@@ -1,0 +1,1060 @@
+<!-- title: HRWest HR Conference Experiences -->
+<style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
+  .new-col {
+    margin-top: 40px !important;
+    font-size: 18px;
+    font-weight: 400;
+    color: #91278c;
+    line-height: 1.6;
+  }
+
+  .new-col span {
+    font-weight: 600;
+    color: #273a8f;
+  }
+  .exp-inc small::first-letter {
+    color: Green;
+  }
+  .exp-inc span::first-letter {
+    color: red;
+  }
+  .tab_info > h6 {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .exp_wrapper {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .exp_wrapper .exp_info {
+    width: 60%;
+    padding-right: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .exp_wrapper .exp_info > h4 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #2a343e;
+    margin: 15px 0px 25px 0px;
+    line-height: 1.4;
+  }
+  .exp_wrapper .exp_info > p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2a343e;
+    margin: 0px 0px 25px 0px;
+    line-height: 1.8;
+  }
+  .exp_wrapper .exp_img {
+    width: 40%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+    padding: 20px;
+  }
+  .exp_wrapper .exp_img > img {
+    display: block;
+    max-width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .exp-details {
+    width: 100%;
+    min-height: 47px;
+    margin: 10px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exp-details > div {
+    width: 50%;
+    min-width: 33.33%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .exp-details > div > span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a343e;
+    margin-top: 7px;
+  }
+  .exp-details > div > small {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #273a8f;
+    margin-top: 7px;
+  }
+  .exp-inc {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .exp-inc small {
+    display: block;
+    padding: 12px 20px;
+    background: #f5f5f5;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 0px;
+    border: 0px solid #fff;
+    border-radius: 25px;
+  }
+  .exp-inc span {
+    display: block;
+    padding: 12px 20px;
+    background: #f5f5f5;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 0px;
+    border: 0px solid #fff;
+    border-radius: 25px;
+  }
+  .exp-inc_wrapper {
+    width: 100%;
+    padding-top: 20px;
+    position: relative;
+  }
+  .exp-inc_wrapper h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a343e;
+    margin: 0px 0px 20px 0px;
+    line-height: 1.3;
+  }
+
+  .exp_wrapper .exp_img p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2a343e;
+    margin: 0px 0px 0px 0px;
+    line-height: 1.8;
+  }
+  .head {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 20px 0px 10px 0px !important;
+  }
+
+  .cta-block {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .cta-block p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2a343e;
+  }
+  .cta-block p span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(42, 52, 62, 0.7);
+    display: block;
+    margin-top: 10px;
+  }
+  .aw-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 0px 0px;
+    gap: 20px;
+  }
+  @media screen and (max-width: 767px) {
+    .exp_wrapper {
+      flex-direction: column;
+    }
+    .exp_wrapper .exp_info {
+      width: 100%;
+    }
+    .exp_wrapper .exp_img {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 900px) {
+    .cta-block {
+      justify-content: start;
+      gap: 3rem;
+    }
+  }
+</style>
+<!-- @format -->
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container">
+    <div class="hr-west_wrapper">
+      <div class="hr-wrapper_info">
+        <div class="hr-west_info">
+          <img
+            alt="HRWest Logo"
+            height="125"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR_West_Logo.png"
+            width="115"
+          />
+          <h1>Experiences &amp; Free Things to Do</h1>
+        </div>
+
+        <h2>
+          We invite you to make the most of your time in Oakland by taking in
+          the vibrant atmosphere and everything the city and area has to offer -
+          before, during, and after HRWest 2025. Explore the local sights,
+          engage in unique activities, and savor the incredible culinary
+          experiences of the Bay area!
+        </h2>
+
+        <div class="cta-block">
+          <a
+            class="hr_custom_btn dark_line_button btn_medium round"
+            href="#thingstodo"
+            >Things to Do
+            <svg
+              height="13.008"
+              style="position: relative; top: 4px; margin-left: 4px"
+              viewbox="0 0 10.052 13.008"
+              width="10.052"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g transform="translate(-317.257 -42.258)">
+                <path
+                  d="M322.243,48.85a.7.7,0,0,0,.972,0l3.242-3.142a.7.7,0,0,0-.486-1.2h-1.944V40.956a.7.7,0,0,0-.7-.7h-1.2a.7.7,0,0,0-.7.7v3.553h-1.944a.7.7,0,0,0-.486,1.2Z"
+                  fill="#2A343E"
+                  transform="translate(-0.608 2)"
+                ></path>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <!-- <div class="new-col">
+          <span>IMPORTANT:</span> You have the option of signing up for
+          experiences below or upon registering for HRWest 2024, as part of the
+          checkout process. If you sign up for experiences here, don&rsquo;t
+          forget to register!
+        </div> -->
+      </div>
+
+      <div class="hr-west-banner">
+        <img
+          alt="Experience Collage"
+          src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Exp-Collage.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------Experiences------------>
+
+<div class="hr-west_container" style="margin-top: 50px">
+  <h3 class="centitle">Experiences</h3>
+
+  <div class="exp_wrapper">
+    <div class="exp_info">
+      <h4>The Great Wine Tour</h4>
+
+      <p>
+        Nobody wants to be the designated driver on a winery tour. Instead of
+        worrying about arranging transportation, join a small-group tour that
+        transports you to <strong>three different wineries</strong>. Along the
+        way, indulge in wine tastings (tasting costs included in the experience
+        fee) and a lunch stop in the historic
+        <strong>Sonoma Village</strong> (cost of lunch not included). On the way
+        back to your hotel, stop by the <strong>Golden Gate Bridge</strong>, one
+        of the most iconic landmarks in the world.
+      </p>
+
+      <p>
+        Along the way, your guide will share interesting facts about the region,
+        its history, and its culture. You&rsquo;ll learn about the challenges
+        and secrets of winemaking, the unique characteristics of the terroirs of
+        Sonoma County, and the importance of sustainable agriculture.
+      </p>
+
+      <p>
+        <strong>Departure and return:</strong> Shuttle pick-up and drop-off from
+        any San Francisco hotels in the Downtown/Union Square/Wharf areas
+        between 8 and 9 a.m.<br />
+        For a full refund, reach out to the tour operator at least 24 hours in
+        advance of the start date of the experience. Customers will also receive
+        a full refund or credit in case of operator cancellation due to weather
+        or other unforeseen circumstances.<br />
+        No minimum group numbers required. Max of 12 people per group.
+      </p>
+    </div>
+
+    <div class="exp_img">
+      <img
+        alt="The Great Wine Tour"
+        src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Wine-Tour.jpg"
+      />
+      <div class="exp-details">
+        <div><span>Price</span><small>$169 USD / person</small></div>
+
+        <div><span>Duration</span> <small>9 hours</small></div>
+
+        <div><span>Ages</span> <small>Ages 21+</small></div>
+      </div>
+
+      <p>Available Monday, March 10th or Thursday, March 13th</p>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Included</h6>
+
+        <div class="exp-inc">
+          <small>✔ 3 winery visits and wine-tasting fees</small>
+          <small>✔ Driver tour guide</small>
+          <small>✔ Transport by small shuttle</small>
+          <small
+            >✔ Hotel pick-up and drop-off within tour region (SF Downtown/Union
+            Square/Wharf areas)</small
+          >
+        </div>
+      </div>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Not Included</h6>
+
+        <div class="exp-inc">
+          <span>✖ Lunch cost</span> <span>✖ Gratuities</span>
+        </div>
+
+        <div class="aw-btn">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            href="https://edgeoftheworldsf.com/tours/great-wine-tours/the-great-wine-tour/"
+            target="_blank"
+            >Sonoma Wine Tour Tickets &amp; Information</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp_wrapper">
+    <div class="exp_info">
+      <h4>Chinatown Culinary Walking Tour</h4>
+
+      <p>
+        Stroll the narrow streets and back alleys of San Francisco&#39;s
+        Chinatown on this walking tour with a small group. Stop by shops selling
+        authentic Chinese crafts and pottery, as well as hard-to-find herbs and
+        produce. A variety of tastings add up to a full lunch, including tea,
+        fortune cookies, dim sum, and other treats. Listen to guided commentary
+        and get answers to any questions as you explore the nation&rsquo;s
+        oldest Chinatown.
+      </p>
+
+      <p>
+        <strong>Departure:</strong> 400 Grant Ave, San Francisco, CA 94108. At
+        the corner of Bush and Grant Streets, in front of the Chinatown (Dragon)
+        Gate.<br />
+        <strong>Return:</strong> 650 Jackson St, San Francisco, CA 94133<br />
+        For a full refund, reach out to the tour operator at least 24 hours in
+        advance of the start date of the experience.<br />
+        This experience requires a minimum number of travelers. If it&rsquo;s
+        canceled because the minimum isn&rsquo;t met, you&rsquo;ll be offered a
+        different date or a full refund. Max of 15 people per group. Please note
+        this tour is not wheelchair accessible.
+      </p>
+    </div>
+
+    <div class="exp_img">
+      <img
+        alt="Chinatown Culinary Walking Tour"
+        src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Culinary-Walking-Tour.jpg"
+      />
+      <div class="exp-details">
+        <div><span>Price</span><small>$110 USD / person</small></div>
+
+        <div><span>Duration</span> <small>3 hours</small></div>
+
+        <div><span>Ages</span> <small>All ages</small></div>
+      </div>
+
+      <p>Available Monday, March 10th or Thursday, March 13th</p>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Included</h6>
+
+        <div class="exp-inc">
+          <small>✔ Guided tour</small> <small>✔ Lunch</small>
+        </div>
+
+        <div class="aw-btn">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            href="https://www.viator.com/tours/San-Francisco/Chinatown-Culinary-Walking-Tour/d651-3327P1?mcid=42383&amp;pid=P00082420&amp;medium=api&amp;api_version=2.0&amp;target_lander=NONE¤cy=USD&amp;campaign=%3A55516f03-4427-45da-aacd-8e37503768c1"
+            target="_blank"
+            >Chinatown Culinary Walking Tour Tickets &amp; Information</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp_wrapper">
+    <div class="exp_info">
+      <h4>Muir Woods Tour &mdash; The Coastal Redwoods</h4>
+
+      <p>
+        Explore the famous groves of the Northern California redwoods on this
+        tour of Muir Woods. Departing from Fisherman&rsquo;s Wharf in San
+        Francisco, a local guide drives you over the scenic Golden Gate Bridge
+        and into the moist air of Muir Woods National Monument. Crane your neck
+        to admire these 1,000-year-old trees standing 260 feet (80 meters) tall.
+        Afterward, enjoy a drive through the charming town of Sausalito before
+        heading back to the city.
+      </p>
+
+      <p>
+        <strong>Departure and return:</strong> 99 Jefferson St, San Francisco,
+        CA 94133<br />
+        For a full refund, reach out to the tour operator at least 24 hours in
+        advance of the start date of the experience. This tour operates in all
+        weather conditions, please dress appropriately. No minimum group numbers
+        required. Max of 15 people per group. Please note this tour is not
+        wheelchair accessible.
+      </p>
+    </div>
+
+    <div class="exp_img">
+      <img
+        alt="Muir Woods Tour — The Coastal Redwoods"
+        src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Coastal-Redwoods.jpg"
+      />
+      <div class="exp-details">
+        <div><span>Price</span><small>$134 USD / person</small></div>
+
+        <div><span>Duration</span> <small>3.5 hours</small></div>
+
+        <div><span>Ages</span> <small>All ages</small></div>
+      </div>
+
+      <p>Available Monday, March 10th or Thursday, March 13th</p>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Included</h6>
+
+        <div class="exp-inc">
+          <small>✔ Entrance fee to Muir Woods</small>
+          <small>✔ Local guide</small>
+          <small
+            >✔ Air-conditioned vehicle for driving both ways and through the
+            seaside town of Sausalito</small
+          >
+        </div>
+      </div>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Not Included</h6>
+
+        <div class="exp-inc">
+          <span>✖ Food and beverage</span> <span>✖ Gratuities</span>
+        </div>
+
+        <div class="aw-btn">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            href="https://www.viator.com/tours/San-Francisco/Muir-Woods-Tour-of-California-Coastal-Redwoods/d651-7116P2"
+            target="_blank"
+            >Muir Woods Tickets &amp; Information</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp_wrapper">
+    <div class="exp_info">
+      <h4>Alcatraz &amp; San Francisco Bay Cruise</h4>
+
+      <p>
+        This convenient package gives you access to two separate essential San
+        Francisco experiences: a visit to Alcatraz Island and a sightseeing bay
+        cruise. Instead of waiting in long ticket lines, this time-saving option
+        helps you explore San Francisco more efficiently. Take a ferry to
+        Alcatraz Island, where you can go inside the Alcatraz Federal
+        Penitentiary and enjoy an audio tour. The San Francisco Bay cruise
+        includes views of Pier 39&#39;s sea lions, the waterfront, and the
+        city&#39;s skyline.
+      </p>
+
+      <p>
+        <strong>Departure and return:</strong> Pier 33, San Francisco, CA 94133,
+        USA<br />
+        The time you select at checkout is the time of your Alcatraz ferry. The
+        ferry will leave on time at your specified departure time. Please arrive
+        at Pier 33 at least 30 minutes prior to your departure time. For the Bay
+        Cruise, exchange the voucher at the Blue and Gold Fleet box office at
+        Pier 39. This tour operates in all weather conditions, please dress
+        appropriately. No minimum group numbers required.<br />
+        <strong>Please note: ALL sales are final. No refunds.</strong> This tour
+        is wheelchair accessible.
+      </p>
+    </div>
+
+    <div class="exp_img">
+      <img
+        alt="Alcatraz &amp; San Francisco Bay Cruise"
+        src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Bay-Cruise.jpg"
+      />
+      <div class="exp-details">
+        <div><span>Price</span><small>$194 USD / person</small></div>
+
+        <div><span>Duration</span> <small>2-4 hours</small></div>
+
+        <div><span>Ages</span> <small>All ages</small></div>
+      </div>
+
+      <p>Available Monday, March 10th or Thursday, March 13th</p>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Included</h6>
+
+        <div class="exp-inc">
+          <small>✔ Round-trip ferry to Alcatraz Island from Pier 33</small>
+          <small> ✔ Entrance/Admission fee to Alcatraz Island</small>
+          <small>✔ 45-minute audio tour on Alcatraz Island</small>
+          <small>✔ 60-minute San Francisco Bay Cruise</small>
+          <small>✔ Entry/Admission &mdash; San Francisco Bay</small>
+        </div>
+      </div>
+
+      <div class="exp-inc_wrapper">
+        <h6>What&#39;s Not Included</h6>
+
+        <div class="exp-inc">
+          <span
+            >✖ Transportation to and from the Pier 33 or Pier 39 (make your own
+            way there)</span
+          >
+          <span>✖ Food and beverage</span>
+        </div>
+
+        <div class="aw-btn">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            href="https://www.viator.com/en-CA/tours/San-Francisco/Alcatraz-with-Bay-Cruise/d651-152424P5?mcid=42383&amp;pid=P00082420&amp;medium=api&amp;api_version=2.0&amp;target_lander=NONE¤cy=CAD&amp;campaign=%3Ab9b8c0f0-a0ff-4288-9edc-e2adf2e7b85e"
+            target="_blank"
+            >Alcatraz &amp; San Francisco Bay Cruise Tickets &amp;
+            Information</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hr-west_container mrtp100" id="thingstodo">
+  <h3 class="centitle">So Many Things to Enjoy</h3>
+
+  <div class="loc-tabs">
+    <ul class="loc-tab">
+      <li class="active" id="what-to-see">
+        <a href="javascript:void(0);">What to see</a>
+      </li>
+      <li id="what-to-eat"><a href="javascript:void(0);">What to eat</a></li>
+      <li id="what-to-do"><a href="javascript:void(0);">What to do</a></li>
+    </ul>
+  </div>
+
+  <div class="loc_info_wrapper" id="1">
+    <div class="tab_info">
+      <svg
+        height="36"
+        viewbox="0 0 41.143 36"
+        width="41.143"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M33.429,3.536A1.285,1.285,0,0,0,32.143,2.25H27a1.285,1.285,0,0,0-1.286,1.286V7.393h7.714Zm-28.293,9C4.934,20.076.278,21.714,0,32.143v3.536A2.572,2.572,0,0,0,2.571,38.25h7.714a2.572,2.572,0,0,0,2.571-2.571V22.821h2.571V9.964H7.7A2.6,2.6,0,0,0,5.136,12.535Zm30.872,0a2.6,2.6,0,0,0-2.566-2.571H25.714V22.821h2.571V35.679a2.572,2.572,0,0,0,2.571,2.571h7.714a2.572,2.572,0,0,0,2.571-2.571V32.143c-.278-10.429-4.934-12.066-5.136-19.608ZM14.143,2.25H9A1.285,1.285,0,0,0,7.714,3.536V7.393h7.714V3.536A1.285,1.285,0,0,0,14.143,2.25ZM18,22.821h5.143V9.964H18Z"
+          transform="translate(0 -2.25)"
+        ></path>
+      </svg>
+
+      <h6>
+        In recent years, Oakland has earned recognition as a travel destination,
+        including being named the top North American city to visit. It features
+        a wide variety of activities and attractions that you can enjoy,
+        including:
+      </h6>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.alltrails.com/trail/us/california/lake-merritt?u=m"
+          target="_blank"
+          ><img
+            alt="Lake Merritt Walk"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Lake-Merritt-Walk.png"
+        /></a>
+      </div>
+
+      <h3>Lake Merritt Walk</h3>
+
+      <p>
+        Enjoy a leisurely stroll around Lake Merritt, a picturesque urban lake
+        located in the heart of Oakland. The 3.4-mile path offers beautiful
+        views of the water, wildlife, and the city skyline. It&#39;s a perfect
+        way to relax and soak in the natural beauty of the area.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.alltrails.com/parks/us/california/reinhardt-redwood-regional-park"
+          target="_blank"
+          ><img
+            alt="Redwood Regional Park"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Redwood-Regional-Park.png"
+        /></a>
+      </div>
+
+      <h3>Redwood Regional Park</h3>
+
+      <p>
+        Take a break from the city and immerse yourself in nature at Redwood
+        Regional Park. This park offers several trails that wind through
+        stunning redwood forests, providing a peaceful and serene environment
+        for hiking, picnicking, and enjoying the great outdoors.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://jacklondonsquare.com/" target="_blank"
+          ><img
+            alt="Jack London Square"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Jack-London-Square.png"
+        /></a>
+      </div>
+
+      <h3>Jack London Square</h3>
+
+      <p>
+        Visit Jack London Square, a waterfront entertainment district named
+        after the famous author who once lived in Oakland. Explore the
+        area&#39;s shops, restaurants and farmers market. You can also enjoy
+        views of the bay, rent a kayak or paddleboard, or simply relax by the
+        waterfront.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.visitoakland.com/blog/post/black-panther-party/"
+          target="_blank"
+          ><img
+            alt="Explore the Black Panther Party’s History in Oakland"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Black-Panther-Party.png"
+        /></a>
+      </div>
+
+      <h3>Explore the Black Panther Party&rsquo;s History in Oakland</h3>
+
+      <p>
+        Founded in 1966 in Oakland, the Black Panther Party expanded across the
+        country and the world &mdash; with more than 40 chapters and branches,
+        including in England, India, New Zealand, Israel, China, North Korea,
+        Vietnam and Algeria. Visit 12 Oakland locations where the Black Panther
+        Party made history.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://www.oaklandzoo.org/admission" target="_blank"
+          ><img
+            alt="Oakland Zoo"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Oakland-Zoo.png"
+        /></a>
+      </div>
+
+      <h3>Oakland Zoo</h3>
+
+      <p>
+        While the Oakland Zoo does require admission fees, it can be an
+        excellent option for an affordable and family-friendly activity. Prices
+        average $25.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://museumca.org/" target="_blank"
+          ><img
+            alt="Oakland Museum of California"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Oakland-Museum.png"
+        /></a>
+      </div>
+
+      <h3>Oakland Museum of California</h3>
+
+      <p>
+        Explore the museum&#39;s art, history, and natural science exhibits that
+        showcase the rich cultural heritage of California. Prices average $20.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.tripadvisor.ca/Attraction_Review-g32810-d8405626-Reviews-Oakland_California_Temple-Oakland_California.html"
+          target="_blank"
+          ><img
+            alt="Oakland California Temple"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Oakland-California-Temple.png"
+        /></a>
+      </div>
+
+      <h3>Oakland California Temple</h3>
+
+      <p>
+        Visitors can walk through the colorful gardens lined with towering palm
+        trees, sit by the fountains and cascading waterfall, enjoy the beautiful
+        view of the San Francisco Bay Area, and feel the peace of the grounds. A
+        coveted location for photographers, the Oakland Temple is one of the
+        best locations to enjoy a sunset over the bay.
+      </p>
+    </div>
+
+    <div class="tab_info">
+      <svg
+        height="36"
+        viewbox="0 0 41.143 36"
+        width="41.143"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M33.429,3.536A1.285,1.285,0,0,0,32.143,2.25H27a1.285,1.285,0,0,0-1.286,1.286V7.393h7.714Zm-28.293,9C4.934,20.076.278,21.714,0,32.143v3.536A2.572,2.572,0,0,0,2.571,38.25h7.714a2.572,2.572,0,0,0,2.571-2.571V22.821h2.571V9.964H7.7A2.6,2.6,0,0,0,5.136,12.535Zm30.872,0a2.6,2.6,0,0,0-2.566-2.571H25.714V22.821h2.571V35.679a2.572,2.572,0,0,0,2.571,2.571h7.714a2.572,2.572,0,0,0,2.571-2.571V32.143c-.278-10.429-4.934-12.066-5.136-19.608ZM14.143,2.25H9A1.285,1.285,0,0,0,7.714,3.536V7.393h7.714V3.536A1.285,1.285,0,0,0,14.143,2.25ZM18,22.821h5.143V9.964H18Z"
+          transform="translate(0 -2.25)"
+        ></path>
+      </svg>
+
+      <h6>
+        Speaking of the bay, San Francisco is just 12 miles west and San Jose is
+        only about 40 miles south, making it convenient to visit sites like the
+        Golden Gate Bridge or the de Young Museum, or events like Golden State
+        Warriors or San Jose Sharks games. Plus, vibrant and eclectic Berkeley
+        is just minutes away.
+      </h6>
+    </div>
+  </div>
+
+  <div class="loc_info_wrapper" id="2" style="display: none">
+    <div class="tab_info">
+      <svg
+        height="36"
+        viewbox="0 0 122.88 122.88"
+        width="36"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M61.44,0A61.46,61.46,0,1,1,18,18,61.21,61.21,0,0,1,61.44,0ZM52.55,58.42c2.92-2,4.39-4.61,4.14-10.58V32.49c0-2.14-3.92-2.4-4.11,0l-.15,12.45a1.75,1.75,0,1,1-3.5,0l.15-12.88c0-2.3-3.77-2.53-3.81,0,0,3.58-.15,9.31-.15,12.88a1.52,1.52,0,1,1-3,0l.15-12.79A2.09,2.09,0,0,0,39,30.61c-1.38.88-1.1,2.65-1.16,4.15l-.48,14.69c.07,4.27,1.19,7.74,4.54,9.22a8.37,8.37,0,0,0,2,.52L42.77,89.25a3.76,3.76,0,0,0,3.71,3.86h.46a4.24,4.24,0,0,0,4.17-4.34l-1-29.59a6.61,6.61,0,0,0,2.45-.76Zm18,29.75-.05-26.41c-11.29-6.52-7.69-31.64,3.6-31.5,13.72.16,15.35,28.31,3.55,31.4l.87,26.64c.17,6.13-8,6.7-8-.13ZM99.29,23.59A53.52,53.52,0,1,0,115,61.44,53.36,53.36,0,0,0,99.29,23.59Z"
+        ></path>
+      </svg>
+
+      <h6>
+        If you&#39;d like to grab lunch while at HRWest, there are many options
+        within walking distance of the Oakland Marriott City Center. Some
+        examples include:
+      </h6>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.tripadvisor.com/Restaurant_Review-g32810-d4749952-Reviews-Blue_Bottle_Coffee_Company-Oakland_California.html"
+          target="_blank"
+          ><img
+            alt="Blue Bottle Coffee"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/blue-bottle-coffee.png"
+        /></a>
+      </div>
+
+      <h3>Blue Bottle Coffee</h3>
+
+      <p>
+        (0.2 Miles) Located at <strong>300 Webster St.</strong>, Blue Bottle
+        Coffee is a renowned coffee shop known for its high-quality coffee and
+        pastries. They offer a selection of freshly brewed coffee and
+        espresso-based beverages, as well as grab-and-go snacks like croissants
+        and muffins.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://tayhooakland.com" target="_blank"
+          ><img
+            alt="Tay Ho Restaurant"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/tay-ho-restaurant.png"
+        /></a>
+      </div>
+
+      <h3>Tay Ho Restaurant</h3>
+
+      <p>
+        (0.3 Miles) Located at <strong>344 12th St.</strong>, this restaurant
+        specializes in authentic Vietnamese cuisine. They offer dishes such as
+        pho, banh mi, and grilled meats. The restaurant has a casual atmosphere
+        and is a popular choice for lunch.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.tripadvisor.ca/Restaurant_Review-g32810-d4715242-Reviews-Miss_Ollie_s-Oakland_California.html"
+          target="_blank"
+          ><img
+            alt="Miss Ollie's"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/miss-ollie.png"
+        /></a>
+      </div>
+
+      <h3>Miss Ollie&#39;s</h3>
+
+      <p>
+        (0.3 miles) Located at <strong>901 Washington St.</strong>, Miss
+        Ollie&#39;s is a Caribbean-inspired restaurant known for flavorful
+        dishes. They offer a variety of Jamaican and Southern cuisine, including
+        jerk chicken, oxtail stew and fried catfish.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://locations.ikessandwich.com/ca/oakland/112/"
+          target="_blank"
+          ><img
+            alt="Ike's Love &amp; Sandwiches"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/lkes-love-sandwiches.png"
+        /></a>
+      </div>
+
+      <h3>Ike&#39;s Love &amp; Sandwiches</h3>
+
+      <p>
+        (0.5 Miles) Located at <strong>2204 Broadway</strong>, Ike&#39;s Love
+        &amp; Sandwiches is a sandwich shop known for its extensive menu of
+        creative and flavorful sandwiches. They offer a wide variety of options,
+        including vegetarian and vegan choices. Their sandwiches are made to
+        order and can be quickly grabbed to enjoy on the go.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://www.bellyrestaurants.com" target="_blank"
+          ><img
+            alt="Belly"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/belly.png"
+        /></a>
+      </div>
+
+      <h3>Belly</h3>
+
+      <p>
+        (0.6 Miles) Found at <strong>1901 San Pablo Ave.</strong>, Belly is a
+        contemporary American restaurant with a focus on seasonal ingredients.
+        Their menu features a range of dishes, including salads, sandwiches and
+        creative entrees. They also have vegetarian and vegan options.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.tripadvisor.ca/Restaurant_Review-g32810-d3343981-Reviews-Hopscotch-Oakland_California.html"
+          target="_blank"
+          ><img
+            alt="Hopscotch"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/hopscotch.png"
+        /></a>
+      </div>
+
+      <h3>Hopscotch</h3>
+
+      <p>
+        (0.6 Miles) Situated at <strong>1915 San Pablo Ave.</strong>, Hopscotch
+        is a stylish restaurant that blends American and Japanese influences.
+        They offer a diverse menu that includes burgers, ramen, sushi and
+        inventive cocktails. The restaurant has a sleek and modern ambiance.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://umamimart.com" target="_blank"
+          ><img
+            alt="Umami Mart"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/umami-mart.png"
+        /></a>
+      </div>
+
+      <h3>Umami Mart</h3>
+
+      <p>
+        (2 Miles) Situated at <strong>4027 Broadway</strong>, Umami Mart is a
+        Japanese-inspired kitchen and bar. They serve a selection of small
+        plates, including sushi, sashimi and izakaya-style dishes. It&#39;s a
+        great option for those looking for a unique dining experience.
+      </p>
+    </div>
+  </div>
+
+  <div class="loc_info_wrapper" id="3" style="display: none">
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://ulcellars.com/" target="_blank"
+          ><img
+            alt="Urban Legend Cellars"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/urban-legend-cellars.png"
+        /></a>
+      </div>
+
+      <h3>Urban Legend Cellars</h3>
+
+      <p>
+        Located at <strong>621 4th St.</strong>, Urban Legend Cellars offers
+        wine tastings in a relaxed and urban setting. They specialize in
+        small-batch, handcrafted wines made from locally sourced grapes.
+        Visitors can enjoy a tasting flight and learn about the winemaking
+        process.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://www.aleindustries.com/" target="_blank"
+          ><img
+            alt="Ale Industries"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/ale-industries.png"
+        /></a>
+      </div>
+
+      <h3>Ale Industries</h3>
+
+      <p>
+        Found at <strong>3096 East 10th St.</strong>, Ale Industries is a local
+        craft brewery that offers a diverse range of beers, including IPAs,
+        stouts and sour ales. They have a taproom where visitors can sample
+        their beers and learn about their brewing process. Ale Industries
+        focuses on sustainability and uses organic ingredients whenever
+        possible.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a href="https://www.factionbrewing.com/" target="_blank"
+          ><img
+            alt="Faction Brewing"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/faction-brewing.png"
+        /></a>
+      </div>
+
+      <h3>Faction Brewing</h3>
+
+      <p>
+        Found at <strong>2501 Monarch St.</strong> in Alameda (just across the
+        estuary from Oakland), Faction Brewing is a waterfront brewery known for
+        its scenic views and excellent beers. They offer a wide range of craft
+        beers, including IPAs, stouts and lagers. Visitors can enjoy their
+        drinks while taking in the panoramic views of the San Francisco skyline.
+      </p>
+    </div>
+
+    <div class="loc_info_card">
+      <div class="tab-img">
+        <a
+          href="https://www.yelp.ca/biz/crooked-city-cider-tap-house-oakland)"
+          target="_blank"
+          ><img
+            alt="Crooked City Cider"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/crooked-city-cider.png"
+        /></a>
+      </div>
+
+      <h3>Crooked City Cider</h3>
+
+      <p>
+        Situated at <strong>206 Broadway</strong>, Crooked City Cider
+        specializes in small-batch, handcrafted hard ciders made from locally
+        sourced apples. They offer tastings of their ciders, which come in a
+        variety of flavors and styles. It&#39;s a unique and refreshing option
+        for those looking to explore the world of cider.
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('#what-to-see').click(function () {
+      $('#1').show()
+      $('#what-to-see').addClass('active')
+      $('#what-to-eat').removeClass('active')
+      $('#what-to-do').removeClass('active')
+      $('#2').hide()
+      $('#3').hide()
+    })
+    $('#what-to-eat').click(function () {
+      $('#what-to-eat').addClass('active')
+      $('#what-to-see').removeClass('active')
+      $('#what-to-do').removeClass('active')
+      $('#2').show()
+      $('#1').hide()
+      $('#3').hide()
+    })
+    $('#what-to-do').click(function () {
+      $('#what-to-do').addClass('active')
+      $('#what-to-see').removeClass('active')
+      $('#what-to-eat').removeClass('active')
+      $('#3').show()
+      $('#1').hide()
+      $('#2').hide()
+    })
+  })
+</script>
+$designAttribute:quick_login_m1 $designAttribute:splashCheckout
+<!-- title: HRWest HR Conference Experiences -->

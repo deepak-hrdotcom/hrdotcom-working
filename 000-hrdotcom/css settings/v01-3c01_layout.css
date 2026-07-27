@@ -1,0 +1,99 @@
+body
+{
+    margin:0em;
+    padding:0em;
+}
+#sfsBody
+{
+    margin:0em;
+    padding:0em;
+    min-width:65em;
+    width:100%;
+}
+#sfsMain, #sfsMainContent
+{
+    margin:0em;
+    padding:0em;
+    height:100%;
+}
+#sfsHeader
+{
+    height:95px;
+    clear:both;
+}
+#sfsHeader2
+{
+    clear:both;
+}
+#sfsHeader2 .welcome
+{
+    display:block;
+    float:left;
+    width:200px;
+padding:.2em 1em;
+}
+#sfsHeaderMenus
+{
+    padding:.5em 1em;
+    font-size:.8em;
+}
+#sfsNavigation
+{
+    float:left;
+    width:190px;
+    margin:0em;
+    padding:1em 1em 1em 0em;
+}
+#sfsNaviNews
+{
+    float:right;
+    width:190px;
+    margin:0em;
+    padding:1em 1em 1em 1em;
+}
+#sfsContent
+{
+    height:100%;
+    margin:0% 230px 0% 200px;
+    padding:0em 0em 5em 0em;
+}
+#sfsContentIn
+{
+    overflow:hidden;
+    height:100%;
+    margin:0em 1em 0em 1em;
+    padding:0em;
+}
+#sfsFooter
+{
+    clear:both;
+    display:block;
+    margin:0;
+    padding:1em;
+    height:2.5em;
+}
+
+#sfsToolBar
+{
+    position:absolute;
+    top:1.5em;
+    right:1em;
+    float:right;
+    width:60%;
+    margin:0em;
+    padding:0em 1em 0em 0em;
+}
+
+#sfsToolBar
+{
+    z-index:10000;
+}
+#sfsLogoLeft
+{
+    z-index:10001;
+}
+
+#sfsLanguageButton
+{
+    padding-top:0.3em;
+}

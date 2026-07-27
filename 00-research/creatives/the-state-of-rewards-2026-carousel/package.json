@@ -1,0 +1,9 @@
+{
+  "name": "the-state-of-rewards-2026-carousel",
+  "version": "1.0.0",
+  "description": "LinkedIn Carousel post generator for the State of Rewards & Recognition 2026 report.",
+  "main": "screenshot.js",
+  "dependencies": {
+    "puppeteer": "^22.6.0"
+  }
+}

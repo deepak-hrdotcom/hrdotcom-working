@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiRater Surveys - Leadership Coach</title>
+</head>
+
+<body>
+
+  <div class="mrs-lp">
+    <style type="text/css">
+      /* Google Font Import: Manrope & Outfit */
+      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap');
+
+      /* Global Scoped Rules */
+      .mrs-lp {
+        background-color: #ffffff;
+        color: #333333;
+        overflow-x: hidden;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* CMS Resets */
+      .mrs-lp * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .mrs-lp img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        display: block;
+        border: 0;
+      }
+
+      /* Typography Overrides */
+      .mrs-lp h1,
+      .mrs-lp h2,
+      .mrs-lp h3,
+      .mrs-lp p,
+      .mrs-lp a,
+      .mrs-lp span,
+      .mrs-lp div {
+        font-family: 'Manrope', sans-serif !important;
+      }
+
+      .mrs-lp h1,
+      .mrs-lp h1 span {
+        font-family: 'Outfit', sans-serif !important;
+        font-size: 64px !important;
+        line-height: 1.1 !important;
+        font-weight: 900 !important;
+        text-transform: none !important;
+        letter-spacing: -1px !important;
+        color: #FFFFFF !important;
+        /* White on blue bg */
+      }
+
+      .mrs-lp h2 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        font-weight: 700 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp p,
+      .mrs-lp div {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        font-weight: 400 !important;
+      }
+
+      .mrs-lp .small-text {
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+
+      .mrs-lp .italic-text {
+        font-style: italic !important;
+        font-weight: 400 !important;
+      }
+
+      /* Layout & Containers */
+      .mrs-lp .section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .mrs-lp .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Buttons */
+      .mrs-lp .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #94C83D !important;
+        /* New Brand Green */
+        color: #ffffff !important;
+        padding: 0 40px;
+        height: 50px;
+        border-radius: 999px !important;
+        /* From guidelines */
+        text-decoration: none !important;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        /* Slightly larger font for prominence */
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        border: none !important;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(148, 200, 61, 0.3);
+      }
+
+      .mrs-lp .btn:hover {
+        background-color: #435A1B !important;
+        /* Darker green */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(148, 200, 61, 0.4);
+      }
+
+      /* Secondary Outlined Button */
+      .mrs-lp .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent !important;
+        color: #02588E !important;
+        /* Brand Blue */
+        border: 2px solid #02588E !important;
+        padding: 0 30px;
+        height: 50px;
+        border-radius: 999px !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      .mrs-lp .btn-outline:hover {
+        background-color: #0A74EE !important;
+        color: #ffffff !important;
+        transform: translateY(-2px);
+      }
+
+      /* --- Hero Section Specific --- */
+      .mrs-lp .hero-section {
+        background: linear-gradient(135deg, #273a8f, #1d84ff);
+        /* Synchronized Blue Gradient */
+        padding-top: 100px;
+        padding-bottom: 120px;
+        position: relative;
+      }
+
+      /* Top Logo Overlay */
+      .mrs-lp .hero-top-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 16px 0;
+        background-color: #F4F4F4;
+        /* Contrasting grey header */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        z-index: 10;
+      }
+
+      .mrs-lp .hero-top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .mrs-lp .hero-logo img {
+        height: 48px;
+        /* Reduced logo size per request */
+      }
+
+      /* HR.com Logo Layout */
+      .mrs-lp .hr-com-logo-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+      }
+
+      /* Hero Grid Layout */
+      .mrs-lp .hero-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        padding-top: 48px
+      }
+
+      .mrs-lp .hero-text-col {
+        text-align: left;
+        margin-top: auto !important;
+      }
+
+      .mrs-lp .hero-headline {
+        margin-bottom: 16px;
+      }
+
+      .mrs-lp .hero-subheadline {
+        margin-bottom: 12px;
+        max-width: 500px;
+      }
+
+      .mrs-lp .hero-new-line {
+        font-size: 24px !important;
+        font-weight: 900 !important;
+        color: #ffffff !important;
+        margin-bottom: 32px;
+        display: block;
+      }
+
+      .mrs-lp .hero-growth-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #FFEB3B 0%, #ff9822 100%);
+        color: #333333 !important;
+        font-size: 18px !important;
+        font-weight: 900 !important;
+        padding: 8px 18px;
+        border-radius: 999px;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        margin-top: 0px;
+        box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+      }
+
+      .mrs-lp .hero-cta {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .mrs-lp .hero-fine-print {
+        max-width: 450px;
+        margin-bottom: 30px;
+      }
+
+      .mrs-lp .hero-statement-box {
+        background: #ffffff;
+        border-left: 4px solid #0FCC90;
+        padding: 20px;
+        border-radius: 0 8px 8px 0;
+        margin-top: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .mrs-lp .hero-statement {
+        font-size: 16px !important;
+        color: #333333 !important;
+        line-height: 1.5 !important;
+      }
+
+      .mrs-lp .hero-statement:last-child {
+        margin-top: 10px;
+        color: #0A74EE !important;
+        /* Switch to brand blue for readability */
+        font-weight: 700 !important;
+      }
+
+      /* Hero Image placeholder/Area */
+      .mrs-lp .hero-image-col {
+        position: relative;
+      }
+
+      @media screen and (min-width: 992px) {
+        .mrs-lp .hero-image-col {
+          padding-top: 36px
+        }
+
+      }
+
+      .mrs-lp .hero-image-placeholder {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.5) !important;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        overflow: hidden;
+      }
+
+      /* --- Video Section Specific --- */
+      .mrs-lp .video-section {
+        background-color: #ffffff;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        text-align: center;
+      }
+
+      .mrs-lp .video-headline {
+        font-size: 36px !important;
+        line-height: 1.3 !important;
+        font-weight: 700 !important;
+        color: #333333 !important;
+        margin-bottom: 24px;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .video-headline em {
+        font-style: italic !important;
+        font-weight: inherit !important;
+      }
+
+      .mrs-lp .video-description {
+        font-size: 20px !important;
+        color: #666666 !important;
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        line-height: 1.6 !important;
+      }
+
+      .mrs-lp .video-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        background-color: #f8fafc;
+      }
+
+      .mrs-lp .video-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        cursor: pointer;
+      }
+
+      /* --- Features Section Specific --- */
+      .mrs-lp .features-section {
+        background-color: #F8FAFC;
+        /* Modern slight off-white/gray */
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      .mrs-lp .features-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 16px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .features-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .mrs-lp .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        width: 100%;
+      }
+
+      .mrs-lp .feature-card {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+      }
+
+      .mrs-lp .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .mrs-lp .feature-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        background-color: rgba(15, 204, 144, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 24px;
+        color: #0FCC90 !important;
+        font-size: 24px !important;
+        flex-shrink: 0;
+      }
+
+      .mrs-lp .feature-item-title {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #333333 !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .mrs-lp .hr-com-logo-wrapper {
+          justify-content: center;
+        }
+
+        .mrs-lp .hero-content-wrapper {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+
+        .mrs-lp .hero-text-col {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: auto !important
+        }
+
+        .mrs-lp .hero-subheadline {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .mrs-lp .hero-cta {
+          align-items: center;
+        }
+
+        .mrs-lp .hero-statement-box {
+          border-left: none;
+          border-top: 4px solid #0FCC90;
+          border-radius: 0 0 8px 8px;
+          text-align: center;
+        }
+
+        .mrs-lp .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+
+        .mrs-lp h1,
+        .mrs-lp h1 span {
+          font-size: 42px !important;
+        }
+
+        .mrs-lp h2 {
+          font-size: 20px !important;
+        }
+
+        .mrs-lp .section {
+          padding: 60px 0;
+        }
+
+        .mrs-lp .hero-section {
+          padding-top: 80px;
+          padding-bottom: 60px;
+        }
+
+        .mrs-lp .video-headline {
+          font-size: 28px !important;
+        }
+
+        .mrs-lp .video-description {
+          font-size: 18px !important;
+        }
+
+        .mrs-lp .video-section {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+
+        .mrs-lp .features-headline {
+          font-size: 32px !important;
+        }
+
+        .mrs-lp .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mrs-lp .impact-headline {
+          font-size: 32px !important;
+        }
+
+        .mrs-lp .impact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mrs-lp .comparison-headline {
+          font-size: 32px !important;
+          margin-bottom: 40px;
+        }
+
+        .mrs-lp .mrs-comparison-table {
+          min-width: 700px;
+        }
+
+        .mrs-lp .benefits-headline {
+          font-size: 32px !important;
+        }
+
+        .mrs-lp .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* --- Comparison Section Specific --- */
+      .mrs-lp .comparison-section {
+        background-color: #ffffff;
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      .mrs-lp .comparison-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .comparison-headline span {
+        position: relative;
+        display: inline-block;
+        color: #0A74EE !important;
+        /* Emphasize Premium with Brand Blue */
+      }
+
+      .mrs-lp .comparison-image-wrapper {
+        max-width: 1000px;
+        margin: 0 auto 80px auto;
+        text-align: center;
+      }
+
+      .mrs-lp .comparison-image-wrapper img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        /* Making it look premium */
+      }
+
+      /* Modern SaaS Comparison Table */
+      .mrs-lp .comparison-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .mrs-lp .mrs-comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+
+      .mrs-lp .mrs-comparison-table th,
+      .mrs-lp .mrs-comparison-table td {
+        padding: 24px 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        vertical-align: top;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+      }
+
+      .mrs-lp .mrs-comparison-table th {
+        background-color: #F8FAFC;
+        font-size: 20px !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      .mrs-lp .mrs-comparison-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .mrs-lp .mrs-comparison-table .feature-col {
+        width: 30%;
+        font-weight: 700 !important;
+        color: #333333 !important;
+        background-color: #ffffff;
+        font-size: 18px !important;
+      }
+
+      .mrs-lp .mrs-comparison-table .free-col {
+        width: 35%;
+        color: #666666 !important;
+        background-color: #ffffff;
+      }
+
+      .mrs-lp .mrs-comparison-table .premium-col {
+        width: 35%;
+        background-color: rgba(10, 116, 238, 0.03);
+        /* Subtle blue tint for premium column */
+        color: #111111 !important;
+        font-weight: 400 !important;
+      }
+
+      .mrs-lp .mrs-comparison-table th.premium-col {
+        background-color: #0A74EE !important;
+        /* Brand Blue header for premium */
+        color: #ffffff !important;
+      }
+
+      .mrs-lp .mrs-comparison-table .premium-col strong {
+        font-weight: 700 !important;
+        color: #0A74EE !important;
+      }
+
+      /* --- Impact Section Specific --- */
+      .mrs-lp .impact-section {
+        background-color: #F8FAFC;
+        /* Alternating Background */
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      .mrs-lp .impact-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 16px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .impact-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        width: 100%;
+      }
+
+      .mrs-lp .impact-card {
+        background-color: #ffffff;
+        padding: 50px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+      }
+
+      .mrs-lp .impact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .mrs-lp .impact-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        background-color: rgba(10, 116, 238, 0.1);
+        /* Primary Blue tinted background */
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        color: #0A74EE !important;
+      }
+
+      .mrs-lp .impact-icon-wrapper svg {
+        width: 32px;
+        height: 32px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .mrs-lp .impact-card h4 {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        color: #333333 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 16px;
+        font-family: 'Manrope', sans-serif !important;
+      }
+
+      .mrs-lp .impact-card p {
+        font-size: 16px !important;
+        color: #666666 !important;
+        line-height: 1.6 !important;
+        font-weight: 400 !important;
+      }
+
+      /* --- Benefits Section Specific --- */
+      .mrs-lp .benefits-section {
+        background-color: #F8FAFC;
+        /* Alternating grey */
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      .mrs-lp .benefits-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 16px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .benefits-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .mrs-lp .benefits-card {
+        background-color: #ffffff;
+        padding: 50px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 6px solid #0FCC90;
+        /* Green highlight bar */
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mrs-lp .benefits-card.consultants-card {
+        border-top: 6px solid #0A74EE;
+        /* Blue highlight bar for the second card */
+      }
+
+      .mrs-lp .benefits-card h4 {
+        font-size: 24px !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .mrs-lp .benefits-card .benefits-role-desc {
+        font-size: 18px !important;
+        color: #666666 !important;
+        text-align: center;
+        font-style: italic;
+        margin-bottom: 40px;
+      }
+
+      .mrs-lp .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+      }
+
+      .mrs-lp .benefits-list li {
+        position: relative;
+        padding-left: 36px;
+        margin-bottom: 24px;
+        font-size: 18px !important;
+        color: #444444 !important;
+        line-height: 1.5 !important;
+      }
+
+      .mrs-lp .benefits-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .mrs-lp .benefits-list li .arrow-icon {
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        color: #0FCC90 !important;
+      }
+
+      .mrs-lp .benefits-card.consultants-card .benefits-list li .arrow-icon {
+        color: #0A74EE !important;
+      }
+
+      /* --- Pricing Section Specific --- */
+      .mrs-lp .pricing-section {
+        background: linear-gradient(135deg, #273a8f, #1d84ff);
+        /* Synchronized Blue Gradient */
+        padding-top: 100px;
+        padding-bottom: 120px;
+      }
+
+      .mrs-lp .pricing-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #FFFFFF !important;
+        margin-bottom: 16px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .pricing-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .mrs-lp .pricing-card {
+        background-color: #ffffff;
+        padding: 60px 50px;
+        display: flex;
+        flex-direction: column;
+        border: none !important;
+      }
+
+      .mrs-lp .pricing-card.premium-plan {
+        background: linear-gradient(135deg, #FFEB3B 0%, #ff9822 100%) !important;
+        /* Ultra Bright Premium Orange Gradient */
+        /* border: 2px solid #FF9800 !important; */
+        color: #000000 !important;
+      }
+
+      .mrs-lp .pricing-card.premium-plan h4,
+      .mrs-lp .pricing-card.premium-plan .pricing-price,
+      .mrs-lp .pricing-card.premium-plan .pricing-price span,
+      .mrs-lp .pricing-card.premium-plan .pricing-desc,
+      .mrs-lp .pricing-card.premium-plan .pricing-list li,
+      .mrs-lp .pricing-card.premium-plan .pricing-group-text {
+        color: #000000 !important;
+        font-weight: 700 !important;
+        /* Bolded text for focus */
+      }
+
+      .mrs-lp .pricing-card.premium-plan .pricing-list li:before {
+        color: #000000 !important;
+        font-weight: 900 !important;
+      }
+
+      .mrs-lp .pricing-card.free-plan {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .mrs-lp .pricing-card h4 {
+        font-size: 32px !important;
+        font-weight: 400 !important;
+        color: #333333 !important;
+        margin-bottom: 24px;
+      }
+
+      .mrs-lp .pricing-price {
+        font-size: 36px !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .mrs-lp .pricing-price.free-price {
+        text-transform: uppercase !important;
+      }
+
+      .mrs-lp .pricing-price span {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-left: 8px;
+      }
+
+      .mrs-lp .pricing-desc {
+        font-size: 18px !important;
+        color: #333333 !important;
+        line-height: 1.5 !important;
+        margin-bottom: 40px;
+      }
+
+      .mrs-lp .pricing-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+      }
+
+      .mrs-lp .pricing-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        font-size: 18px !important;
+        color: #333333 !important;
+        line-height: 1.4 !important;
+      }
+
+      .mrs-lp .pricing-list li:before {
+        content: '•';
+        flex-shrink: 0;
+        margin-right: 12px;
+        font-size: 24px;
+        line-height: 1;
+        /* Reset to 1 to prevent vertical skew */
+        color: #333333;
+        margin-top: -2px;
+        /* Fine-tune specific vertical alignment */
+      }
+
+      .mrs-lp .pricing-group-text {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        color: #333333 !important;
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .mrs-lp .pricing-cta-area {
+        text-align: center;
+        margin-top: 60px;
+        color: #ffffff;
+      }
+
+      .mrs-lp .pricing-cta-link {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #0FCC90 !important;
+        /* Brand Green */
+        text-decoration: underline !important;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+
+      .mrs-lp .pricing-cta-link:hover {
+        color: #ffffff !important;
+      }
+
+      .mrs-lp .pricing-fine-print {
+        font-size: 16px !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5 !important;
+      }
+
+      /* --- FAQ Section Specific --- */
+      .mrs-lp .faq-section {
+        background-color: #F8FAFC;
+        /* Light gray to separate from Resources */
+        padding-top: 100px;
+        padding-bottom: 120px;
+      }
+
+      .mrs-lp .faq-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 16px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .faq-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp .faq-subheadline a {
+        color: #0A74EE !important;
+        text-decoration: underline !important;
+      }
+
+      .mrs-lp .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: transparent;
+      }
+
+      .mrs-lp .faq-item {
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .mrs-lp .faq-item:first-of-type {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      /* Pure CSS Accordion using Details/Summary */
+      .mrs-lp .faq-item details {
+        width: 100%;
+      }
+
+      .mrs-lp .faq-item summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #000000 !important;
+        cursor: pointer;
+        list-style: none;
+        /* Hide default arrow */
+        position: relative;
+      }
+
+      /* Hide the default Webkit triangle */
+      .mrs-lp .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mrs-lp .faq-item summary:active,
+      .mrs-lp .faq-item summary:focus {
+        outline: none;
+        /* Clean click state */
+      }
+
+      .mrs-lp .faq-item summary .faq-question-text {
+        padding-right: 40px;
+        /* Space for chevron */
+      }
+
+      /* Chevron Icon Setup */
+      .mrs-lp .faq-chevron {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        color: #0A74EE;
+        /* Brand Blue Chevron */
+        transition: transform 0.3s ease;
+      }
+
+      /* Rotate chevron on open */
+      .mrs-lp .faq-item details[open] summary .faq-chevron {
+        transform: rotate(180deg);
+      }
+
+      .mrs-lp .faq-answer {
+        padding: 0 40px 30px 30px;
+        /* Indent answer slightly */
+        font-size: 18px !important;
+        color: #333333 !important;
+        line-height: 1.6 !important;
+      }
+
+      /* --- Final CTA Section Specific --- */
+      .mrs-lp .final-cta-section {
+        background-color: #ffffff;
+        padding-top: 100px;
+        padding-bottom: 120px;
+        text-align: center;
+      }
+
+      .mrs-lp .final-cta-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 16px;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .final-cta-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-bottom: 40px;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp .final-cta-fine-print {
+        font-size: 14px !important;
+        color: #666666 !important;
+        max-width: 800px;
+        margin: 16px auto 0;
+        line-height: 1.5 !important;
+      }
+
+      /* --- Resources Section Specific --- */
+      .mrs-lp .resources-section {
+        background-color: #ffffff;
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      .mrs-lp .resources-headline {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        font-weight: 900 !important;
+        color: #333333 !important;
+        margin-bottom: 16px;
+        text-align: center;
+        text-transform: none !important;
+      }
+
+      .mrs-lp .resources-subheadline {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: #666666 !important;
+        margin-bottom: 60px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+      }
+
+      .mrs-lp .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        /* Soft container shadow */
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .mrs-lp .resource-card {
+        background-color: #ffffff;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .mrs-lp .resource-card:last-child {
+        border-right: none;
+      }
+
+      .mrs-lp .resource-title {
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #111111 !important;
+        /* Brand Blue */
+        margin-bottom: 24px;
+        /* text-decoration: underline !important; */
+        line-height: 1.3 !important;
+        display: block;
+        /* Make the whole title clickable */
+      }
+
+
+
+      .mrs-lp .resource-desc {
+        font-size: 16px !important;
+        color: #333333 !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px;
+        flex-grow: 1;
+        /* Pushes the button to the bottom */
+      }
+
+      @media (max-width: 992px) {
+        .mrs-lp .impact-card {
+          padding: 40px 30px;
+        }
+
+        .mrs-lp .benefits-card {
+          padding: 40px 30px;
+        }
+
+        .mrs-lp .pricing-card {
+          padding: 40px 30px;
+        }
+
+        .mrs-lp .mrs-comparison-table th,
+        .mrs-lp .mrs-comparison-table td {
+          padding: 20px 15px;
+        }
+
+        /* Switch to 1 column earlier on iPad for text-heavy cards */
+        .mrs-lp .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mrs-lp .impact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mrs-lp .pricing-grid {
+          grid-template-columns: 1fr;
+          max-width: 600px;
+        }
+
+        .mrs-lp .pricing-card.free-plan {
+          border-right: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mrs-lp .resources-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        .mrs-lp .resource-card {
+          border-right: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mrs-lp .resource-card:last-child {
+          border-bottom: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+
+        /* Reset paddings for mobile */
+        .mrs-lp .benefits-section {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+
+        .mrs-lp .benefits-card {
+          padding: 30px 20px;
+        }
+
+        .mrs-lp .impact-card {
+          padding: 30px 20px;
+        }
+
+        .mrs-lp .pricing-section {
+          padding-top: 60px;
+          padding-bottom: 80px;
+        }
+
+        .mrs-lp .pricing-card {
+          padding: 30px 20px;
+        }
+
+        .mrs-lp .pricing-headline {
+          font-size: 32px !important;
+        }
+
+        .mrs-lp .resources-section {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+
+        .mrs-lp .resource-card {
+          padding: 40px 20px;
+        }
+
+        .mrs-lp .resources-headline {
+          font-size: 32px !important;
+        }
+
+        .mrs-lp .faq-section {
+          padding-top: 60px;
+          padding-bottom: 80px;
+        }
+
+        .mrs-lp .faq-headline {
+          font-size: 32px !important;
+        }
+
+        .mrs-lp .faq-item summary {
+          font-size: 18px !important;
+          padding: 20px 0;
+        }
+
+        .mrs-lp .faq-answer {
+          padding: 0 15px 20px 15px;
+          font-size: 16px !important;
+        }
+
+        .mrs-lp .final-cta-section {
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+
+        .mrs-lp .final-cta-headline {
+          font-size: 32px !important;
+        }
+      }
+    </style>
+    <div class="hero-top-bar" style="display: block;">
+      <div class="container">
+        <div class="hero-logo"><!-- Replaced with the logo image, we assume it's a version that works on white --><img
+            alt="HR.com Logo" src="https://public-cdn.hr.com/remoteimages/multirater-survey/hrcom_25years_logo.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="section hero-section" style="padding-top: 40px !important">
+      <div class="container" style="position: relative;">
+        <!-- <div class="hr-com-logo-wrapper">
+          <div class="hero-logo"
+            style="background-color: #ffffff; display: inline-block; padding: 8px 12px; border-radius: 8px;">
+       <img
+              alt="MultiRater Surveys Logo"
+              src="https://public-cdn.hr.com/remoteimages/multirater-survey/hrcom_25years_logo.png" />
+          </div>
+        </div> -->
+
+        <div class="hero-content-wrapper"><!-- Left Text Column -->
+          <div class="hero-text-col">
+            <h1 class="hero-headline"> <span style="color: #94C83D !important;">Your</span><br />
+              Leadership Coach
+            </h1>
+            <img alt="Powered by MultiRater Surveys"
+              src="https://public-cdn.hr.com/remoteimages/multirater-survey/mrs-powered-by-logo.png"
+              style="height: 80px !important; width: auto; max-width: 100%; object-fit: contain; margin-bottom: 24px; background-color: #ffffff; padding: 8px 12px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.1);padding-bottom: 2px; height: 48px" />
+            <h2 class="hero-subheadline">The Platform for Professional-Grade Leadership Programs.</h2>
+            <span class="hero-growth-badge">Accelerating Growth for 10,000+ Global Leaders!</span>
+
+            <div class="hero-cta"><a class="btn" href="https://web.hr.com/btmbm" target="_blank">Join for Free &gt;</a>
+
+              <p class="small-text hero-fine-print">*By clicking on JOIN FOR FREE you will be registered for a
+                MultiRater Surveys account, and get access to the PRO+ 25 plan at no cost.</p>
+            </div>
+
+          </div>
+          <!-- Right Image/Mockup Column -->
+
+          <div class="hero-image-col"><img alt="Two professionals reviewing people analytics data on a tablet"
+              src="https://public-cdn.hr.com/remoteimages/multirater-survey/mrs-hero-image.webp"
+              style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 24px 50px rgba(0,0,0,0.25);" /></div>
+        </div>
+      </div>
+    </div>
+    <!-- HR.com Trust Banner — floats/overlaps between Hero and next section -->
+
+    <div class="section"
+      style="background: transparent; padding: 0; position: relative; z-index: 20; margin-top: -70px; margin-bottom: -70px;">
+      <div class="container">
+        <div style="
+        background: #ffffff;
+        border-left: 6px solid #0FCC90;
+        border-radius: 12px;
+        padding: 36px 50px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+        max-width: 1050px;
+        margin: 0 auto;
+      ">
+          <p
+            style="font-size: 20px !important; color: #333333 !important; line-height: 1.5 !important; margin-bottom: 10px; font-family: 'Lato', sans-serif !important; font-weight: 400 !important;margin-bottom: 0;">
+            HR.com is pleased to offer this 360&deg; feedback solution <strong>FREE</strong> to members. For
+            personalized coaching and development insights, upgrade to the <span
+              style="color: #0A74EE; font-weight: 700;">premium AI-powered program!</span></p>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- Features Section -->
+
+    <div class="section features-section" style="padding-top: 170px !important;">
+      <div class="container">
+        <h2 class="features-headline">Empower HR &amp; Consultants to Transform Development</h2>
+
+        <h3 class="features-subheadline">Key Features &amp; Benefits</h3>
+
+        <div class="features-grid"><!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✓</div>
+
+            <div class="feature-item-title">Uncover Data-Backed Leadership Insights</div>
+          </div>
+          <!-- Feature 2 -->
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✓</div>
+
+            <div class="feature-item-title">Deliver Automated, Personalized Development Plans</div>
+          </div>
+          <!-- Feature 3 -->
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✓</div>
+
+            <div class="feature-item-title">Connect Development Efforts to Measurable Results</div>
+          </div>
+          <!-- Feature 4 -->
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✓</div>
+
+            <div class="feature-item-title">Grow Stronger Leaders at Every Level</div>
+          </div>
+          <!-- Feature 5 -->
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✓</div>
+
+            <div class="feature-item-title">Build Succession Planning at Scale</div>
+          </div>
+          <!-- Feature 6 -->
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✓</div>
+
+            <div class="feature-item-title">Promote a Culture of Coaching and Development</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Video / Demo Section -->
+
+    <div class="section video-section">
+      <div class="container">
+        <h2 class="video-headline"><em>Your Leadership Coach</em> &mdash; Guides Managers and Leaders Step‑By‑Step</h2>
+
+        <p class="video-description">Watch a quick 2-minute demo of how our premium AI-powered program revolutionizes
+          employee development from survey to accountability.</p>
+        <!-- Responsive 16:9 YouTube Video Embed -->
+
+        <div style="
+          position: relative;
+          width: 100%;
+          max-width: 900px;
+          margin: 0 auto;
+          padding-top: 50.625%; /* 900px wide → 16:9 = 506.25px tall = 50.625% */
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+          border: 1px solid rgba(0,0,0,0.05);
+          background-color: #000000;
+        "><iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen="" id="mrs-youtube-player" referrerpolicy="strict-origin-when-cross-origin"
+            src="https://www.youtube.com/embed/bCZ16hZdPEk?si=qHyjXIG86Ui-Fy3j&amp;rel=0&amp;enablejsapi=1" style="
+              position: absolute;
+              top: 0; left: 0;
+              width: 100%; height: 100%;
+              border: 0;
+            " title="YouTube video player"></iframe></div>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script>
+          var ytPlayer;
+          function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('mrs-youtube-player', {
+              events: {
+                'onStateChange': function (event) {
+                  // When the video ends (state 0), seek back to start and stop.
+                  // This entirely prevents YouTube from showing the related videos grid.
+                  if (event.data === YT.PlayerState.ENDED) {
+                    ytPlayer.seekTo(0);
+                    ytPlayer.stopVideo();
+                  }
+                }
+              }
+            });
+          }
+        </script>
+      </div>
+    </div>
+    <!-- Impact / Benefits Section -->
+
+    <div class="section impact-section">
+      <div class="container">
+        <h2 class="impact-headline">Drive Impactful Development and Measurable Behavioral Change</h2>
+
+        <h3 class="impact-subheadline">All Plans Feature:</h3>
+
+        <div class="impact-grid"><!-- Impact 1 -->
+          <div class="impact-card">
+            <div class="impact-icon-wrapper"><svg viewbox="0 0 24 24">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                <path d="M16 21v-5h5"></path>
+              </svg></div>
+
+            <h4>360&deg; Competency Surveys</h4>
+
+            <p>Simplify gathering feedback from managers, peers, direct reports, and self-assessments.</p>
+          </div>
+          <!-- Impact 2 -->
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper"><svg viewbox="0 0 24 24">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                </path>
+              </svg></div>
+
+            <h4>Custom Competencies Builder</h4>
+
+            <p>Design and tailor competency frameworks that reflect your organization&#39;s values, leadership
+              expectations, and capability priorities.</p>
+          </div>
+          <!-- Impact 3 -->
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper"><svg viewbox="0 0 24 24">
+                <path
+                  d="M12 20.1l-1.6-1.5C5.4 14 2 10.9 2 7.1A5.1 5.1 0 0 1 7.1 2c2 0 3.8 1.1 4.9 2.7C13.1 3.1 14.9 2 16.9 2A5.1 5.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.4 11.5l-1.6 1.5z">
+                </path>
+              </svg></div>
+
+            <h4>Employee Engagement Surveys</h4>
+
+            <p>Capture employee sentiment and track engagement over time through follow-up surveys and continuous
+              feedback loops that support meaningful improvement.</p>
+          </div>
+          <!-- Impact 4 -->
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper"><svg viewbox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg></div>
+
+            <h4>Security &amp; Anonymity</h4>
+
+            <p>Our security measures ensure anonymous feedback and confidential results to promote honest, constructive
+              input.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Comparison Section -->
+
+    <div class="section comparison-section">
+      <div class="container">
+        <h2 class="comparison-headline">The <span>Premium</span> AI Program Drives Difference-Making Outcomes</h2>
+        <!-- Full Width Device Image -->
+
+        <div class="comparison-image-wrapper"><img alt="Premium AI Program Dashboard on Multiple Devices"
+            src="https://public-cdn.hr.com/remoteimages/multirater-survey/premium-ai-image.webp" /></div>
+        <!-- SaaS Comparison Table -->
+
+        <div class="comparison-table-wrapper">
+          <table class="mrs-comparison-table">
+            <thead>
+              <tr>
+                <th class="feature-col">&nbsp;</th>
+                <th class="free-col">Free Pro+ 25 Plan</th>
+                <th class="premium-col">Premium AI Program</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-col">Interactive Debriefs</td>
+                <td class="free-col">Clear summary reports that leaders and HR teams can review and discuss together to
+                  understand results and identify next steps.</td>
+                <td class="premium-col"><strong>Interactive, guided debriefs</strong> that help leaders interpret their
+                  results independently, prioritize focus areas, and move quickly from insight to action.</td>
+              </tr>
+              <tr>
+                <td class="feature-col">Personalized Development Plans</td>
+                <td class="free-col">Feedback can be used to inform development conversations and manually created
+                  development plans.</td>
+                <td class="premium-col"><strong>Automatically generated, personalized development plans</strong> aligned
+                  to each leader&#39;s feedback, role expectations, and development priorities.</td>
+              </tr>
+              <tr>
+                <td class="feature-col">Quarterly Progress Check-Ins</td>
+                <td class="free-col">Progress is typically reviewed during scheduled check-ins or ad-hoc follow-ups led
+                  by HR or managers.</td>
+                <td class="premium-col"><strong>Structured quarterly check-ins</strong> built into the platform, keeping
+                  development visible, consistent, and on track throughout the year.</td>
+              </tr>
+              <tr>
+                <td class="feature-col">Measurable Behavior Change</td>
+                <td class="free-col">Provides a one-time snapshot of current perceptions and feedback.</td>
+                <td class="premium-col"><strong>Tracks progress over time</strong>, helping organizations see how
+                  development efforts translate into meaningful behavior change.</td>
+              </tr>
+              <tr>
+                <td class="feature-col">HR Admin &amp; Oversight Effort</td>
+                <td class="free-col">HR teams coordinate communication, reminders, and follow-up activities manually.
+                </td>
+                <td class="premium-col"><strong>Automated guidance and in-platform prompts</strong> significantly reduce
+                  HR coordination effort while maintaining visibility.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Benefits Section -->
+
+    <div class="section benefits-section">
+      <div class="container">
+        <h2 class="benefits-headline">Benefits for HR and Consultants</h2>
+
+        <h3 class="benefits-subheadline">Discover how <em>Your Leadership Coach</em> delivers value to your specific
+          needs</h3>
+
+        <div class="benefits-grid"><!-- HR Professionals Card -->
+          <div class="benefits-card">
+            <h4>For HR Professionals</h4>
+
+            <div class="benefits-role-desc">Build a stronger workforce</div>
+
+            <ul class="benefits-list">
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Scale leadership development across your entire organization efficiently</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Reduce time spent coordinating feedback collection and report generation</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Provide data-driven insights that demonstrate ROI to leadership</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Create a culture of continuous feedback and growth</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Standardize development processes while allowing personalization</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Track progress and measure behavioral change over time</li>
+            </ul>
+          </div>
+          <!-- Consultants Card -->
+
+          <div class="benefits-card consultants-card">
+            <h4>For Consultants</h4>
+
+            <div class="benefits-role-desc">Amplify your impact</div>
+
+            <ul class="benefits-list">
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Deliver more impactful coaching sessions with rich data insights</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Save hours on preparation and report analysis</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Facilitate deeper conversations with AI-powered debrief tools</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Create truly personalized development plans in minutes</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Monitor client progress between sessions effortlessly</li>
+              <li><svg class="arrow-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+                  <line x1="5" x2="19" y1="12" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg> Scale your coaching practice without sacrificing quality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing Section -->
+
+    <div class="section pricing-section">
+      <div class="container">
+        <h2 class="pricing-headline">Exclusive Pricing for HR.com Members</h2>
+
+        <h3 class="pricing-subheadline">Choose the perfect plan for your needs.<br />
+          Start free or scale with comprehensive support.</h3>
+
+        <div class="pricing-grid"><!-- Free Plan -->
+          <div class="pricing-card free-plan">
+            <h4>Pro+ 25 Plan</h4>
+
+            <div class="pricing-price free-price">FREE</div>
+
+            <div class="pricing-desc">Free member benefit. Perfect for small teams starting their development journey or
+              solo leadership coaches.</div>
+
+            <ul class="pricing-list">
+              <li>Up to 25 employees</li>
+              <li>360&deg; competency frameworks</li>
+              <li>Employee engagement surveys</li>
+              <li>Custom survey launcher</li>
+              <li>Standard PDF Report</li>
+              <li>Pre-Post Comparison Report</li>
+              <li>Leadership Cohort Report</li>
+            </ul>
+          </div>
+          <!-- Premium Plan -->
+
+          <div class="pricing-card premium-plan">
+            <h4>AI-Powered Program</h4>
+
+            <div class="pricing-price"><span style="display: inline-block;padding-right: 8px;"> From </span> $110 - $240 <span>per leader*</span></div>
+
+            <div class="pricing-desc">Complete personalized development journey with comprehensive support and tracking
+              for all individuals.</div>
+
+            <ul class="pricing-list">
+              <li>Full 12-month development cycle</li>
+              <li>Interactive debrief reports</li>
+              <li>AI-powered conversations</li>
+              <li>Personalized development plans</li>
+              <li>Quarterly progress check-ins</li>
+              <li>Measurable behavior change</li>
+              <li>Real-time progress analytics</li>
+            </ul>
+
+            <div class="pricing-group-text">* Group discounts available</div>
+          </div>
+        </div>
+
+        <div class="pricing-cta-area"><a class="btn" href="https://web.hr.com/kno5h" style="margin-bottom: 24px;"
+            target="_blank">Start Your Journey</a>
+
+          <p class="pricing-fine-print">*By clicking on START YOUR JOURNEY you will be registered for a MultiRater
+            Surveys account, and get access to the Pro+ 25 plan at no cost</p>
+        </div>
+      </div>
+    </div>
+    <!-- Resources Section -->
+
+    <div class="section resources-section">
+      <div class="container">
+        <h2 class="resources-headline">Free Educational Resources</h2>
+
+        <h3 class="resources-subheadline">Download our comprehensive guides to maximize the impact of your people
+          development programs.</h3>
+
+        <div class="resources-grid"><!-- Resource 1 -->
+          <div class="resource-card">
+            <h2 class="resource-title">Develop Next-Gen<br />
+              Managers</h2>
+
+            <div class="resource-desc">Learn how to design and launch effective 360&deg; programs that drive real
+              development outcomes for next-gen people managers.</div>
+            <a class="btn-outline" id="fc_1773280389558" name="fc_1773280389558" onclick="loadPopup('fc_1773280389558')"
+              target="_blank">Download Free</a>
+          </div>
+          <!-- Resource 2 -->
+
+          <div class="resource-card">
+            <h2 class="resource-title">The Future of Coaching<br />
+              with AI</h2>
+
+            <div class="resource-desc">Incorporate AI into your coaching and mentoring practices to ensure that your
+              methodologies and toolkits remain relevant.</div>
+            <a class="btn-outline" id="fc_1770330152023" name="fc_1770330152023" onclick="loadPopup('fc_1770330152023')"
+              target="_blank">Download Free</a>
+          </div>
+          <!-- Resource 3 -->
+
+          <div class="resource-card">
+            <h2 class="resource-title">Master Competency<br />
+              Frameworks</h2>
+
+            <div class="resource-desc">Become proficient at developing custom competency frameworks and the tools
+              required to sustain and measure it over time.</div>
+            <a class="btn-outline" id="fc_1770331152534" name="fc_1770331152534" onclick="loadPopup('fc_1770331152534')"
+              target="_blank">Download Free</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQ Section -->
+
+    <div class="section faq-section">
+      <div class="container">
+        <h2 class="faq-headline">Frequently Asked Questions</h2>
+
+        <h3 class="faq-subheadline">Have questions? We have answers.<br />
+          Can&#39;t find what you&#39;re looking for? <a href="mailto:support@multiratersurveys.com"
+            target="_blank">Contact</a> our support team.</h3>
+
+        <div class="faq-container"><!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <details>
+              <summary> <span class="faq-question-text">1. How is the premium AI program different from the free Pro+
+                  25?</span> <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg> </summary>
+
+              <div class="faq-answer">The free version provides a strong feedback snapshot and reporting foundation. The
+                premium AI program adds structure, guidance, and continuity, helping leaders understand their results
+                independently, focus on the right development priorities, and stay engaged over time.</div>
+            </details>
+          </div>
+          <!-- FAQ Item 2 -->
+
+          <div class="faq-item">
+            <details>
+              <summary> <span class="faq-question-text">2. Who is the Premium AI Program best suited for?</span> <svg
+                  class="faq-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg> </summary>
+
+              <div class="faq-answer">The Premium AI Program is ideal for organizations that want more than a one-time
+                feedback event. It works particularly well for leadership development programs, cohort-based
+                initiatives, and organizations aiming to support consistent development across managers and leaders.
+              </div>
+            </details>
+          </div>
+          <!-- FAQ Item 3 -->
+
+          <div class="faq-item">
+            <details>
+              <summary> <span class="faq-question-text">3. How does the Premium AI Program support measurable
+                  development?</span> <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg> </summary>
+
+              <div class="faq-answer">The program connects feedback results with personalized development plans and
+                scheduled progress check-ins. This creates visibility into development focus areas over time and
+                supports sustained behavior change.</div>
+            </details>
+          </div>
+          <!-- FAQ Item 4 -->
+
+          <div class="faq-item">
+            <details>
+              <summary> <span class="faq-question-text">4. Does the Premium AI Program replace coaching or HR
+                  support?</span> <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg> </summary>
+
+              <div class="faq-answer">No. The Premium AI Program complements coaching and HR-led development
+                conversations. It provides clarity and structure between conversations, making follow-ups more focused
+                and productive rather than replacing human support.</div>
+            </details>
+          </div>
+          <!-- FAQ Item 5 -->
+
+          <div class="faq-item">
+            <details>
+              <summary> <span class="faq-question-text">5. Can the Premium AI Program work with our existing leadership
+                  frameworks?</span> <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg> </summary>
+
+              <div class="faq-answer">Yes. The program is designed to align with existing competency frameworks and
+                leadership models, reinforcing your organization&#39;s current approach rather than replacing it.</div>
+            </details>
+          </div>
+          <!-- FAQ Item 6 -->
+
+          <div class="faq-item">
+            <details>
+              <summary> <span class="faq-question-text">6. How can I take advantage of the free program?</span> <svg
+                  class="faq-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg> </summary>
+
+              <div class="faq-answer">The free program offers a solid feedback and reporting foundation and is a great
+                starting point. The Premium AI Program is designed for organizations that want additional guidance,
+                structure, and follow-through built into the experience.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Final CTA Section -->
+
+    <div class="section final-cta-section">
+      <div class="container">
+        <h2 class="final-cta-headline">Ready to Transform Your Development Programs?</h2>
+
+        <h3 class="final-cta-subheadline">Join thousands of users using our platform to drive meaningful employee
+          development.</h3>
+        <a class="btn" href="https://web.hr.com/kno5h" target="_blank">Get Started Free</a>
+
+        <p class="final-cta-fine-print">*By clicking on GET STARTED FREE you will be registered for a MultiRater Surveys
+          account, and get access to the Pro+ 25 plan at no cost.</p>
+      </div>
+    </div>
+
+    <div>$vendorLeadForm</div>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1506 @@
+<!-- @format -->
+<style type="text/css">
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .ev_speaker_call {
+        width: 100%;
+        padding: 30px;
+        background: #fff url($public/remoteimages/website-images/2021_siteupdate/inspire2022/images/inspire_dotted_bg.png) bottom right / 400px 300px no-repeat;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .ev_speaker_call>h3 {
+        font-size: 24px;
+        width: 100%;
+        max-width: 60%;
+        font-weight: 600;
+        color: #e51069;
+        margin: 0 0 15px 0;
+    }
+
+    .ev_speaker_call>h4 {
+        font-size: 18px;
+        width: 100%;
+        max-width: 60%;
+        font-weight: 600;
+        color: #2a343e;
+        margin: 0px;
+        line-height: 1.5;
+        font-style: italic;
+    }
+
+    .ev_speaker_call>h5>span {
+        font-size: 14px;
+        width: 100%;
+        max-width: 60%;
+        font-weight: 800;
+        color: #2a343e;
+        margin: 0px;
+        line-height: 1.5;
+        text-align: right;
+    }
+
+    .ev_speaker_call>h5 {
+        font-size: 14px;
+        width: 100%;
+        max-width: 60%;
+        font-weight: 500;
+        color: #2a343e;
+        margin-top: 20px;
+        line-height: 1.5;
+        text-align: right;
+    }
+
+    .ev_speaker_call>a.hr_custom_btn_new {
+        position: absolute;
+        right: 30px;
+        top: 40%;
+        cursor: pointer;
+    }
+
+    .ev_wee_wrapper .ev_wee_card .ev_wc_left>h3 {
+        font-size: 30px;
+        font-weight: 500;
+        color: #e51069;
+        margin: 20px 0px 40px 0px;
+        line-height: 1.3;
+    }
+
+    .ip_js_title>h3 {
+        display: block;
+        max-width: 80%;
+        font-size: 32px;
+        font-weight: 500;
+        color: #2a343e;
+        margin: 0px 0px 0px 0px;
+        line-height: 1.3;
+    }
+
+    .edu_review_box>h3 {
+        font-size: 30px;
+        font-weight: 600;
+        color: #2a343e;
+        margin: 10px 0px 20px 0px;
+    }
+
+    .uve_card .uve_plus {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        gap: 5%;
+        top: -45px;
+    }
+
+    .uve_card .uve_plus>a>svg {
+        max-width: 24px;
+    }
+
+    .uve_card .uve_plus>a:hover>svg {
+        transition: all 0.3s ease;
+        transform: scale(1.05);
+    }
+
+    .uve_card .uve_plus>a>span {
+        display: block;
+        width: 104px;
+        padding: 4px 4px;
+        font-size: 8px;
+        font-weight: 400;
+        color: #fff;
+        background: #000c;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        text-transform: uppercase;
+        transform: scale(0) translate(0px, -30px);
+        border-radius: 10px;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.4s ease;
+        text-align: center;
+        transform-origin: center;
+        line-height: 1.2;
+    }
+
+    .uve_card .uve_plus>a:hover>span {
+        opacity: 1 !important;
+        transform-origin: center;
+        transform: scale(1) translate(0px, 0px);
+        z-index: 1;
+        transition: all 0.4s ease;
+    }
+
+    .rec_wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* flex-wrap: wrap;*/
+        gap: 1%;
+    }
+
+    .rec_wrapper .rec_card {
+        width: 280px;
+        height: auto;
+        min-height: 225px;
+        background: #fff;
+        border: 1px solid #e8ecf7;
+        border-radius: 10px;
+        padding: 25px 20px 15px 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 10px 20px rgb(0 0 0 / 10%);
+    }
+
+    .rec_wrapper .rec_card>p {
+        font-size: 14px !important;
+        font-weight: 400;
+        color: #2a343e;
+        margin: 0px 0px 0px 0px;
+        line-height: 1.6;
+    }
+
+    .rec_wrapper .rec_card .rec_card_title>h4>a {
+        font-size: 18px;
+        font-weight: 500;
+        color: #2a343e;
+    }
+
+    .rec_wrapper .rec_card .rec_card_title>h4>a:hover {
+        color: ##0c4878;
+        text-decoration: underline;
+    }
+
+    .ev_wee_wrapper {
+        overflow-y: visible;
+        overflow-x: visible;
+        height: 550px;
+    }
+
+    .ws_video_wrapper .ws_video_card .ws_vs_desc>ul {
+        list-style: none;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .ws_video_wrapper .ws_video_card .ws_vs_desc>ul>li {
+        list-style: none;
+        color: #2a343e;
+        padding: 0px 0px 15px 30px;
+        position: relative;
+        background: url($public/remoteimages/website-images/2022_siteupdate/market_solution/images/green_tick_icon.svg) top 1px left no-repeat;
+    }
+
+    .ws_video_wrapper .ws_video_card .ws_vs_box img {
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+    }
+
+    .dark-moss-green {
+        color: #435a1b !important;
+    }
+
+    .blue-sapphire {
+        color: #175e69 !important;
+    }
+
+    .crayola {
+        color: #2c353f !important;
+    }
+
+    .brown {
+        color: #ab2117 !important;
+    }
+
+    .ws_video_wrapper .ws_video_card .ws_vs_desc>h2 {
+        font-size: 28px;
+        font-weight: 500;
+        color: #2a343e;
+        line-height: 1.3;
+        margin: 10px 0px 20px 0px;
+    }
+
+    .case_wrapper {
+        background: #fff;
+        width: 100%;
+        border-radius: 10px;
+        padding: 30px 30px;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .case_wrapper .case_info {
+        width: 50%;
+        padding-right: 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .case_wrapper .case_img {
+        width: 50%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .case_wrapper .case_img>img {
+        display: block;
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .case_wrapper .case_info>h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #2a343e;
+        margin: 15px 0px 25px 0px;
+        line-height: 1.4;
+    }
+
+    .case_wrapper .case_info>h2 {
+        font-size: 28px;
+        font-weight: 500;
+        color: #2a343e;
+        line-height: 1.3;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .case_wrapper .case_info>ul {
+        list-style: none;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .case_wrapper .case_info>ul>li {
+        list-style: none;
+        color: #2a343e;
+        padding: 0px 0px 15px 30px;
+        position: relative;
+        background: url($public/remoteimages/website-images/2022_siteupdate/market_solution/images/green_tick_icon.svg) top 1px left no-repeat;
+    }
+
+    .wv_head_title>p {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #2a343e;
+        margin: 20px 0px 0px 0px;
+        line-height: 1.6;
+    }
+
+    @media screen and (max-width: 767px) {
+        .case_wrapper {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .rec_wrapper {
+            flex-wrap: wrap;
+        }
+
+        .rec_wrapper .rec_card {
+            width: 100%;
+        }
+
+        .ev_speaker_call {
+            padding: 40px 20px 100px 20px;
+        }
+
+        .ev_speaker_call>h3,
+        .ev_speaker_call>h4 {
+            max-width: 100%;
+        }
+
+        .ev_speaker_call>h3,
+        .ev_speaker_call>h4 {
+            max-width: 100%;
+        }
+
+        .ev_speaker_call>a.hr_custom_btn_new {
+            top: auto;
+            bottom: 20px;
+            right: auto;
+            left: 20px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .case_wrapper .case_info {
+            width: 100%;
+        }
+
+        .case_wrapper .case_img {
+            width: 100%;
+        }
+    }
+</style>
+<section class="wv_banner rsch">
+    <div class="adv_container">
+        <div class="wv_head_banner">
+            <div class="adv_head_link">
+                <ul>
+                    <li><a href="/en/about_us/advertise">Marketing with HR.com</a></li>
+                    <li>Research</li>
+                </ul>
+            </div>
+
+            <div class="wv_head_title">
+                <h1><span>HR Research</span></h1>
+
+                <h2>Align Your Brand with Exclusive 3rd Party Research</h2>
+
+                <p>Choose Custom Research (your topic) or State of the Industry Research (hot topics) to help drive your
+                    marketing results.</p>
+
+                <div class="wv_head_button"><button class="hr_custom_btn gradient_btn round btn_large"
+                        id="fc_1614283173294" name="fc_1614283173294" onclick="loadPopup('fc_1614283173294')"
+                        type="button"><svg height="13.008" style="position: relative; top: 2px; margin-right: 4px"
+                            viewbox="0 0 10.052 13.008" width="10.052" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-317.257 -42.258)">
+                                <path
+                                    d="M322.243,48.85a.7.7,0,0,0,.972,0l3.242-3.142a.7.7,0,0,0-.486-1.2h-1.944V40.956a.7.7,0,0,0-.7-.7h-1.2a.7.7,0,0,0-.7.7v3.553h-1.944a.7.7,0,0,0-.486,1.2Z"
+                                    fill="#fff" transform="translate(-0.608 2)"></path>
+                                <rect fill="#fff" height="2.615" rx="1.308" transform="translate(317.257 52.65)"
+                                    width="10.052"></rect>
+                            </g>
+                        </svg> Download Media Planner</button><a class="hr_custom_btn gradient_btn round btn_large"
+                        href="/en/webcasts_events/hrcom-virtual-and-in-person-event-schedule_l940kx8t.html">Hot Topics
+                        Calendar</a></div>
+            </div>
+
+            <div class="adv_video_banner">
+                <div class="adv_video_bg">
+                    <div class="adv_video_wrap" style="display: none">
+                        <div id="adv_video_player">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="adv_container">
+    <div class="rec_wrapper mrtp60">
+        <div class="rec_card">
+            <div class="rec_card_title"><svg height="10" viewbox="0 0 55 10" width="55"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-529 -999)">
+                        <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                    </g>
+                </svg>
+
+                <h4><a href="#custom-research">Custom Research</a></h4>
+            </div>
+            <svg height="5" style="margin-bottom: 10px" viewbox="0 0 60 5" width="60"
+                xmlns="http://www.w3.org/2000/svg">
+                <g data-name="Group 1126" transform="translate(-159 -2091)">
+                    <rect data-name="Rectangle 922" fill="#e51069" height="5" id="Rectangle_922" rx="2.5"
+                        transform="translate(159 2091)" width="50"></rect>
+                    <rect data-name="Rectangle 923" fill="#e51069" height="5" id="Rectangle_923" rx="2.5"
+                        transform="translate(214 2091)" width="5"></rect>
+                </g>
+            </svg>
+
+            <p>Sponsor research on a topic of your choice &amp; present a webcast</p>
+        </div>
+
+        <div class="rec_card">
+            <div class="rec_card_title"><svg height="10" viewbox="0 0 55 10" width="55"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-529 -999)">
+                        <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                    </g>
+                </svg>
+
+                <h4><a href="#state-of-the-industry-research">State of Industry Research</a></h4>
+            </div>
+            <svg height="5" style="margin-bottom: 10px" viewbox="0 0 60 5" width="60"
+                xmlns="http://www.w3.org/2000/svg">
+                <g data-name="Group 1126" id="Group_1126" transform="translate(-159 -2091)">
+                    <rect data-name="Rectangle 922" fill="#e51069" height="5" id="Rectangle_922" rx="2.5"
+                        transform="translate(159 2091)" width="50"></rect>
+                    <rect data-name="Rectangle 923" fill="#e51069" height="5" id="Rectangle_923" rx="2.5"
+                        transform="translate(214 2091)" width="5"></rect>
+                </g>
+            </svg>
+
+            <p>Sponsor research on a hot HR topic and speak at virtual event</p>
+        </div>
+
+        <div class="rec_card">
+            <div class="rec_card_title"><svg height="10" viewbox="0 0 55 10" width="55"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-529 -999)">
+                        <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                    </g>
+                </svg>
+
+                <h4><a href="#pulse-surveys">Pulse Surveys</a></h4>
+            </div>
+            <svg height="5" style="margin-bottom: 10px" viewbox="0 0 60 5" width="60"
+                xmlns="http://www.w3.org/2000/svg">
+                <g data-name="Group 1126" id="Group_1126" transform="translate(-159 -2091)">
+                    <rect data-name="Rectangle 922" fill="#e51069" height="5" id="Rectangle_922" rx="2.5"
+                        transform="translate(159 2091)" width="50"></rect>
+                    <rect data-name="Rectangle 923" fill="#e51069" height="5" id="Rectangle_923" rx="2.5"
+                        transform="translate(214 2091)" width="5"></rect>
+                </g>
+            </svg>
+
+            <p>Get quick survey results &amp; infographic on any HR topic</p>
+        </div>
+
+        <div class="rec_card">
+            <div class="rec_card_title"><svg height="10" viewbox="0 0 55 10" width="55"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-529 -999)">
+                        <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                    </g>
+                </svg>
+
+                <h4><a href="#case-studies">Case Studies</a></h4>
+            </div>
+            <svg height="5" style="margin-bottom: 10px" viewbox="0 0 60 5" width="60"
+                xmlns="http://www.w3.org/2000/svg">
+                <g data-name="Group 1126" id="Group_1126" transform="translate(-159 -2091)">
+                    <rect data-name="Rectangle 922" fill="#e51069" height="5" id="Rectangle_922" rx="2.5"
+                        transform="translate(159 2091)" width="50"></rect>
+                    <rect data-name="Rectangle 923" fill="#e51069" height="5" id="Rectangle_923" rx="2.5"
+                        transform="translate(214 2091)" width="5"></rect>
+                </g>
+            </svg>
+
+            <p>Have our experts detail your client success story</p>
+        </div>
+    </div>
+
+    <div class="ev_wee_wrapper mrtp60" style="margin-top: 100px">
+        <div class="team">
+            <div class="leadership owl-carousel owl-theme">
+                <div class="item ev_wee_card" target="1">
+                    <div class="ev_wc_left"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-529 -999)">
+                                <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                            </g>
+                        </svg>
+
+                        <h3>HR Research Institute: Industry best practices and HR trends</h3>
+
+                        <div class="rs_sld_info">
+                            <div>Align your brand with latest research insights</div>
+
+                            <div>Gain valuable insights on your buyers</div>
+
+                            <div>Generate cost effective qualified leads</div>
+                        </div>
+                    </div>
+
+                    <div class="ev_wc_right"><img alt="Buyer Activation Program"
+                            src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/rs_slider_img_01.jpg" />
+                    </div>
+                </div>
+
+                <div class="item ev_wee_card" target="2">
+                    <div class="ev_wc_left"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-529 -999)">
+                                <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                            </g>
+                        </svg>
+
+                        <h3>Build your content marketing strategies with exclusive HR.com Research</h3>
+
+                        <p>Is your business having a tough time setting itself apart in a crowded marketplace? You are
+                            not alone! Build your brand, content marketing strategies, and thought leadership with
+                            exclusive HR.com research. Choose between custom research or state-of-the-industry research.
+                            Then save your marketing department valuable time by letting HR Research Institute, an arm
+                            of HR.com, do the heavy lifting for you!</p>
+                    </div>
+
+                    <div class="ev_wc_right"><img alt="Buyer Activation Program 02"
+                            src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/rs_slider_img_02.jpg" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="owl-theme">
+                <div class="owl-controls">
+                    <div class="cust-nav owl-nav">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ws_video_wrapper" id="custom-research">
+        <div class="ws_video_card">
+            <div class="ws_vs_box" id="vid1">&nbsp;</div>
+
+            <div class="ws_vs_desc"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                </svg>
+
+                <h2 class="dark-moss-green">Custom Research</h2>
+
+                <h3>Build thought leadership and (hint!) better understand your buyers</h3>
+
+                <p>We develop a research report and infographic for you on a topic of your choice, and then host a
+                    webcast on the research insights where you&rsquo;re the star of the show!</p>
+
+                <ul>
+                    <li>Showcase your expertise and link your brand with exciting new thought leadership.</li>
+                    <li>We&rsquo;ll promote your research with full promotion on social media.</li>
+                    <li>We provide you with all research data to inform you about your buyers and for use in your
+                        content.</li>
+                    <li>You get all lead information from survey respondents, research downloads, and webcast
+                        registrants.</li>
+                </ul>
+
+                <p>So many benefits from one project!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ws_video_wrapper" id="state-of-the-industry-research">
+        <div class="ws_video_card">
+            <div class="ws_vs_box" id="vid2">&nbsp;</div>
+
+            <div class="ws_vs_desc"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                </svg>
+
+                <h2 class="blue-sapphire">State of the Industry Research</h2>
+
+                <h3>Showcase your expertise on a hot topic and acquire quality leads</h3>
+
+                <p>Sponsor our SOI Research (15 topics to choose from) to showcase how your brand is on the cutting edge
+                    of a hot HR topic and trend &mdash; and to come away with tremendous marketing collateral.
+                    It&rsquo;s the perfect opportunity to demonstrate your expertise to our audience of over 2 million
+                    HR pros.</p>
+
+                <ul>
+                    <li>Research report and infographic are personalized with your brand</li>
+                    <li>Present at a one-day virtual event on the topic of the research</li>
+                    <li>Bolster sales with qualified leads from all research downloads&nbsp;and event registrants</li>
+                </ul>
+
+                <p>Participation is simple and easy, and the results can do wonders for your business.</p>
+            </div>
+        </div>
+    </div>
+    <!--<div class="adv_talk MarginTop30 rspdls" style="text-align: center;">
+<h3>NEW - Get added value with Data Benchmarking</h3>
+<i>Curious how your clients would respond to key questions on these same hot topics? HR.com will take data highlights from our state-of-the-industry research and benchmark it against survey findings from your internal client data. Data visualization and benchmarking has never been so easy!</i><button class="hr_custom_btn gradient_btn round btn_large" data-target="#htcModal" data-toggle="modal" type="button">Hot Topics Calendar</button></div>-->
+
+    <div class="ws_video_wrapper" id="pulse-surveys">
+        <div class="ws_video_card">
+            <div class="ws_vs_box" id="vid3">&nbsp;</div>
+
+            <div class="ws_vs_desc"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                </svg>
+
+                <h2 class="crayola">Pulse Surveys</h2>
+
+                <h3>Collect fast market insights on any HR topic</h3>
+
+                <p>Our 3- to 5-question Pulse Surveys are a great way to quickly get marketplace data on any topic.
+                    Understand HR professionals&rsquo; pain points, test market needs for a product, get data for your
+                    marketing &mdash; there are so many use cases!</p>
+
+                <ul>
+                    <li>Results within 8-12 weeks</li>
+                    <li>Survey collaboration, analysis, and final completed infographic</li>
+                    <li>Leads from infographic downloads on HR.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="ip_js_title">
+        <h3>Let Our Experts Help Tell Your Client Stories</h3>
+    </div>
+
+    <div class="case_wrapper" id="case-studies">
+        <div class="case_info"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+            </svg>
+
+            <h2 class="brown">Case Studies</h2>
+
+            <h3>Showcase the credibility and impact of your solutions</h3>
+
+            <p>Your client will love you! We&#39;ll work with one of your customers to develop a customized case study
+                that illustrates how your solution has helped solve a specific business problem. It&#39;s great
+                marketing and sales collateral that helps potential buyers envision how much they can benefit from
+                working with you.</p>
+
+            <ul>
+                <li>In-depth interviews with your client</li>
+                <li>5- to 9-page customized case study summarizing the findings</li>
+                <li>Case study promotion (social, ads, press release), as well as a two-page summary featured in the
+                    HR.com epublication that most closely aligns</li>
+            </ul>
+        </div>
+
+        <div class="case_img"><img alt="group offers for companies"
+                src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/custom-research.jpg" />
+        </div>
+    </div>
+
+    <div class="ip_js_title">
+        <h3>How Research Can Drive Marketing Success</h3>
+    </div>
+
+    <div class="ip_js_wrapper">
+        <div class="team">
+            <div class="leadershipResources owl-carousel owl-theme">
+                <div class="item js_event_card" target="1">
+                    <div class="js_card_img"><img alt="Research Report"
+                            src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/research_report.png" />
+                    </div>
+
+                    <div class="js_card_dls"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                            <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                            <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                            <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                        </svg>
+
+                        <h3>Article + Research Checklist</h3>
+
+                        <h4>How to Build a Stronger Return on Research plus accompanying Research Checklist with 12 tips
+                            to help you get the most out of your research!</h4>
+                        <a class="hr_custom_btn dark_line_btn round btn_medium"
+                            href="/en/about_us/splash_pages/building-stronger-return-on-research_kp5jlic8.html">View
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="item js_event_card" target="2">
+                    <div class="js_card_img"><img alt="Article 02"
+                            src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/rsc_card_img_02.jpg" />
+                    </div>
+
+                    <div class="js_card_dls"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                            <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                            <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                            <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                        </svg>
+
+                        <h3>Article</h3>
+
+                        <h4>How Research Can Help HR Solution Providers Stand Out From the Competition</h4>
+                        <a class="hr_custom_btn dark_line_btn round btn_medium"
+                            href="/en/about_us/splash_pages/use-research-to-stand-out-from-the-competition_jzvo50jn.html">View
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="item js_event_card" target="3">
+                    <div class="js_card_img"><img alt="Infographic"
+                            src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/info_graphic_card_new.png" />
+                    </div>
+
+                    <div class="js_card_dls"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                            <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                            <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                            <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                        </svg>
+
+                        <h3>Infographic</h3>
+
+                        <h4>How to Use Research Content to Provide over a Year&#39;s Worth of Powerful Promotional and
+                            Marketing Material for your Brand</h4>
+                        <a class="hr_custom_btn dark_line_btn round btn_medium"
+                            href="/en/about_us/advertise/how-to-use-research-content_l2rcw3qt.html">View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="owl-theme">
+                <div class="owl-controls">
+                    <div class="cust-nav owl-nav">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- client testimonial----->
+
+    <div class="ev_speaker_call mrtp60">
+        <h3>Client Testimonial</h3>
+
+        <h4 class="GrayLeftBorder">We have a 100% success rate of achieving our demand generating goals when partnering
+            with HR.com.</h4>
+
+        <h5><span>Kelci Marx</span>, Senior Marketing Manager, SeekOut</h5>
+        <a class="hr_custom_btn_new gradient_btn round btn_large"
+            href="https://www.hr.com/en?t=/documentManager/sfdoc.file.supply&amp;fileID=1670999103333">Download</a>
+    </div>
+
+    <div aria-labelledby="htcModalLabel" class="modal htcmodal fade" id="htcModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                        aria-hidden="true"><svg height="30" viewbox="0 0 16 16" width="30"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z">
+                            </path>
+                        </svg></span></button>
+
+                <h4>Hot Topics Calendar</h4>
+
+                <div class="modal-body">
+                    <div class="htc_wrapper">
+                        <h3>Align your brand with this year&#39;s State of the Industry hot HR topics and showcase your
+                            expertise</h3>
+
+                        <p>Sponsor any of this year&#39;s research topics and come away with your very own affordable
+                            and branded research report and infographic, establish yourself as an industry thought
+                            leader by presenting at a one-day Virtual Event, and bolster sales through the generation of
+                            qualified leads. See below to learn more about each of the hot research topics, and book an
+                            appointment to get started today.</p>
+
+                        <h4>Virtual Event Date &amp; Event details</h4>
+
+                        <div class="htc_card_wrapper">
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>July 13-14, 2022</h3>
+
+                                <p>The Future of Performance Management 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1615499048668"
+                                        name="fc_1615499048668" onclick="loadPopup('fc_1615499048668')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/PMResearch" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>July 20, 2022</h3>
+
+                                <p>The Future of HRs Role in Managing Corporate Culture &amp; Change 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1629389984268"
+                                        name="fc_1629389984268" onclick="loadPopup('fc_1629389984268')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/HRCorporateCulture" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>August 17, 2022</h3>
+
+                                <p>The State of Human Experience 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630528724928"
+                                        name="fc_1630528724928" onclick="loadPopup('fc_1630528724928')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/HumanExperienceResearch"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>August 24-25, 2022</h3>
+
+                                <p>The Future of Talent Acquisition 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1615843219976"
+                                        name="fc_1615843219976" onclick="loadPopup('fc_1615843219976')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/FutureTalentAcquisition"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>September 07, 2022</h3>
+
+                                <p>The State of Today&#39;s HR Tech Stack 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1615499301210"
+                                        name="fc_1615499301210" onclick="loadPopup('fc_1615499301210')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/techstackresearch" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>September 14, 2022</h3>
+
+                                <p>The State of People Analytics 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1615843453327"
+                                        name="fc_1615843453327" onclick="loadPopup('fc_1615843453327')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/BigDataResearch" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>September 28, 2022</h3>
+
+                                <p>The State of Employee Retention 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1629392608357"
+                                        name="fc_1629392608357" onclick="loadPopup('fc_1629392608357')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/employeeretention" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>October 18, 2022</h3>
+
+                                <p>The Future of Diversity, Equity and Inclusion 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630527977594"
+                                        name="fc_1630527977594" onclick="loadPopup('fc_1630527977594')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/DiversityResearch" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>October 19, 2022</h3>
+
+                                <p>The State of HR Skills and Education 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630529167466"
+                                        name="fc_1630529167466" onclick="loadPopup('fc_1630529167466')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/HRSkillsResearch" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>October 25, 2022</h3>
+
+                                <p>The Future of Compensation and Total Rewards 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1654188102837"
+                                        name="fc_1654188102837" onclick="loadPopup('fc_1654188102837')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/CompensationandRewardsresearch"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>October 26, 2022</h3>
+
+                                <p>The State of Legal, Compliance and Employment Law 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630529369911"
+                                        name="fc_1630529369911" onclick="loadPopup('fc_1630529369911')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/LegalComplianceResearch"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>November 02-03, 2022</h3>
+
+                                <p>The Future of Employee Engagement 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630529537177"
+                                        name="fc_1630529537177" onclick="loadPopup('fc_1630529537177')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/engagement" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>November 15, 2022</h3>
+
+                                <p>The State of Internal Mobility, Succession, and Career Development 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630529673886"
+                                        name="fc_1630529673886" onclick="loadPopup('fc_1630529673886')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/InternalMobilityResearch"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>December 07, 2022</h3>
+
+                                <p>The Future of Recruitment Technologies 2022</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1630529917045"
+                                        name="fc_1630529917045" onclick="loadPopup('fc_1630529917045')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/RecruitmentTechnologiesResearch"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>January 25, 2023</h3>
+
+                                <p>Hottest Trends in Benefits</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1656352573670"
+                                        name="fc_1656352573670" onclick="loadPopup('fc_1656352573670')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a
+                                        href="https://www.hr.com/en/about_us/splash_pages/hottest-trends-in-benefits-virtual-event_l4y5ecxq.html"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>February 08, 2022</h3>
+
+                                <p>The Future of Workplace Trends</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1656532199525"
+                                        name="fc_1656532199525" onclick="loadPopup('fc_1656532199525')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a href="https://www.hr.com/workplacetrends" target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+
+                            <div class="uve_card"><svg height="10" viewbox="0 0 55 10" width="55"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+                                </svg>
+
+                                <h3>February 15-16, 2023</h3>
+
+                                <p>The State of Human Experience in the Workplace</p>
+                                <span class="uve_plus"> <a href="javascript:void(0)" id="fc_1656524905106"
+                                        name="fc_1656524905106" onclick="loadPopup('fc_1656524905106')"><svg>
+                                            <use xlink:href="#download_pdf"></use>
+                                        </svg></a> <a
+                                        href="https://www.hr.com/en/about_us/splash_pages/the-state-of-employee-people-experience_jxdq4mh3.html"
+                                        target="_blank"><svg>
+                                            <use xlink:href="#learn_more"></use>
+                                        </svg></a> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container-fluid ml_rvbg mrtp60">
+    <div class="edu_container">
+        <div class="edu_review_box"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(-529 -999)">
+                    <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                </g>
+            </svg>
+
+            <h3>See what our customers are saying</h3>
+
+            <div class="swocas_wrapper">
+                <div class="team">
+                    <div class="swocas_slider owl-carousel owl-theme">
+                        <div class="item mot_js_card" target="1">
+                            <div class="js_card_img"><img alt="Erika Rahman"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/erika-rahman.jpg" />
+                                <div class="js_card_dls">
+                                    <h3>Erika Rahman</h3>
+
+                                    <h4>Product Marketing Manager, Motivocity</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>Partnering with the HR Research Institute on this custom research project exceeded
+                                    our expectations. From the start, it felt like a true partnership. They really took
+                                    the time to understand what we were trying to uncover and delivered insights that
+                                    matter. The report is deeply impactful for our business, and we've also gotten
+                                    feedback from the broader HR community that the data is revelatory, refreshing, and
+                                    helpful. Mark and the entire team were responsive, thoughtful, and incredibly easy
+                                    to work with every step of the way.</p>
+                            </div>
+                        </div>
+
+                        <div class="item mot_js_card" target="2">
+                            <div class="js_card_img"><img alt="Melissa Richardson"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/Melissa_Richardson.jpeg" />
+                                <div class="js_card_dls">
+                                    <h3>Melissa Richardson</h3>
+
+                                    <h4>Founder, Art of Mentoring</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>The HR.com research team worked closely with us to update and improve a set of
+                                    research questions we had used for a study a few years prior. Once set, the survey
+                                    was deployed and we received regular updates on survey completion progress. The team
+                                    collaborated with us to determine the main analysis thrusts and emergent insights,
+                                    and then did a terrific job of writing a top-quality report. Overall, the
+                                    combination of our mentoring domain expertise with HR.com&rsquo;s research
+                                    capability, delivered a first-class piece of research. HR.com&rsquo;s team was
+                                    responsive, proactive and easy to work with through the whole process.</p>
+                            </div>
+                        </div>
+
+                        <div class="item mot_js_card" target="3">
+                            <div class="js_card_img"><img alt="Dr. Jocelyn Tomaka"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/market_solution/images/li_testimonial.jpg" />
+                                <div class="js_card_dls">
+                                    <h3>Dr. Jocelyn Tomaka</h3>
+
+                                    <h4>Principal, I-O psychology: Lead, People Science; Product Strategy at UKG</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>I&#39;ve used all these different platforms and HR.com gave me such a great
+                                    experience. The team was ready to reiterate and think about my ideas to get a true
+                                    and actual depiction of what this research said. HR.com was such a great partner
+                                    over months helping us get it right. We have a lot of people working on it and I
+                                    found it to be one of the best experiences with working with vendors. It&#39;s not
+                                    about marketing it to the right people to make people feel good about it but to get
+                                    the story out there and help people do what they need to do. So, personally, it is a
+                                    solid experience!</p>
+                            </div>
+                        </div>
+
+                        <div class="item mot_js_card" target="4">
+                            <div class="js_card_img"><img alt="Jenny Watkins"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/Monica.jpg" />
+                                <div class="js_card_dls">
+                                    <h3>Jenny Watkins</h3>
+
+                                    <h4>Terryberry</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>We&#39;ve worked with HR.com for over a year on a series of webcasts, across a
+                                    variety of product offerings and have been quite impressed. The attention and care
+                                    given to speaker preparation is exceptional, the audience outreach and promotion is
+                                    not only effective but also delivers cost efficient results &ndash; time and again.
+                                    It&#39;s definitely been a great platform for effortlessly connecting with our
+                                    desired customer base.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="owl-theme">
+                        <div class="owl-controls">
+                            <div class="cust-nav owl-nav">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script type="text/javascript">
+    var tag = document.createElement("script");
+    tag.src = "https://youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player("adv_video_player", {
+            height: "300",
+            width: "533",
+            videoId: "BbhTTE4BVao",
+            playerVars: {
+                autoplay: 0,
+                controls: 1,
+                showinfo: 0,
+                modestbranding: 1,
+                rel: 0,
+                enablejsapi: 1,
+                loop: 1,
+                wmode: "transparent",
+                rel: 0,
+            },
+            events: {
+                onReady: advOnPlayerReady,
+                onStateChange: advOnPlayerStateChange,
+            },
+        });
+
+        player = new YT.Player("vid1", {
+            height: "300",
+            width: "533",
+            videoId: "BbhTTE4BVao",
+            playerVars: {
+                playlist: "BbhTTE4BVao",
+                autoplay: 0,
+                controls: 1,
+                showinfo: 0,
+                modestbranding: 1,
+                rel: 0,
+                enablejsapi: 1,
+                loop: 1,
+                wmode: "transparent",
+                rel: 0,
+            },
+            events: {
+                onReady: advOnPlayerReady,
+                onStateChange: advOnPlayerStateChange,
+            },
+        });
+
+        player = new YT.Player("vid2", {
+            height: "300",
+            width: "533",
+            videoId: "ItdMf4XjcUA",
+            playerVars: {
+                playlist: "ItdMf4XjcUA",
+                autoplay: 0,
+                controls: 1,
+                showinfo: 0,
+                modestbranding: 1,
+                rel: 0,
+                enablejsapi: 1,
+                loop: 1,
+                wmode: "transparent",
+                rel: 0,
+            },
+            events: {
+                onReady: advOnPlayerReady,
+                onStateChange: advOnPlayerStateChange,
+            },
+        });
+
+        player = new YT.Player("vid3", {
+            height: "300",
+            width: "533",
+            videoId: "GhM6Re8dGkA",
+            playerVars: {
+                playlist: "GhM6Re8dGkA",
+                autoplay: 0,
+                controls: 1,
+                showinfo: 0,
+                modestbranding: 1,
+                rel: 0,
+                enablejsapi: 1,
+                loop: 1,
+                wmode: "transparent",
+                rel: 0,
+            },
+            events: {
+                onReady: advOnPlayerReady,
+                onStateChange: advOnPlayerStateChange,
+            },
+        });
+    }
+    function advOnPlayerStateChange(e) {
+        var frm = $(e.target.getIframe());
+        if (e.data === YT.PlayerState.ENDED) {
+            if ("player" === frm.attr("id")) {
+                player.playVideo();
+            }
+        }
+        if (e.data === YT.PlayerState.BUFFERING) {
+            if ("player" === frm.attr("id")) {
+                e.target.setPlaybackQuality("hd720");
+            }
+        }
+    }
+    function advOnPlayerReady(e) {
+        // player.mute();
+        e.target.setPlaybackQuality("hd720");
+    }
+    var advEnableYoutube = function () {
+        var deferred = jQuery.Deferred();
+        var img = new Image();
+        img.onload = function () {
+            return deferred.resolve();
+        };
+        img.onerror = function () {
+            return deferred.reject();
+        };
+        img.src =
+            "https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif?" + new Date().getTime();
+        return deferred.promise();
+    };
+    jQuery(function ($) {
+        $.when(advEnableYoutube()).done(function () {
+            setTimeout(function () {
+                $(".adv_video_wrap").fadeIn();
+            }, 3000);
+        });
+    });
+
+    $(function () {
+        let lilist = document.querySelectorAll("div.h_scroll ul li");
+        let index = 0;
+        window.show = function (increase) {
+            index = index + increase;
+            index = Math.min(Math.max(index, 0), lilist.length - 1);
+            lilist[index].scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "start",
+            });
+            var target = $(event.currentTarget);
+            // if(lilist.length == (index + 3)) {
+            // 	target.css('display','none');
+            // } else {
+            // 	target.css('display','flex');
+            // }
+            // if(index == 0) {
+            // 	target.css('display','none');
+            // 	target.css('display','flex');
+            // }
+        };
+    });
+
+    $(".leadership").owlCarousel({
+        loop: true,
+        autoplay: false,
+        margin: 10,
+        navText: [
+            '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#454F5B" transform="translate(7.071) rotate(45)"></path></svg>',
+            '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#454F5B" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+        ],
+        navContainer: ".ev_wee_wrapper .team .cust-nav",
+        dots: true,
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+                stagePadding: 0,
+                nav: false,
+            },
+            992: {
+                items: 1,
+                stagePadding: 0,
+                nav: false,
+            },
+            1000: {
+                items: 1,
+                stagePadding: 0,
+                nav: true,
+            },
+        },
+    });
+    $(".leadershipResources").owlCarousel({
+        loop: true,
+        autoplay: false,
+        margin: 10,
+        navText: [
+            '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#454F5B" transform="translate(7.071) rotate(45)"></path></svg>',
+            '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#454F5B" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+        ],
+        navContainer: ".ip_js_wrapper .team .cust-nav",
+        dots: true,
+        items: 3,
+        responsive: {
+            0: {
+                items: 1,
+                stagePadding: 20,
+                nav: false,
+            },
+            767: {
+                items: 2,
+                stagePadding: 20,
+                nav: false,
+            },
+            992: {
+                items: 3,
+                stagePadding: 20,
+                nav: false,
+            },
+            1000: {
+                items: 3,
+                stagePadding: 20,
+                nav: true,
+            },
+        },
+    });
+    $(document).ready(function () {
+        $(".submenu_list>li:nth-child(5)>a").addClass("active");
+    });
+</script><svg display="none" height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="download_pdf" viewbox="0 0 36 36">
+        <g transform="translate(-243 -1484)">
+            <circle cx="18" cy="18" fill="#ed0f69" r="18" transform="translate(243 1484)"></circle>
+            <g transform="translate(-62.56 1451.502)">
+                <path
+                    d="M323.121,51.034a.875.875,0,0,0,1.219,0l4.066-3.941a.875.875,0,0,0-.609-1.5h-2.438V41.133a.875.875,0,0,0-.875-.875h-1.506a.875.875,0,0,0-.875.875v4.456h-2.438a.875.875,0,0,0-.609,1.5Z"
+                    fill="#fff" transform="translate(-0.374 2)"></path>
+                <rect fill="#fff" height="3.28" opacity="0.8" rx="1.64" transform="translate(317.257 54.458)"
+                    width="12.606"></rect>
+            </g>
+        </g>
+    </symbol>
+    <symbol id="learn_more" viewbox="0 0 128 128">
+        <path
+            d="M64 .3C28.8.3.3 28.8.3 64s28.5 63.7 63.7 63.7 63.7-28.5 63.7-63.7S99.2.3 64 .3zm0 121C32.3 121.3 6.7 95.7 6.7 64 6.7 32.3 32.3 6.7 64 6.7c31.7 0 57.3 25.7 57.3 57.3 0 31.7-25.6 57.3-57.3 57.3zm-2-82.8c-2.2 0-3.9 1.8-3.9 3.9l12.2 15.2H41.7c-2.2 0-3.2 2.2-3.2 4.4v4c0 2.2 1.8 3.9 3.9 3.9h28.4L58.1 85.6c0 2.2 1.8 3.9 3.9 3.9h7.1L95.8 64 69.1 38.5H62z">
+        </path>
+    </symbol>
+</svg> $designAttribute:helpdesk $designAttribute:quick_login_m1

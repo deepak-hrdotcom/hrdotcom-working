@@ -1,0 +1,325 @@
+<!-- @format -->
+
+<!-- custom css -->
+<link
+  rel="stylesheet"
+  href="$public/remoteimages/website-images/2022_siteupdate/custom-css/education/cert-prep-tracker-custom.css"
+/>
+
+<!-- to be announced -->
+<div class="en_it tba">
+  <span>To Be Announced</span>
+</div>
+
+<!-- buttons -->
+<div class="en_pc">
+  <div>
+    <a
+      class="hr_custom_btn gradient_btn btn_small round scoPage quick-login-m1"
+      href="https://www.hr.com/en?t=/merchant/singleCheckoutWizerd/product.show&amp;productID=1732583978893&amp;ParentID=0&amp;sort=0&amp;pt=100&amp;dealcat=2&amp;dealdesc=buynow-prepcourse-group26"
+      >Purchase course</a
+    >
+    <a
+      class="ms_link"
+      href="$public/system/app/media/rs/2020/3/17/k7vz4heu/og.jpg"
+      onclick="
+        window.open(
+          this.href,
+          '',
+          'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no',
+        )
+        return false
+      "
+      >Map shipment</a
+    >
+  </div>
+  <a
+    class="hr_custom_btn gradient_btn btn_small round scoPage quick-login-m1"
+    href="https://www.hr.com/en?t=/merchant/singleCheckoutWizerd/product.show&amp;productID=1732586658937&amp;ParentID=0&amp;sort=0&amp;pt=100&amp;dealcat=2&amp;dealdesc=buynow-prepcourse-group4-withprime"
+    >Purchase Course + HR Prime Bundle</a
+  >
+</div>
+<!-- end buttons -->
+<!-- diable tab -->
+<li role="presentation" class="disabled">
+  <a>July - Sept 2025</a>
+</li>
+
+<!-- education special modal -->
+<div class="modal-ed" id="modal-ed">
+  <div class="modal-ed-content" id="modal-ed-box">
+    <div class="popup-container">
+      <a href="#earlybird-offer"
+        ><img
+          alt="Enroll Early and Save $50. Use Code EARLYBIRD50"
+          class="modal-img"
+          src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2025_siteupdate/education/enrollment-save-50-popup.jpg"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- end education special modal -->
+
+<div class="en_mtitle" id="earlybird-offer">
+  June 2025
+  <span
+    >Offer ends soon! Enroll by <span>June 2nd</span> and save $50 with promo
+    code <span>EARLYBIRD50</span> at checkout.</span
+  >
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal-ed')
+    const modalLink = modal.querySelector('a[href="#earlybird-offer"]')
+    const eduBlock = document.querySelector('#earlybird-offer')
+    const scrollOffset = 80 // pixels from the top
+
+    // Show modal after 3 seconds on every load
+    setTimeout(() => {
+      modal.style.visibility = 'visible'
+      modal.style.opacity = '1'
+      modal.style.display = 'flex'
+    }, 3000)
+
+    const closeModal = () => {
+      modal.style.opacity = '0'
+      setTimeout(() => {
+        modal.style.visibility = 'hidden'
+        modal.style.display = 'none'
+      }, 300)
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal()
+      }
+    })
+
+    if (modalLink && eduBlock) {
+      modalLink.addEventListener('click', (e) => {
+        e.preventDefault()
+        const elementPosition =
+          eduBlock.getBoundingClientRect().top + window.scrollY
+        const offsetPosition = elementPosition - scrollOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+
+        closeModal()
+      })
+    }
+  })
+</script>
+
+<!-- alert me about the new schedules button -->
+
+<div class="upcoming-schedules_btn">
+  <button
+    class="hr_custom_btn gradient_btn btn_large round"
+    id="fc_1744227826203"
+    name="fc_1744227826203"
+    onclick="loadPopup('fc_1744227826203')"
+  >
+    Alert Me About New Schedules: Jul-Sep 2025
+  </button>
+</div>
+<!-- alert me about the new schedules button -->
+
+<!-- to be announced -->
+<div class="en_it tba"><span>To Be Announced</span></div>
+<!-- end to be announced -->
+
+<!-- facilitators -->
+<div class="en_it" onclick="Alaena_M()">
+  <img
+    alt="Alaena Mallory"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/alaenamallory.jpg"
+  />
+  <span>Alaena Mallory</span>
+  <small>MHRM, SHRM-CP</small>
+</div>
+
+<div class="en_it" onclick="Beverly_D()">
+  <img
+    alt="Beverly Dance"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/beverly_dance.jpg"
+  />
+  <span>Beverly Dance</span>
+  <small>MBA, SHRM-SCP, PHRca </small>
+</div>
+
+<div class="en_it">
+  <img
+    alt="Steven Yee"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/steven_yee.jpg"
+  /><span>Steven Yee</span> <small>MBA, SPHR, SHRM-SCP</small>
+</div>
+<div class="en_it">
+  <img
+    alt="Chris Vokaty"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/Chris_Vokaty.jpg"
+  /><span>Chris Vokaty</span> <small>SPHR, SHRM-SCP</small>
+</div>
+
+<div class="en_it">
+  <img
+    alt="Debra Braden"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/D%20Braden.jpg"
+  /><span>Debra Braden</span> <small>SPHR, SHRM-CP</small>
+</div>
+
+<div class="en_it" onclick="melissabowen()">
+  <img
+    alt="Melissa Bowen"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/M-Bowen.jpg"
+  />
+  <span>Melissa Bowen</span> <small>SPHR, SHRM-SCP, MSHRM</small>
+</div>
+
+<div class="en_it" onclick="mdisch()">
+  <img
+    alt="Maricela Disch"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/Maricela.jpg"
+  />
+  <span>Maricela Disch</span> <small>SHRM-SCP, SPHR</small>
+</div>
+
+<div class="en_it">
+  <img
+    alt="Helena Quick"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/helena_quick.jpg"
+  /><span>Helena Quick</span> <small>MBA, PHR</small>
+</div>
+
+<div class="en_it">
+  <img
+    alt="Jennifer Marrants"
+    src="$public/system/app/media/rs/2017/10/23/j94mxuzg/og.jpg"
+  />
+  <span>Jennifer Marants</span> <small>MHRM, SHRM-CP, aPHR</small>
+</div>
+
+<div class="en_it">
+  <img
+    alt="Billy Keene"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/BKeene.jpg"
+  />
+  <span>Billy Keene</span> <small>PHR SHRM-SCP</small>
+</div>
+
+<div class="en_it" onclick="Drivera()">
+  <img
+    alt="Daniel Rivera"
+    src="$public/remoteimages/website-images/2017_SiteRedesign/images/Dan_Rivera.jpg"
+  />
+  <span>Dan Rivera</span> <small>MHRM, PHR</small>
+</div>
+
+<!-- shrmm focused card -->
+<style>
+  .sf-card {
+    background: #f0493c;
+    background: linear-gradient(
+      90deg,
+      rgba(240, 73, 60, 1) 0%,
+      rgba(165, 18, 92, 1) 100%
+    );
+    padding: 0 1rem;
+    border-radius: 1rem;
+  }
+  .sf-title span {
+    color: #ffff;
+    font-size: clamp(2rem, 1.5vw, 24px);
+    font-weight: bold;
+    padding-block: 1.5rem;
+  }
+
+  .sf-title {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+  }
+  .sf-icon {
+    max-width: 22px;
+  }
+</style>
+
+<div class="sf-card">
+  <div class="sf-title">
+    <img
+      src="$public/remoteimages/website-images/2024_Siteupdate/education/check-mark-shrm-focused.png"
+      alt="check mark"
+      class="sf-icon"
+    />
+    <span>SHRM Exam Focused</span>
+  </div>
+  <!-- card div here-->
+</div>
+
+<!-- end shr focused -->
+<div class="en_mtitle">Coming Soon</div>
+
+<!-- holiday special pill -->
+<span
+  style="
+    background: #f1e6f9;
+    color: #551989;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 4px;
+  "
+>
+  Holiday Special – $699 🎉
+</span>
+
+<!-- offset scroll -->
+
+<style>
+  #g31,
+  #g1,
+  #g3,
+  #g5,
+  #g4,
+  #g23,
+  #g2,
+  #g4,
+  #g6,
+  #g12 {
+    scroll-margin-top: 120px;
+  }
+</style>
+
+<style>
+  /* lead button */
+  .lead-btn-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    margin-block: 2rem;
+  }
+  .btn-lead {
+    font-size: clamp(1.5rem, 1.2vw, 1.8rem) !important;
+    font-weight: bold !important;
+  }
+</style>
+
+<div class="lead-btn-container">
+  <button
+    id="fc_1771524075634"
+    name="fc_1771524075634"
+    class="RedBtn btn btn-lead"
+    onclick="loadPopup('fc_1771524075634')"
+  >
+    BE THE FIRST TO SEE NEW CLASSES
+  </button>
+</div>

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Patrick's Day HR Certification Contest — HR.com</title>
+    <meta name="description"
+        content="Win a FREE HR certification exam voucher! Enter the St. Patrick's Day HR Certification Contest. March 17–31. You're in Luck!">
+
+
+    <style>
+        /* ============================================================
+       ST. PATRICK'S DAY CONTEST — SCOPED DESIGN SYSTEM
+       All styles are scoped under #st-patrick-contest to safely
+       override CMS global styles without leakage.
+    ============================================================ */
+
+
+        /* ── Strict CMS Reset for Semantic Elements ───────────────── */
+        #st-patrick-contest,
+        #st-patrick-contest * {
+            box-sizing: border-box;
+        }
+        
+        #st-patrick-contest h1, #st-patrick-contest h2, #st-patrick-contest h3,
+        #st-patrick-contest h4, #st-patrick-contest h5, #st-patrick-contest h6,
+        #st-patrick-contest p, #st-patrick-contest a, #st-patrick-contest span,
+        #st-patrick-contest div, #st-patrick-contest header, #st-patrick-contest footer,
+        #st-patrick-contest section, #st-patrick-contest article, #st-patrick-contest main,
+        #st-patrick-contest aside, #st-patrick-contest nav, #st-patrick-contest figure,
+        #st-patrick-contest figcaption, #st-patrick-contest ul, #st-patrick-contest ol,
+        #st-patrick-contest li {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            vertical-align: baseline;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            list-style: none;
+            text-decoration: none;
+            max-width: none;
+        }
+
+        #st-patrick-contest img, #st-patrick-contest svg {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        /* ── Hardcoded CSS Variables per Screen Size ───────────────── */
+        #st-patrick-contest {
+            /* Mobile (base) */
+            --pad-x: 16px;
+            --section-y: 40px;
+            --fs-base: 14px;
+            --fs-hero-title: 32px;
+            --fs-hero-sub: 19px;
+            --fs-hero-date: 14px;
+            --fs-prize-title: 22px;
+            --fs-prize-item: 14px;
+            --fs-guarantee-title: 25px;
+            --fs-guarantee-tag: 11px;
+            --fs-guarantee-pt: 15px;
+            --fs-action-title: 16px;
+            --fs-certs-label: 12px;
+            --fs-cert-pill: 14px;
+            --fs-leadgen-title: 20px;
+            --fs-contact-title: 17px;
+            --fs-contact-item: 15px;
+        }
+
+        @media (min-width: 600px) {
+            #st-patrick-contest {
+                --pad-x: 24px; --section-y: 50px;
+                --fs-base: 14px;
+                --fs-hero-title: 38px; --fs-hero-sub: 22px; --fs-hero-date: 15px;
+                --fs-prize-title: 28px; --fs-prize-item: 15px;
+                --fs-guarantee-title: 30px; --fs-guarantee-tag: 11px; --fs-guarantee-pt: 16px;
+                --fs-action-title: 18px;
+                --fs-certs-label: 12px; --fs-cert-pill: 15px;
+                --fs-leadgen-title: 24px;
+                --fs-contact-title: 19px; --fs-contact-item: 15px;
+            }
+        }
+        @media (min-width: 900px) {
+            #st-patrick-contest {
+                --pad-x: 32px; --section-y: 60px;
+                --fs-base: 15px;
+                --fs-hero-title: 45px; --fs-hero-sub: 26px; --fs-hero-date: 16px;
+                --fs-prize-title: 34px; --fs-prize-item: 16px;
+                --fs-guarantee-title: 36px; --fs-guarantee-tag: 12px; --fs-guarantee-pt: 17px;
+                --fs-action-title: 20px;
+                --fs-certs-label: 13px; --fs-cert-pill: 16px;
+                --fs-leadgen-title: 28px;
+                --fs-contact-title: 22px; --fs-contact-item: 16px;
+            }
+        }
+        @media (min-width: 1200px) {
+            #st-patrick-contest {
+                --pad-x: 40px; --section-y: 70px;
+                --fs-base: 16px;
+                --fs-hero-title: 55px; --fs-hero-sub: 32px; --fs-hero-date: 17px;
+                --fs-prize-title: 42px; --fs-prize-item: 18px;
+                --fs-guarantee-title: 44px; --fs-guarantee-tag: 13px; --fs-guarantee-pt: 18px;
+                --fs-action-title: 22px;
+                --fs-certs-label: 14px; --fs-cert-pill: 18px;
+                --fs-leadgen-title: 34px;
+                --fs-contact-title: 26px; --fs-contact-item: 16px;
+            }
+        }
+        @media (min-width: 1600px) {
+            #st-patrick-contest {
+                --pad-x: 48px; --section-y: 80px;
+                --fs-base: 16px;
+                --fs-hero-title: 60px; --fs-hero-sub: 35px; --fs-hero-date: 18px;
+                --fs-prize-title: 48px; --fs-prize-item: 19px;
+                --fs-guarantee-title: 48px; --fs-guarantee-tag: 13px; --fs-guarantee-pt: 18px;
+                --fs-action-title: 24px;
+                --fs-certs-label: 14px; --fs-cert-pill: 19px;
+                --fs-leadgen-title: 38px;
+                --fs-contact-title: 28px; --fs-contact-item: 16px;
+            }
+        }
+
+        /* ── Host-page isolation ─────────────────────────────────────
+       Force the wrapper to escape any CMS max-width constraints  */
+        #st-patrick-contest {
+            /* Color Tokens */
+            --c-green-darkest: #031a0d;
+            --c-green-dark: #062c18;
+            --c-green-mid: #0a4f2a;
+            --c-green-primary: #138245;
+            --c-green-brand: #94c83d;
+            --c-green-tint: #e8f5ed;
+            --c-gold: #fdb415;
+            --c-gold-dark: #c89200;
+            --c-gold-tint: #fff8e1;
+            --c-white: #ffffff;
+            --c-near-white: #f8faf9;
+            --c-black: #010203;
+            --c-text: #1a2e24;
+            --c-muted: #4a5e54;
+            --c-border: #d4ddd9;
+
+            /* Rainbow spectrum */
+            --c-r1: #e63946;
+            --c-r2: #f4a261;
+            --c-r3: #fdb415;
+            --c-r4: #94c83d;
+            --c-r5: #4ac0d6;
+            --c-r6: #5d94ce;
+
+            /* Typography */
+            --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+
+            /* Motion */
+            --ease: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Layout tokens — full HD baseline */
+            --inner-max: 1800px;
+            /* Fluid edge padding: 1rem on small screens, up to 3rem on wide */
+            --pad-x: clamp(1rem, 3.5vw, 3rem);
+            --section-y: clamp(2.5rem, 5vw, 5rem);
+
+            display: block;
+            font-family: var(--f-sans);
+            /* Fluid base: 14px mobile → 16px desktop */
+            font-size: var(--fs-base);
+            line-height: 1.6;
+            color: var(--c-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--c-white);
+            /* Escape CMS wrappers, allow full-width sections */
+            width: 100%;
+            max-width: 1920px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            box-sizing: border-box;
+        }
+
+        #st-patrick-contest *,
+        #st-patrick-contest *::before,
+        #st-patrick-contest *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #st-patrick-contest img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #st-patrick-contest a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #st-patrick-contest p {
+            margin: 0;
+        }
+
+        #st-patrick-contest ul,
+        #st-patrick-contest ol {
+            list-style: none;
+        }
+
+        /* ── Inner container ────────────────────────────────────── */
+        #st-patrick-contest .spc-inner {
+            max-width: var(--inner-max);
+            margin: 0 auto;
+            padding-left: var(--pad-x);
+            padding-right: var(--pad-x);
+            width: 100%;
+        }
+
+        /* ── Rainbow rule ───────────────────────────────────────── */
+        #st-patrick-contest .spc-rainbow-rule {
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(to right,
+                    var(--c-r1), var(--c-r2), var(--c-r3),
+                    var(--c-r4), var(--c-r5), var(--c-r6));
+            flex-shrink: 0;
+        }
+
+        /* ── Rainbow dot motif ──────────────────────────────────── */
+        #st-patrick-contest .spc-dots {
+            display: inline-flex;
+            gap: 9px;
+            align-items: center;
+        }
+
+        #st-patrick-contest .spc-dots span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* ── Buttons ────────────────────────────────────────────── */
+        #st-patrick-contest .spc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: var(--f-sans);
+            font-weight: 800;
+            font-size: calc(var(--fs-base) * 1.05);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            padding: 1.05rem 2.6rem;
+            border-radius: 7px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
+            white-space: nowrap;
+        }
+
+        #st-patrick-contest .spc-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        #st-patrick-contest .spc-btn:active {
+            transform: translateY(0);
+        }
+
+        #st-patrick-contest .spc-btn:focus-visible {
+            outline: 3px solid var(--c-gold);
+            outline-offset: 3px;
+        }
+
+        /* Gold CTA — primary conversion action */
+        #st-patrick-contest .spc-btn-gold {
+            background: var(--c-gold);
+            color: var(--c-black);
+            box-shadow: 0 5px 20px rgba(253, 180, 21, .40);
+        }
+
+        #st-patrick-contest .spc-btn-gold:hover {
+            background: #e8a400;
+            box-shadow: 0 8px 28px rgba(253, 180, 21, .55);
+        }
+
+        /* White outline on dark backgrounds */
+        #st-patrick-contest .spc-btn-outline-white {
+            background: rgba(255, 255, 255, .06);
+            border-color: rgba(255, 255, 255, .7);
+            color: var(--c-white);
+            backdrop-filter: blur(4px);
+        }
+
+        #st-patrick-contest .spc-btn-outline-white:hover {
+            background: var(--c-white);
+            color: var(--c-green-mid);
+        }
+
+        /* White solid on gradient sections */
+        #st-patrick-contest .spc-btn-white-solid {
+            background: var(--c-white);
+            color: var(--c-green-mid);
+            border-color: var(--c-white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+        }
+
+        #st-patrick-contest .spc-btn-white-solid:hover {
+            background: var(--c-gold-tint);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, .2);
+        }
+
+        /* Pill variant */
+        #st-patrick-contest .spc-btn-pill {
+            border-radius: 50px;
+        }
+
+        /* Large variant */
+        #st-patrick-contest .spc-btn-lg {
+            padding: 1.2rem 3.2rem;
+            font-size: calc(var(--fs-base) * 1.1);
+        }
+
+        /* ── Accessibility helpers ──────────────────────────────── */
+        #st-patrick-contest .spc-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #st-patrick-contest *,
+            #st-patrick-contest *::before,
+            #st-patrick-contest *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+
+
+        /* ─────────────────────────────────────────────────────
+           HERO — Section itself IS the two-column grid.
+           The left column contains the padded content.
+           The right column is unrestricted so the image
+           can bleed from the very top to the rainbow rule.
+        ───────────────────────────────────────────────────── */
+        #st-patrick-contest .spc-hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(150deg,
+                    var(--c-green-darkest) 0%,
+                    var(--c-green-dark) 28%,
+                    var(--c-green-mid) 60%,
+                    #1a6e3c 100%);
+            /* Hero IS the grid — no inner wrapper around image */
+            display: grid;
+            grid-template-columns: 55% 45%;
+            min-height: 400px;
+        }
+
+        /* Left column: scoped padding keeps content in line with max-width */
+        #st-patrick-contest .spc-hero-copy {
+            /* right-pad = gap; left-pad aligns to inner-max container edge */
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3rem) max(var(--pad-x), calc((100vw - var(--inner-max)) / 2 + var(--pad-x)));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo — explicit dimensions prevent CMS img { width:100% } stretching */
+        #st-patrick-contest .spc-hero-logo {
+            display: block;
+            height: 40px !important;
+            width: auto !important;
+            max-width: 200px;
+            margin-bottom: 1.25rem;
+            filter: brightness(0) invert(1);
+            object-fit: contain;
+            flex-shrink: 0;
+            align-self: start;
+        }
+
+        /* Hero decos live behind everything */
+        #st-patrick-contest .spc-hero-decos {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        #st-patrick-contest .spc-hero-decos b {
+            position: absolute;
+            font-weight: normal;
+            opacity: .05;
+            user-select: none;
+            animation: spc-float 10s ease-in-out infinite;
+        }
+
+        #st-patrick-contest .spc-hero-decos b:nth-child(1) {
+            font-size: calc(var(--fs-base) * 7);
+            top: 8%;
+            left: 1.5%;
+            animation-delay: 0s;
+        }
+
+        #st-patrick-contest .spc-hero-decos b:nth-child(2) {
+            font-size: calc(var(--fs-base) * 4);
+            top: 62%;
+            left: 4%;
+            animation-delay: 3s;
+        }
+
+        #st-patrick-contest .spc-hero-decos b:nth-child(3) {
+            font-size: calc(var(--fs-base) * 8.5);
+            top: 10%;
+            right: 2%;
+            animation-delay: 5s;
+        }
+
+        #st-patrick-contest .spc-hero-decos b:nth-child(4) {
+            font-size: calc(var(--fs-base) * 3.5);
+            top: 72%;
+            right: 8%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes spc-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(12deg);
+            }
+        }
+
+        /* Headline — block so emoji text nodes are truly inline */
+        #st-patrick-contest .spc-hero-headline {
+            display: block;
+            font-size: var(--fs-hero-title);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--c-white);
+            margin: 0 0 0.3rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Emojis: truly inline, slightly smaller */
+        #st-patrick-contest .spc-hero-headline .spc-emoji {
+            display: inline;
+            font-size: calc(var(--fs-base) * 0.7);
+            vertical-align: middle;
+            margin: 0 0.05em;
+        }
+
+        /* Gold subhead on its own line */
+        #st-patrick-contest .spc-hero-subhead {
+            display: block;
+            font-size: var(--fs-hero-sub);
+            font-weight: 800;
+            color: var(--c-gold);
+            line-height: 1.2;
+            margin-top: 0.15em;
+            letter-spacing: -0.01em;
+        }
+
+        #st-patrick-contest .spc-hero-date {
+            margin: 0.9rem 0 1.4rem;
+            font-size: var(--fs-hero-date);
+            font-weight: 600;
+            color: rgba(255, 255, 255, .78);
+        }
+
+        #st-patrick-contest .spc-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            align-items: center;
+        }
+
+        /* Right column — image fills full hero height end-to-end */
+        #st-patrick-contest .spc-hero-visual {
+            overflow: hidden;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left center;
+            display: block;
+        }
+
+
+        /* ============================================================
+       S2 — PRIZE BAND
+       Full-bleed gold accent · Scannable single-row value prop
+    ============================================================ */
+
+        #st-patrick-contest .spc-prize-band {
+            background: linear-gradient(135deg, #7a4800 0%, #a86200 30%, var(--c-gold-dark) 65%, var(--c-gold) 100%);
+            padding: clamp(2rem, 3.5vw, 3rem) var(--pad-x);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle shimmer overlay */
+        #st-patrick-contest .spc-prize-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(-45deg,
+                    transparent 0px, transparent 18px,
+                    rgba(255, 255, 255, .04) 18px, rgba(255, 255, 255, .04) 20px);
+            pointer-events: none;
+        }
+
+        #st-patrick-contest .spc-prize-band .spc-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px
+        }
+
+        #st-patrick-contest .spc-prize-band-heading {
+            /* Fluid: 1.4rem mobile → 3rem desktop */
+            font-size: var(--fs-prize-title);
+            font-weight: 900;
+            color: var(--c-black);
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        #st-patrick-contest .spc-prize-band-heading .spc-pot {
+            color: var(--c-green-dark);
+        }
+
+        #st-patrick-contest .spc-prize-band-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem 2rem;
+            margin-top: 0.9rem;
+        }
+
+        #st-patrick-contest .spc-prize-band-item {
+            /* Fluid body text */
+            font-size: var(--fs-prize-item);
+            font-weight: 600;
+            color: var(--c-black);
+            opacity: .88;
+        }
+
+        #st-patrick-contest .spc-prize-band-sep {
+            color: rgba(0, 0, 0, .3);
+            font-size: calc(var(--fs-base) * 1.2);
+        }
+
+        #st-patrick-contest .spc-prize-band-value {
+            background: var(--c-green-dark);
+            color: var(--c-gold);
+            font-weight: 900;
+            font-size: calc(var(--fs-base) * 1.1);
+            padding: 0.25rem 1.1rem;
+            border-radius: 50px;
+            letter-spacing: 0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+
+        /* ============================================================
+       S3 — GUARANTEE + ENTRY CTA
+       Full-bleed white · Two-column · Trust left / Action right
+    ============================================================ */
+
+        #st-patrick-contest .spc-guarantee {
+            background: var(--c-white);
+            padding: var(--section-y) var(--pad-x);
+            border-top: 1px solid var(--c-border);
+        }
+
+        #st-patrick-contest .spc-guarantee-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem 4rem;
+            align-items: start;
+        }
+
+        /* Left: Trust copy */
+        #st-patrick-contest .spc-guarantee-trust {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #st-patrick-contest .spc-guarantee-tag {
+            display: flex;
+            /* full-width row — not inline */
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--c-green-tint);
+            border: 1.5px solid var(--c-green-primary);
+            color: var(--c-green-dark);
+            font-size: var(--fs-guarantee-tag);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+            width: fit-content;
+        }
+
+        #st-patrick-contest .spc-guarantee-heading {
+            /* Fluid: 1.6rem mobile → 3rem desktop */
+            font-size: var(--fs-guarantee-title);
+            font-weight: 900;
+            line-height: 1.12;
+            color: var(--c-green-dark);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        #st-patrick-contest .spc-guarantee-heading em {
+            font-style: normal;
+            color: var(--c-green-primary);
+        }
+
+        #st-patrick-contest .spc-guarantee-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #st-patrick-contest .spc-guarantee-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+        }
+
+        #st-patrick-contest .spc-guarantee-point-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            background: var(--c-green-tint);
+            border-radius: 50%;
+            border: 1.5px solid var(--c-green-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(var(--fs-base) * 0.85);
+            line-height: 1;
+            margin-top: 0.1rem;
+        }
+
+        #st-patrick-contest .spc-guarantee-point-text {
+            font-size: var(--fs-guarantee-pt);
+            color: var(--c-muted);
+            line-height: 1.6;
+        }
+
+        /* Right: Action block */
+        #st-patrick-contest .spc-guarantee-action {
+            background: var(--c-green-dark);
+            border-radius: 16px;
+            padding: 2.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(6, 44, 24, .22);
+        }
+
+        #st-patrick-contest .spc-guarantee-action::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 20%, rgba(148, 200, 61, .15) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        #st-patrick-contest .spc-action-eyebrow {
+            color: var(--c-gold);
+            font-size: calc(var(--fs-base) * 0.78);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-action-heading {
+            font-size: var(--fs-action-title);
+            font-weight: 800;
+            color: var(--c-white);
+            line-height: 1.35;
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-action-cta {
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-guarantee-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, .1);
+            margin: 1.75rem 0;
+        }
+
+        #st-patrick-contest .spc-action-notify {
+            font-size: calc(var(--fs-base) * 0.9);
+            color: rgba(255, 255, 255, .6);
+            line-height: 1.5;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-action-notify .spc-date-hl {
+            color: var(--c-gold);
+            font-weight: 700;
+        }
+
+
+        /* ============================================================
+       S4 — CERTIFICATIONS
+       Full-bleed dark green · Authority signal · Professional break
+    ============================================================ */
+
+        #st-patrick-contest .spc-certs {
+            background: linear-gradient(160deg, var(--c-green-dark) 0%, #0d4a24 100%);
+            padding: var(--section-y) var(--pad-x);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #st-patrick-contest .spc-certs::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 100%, rgba(148, 200, 61, .10) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        #st-patrick-contest .spc-certs-label {
+            font-size: var(--fs-certs-label);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: rgba(255, 255, 255, .5);
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-certs-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.85rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-cert-pill {
+            background: rgba(255, 255, 255, .08);
+            border: 1.5px solid rgba(255, 255, 255, .22);
+            color: var(--c-white);
+            font-weight: 800;
+            font-size: var(--fs-cert-pill);
+            padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1.25rem, 2.5vw, 2.25rem);
+            border-radius: 50px;
+            letter-spacing: 0.08em;
+            transition: all var(--ease);
+            cursor: default;
+        }
+
+        #st-patrick-contest .spc-cert-pill:hover {
+            background: var(--c-green-primary);
+            border-color: var(--c-green-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, .3);
+        }
+
+        #st-patrick-contest .spc-certs-conditions {
+            font-size: calc(var(--fs-base) * 0.875);
+            font-style: italic;
+            color: rgba(255, 255, 255, .42);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.65;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            position: relative;
+        }
+
+
+        /* ============================================================
+       S5 — LEAD GEN BANNER  (extra conversions)
+    ============================================================ */
+
+        #st-patrick-contest .spc-leadgen {
+            padding: var(--section-y) var(--pad-x);
+            background: var(--c-near-white);
+        }
+
+        #st-patrick-contest .spc-leadgen-card {
+            /* Wider card — fills more screen on large displays */
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e5ba8 0%, #2a7bd4 45%, var(--c-green-primary) 100%);
+            border-radius: 20px;
+            padding: clamp(2.5rem, 4vw, 4.5rem) clamp(2rem, 6vw, 5rem);
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(30, 91, 168, .22);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #st-patrick-contest .spc-leadgen-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 15%, rgba(255, 255, 255, .12) 0%, transparent 55%);
+            pointer-events: none;
+        }
+
+        #st-patrick-contest .spc-leadgen-heading {
+            font-size: var(--fs-leadgen-title);
+            font-weight: 800;
+            color: var(--c-white);
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        #st-patrick-contest .spc-leadgen-card .spc-btn {
+            position: relative;
+        }
+
+
+        /* ============================================================
+       S6 — CONTACT FOOTER STRIP
+    ============================================================ */
+
+        #st-patrick-contest .spc-contact {
+            padding: clamp(2.5rem, 4vw, 3.5rem) var(--pad-x);
+            background: var(--c-white);
+            border-top: 1px solid var(--c-border);
+            text-align: center;
+        }
+
+        #st-patrick-contest .spc-contact-heading {
+            font-size: var(--fs-contact-title);
+            font-weight: 800;
+            color: var(--c-black);
+            margin-bottom: 1.75rem;
+        }
+
+        #st-patrick-contest .spc-contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem 3.5rem;
+        }
+
+        #st-patrick-contest .spc-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: calc(var(--fs-base) * 0.97);
+            color: var(--c-muted);
+            font-weight: 500;
+        }
+
+        #st-patrick-contest .spc-contact-item a {
+            color: var(--c-green-primary);
+            font-weight: 700;
+            transition: color var(--ease);
+        }
+
+        #st-patrick-contest .spc-contact-item a:hover,
+        #st-patrick-contest .spc-contact-item a:focus {
+            color: var(--c-green-dark);
+        }
+
+        #st-patrick-contest .spc-contact-ico {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--c-green-tint);
+            border: 1.5px solid var(--c-green-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        #st-patrick-contest .spc-contact-ico svg {
+            width: 17px;
+            height: 17px;
+            fill: var(--c-green-primary);
+        }
+
+
+        /* ============================================================
+       RESPONSIVE BREAKPOINTS
+    ============================================================ */
+
+        @media (max-width: 900px) {
+
+            /* Stack hero columns on tablet/mobile */
+            #st-patrick-contest .spc-hero {
+                grid-template-columns: 1fr;
+                min-height: unset;
+            }
+
+            #st-patrick-contest .spc-hero-copy {
+                padding: 2.5rem var(--pad-x);
+                text-align: center;
+                align-items: center;
+                /* center logo */
+            }
+
+            #st-patrick-contest .spc-hero-logo {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #st-patrick-contest .spc-hero-actions {
+                justify-content: center;
+            }
+
+            #st-patrick-contest .spc-hero-visual {
+                height: 360px;
+            }
+
+            #st-patrick-contest .spc-guarantee-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #st-patrick-contest .spc-hero-copy {
+                text-align: center;
+                align-items: center;
+            }
+
+            #st-patrick-contest .spc-hero-actions {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            #st-patrick-contest .spc-hero-actions .spc-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            #st-patrick-contest .spc-btn-lg {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            #st-patrick-contest .spc-prize-band-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #st-patrick-contest .spc-prize-band-sep {
+                display: none;
+            }
+
+            #st-patrick-contest .spc-guarantee-action {
+                padding: 2rem 1.5rem;
+            }
+
+            #st-patrick-contest .spc-leadgen-card {
+                border-radius: 14px;
+                padding: 2rem 1.5rem;
+            }
+
+            #st-patrick-contest .spc-contact-row {
+                gap: 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin:0;padding:0;background:#eef1ee;">
+
+    <!-- ════════════════════════════════════════════════════════
+     #st-patrick-contest — entire page lives inside this div
+     for safe CMS embedding & full style scoping.
+════════════════════════════════════════════════════════ -->
+    <div id="st-patrick-contest">
+
+        <!-- Top rainbow stripe -->
+        <div class="spc-rainbow-rule" aria-hidden="true"></div>
+
+
+        <section class="spc-hero" aria-labelledby="spc-hero-title">
+
+            <!-- Decorative floating shamrocks (aria-hidden) -->
+            <div class="spc-hero-decos" aria-hidden="true">
+                <b>🍀</b><b>🍀</b><b>🍀</b><b>🍀</b>
+            </div>
+
+            <!-- LEFT COLUMN: content -->
+            <div class="spc-hero-copy">
+                <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/st-patricks-day-hr-contest/hr-dot-education.png" alt="HR.Education" class="spc-hero-logo" loading="eager">
+
+                <!--
+                    Emojis written as direct text chars inside the h1 —
+                    no span wrappers that could cause line-break issues.
+                -->
+                <h1 id="spc-hero-title" class="spc-hero-headline">🍀 St.&nbsp;Patrick's&nbsp;Day 🍀<span
+                        class="spc-hero-subhead">HR Certification Giveaway</span></h1>
+
+                <p class="spc-hero-date">March 17–31 — You're in Luck!</p>
+
+                <div class="spc-hero-actions">
+                    <a href="#" class="btn spc-btn-gold spc-btn-lg spc-btn-pill">🍀&nbsp; Enter Contest</a>
+                    <a href="#guarantee" class="btn spc-btn-outline-white">See Prizes ↓</a>
+                </div>
+            </div><!-- /hero-copy -->
+
+            <!-- RIGHT COLUMN: full-bleed image -->
+            <div class="spc-hero-visual" aria-hidden="true">
+                <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/st-patricks-day-hr-contest/leprechaun-prize.webp" alt="" class="spc-hero-img" loading="eager">
+            </div>
+
+            <div class="spc-rainbow-rule" style="grid-column: 1 / -1;" aria-hidden="true"></div>
+        </section>
+
+
+        <!-- ╔══════════════════════════════════════════════════════╗
+         ║  S2 · PRIZE BAND — Scannable value-prop strip      ║
+         ╚══════════════════════════════════════════════════════╝-->
+        <section class="spc-prize-band" aria-labelledby="spc-prize-heading">
+            <div class="spc-inner">
+
+                <h2 id="spc-prize-heading" class="spc-prize-band-heading">
+                    Grand Prize: Win the <span class="spc-pot">Pot of Gold</span>!
+                </h2>
+
+                <div class="spc-prize-band-meta">
+                    <span class="spc-prize-band-item">
+                        FREE exam voucher for HR certification exam of your choice
+                        with enrollment of live instructor-led course.
+                    </span>
+                    <span class="spc-prize-band-sep" aria-hidden="true">·</span>
+                    <span class="spc-prize-band-value">Up to a $695 value!!</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ╔══════════════════════════════════════════════════════╗
+         ║  S3 · GUARANTEE + ENTRY CTA — Trust left / Act right║
+         ╚══════════════════════════════════════════════════════╝-->
+        <section class="spc-guarantee" id="guarantee" aria-labelledby="spc-guarantee-title">
+            <div class="spc-inner">
+                <div class="spc-guarantee-grid">
+
+                    <!-- LEFT: Trust copy -->
+                    <div class="spc-guarantee-trust">
+                        <div class="spc-guarantee-tag" aria-label="All entries win a prize">
+                            <span aria-hidden="true">🏆</span> All Entries Win
+                        </div>
+
+                        <h2 id="spc-guarantee-title" class="spc-guarantee-heading">
+                            You're <em>GUARANTEED</em> to WIN!
+                        </h2>
+
+                        <div class="spc-guarantee-points">
+                            <div class="spc-guarantee-point">
+                                <div class="spc-guarantee-point-icon" aria-hidden="true">✓</div>
+                                <p class="spc-guarantee-point-text">All entries will receive a prize.</p>
+                            </div>
+                            <div class="spc-guarantee-point">
+                                <div class="spc-guarantee-point-icon" aria-hidden="true">✓</div>
+                                <p class="spc-guarantee-point-text">Other prizes include savings of up to $100 on any live
+                                    instructor-led course.</p>
+                            </div>
+                        </div>
+                    </div><!-- /guarantee-trust -->
+
+                    <!-- RIGHT: Action card -->
+                    <div class="spc-guarantee-action">
+                        <p class="spc-action-eyebrow">Ready to Enter?</p>
+                        <h3 class="spc-action-heading">
+                            Simply fill out the brief contest entry form.
+                        </h3>
+                        <div class="spc-action-cta">
+                            <a href="#" class="btn spc-btn-gold spc-btn-lg spc-btn-pill">
+                                🍀&nbsp; Enter the Contest
+                            </a>
+                        </div>
+
+                        <div class="spc-guarantee-divider" aria-hidden="true"></div>
+
+                        <p class="spc-action-notify">
+                            You will be notified of your prize via email on
+                            <span class="spc-date-hl">April 1st</span>.
+                        </p>
+                    </div><!-- /guarantee-action -->
+
+                </div><!-- /guarantee-grid -->
+            </div>
+        </section>
+
+
+        <!-- ╔══════════════════════════════════════════════════════╗
+         ║  S4 · CERTIFICATIONS — Dark green authority anchor ║
+         ╚══════════════════════════════════════════════════════╝-->
+        <section class="spc-certs" aria-labelledby="spc-certs-label">
+            <div class="spc-inner">
+
+                <p id="spc-certs-label" class="spc-certs-label">HR certification exams supported include:</p>
+
+                <div class="spc-certs-pills" role="list">
+                    <span class="spc-cert-pill" role="listitem">PHR</span>
+                    <span class="spc-cert-pill" role="listitem">SPHR</span>
+                    <span class="spc-cert-pill" role="listitem">SHRM-CP</span>
+                    <span class="spc-cert-pill" role="listitem">SHRM-SCP</span>
+                    <span class="spc-cert-pill" role="listitem">aPHR</span>
+                </div>
+
+                <p class="spc-certs-conditions">
+                    <em>Conditions apply: cannot be combined with any other promotional discount;
+                        only available through HR.com (not affiliates or partners)</em>
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ╔══════════════════════════════════════════════════════╗
+         ║  S5 · LEAD GEN BANNER — Extra conversion layer     ║
+         ╚══════════════════════════════════════════════════════╝-->
+        <section class="spc-leadgen" aria-labelledby="spc-leadgen-title">
+            <div class="spc-leadgen-card">
+                <h2 id="spc-leadgen-title" class="spc-leadgen-heading">
+                    Don't miss out on HR.com Certification<br>Specials &amp; Announcements
+                </h2>
+                <a href="#" class="btn spc-btn-white-solid spc-btn-pill spc-btn-lg">
+                    Sign Up Now to Stay Updated
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ╔══════════════════════════════════════════════════════╗
+         ║  S6 · CONTACT — Final trust strip                  ║
+         ╚══════════════════════════════════════════════════════╝-->
+        <section class="spc-contact" aria-labelledby="spc-contact-title">
+            <div class="spc-inner">
+                <h2 id="spc-contact-title" class="spc-contact-heading">
+                    Contact HR.com's Exam Preparation Team
+                </h2>
+
+                <div class="spc-contact-row">
+
+                    <div class="spc-contact-item">
+                        <div class="spc-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
+                            </svg>
+                        </div>
+                        <span>1-877-472-6648 Ext. 102</span>
+                    </div>
+
+                    <div class="spc-contact-item">
+                        <div class="spc-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </div>
+                        <a href="mailto:certification@hr.com">certification@hr.com</a>
+                    </div>
+
+                    <div class="spc-contact-item">
+                        <div class="spc-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 01-7.93-7h2.02c.43 2.8 2.37 5 5.91 5s5.48-2.2 5.91-5h2.02A8 8 0 0112 20zm-5.91-9C6.52 8.2 8.46 6 12 6s5.48 2.2 5.91 5H6.09z" />
+                            </svg>
+                        </div>
+                        <a href="https://hr.com/prepcourse" target="_blank"
+                            rel="noopener noreferrer">hr.com/prepcourse</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom rainbow strip -->
+        <div class="spc-rainbow-rule" aria-hidden="true"></div>
+
+    </div><!-- /#st-patrick-contest -->
+
+</body>
+
+</html>

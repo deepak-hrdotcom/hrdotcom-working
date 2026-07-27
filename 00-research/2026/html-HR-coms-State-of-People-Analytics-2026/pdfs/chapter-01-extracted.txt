@@ -1,0 +1,122 @@
+ Executive Summary
+ Organizations have access to more workforce data than ever, yet many still struggle to
+turn that information into meaningful business action. Findings from HR.com’s State
+of People Analytics 2026 report, informed by a three-round Delphi study and advisory
+board discussions with senior people analytics practitioners and industry experts, reveal
+a persistent execution gap. When asked which single barrier would unlock the greatest
+organizational impact if completely solved, 57% of experts identify this execution gap as
+ the primary challenge facing the field.
+The findings suggest that organizations no longer struggle primarily with data access or
+ reporting capability. Instead, the larger challenge is decision activation, which refers to
+partnering directly with business leaders to turn workforce insights into concrete action
+plans, operational changes, and measurable follow-through. Half of the experts view this
+as the key to closing the execution gap.
+ The study also shows that people analytics increasingly gains influence through
+ business relevance and operational integration rather than technical sophistication
+ alone. Experts define high-impact analytics teams as those embedded into routine
+ leadership and operational planning discussions, where workforce insights directly
+shape business decisions. At the same time, 50% of experts state that the biggest
+barrier keeping analytics teams out of operational planning meetings is lack of
+ relevance, meaning workforce metrics are not tied closely enough to financial or
+ operational goals.
+ The findings also reveal growing caution around large-scale AI expansion. While AI
+ is expected to enhance analytics, experts stress the continued importance of human
+judgment and context. With limited resources, 92% recommend piloting AI in targeted
+use cases rather than scaling broadly.
+Ultimately, 43% of experts conclude that the primary role of the people analytics
+function over the next two years must evolve into that of a Strategic Advisor that guides
+executive strategy with workforce insights and research. Future competitive advantage
+will depend more on helping organizations act effectively on the information they
+already have.
+ We examine these and other insights in our summary of key findings below.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+3 HR.com’s State of People Analytics 2026
+
+--- PAGE BREAK ---
+
+ Our Major Research Findings
+ The execution gap is the primary hurdle for people analytics.
+Major
+ ●   When asked which single barrier would unlock the greatest
+ 1 Finding
+ organizational impact if completely solved first, 57% of experts
+selected the execution gap, defined as insights being produced but not
+ translated into action.
+ ●   Furthermore, experts cited fragmented systems (58%) and a lack of
+ownership (42%) as the most frequent points of process breakdown.
+ Business relevance is the new credibility.
+Major
+ ●   The biggest barrier keeping analytics teams out of operational
+2 Finding
+planning meetings is lack of relevance, with 50% of experts stating
+ that workforce metrics are simply not tied closely enough to financial
+ or operational goals.
+ ●   In Round 2 choices, 58% of experts prioritize improving the quality of
+hire and time to productivity, and 58% prioritize building future skills
+and workforce capability, to demonstrate maximum business value.
+ ●   When forced to choose a single outcome in Round 3, 35% of experts
+prioritize improving leadership effectiveness, which outranks
+workforce productivity (29%) and future skills building (29%).
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+4 HR.com’s State of People Analytics 2026
+
+--- PAGE BREAK ---
+
+ High impact teams are embedded into operational routines.
+Major
+ ●   In Round 2, experts generate a three-way statistical tie at 58%,
+ 3 Finding
+identifying high-impact people analytics functions as those that:
+    embed analytics into routine leadership and operational planning
+meetings
+    start analytics efforts with specific business problems
+    measure success through business impact and follow-through
+rather than report usage
+ ●   Given limited budgets and headcount, 75% of respondents state that
+organizations must aggressively scale the embedding of analytics into
+routine business decision-making.
+ Business acumen overtakes technical capability to close the execution gap.
+Major
+ ●   To close the execution gap over the next two years, 67% of experts
+4 Finding
+select decision activation, which means partnering directly with
+business leaders to turn insights into action plans, and 58% select
+business acumen, which means understanding operational priorities and
+ linking analytics to financial outcomes.
+ ●   These capabilities outrank technical or baseline proficiencies in the
+ Round 2 data, including data quality and governance (50%), data
+storytelling (42%), data integration (42%), and predictive analytics (33%).
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+5 HR.com’s State of People Analytics 2026
+
+--- PAGE BREAK ---
+
+ Artificial intelligence acts as an accelerator but requires human judgment.
+Major
+ ●   AI is poised to revolutionize the function, with experts split evenly on
+ 5 Finding
+its greatest long-term value, as 36% point to automating tedious data
+preparation while another 36% favor democratization, which means
+allowing managers to access and use workforce data without relying
+on analysts.
+ ●   However, human judgment is more vital than ever. Experts cite
+over-reliance on AI without applying human judgment as the
+single greatest risk (50%). To counter this risk, 43% select decision
+accountability, which requires leaders to justify major AI-assisted
+decisions, as the single best safeguard.
+ ●   To manage this transition safely, 92% of experts recommend piloting
+new AI tools in small areas rather than aggressively rolling them out
+enterprise wide.
+ The function must embrace the role of Strategic Advisor.
+Major
+ ●   In the final round, 43% of experts conclude that the primary role of
+6 Finding
+ the people analytics function over the next two years is a ‘Strategic
+Advisor’ that guides executive strategy with workforce insights
+and research. This outranks the roles of Data Integrator (29%) and
+Embedded Partner (29%).
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+6 HR.com’s State of People Analytics 2026
+
+--- PAGE BREAK ---
+

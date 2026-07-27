@@ -1,0 +1,699 @@
+<!-- @format --><!-- 
+<link
+  rel="stylesheet"
+  href="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr_west_style.css"
+/> -->
+<style type="text/css">.speakers-intro {
+    display: flex;
+  }
+
+  .hr-west_info>p {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 20px 0px 10px 0px;
+  }
+
+  .hr-west_info>p>span {
+    display: block;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    margin: 0;
+  }
+
+  /* apply to speak */
+
+  .apply-spk {
+    position: relative;
+    background: #91278c;
+    border-radius: 20px;
+    margin: 80px auto 40px auto;
+    max-width: 850px;
+  }
+
+  .apply-spk-inner {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 1.25rem;
+  }
+
+  .apply-spk-content {
+    width: 80%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+
+  .apply-spk-content p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0px;
+    line-height: 1.6;
+  }
+
+  .apply-spk-content h5 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+
+  .apply-spk-image {
+    position: relative;
+    width: 40%;
+    height: 100%;
+  }
+
+  .apply-spk-image .circle-shape {
+    position: absolute;
+    bottom: -300px;
+    right: -26px;
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.3;
+  }
+
+  .apply-spk>img {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    max-width: 200px;
+  }
+
+  .button-wrap {
+    margin-top: 30px;
+  }
+
+  .sm {
+    font-size: 16px !important;
+    margin-top: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* end apply to speak */
+  /* early bird offer */
+
+  .early-bird-container {
+    /* border: 1px solid red; */
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .early-bird-container {
+      grid-template-columns: 3fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .early-bird-offer {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px;
+    border: 1px;
+    border-radius: 5px auto;
+    /* text-align: center; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    /* max-width: 600px; */
+    justify-content: center;
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .early-bird-img {
+    width: 100%;
+    max-width: 250px;
+    max-height: 100%;
+  }
+
+  .early-bird-text {
+    width: 100%;
+    font-size: 30px;
+    color: #91278c;
+    line-height: 1.3;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .call-for-speakers {
+    background: rgb(142, 39, 138);
+    background: linear-gradient(48deg,
+        rgba(142, 39, 138, 1) 0%,
+        rgba(35, 34, 131, 1) 100%);
+    color: black;
+    padding: 10px;
+    border: 1px;
+    text-align: center;
+    border-radius: 5px auto;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    min-height: 150px;
+  }
+
+  .call-for-speakers p {
+    font-size: 20px;
+    color: #ffff;
+  }
+
+  .evnt_spk_wrapper.speakersection .mot_js_card .spk_logo {
+    top: 145px !important;
+  }
+
+  .evnt_spk_wrapper.speakersection .mot_js_card .js_card_img > img {
+    border-radius: 25px 25px 0px 0px !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    .early-bird-offer {
+      gap: 4rem;
+      grid-template-columns: auto 1fr;
+      justify-items: start;
+    }
+
+    .early-bird-text {
+      text-align: left;
+    }
+  }
+
+  /* end early bird offer */
+
+  a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .hero-btn-container {
+    justify-self: center;
+  }
+
+  @media screen and (min-width: 992px) {
+    .hero-btn-container {
+      justify-self: start;
+    }
+  }
+
+  /* New Hero Section Styles */
+  .new-hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+  }
+  
+  .new-hero-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .new-hero-logo img {
+    height: 120px;
+    width: auto;
+  }
+  
+  .new-hero-subheader {
+    font-size: 42px;
+    font-weight: 900;
+    color: #2a343e;
+    letter-spacing: -0.03em;
+    margin: 0;
+    line-height: 1.1;
+    border-left: 4px solid #91278c;
+    padding-left: 25px;
+    text-align: left;
+  }
+  
+  .new-hero-instruction {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ef5924; /* Orange color from theme */
+    margin: 30px 0 0 0;
+    padding: 15px 40px;
+    background-color: rgba(239, 89, 36, 0.08);
+    border-radius: 50px;
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 768px) {
+    .new-hero-logo {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .new-hero-subheader {
+      border-left: none;
+      border-top: 3px solid #91278c;
+      padding-left: 0;
+      padding-top: 15px;
+      text-align: center;
+      font-size: 32px;
+    }
+    .new-hero-instruction {
+      font-size: 20px;
+      padding: 12px 25px;
+    }
+  }
+</style>
+<div class="hr-west_container-fluid" style="display: none;">
+<div class="hr-west_container">
+<div class="hr-west_wrapper">
+<div class="hr-wrapper_info">
+<div class="hr-west_info"><img alt="HRWest HR Conference HRWest Logo" height="125" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png" width="155" />
+<p>HRWest Conference Speakers</p>
+</div>
+<!--<h2>HR Strategy / HR Technology / Talent / Compliance</h2>--><!-- <h2>HR Practitioners | Thought Leaders | Visionaries</h2> -->
+
+<p class="para" style="font-size: 15px; line-height: 1.4;margin-top: 16px"><strong>We invite HR professionals and thought leaders to present sessions, participate in panel discussions, and host roundtables at HRWest 2026!</strong> If you have real-world insights, hands-on experience, or practical strategies to share with the HR community, we encourage you to apply.</p>
+
+<p class="para" style="font-size: 15px; margin-top: 8px; line-height: 1.2;margin-bottom: 16px">We are especially interested in insights that are highly relevant to HR professionals&#39; lives today. Our tracks are <strong>HR Tech, HR Strategy/AI, Talent (this includes HR career tips), Legal and Compliance, Leadership, and Health, Wellness, Benefits.</strong></p>
+
+<div class="hero-btn-container" style="display: flex; align-items: center; display: none;"><!-- <div class="rs_btnset" style="width: 170px; padding: 0 10 0 0">
+              <a
+                class="hr_custom_btn gradient_btn btn_large round"
+                href="/en/webcasts_events/live_events/hr-west-2025-registration_lt8ybqxq.html"
+                >Register Now</a
+              >
+            </div> -->
+<div class="rs_btnset" style="width: 170px;margin-top: 0 !important;"><a class="hr_custom_btn gradient_btn btn_large round" id="fc_1718298636298" name="fc_1718298636298" onclick="loadPopup('fc_1718298636298')">Apply to Speak</a></div>
+<!-- <p class="para">Deadline: April 17th</p> --></div>
+
+<p class="para" style="font-size: 13px; font-style: italic;margin-top: 10px; margin-bottom: 20px">Please note: Solution providers, please visit the <a class="hrw-link" href="https://www.hr.com/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" rel="noopener noreferrer" target="_blank">sponsorship page</a> for visibility opportunities.</p>
+
+<div class="reg_info" style="display: none"><svg height="36" viewbox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <lineargradient gradientunits="objectBoundingBox" id="linear-gradient" x1="1" x2="0" y1="1"> <stop offset="0" stop-color="#ef5924"></stop> <stop offset="1" stop-color="#fcb22f"></stop> </lineargradient> </defs> <path d="M32.247,17.994,35.48,14.83a1.675,1.675,0,0,0-.75-2.836l-4.405-1.124,1.242-4.36a1.7,1.7,0,0,0-2.086-2.086L25.123,5.665,24,1.258a1.687,1.687,0,0,0-2.835-.75L18,3.767,14.837.508A1.687,1.687,0,0,0,12,1.258L10.877,5.665,6.518,4.423A1.7,1.7,0,0,0,4.433,6.509l1.242,4.36L1.27,11.994A1.675,1.675,0,0,0,.52,14.83l3.233,3.164L.52,21.159A1.675,1.675,0,0,0,1.27,24l4.405,1.124L4.433,29.48a1.7,1.7,0,0,0,2.086,2.086l4.359-1.242L12,34.73a1.672,1.672,0,0,0,2.835.75L18,32.246l3.163,3.234A1.679,1.679,0,0,0,24,34.73l1.124-4.407,4.359,1.242a1.7,1.7,0,0,0,2.086-2.086l-1.242-4.36L34.73,24a1.675,1.675,0,0,0,.75-2.836l-3.233-3.164Z" fill="url(#linear-gradient)" transform="translate(0 0)"></path> </svg>
+
+<div class="reg-detail">
+<p>SPECIAL OFFER: Register for</p>
+
+<h6><span>$199</span> until Jan 14, 2024</h6>
+</div>
+</div>
+
+<p><span></span></p>
+</div>
+
+<div class="hr-west-banner"><img alt="Enthusiastic Conference Speaker" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/speakerpage_headerimage.png" /></div>
+</div>
+</div>
+</div>
+
+<!-- New Hero Section -->
+<div class="hr-west_container">
+  <div class="new-hero-section">
+    <div class="new-hero-logo">
+      <img alt="HRWest HR Conference HRWest Logo" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png" />
+      <h2 class="new-hero-subheader">HRWest Conference<br>Speakers</h2>
+    </div>
+    <p class="new-hero-instruction">Click on speakers' photos to see details on their sessions!</p>
+  </div>
+</div>
+
+<div class="hr-west_container">
+<h3 class="centitle mrtp50 mrtb40" style="display: none;">HRWest 2026 Speakers</h3>
+
+<div class="evnt_spk_wrapper speakersection"><!--speaker start-->
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/dr-alireza-boloorchi_mox7msxe.html" target="_blank"><img alt="HRWest HR Conference Speaker Dr. Alireza Boloorchi" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/alireza-boloorchi-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Oklahoma State University Logo" src="https://public-cdn.hr.com/system/app/media/rs/2015/9/1/ie0z1c3k/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Dr. Alireza Boloorchi</div>
+</div>
+
+<div class="js_card_info">
+<p>Professor and CEO</p>
+
+<h4>Oklahoma State University &amp; Catch Up AI</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/lee-cage-jr_mox7qf64.html" target="_blank"><img alt="HRWest HR Conference Speaker Lee Cage Jr." src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference BDO USA Logo" src="https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Lee Cage Jr.</div>
+</div>
+
+<div class="js_card_info">
+<p>Director, Enterprise Transformation, Strategy &amp; Technology</p>
+
+<h4>BDO USA</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/rosalind-roz-cohen_mox7tgck.html" target="_blank"><img alt="HRWest HR Conference Speaker Rosalind Roz Cohen" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/roz-cohen-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Socius Strategies Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morqbiut/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Rosalind &quot;Roz&quot; Cohen</div>
+</div>
+
+<div class="js_card_info">
+<p>CEO/Founder</p>
+
+<h4>Socius Strategies</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/treena-diebolt_mox7vqo2.html" target="_blank"><img alt="HRWest HR Conference Speaker Treena Diebolt" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Otter.ai Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Treena Diebolt</div>
+</div>
+
+<div class="js_card_info">
+<p>Vice President, People</p>
+
+<h4>Otter.ai</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/edie-goldberg_mox7xxzf.html" target="_blank"><img alt="HRWest HR Conference Speaker Edie Goldberg" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/edie-goldberg-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference E. L. Goldberg &amp; Associates Logo" src="https://public-cdn.hr.com/system/app/media/rs/2013/2/1/hco5svrr/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Edie Goldberg</div>
+</div>
+
+<div class="js_card_info">
+<p>Founder &amp; President</p>
+
+<h4>E. L. Goldberg &amp; Associates</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/natalie-grabher_mox7zzjg.html" target="_blank"><img alt="HRWest HR Conference Speaker Natalie Grabher" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/natalie-grabher-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Hall of Frames Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo356yk9/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Natalie Grabher</div>
+</div>
+
+<div class="js_card_info">
+<p>VP of HR</p>
+
+<h4>Hall of Frames</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="www.hr.com/en/about_us/splash_pages/stephanie-hancock_mox82g4y.html" target="_blank"><img alt="HRWest HR Conference Speaker Stephanie Hancock" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/stephanie-hancock-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Dealer Image Pro™ Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/4/29/mok35rar/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Stephanie Hancock</div>
+</div>
+
+<div class="js_card_info">
+<p>Director of People and Culture</p>
+
+<h4>Dealer Image Pro&trade;</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/nancy-hauge_mox85aye.html" target="_blank"><img alt="HRWest HR Conference Speaker Nancy Hauge" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Automation Anywhere Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Nancy Hauge</div>
+</div>
+
+<div class="js_card_info">
+<p>Chief People Experience Officer</p>
+
+<h4>Automation Anywhere</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/christina-herrmann_mox8uskx.html" target="_blank"><img alt="HRWest HR Conference Speaker Christina Herrmann" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/christina-smith-herrmann-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Christina Herrmann initials" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/christina-herrmann-logo.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Christina Herrmann</div>
+</div>
+
+<div class="js_card_info">
+<p>Global Chief People Officer</p>
+<!-- <h4>The Oliver Agency</h4> --></div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/howard-kornfeld-md_moxas3xw.html" target="_blank"><img alt="HRWest HR Conference Speaker Howard Kornfeld, MD" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/howard-kornfeld-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Recovery Without Walls" src="https://public-cdn.hr.com/system/app/media/rs/2026/5/8/moxah14a/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Howard Kornfeld, MD</div>
+</div>
+
+<div class="js_card_info">
+<p>Director</p>
+
+<h4>Recovery Without Walls</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/emma-lidgett_mox87f5i.html" target="_blank"><img alt="HRWest HR Conference Speaker Emma Lidgett" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/emma-lidgett-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Kainos Logo" src="https://public-cdn.hr.com/system/app/media/rs/2021/10/16/kuttvljc/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Emma Lidgett</div>
+</div>
+
+<div class="js_card_info">
+<p>Global Head of Talent Development and Learning</p>
+
+<h4>Kainos</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/debbie-mcgrath_moxb67as.html" target="_blank"><img alt="HRWest HR Conference Speaker Debbie McGrath" src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference HR.com Logo" src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Debbie McGrath</div>
+</div>
+
+<div class="js_card_info">
+<p>CEO / Founder and Chief Instigator</p>
+
+<h4>HR.com</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/laura-middleton_mox89rm1.html" target="_blank"><img alt="HRWest HR Conference Speaker Laura Middleton" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/laura-middleton-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference HRCP - Human Resource Certification Preparation Logo" src="https://public-cdn.hr.com/system/app/media/rs/2023/12/12/lq2rdkt6/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Laura Middleton</div>
+</div>
+
+<div class="js_card_info">
+<p>CEO</p>
+
+<h4>HRCP - Human Resource Certification Preparation</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/mark-monaghan_mox8dlvp.html" target="_blank"><img alt="HRWest HR Conference Speaker Mark Monaghan" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/mark-monaghan-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference iQor Logo" src="https://public-cdn.hr.com/system/app/media/rs/2014/4/8/htrbviw9/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Mark Monaghan</div>
+</div>
+
+<div class="js_card_info">
+<p>Vice President of Organizational Development</p>
+
+<h4>iQor</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/dr-lauren-s-park-phd_mox8oecf.html" target="_blank"><img alt="HRWest HR Conference Speaker Dr. Lauren S. Park, PhD" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lauren-park-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference SAP SuccessFactors Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/2/11/mlicv0tp/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Dr. Lauren S. Park, PhD</div>
+</div>
+
+<div class="js_card_info">
+<p>Quantitative Science Team Lead, Future of Work Research Lab</p>
+
+<h4>SAP SuccessFactors</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/theresa-parra_mox8qmw0.html" target="_blank"><img alt="HRWest HR Conference Speaker Theresa Parra" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/theresa-parra-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Netafim - North America Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo34z64p/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Theresa Parra</div>
+</div>
+
+<div class="js_card_info">
+<p>Executive Director, People &amp; Development</p>
+
+<h4>Netafim - North America</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/ramprasad-reddy_mox8soki.html" target="_blank"><img alt="HRWest HR Conference Speaker Ramprasad Reddy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/ramprasad-reddy-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference NSF International Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morcuqco/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Ramprasad Reddy</div>
+</div>
+
+<div class="js_card_info">
+<p>Senior Manager, HRIS</p>
+
+<h4>NSF International</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/allison-west_mor9um86.html" target="_blank"><img alt="HRWest HR Conference Speaker Allison West, Esq., SHRM-SCP, AWI-CH" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/allison-west-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Employment Practices Specialists Logo" src="https://public-cdn.hr.com/system/app/media/rs/2013/4/17/hfmujyr2/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Allison West, Esq., SHRM-SCP, AWI-CH</div>
+</div>
+
+<div class="js_card_info">
+<p>Principal</p>
+
+<h4>Employment Practices Specialists</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/dr-jonathan-h-westover_mox8wvv7.html" target="_blank"><img alt="HRWest HR Conference Speaker Dr. Jonathan H. Westover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/jonathan-westover-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference Western Governors University Logo" src="https://public-cdn.hr.com/system/app/media/rs/2021/11/18/kw554jn6/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Dr. Jonathan H. Westover</div>
+</div>
+
+<div class="js_card_info">
+<p>Associate Dean and Director of HR Academic Programs</p>
+
+<h4>Western Governors University</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/adilen-valentina_mox8ywdf.html" target="_blank"><img alt="HRWest HR Conference Speaker Adilen Valentina" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/adilen-valentina-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference NWCTHRA Logo" src="https://public-cdn.hr.com/system/app/media/rs/2026/4/28/moixc989/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Adilen Valentina</div>
+</div>
+
+<div class="js_card_info">
+<p>Human Resource Director</p>
+
+<h4>NWCTHRA</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/mark-vickers_mox91nrp.html" target="_blank"><img alt="HRWest HR Conference Speaker Mark Vickers" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/mark-vickers-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference HR.com Logo" src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Mark Vickers</div>
+</div>
+
+<div class="js_card_info">
+<p>Chief Research Analyst &amp; Data Wrangler</p>
+
+<h4>HR.com</h4>
+</div>
+</div>
+<!--speaker end--><!--speaker start-->
+
+<div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/mike-wood_mox946ck.html" target="_blank"><img alt="HRWest HR Conference Speaker Mike Wood" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/mike-wood-350x350.jpg" /> </a>
+
+<div class="spk_logo"><img alt="HRWest HR Conference HR.com Logo" src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" /></div>
+
+<div class="js_card_dls">
+<div class="spkr-name">Mike Wood</div>
+</div>
+
+<div class="js_card_info">
+<p>Executive Community Leader, Talent Acquisition</p>
+
+<h4>HR.com</h4>
+</div>
+</div>
+<!--speaker end--></div>
+<!--------------------------------------------------></div>

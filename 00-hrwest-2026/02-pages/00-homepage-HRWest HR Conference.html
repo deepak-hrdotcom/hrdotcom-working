@@ -1,0 +1,2598 @@
+<!-- @format --><!-- <link href="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr_west_style.css"
+  rel="stylesheet" /> --><!-- <link
+  rel="stylesheet"
+  href="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr-west-style-tokens-2026.css"
+/> -->
+<style type="text/css">
+  .hero_card_wrapper {
+    padding-top: 0px !important;
+  }
+
+  .evnt_abs_info {
+    margin: 20px auto !important;
+  }
+
+  .apply-spk {
+    position: relative;
+    background: #91278c;
+    border-radius: 20px;
+    margin: 80px auto 40px auto;
+    max-width: 850px;
+  }
+
+  .apply-spk-inner {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 1.25rem;
+  }
+
+  .apply-spk-content {
+    width: 80%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+
+  .apply-spk-content p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0px;
+    line-height: 1.6;
+  }
+
+  .apply-spk-content h5 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+
+  .apply-spk-image {
+    position: relative;
+    width: 40%;
+    height: 100%;
+  }
+
+  .apply-spk-image .circle-shape {
+    position: absolute;
+    bottom: -300px;
+    right: -26px;
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.3;
+  }
+
+  .apply-spk>img {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    max-width: 200px;
+  }
+
+  .button-wrap {
+    margin-top: 30px;
+  }
+
+  .ext-class {
+    font-size: 48px !important;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.1 !important;
+    margin: 0px 0px 10px 0px !important;
+  }
+
+  .hero_card_wrapper .hero_card>h4 {
+    font-size: 24px;
+  }
+
+  .hero_card_wrapper .hero_card>h4>span {
+    font-size: 32px;
+  }
+
+  .hr-west_info>p>span {
+    display: block;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    margin: 0;
+  }
+
+  .hr-wrapper_info>h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a343e;
+    line-height: 1.5;
+    margin: 20px 0px 10px 0px;
+  }
+
+  .hr-wrapper_info>h2 {
+    font-weight: 400 !important;
+  }
+
+  .spk_logo>img {
+    border-radius: 100px;
+  }
+
+  .swocas_wrapper .mot_js_card .js_card_img>img {
+    border-radius: 100px 100px 0px 0px;
+  }
+
+  .purple {
+    background:
+      url(https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Learn-from-the-best.webp),
+      linear-gradient(45deg, #91278c, #ef5924);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  .yellow {
+    background:
+      url(https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/chat-with-peers.webp),
+      linear-gradient(45deg, #ef5924, #fcb22f);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  .blue {
+    background:
+      url(https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/social-experiences.webp),
+      linear-gradient(45deg, #29a8df, #273a8f);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  .green {
+    background:
+      url(https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/employee-using-ai.webp),
+      linear-gradient(45deg, #338b93, #b6f492);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  @media screen and (max-width: 767px) {
+    .apply-spk>img {
+      right: -25px;
+    }
+  }
+
+  /* countdown */
+  .countdown-container {
+    /* border: 2px solid blue; */
+    margin-block: 1rem;
+    margin: 1rem 0 1rem 0;
+  }
+
+  #countdown {
+    /* width: 90vw; */
+    /* border: 2px solid red;  */
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .countdown ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown ul li {
+    list-style-type: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .countdown ul li span {
+    /* display: block; */
+    font-size: clamp(3rem, 5vw, 6rem);
+    color: #e51069;
+    font-weight: bold;
+  }
+
+  .countdown-separator {
+    display: block;
+    font-size: clamp(3rem, 5vw, 6rem) !important;
+    margin: -5px 10px;
+    color: #e51069;
+  }
+
+  /* .countdown li:first-of-type {
+    margin-right: 3rem;
+  } */
+  /* end countdown */
+  .sm {
+    font-size: 16px !important;
+    margin-top: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* sold out / special offer image */
+  /* mobile */
+  @media screen and (min-width: 768px) {
+    .sold-mobile {
+      display: none;
+    }
+  }
+
+  /* dekstop */
+  .sold {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .sold {
+      display: block;
+      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      z-index: 2;
+    }
+  }
+
+  .checkmark-list {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  .checkmark-list li {
+    position: relative;
+    margin: 10px 0;
+    padding-left: 25px;
+    color: #333;
+  }
+
+  .checkmark-list li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: green;
+    font-size: 16px;
+  }
+
+  .custom-list {
+    list-style: none;
+    margin: 0px 0px 30px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .custom-list>li {
+    list-style: none;
+    color: #2a343e;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0px 0px 30px 30px;
+    position: relative;
+    background: url(../images/black-tick.svg) top 8px left no-repeat;
+  }
+
+  .ev_wc {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+
+  .ev_wc>p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2a343e;
+    margin-top: 20px;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+
+  .ev_wc .ev_wc_infocard {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3%;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .square {
+    width: 175px;
+    height: 100px;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hero_card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-basis: 0;
+    padding-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .hero_card_wrapper .hero_card {
+    width: 100%;
+    max-width: 245px;
+    min-height: 450px;
+    border-radius: 20px;
+    padding: 55px 20px 20px 20px;
+    flex: 1 1 0px;
+    position: relative;
+    text-align: left;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .hero_card_wrapper .hero_card>h4 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0px 0px 15px 0px;
+  }
+
+  .hero_card_wrapper .hero_card>h4>span {
+    display: block;
+    font-size: 45px;
+    font-weight: 600;
+  }
+
+  .hero_card_wrapper .hero_card>p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0px 0px 15px 0px;
+  }
+
+  .grey {
+    background:
+      url(https://media-cdn.hr.com/LiveEvents/HRWest2024/thumbsupvalueimage.jpg),
+      linear-gradient(45deg, #8b8000, #967969);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  .feature {
+    max-width: 1170px;
+    margin: 60px auto 50px auto;
+    text-align: center;
+  }
+
+  .feature>p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.4;
+  }
+
+  .feature>span {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.4;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .grid-item {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px;
+    border: 1px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0);
+  }
+
+  .pargarphstyleleft {
+    text-align: left;
+  }
+
+  .slide_wrapper {
+    max-width: 500px;
+    min-width: 500px;
+    position: relative;
+    height: auto;
+    min-height: 380px;
+    padding: 20px 0px;
+    background-image: url(https://media-cdn.hr.com/LiveEvents/HRWest2024/BG_2025.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* end sold out / special offer image */
+
+  /* early bird offer */
+
+  .early-bird-container {
+    /* border: 1px solid red; */
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .early-bird-container {
+      grid-template-columns: 3fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .early-bird-offer {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px;
+    border: 1px;
+    border-radius: 5px auto;
+    /* text-align: center; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    /* max-width: 600px; */
+    justify-content: center;
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .early-bird-img {
+    width: 100%;
+    max-width: 250px;
+    max-height: 100%;
+  }
+
+  .early-bird-text {
+    width: 100%;
+    font-size: 30px;
+    color: #91278c;
+    line-height: 1.3;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .call-for-speakers {
+    background: rgb(142, 39, 138);
+    background: linear-gradient(48deg,
+        rgba(142, 39, 138, 1) 0%,
+        rgba(35, 34, 131, 1) 100%);
+    color: black;
+    padding: 10px;
+    border: 1px;
+    text-align: center;
+    border-radius: 5px auto;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    min-height: 150px;
+  }
+
+  .call-for-speakers p {
+    font-size: 20px;
+    color: #ffff;
+  }
+
+  @media screen and (min-width: 768px) {
+    .early-bird-offer {
+      gap: 4rem;
+      grid-template-columns: auto 1fr;
+      justify-items: start;
+    }
+
+    .early-bird-text {
+      text-align: left;
+    }
+  }
+
+  /* end early bird offer */
+
+  /* alliance-list */
+  .alliance-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .alliance-list span {
+    display: block;
+    border: 1px solid #333;
+    border-radius: 1rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    padding: 1rem;
+  }
+
+  /* end alliance-list */
+  /* did you know */
+  .did-you-know {
+    background: linear-gradient(48deg,
+        rgba(142, 39, 138, 1) 0%,
+        rgba(35, 34, 131, 1) 100%);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 16px;
+    padding: 3rem;
+  }
+
+  .did-you-know span {
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 3.5rem);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .did-you-know-img {
+    height: 100%;
+    display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    .did-you-know {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+
+    .did-you-know span {
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .did-you-know {
+      grid-template-columns: 1fr 3fr;
+      gap: 6rem;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+      gap: 8rem;
+    }
+
+    .did-you-know img {
+      justify-self: right;
+    }
+
+    .did-you-know span {
+      justify-self: left;
+    }
+  }
+
+  /* end did you know */
+  /* community logos */
+
+  .alliance-list {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .community-logo {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    align-self: center;
+    width: 90%;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  /* end community logos */
+
+  /* thank you banner */
+  .thank-you-banner {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-block: 2rem;
+  }
+
+  /* end thank you banner */
+  .xstitle,
+  .lgtitle {
+    text-align: center;
+  }
+
+  .xstitle::after {
+    display: none !important;
+  }
+
+  .editlink {
+    position: absolute;
+    left: 0;
+  }
+</style>
+<!-- 2026 css updates -->
+<style type="text/css">
+  /* HRWEST HERO CLEAN START */
+  .hr-west_container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 40px 16px;
+  }
+
+  .hr-west_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    min-height: fit-content !important;
+  }
+
+  .hr-wrapper_info {
+    flex: 1;
+    gap: 0;
+    padding-top: 0 !important;
+  }
+
+  .hr-wrapper_info img {
+    height: auto !important;
+  }
+
+  .hr-west-banner {
+    flex: 1;
+  }
+
+  .slide_wrapper {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .slide_wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* responsive */
+  @media (max-width: 991px) {
+    .hr-west_wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hr-west_info {
+      justify-content: center;
+    }
+
+    .rs_btnset {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media screen and(min-width: 992px) {
+    .hr-west_info img {
+      margin-left: -2rem;
+    }
+  }
+
+  .slide_wrapper {
+    min-width: fit-content;
+    min-height: auto;
+  }
+
+  .hr-wrapper_info {
+    max-width: max-content;
+    min-width: fit-content !important;
+  }
+
+  /* HRWEST HERO CLEAN END */
+  /* HRWEST NOTICE + COUNTDOWN OVERRIDE START */
+
+  .notice-grid {
+    display: grid !important;
+    grid-template-columns: 3fr 2fr !important;
+    align-items: center !important;
+    gap: 24px !important;
+    background: #f9f3fa !important;
+    border-radius: 16px !important;
+    padding: 24px 32px !important;
+    /* margin-top: -32px !important; */
+  }
+
+  .notice-box {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 16px 24px !important;
+  }
+
+  .notice-box .para {
+    max-width: none !important;
+    white-space: nowrap !important;
+  }
+
+  /* countdown force */
+  .countdown ul {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .countdown li {
+    list-style: none !important;
+    text-align: center !important;
+  }
+
+  .countdown span {
+    font-size: 34px !important;
+    font-weight: 700 !important;
+    color: var(--accent-pink) !important;
+    display: block !important;
+    line-height: 1 !important;
+  }
+
+  .countdown small {
+    font-size: 10px !important;
+    color: var(--color-text-muted) !important;
+    letter-spacing: 1px !important;
+  }
+
+  .countdown .sep {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  /* mobile */
+  @media (max-width: 768px) {
+    .notice-grid {
+      grid-template-columns: 1fr !important;
+      text-align: center !important;
+    }
+
+    .notice-box .para {
+      white-space: normal !important;
+    }
+  }
+
+  /* HRWEST NOTICE + COUNTDOWN OVERRIDE END */
+  .hr-west_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hr-wrapper_info {
+    justify-self: center;
+  }
+
+  @media screen and (min-width: 992px) {
+    .hr-west_wrapper {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .hrwest-logo {
+      margin-left: -2rem;
+    }
+
+    .hr-wrapper_info {
+      justify-self: start;
+    }
+  }
+
+  .hr-west_info {
+    gap: 0;
+    padding: 0;
+  }
+
+  .hr-west-banner {
+    max-height: 100%;
+  }
+
+  .evnt_abs_info {
+    margin: 0 auto !important;
+    background: #f9f3fa !important;
+    border-radius: 12px;
+  }
+
+  .ev_wee_wrapper .ev_wee_card .ev_wc_left>h3,
+  .ev_wee_wrapper .ev_wee_card .ev_wc_right1>h3 {
+    margin-bottom: 8px;
+  }
+
+  .ev_wee_wrapper .ev_wee_card .ev_wc_left>p,
+  .ev_wee_wrapper .ev_wee_card .ev_wc_right1>p {
+    margin-bottom: 24px;
+  }
+
+  .ev_wee_wrapper .ev_wee_card {
+    align-items: center;
+  }
+
+  /* HRWEST HERO BACKGROUND SWAP START */
+
+  .hero-section {
+    background: url('https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2026-hero-img.webp') no-repeat top -40px center;
+    background-size: cover;
+  }
+
+  /* hide right column but keep layout width */
+  .hero-section .hr-west-banner {
+    display: none;
+  }
+
+  /* reduce hero height naturally */
+  .hero-section .hr-west_container {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* mobile: shift image center */
+  @media (max-width: 768px) {
+    .hero-section {
+      background-position: center top;
+    }
+  }
+
+  /* HRWEST HERO BACKGROUND SWAP END */
+
+  /* ═══ JASON AVERBOOK KEYNOTE FEATURE — BOLD REDESIGN ═══ */
+
+  /* Full-width background wrapper */
+  .ja-keynote-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 24px;
+  }
+
+  .ja-keynote-outer {
+    background: linear-gradient(130deg, #0f1c5e 0%, #1e0a40 45%, #4a0a2e 100%);
+    padding: 48px 16px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative glowing orbs */
+  .ja-keynote-outer::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229, 16, 105, 0.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ja-keynote-outer::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(39, 58, 143, 0.5) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Inner card */
+  .ja-keynote-card {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+    z-index: 2;
+    border-radius: 24px;
+    overflow: visible;
+    gap: 0;
+  }
+
+  /* Photo column — tall, dramatic */
+  .ja-photo-col {
+    flex-shrink: 0;
+    width: 260px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(229, 16, 105, 0.6);
+    background: linear-gradient(160deg, #273a8f 0%, #1a1f5e 100%);
+    align-self: stretch;
+  }
+
+  .ja-photo-col img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s ease;
+    min-height: 280px;
+    transform: scale(1.04);
+  }
+
+  .ja-photo-col:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Content column */
+  .ja-content-col {
+    flex: 1;
+    padding: 36px 40px 36px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* Gold star badge */
+  .ja-keynote-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 30px;
+    width: fit-content;
+    margin-bottom: 2px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45);
+  }
+
+  /* Giant name */
+  .ja-name {
+    font-size: 36px !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    line-height: 1.1 !important;
+    margin: 0 0 4px 0 !important;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Session title */
+  .ja-session-title {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: rgba(253, 186, 116, 0.95) !important;
+    font-style: italic;
+    line-height: 1.45 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  /* Divider line */
+  .ja-divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #e51069, #f59e0b);
+    border-radius: 2px;
+    margin: 0;
+  }
+
+  /* Body text */
+  .ja-description {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+  }
+
+  .ja-description+.ja-description {
+    margin-top: 6px !important;
+  }
+
+  /* Hidden Learn More */
+  .ja-learn-more {
+    display: none;
+    margin-top: 6px;
+    width: fit-content;
+  }
+
+  .ja-learn-more a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #fbbf24 !important;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(251, 191, 36, 0.5);
+    padding-bottom: 2px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .ja-learn-more a:hover {
+    color: #fff !important;
+    border-color: #fff;
+  }
+
+  /* Editorial tagline — vivid strip below the dark section */
+  .ja-editorial-strip {
+    background: linear-gradient(90deg, #273a8f 0%, #91278c 50%, #e51069 100%);
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .ja-editorial-strip p {
+    font-size: 15px !important;
+    font-style: italic;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    letter-spacing: 0.2px;
+  }
+
+  .ja-editorial-strip p strong {
+    font-style: italic;
+    color: #fde68a !important;
+    font-weight: 800 !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .ja-keynote-card {
+      flex-direction: column;
+    }
+
+    .ja-photo-col {
+      width: 100%;
+      height: 260px;
+      min-height: unset;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(229, 16, 105, 0.5);
+    }
+
+    .ja-photo-col img {
+      object-position: center 12%;
+      min-height: unset;
+    }
+
+    .ja-content-col {
+      padding: 24px 20px;
+    }
+
+    .ja-name {
+      font-size: 28px !important;
+    }
+
+    .ja-keynote-outer {
+      padding: 32px 12px 36px;
+    }
+  }
+</style>
+<!-- end 2026 css updates --><!-- ═══ HRW26 HERO OFFER TICKER — scoped styles, no conflicts ═══ -->
+<style type="text/css">
+  /* Right column — stretches to match left column height */
+  .hrw26-hero-right {
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* One card — static gradient, never changes */
+  .hrw26-card {
+    flex: 1;
+    min-height: 190px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #91278c 0%, #e51069 100%);
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Fixed badge — always visible, never animates */
+  .hrw26-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    width: fit-content;
+    flex-shrink: 0;
+  }
+
+  /* Text stage — clips the sliding text */
+  .hrw26-text-stage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Each text block — stacked, slide via transform */
+  .hrw26-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(110%);
+  }
+
+  .hrw26-text.active {
+    transform: translateY(0);
+  }
+
+  /* Big headline label — sits above the giant value */
+  .hrw26-headline {
+    font-size: clamp(13px, 3.5vw, 20px) !important;
+    font-weight: 700 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 2px 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Giant value — fills the card */
+  .hrw26-price {
+    font-size: clamp(52px, 11vw, 100px) !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.04em !important;
+    display: block;
+    margin-top: 6px !important;
+  }
+
+  /* Dots */
+  .hrw26-dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .hrw26-dot {
+    height: 4px;
+    width: 18px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .hrw26-dot.active {
+    background: #fff;
+    width: 30px;
+  }
+
+  /* ── Hero layout override: scoped to .hero-section only ── */
+  .hero-section .hr-west_wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  @media screen and (min-width: 992px) {
+    .hero-section .hr-west_wrapper {
+      grid-template-columns: 4fr 1.5fr !important;
+      align-items: stretch !important;
+      gap: 40px !important;
+    }
+
+    .hero-section .hr-wrapper_info {
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+
+  /* Individual slides — all stacked via absolute */
+  .hrw26-slide {
+    position: absolute;
+    inset: 0;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.75s ease;
+    pointer-events: none;
+  }
+
+  .hrw26-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Slide 1 — purple → hot pink (brand primary) */
+  .hrw26-slide-1 {
+    background: linear-gradient(135deg, #91278c 0%, #e51069 100%);
+  }
+
+  /* Slide 2 — deep navy → brand purple */
+  .hrw26-slide-2 {
+    background: linear-gradient(135deg, #273a8f 0%, #91278c 100%);
+  }
+
+  /* Progress bar — grows over 3s, resets on slide change */
+  .hrw26-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 0 0 20px 20px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: none;
+  }
+
+  .hrw26-slide.active::after {
+    transform: scaleX(1);
+    transition: transform 3s linear;
+  }
+
+  /* Badge pill */
+  .hrw26-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: fit-content;
+  }
+
+  /* Headline */
+  .hrw26-headline {
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    line-height: 1.15 !important;
+    margin: 0 0 8px 0 !important;
+  }
+
+  /* Price — pulsing on active slide */
+  .hrw26-price {
+    font-size: 50px !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    line-height: 1 !important;
+    letter-spacing: -0.03em !important;
+    margin: 0 !important;
+    display: inline-block;
+  }
+
+  @keyframes hrw26pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.06);
+    }
+  }
+
+  .hrw26-slide.active .hrw26-price {
+    animation: hrw26pulse 2s ease-in-out infinite;
+  }
+
+  /* Sub line */
+  .hrw26-sub {
+    font-size: 13px !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    margin: 8px 0 0 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Dot indicators */
+  .hrw26-dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .hrw26-dot {
+    height: 5px;
+    width: 20px;
+    border-radius: 3px;
+    background: rgba(145, 39, 140, 0.25);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .hrw26-dot.active {
+    background: #91278c;
+    width: 34px;
+  }
+
+  /* ── Hero layout override: scoped to .hero-section only ── */
+  /* Mobile first: single column */
+  .hero-section .hr-west_wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Desktop: 3fr content | 2fr ticker */
+  @media screen and (min-width: 992px) {
+    .hero-section .hr-west_wrapper {
+      grid-template-columns: 3fr 2fr !important;
+      align-items: center !important;
+      gap: 40px !important;
+    }
+
+    /* Allow left col to use full grid column width */
+    .hero-section .hr-wrapper_info {
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+</style>
+<!-- ═══ HRW26 SPEAKERS SLIDER STYLES ═══ -->
+<style type="text/css">
+  /* One card — static gradient/background, never changes */
+  .hrw26-speaker-card {
+    flex: 1;
+    min-height: 190px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #273a8f 0%, #91278c 100%);
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Fixed badge — always visible */
+  .hrw26-speaker-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    width: fit-content;
+    flex-shrink: 0;
+    margin-bottom: 5px;
+  }
+
+  /* Text stage — clips the sliding text */
+  .hrw26-speaker-stage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Each text block — stacked, slide via transform translateX */
+  .hrw26-speaker-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(110%);
+  }
+
+  .hrw26-speaker-slide.active {
+    transform: translateX(0);
+  }
+
+  .hrw26-speaker-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .hrw26-speaker-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hrw26-speaker-name {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    line-height: 1.2 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .hrw26-speaker-title {
+    font-size: 13px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.3 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .hrw26-speaker-company {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+
+  /* Dots */
+  .hrw26-speaker-dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+
+  .hrw26-speaker-dot {
+    height: 5px;
+    width: 20px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .hrw26-speaker-dot.active {
+    background: #fff;
+    width: 34px;
+  }
+
+  @media (max-width: 600px) {
+    .hrw26-speaker-card {
+      min-height: 310px;
+    }
+
+    .hrw26-speaker-slide {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .hrw26-speaker-img {
+      width: 75px;
+      height: 75px;
+    }
+
+    .hrw26-speaker-name {
+      font-size: 20px !important;
+    }
+
+    .hrw26-speaker-title {
+      font-size: 13px !important;
+    }
+  }
+</style>
+<!-- HRWEST HERO START -->
+<div class="hr-west_container-fluid hero-section" style="padding-block: 36px">
+  <div class="hr-west_container" style="padding-block: 0 !important">
+    <div class="hr-west_wrapper"><!-- LEFT: Content -->
+      <div class="hr-wrapper_info" style="min-height: fit-content !important">
+        <div class="hr-west_info"><img alt="HRWest HR Conference HRWest Logo" class="hrwest-logo"
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png"
+            width="155" />
+          <p class="ext-class">HRWest 2026: <span>Rising Above the FOG</span></p>
+        </div>
+
+        <div style="font-size: 20px; padding-top: 10px; line-height: 1.2;">Finding clarity, connection and purpose amid
+          turbulent times</div>
+
+        <div class="rs_btnset" style="margin-top: 20px;"><button class="RedBtn btn" id="fc_1678200607921"
+            name="fc_1678200607921" onclick="loadPopup('fc_1678200607921')">Pre-register for 2027</button></div>
+      </div>
+      <!-- RIGHT: Featured Speakers Slider -->
+
+      <div class="hrw26-hero-right" id="hrw26-speakers">
+        <div class="hrw26-speaker-card"><span class="hrw26-speaker-badge">🎙️ 2026 Featured Speakers</span>
+
+          <div class="hrw26-speaker-stage" id="hrw26-speaker-stage"><!-- Speaker 1 -->
+            <div class="hrw26-speaker-slide active"><img alt="Allison West" class="hrw26-speaker-img"
+                src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/allison-west2.jpg" />
+              <div class="hrw26-speaker-info">
+                <h3 class="hrw26-speaker-name">Allison West</h3>
+
+                <p class="hrw26-speaker-title">Founder, Attorney, Investigator, Speaker, Trainer and Expert</p>
+
+                <p class="hrw26-speaker-company"><b>Employment Practices Specialists</b></p>
+              </div>
+            </div>
+            <!-- Speaker 2 -->
+
+            <div class="hrw26-speaker-slide"><img alt="Mark Monaghan" class="hrw26-speaker-img"
+                src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/mark-monaghan.jpg" />
+              <div class="hrw26-speaker-info">
+                <h3 class="hrw26-speaker-name">Mark Monaghan</h3>
+
+                <p class="hrw26-speaker-title">VP of Organizational Development</p>
+
+                <p class="hrw26-speaker-company"><b>iQor</b></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hrw26-speaker-dots" id="hrw26-speaker-dots">
+            <div class="hrw26-speaker-dot active">&nbsp;</div>
+
+            <div class="hrw26-speaker-dot">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+      <!-- HIDDEN FOR NEXT YEAR: Looping Offer Ticker -->
+
+      <div aria-hidden="true" style="display: none;">
+        <div class="hrw26-hero-right" id="hrw26-ticker">
+          <div class="hrw26-card"><!-- Fixed badge — same on both slides --><span class="hrw26-badge">⏰ Offer Ends
+              Friday</span> <!-- Text stage — only this part animates -->
+
+            <div class="hrw26-text-stage" id="hrw26-stage"><!-- Text 1 -->
+              <div class="hrw26-text active" id="hrw26-t0">
+                <p class="hrw26-headline">FINAL DAYS to Save</p>
+                <span class="hrw26-price">50%</span>
+              </div>
+              <!-- Text 2 -->
+
+              <div class="hrw26-text" id="hrw26-t1">
+                <p class="hrw26-headline">Register by Friday<br />
+                  for just</p>
+                <span class="hrw26-price">$399.</span>
+              </div>
+            </div>
+            <!-- Dot indicators -->
+
+            <div class="hrw26-dots" id="hrw26-dots">
+              <div class="hrw26-dot active">&nbsp;</div>
+
+              <div class="hrw26-dot">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- HRWEST HERO END --><!-- HRW26 TICKER JS -->
+<script>
+  (function () {
+    var texts = document.querySelectorAll('#hrw26-stage .hrw26-text');
+    var dots = document.querySelectorAll('#hrw26-dots .hrw26-dot');
+    var current = 0;
+    var total = texts.length;
+    var dur = 500; // animation ms
+
+    // Set initial transition on all text blocks
+    texts.forEach(function (t) {
+      t.style.transition = 'transform ' + dur + 'ms cubic-bezier(0.4,0,0.2,1)';
+    });
+
+    function goTo(idx) {
+      var outgoing = texts[current];
+      var next = (idx + total) % total;
+      var incoming = texts[next];
+
+      // 1. Slide outgoing UP and off
+      outgoing.style.transition = 'transform ' + dur + 'ms cubic-bezier(0.4,0,0.2,1)';
+      outgoing.style.transform = 'translateY(-110%)';
+      outgoing.classList.remove('active');
+
+      // 2. Position incoming BELOW instantly (no transition)
+      incoming.style.transition = 'none';
+      incoming.style.transform = 'translateY(110%)';
+      void incoming.offsetWidth; // force reflow
+
+      // 3. Slide incoming UP into view
+      incoming.style.transition = 'transform ' + dur + 'ms cubic-bezier(0.4,0,0.2,1)';
+      incoming.style.transform = 'translateY(0)';
+      incoming.classList.add('active');
+
+      // 4. Reset outgoing to below (instant) after animation
+      setTimeout(function () {
+        outgoing.style.transition = 'none';
+        outgoing.style.transform = 'translateY(110%)';
+      }, dur + 50);
+
+      // Dots
+      dots[current].classList.remove('active');
+      dots[next].classList.add('active');
+      current = next;
+    }
+
+    // Auto-loop every 3 seconds
+    setInterval(function () { goTo(current + 1); }, 3000);
+
+    // Dot click
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+  })();
+</script><!-- END HRW26 TICKER JS --><!-- HRW26 SPEAKERS JS -->
+<script>
+  (function () {
+    var slides = document.querySelectorAll('#hrw26-speaker-stage .hrw26-speaker-slide');
+    var dotsContainer = document.getElementById('hrw26-speaker-dots');
+    if (slides.length === 0 || !dotsContainer) return;
+
+    // Dynamically generate dots based on the number of slides
+    dotsContainer.innerHTML = '';
+    slides.forEach(function (_, i) {
+      var d = document.createElement('div');
+      d.className = 'hrw26-speaker-dot' + (i === 0 ? ' active' : '');
+      dotsContainer.appendChild(d);
+    });
+
+    var dots = document.querySelectorAll('#hrw26-speaker-dots .hrw26-speaker-dot');
+    var current = 0;
+    var total = slides.length;
+    var dur = 600; // animation ms
+
+    // Set initial transition on all slides
+    slides.forEach(function (t) {
+      t.style.transition = 'transform ' + dur + 'ms cubic-bezier(0.4,0,0.2,1)';
+    });
+
+    function goTo(idx) {
+      var outgoing = slides[current];
+      var next = (idx + total) % total;
+      var incoming = slides[next];
+
+      // 1. Slide outgoing LEFT and off (right to left animation)
+      outgoing.style.transition = 'transform ' + dur + 'ms cubic-bezier(0.4,0,0.2,1)';
+      outgoing.style.transform = 'translateX(-110%)';
+      outgoing.classList.remove('active');
+
+      // 2. Position incoming RIGHT instantly (no transition)
+      incoming.style.transition = 'none';
+      incoming.style.transform = 'translateX(110%)';
+      void incoming.offsetWidth; // force reflow
+
+      // 3. Slide incoming LEFT into view
+      incoming.style.transition = 'transform ' + dur + 'ms cubic-bezier(0.4,0,0.2,1)';
+      incoming.style.transform = 'translateX(0)';
+      incoming.classList.add('active');
+
+      // 4. Reset outgoing to RIGHT (instant) after animation
+      setTimeout(function () {
+        outgoing.style.transition = 'none';
+        outgoing.style.transform = 'translateX(110%)';
+      }, dur + 50);
+
+      // Dots
+      dots[current].classList.remove('active');
+      dots[next].classList.add('active');
+      current = next;
+    }
+
+    // Auto-loop every 4 seconds
+    var slideInterval = setInterval(function () { goTo(current + 1); }, 4000);
+
+    // Dot click
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        clearInterval(slideInterval);
+        goTo(i);
+        slideInterval = setInterval(function () { goTo(current + 1); }, 4000);
+      });
+    });
+  })();
+</script><!-- END HRW26 SPEAKERS JS --><!-- HRWEST NOTICE + COUNTDOWN START -->
+
+<div class="layout-full" style="padding-block: 0; margin-top: 1rem; display: none">
+  <div class="layout-container notice-grid">
+    <div class="notice-box">
+      <p class="para center" style="font-size: 18px"><strong> Good news: HRWest 2026 registration is priced the same as
+          2025! </strong></p>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <ul>
+        <li><span id="days">127</span><small>DAYS</small></li>
+        <li class="sep">:</li>
+        <li><span id="hours">23</span><small>HOURS</small></li>
+        <li class="sep">:</li>
+        <li><span id="minutes">27</span><small>MINUTES</small></li>
+        <li class="sep">:</li>
+        <li><span id="seconds">39</span><small>SECONDS</small></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- HRWEST NOTICE + COUNTDOWN END -->
+
+<!-- HRW26 PHOTO MONTAGE START -->
+<div class="hrw26-montage-section">
+  <style type="text/css">
+    /* ─── SCOPED WRAPPER ─── */
+    .hrw26-montage-section {
+      width: 100% !important;
+      background: #ffffff !important;
+      padding: 56px 0 48px 0 !important;
+      overflow: hidden !important;
+      position: relative !important;
+      box-sizing: border-box !important;
+    }
+
+    /* ─── HEADING BLOCK ─── */
+    .hrw26-montage-section .hrw26-head {
+      max-width: 1170px !important;
+      margin: 0 auto 36px auto !important;
+      padding: 0 24px !important;
+      text-align: center !important;
+    }
+
+    .hrw26-montage-section .hrw26-head h2 {
+      font-family: 'Roboto', Arial, sans-serif !important;
+      font-size: 36px !important;
+      font-weight: 700 !important;
+      color: #2a343e !important;
+      letter-spacing: -0.02em !important;
+      line-height: 1.2 !important;
+      margin: 0 0 10px 0 !important;
+      padding: 0 !important;
+      text-transform: none !important;
+    }
+
+    .hrw26-montage-section .hrw26-head h2::after {
+      display: none !important;
+    }
+
+    .hrw26-montage-section .hrw26-head p {
+      font-family: 'Roboto', Arial, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+      color: #6b7280 !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* ─── BRAND ACCENT STRIPE ─── */
+    .hrw26-montage-section .hrw26-stripe {
+      width: 80px !important;
+      height: 4px !important;
+      background: linear-gradient(to right, #ef4a3d, #fdb414, #94c83d, #ef146e, #273a8f) !important;
+      border-radius: 2px !important;
+      margin: 14px auto 0 auto !important;
+      display: block !important;
+    }
+
+    /* ─── MARQUEE OUTER WRAPPER (clips overflow + edge fades) ─── */
+    .hrw26-montage-section .hrw26-marquee-outer {
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .hrw26-montage-section .hrw26-marquee-outer::before,
+    .hrw26-montage-section .hrw26-marquee-outer::after {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      width: 140px !important;
+      z-index: 3 !important;
+      pointer-events: none !important;
+    }
+
+    .hrw26-montage-section .hrw26-marquee-outer::before {
+      left: 0 !important;
+      background: linear-gradient(to right, #ffffff 30%, transparent 100%) !important;
+    }
+
+    .hrw26-montage-section .hrw26-marquee-outer::after {
+      right: 0 !important;
+      background: linear-gradient(to left, #ffffff 30%, transparent 100%) !important;
+    }
+
+    /* ─── EACH SCROLLING ROW TRACK ─── */
+    .hrw26-montage-section .hrw26-row {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      width: max-content !important;
+      align-items: stretch !important;
+      margin-bottom: 12px !important;
+      will-change: transform !important;
+    }
+
+    .hrw26-montage-section .hrw26-row:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .hrw26-montage-section .hrw26-row.row-left {
+      animation: hrw26-left 45s linear infinite !important;
+    }
+
+    .hrw26-montage-section .hrw26-row.row-right {
+      animation: hrw26-right 45s linear infinite !important;
+    }
+
+    /* Hover pauses both rows */
+    .hrw26-montage-section .hrw26-marquee-outer:hover .hrw26-row {
+      animation-play-state: paused !important;
+    }
+
+    /* ─── INDIVIDUAL PHOTO CARD ─── */
+    .hrw26-montage-section .hrw26-card {
+      flex-shrink: 0 !important;
+      width: 280px !important;
+      height: 200px !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      margin-right: 12px !important;
+      display: block !important;
+      position: relative !important;
+      background: #e8e8e8 !important;
+    }
+
+    .hrw26-montage-section .hrw26-card img {
+      display: block !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      transition: transform 0.45s ease !important;
+    }
+
+    .hrw26-montage-section .hrw26-card:hover img {
+      transform: scale(1.07) !important;
+    }
+
+    /* ─── KEYFRAME ANIMATIONS ─── */
+    @keyframes hrw26-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes hrw26-right {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* ─── MOBILE ─── */
+    @media screen and (max-width: 767px) {
+      .hrw26-montage-section .hrw26-head h2 {
+        font-size: 26px !important;
+      }
+
+      .hrw26-montage-section .hrw26-marquee-outer::before,
+      .hrw26-montage-section .hrw26-marquee-outer::after {
+        width: 60px !important;
+      }
+
+      .hrw26-montage-section .hrw26-card {
+        width: 220px !important;
+        height: 160px !important;
+      }
+
+      .hrw26-montage-section .hrw26-card img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  </style>
+
+  <!-- Heading -->
+  <div class="hrw26-head">
+    <h2>Photos from HRWest 2026</h2>
+    <p>A look back at the sessions, speakers, and connections from this year's conference</p>
+    <span class="hrw26-stripe"></span>
+  </div>
+
+  <!-- Dual-Lane Marquee -->
+  <div class="hrw26-marquee-outer">
+
+    <!-- ROW 1 — scrolls LEFT (Set A + Set B duplicated for seamless loop) -->
+    <div class="hrw26-row row-left">
+      <!-- Set A -->
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" alt="Allison West at HRWest 2026" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp" alt="Allison West with Attendees" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp" alt="Capturely Table" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp" alt="Closing Keynote" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp" alt="Emcee and Speaker Yael Schy" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp" alt="Jane Kow" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" alt="Jason Averbook" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp" alt="Let's Build! Day 2" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp" alt="Let's Build! Part 1" /></div>
+      <!-- Set B (duplicate — enables seamless infinite loop) -->
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" alt="Allison West at HRWest 2026" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp" alt="Allison West with Attendees" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp" alt="Capturely Table" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp" alt="Closing Keynote" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp" alt="Emcee and Speaker Yael Schy" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp" alt="Jane Kow" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" alt="Jason Averbook" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp" alt="Let's Build! Day 2" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp" alt="Let's Build! Part 1" /></div>
+    </div>
+
+    <!-- ROW 2 — scrolls RIGHT (Set A + Set B duplicated for seamless loop) -->
+    <div class="hrw26-row row-right">
+      <!-- Set A -->
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuild2.webp" alt="Let's Build Session" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/MarkMonaghan2.webp" alt="Mark Monaghan" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/MichaelBoroff.webp" alt="Michael Boroff" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/PacificService_CreditUnion_booth.webp" alt="Pacific Service Credit Union Booth" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/RajanSahni.webp" alt="Rajan Sahni" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Registration.webp" alt="Conference Registration" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Roundtable1.webp" alt="Roundtable Session 1" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Roundtable2.webp" alt="Roundtable Session 2" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/SAPSpeaker.webp" alt="SAP Speaker" /></div>
+      <!-- Set B (duplicate — enables seamless infinite loop) -->
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuild2.webp" alt="Let's Build Session" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/MarkMonaghan2.webp" alt="Mark Monaghan" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/MichaelBoroff.webp" alt="Michael Boroff" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/PacificService_CreditUnion_booth.webp" alt="Pacific Service Credit Union Booth" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/RajanSahni.webp" alt="Rajan Sahni" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Registration.webp" alt="Conference Registration" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Roundtable1.webp" alt="Roundtable Session 1" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Roundtable2.webp" alt="Roundtable Session 2" /></div>
+      <div class="hrw26-card"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/SAPSpeaker.webp" alt="SAP Speaker" /></div>
+    </div>
+
+  </div><!-- /hrw26-marquee-outer -->
+</div>
+<!-- HRW26 PHOTO MONTAGE END -->
+
+<!-- JASON AVERBOOK KEYNOTE FEATURE START -->
+
+<div class="hr-west_container-fluid ja-keynote-section"><!-- Dark full-width background wrap -->
+  <div class="ja-keynote-outer">
+    <div class="hr-west_container" style="padding: 0; max-width: 960px;"><!-- Keynote Card -->
+      <div class="ja-keynote-card"><!-- Photo Column -->
+        <div class="ja-photo-col"><img alt="Jason Averbook — HRWest 2026 Keynote Speaker"
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/jason-averbook-350x350-3.jpg" />
+        </div>
+        <!-- Content Column -->
+
+        <div class="ja-content-col"><span class="ja-keynote-badge">⭐ Keynote Announced</span>
+
+          <div>
+            <h3 class="ja-name">Jason Averbook</h3>
+
+            <p class="ja-session-title">&ldquo;The AI-First HR Function: Strategy, Structure, and Systems&rdquo;</p>
+          </div>
+
+          <div class="ja-divider">&nbsp;</div>
+
+          <p class="ja-description">There is no one better to help HR leaders thrive in the AI age than global thought
+            leader and future-of-work visionary Jason Averbook.</p>
+
+          <p class="ja-description">This immersive one-hour workshop will be an eye-opening experience and provide you
+            with a scalable AI strategy that you&rsquo;ll be eager to put to work immediately.</p>
+          <!-- Hidden until speaker page is ready -->
+
+          <div aria-hidden="true" class="ja-learn-more"><a
+              href="/en/webcasts_events/live_events/hrwest-2026-speakers.html" tabindex="-1">Learn More &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+      <!-- /Keynote Card -->
+    </div>
+  </div>
+  <!-- /Dark background wrap --><!-- Editorial tagline strip — vivid gradient bar, full-width, sits below the dark section -->
+
+  <div class="ja-editorial-strip">
+    <p><em>One part of the can&rsquo;t-miss AI education added to <strong>HRWest</strong> for 2026!</em></p>
+  </div>
+</div>
+<!-- JASON AVERBOOK KEYNOTE FEATURE END --><!-- HR & YOU -->
+
+<div class="hr-west_container-fluid" style="padding-block: 16px">
+  <div class="hr-west_container" style="padding-top: 0">
+    <h3 class="lgtitle">The Event That Brings the HR Community Together</h3>
+    <!-- <h4 class="xstitle">HR Community Together</h4> -->
+
+    <p class="para center" style="margin: 0 auto 24px auto; max-width: 900px">Other conferences charge premium prices
+      for celebrity keynotes with little relevance to HR. HRWest delivers practical, real-world insights from HR
+      professionals you can actually learn from &mdash; without the inflated price tag.</p>
+
+    <div class="hero_card_wrapper">
+      <div class="hero_card grey">
+        <h4>Enjoy the Best HR <span style="font-size: 30px">Event Value</span></h4>
+
+        <p>Pay hundreds or thousands less than most high-quality events.</p>
+      </div>
+
+      <div class="hero_card yellow">
+        <h4>Engage With<span style="font-size: 30px">Peers</span></h4>
+
+        <p>Make new HR friends and exchange ideas during roundtable sessions.</p>
+      </div>
+
+      <div class="hero_card purple">
+        <h4>Learn From <span style="font-size: 30px">Real Experts</span></h4>
+
+        <p>Take home HR game plans and tips to thrive in 2026 and beyond.</p>
+      </div>
+
+      <div class="hero_card green">
+        <h4>Get Clarity on Your Future</h4>
+
+        <p>Discover key steps to take on critical issues (such as AI) and in your career.</p>
+      </div>
+
+      <div class="hero_card blue">
+        <h4>Experience Special <span style="font-size: 30px">AI</span> Education</h4>
+
+        <p>From contests to connecting with HR friends, this is an event you&rsquo;ll love.</p>
+      </div>
+    </div>
+
+    <div class="evnt_abs_info">
+      <div class="evnt_absi"><span>700+</span> <small>Attendees</small></div>
+
+      <div class="evnt_absi"><span>50+</span><small>Speakers</small></div>
+
+      <div class="evnt_absi"><span>8.5</span> <small>Full HR Credits</small></div>
+
+      <div class="evnt_absi"><span>30+</span> <small>Exhibitors</small></div>
+    </div>
+  </div>
+</div>
+<!-- end HR & YOU --><!-- seven tracks - did you know  - hr community meeting places -->
+
+<div class="hr-west_container" style="padding-block: 0; display: none">
+  <div class="ev_wc">
+    <h3 class="centitle">Tracks Covering ALL the Big HR Issues in 2026</h3>
+    <!-- <h6>Our “Super Seven” Tracks</h6> -->
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50" /></div>
+
+        <div>
+          <h4><strong>HR Strategy/AI</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50" /></div>
+
+        <div>
+          <h4><strong>HR Tech</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50" /></div>
+
+        <div>
+          <h4><strong>Talent</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div style="padding-top: 5px"><img alt="" height="36"
+            src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png" width="50" /></div>
+
+        <div>
+          <h4><strong>Legal and Compliance</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50" /></div>
+
+        <div>
+          <h4><strong>Health, Wellness, Benefits</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50" /></div>
+
+        <div>
+          <h4><strong>Leadership</strong></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end seven tracks - did you know  - hr community meeting places --><!-- super seven tracks -->
+
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container" style="padding-block: 0; padding-top: 40px">
+    <div class="edu_review_box" style="margin-top: 0">
+      <h2 class="centitle">Tracks Covering ALL the Big HR Issues in 2026</h2>
+
+      <div class="grid-container" style="padding-bottom: 0">
+        <div class="grid-item">
+          <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+              width="50" /></div>
+
+          <div>
+            <h4><strong>HR Tech</strong></h4>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+              width="50" /></div>
+
+          <div>
+            <h4><strong>HR Strategy/AI</strong></h4>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+              width="50" /></div>
+
+          <div>
+            <h4><strong>Talent</strong></h4>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div style="padding-top: 5px"><img alt="" height="36"
+              src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png" width="50" /></div>
+
+          <div>
+            <h4><strong>Legal and Compliance</strong></h4>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+              width="50" /></div>
+
+          <div>
+            <h4><strong>Health, Wellness, Benefits</strong></h4>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div><img alt="" height="36" src="https://media-cdn.hr.com/LiveEvents/HRWest2024/greentick_50px.png"
+              width="50" /></div>
+
+          <div>
+            <h4><strong>Leadership</strong></h4>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-subtitle">Being asked to do your job with less budget or personnel? You&#39;re not alone. HRWest
+        expert content will help you move forward with clarity and confidence.</p>
+
+      <div class="ev_wee_wrapper mb32">
+        <div class="ev_wee_card">
+          <div class="ev_wc_left">
+            <h3>HR Strategy/AI</h3>
+
+            <p align="left">HR must adapt new strategies and refine existing ones to meet today&rsquo;s changing
+              demands. In this track, get insights on how you can better plan, develop, improve and implement strategies
+              to successfully tackle a variety of HR issues.</p>
+
+            <h3>HR Tech</h3>
+
+            <p align="left">Technology&rsquo;s importance for HR is spiking, especially with the rise of Generative AI.
+              Learn the best practices, and insights about specific technologies that will help improve your day-to-day
+              HR life and performance.</p>
+          </div>
+
+          <div class="ev_wc_right"><img alt="Ideal Exhibiting Experience"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-collage-july-5.jpg"
+              style="max-height: 100%" /></div>
+        </div>
+      </div>
+
+      <div class="ev_wee_wrapper mb32">
+        <div class="ev_wee_card">
+          <div class="ev_wc_left1"><img alt="Ideal Exhibiting Experience"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-collage-july-5-v2.jpg"
+              style="max-height: 100%" /></div>
+
+          <div class="ev_wc_right1">
+            <h3>Talent</h3>
+
+            <p align="left">This track covers EVERYTHING from your company&rsquo;s talent to developing your HR skills
+              and career. Talent acquisition, talent management, retention, employee engagement, company culture, HR
+              development &mdash; they&rsquo;re all in here!</p>
+
+            <h3>Legal and Compliance</h3>
+
+            <p align="left">Employment attorneys and other experts share critical compliance insights and updates to
+              help you make sense of laws and regulations. Sessions in this highly popular track are often packed with
+              attendees.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev_wee_wrapper">
+        <div class="ev_wee_card">
+          <div class="ev_wc_left">
+            <h3>Health, Wellness, Benefits</h3>
+
+            <p align="left">Discover how to plan for a healthier and more productive workforce, and learn how to make
+              your organization&rsquo;s benefits and wellness offerings more modern and holistic to stand out from the
+              competition.</p>
+
+            <h3>Leadership</h3>
+
+            <p align="left">Explore what effective leadership looks like today in HR and the broader organization, and
+              how HR can help develop leaders who drive results.</p>
+          </div>
+
+          <div class="ev_wc_right"><img alt="Ideal Exhibiting Experience"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-collage-july-5-v3.webp"
+              style="max-height: 100%" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end super seven tracks --><!-- HOTEL ACCOMMODATIONS -->
+<style type="text/css">
+  .info-cards-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .info-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .info-card {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-card.blue-top {
+    border-top: 5px solid #273a8f;
+  }
+
+  .info-card.purple-top {
+    border-top: 5px solid #91278c;
+  }
+
+  .info-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .info-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a343e;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .info-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #4a5568;
+  }
+
+  .room-rate-box {
+    margin-top: auto;
+    background: #fff0f5;
+    border-left: 4px solid #e51069;
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .room-rate-box h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e51069;
+    margin: 0 0 5px 0;
+  }
+
+  .map-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #e8ecf7;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    gap: 8px;
+    color: #273a8f;
+    margin-top: auto;
+    width: max-content;
+    text-decoration: none;
+  }
+</style>
+<div class="hr-west_container-fluid info-cards-section">
+  <div class="hr-west_container" style="padding-top: 0">
+    <div class="info-cards-wrapper">
+      <div class="info-card blue-top">
+        <h3 style="color: #273a8f">Conference</h3>
+
+        <h4>South San Francisco Conference Center</h4>
+
+        <p>255 S Airport Blvd<br />
+          South San Francisco, CA 94080</p>
+        <a class="map-pill"
+          href="https://www.google.com/maps/place/South+San+Francisco+Conference/@37.6474648,-122.406953,17z/data=!3m1!4b1!4m6!3m5!1s0x808f79b47d5d81ad:0xfd9c1f0af6155a3d!8m2!3d37.6474606!4d-122.4043781!16s%2Fm%2F0k06vq2?entry=ttu&amp;g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"><svg fill="#273A8F" height="14" viewbox="0 0 384 512" width="14"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+            </path>
+          </svg> Open in Google Maps </a>
+      </div>
+
+      <div class="info-card purple-top">
+        <h3 style="color: #91278c">Hotel Accommodations</h3>
+
+        <h4>DoubleTree by Hilton San Francisco Airport South Blvd</h4>
+
+        <p>275 South Airport Blvd<br />
+          South San Francisco, CA 94080<br />
+          <span style="display: block; margin-top: 10px"><strong>Hotel Direct:</strong> (650) 873-3550</span>
+        </p>
+
+        <p>Guests should call the hotel directly and reference the HRWest group rate to check availability at the
+          discounted rate.<br />
+          <br />
+          We recommend booking early to secure the preferred rate.<br />
+          Complimentary parking is available for guests staying at the hotel.
+        </p>
+
+        <div class="room-rate-box">
+          <h5>Room Rate</h5>
+
+          <p style="font-weight: 600; color: #2a343e; margin: 0">$189/night before taxes and fees</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end HOTEL ACCOMMODATIONS --><!-- countdown js -->
+<script>
+  const daysEl = document.getElementById('days')
+  const hoursEl = document.getElementById('hours')
+  const minutesEl = document.getElementById('minutes')
+  const secondsEl = document.getElementById('seconds')
+  const countDownContainer = document.querySelector('.countdown-container')
+
+  const formatNumber = (n) => (n < 10 ? '0' + n : n)
+
+  // Target: June 8, 2026 11:55 PM ET
+  const EVENT_ET = {
+    year: 2026,
+    month: 5, // June (0-based)
+    day: 8,
+    hour: 23,
+    minute: 55,
+    second: 0,
+  }
+
+  const getETNow = () => {
+    const now = new Date()
+    const etString = now.toLocaleString('en-US', {
+      timeZone: 'America/New_York',
+    })
+    return new Date(etString)
+  }
+
+  const getETEvent = () => {
+    // Let browser handle DST by constructing via locale
+    const parts = {
+      year: EVENT_ET.year,
+      month: EVENT_ET.month + 1,
+      day: EVENT_ET.day,
+      hour: EVENT_ET.hour,
+      minute: EVENT_ET.minute,
+      second: EVENT_ET.second,
+    }
+
+    const iso = `${parts.year}-${String(parts.month).padStart(2, '0')}-${String(parts.day).padStart(2, '0')}T${String(parts.hour).padStart(2, '0')}:${String(parts.minute).padStart(2, '0')}:${String(parts.second).padStart(2, '0')}`
+
+    // Create in ET by appending EDT offset (auto handled by locale logic below)
+    const etDate = new Date(
+      new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York' }),
+    )
+
+    return etDate
+  }
+
+  const countdownTimer = () => {
+    const second = 1000
+    const minute = second * 60
+    const hour = minute * 60
+    const day = hour * 24
+
+    const eventDate = getETEvent().getTime()
+
+    const interval = setInterval(() => {
+      const nowET = getETNow().getTime()
+      const distance = eventDate - nowET
+
+      if (distance <= 0) {
+        clearInterval(interval)
+        countDownContainer.style.display = 'none'
+        return
+      }
+
+      daysEl.innerText = formatNumber(Math.floor(distance / day))
+      hoursEl.innerText = formatNumber(Math.floor((distance % day) / hour))
+      minutesEl.innerText = formatNumber(Math.floor((distance % hour) / minute))
+      secondsEl.innerText = formatNumber(
+        Math.floor((distance % minute) / second),
+      )
+    }, 1000)
+  }
+
+  countdownTimer()
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const all = document.querySelectorAll('.hr-west_container')
+    if (all.length > 0) {
+      const el = all[0]
+
+      el.style.paddingTop = '0'
+      el.style.paddingBottom = '0'
+
+      el.style.setProperty('margin-top', '4px', 'important')
+      el.style.setProperty('margin-bottom', '8px', 'important')
+    }
+  })
+</script><!-- end countdown js --><!-- TESTIMONIAL SLIDER JS START -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('testimonial-track');
+    if (!track) return;
+    const slides = Array.from(track.children);
+    const wrapper = document.querySelector('.testimonial-slider-wrapper');
+    const dotsContainer = document.getElementById('testimonial-dots');
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+    const intervalTime = 8000; // 8 seconds per slide
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('testimonial-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        resetInterval();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.children);
+
+    const updateSlider = () => {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[currentIndex]) {
+        dots[currentIndex].classList.add('active');
+      }
+    };
+
+    const nextSlide = () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    };
+
+    const goToSlide = (index) => {
+      currentIndex = index;
+      updateSlider();
+    };
+
+    const startInterval = () => {
+      autoPlayInterval = setInterval(nextSlide, intervalTime);
+    };
+
+    const resetInterval = () => {
+      clearInterval(autoPlayInterval);
+      startInterval();
+    };
+
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    wrapper.addEventListener('mouseleave', startInterval);
+
+    startInterval();
+  });
+</script><!-- TESTIMONIAL SLIDER JS END -->

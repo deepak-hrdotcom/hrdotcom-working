@@ -1,0 +1,1423 @@
+<!-- @format --><!-- title: HRWest 2026 Registration --><!-- @format -->
+<link href="$public/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr_west_style.css" media="screen"
+  rel="stylesheet" type="text/css" />
+<style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5 !important;
+  }
+
+  body>.ContentArea {
+    margin: 0px 0px;
+  }
+
+  body>.ContentArea>.container,
+  body>.ContentArea>.container>.row>.container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+
+  body>.ContentArea>.container>.row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  body>.container-fluid>.row>.ContentArea>.container>div[style*='float:right'] {
+    float: none !important;
+    text-align: right;
+  }
+
+  .ev_container {
+    width: 100%;
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* New Registratin Attendee Page Start here */
+  .ev_countdown_wrapper {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .ev_countdown_wrapper>h4 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2a343e;
+    margin: 0 0 15px 0px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .ev_countdown_wrapper>h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a343e;
+    margin: 0 0 30px 0px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .ev_countdown_wrapper .ev_cd_box {
+    width: 100%;
+    height: auto;
+    min-height: 110px;
+    max-width: 540px;
+    padding: 25px 80px;
+    background: #2a343e;
+    border-radius: 15px;
+    margin: 0px auto;
+  }
+
+  .ev_cd_info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .ev_cd_info>div>span {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .ev_cd_info>span {
+    display: block;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .ev_reg_buypass {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 10%;
+  }
+
+  .ev_reg_buypass .ev_bp_card {
+    width: 48.5%;
+    max-width: 330px;
+    background: #fff;
+    padding: 40px 30px 30px 30px;
+    border-radius: 15px;
+    position: relative;
+    text-align: left;
+  }
+
+  .ev_reg_buypass .ev_bp_card .bp_type {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    position: absolute;
+    left: 30px;
+    top: -18px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .ev_reg_buypass .ev_bp_card>h4 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #e51069;
+    line-height: 1.4;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .ev_reg_buypass .ev_bp_card>h4>small {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2a343e;
+    margin-bottom: 7px;
+  }
+
+  .ev_reg_buypass .ev_bp_card .bp_pb_info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .ev_reg_buypass .ev_bp_card .bp_pb_info .bp_price {
+    width: auto;
+    min-height: 46px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .ev_reg_buypass .ev_bp_card .bp_pb_info .bp_price>small {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    color: #2a343e;
+    margin-bottom: 5px;
+  }
+
+  .ev_reg_buypass .ev_bp_card .bp_pb_info .bp_price>span {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a343e;
+  }
+
+  .ev_reg_buypass .ev_bp_card>ul {
+    list-style: none;
+    margin: 35px 0 0 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .ev_reg_buypass .ev_bp_card>ul>li {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0px 20px 0px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(42, 52, 62, 1);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .ev_reg_buypass .ev_bp_card .pb_ln_next {
+    width: auto;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e51069;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 25px;
+  }
+
+  .ev_reg_buypass .ev_bp_card .pb_ln_next>svg {
+    margin-left: 10px;
+  }
+
+  .ev_reg_buypass .ev_bp_card.probg {
+    background: #161833;
+  }
+
+  .ev_reg_buypass .ev_bp_card.probg>h4 {
+    color: #00ffe6;
+  }
+
+  .ev_reg_buypass .ev_bp_card.probg>h4>small {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .ev_reg_buypass .ev_bp_card.probg .bp_pb_info .bp_price>span {
+    color: #fff;
+  }
+
+  .ev_reg_buypass .ev_bp_card.probg>ul>li {
+    color: #fff;
+  }
+
+  .firstreg {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 4px;
+  }
+
+  .tc_xsfont {
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0px 0px 0px 0px;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .tc_xsfont.lgpnk {
+    color: #e51069;
+  }
+
+  .tc_xsfont.lgblu {
+    color: #00ffe6;
+  }
+
+  .ev_kn_footer {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  ul.ev_kn_list {
+    list-style: none;
+    margin: 20px auto 20px auto;
+    padding: 0;
+    width: auto;
+    text-align: center;
+  }
+
+  ul.ev_kn_list>li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 30px 0px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    position: relative;
+    background: url($public/remoteimages/website-images/2021_siteupdate/inspire2022/images/green_tickicon.svg) top 3px left no-repeat;
+  }
+
+  .ev_tc_line {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.5;
+  }
+
+  .ev_tc_line>a {
+    color: #273a8f;
+    text-decoration: none;
+  }
+
+  #myModalViewMore .modal-dialog .modal-content button.close {
+    width: auto;
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  #myModalViewMore .modal-dialog {
+    width: 94%;
+    max-width: 720px;
+  }
+
+  #myModalViewMore .modal-dialog .modal-content .modal-body {
+    padding: 30px;
+    background: url($public/remoteimages/website-images/2021_siteupdate/inspire2022/images/ev_vm_bg.png) bottom right no-repeat;
+    background-size: 350px auto;
+    text-transform: initial;
+  }
+
+  .vm_modal_box {
+    width: 100%;
+    height: auto;
+    min-height: 410px;
+  }
+
+  .vm_modal_box>h4 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #e51069;
+    line-height: 1.4;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .vm_modal_box>h4>small {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2a343e;
+    margin-bottom: 7px;
+  }
+
+  .vm_modal_box>ul {
+    list-style: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .vm_modal_box>ul>li {
+    list-style: none;
+    display: block;
+    padding: 0px 0px 0px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    position: relative;
+    background: url($public/remoteimages/website-images/2021_siteupdate/inspire2022/images/images/green_tickicon.svg) top 3px left no-repeat;
+  }
+
+  #myModalgotoCart .modal-dialog .modal-content button.close {
+    width: auto;
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  #myModalgotoCart .modal-dialog {
+    width: 94%;
+    max-width: 720px;
+    margin-top: 60px;
+  }
+
+  #myModalgotoCart .modal-dialog .modal-content {
+    border-radius: 10px;
+  }
+
+  #myModalgotoCart .modal-dialog .modal-content .modal-body {
+    padding: 30px;
+    text-transform: initial;
+  }
+
+  .vm_col_box {
+    width: 100%;
+    height: auto;
+    min-height: 410px;
+  }
+
+  .vm_col_box>h2 {
+    font-size: 27px;
+    font-weight: 600;
+    color: #2a343e;
+    line-height: 1.4;
+    margin: 0px 0px 15px 0px;
+  }
+
+  .vm_col_box>h3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin: 0px 0px 30px 0px;
+    border-bottom: 3px solid #2a343e;
+  }
+
+  .vm_col_box>h3>span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2a343e;
+    line-height: 1.4;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .vm_col_box>h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #2a343e;
+    line-height: 1.4;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .vm_col_wrapper {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .vm_col_wrapper .vm_cart_col {
+    width: 48.5%;
+  }
+
+  .vm_col_wrapper .vm_cart_col>h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #e51069;
+    line-height: 1.4;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .vm_col_wrapper .vm_cart_col>h4>small {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2a343e;
+    margin-bottom: 7px;
+  }
+
+  .vm_col_tc {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2a343e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .vm_col_tc>i {
+    margin-right: 10px;
+    font-weight: 600;
+    font-style: normal;
+    color: #e51069;
+  }
+
+  .vm_col_tc>span>b {
+    font-weight: 500;
+    color: #e51069;
+  }
+
+  .vm_col_tc>span>a {
+    color: #146eb5;
+    text-decoration: underline;
+  }
+
+  .vm_col_note {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(42, 52, 62, 0.7);
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 991px) {
+    #myModalViewMore .modal-dialog .modal-content .modal-body {
+      background: none;
+      text-transform: initial;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .ev_reg_buypass,
+    .vm_col_wrapper {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .ev_reg_buypass .ev_bp_card,
+    .vm_col_wrapper .vm_cart_col {
+      width: 100%;
+    }
+
+    #myModalgotoCart .modal-dialog .modal-content .modal-body {
+      padding: 20px;
+      text-transform: initial;
+    }
+
+    .vm_col_box>h2 {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    .vm_col_box>h3 {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* New Registratin Attendee Page End here */
+
+  .ev_footer_bg {
+    width: 100%;
+    padding: 40px 0px 120px 0px;
+    background: #000321 url($public/remoteimages/website-images/2021_siteupdate/inspire2022/images/inspire_footer_bg.png) center bottom / contain no-repeat;
+  }
+
+  .ev_footer_help {
+    width: auto;
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+  }
+
+  .ev_footer_help>img {
+    display: block;
+    width: 80px;
+    margin-bottom: 30px;
+  }
+
+  .ev_footer_help .ev_fcontact {
+    width: auto;
+    position: relative;
+    text-align: center;
+  }
+
+  .ev_footer_help .ev_fcontact>h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 25px 0px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .ev_footer_help .ev_fcontact>h4 {
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 0 10px 0px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .ev_footer_help .ev_fcontact>span {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .ev_footer_help .ev_fcontact>span>a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  /* css for Common custom button design start 14 July 21 */
+  .hr_custom_btn_new {
+    display: inline-block;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .gradient_btn_new.red,
+  .gradient_btn_new.red:active,
+  .gradient_btn_new.red:active:focus {
+    background: linear-gradient(to right, #e2204f, #fd5b1d);
+    border: 0px solid #fff;
+    color: #fff !important;
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.red:hover {
+    background: linear-gradient(to right, #fd5b1d, #e2204f);
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.blue,
+  .gradient_btn_new.blue:active,
+  .gradient_btn_new.blue:active:focus {
+    background: linear-gradient(to right, #643598, #47246e);
+    border: 0px solid #fff;
+    color: #fff !important;
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.blue:hover {
+    background: linear-gradient(to right, #47246e, #643598);
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.purple,
+  .gradient_btn_new.purple:active,
+  .gradient_btn_new.purple:active:focus {
+    background: linear-gradient(to right, #6d258b, #e90376);
+    border: 0px solid #fff;
+    color: #fff !important;
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.purple:hover {
+    background: linear-gradient(to right, #e90376, #6d258b);
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.black,
+  .gradient_btn_new.black:active,
+  .gradient_btn_new.black:active:focus {
+    background: linear-gradient(to right, #2a343e, #2a343e);
+    border: 0px solid #fff;
+    color: #fff !important;
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.black:hover {
+    background: linear-gradient(to right, #161833, #161833);
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.white,
+  .gradient_btn_new.white:active,
+  .gradient_btn_new.white:active:focus {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    border: 0px solid #2a343e;
+    color: #2a343e !important;
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.white:hover {
+    background: linear-gradient(to right, #f2f2f2, #f2f2f2);
+    transition: all 0.3s ease;
+  }
+
+  .gradient_btn_new.btn_large {
+    padding: 16px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #fff;
+  }
+
+  .gradient_btn_new.btn_medium {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .hr_custom_btn_new.disabled,
+  .hr_custom_btn_new.disabled:hover,
+  .hr_custom_btn_new.disabled:active:focus {
+    background: #d1d2d4 !important;
+    color: #949599 !important;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .hr_custom_btn_new.FullWidth {
+    width: 100%;
+  }
+
+  .hr_custom_btn_new.FixedWidth {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .mrbt30 {
+    margin-bottom: 30px;
+  }
+
+  .mrtp30 {
+    margin-top: 30px;
+  }
+
+  /* css for Common custom button design end 14 July 21 */
+
+  /* countdown */
+  .countdown-container {
+    /* border: 2px solid blue; */
+    margin-block: 5rem;
+    margin: 8rem 0 3rem 0;
+  }
+
+  #countdown {
+    width: 90vw;
+    /* border: 2px solid red;  */
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .countdown ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown ul li {
+    list-style-type: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .countdown ul li span {
+    /* display: block; */
+    font-size: clamp(3rem, 5vw, 6rem);
+    color: #e51069;
+    font-weight: bold;
+  }
+
+  .countdown-separator {
+    display: block;
+    font-size: clamp(3rem, 5vw, 6rem) !important;
+    margin: -5px 10px;
+    color: #e51069;
+  }
+
+  .countdown li:first-of-type {
+    margin-right: 3rem;
+  }
+
+  /* end countdown */
+
+  /* sold out / special offer image */
+  /* mobile */
+  @media screen and (min-width: 768px) {
+    .sold-mobile {
+      display: none;
+    }
+  }
+
+  /* dekstop */
+  .sold {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .sold {
+      display: block;
+      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      z-index: 2;
+    }
+  }
+
+  /* end sold out / special offer image */
+
+  /* pricing table */
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .table-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  th {
+    background: #161833;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  /* end pricing table */
+  .header {
+    border: 0 !important;
+  }
+
+  .header::before {
+    display: none !important;
+  }
+
+  .nave {
+    max-height: 80px !important;
+  }
+
+  .header {
+    padding-block: 0 !important;
+    margin-block: 0 !important;
+  }
+
+  @media screen and (min-width: 1118px) {
+
+    .dropdown__menu,
+    .dropdown__submenu {
+      top: 60px !important;
+    }
+  }
+
+  .hr-west-head-info {
+    margin-bottom: 12px !important;
+    margin-top: 20px !important;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  .hrw-link {
+    color: #e51069 !important;
+    font-weight: 500 !important;
+  }
+</style>
+<!--<div>$vendorLeadForm</div>--><!--------sticky menu------->
+<header class="header" id="header">
+  <nav class="nave in-container">
+    <div class="nave__data"><a class="nave__logo" data-feathr-click-track="true"
+        data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+        href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html">HRWest 2026 </a>
+      <div class="separator">&nbsp;</div>
+
+      <div class="nave__toggle" id="nave-toggle"><svg class="nave__burger" fill="none" height="25px" viewbox="0 0 24 24"
+          width="25px" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 18L20 18" stroke="#2a343e" stroke-linecap="round" stroke-width="2"></path>
+          <path d="M4 12L20 12" stroke="#2a343e" stroke-linecap="round" stroke-width="2"></path>
+          <path d="M4 6L20 6" stroke="#2a343e" stroke-linecap="round" stroke-width="2"></path>
+        </svg> <svg class="nave__close" fill="none" height="25px" viewbox="0 0 24 24" width="25px"
+          xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#2a343e" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="2"></path>
+          </g>
+        </svg></div>
+    </div>
+    <!--=============== NAV MENU ===============-->
+
+    <div class="nave__menu" id="nave-menu">
+      <ul class="nave__list">
+        <li class="dropdown__item">
+          <div class="nave__link">Program <svg class="dropdown__arrow" fill="#2a343e" height="10px" id="Capa_1"
+              version="1.1" viewbox="0 0 30.021 30.021" width="10px" xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g>
+                <path d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"></path>
+              </g>
+            </svg></div>
+
+          <ul class="dropdown__menu">
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html">Speakers
+              </a></li>
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html"> Agenda </a>
+            </li>
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html">Sponsors </a></li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hr-awards_m1829lxd.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                HR.com Awards
+              </a>
+            </li> -->
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/futurehr-the-ultimate-startup-showdown_ln398wxu.html">FutureHR:
+                The Ultimate Startup Showdown </a></li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/the-hrcom-awards_lne1ek46.html"
+                class="dropdown__link"
+              >
+                The HR.com Awards
+              </a>
+            </li> -->
+          </ul>
+        </li>
+        <li class="dropdown__item">
+          <div class="nave__link">Attend <svg class="dropdown__arrow" fill="#2a343e" height="10px" id="Capa_1"
+              version="1.1" viewbox="0 0 30.021 30.021" width="10px" xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g>
+                <path d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"></path>
+              </g>
+            </svg></div>
+
+          <ul class="dropdown__menu">
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html">Attend as Team </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-experiences_lmrcoc0x.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Experiences
+              </a>
+            </li> -->
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html">Volunteer
+              </a></li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Location
+              </a>
+            </li> -->
+            <li><a class="dropdown__link" data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html">Get
+                Your Employer to Send You to HRWest </a></li>
+          </ul>
+        </li>
+        <!-- <li class="dropdown__item">
+          <div class="nave__link">
+            2023 Program
+            <svg
+              class="dropdown__arrow"
+              fill="#2a343e"
+              width="10px"
+              height="10px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 30.021 30.021"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"
+                />
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/2023-speakers_ljco3fo1.html"
+                class="dropdown__link"
+              >
+                2023 Speakers
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/agenda-2023_ljz8l2gh.html"
+                class="dropdown__link"
+              >
+                2023 Agenda
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <li><a class="nave__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+            href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html">Why Sponsor/Exhibit</a></li>
+        <li><a class="nave__link"
+            href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html">Testimonials</a></li>
+        <!-- <li>
+          <a href="#" class="nave__link">FAQ</a>
+        </li>-->
+        <li class="reg-btn"><a class="hr_custom_btn gradient_btn btn_large round"
+            href="https://www.hr.com/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html"
+            onclick="window.location=this.href;">Register Now </a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="hr-west_container">
+  <div class="hr-west-head-info">
+    <ul>
+      <li>June 9-10</li>
+      <li>San Francisco</li>
+    </ul>
+
+    <h5><svg height="24" viewbox="0 0 34.286 24" width="34.286" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M5.143,12.536A3.429,3.429,0,1,0,1.714,9.107,3.432,3.432,0,0,0,5.143,12.536Zm24,0a3.429,3.429,0,1,0-3.429-3.429A3.432,3.432,0,0,0,29.143,12.536Zm1.714,1.714H27.429a3.418,3.418,0,0,0-2.416,1,7.836,7.836,0,0,1,4.023,5.861h3.536a1.712,1.712,0,0,0,1.714-1.714V17.679A3.432,3.432,0,0,0,30.857,14.25Zm-13.714,0a6,6,0,1,0-6-6A6,6,0,0,0,17.143,14.25Zm4.114,1.714h-.445a8.284,8.284,0,0,1-7.339,0h-.445a6.173,6.173,0,0,0-6.171,6.171v1.543A2.572,2.572,0,0,0,9.429,26.25H24.857a2.572,2.572,0,0,0,2.571-2.571V22.136A6.173,6.173,0,0,0,21.257,15.964ZM9.273,15.246a3.418,3.418,0,0,0-2.416-1H3.429A3.432,3.432,0,0,0,0,17.679v1.714a1.712,1.712,0,0,0,1.714,1.714h3.53A7.856,7.856,0,0,1,9.273,15.246Z"
+          fill="#91278C" transform="translate(0 -2.25)"></path>
+      </svg> <a href="/en/webcasts_events/live_events/hrwest/attend-as-team_laaqzi6t.html">Bring Your Team</a></h5>
+  </div>
+</div>
+
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container">
+    <div class="sold" style="display: none"><img alt="Pre Early Bird Rate Ends on March 31"
+        src="$public/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2025-early-bird-offer.png" />
+    </div>
+
+    <div class="hr-west_wrapper">
+      <div class="hr-wrapper_info">
+        <div class="hr-west_info"><img alt="Empower HR Talent Logo" height="125"
+            src="$public/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR_West_Logo.png"
+            width="115" /> <!-- <h1>Better HR <span>Today &amp; Tomorrow</span></h1> -->
+          <h1>HRWest Registration</h1>
+        </div>
+
+        <h2>Join the HR community at HRWest 2026 in San Francisco!</h2>
+
+        <p style="font-size: 15px"><strong> Practical insights you can use, peers you can learn from, and pricing that
+            respects your budget. It&rsquo;s built for real HR professionals like you.</strong> Celebrating 40+ years of
+          amazing HR education and networking!</p>
+        <img alt="Pre Early Bird Rate Ends on March 31" class="sold-mobile"
+          src="$public/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2025-early-bird-offer.png"
+          style="display: none" />
+        <div class="rs_btnset">
+          <div class="reg_info" style="display: none"><svg height="36" viewbox="0 0 36 36" width="36"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <lineargradient gradientunits="objectBoundingBox" id="linear-gradient" x1="1" x2="0" y1="1">
+                  <stop offset="0" stop-color="#ef5924"></stop>
+                  <stop offset="1" stop-color="#fcb22f"></stop>
+                </lineargradient>
+              </defs>
+              <path
+                d="M32.247,17.994,35.48,14.83a1.675,1.675,0,0,0-.75-2.836l-4.405-1.124,1.242-4.36a1.7,1.7,0,0,0-2.086-2.086L25.123,5.665,24,1.258a1.687,1.687,0,0,0-2.835-.75L18,3.767,14.837.508A1.687,1.687,0,0,0,12,1.258L10.877,5.665,6.518,4.423A1.7,1.7,0,0,0,4.433,6.509l1.242,4.36L1.27,11.994A1.675,1.675,0,0,0,.52,14.83l3.233,3.164L.52,21.159A1.675,1.675,0,0,0,1.27,24l4.405,1.124L4.433,29.48a1.7,1.7,0,0,0,2.086,2.086l4.359-1.242L12,34.73a1.672,1.672,0,0,0,2.835.75L18,32.246l3.163,3.234A1.679,1.679,0,0,0,24,34.73l1.124-4.407,4.359,1.242a1.7,1.7,0,0,0,2.086-2.086l-1.242-4.36L34.73,24a1.675,1.675,0,0,0,.75-2.836l-3.233-3.164Z"
+                fill="url(#linear-gradient)" transform="translate(0 0)"></path>
+            </svg>
+
+            <div class="reg-detail">
+              <p>SPECIAL OFFER: Register for</p>
+
+              <h6><span>$199</span> until Jan 14, 2024</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr-west-banner"><img alt="Excited woman pointing to Regiter Section"
+          src="$public/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/register-to-hr-west-2024.webp" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="countdown-container">
+  <div class="countdown" id="countdown">
+    <ul>
+      <li><span id="days">00</span> days</li>
+      <li><span id="hours">00</span> hours</li>
+      <li class="countdown-separator">:</li>
+      <li><span id="minutes">00</span> minutes</li>
+      <li class="countdown-separator">:</li>
+      <li><span id="seconds">00</span> seconds</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ev_container_fluid">
+  <div class="ev_container mrtp60 mrbt30">
+    <div class="ev_wc" style="max-width: 100%"><!--
+<div class="ev_countdown_wrapper">
+<h4>Don&#39;t Miss Out! Free Early Bird Registration Ends March 5th</h4>
+<h5><b>(Conference passes are restricted to HR professionals)</b></h5>
+<div class="ev_cd_box">
+<div class="ev_cd_info" id="cdInspireHR">&nbsp;</div>
+</div>
+</div>
+-->$include:/CustomCode/HybridEvents/EventPass.RegMessage
+      <div class="ev_reg_buypass" style="align-items: stretch">
+        <div class="ev_bp_card probg">
+          <div class="bp_type"><svg height="24" viewbox="0 0 15 24" width="15" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.749,4.5A2.25,2.25,0,1,0,7.5,2.25,2.25,2.25,0,0,0,9.749,4.5Zm4.429,6.988-1.092-.553-.455-1.378A5.11,5.11,0,0,0,7.841,6,10.306,10.306,0,0,0,3.469,7.18,4.471,4.471,0,0,0,1.139,9.346l-.314.637a1.5,1.5,0,0,0,.666,2.011,1.48,1.48,0,0,0,1.992-.67l.314-.637a1.49,1.49,0,0,1,.773-.722l1.256-.506L5.114,12.3a3.01,3.01,0,0,0,.7,2.756l2.807,3.065a3.025,3.025,0,0,1,.7,1.3l.858,3.435a1.5,1.5,0,1,0,2.91-.726l-1.04-4.171a3,3,0,0,0-.7-1.3L9.215,14.332l.806-3.22.258.773a2.989,2.989,0,0,0,1.486,1.734l1.092.553a1.48,1.48,0,0,0,1.992-.67,1.517,1.517,0,0,0-.67-2.015ZM3.45,18.082a2.908,2.908,0,0,1-.666,1.008L.441,21.437A1.5,1.5,0,0,0,2.56,23.561l2.784-2.784a3.046,3.046,0,0,0,.666-1.008l.633-1.584C4.05,15.359,4.828,16.226,4.42,15.668Z"
+                fill="#e51069" transform="translate(-0.002)"></path>
+            </svg></div>
+
+          <h4><small>HR Professional</small> HR Attendee Pass</h4>
+
+          <div class="bp_pb_info">$include:/CustomCode/HybridEvents/EventPass.AttendeeButton
+            <div class="bp_price"><span>$799</span></div>
+          </div>
+
+          <ul>
+            <li><svg height="13.333" viewbox="0 0 20 13.333" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.444,7.833H15.556V14.5H4.444Zm13.889,3.333A1.667,1.667,0,0,0,20,12.833v3.333a1.667,1.667,0,0,1-1.667,1.667H1.667A1.667,1.667,0,0,1,0,16.167V12.833a1.667,1.667,0,0,0,1.667-1.667A1.667,1.667,0,0,0,0,9.5V6.167A1.667,1.667,0,0,1,1.667,4.5H18.333A1.667,1.667,0,0,1,20,6.167V9.5A1.667,1.667,0,0,0,18.333,11.167ZM16.667,7.556a.833.833,0,0,0-.833-.833H4.167a.833.833,0,0,0-.833.833v7.222a.833.833,0,0,0,.833.833H15.833a.833.833,0,0,0,.833-.833Z"
+                  fill="#94c83d" transform="translate(0 -4.5)"></path>
+              </svg> Full event access</li>
+          </ul>
+
+          <div class="tc_xsfont lgblu">*Intended for practicing, aspiring, and in-transition HR professionals.<br />
+            <br />
+            <br />
+            &nbsp;
+          </div>
+        </div>
+
+        <div class="ev_bp_card" style="min-height: 340px; background: #f1f1">
+          <div class="bp_type"><svg height="22" viewbox="0 0 18.03 22" width="18.03" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.387,13.272c-1.357.386-2.282,1.18-2.282,2.49V19.5c0,2.794-2.665,2.488-5.974,2.488h-.509c-.206,0-.329-.077-.329-.257V20.452c0-.178.11-.256.316-.256h.412c1.98,0,3.369.435,3.369-1.155v-3.59a3.6,3.6,0,0,1,2.311-3.2c.109-.028.124-.078.124-.129a.208.208,0,0,0-.124-.179,3.415,3.415,0,0,1-2.311-2.949V4.936a3.271,3.271,0,0,0-3.354-3.128h-.413c-.206,0-.3-.077-.3-.256V.276c0-.179.137-.258.344-.258h.51c3.3,0,5.995,2.358,5.995,5.151V8.58c0,1.292.92,2.035,2.31,2.515.51.151.8.18.8.592V12.76c.027.235-.219.344-.838.522l-.051-.01Zm-11.706,8.7H3.557c-.206,0-.308-.051-.308-.231V.256c0-.15.1-.256.3-.256H8.624c.207,0,.33.077.33.256V1.589c0,.179-.111.231-.317.231H6.371c-.28,0-.385.1-.385.281V19.894c0,.18.105.247.336.247H8.63c.207,0,.333.07.333.234v1.36c.027.152-.077.234-.282.234v0ZM13.15,10.024H11.788a.572.572,0,0,1-.588-.541V8.252a.568.568,0,0,1,.588-.536H13.15a.571.571,0,0,1,.588.536V9.484a.572.572,0,0,1-.591.539l0,0Z"
+                fill="#e51069" transform="translate(-3.249)"></path>
+            </svg></div>
+
+          <h4><small>HR Solution Providers</small> Vendor Pass</h4>
+          <!--<a class="hr_custom_btn_new gradient_btn_new btn_large purple" href="javascript:void(0);" id="fc_1671556373177" name="fc_1671556373177" onclick="loadPopup('fc_1671556373177')">Register</a>-->
+
+          <div class="bp_pb_info">$include:/CustomCode/HybridEvents/EventPass.VendorButton
+            <div class="bp_price"><span>$1,299</span></div>
+          </div>
+          <!--<ul>
+	<li><svg height="13.333" viewbox="0 0 20 13.333" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4.444,7.833H15.556V14.5H4.444Zm13.889,3.333A1.667,1.667,0,0,0,20,12.833v3.333a1.667,1.667,0,0,1-1.667,1.667H1.667A1.667,1.667,0,0,1,0,16.167V12.833a1.667,1.667,0,0,0,1.667-1.667A1.667,1.667,0,0,0,0,9.5V6.167A1.667,1.667,0,0,1,1.667,4.5H18.333A1.667,1.667,0,0,1,20,6.167V9.5A1.667,1.667,0,0,0,18.333,11.167ZM16.667,7.556a.833.833,0,0,0-.833-.833H4.167a.833.833,0,0,0-.833.833v7.222a.833.833,0,0,0,.833.833H15.833a.833.833,0,0,0,.833-.833Z" fill="#2680EB" transform="translate(0 -4.5)"></path></svg> Limited event access includes</li>
+	<li><svg height="15" viewbox="0 0 15 15" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M-3126.5-58a7.509,7.509,0,0,1-7.5-7.5,7.508,7.508,0,0,1,7.5-7.5,7.509,7.509,0,0,1,7.5,7.5A7.509,7.509,0,0,1-3126.5-58Zm-2.989-8.477h0l-1.178,1.178,2.946,2.947,5.3-5.3-1.179-1.179-4.125,4.125-1.768-1.768Z" fill="#2680EB" transform="translate(3134 73)"></path></svg> Keynotes</li>
+	<li><svg height="15" viewbox="0 0 15 15" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M-3126.5-58a7.509,7.509,0,0,1-7.5-7.5,7.508,7.508,0,0,1,7.5-7.5,7.509,7.509,0,0,1,7.5,7.5A7.509,7.509,0,0,1-3126.5-58Zm-2.989-8.477h0l-1.178,1.178,2.946,2.947,5.3-5.3-1.179-1.179-4.125,4.125-1.768-1.768Z" fill="#2680EB" transform="translate(3134 73)"></path></svg> Expo</li>
+</ul>-->
+
+          <ul>
+            <li><svg height="13.333" viewbox="0 0 20 13.333" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.444,7.833H15.556V14.5H4.444Zm13.889,3.333A1.667,1.667,0,0,0,20,12.833v3.333a1.667,1.667,0,0,1-1.667,1.667H1.667A1.667,1.667,0,0,1,0,16.167V12.833a1.667,1.667,0,0,0,1.667-1.667A1.667,1.667,0,0,0,0,9.5V6.167A1.667,1.667,0,0,1,1.667,4.5H18.333A1.667,1.667,0,0,1,20,6.167V9.5A1.667,1.667,0,0,0,18.333,11.167ZM16.667,7.556a.833.833,0,0,0-.833-.833H4.167a.833.833,0,0,0-.833.833v7.222a.833.833,0,0,0,.833.833H15.833a.833.833,0,0,0,.833-.833Z"
+                  fill="#94c83d" transform="translate(0 -4.5)"></path>
+              </svg> Full event access</li>
+          </ul>
+
+          <div class="tc_xsfont lgpnk">*Intended for Consultants and Solution providers of HR products and services.
+          </div>
+        </div>
+
+        <div class="ev_bp_card" style="display: none">
+          <div class="bp_type"><svg height="22" viewbox="0 0 12.571 22" width="12.571"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.571,6.179V4.823A2.631,2.631,0,0,0,18.88,2.25H11.7A2.632,2.632,0,0,0,9,4.823V6.179h7.464V8H9v2.112h7.464v1.817H9v2.112h7.464v1.817H9v2.053a2.624,2.624,0,0,0,2.7,2.563h1.478V24.25H17.4V20.469H18.88a2.623,2.623,0,0,0,2.691-2.563V15.853h-2.75V14.036h2.75V11.924h-2.75V10.107h2.75V8h-2.75V6.179Z"
+                fill="#e51069" transform="translate(-9 -2.25)"></path>
+            </svg></div>
+
+          <h4><small>Journalists &amp; Influencers</small> Media/Analyst Pass</h4>
+
+          <div class="bp_pb_info">$include:/CustomCode/HybridEvents/EventPass.FreeButton
+            <div class="bp_price"><span>$0.00</span></div>
+          </div>
+
+          <ul>
+            <li><svg height="13.333" viewbox="0 0 20 13.333" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.444,7.833H15.556V14.5H4.444Zm13.889,3.333A1.667,1.667,0,0,0,20,12.833v3.333a1.667,1.667,0,0,1-1.667,1.667H1.667A1.667,1.667,0,0,1,0,16.167V12.833a1.667,1.667,0,0,0,1.667-1.667A1.667,1.667,0,0,0,0,9.5V6.167A1.667,1.667,0,0,1,1.667,4.5H18.333A1.667,1.667,0,0,1,20,6.167V9.5A1.667,1.667,0,0,0,18.333,11.167ZM16.667,7.556a.833.833,0,0,0-.833-.833H4.167a.833.833,0,0,0-.833.833v7.222a.833.833,0,0,0,.833.833H15.833a.833.833,0,0,0,.833-.833Z"
+                  fill="#94c83d" transform="translate(0 -4.5)"></path>
+              </svg> Full event access</li>
+          </ul>
+
+          <div class="tc_xsfont lgpnk">*Must be a media contributor to current and relevant HR content. All
+            registrants&#39; applications will be reviewed.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev_container mrtp60 mrbt30"><!-- pricing table -->
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Timeframe</th>
+            <th>Attendee</th>
+            <th>Vendor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>Early Bird</td>
+            <td>Ends May 1</td>
+            <td>$399</td>
+            <td>$899</td>
+          </tr> -->
+          <tr>
+            <td>Regular</td>
+            <td>May 2 - June 8</td>
+            <td>$799</td>
+            <td>$1,299</td>
+          </tr>
+          <tr>
+            <td>On Site</td>
+            <td>June 9&ndash;10</td>
+            <td>$999</td>
+            <td>$1,499</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="text-align: center; margin-top: 12px; margin-bottom: 24px">Want to bring a group? Contact us at <a
+          class="hrw-link" href="mailto:hrwest@hr.com" rel="noopener noreferrer" target="_blank">hrwest@hr.com</a> to
+        reserve discounted rates. Visit our <a class="hrw-link"
+          href="https://www.hr.com/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html"
+          rel="noopener noreferrer" target="_blank">Team Registration</a> page for pricing details.</p>
+    </div>
+    <!-- end pricing table -->
+  </div>
+
+  <div class="ev_kn_footer"><svg height="13.333" viewbox="0 0 20 13.333" width="20" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4.444,7.833H15.556V14.5H4.444Zm13.889,3.333A1.667,1.667,0,0,0,20,12.833v3.333a1.667,1.667,0,0,1-1.667,1.667H1.667A1.667,1.667,0,0,1,0,16.167V12.833a1.667,1.667,0,0,0,1.667-1.667A1.667,1.667,0,0,0,0,9.5V6.167A1.667,1.667,0,0,1,1.667,4.5H18.333A1.667,1.667,0,0,1,20,6.167V9.5A1.667,1.667,0,0,0,18.333,11.167ZM16.667,7.556a.833.833,0,0,0-.833-.833H4.167a.833.833,0,0,0-.833.833v7.222a.833.833,0,0,0,.833.833H15.833a.833.833,0,0,0,.833-.833Z"
+        fill="#94c83d" transform="translate(0 -4.5)"></path>
+    </svg> Full event access includes</div>
+
+  <ul class="ev_kn_list">
+    <li>Keynotes</li>
+    <li>Expo</li>
+    <li>Roundtables</li>
+    <li>Sessions</li>
+    <li>Reception</li>
+  </ul>
+</div>
+
+<div class="ev_tc_line mrtp20 MarginBottom20"
+  style="margin-left: auto; margin-right: auto; width: 100%; max-width: 900px">Attendee registration is
+  <strong>non-refundable.</strong> However, if you&#39;re unable to attend, you can transfer your registration to HRWest
+  2027. Transfers are available anytime until 7 business days before the event. For specificities around the event,
+  please email us at <a href="mailto:hrwest@hr.com" rel="noopener noreferrer" target="_blank">hrwest@hr.com.</a> <span
+    style="display: block; margin-top: 16px">Terms and conditions can be found <a class="hrw-link"
+      href="https://www.hr.com/en/about_us/privacy_information/" target="_blank">here</a>. </span></div>
+<script type="text/javascript">
+  const showMenu = (toggleId, naveId) => {
+    const toggle = document.getElementById(toggleId),
+      nave = document.getElementById(naveId)
+
+    toggle.addEventListener('click', () => {
+      // Add show-menu class to nav menu
+      nave.classList.toggle('show-menu')
+
+      // Add show-icon to show and hide the menu icon
+      toggle.classList.toggle('show-icon')
+    })
+  }
+
+  showMenu('nave-toggle', 'nave-menu')
+
+  $(document).ready(function () {
+    var cdDate = new Date('Mar 05, 2023 23:59:59').getTime()
+    var cdiv = setInterval(function () {
+      var cdnow = new Date().getTime()
+      var cddistance = cdDate - cdnow
+      var cddays = Math.floor(cddistance / (1000 * 60 * 60 * 24))
+      var cdhours = Math.floor(
+        (cddistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      )
+      var cdminutes = Math.floor((cddistance % (1000 * 60 * 60)) / (1000 * 60))
+      var cdseconds = Math.floor((cddistance % (1000 * 60)) / 1000)
+      document.getElementById('cdInspireHR').innerHTML =
+        '<div>' +
+        cddays +
+        '<span>Days</span></div>' +
+        '<div>' +
+        cdhours +
+        '<span>Hours</span></div>' +
+        '<div>' +
+        cdminutes +
+        '<span>Minutes</span></div>' +
+        '<div>' +
+        cdseconds +
+        '<span>Seconds</span></div>'
+      if (cddistance < 0) {
+        clearInterval(cdiv)
+        document.getElementById('cdInspireHR').innerHTML =
+          '<span>Empower HR Tech Europe 2023 has started</span>'
+      }
+    }, 1000)
+  })
+</script><!-- countdown js -->
+<script>
+  const daysEl = document.getElementById('days')
+  const hoursEl = document.getElementById('hours')
+  const minutesEl = document.getElementById('minutes')
+  const secondsEl = document.getElementById('seconds')
+  const countDownContainer = document.querySelector('.countdown-container')
+
+  const formatNumber = (number) => {
+    if (number < 10) {
+      return '0' + number
+    }
+    return number
+  }
+
+  const countdownTimer = () => {
+    const eventDate = new Date('03/05/2024').getTime()
+
+    // conver to milliseconds
+    const second = 1000
+    const minute = second * 60
+    const hour = minute * 60
+    const day = hour * 24
+
+    const interval = setInterval(() => {
+      // get current date
+      const now = new Date().getTime()
+      const distance = eventDate - now
+
+      daysEl.innerText = formatNumber(Math.floor(distance / day))
+      hoursEl.innerText = formatNumber(Math.floor((distance % day) / hour))
+      minutesEl.innerText = formatNumber(Math.floor((distance % hour) / minute))
+      secondsEl.innerText = formatNumber(
+        Math.floor((distance % minute) / second),
+      )
+
+      // when event data is reached
+      if (distance < 0) {
+        countDownContainer.style.display = 'none'
+        //  stop interval
+        clearInterval(interval)
+      }
+    }, 1000)
+  }
+
+  countdownTimer()
+</script>

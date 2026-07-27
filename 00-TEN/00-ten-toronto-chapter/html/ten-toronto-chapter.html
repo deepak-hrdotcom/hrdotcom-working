@@ -1,0 +1,1353 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEN Toronto Chapter</title>
+</head>
+
+<body>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --mid-grey: #6b7280;
+      --teal: #2a9d8f;
+      --midnight: #1a2e45;
+      --soft-white: #f9fafb;
+      --blush: #f4ede4;
+
+      --title-xl: 72px;
+      --title-xl-lh: 90px;
+      --title-lg: 33px;
+      --title-lg-lh: 44px;
+      --text-xl: 20px;
+      --text-lg: 18px;
+      --text-md: 16px;
+      --text-sm: 14px;
+      --text-xs: 12px;
+
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+
+      --max-width: 1440px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      background: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    small {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* =====================
+       GLOBAL LAYOUT
+    ====================== */
+    .main-container {
+      /* max-width: var(--max-width); */
+      margin: 0 auto;
+      /* padding: 0 var(--space-lg); */
+    }
+
+    .section {
+      padding: var(--space-3xl) 0;
+    }
+
+    .section-divider {
+      width: 100%;
+      min-height: 1px;
+      border-bottom: 1px solid #d1d1d1;
+      /* Light grey solid line */
+    }
+
+    /* =====================
+       BUTTONS
+    ====================== */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm) var(--space-lg);
+      font-size: var(--text-md);
+      font-weight: 500;
+      border-radius: 4px;
+      white-space: nowrap;
+      width: auto;
+      max-width: max-content;
+    }
+
+    .button-primary {
+      background: var(--teal);
+      color: var(--white) !important;
+    }
+
+    .button-secondary {
+      background: var(--midnight);
+      color: var(--white);
+    }
+
+    .button-hero {
+      background: var(--blush);
+      color: var(--midnight) !important;
+      transition: all 0.1s;
+    }
+
+    .button-hero:hover {
+      background-color: var(--soft-white);
+    }
+
+    /* =====================
+       HERO SECTION
+    ====================== */
+    .hero-section {
+      background: var(--white);
+      padding-block: 2rem;
+      padding-bottom: 2rem;
+      background-color: var(--midnight);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1.5fr;
+      gap: var(--space-2xl);
+      align-items: center;
+      width: 90vw;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      /* padding-block:var(--space-lg); */
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-logo {
+      width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .title-page {
+      font-size: var(--title-xl);
+      line-height: var(--title-xl-lh);
+      color: var(--white);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .hero-description {
+      font-size: var(--text-xl);
+      line-height: 1.6;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .hero-image-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    /* =====================
+       CONTENT SECTION
+    ====================== */
+    .content-section {
+      width: 90vw;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 4fr;
+      gap: var(--space-xl);
+    }
+
+    @media screen and (min-width: 992px) {
+      .sidebar-container {
+        background-color: var(--blush);
+        padding: 20px 20px;
+        min-height: 100vh;
+      }
+    }
+
+    /* Desktop Sidebar */
+    .sidebar-nav {
+      position: sticky;
+      top: var(--space-xl);
+      align-self: flex-start;
+      padding-top: 8rem;
+    }
+
+    .sidebar-link {
+      display: block;
+      font-size: var(--text-lg);
+      color: var(--black) !important;
+      margin-bottom: var(--space-lg);
+      transition: all 0.2s ease;
+      background: var(--soft-white);
+      padding: 12px 15px;
+      border-radius: 4px;
+    }
+
+    .sidebar-link.active {
+      color: var(--white) !important;
+      font-weight: 600;
+      font-size: var(--text-xl);
+      background-color: var(--teal);
+    }
+
+    .sidebar-link:hover {
+      color: var(--teal);
+    }
+
+    /* Content Blocks */
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+      max-width: 800px;
+      justify-self: center;
+    }
+
+    .content-block {
+      min-height: 320px;
+      padding-bottom: var(--space-sm);
+      /* border-bottom: 1px solid var(--soft-white); */
+    }
+
+    .content-block h2 {
+      font-size: var(--title-lg);
+      line-height: var(--title-lg-lh);
+      color: var(--midnight);
+      margin-bottom: var(--space-md);
+    }
+
+    .content-block p {
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      color: var(--midnight);
+      max-width: 720px;
+    }
+
+    /* Adjust anchor scroll offset to account for sticky button */
+    .content-block {
+      scroll-margin-top: 80px;
+      /* Adjust this value if your sticky button height differs */
+    }
+
+    @media screen and (max-width: 768px) {
+      .content-block {
+        scroll-margin-top: 140px;
+      }
+    }
+
+    /* =====================
+       MOBILE STICKY NAV
+    ====================== */
+    .mobile-sticky-wrapper {
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text {
+        align-items: center;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar-nav {
+        display: none;
+      }
+
+      .mobile-sticky-wrapper {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: var(--white);
+        border-bottom: 1px solid var(--blush);
+        padding-top: 100px;
+      }
+
+      .mobile-nav-toggle {
+        text-align: center;
+        padding: var(--space-sm) 0;
+      }
+
+      .mobile-sidebar-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        background: var(--soft-white);
+        padding: var(--space-md);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .mobile-sidebar-nav.open {
+        display: block;
+      }
+    }
+
+    /* =========================
+// BLOCK: Exclusive Groups
+========================= */
+
+    .exclusive-groups {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .exclusive-heading {
+      font-size: var(--title-lg);
+      line-height: var(--title-lg-lh);
+      color: var(--midnight);
+      font-weight: 600;
+    }
+
+    .exclusive-heading .highlight {
+      color: var(--teal);
+    }
+
+    .exclusive-intro,
+    .exclusive-description,
+    .exclusive-note {
+      font-size: var(--text-md);
+      line-height: 1.6;
+      color: var(--mid-grey);
+    }
+
+    .exclusive-groups-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-sm);
+      padding-left: 0;
+    }
+
+    .exclusive-groups-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--midnight);
+      font-weight: 500;
+      font-size: var(--text-lg);
+    }
+
+    .exclusive-groups-list li::before {
+      content: '✔';
+      color: var(--teal);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .exclusive-link {
+      color: #2563eb;
+      /* Tailwind blue-600 as seen in mock */
+      text-decoration: underline !important;
+    }
+
+    .exclusive-link:hover {
+      text-decoration: none;
+    }
+
+    /* =========================
+// END: Exclusive Groups
+========================= */
+    /* =========================
+   START: Scenes from TEN Styles
+========================= */
+    .video-section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .video-heading {
+      font-size: var(--title-lg);
+      line-height: var(--title-lg-lh);
+      color: var(--midnight);
+      font-weight: 600;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* =========================
+   END: Scenes from TEN Styles
+========================= */
+
+    /* =========================
+   START: Upcoming Events Styles
+========================= */
+
+    .upcoming-events {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .events-heading {
+      font-size: var(--title-lg);
+      line-height: var(--title-lg-lh);
+      color: var(--midnight);
+      font-weight: 600;
+    }
+
+    .events-subtitle {
+      font-size: var(--text-md);
+      color: var(--mid-grey);
+    }
+
+    /* ✅ Scrollable Table Wrapper */
+    .events-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 380px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      /* allows flexible width */
+    }
+
+    .events-table th,
+    .events-table td {
+      padding: var(--space-md) var(--space-md);
+      font-size: var(--text-md);
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+      text-align: left;
+      word-break: break-word;
+    }
+
+    .events-table thead th {
+      background-color: var(--teal);
+      color: var(--white);
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .events-table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .events-footnote {
+      font-size: var(--text-sm) !important;
+      color: var(--mid-grey);
+      background: #fff7d6;
+      padding: var(--space-sm);
+      border-radius: 4px;
+      max-width: 100% !important;
+    }
+
+    .public-events {
+      margin-top: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .public-events-title {
+      font-size: var(--text-md);
+      color: var(--midnight);
+    }
+
+    .public-events-note {
+      border: 1px solid #e5e7eb;
+      padding: var(--space-sm);
+      font-size: var(--text-md);
+      background: var(--soft-white);
+    }
+
+    .topic-link {
+      text-decoration: underline !important;
+      font-weight: 600 !important;
+    }
+
+    /* =========================
+   Responsive: Mobile View
+========================= */
+    @media (max-width: 768px) {
+      .events-table-wrapper {
+        max-height: 300px;
+        overflow-x: auto;
+      }
+
+      /* .events-table {
+    min-width: 700px; 
+  } */
+
+      .events-table th,
+      .events-table td {
+        font-size: 9px;
+        padding: 6px;
+      }
+
+      .events-table tbody tr td:first-child {
+        font-weight: 800;
+        font-size: 10px !important;
+        color: var(--teal);
+      }
+
+      .events-footnote {
+        font-size: 10px !important;
+      }
+
+      .events-heading {
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      .events-subtitle {
+        font-size: 14px;
+      }
+
+      .events-footnote {
+        font-size: 12px !important;
+      }
+
+      .public-events-note {
+        font-size: 14px;
+      }
+    }
+
+    /* Highlight date column (first cell in each row) */
+    .events-table tbody tr td:first-child {
+      font-weight: 600;
+      font-size: var(--text-lg);
+      color: var(--teal);
+    }
+
+    /* ✅ Small required tweak to ensure equal column widths across BOTH tables */
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      /* forces consistent column widths */
+    }
+
+    .events-table th,
+    .events-table td {
+      word-break: break-word;
+    }
+
+    /* =========================
+   END: Upcoming Events Styles
+========================= */
+    /* =========================
+   START: Membership Section Styles
+========================= */
+    .membership-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .membership-heading {
+      font-size: var(--title-lg);
+      line-height: var(--title-lg-lh);
+      color: var(--midnight);
+      font-weight: 600;
+    }
+
+    .membership-step {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: var(--teal) !important;
+      font-size: var(--text-md);
+    }
+
+    .step-description {
+      font-size: var(--text-md);
+      color: var(--mid-grey);
+      line-height: 1.6;
+    }
+
+    /* =========================
+   END: Membership Section Styles
+========================= */
+    /* =========================
+   START: Why Join TEN Styles
+========================= */
+    .why-join-ten {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .why-join-heading {
+      font-size: var(--title-lg);
+      line-height: var(--title-lg-lh);
+      color: var(--midnight);
+      font-weight: 600;
+    }
+
+    .why-join-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .benefit-title {
+      font-size: var(--text-xl) !important;
+      font-weight: 600;
+      color: var(--teal) !important;
+    }
+
+    .benefit-description {
+      font-size: var(--text-md);
+      color: var(--mid-grey);
+      line-height: 1.6;
+    }
+
+    /* =========================
+   END: Why Join TEN Styles
+========================= */
+    /* =========================
+   START: Special Offer Styles
+========================= */
+    .special-offer {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .special-offer-title {
+      font-size: var(--title-lg) !important;
+      line-height: var(--title-lg-lh);
+      font-weight: 600;
+      color: var(--midnight);
+    }
+
+    .special-offer-text {
+      font-size: var(--text-lg) !important;
+      color: var(--midnight);
+    }
+
+    .chapter-director {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .director-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .director-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .director-role {
+      font-size: var(--text-md);
+      color: var(--mid-grey);
+    }
+
+    .director-name {
+      font-weight: 600;
+      font-size: var(--text-md);
+      color: var(--midnight);
+    }
+
+    .director-email {
+      font-size: var(--text-sm);
+      color: var(--mid-grey);
+      text-decoration: underline;
+    }
+
+    /* =========================
+   END: Special Offer Styles
+========================= */
+
+    /* sticky css */
+    /* Default state */
+    .mobile-sticky-wrapper {
+      padding-top: 0;
+      transition: padding-top 0.3s ease;
+    }
+
+    .mobile-sticky-wrapper.is-sticky-at-top {
+      padding-top: 100px;
+    }
+
+    .sidebar-nav {
+      padding-top: 0;
+      transition: padding-top 0.3s ease;
+    }
+
+    .sidebar-nav.is-sticky-at-top {
+      padding-top: 8rem;
+    }
+  </style>
+  <div class="main-container">
+    <div>$vendorLeadForm</div>
+    <!-- HERO SECTION -->
+
+    <section class="section hero-section">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <img alt="TEN Logo" class="hero-logo"
+            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/TrustedExecutiveNetwork-2c-logo-without-tagline-white.webp" />
+          <h1 class="title-page">TEN Toronto Chapter</h1>
+
+          <p class="hero-description">
+            The Ultimate in Strategic Networking for HR Leaders
+          </p>
+          <button class="button button-primary button-hero" id="fc_1768256195978" name="fc_1768256195978"
+            onclick="loadPopup('fc_1768256195978')">
+            Apply to Join Chapter
+          </button>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <img alt="HR leaders collaborating" class="hero-image"
+            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ten-toronto-city.webp" />
+        </div>
+      </div>
+    </section>
+    <!-- CONTENT SECTION -->
+
+    <section class="section content-section">
+      <div id="mobileStickySentinel">&nbsp;</div>
+      <!-- MOBILE STICKY NAV -->
+
+      <div class="mobile-sticky-wrapper">
+        <div class="mobile-nav-toggle">
+          <button class="button button-secondary" id="mobileToggle">
+            Jump to Section
+          </button>
+        </div>
+
+        <nav class="mobile-sidebar-nav" id="mobileNav">
+          <a class="sidebar-link active" href="#who">Who is this for?</a>
+          <a class="sidebar-link" href="#scenes">Scenes from TEN</a>
+          <a class="sidebar-link" href="#events">Upcoming Events</a>
+          <a class="sidebar-link" href="#membership">How Membership Works</a>
+          <a class="sidebar-link" href="#howToJoin">How to Join TEN</a>
+          <a class="sidebar-link" href="#pricing">Membership &amp; Pricing</a>
+        </nav>
+      </div>
+
+      <div class="content-grid">
+        <div class="sidebar-container">
+          <div id="sidebarStickySentinel">&nbsp;</div>
+          <!-- DESKTOP SIDEBAR -->
+
+          <nav class="sidebar-nav">
+            <a class="sidebar-link active" href="#who">Who is this for?</a>
+            <a class="sidebar-link" href="#scenes">Scenes from TEN</a>
+            <a class="sidebar-link" href="#events">Upcoming Events</a>
+            <a class="sidebar-link" href="#membership">How Membership Works</a>
+            <a class="sidebar-link" href="#howToJoin">How to Join TEN</a>
+            <a class="sidebar-link" href="#pricing">Membership &amp; Pricing</a>
+          </nav>
+        </div>
+        <!-- MAIN CONTENT -->
+
+        <div class="section-content">
+          <!-- =========================
+     BLOCK: Exclusive Groups
+============================= -->
+          <section class="content-block exclusive-groups" id="who">
+            <h2 class="exclusive-heading">
+              Exclusive Groups for
+              <span class="highlight">HR Leaders in Toronto</span>
+            </h2>
+
+            <p class="exclusive-intro">
+              Welcome to the Toronto Chapter of the Trusted Executive Network!
+              We offer groups for:
+            </p>
+
+            <ul class="exclusive-groups-list">
+              <li>CHROs</li>
+              <li>NextGen CHROs</li>
+              <li>Talent Acquisition &amp; Employer Branding Leaders</li>
+              <li>Workforce Planning &amp; HR Analytics Leaders</li>
+              <!-- <li>DEI Leaders</li> -->
+              <li>VPs of Payroll &amp; Benefits</li>
+            </ul>
+
+            <p class="exclusive-description">
+              Become a Toronto TEN member to build lasting relationships with
+              peers, gain strategic insights, and navigate leadership
+              challenges with a select group of your peers in the GTA.
+            </p>
+
+            <p class="exclusive-note">
+              CHRO and Talent Acquisition groups are meeting now and accepting
+              new members.
+            </p>
+
+            <p class="exclusive-note">
+              <a class="exclusive-link" href="/en/memberships/trusted_executive_network/" target="_blank">View other TEN
+                chapters in the United States and Canada.</a>
+            </p>
+          </section>
+
+          <div class="section-divider">&nbsp;</div>
+          <!-- =========================
+   START:Scnes from toronto event
+========================= -->
+
+          <section class="content-block video-section" id="scenes">
+            <h2 class="video-heading">Scenes from a TEN Event in Toronto</h2>
+
+            <div class="video-wrapper">
+              <iframe allow="
+                    autoplay;
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  " allowfullscreen="" loading="lazy"
+                src="https://www.youtube.com/embed/eKwRZ0i2hf0?autoplay=1&amp;mute=1"
+                title="Trusted Executive Network - HR.com"></iframe>
+            </div>
+          </section>
+          <!-- =========================
+   START: Upcoming Events Section
+========================= -->
+
+          <section class="content-block upcoming-events" id="events" style="padding-top: 2rem">
+            <h2 class="events-heading">CHRO Toronto Local Chapter Event</h2>
+
+            <p class="events-subtitle">
+              <strong>MEMBER-ONLY EVENTS.</strong> More to be added in 2026. Dates and
+              topics are subject to change.
+            </p>
+
+            <!-- MEMBER-ONLY EVENTS TABLE -->
+            <div class="events-table-wrapper">
+              <table class="events-table">
+                <thead>
+                  <tr>
+                    <th>MONTH / DATE</th>
+                    <th>MEETING TYPE</th>
+                    <th>TOPIC</th>
+                    <th>FOCUS OF DISCUSSION</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>April 9, 2026<br />
+                      
+                    </td>
+                    <td>In-Person</td>
+                    <td> The
+                        Post-Growth Playbook</td>
+                    <td>Driving high-velocity performance with flat budgets</td>
+                  </tr>
+
+                  <tr>
+                    <td>May 7, 2026 <a style="font-size: 13px !important; text-decoration: underline !important; cursor: pointer; color: #1a2e45 !important; display: inline-block;"
+                        id="fc_1776196000656" name="fc_1776196000656" onclick="loadPopup('fc_1776196000656')">Register
+                        Now</a></td>
+                    <td>Virtual</td>
+                    <td><a style="text-decoration: underline !important; cursor: pointer; color: #1a2e45 !important"
+                        id="fc_1776196000656" name="fc_1776196000656" onclick="loadPopup('fc_1776196000656')">Cannibalizing Your Own Structure</a></td>
+                    <td>Redesigning operating models for adaptive fluidity</td>
+                  </tr>
+
+                  <tr>
+                    <td>June 4, 2026</td>
+                    <td>In-Person</td>
+                    <td>The Talent Arms Race vs. The Bottom Line</td>
+                    <td>Prioritizing enterprise value roles</td>
+                  </tr>
+
+                  <tr>
+                    <td>July 2, 2026</td>
+                    <td>Virtual</td>
+                    <td>Beyond the Performance Review</td>
+                    <td>Elevating executive accountability standards</td>
+                  </tr>
+
+                  <tr>
+                    <td>August 6, 2026</td>
+                    <td>In-Person</td>
+                    <td>The Death of the Headcount Request</td>
+                    <td>Skills density vs. seat filling strategy</td>
+                  </tr>
+
+                  <tr>
+                    <td>September 17, 2026 (Dedicated Date – Full Day or Two-Day Format)</td>
+                    <td>Executive Retreat (In-Person)</td>
+                    <td>Executive Retreat</td>
+                    <td>
+                      Strategic alignment, peer advisory dialogue, and forward planning.
+                      <br />
+                      Final retreat date, duration (one or two days) and location will be
+                      determined by cohort member consensus
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>October 1, 2026</td>
+                    <td>Virtual</td>
+                    <td>The Succession Advantage</td>
+                    <td>Managing 5-year leadership pipeline risk</td>
+                  </tr>
+
+                  <tr>
+                    <td>November 5, 2026</td>
+                    <td>In-Person</td>
+                    <td>AI as a Cultural Catalyst, Not a Tool</td>
+                    <td>Workforce augmentation &amp; cultural implications</td>
+                  </tr>
+
+                  <tr>
+                    <td>December 3, 2026</td>
+                    <td>Virtual</td>
+                    <td>The Quiet Exit of the Middle Manager</td>
+                    <td>Stabilizing the execution layer</td>
+                  </tr>
+
+                  <tr>
+                    <td>January 7, 2027</td>
+                    <td>In-Person</td>
+                    <td>Corporate Diplomacy &amp; Activism</td>
+                    <td>Navigating social expectations without losing enterprise focus</td>
+                  </tr>
+
+                  <tr>
+                    <td>February 4, 2027</td>
+                    <td>Virtual</td>
+                    <td>The Legacy Play: Operator to Governor</td>
+                    <td>Transitioning toward board-level influence</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- PUBLIC EVENTS -->
+            <div class="public-events">
+              <p class="public-events-title">
+                <strong>PUBLIC EVENTS.</strong> More to be added in 2026. Dates and topics
+                are subject to change.
+              </p>
+
+              <!-- PUBLIC EVENTS TABLE (same styling + same columns) -->
+              <div class="events-table-wrapper">
+                <table class="events-table">
+                  <thead>
+                    <tr>
+                      <th>MONTH / DATE</th>
+                      <th>MEETING TYPE</th>
+                      <th>TOPIC</th>
+                      <th>FOCUS OF DISCUSSION</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Apr 23, 2026</td>
+                      <td>Virtual</td>
+                      <td>
+                        <a href="https://www.hr.com/en/webcasts_events/virtual_events/upcoming_virtual_events/hr-demo-day_mjh745ho.html?s=6b31a6c9-ffe8-4e3e-9d31-e41c4d63f548"
+                          class="topic-link" target="_blank">
+                          HR Demo Day
+                        </a>
+                      </td>
+                      <td>30-minute live demos from a variety of HR solution providers</td>
+                    </tr>
+
+                    <tr>
+                      <td>Apr 29, 2026</td>
+                      <td>Virtual</td>
+                      <td>
+                        <a href="https://www.hr.com/en/webcasts_events/virtual_events/upcoming_virtual_events/ai4hr-live_mjd4uff8.html?s=6b31a6c9-ffe8-4e3e-9d31-e41c4d63f548"
+                          class="topic-link" target="_blank">
+                          AI4HR Live
+                        </a>
+                      </td>
+                      <td>
+                        Practical insights into how AI is being applied across HR today
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>May 12, 2026</td>
+                      <td>Virtual</td>
+                      <td>
+                        <a href="https://www.hr.com/en/webcasts_events/virtual_events/upcoming_virtual_events/hrcoms-future-of-employee-well-being_md4xg05y.html?s=6b31a6c9-ffe8-4e3e-9d31-e41c4d63f548"
+                          class="topic-link" target="_blank">
+                          Future of Employee Well-being
+                        </a>
+                      </td>
+                      <td>
+                        Learn about technologies, services, and methodologies for improving
+                        employee well-being.
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>May 14, 2026</td>
+                      <td>Virtual</td>
+                      <td>
+                        <a href="https://www.hr.com/en/webcasts_events/virtual_events/upcoming_virtual_events/hrcoms-state-of-todays-hr-tech-and-integrations_md4xtly6.html?s=6b31a6c9-ffe8-4e3e-9d31-e41c4d63f548"
+                          class="topic-link" target="_blank">
+                          State of Today's HR Tech and Integrations
+                        </a>
+                      </td>
+                      <td>
+                        How organizations that excel in the proper usage of technologies
+                        differ from those that do not.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- =========================
+   END: Upcoming Events Section
+========================= -->
+
+          <div class="section-divider">&nbsp;</div>
+          <!-- =========================
+     START: Membership Section
+========================= -->
+
+          <section class="content-block membership-steps" id="membership">
+            <h2 class="membership-heading">
+              How to Become a Toronto TEN Member
+            </h2>
+
+            <div class="membership-step">
+              <p class="step-title">Step 1:</p>
+
+              <p class="step-description">
+                Fill out our brief application form, so we can verify you meet
+                the member qualification standards.
+              </p>
+            </div>
+
+            <div class="membership-step">
+              <p class="step-title">Step 2:</p>
+
+              <p class="step-description">
+                The TEN chapter director will contact you with details.
+              </p>
+            </div>
+
+            <div class="membership-step">
+              <p class="step-title">Step 3:</p>
+
+              <p class="step-description">
+                You will be placed into a group of up to 16 peers.
+              </p>
+            </div>
+          </section>
+          <!-- =========================
+     END: Membership Section
+========================= -->
+
+          <div class="section-divider">&nbsp;</div>
+          <!-- =========================
+     START: Why Join TEN Section
+========================= -->
+
+          <section class="content-block why-join-ten" id="howToJoin">
+            <h2 class="why-join-heading">
+              Why Join Fellow Toronto-Area HR Leaders in TEN!
+            </h2>
+
+            <div class="why-join-benefits">
+              <div class="benefit">
+                <p class="benefit-title">Enjoy Regular Meetings With Peers</p>
+
+                <p class="benefit-description">
+                  Build valuable relationships and benefit from ongoing
+                  collaboration. 5 in-person, facilitated sessions (2&ndash;3
+                  hrs) + 5 virtual check-ins + an annual retreat!
+                </p>
+              </div>
+
+              <div class="benefit">
+                <p class="benefit-title">Gain New Perspective</p>
+
+                <p class="benefit-description">
+                  Exchange insights with people who have the same HR
+                  challenges and opportunities. Share experiences and see
+                  what&rsquo;s working &mdash; and not working &mdash; for
+                  others.
+                </p>
+              </div>
+
+              <div class="benefit">
+                <p class="benefit-title">Find Support</p>
+
+                <p class="benefit-description">
+                  Be part of an engaging and exclusive group that promotes
+                  each other&rsquo;s success.
+                </p>
+              </div>
+
+              <div class="benefit">
+                <p class="benefit-title">
+                  Enjoy Exclusive Opportunities &amp; Insights
+                </p>
+
+                <p class="benefit-description">
+                  Access HR data, special interest groups, and leadership
+                  branding opportunities.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- =========================
+     END: Why Join TEN Section
+========================= -->
+
+          <div class="section-divider">&nbsp;</div>
+          <!-- =========================
+     START: Special Offer Section
+========================= -->
+
+          <section class="content-block special-offer" id="pricing">
+            <!-- <h2 class="special-offer-title">Special Offer</h2>
+
+              <p class="special-offer-text">
+                Join the Toronto TEN Chapter for just
+                <strong>$2,200 per year!</strong>
+              </p> -->
+            <button class="button button-primary" id="fc_1768256195978" name="fc_1768256195978"
+              onclick="loadPopup('fc_1768256195978')">
+              Apply to Join
+            </button>
+
+            <div class="chapter-director">
+              <img alt="Ali Jafri - TEN Chapter Director" class="director-photo"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ali-jafri-90px.png" />
+              <div class="director-info">
+                <p class="director-role">Your TEN Chapter Director</p>
+
+                <p class="director-name">
+                  Ali Jafri
+                  <a class="director-email" href="mailto:ajafri@hr.com">ajafri@hr.com</a>
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- =========================
+     END: Special Offer Section
+========================= -->
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('mobileToggle')
+      const mobileNav = document.getElementById('mobileNav')
+      const mobileLinks = mobileNav.querySelectorAll('.sidebar-link')
+      const desktopLinks = document.querySelectorAll(
+        '.sidebar-nav .sidebar-link',
+      )
+
+      // Toggle mobile menu
+      toggleBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('open')
+      })
+
+      // Active link logic
+      function setActiveLink(clickedLink) {
+        ;[...mobileLinks, ...desktopLinks].forEach((link) => {
+          link.classList.remove('active')
+        })
+
+        clickedLink.classList.add('active')
+
+        // Close mobile nav if open
+        if (mobileNav.classList.contains('open')) {
+          mobileNav.classList.remove('open')
+        }
+      }
+
+      // Apply on mobile link click
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          setActiveLink(link)
+        })
+      })
+
+      // Apply on desktop link click
+      desktopLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          setActiveLink(link)
+        })
+      })
+
+      // Sticky Observer Setup
+      function setupStickyObserver(sentinelId, targetSelector, stickyClass) {
+        const sentinel = document.getElementById(sentinelId)
+        const target = document.querySelector(targetSelector)
+
+        if (!sentinel || !target) return
+
+        const observer = new IntersectionObserver(([entry]) => {
+          if (!entry.isIntersecting) {
+            target.classList.add(stickyClass)
+          } else {
+            target.classList.remove(stickyClass)
+          }
+        })
+
+        observer.observe(sentinel)
+      }
+
+      // Setup sticky behavior
+      setupStickyObserver(
+        'mobileStickySentinel',
+        '.mobile-sticky-wrapper',
+        'is-sticky-at-top',
+      )
+      setupStickyObserver(
+        'sidebarStickySentinel',
+        '.sidebar-nav',
+        'is-sticky-at-top',
+      )
+    })
+
+    // Section scroll-based nav highlighting (desktop)
+    const sections = document.querySelectorAll('.content-block[id]')
+    const desktopNavLinks = document.querySelectorAll(
+      '.sidebar-nav .sidebar-link',
+    )
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id')
+
+            desktopNavLinks.forEach((link) => {
+              link.classList.toggle(
+                'active',
+                link.getAttribute('href') === `#${id}`,
+              )
+            })
+          }
+        })
+      },
+      {
+        root: null,
+        rootMargin: '-50% 0px -49% 0px', // Top edge buffer (fine-tuned)
+        threshold: 0,
+      },
+    )
+
+    sections.forEach((section) => {
+      sectionObserver.observe(section)
+    })
+  </script>
+</body>
+
+</html>

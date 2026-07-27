@@ -1,0 +1,1719 @@
+<link href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css" media="screen" rel="stylesheet"
+  type="text/css" />
+<link href="$public/remoteimages/website-images/2017_SiteRedesign/css/jquery.dataTables.min.css" media="screen"
+  rel="stylesheet" type="text/css" />
+<link href="$public/remoteimages/website-images/2017_SiteRedesign/css/responsive.dataTables.min.css" media="screen"
+  rel="stylesheet" type="text/css" />
+<link href="$public/remoteimages/website-images/2021_siteRedesign/css/Custom-Style.css?version=5" media="screen"
+  rel="stylesheet" type="text/css" />
+<link href="$public/remoteimages/website-images/2021_siteRedesign/css/calendar_design.css?version=5" media="screen"
+  rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .SM-Icons li {
+    font-size: 0px;
+  }
+
+  .AffiliateProgramLanding-Top-BG {
+    background: url($public/remoteimages/website-images/2017_SiteRedesign/images/AffiliateProgramLanding-BG.jpg) no-repeat center center #2b4452;
+    padding: 80px 30px;
+    margin-bottom: 0px;
+  }
+
+  .AffiliateProgramLanding-Top-BG h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+
+  .AffiliateProgramLanding-Top-BG h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fbb416;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+
+  .AffiliateProgramLanding-Top-BG .btn {
+    margin: 10px;
+  }
+
+  .AffiliateProgram-Content-Block {
+    background: #fff;
+    border: solid 1px #e5e5e5;
+    padding: 30px;
+    margin: 0px 0px;
+    margin-bottom: 30px;
+    min-height: 410px;
+  }
+
+  .AffiliateProgram-Content-Block hr {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  .AffiliateProgram-Content-Block h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0px;
+    margin-bottom: 10px;
+    min-height: 60px;
+  }
+
+  .AffiliateProgram-Content-Block h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px 0px;
+    color: #2a343e;
+    border-left: solid 10px #9dcb57;
+    padding-left: 10px;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li {
+    background-color: #77d3e0;
+    margin-top: 0px;
+    padding: 5px;
+    border-radius: 2px;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li:hover {
+    background-color: #2ca3b3;
+    border-radius: 50%;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li img {
+    width: 24px;
+    height: auto;
+    border-radius: 0%;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li img {
+    display: none;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li {
+    background: none;
+    padding: 0px;
+    height: 20px;
+    margin-bottom: 6px;
+    width: 75px;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li:hover {
+    background: none;
+  }
+
+  .AffiliateProgram-Content-Block .SM-Icons li .myModal-EmailFriends img {
+    display: inherit !important;
+    background-color: #77d3e0;
+    border-radius: 5px;
+    width: 58px;
+  }
+
+  div#message-subject {
+    font-size: 16px;
+    font-weight: bold;
+    color: #454545;
+    margin-bottom: 16px;
+  }
+
+  div#message-body {
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+<div id="fb-root">&nbsp;</div>
+<script>
+  $(document).ready(function () {
+    ; (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0]
+      if (d.getElementById(id)) return
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0'
+      fjs.parentNode.insertBefore(js, fjs)
+    })(document, 'script', 'facebook-jssdk')
+
+    setTimeout(function () {
+      console.log('fb rendered')
+      FB.XFBML.parse()
+    }, 3000)
+  })
+</script>
+<script type="text/javascript">
+  !(function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0],
+      p = /^http:/.test(d.location) ? 'http' : 'https'
+    if (!d.getElementById(id)) {
+      js = d.createElement(s)
+      js.id = id
+      js.src = p + '://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+    }
+  })(document, 'script', 'twitter-wjs')
+</script>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">
+  lang: en_US
+</script>
+
+<div class="AffiliateProgramLanding-Top-BG">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h1>Loving HR.com&#39;s products?</h1>
+
+          <h3>Spread the love by referring us to your friends, and make money in the process!</h3>
+          <button class="btn LargeBtn RedBtn" onclick="window.location.href = '#HowMuch'" type="submit">How Much Can I
+            Earn?</button><a class="btn LargeBtn BlueBtn"
+            href="mailto:affiliates@hr.com?subject=I have a Referral program question" target="_blank">Contact Us</a><a
+            class="btn LargeBtn GreenBtn" href="#ReferralReport">Check Referral Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 text-center MarginTop40">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+        <div class="Page-Header">
+          <h1 class="Red" style="font-weight: 800">Let&#39;s get this referral party started!</h1>
+
+          <h5 class="Dark" style="line-height: 24px">First of all, thank you for being so excited about our products and
+            services! We are glad that you&#39;re interested in helping us spread the word about HR.com - and don&#39;t
+            worry, your efforts won&#39;t go unnoticed! How?</h5>
+
+          <h4 class="Red" style="line-height: 24px">WE PAY YOU WHEN YOUR FRIENDS PURCHASE<br />
+            HR.COM PRODUCTS AS A RESULT OF YOUR REFERRAL!</h4>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20 MarginTop20"><img alt=""
+          src="$public/remoteimages/website-images/2017_SiteRedesign/images/AffiliateProgramLanding-Diagram.png"
+          style="width: 100%; height: auto; max-width: 687px" /></div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+        <div class="Page-Header">
+          <h2 class="Green" style="font-weight: 800">Wow! Does it get much better than that?</h2>
+          <img alt="" class="Profile60"
+            src="$public/remoteimages/website-images/2017_SiteRedesign/images/LandingPage-Genie.png" />
+          <h2 class="Red" style="font-weight: 800">So, how can you get started collecting dough from HR.com?</h2>
+
+          <h5 class="Gray" id="HowMuch" style="line-height: 24px">Select your product from the chart below, share the
+            code with your friends or colleagues, and wait for the money to roll in!</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="AffiliateProgram-Content-Block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                src="$public/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png"
+                style="width: 80px; height: auto; margin-right: 10px" />
+              <h3 class="Orange">HRWest 2026</h3>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+              <h4>Earnings: Earn up to 25% for each registered referral.</h4>
+              <span class="small">Earnings dependent on the total sale price.</span>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p class="MarginBottom20">Register today to attend HRWest 2026, June 9&ndash;10, 2026 at the South San
+                Francisco Conference Center in South San Francisco, CA. Gain essential insights and strategies from
+                leading experts on everything from compliance to AI, and be part of conversations on critical issues.
+                It&#39;s the must-attend collaborative conference for everyone in HR.</p>
+
+              <hr />
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+              <p class="Gray">Share referral code via:</p>
+
+              <ul class="SM-Icons">
+                <li><span class="fb_share_1708978965338">Share</span></li>
+                <li><span class="twitter_share_1708978965338">Tweet</span></li>
+                <li><span class="linkedIn_share_1708978965338"></span></li>
+                <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                      src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <p class="Gray">Share unique link with your networks:</p>
+
+              <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1708978965338">web.hr.com/1234</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="AffiliateProgram-Content-Block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <h3 class="Orange">Prepare for PHR, SPHR or SHRM Certification Exams</h3>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+              <h4>Earnings: Up to $200&nbsp;per referral</h4>
+              <span class="small">Earnings are dependent on the total sale price.</span>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p class="MarginBottom20">Are your friend&#39;s HR certified? Well, now they can be when you refer them to
+                the <strong>HR Certifications Exam Prep Course</strong>.<br />
+                <br />
+                We are happy to say that we have a 93% pass rate! &nbsp;
+              </p>
+
+              <hr />
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+              <p class="Gray">Share referral code via:</p>
+
+              <ul class="SM-Icons">
+                <li><span class="fb_share_1389907809599">Share</span></li>
+                <li><span class="twitter_share_1389907809599">Tweet</span></li>
+                <li><span class="linkedIn_share_1389907809599"></span></li>
+                <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                      src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <p class="Gray">Share unique link with your networks:</p>
+
+              <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1389907809599">web.hr.com/1234</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix visible-md-block visible-lg-block visible-sm-block">&nbsp;</div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="AffiliateProgram-Content-Block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><img alt="HRCI and SHRM Recertification"
+                class="Profile60 FloatLeft"
+                src="$public/remoteimages/website-images/2017_SiteRedesign/images/HRCI-2018.png" />
+              <h3 class="Orange">HRCI and SHRM Recertification!</h3>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+              <h4>Earnings: Up to $50 per referral</h4>
+              <span class="small">Earnings dependent on the total sale price.</span>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p class="MarginBottom20">Do your friends or family members need HRCI and SHRM Recertification? If yes,
+                then you should refer them to the <strong>HRCI and SHRM Recertification</strong> that is currently
+                available through HR.com</p>
+
+              <hr />
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+              <p class="Gray">Share referral code via:</p>
+
+              <ul class="SM-Icons">
+                <li><span class="fb_share_1365031945882">Share</span></li>
+                <li><a><span class="twitter_share_1365031945882">Tweet</span></a></li>
+                <li><a><span class="linkedIn_share_1365031945882"></span></a></li>
+                <!--<li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-facebook.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-linkedin.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-googlePlus.png" /></a></li>-->
+                <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                      src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <p class="Gray">Share unique link with your networks:</p>
+
+              <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1365031945882">web.hr.com/1234</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="AffiliateProgram-Content-Block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Prime HR Pro" class="FloatLeft"
+                src="$public/remoteimages/website-images/memberships/Hr-prime.png"
+                style="width: 80px; margin-right: 10px" />
+              <h3 class="Orange">Prime HR Pro</h3>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+              <h4>Earnings: Up to $37 per referral</h4>
+              <span class="small">Earnings dependent on the total sale price.</span>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p class="MarginBottom20">Tackling HR issues just got a whole lot easier! <strong>Prime HR Pro</strong>
+                will give you the power to manage your HR department needs from one central location and make your HR
+                challenges disappear.</p>
+
+              <hr />
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+              <p class="Gray">Share referral code via:</p>
+
+              <ul class="SM-Icons">
+                <li><span class="fb_share_201710101">Share</span></li>
+                <li><span class="twitter_share_201710101">Tweet</span></li>
+                <li><span class="linkedIn_share_201710101"></span></li>
+                <!--<li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-facebook.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-linkedin.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-googlePlus.png" /></a></li>-->
+                <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                      src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <p class="Gray">Share unique link with your networks:</p>
+
+              <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="201710101">web.hr.com/1234</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix visible-md-block visible-lg-block visible-sm-block">&nbsp;</div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="AffiliateProgram-Content-Block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Prime HR Plus" class="FloatLeft"
+                src="$public/remoteimages/website-images/memberships/Hr-prime.png"
+                style="width: 80px; margin-right: 10px" />
+              <h3 class="Orange">Prime HR Plus</h3>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+              <h4>Earnings: Up to $79 per referral</h4>
+              <span class="small">Earnings dependent on the total sale price.</span>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p class="MarginBottom20">Tackling HR issues just got a whole lot easier! <strong>Prime HR Plus</strong>
+                will give you the power to manage your HR department needs from one central location and make your HR
+                challenges disappear.</p>
+
+              <hr />
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+              <p class="Gray">Share referral code via:</p>
+
+              <ul class="SM-Icons">
+                <li><span class="fb_share_4820593812">Share</span></li>
+                <li><span class="twitter_share_4820593812">Tweet</span></li>
+                <li><span class="linkedIn_share_4820593812"></span></li>
+                <!--<li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-facebook.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-linkedin.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-googlePlus.png" /></a></li>-->
+                <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                      src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <p class="Gray">Share unique link with your networks:</p>
+
+              <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="4820593812">web.hr.com/1234</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="AffiliateProgram-Content-Block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Prime HR Elite" class="FloatLeft"
+                src="$public/remoteimages/website-images/memberships/Hr-prime.png"
+                style="width: 80px; margin-right: 10px" />
+              <h3 class="Orange">Prime HR Elite</h3>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+              <h4>Earnings: Up to $399 per referral</h4>
+              <span class="small">Earnings dependent on the total sale price.</span>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p class="MarginBottom20">Tackling HR issues just got a whole lot easier! <strong>Prime HR Elite</strong>
+                will give you the power to manage your HR department needs from one central location and make your HR
+                challenges disappear.</p>
+
+              <hr />
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+              <p class="Gray">Share referral code via:</p>
+
+              <ul class="SM-Icons">
+                <li><span class="fb_share_202110101">Share</span></li>
+                <li><span class="twitter_share_202110101">Tweet</span></li>
+                <li><span class="linkedIn_share_202110101"></span></li>
+                <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                      src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <p class="Gray">Share unique link with your networks:</p>
+
+              <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="202110101">web.hr.com/1234</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix visible-md-block visible-lg-block visible-sm-block">&nbsp;</div>
+      <!--<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="AffiliateProgram-Content-Block">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft" src="$public/remoteimages/website-images/2022_siteupdate/Images/InspireHR_Logo_RGB.gif" style="width:80px; height:auto; margin-right:10px;" />
+<h3 class="Orange">INSPIRE 2022 Event Passes</h3>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+<h4>Earnings: 20% of the ticket price back per referral</h4>
+<span class="small">Earnings dependent on the total sale price.</span></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="MarginBottom20">InspireHR&nbsp;will open up the world of what is possible in the near future. It will deep-dive into trends, case-studies, research, opportunities and market innovation. Join us at InspireHR Oct 5-7 in Nashville, Tennessee &amp; Oct 11-12 Virtually</p>
+
+<hr /></div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+<p class="Gray">Share referral code via:</p>
+
+<ul class="SM-Icons">
+    <li><span class="fb_share_1633447019285">Share</span></li>
+    <li><span class="twitter_share_1633447019285">Tweet</span></li>
+    <li><span class="linkedIn_share_1633447019285"></span></li>
+    <li><a class="myModal-EmailFriends modal-toggle" href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+</ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="Gray">Share unique link with your networks:</p>
+
+<h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1633447019285">web.hr.com/1234</h5>
+</div>
+</div>
+</div>
+</div>--><!--
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="AffiliateProgram-Content-Block">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft" src="$public/remoteimages/website-images/2021_siteupdate/Europe2022/images/HRTECH_Europe_logo.png" style="width: 65px; margin-right: 10px; margin-bottom:8px" />
+<h3 class="Orange">Empower HR Tech Europe 2022</h3>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+<h4>Earnings: 20% of the ticket price back per referral</h4>
+<span class="small">Earnings dependent on the total sale price.</span></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="MarginBottom20">The Empower HR Tech Europe platform hosts new human resources technology collaboration and where HR professionals connect vision and strategy with solution and practicality. Join us Nov 16-17 in London &amp; Nov 21 Virtually&quot;</p>
+
+<hr /></div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+<p class="Gray">Share referral code via:</p>
+
+<ul class="SM-Icons">
+    <li><span class="fb_share_1633447019286">Share</span></li>
+    <li><span class="twitter_share_1633447019286">Tweet</span></li>
+    <li><span class="linkedIn_share_1633447019286"></span></li>
+    <li><a class="myModal-EmailFriends modal-toggle" href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+</ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="Gray">Share unique link with your networks:</p>
+
+<h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1633447019286">web.hr.com/1234</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+--><!-- ten blocks -->
+
+      <div class="row">
+        <hr />
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h2 class="Red" id="ProfEdu" style="font-weight: 800">Trusted Executive Network</h2>
+        </div>
+        <!-- TEN 1 -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Trusted Executive Network" class="FloatLeft"
+                  src="$public/remoteimages/website-images/logo/TrustedExecutiveNetwork-2c-logo-without-tagline.png"
+                  style="width: 80px; margin-right: 10px" />
+                <h3 class="Orange">TEN Individual Membership USD</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to $500 per referral</h4>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1737403070889">Share</span></li>
+                  <li><span class="twitter_share_1737403070889">Tweet</span></li>
+                  <li><span class="linkedIn_share_1737403070889"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1737403070889">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END TEN 1 --><!-- TEN 2 -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Trusted Executive Network" class="FloatLeft"
+                  src="$public/remoteimages/website-images/logo/TrustedExecutiveNetwork-2c-logo-without-tagline.png"
+                  style="width: 80px; margin-right: 10px" />
+                <h3 class="Orange">TEN Organization Membership USD</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to $1000&nbsp;per referral</h4>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1737403203529">Share</span></li>
+                  <li><span class="twitter_share_1737403203529">Tweet</span></li>
+                  <li><span class="linkedIn_share_1737403203529"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1737403203529">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END TEN 2 --><!-- TEN 3 -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Trusted Executive Network" class="FloatLeft"
+                  src="$public/remoteimages/website-images/logo/TrustedExecutiveNetwork-2c-logo-without-tagline.png"
+                  style="width: 80px; margin-right: 10px" />
+                <h3 class="Orange">TEN Organization Membership CAD</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to $1000&nbsp;per referral</h4>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1738000231422">Share</span></li>
+                  <li><span class="twitter_share_1738000231422">Tweet</span></li>
+                  <li><span class="linkedIn_share_1738000231422"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1738000231422">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END TEN 3 --><!-- TEN 4 -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img alt="Trusted Executive Network" class="FloatLeft"
+                  src="$public/remoteimages/website-images/logo/TrustedExecutiveNetwork-2c-logo-without-tagline.png"
+                  style="width: 80px; margin-right: 10px" />
+                <h3 class="Orange">TEN Individual Membership CAD</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to $500 per referral</h4>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1738000455402">Share</span></li>
+                  <li><span class="twitter_share_1738000455402">Tweet</span></li>
+                  <li><span class="linkedIn_share_1738000455402"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1738000455402">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END TEN 4 -->
+      </div>
+      <!-- end ten blocks -->
+
+      <div class="row">
+        <hr />
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h2 class="Red" id="ProfEdu" style="font-weight: 800">Professional Education</h2>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Professional Education</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Wherever you are in your HR Career, we have flexible training to meet YOUR
+                  needs.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_776337746625">Share</span></li>
+                  <li><span class="twitter_share_776337746625">Tweet</span></li>
+                  <li><span class="linkedIn_share_776337746625"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="776337746625">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Move Beyond DEI for Wellness</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Equip your HR group with strong knowledge in wellness, multiculturalism,
+                  diversity, equity, and inclusion that extend beyond policies and compliance.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1637769807180">Share</span></li>
+                  <li><span class="twitter_share_1637769807180">Tweet</span></li>
+                  <li><span class="linkedIn_share_1637769807180"></span></li>
+                  <!--<li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-facebook.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-linkedin.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-googlePlus.png" /></a></li>-->
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1637769807180">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Disrupt Implicit Bias in Your World Certificate Course</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Want to learn how to disrupt implicit bias in the workplace? Understanding
+                  unconscious bias will help foster fair chance hiring processes and overall employee well-being.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1652274966402">Share</span></li>
+                  <li><span class="twitter_share_1652274966402">Tweet</span></li>
+                  <li><span class="linkedIn_share_1652274966402"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1652274966402">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Change Management for HR Professionals: Certificate of Learning</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn the fundamentals of change management to effectively manage
+                  organizational change or any type of employee or workforce transformation.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1628195613490">Share</span></li>
+                  <li><span class="twitter_share_1628195613490">Tweet</span></li>
+                  <li><span class="linkedIn_share_1628195613490"></span></li>
+                  <!--<li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-facebook.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-linkedin.png" /></a></li>
+    <li><a href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-googlePlus.png" /></a></li>-->
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1628195613490">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">How To&#39;s of On-Demand Pay</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn to improve staff retention, enhance recruitment, and how this financial
+                  wellness benefit can provide positive financial awareness and flexibility for employees living
+                  paycheck-to-paycheck.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1657125906314">Share</span></li>
+                  <li><span class="twitter_share_1657125906314">Tweet</span></li>
+                  <li><span class="linkedIn_share_1657125906314"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1657125906314">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">What is On-Demand Pay</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn how to leverage an emerging new financial wellness benefit, on-demand
+                  pay.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1644603915434">Share</span></li>
+                  <li><span class="twitter_share_1644603915434">Tweet</span></li>
+                  <li><span class="linkedIn_share_1644603915434"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1644603915434">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Building or Improving Your Employer Brand</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Build a compelling employer brand and strong Employee Value Proposition to
+                  attract talent and boost retention for a competitive edge in talent acquisition.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1609219523330">Share</span></li>
+                  <li><span class="twitter_share_1609219523330">Tweet</span></li>
+                  <li><span class="linkedIn_share_1609219523330"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1609219523330">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">5 Steps to Improved Work-Life Balance</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn how to declutter your mind and life while reframing any negative thought
+                  processes.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1649092817742">Share</span></li>
+                  <li><span class="twitter_share_1649092817742">Tweet</span></li>
+                  <li><span class="linkedIn_share_1649092817742"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1649092817742">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Mergers and Acquisitions For Human Resource Professionals</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Get a omprehensive overview of the M&amp;A process and HR&#39;s role during
+                  both the due diligence and execution phases.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1657907200690">Share</span></li>
+                  <li><span class="twitter_share_1657907200690">Tweet</span></li>
+                  <li><span class="linkedIn_share_1657907200690"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1657907200690">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Performance Review Conversations</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Grab tools and tips on conducting effective performance review conversations.
+                </p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1659131710810">Share</span></li>
+                  <li><span class="twitter_share_1659131710810">Tweet</span></li>
+                  <li><span class="linkedIn_share_1659131710810"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1659131710810">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="AffiliateProgram-Content-Block">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft" src="$public/hrCourses/hrcom_professionaleducationbadge.png" style="width: 80px; height: auto; margin-right: 10px" />
+<h3 class="Orange">Creating More Respectful Workplaces: LGBTQ Employees</h3>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+<h4>Earnings: Up to 40% per referral</h4>
+<span class="small">Earnings dependent on the total netsale price and seat sales minimum requirement.</span></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="MarginBottom20">Discover how to develop, implement and maintain an inclusive, safe, and accepting workplace for LGBTQ+ individuals through policy, procedures, and personal development.</p>
+
+<hr /></div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+<p class="Gray">Share referral code via:</p>
+
+<ul class="SM-Icons">
+<li><span class="fb_share_1627658985048">Share</span></li>
+<li><span class="twitter_share_1627658985048">Tweet</span></li>
+<li><span class="linkedIn_share_1627658985048"></span></li>
+<li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+</ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="Gray">Share unique link with your networks:</p>
+
+<h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1627658985048">web.hr.com/1234</h5>
+</div>
+</div>
+</div>
+</div>
+-->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Payroll Fraud and Risk</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Identify areas of risk, and provide recommendations to properly vet employees,
+                  clients, and vendors in an effort to mitigate the risk of fraud</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1655911085170">Share</span></li>
+                  <li><span class="twitter_share_1655911085170">Tweet</span></li>
+                  <li><span class="linkedIn_share_1655911085170"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1655911085170">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">The Candidate Experience Certificate of Learning</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn how to create a best-in-class candidate experience journey for your
+                  organization in this course to strengthen your employer brand, talent acquisition, and retention.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1643659400878">Share</span></li>
+                  <li><span class="twitter_share_1643659400878">Tweet</span></li>
+                  <li><span class="linkedIn_share_1643659400878"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1643659400878">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">HR for Non-HR Managers</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Gain the ultimate manager tools that will enhance your leadership style with
+                  HR professionalism and knowledge.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1614288160187">Share</span></li>
+                  <li><span class="twitter_share_1614288160187">Tweet</span></li>
+                  <li><span class="linkedIn_share_1614288160187"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1614288160187">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Meeting Effectiveness</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn how to develop strategies to apply situational leadership to help move
+                  the team forward and run highly productive live or virtual meetings.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1609196949433">Share</span></li>
+                  <li><span class="twitter_share_1609196949433">Tweet</span></li>
+                  <li><span class="linkedIn_share_1609196949433"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1609196949433">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">Fair Pay for the Right Talent</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Learn best practices to determine how much and how to pay your employees to
+                  achieve fair pay practices.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1660932090862">Share</span></li>
+                  <li><span class="twitter_share_1660932090862">Tweet</span></li>
+                  <li><span class="linkedIn_share_1660932090862"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1660932090862">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">HR Strategies for Building an Ethical Workplace</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 40% per referral</h4>
+                <span class="small">Earnings dependent on the total netsale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Gain the knowledge, skills, and tools to effectively implement and communicate
+                  ethically-sound policies, procedures, and practices that align to core company values.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_166273590385638">Share</span></li>
+                  <li><span class="twitter_share_166273590385638">Tweet</span></li>
+                  <li><span class="linkedIn_share_166273590385638"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="166273590385638">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">AI for HR Academy for CHROs Certificate</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 20% per referral</h4>
+                <span class="small">Earnings dependent on the total net sale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Get ahead in the AI game and lead AI in your workplace with confidence.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1739469974617">Share</span></li>
+                  <li><span class="twitter_share_1739469974617">Tweet</span></li>
+                  <li><span class="linkedIn_share_1739469974617"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1739469974617">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AffiliateProgram-Content-Block">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft"
+                  src="$public/hrCourses/hrcom_professionaleducationbadge.png"
+                  style="width: 80px; height: auto; margin-right: 10px" />
+                <h3 class="Orange">AI for HR Academy for HR Professionals Certificate</h3>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+                <h4>Earnings: Up to 20% per referral</h4>
+                <span class="small">Earnings dependent on the total net sale price and seat sales minimum
+                  requirement.</span>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="MarginBottom20">Get ahead in the AI game and lead AI in your workplace with confidence.</p>
+
+                <hr />
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+                <p class="Gray">Share referral code via:</p>
+
+                <ul class="SM-Icons">
+                  <li><span class="fb_share_1743084447773">Share</span></li>
+                  <li><span class="twitter_share_1743084447773">Tweet</span></li>
+                  <li><span class="linkedIn_share_1743084447773"></span></li>
+                  <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img
+                        src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="Gray">Share unique link with your networks:</p>
+
+                <h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1743084447773">web.hr.com/1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="AffiliateProgram-Content-Block">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft" src="$public/remoteimages/website-images/2017_SiteRedesign/images/HrGenius-Logo-Inside.png" style="width:80px; height:auto; margin-right:10px;" />
+<h3 class="Orange">HR Genius</h3>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+<h4>Earnings: Up to $60 per referral</h4>
+<span class="small">Earnings dependent on the total sale price.</span></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="MarginBottom20"><strong>HR Genius</strong> is an online library of thousands video-based and interactive lessons across all areas of HR. Expand your knowledge and heighten your skills to take your career to the next level.</p>
+
+<hr /></div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+<p class="Gray">Share referral code via:</p>
+
+<ul class="SM-Icons">
+    <li><span class="fb_share_47436487">Share</span></li>
+    <li><span class="twitter_share_47436487">Tweet</span></li>
+    <li><span class="linkedIn_share_47436487"></span></li>
+
+    <li><a class="myModal-EmailFriends modal-toggle quick-login-m1" href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+</ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="Gray">Share unique link with your networks:</p>
+
+<h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="47436487">web.hr.com/1234</h5>
+</div>
+</div>
+</div>
+</div>--><!--<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="AffiliateProgram-Content-Block">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft" src="$public/remoteimages/website-images/2021_siteupdate/HR-West-2022/hrwest_logo.png" style="width:80px; height:auto; margin-right:10px;" />
+<h3 class="Orange">HR West Event Pass</h3>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+<h4>Earnings: 5% of the ticket price back per referral</h4>
+<span class="small">Earnings dependent on the total sale price.</span></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="MarginBottom20">Reconnect.Innovate. Regenerate. HR professionals on the west coast are coming together again at this hybrid event (both in-person and virtually) at the Oakland City Center Marriott in March 8-9, 2022. Join HR peers and experts to level up your career and earn tons of credits towards your certification or recertification at HR West 2022!</p>
+
+<hr /></div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+<p class="Gray">Share referral code via:</p>
+
+<ul class="SM-Icons">
+    <li><span class="fb_share_1633446707989">Share</span></li>
+    <li><span class="twitter_share_1633446707989">Tweet</span></li>
+    <li><span class="linkedIn_share_1633446707989"></span></li>
+    <li><a class="myModal-EmailFriends modal-toggle" href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+</ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="Gray">Share unique link with your networks:</p>
+
+<h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="1633446707989">web.hr.com/1234</h5>
+</div>
+</div>
+</div>
+</div>--><!--<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="AffiliateProgram-Content-Block">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12"><img class="FloatLeft" src="$public/remoteimages/website-images/2021_siteupdate/HR-West-2022/hrwest_logo.png" style="width:80px; height:auto; margin-right:10px;" />
+<h3 class="Orange">HR West Event With Prime HR Pro Pass</h3>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+<h4>Earnings: 5% of the ticket price back per referral</h4>
+<span class="small">Earnings dependent on the total sale price.</span></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="MarginBottom20">Reconnect.Innovate. Regenerate. HR professionals on the west coast are coming together again at this hybrid event (both in-person and virtually) at the Oakland City Center Marriott in March 8-9, 2022. Join HR peers and experts to level up your career and earn tons of credits towards your certification or recertification at HR West 2022!</p>
+
+<hr /></div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 MarginBottom10">
+<p class="Gray">Share referral code via:</p>
+
+<ul class="SM-Icons">
+    <li><span class="fb_share_3072022479378">Share</span></li>
+    <li><span class="twitter_share_3072022479378">Tweet</span></li>
+    <li><span class="linkedIn_share_3072022479378"></span></li>
+    <li><a class="myModal-EmailFriends modal-toggle" href="#"><img src="$public/remoteimages/website-images/2017_SiteRedesign/images/SM-Mail.png" /></a></li>
+
+</ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="Gray">Share unique link with your networks:</p>
+
+<h5 class="Blue MarginTop10 referral-shortcode" data-toolkit="3072022479378">web.hr.com/1234</h5>
+</div>
+</div>
+</div>
+</div>--><!--end divs-->
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12" id="ReferralReport">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h3 class="Red text-center"><strong>Your Referral Report</strong></h3>
+
+          <h5 class="Dark text-center">Ready to redeem your points? Please email this request to <a
+              href="mailto:redeem@hr.com" target="_blank">redeem@hr.com</a> and we will work with you on your
+            payout!<br />
+            Please note: members must have a <em><strong>minimum</strong></em> of referral or reward points with a value
+            of $200 in order to redeem.</h5>
+
+          <div class="WhiteBlock">$designAttribute:Affiliate_UserStats</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  $designAttribute:affiliateToolkit <!-- Modal -->
+
+  <div aria-labelledby="myModalLabel2" class="modal right fade" id="myModal-EmailFriends" role="dialog" tabindex="-1">
+    <div class="modal-dialog SideModal" role="document">
+      <div class="modal-content"><!--<div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">Competitor Pricing</h4>
+            </div>-->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><label>Send to:</label><br />
+              <textarea class="ep to" data-gramm="true" data-gramm_editor="true"
+                data-gramm_id="08caed85-b185-1b11-ff85-8e45f2fd655a"
+                data-txt_gramm_id="08caed85-b185-1b11-ff85-8e45f2fd655a" data-url="/affiliate/toolkit/email/send2"
+                id="emails" name="recipients-emails"
+                placeholder="Insert email addresses here (comma or whitespace separated)" spellcheck="false" style="
+                  z-index: auto;
+                  position: relative;
+                  transition: none 0s ease 0s;
+                  background: transparent !important;
+                  min-height: 60px;
+                "></textarea>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12"><button class="prev_add btn WhiteBtn MarginTop10"
+                type="button">Previous Email Addresses</button>
+
+              <div class="prev-email-list hidden">&nbsp;</div>
+
+              <p class="Green">Valid Email Addresses:</p>
+
+              <div class="ep valid cf valid-emails">&nbsp;</div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <hr /><label class="Dark">Subject:</label>
+
+              <div class="ep subject FullWidth" id="message-subject">&nbsp;</div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12"><label>Message:</label>
+
+              <div class="ep message" id="message-body">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer"><button class="btn RedBtn send-emails-btn"
+            data-loading-text="&lt;i class='fa fa-spinner fa-spin'&gt;&lt;/i&gt; Sending Emails" type="button">Send
+            Mail</button><button class="btn" data-dismiss="modal" type="button"><span
+              class="glyphicon glyphicon-remove"></span>Close</button></div>
+      </div>
+      <!-- modal-content -->
+    </div>
+    <!-- modal-dialog -->
+  </div>
+  <!-- modal --> $designAttribute:quick_login_m1 $designAttribute:helpdesk
+</div>

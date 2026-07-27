@@ -1,0 +1,1688 @@
+<!-- @format -->
+
+<!-- title: HRWest HR Conference  -->
+
+<!-- @format --><!-- <link rel="stylesheet" href="./test.css"> -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  rel="stylesheet"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- @format -->
+<style type="text/css">
+  .hero_card_wrapper {
+    padding-top: 0px !important;
+  }
+  .evnt_abs_info {
+    margin: 20px auto !important;
+  }
+
+  .apply-spk {
+    position: relative;
+    background: #91278c;
+    border-radius: 20px;
+    margin: 80px auto 40px auto;
+    max-width: 850px;
+  }
+
+  .apply-spk-inner {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 1.25rem;
+  }
+
+  .apply-spk-content {
+    width: 80%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+  .apply-spk-content p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0px;
+    line-height: 1.6;
+  }
+  .apply-spk-content h5 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+  .apply-spk-image {
+    position: relative;
+    width: 40%;
+    height: 100%;
+  }
+
+  .apply-spk-image .circle-shape {
+    position: absolute;
+    bottom: -300px;
+    right: -26px;
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.3;
+  }
+  .apply-spk > img {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    max-width: 200px;
+  }
+
+  .button-wrap {
+    margin-top: 30px;
+  }
+
+  .ext-class {
+    font-size: 70px !important;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.1 !important;
+    margin: 0px 0px 10px 0px !important;
+  }
+  .hero_card_wrapper .hero_card > h4 {
+    font-size: 24px;
+  }
+  .hero_card_wrapper .hero_card > h4 > span {
+    font-size: 32px;
+  }
+  .hr-west_info > p > span {
+    display: block;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    margin: 0;
+  }
+  .hr-wrapper_info > h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a343e;
+    line-height: 1.5;
+    margin: 20px 0px 10px 0px;
+  }
+  .hr-wrapper_info > h2 {
+    font-weight: 400 !important;
+  }
+  .spk_logo > img {
+    border-radius: 100px;
+  }
+  .swocas_wrapper .mot_js_card .js_card_img > img {
+    border-radius: 100px 100px 0px 0px;
+  }
+  .purple {
+    background: url(https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Learn-from-the-best.webp),
+      linear-gradient(45deg, #91278c, #ef5924);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+  .yellow {
+    background: url(https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/chat-with-peers.webp),
+      linear-gradient(45deg, #ef5924, #fcb22f);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  .blue {
+    background: url(https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/social-experiences.webp),
+      linear-gradient(45deg, #29a8df, #273a8f);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+  .green {
+    background: url(https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Awards-banner.png),
+      linear-gradient(45deg, #338b93, #b6f492);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+  @media screen and (max-width: 767px) {
+    .apply-spk > img {
+      right: -25px;
+    }
+  }
+
+  /* countdown */
+  .countdown-container {
+    /* border: 2px solid blue; */
+    margin-block: 5rem;
+    margin: 5rem 0 5rem 0;
+  }
+  #countdown {
+    width: 90vw;
+    /* border: 2px solid red;  */
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .countdown ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown ul li {
+    list-style-type: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .countdown ul li span {
+    /* display: block; */
+    font-size: clamp(3rem, 5vw, 6rem);
+    color: #e51069;
+    font-weight: bold;
+  }
+
+  .countdown-separator {
+    display: block;
+    font-size: clamp(3rem, 5vw, 6rem) !important;
+    margin: -5px 10px;
+    color: #e51069;
+  }
+
+  .countdown li:first-of-type {
+    margin-right: 3rem;
+  }
+  /* end countdown */
+  .sm {
+    font-size: 16px !important;
+    margin-top: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* sold out / special offer image */
+  /* mobile */
+  @media screen and (min-width: 768px) {
+    .sold-mobile {
+      display: none;
+    }
+  }
+  /* dekstop */
+  .sold {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .sold {
+      display: block;
+      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      z-index: 2;
+    }
+  }
+
+  .checkmark-list {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  .checkmark-list li {
+    position: relative;
+    margin: 10px 0;
+    padding-left: 25px;
+    color: #333;
+  }
+
+  .checkmark-list li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: green;
+    font-size: 16px;
+  }
+
+  .custom-list {
+    list-style: none;
+    margin: 0px 0px 30px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .custom-list > li {
+    list-style: none;
+    color: #2a343e;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0px 0px 30px 30px;
+    position: relative;
+    background: url(../images/black-tick.svg) top 8px left no-repeat;
+  }
+
+  .ev_wc {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+
+  .ev_wc > p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2a343e;
+    margin-top: 20px;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+  .ev_wc .ev_wc_infocard {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3%;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .square {
+    width: 175px;
+    height: 100px;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hero_card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-basis: 0;
+    padding-top: 40px;
+    margin-bottom: 10px;
+  }
+  .hero_card_wrapper .hero_card {
+    width: 100%;
+    max-width: 245px;
+    min-height: 450px;
+    border-radius: 20px;
+    padding: 55px 20px 20px 20px;
+    flex: 1 1 0px;
+    position: relative;
+    text-align: left;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .hero_card_wrapper .hero_card > h4 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0px 0px 15px 0px;
+  }
+  .hero_card_wrapper .hero_card > h4 > span {
+    display: block;
+    font-size: 45px;
+    font-weight: 600;
+  }
+  .hero_card_wrapper .hero_card > p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0px 0px 15px 0px;
+  }
+  .grey {
+    background: url(https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/thumbsupvalueimage.jpg),
+      linear-gradient(45deg, #8b8000, #967969);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+  }
+
+  .feature {
+    max-width: 1170px;
+    margin: 60px auto 50px auto;
+    text-align: center;
+  }
+  .feature > p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.4;
+  }
+  .feature > span {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.4;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .grid-item {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px;
+    border: 1px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0);
+  }
+
+  .pargarphstyleleft {
+    text-align: left;
+  }
+
+  .slide_wrapper {
+    max-width: 500px;
+    min-width: 500px;
+    position: relative;
+    height: auto;
+    min-height: 380px;
+    padding: 20px 0px;
+    background-image: url(https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/BG_2025.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  /* end sold out / special offer image */
+
+  /* early bird offer */
+
+  .early-bird-container {
+    /* border: 1px solid red; */
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .early-bird-container {
+      grid-template-columns: 3fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .early-bird-offer {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px;
+    border: 1px;
+    border-radius: 5px auto;
+    /* text-align: center; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    /* max-width: 600px; */
+    justify-content: center;
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .early-bird-img {
+    width: 100%;
+    max-width: 250px;
+    max-height: 100%;
+  }
+
+  .early-bird-text {
+    width: 100%;
+    font-size: 30px;
+    color: #91278c;
+    line-height: 1.3;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .call-for-speakers {
+    background: rgb(142, 39, 138);
+    background: linear-gradient(
+      48deg,
+      rgba(142, 39, 138, 1) 0%,
+      rgba(35, 34, 131, 1) 100%
+    );
+    color: black;
+    padding: 10px;
+    border: 1px;
+    text-align: center;
+    border-radius: 5px auto;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    min-height: 150px;
+  }
+
+  .call-for-speakers p {
+    font-size: 20px;
+    color: #ffff;
+  }
+
+  @media screen and (min-width: 768px) {
+    .early-bird-offer {
+      gap: 4rem;
+      grid-template-columns: auto 1fr;
+      justify-items: start;
+    }
+    .early-bird-text {
+      text-align: left;
+    }
+  }
+  /* end early bird offer */
+
+  /* alliance-list */
+  .alliance-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .alliance-list span {
+    display: block;
+    border: 1px solid #333;
+    border-radius: 1rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    padding: 1rem;
+  }
+  /* end alliance-list */
+  /* did you know */
+  .did-you-know {
+    background: linear-gradient(
+      48deg,
+      rgba(142, 39, 138, 1) 0%,
+      rgba(35, 34, 131, 1) 100%
+    );
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 16px;
+    padding: 3rem;
+  }
+
+  .did-you-know span {
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 3.5rem);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .did-you-know-img {
+    height: 100%;
+    display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    .did-you-know {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .did-you-know span {
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .did-you-know {
+      grid-template-columns: 1fr 3fr;
+      gap: 6rem;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+      gap: 8rem;
+    }
+
+    .did-you-know img {
+      justify-self: right;
+    }
+
+    .did-you-know span {
+      justify-self: left;
+    }
+  }
+  /* end did you know */
+  /* community logos */
+
+  .alliance-list {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .community-logo {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    align-self: center;
+    width: 90%;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  /* end community logos */
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "HRWest HR Conference 2024",
+    "startDate": "2024-03-05T19:00-05:00",
+    "endDate": "2024-03-06T23:00-05:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Oakland Marriott City Center",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1001 Broadway",
+        "addressLocality": "Oakland",
+        "postalCode": "94607",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    },
+    "image": [
+      "https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png"
+    ],
+    "description": "The HR conference that reveals the top human resources trends and strategies for 2024.",
+    "offers": {
+      "@type": "Early Bird",
+      "url": "https://www.hr.com/en/webcasts_events/live_events/hrwest/hr-west-2024-registration_lg2jb7k2.html",
+      "price": "199",
+      "priceCurrency": "USD"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "HR.com",
+      "url": "https://www.hr.com/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html"
+    }
+  }
+</script>
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container">
+    <div class="sold" style="display: none">
+      <img
+        alt="Pre Early Bird Rate Ends on March 31"
+        src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2025-early-bird-offer.png"
+      />
+    </div>
+
+    <div class="hr-west_wrapper">
+      <div class="hr-wrapper_info">
+        <div class="hr-west_info">
+          <img
+            alt="HRWest HR Conference HRWest Logo"
+            height="125"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png"
+            width="155"
+          />
+          <p class="ext-class">HR Evolved:<span>Thriving in Change</span></p>
+        </div>
+
+        <div style="font-size: 20px; padding-top: 10px">
+          <strong
+            >The most important and valuable edition of HRWest &mdash;
+            EVER!</strong
+          >
+        </div>
+
+        <h2>Celebrating 4 decades of amazing HR education and networking.</h2>
+        <img
+          alt="Pre Early Bird Rate Ends on March 31"
+          class="sold-mobile"
+          src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2025-early-bird-offer.png"
+          style="display: none"
+        />
+        <!--<p>Nearly 40 years of amazing HR education and networking!</p>-->
+        <div class="rs_btnset">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            data-feathr-click-track="true"
+            data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+            href="https://www.hr.com/en/webcasts_events/live_events/hr-west-2025-registration_lt8ybqxq.html"
+            >Register Now</a
+          >
+
+          <div class="reg_info" style="display: none">
+            <svg
+              height="36"
+              viewbox="0 0 36 36"
+              width="36"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <defs>
+                <lineargradient
+                  gradientunits="objectBoundingBox"
+                  id="linear-gradient"
+                  x1="1"
+                  x2="0"
+                  y1="1"
+                >
+                  <stop offset="0" stop-color="#ef5924"></stop>
+                  <stop offset="1" stop-color="#fcb22f"></stop>
+                </lineargradient>
+              </defs>
+              <path
+                d="M32.247,17.994,35.48,14.83a1.675,1.675,0,0,0-.75-2.836l-4.405-1.124,1.242-4.36a1.7,1.7,0,0,0-2.086-2.086L25.123,5.665,24,1.258a1.687,1.687,0,0,0-2.835-.75L18,3.767,14.837.508A1.687,1.687,0,0,0,12,1.258L10.877,5.665,6.518,4.423A1.7,1.7,0,0,0,4.433,6.509l1.242,4.36L1.27,11.994A1.675,1.675,0,0,0,.52,14.83l3.233,3.164L.52,21.159A1.675,1.675,0,0,0,1.27,24l4.405,1.124L4.433,29.48a1.7,1.7,0,0,0,2.086,2.086l4.359-1.242L12,34.73a1.672,1.672,0,0,0,2.835.75L18,32.246l3.163,3.234A1.679,1.679,0,0,0,24,34.73l1.124-4.407,4.359,1.242a1.7,1.7,0,0,0,2.086-2.086l-1.242-4.36L34.73,24a1.675,1.675,0,0,0,.75-2.836l-3.233-3.164Z"
+                fill="url(#linear-gradient)"
+                transform="translate(0 0)"
+              ></path>
+            </svg>
+
+            <div class="reg-detail">
+              <p>SPECIAL OFFER: Register for</p>
+
+              <h6><span>$199</span> until Jan 14, 2024</h6>
+            </div>
+          </div>
+        </div>
+
+        <p>(Over $2,000 less than other annual HR conferences!)</p>
+      </div>
+
+      <div class="hr-west-banner">
+        <div class="slide_wrapper">
+          <div height="300px" style="padding-top: 50px" width="450px">
+            <iframe
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen="1"
+              frameborder="0"
+              height="300"
+              padding="20 0 0 0"
+              sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+              src="https://www.youtube.com/embed/noHEBlrp1EU?autoplay=1&amp;controls=1&amp;showinfo=0&amp;modestbranding=1&amp;rel=0&amp;enablejsapi=1&amp;loop=1&amp;wmode=transparent&amp;origin=https%3A%2F%2Fwww.hr.com&amp;widgetid=3&amp;mute=1"
+              title="Monica Vermani"
+              width="100%"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="countdown-container">
+  <div class="countdown" id="countdown">
+    <ul>
+      <li><span id="days">00</span> days</li>
+      <li><span id="hours">00</span> hours</li>
+      <li class="countdown-separator">:</li>
+      <li><span id="minutes">00</span> minutes</li>
+      <li class="countdown-separator">:</li>
+      <li><span id="seconds">00</span> seconds</li>
+    </ul>
+  </div>
+</div>
+<!-- early bird offer - hidden -->
+
+<div class="early-bird-container" style="display: none">
+  <div class="early-bird-offer">
+    <img
+      alt="early bird offer"
+      class="early-bird-img"
+      src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2025-early-bird-offer-banner.png"
+    />
+    <div>
+      <span class="early-bird-text" style="display: block"
+        ><strong
+          ><span style="color: #e51069; font-weight: 700">
+            SAVE 50%
+          </span></strong
+        >When You Register by December 18!</span
+      >
+      <a
+        class="hr_custom_btn gradient_btn btn_large round"
+        data-feathr-click-track="true"
+        data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+        href="https://www.hr.com/en/webcasts_events/live_events/hr-west-2025-registration_lt8ybqxq.html"
+        >Grab the Early-Bird</a
+      >
+    </div>
+  </div>
+
+  <div class="call-for-speakers">
+    <p>Interested in speaking?</p>
+
+    <div>$vendorLeadForm</div>
+    <a
+      class="hr_custom_btn gradient_btn btn_large round"
+      id="fc_1718298636298"
+      name="fc_1718298636298"
+      onclick="loadPopup('fc_1718298636298')"
+      >Apply Here</a
+    >
+  </div>
+</div>
+<!-- early bird offer hidden -->
+
+<div class="hr-west_container-fluid clr-box">
+  <div class="hr-west_container mrtp40">
+    <h3 class="lgtitle">The Present &amp; Future of Work</h3>
+
+    <h4 class="xstitle">HR &amp; YOU</h4>
+
+    <div class="hero_card_wrapper">
+      <div class="hero_card grey">
+        <h4>
+          Enjoy the Best HR <span style="font-size: 30px">Event Value</span>
+        </h4>
+
+        <p>Pay hundreds or thousands less than most high-quality events.</p>
+      </div>
+
+      <div class="hero_card purple">
+        <h4>Learn From <span style="font-size: 30px">Real Experts</span></h4>
+
+        <p>Take home HR game plans and tips to thrive in 2025 and beyond.</p>
+      </div>
+
+      <div class="hero_card yellow">
+        <h4>Engage With<span style="font-size: 30px">Peers</span></h4>
+
+        <p>
+          Make new HR friends and exchange ideas during roundtable sessions.
+        </p>
+      </div>
+
+      <div class="hero_card green">
+        <h4>Celebrate <span style="font-size: 30px">HR Excellence</span></h4>
+
+        <p>
+          You can experience The HR.com Awards and learn from leaders during
+          HRWest.
+        </p>
+      </div>
+
+      <div class="hero_card blue">
+        <h4>Enjoy Special <span style="font-size: 30px">Experiences</span></h4>
+
+        <p>
+          From contests to connecting with HR friends, this is an event
+          you&rsquo;ll love.
+        </p>
+      </div>
+    </div>
+
+    <div class="evnt_abs_info">
+      <div class="evnt_absi">
+        <span>1000+</span> <small>Global Attendees</small>
+      </div>
+
+      <div class="evnt_absi"><span>80+</span><small>Speakers</small></div>
+
+      <div class="evnt_absi">
+        <span>10</span> <small>Full HR Credits</small>
+      </div>
+
+      <div class="evnt_absi"><span>80+</span> <small>Exhibitors</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="hr-west_container">
+  <div class="ev_wc">
+    <h3 class="centitle" style="padding-top: 60px">
+      Covering ALL You Need to Know in HR for 2025
+    </h3>
+
+    <h6>Our &ldquo;Super Seven&rdquo; Tracks</h6>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <div>
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>HR Tech</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>HR Strategy</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>Talent</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div style="padding-top: 5px">
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>Legal and Compliance</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>Health, Wellness, Benefits</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>Leadership</strong></h4>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <img
+            alt=""
+            height="36"
+            src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/greentick_50px.png"
+            width="50"
+          />
+        </div>
+
+        <div>
+          <h4><strong>DEIB</strong></h4>
+        </div>
+      </div>
+    </div>
+    <!-- did you know -->
+
+    <div class="did-you-know">
+      <img
+        alt="did you know"
+        class="did-you-know-img"
+        src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/did-you-know-hrwest-home-page-banner.png"
+      />
+      <span
+        >HRWest 2025 will include global, national, AND California HR
+        content!</span
+      >
+    </div>
+    <!-- end did you khow -->
+
+    <div class="hr-west_container" id="How-it-Works">
+      <div class="feature">
+        <div class="centitle" style="padding-top: 15px">
+          HR&rsquo;s Community Meeting Place!
+        </div>
+        <!-- <p style="padding-top: 20px">
+          Do you know of any people or initiatives that should be recognized for
+          making amazing strides towards HR excellence?
+        </p> --><span
+          >Don&#39;t miss out on the must-attend CommunityConnect sessions at
+          HRWest 2025, where HR.com Communities will come together to connect,
+          collaborate, and dive into game-changing discussions on the issues
+          shaping the future of HR. This is your chance to be part of the
+          conversations that truly matter.</span
+        >
+
+        <p>
+          <span><b>Scheduled CommunityConnect sessions include:</b></span>
+        </p>
+
+        <div class="alliance-list" style="display: none">
+          <span
+            ><span>People Analytics Community</span>
+            <span> AIX HCM Community</span>
+            <span>Chief Diversity Leaders Community</span>
+            <span>Advisory Board Community</span>
+            <span>Career Development Community</span>
+            <span>CEO Funded HCM Community</span>
+            <span>Global EOR Community</span>
+            <span>Payroll Community</span></span
+          >
+        </div>
+        <span> </span>
+
+        <div class="alliance-list" id="alliance-list">
+          <span
+            ><img
+              alt="Advisory Board Community"
+              class="community-logo"
+              src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/community-logos/advisory-board-community.png"
+          /></span>
+        </div>
+        <span> <span> </span> </span>
+
+        <div class="rs_btnset">
+          <span
+            ><span
+              ><a
+                class="hr_custom_btn gradient_btn btn_large round"
+                data-feathr-click-track="true"
+                data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+                href="https://www.hr.com/en/about_us/splash_pages/hrcom-communities_lsyeprdy.html"
+                style="margin-top: 2rem"
+                target="_blank"
+                >Learn About Joining a Community</a
+              >
+            </span></span
+          >
+        </div>
+        <span> <span> </span></span>
+      </div>
+      <!--------------><!-- <h3 class="centitle">2025 HRWest Conference Speakers</h3> -->
+
+      <div class="swocas_wrapper" style="display: none">
+        <div class="team">
+          <div class="swocas_slider owl-carousel owl-theme">
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Bev Kaye"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/Bev-Kaye.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor Bev Kaye &amp; Co. Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/bev-kaye-and-co2.jpg"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Bev Kaye</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>CEO</p>
+
+                <h4>Bev Kaye &amp; Co.</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Allison West, Esq., SHRM-SCP, AWI-CH"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/allison-west2.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor Employment Practices Specialists Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/employment-practices-specialists.png"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">
+                    Allison West, Esq., SHRM-SCP, AWI-CH
+                  </div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>
+                  Founder, Attorney, Investigator, Speaker, Trainer and Expert
+                </p>
+
+                <h4>Employment Practices Specialists</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Debbie McGrath"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/debbie-mcgrath.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor HR.com Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/hr.com.png"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Debbie McGrath</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>CEO</p>
+
+                <h4>HR.com</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Mark Vickers"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/mark-vickers.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor HR.com  Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/hr.com.png"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Mark Vickers</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>Chief Research Analyst &amp; Data Wrangler</p>
+
+                <h4>HR.com</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Gregg Ward"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/gregg-ward2.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor The Center for Respectful Leadership Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/the-center-for-respectful-leadership-logo.png"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Gregg Ward</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>Founder and Executive Director</p>
+
+                <h4>The Center for Respectful Leadership</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Jeff Higgins"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/jeff-higgins.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor Human Capital Management Institute (HCMI) Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/human-capital-management-institute.png"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Jeff Higgins</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>Founder and CEO</p>
+
+                <h4>Human Capital Management Institute (HCMI)</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Ekta Vyas"
+                  src="$public/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/ekta-vyas.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor Keck Medicine USC Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/keck-medicine-usc-logo.jpg"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Ekta Vyas</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>
+                  CHRO, TEDx, Speaker, Author, USC Marshall Adjunct Professor,
+                  &amp; Forbes Influencer
+                </p>
+
+                <h4>Keck Medicine</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Natasha Nuytten"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/Natasha-Nuytten.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor DEI Network Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/deinetwork.jpg"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Natasha Nuytten</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>CEO</p>
+
+                <h4>DEI Network/Clara</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Dummy Headshot"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/dummy-headshot.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor Amy Moser Consulting LLC"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/amy-moser-consulting-llc.jpg"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Amy Moser</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <!-- <p>CHRO, TEDx, Speaker, Author, USC Marshall Adjunct Professor, & Forbes Influencer</p> -->
+                <h4>Amy Moser Consulting LLC</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Cecilia Brookshire"
+                  src="$public/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/cecilia-brookshire.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor Ocado Solutions Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/ocado-solutions.jpg"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Cecilia Brookshire</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>HR Leader, Strategic HR Business Partner</p>
+
+                <h4>Ocado Solutions</h4>
+              </div>
+            </div>
+
+            <div class="item mot_js_card" target="1">
+              <div class="js_card_img">
+                <img
+                  alt="HRWest HR Conference Speaker Dr. Kylie Ensrud"
+                  src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/kylie-ensrud.jpg"
+                />
+                <div class="spk_logo">
+                  <img
+                    alt="HRWest HR Conference Sponsor DataVizion Logo"
+                    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Logos/datavizion.jpg"
+                  />
+                </div>
+
+                <div class="js_card_dls">
+                  <div class="spkr-name">Dr. Kylie Ensrud</div>
+                </div>
+              </div>
+
+              <div class="js_card_info">
+                <p>Chief People Officer</p>
+
+                <h4>DataVizion</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="owl-theme">
+            <div class="owl-controls">
+              <div class="cust-nav owl-nav">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- apply to speak -->
+
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container">
+    <div class="edu_review_box">
+      <!---------------->
+      <div class="apply-spk">
+        <div class="apply-spk-inner">
+          <div class="apply-spk-content">
+            <p>
+              Calling HR or Talent practitioners with innovative ideas and
+              insights to share!
+            </p>
+            <!-- 
+            <h5>
+              Call for speakers is now closed. Thank you for your interest.
+            </h5> -->
+
+            <div>
+              <div class="button-wrap">
+                <div>$vendorLeadForm</div>
+                <button
+                  class="hr_custom_btn dark_line_button btn_medium round"
+                  href="https://www.hr.com/en/about_us/call-for-papers-for-oakland--phoenix-events_laimg0gq.html"
+                  id="fc_1718298636298"
+                  name="fc_1718298636298"
+                  onclick="loadPopup('fc_1718298636298')"
+                  target="_blank"
+                >
+                  Apply to Speak
+                </button>
+              </div>
+
+              <p class="sm" style="margin-top: 0.5rem !important">
+                Deadline: January 24
+              </p>
+
+              <p align="left" class="sm">
+                We invite HR practitioner subject matter experts to submit a
+                presentation for consideration at our upcoming event in Oakland.
+              </p>
+
+              <p align="left" class="sm">
+                <strong>Wait a Sec!</strong> Are you a speaker with a great
+                service or product for the HR community? For your best results,
+                email<a href="mailto:sales@hr.com" style="color: #fff">
+                  sales@hr.com.</a
+                >
+                Thanks a bunch.
+              </p>
+
+              <p align="left" class="sm">
+                Thanks for your interest in HRWest 2025!
+              </p>
+            </div>
+          </div>
+
+          <div class="apply-spk-image">
+            <div class="circle-shape">&nbsp;</div>
+          </div>
+        </div>
+        <img
+          alt="apply to speak"
+          src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/apply-to-speak.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end apply to speak -->
+
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container">
+    <div class="edu_review_box">
+      <h2 class="centitle">THE &quot;SUPER SEVEN&quot; TRACKS</h2>
+
+      <h3 class="centitle">Everything HR Needs to Thrive in 2025</h3>
+
+      <p align="left">
+        Being asked to do your job with less budget or personnel? You&#39;re not
+        alone. HRWest expert content will help you move forward with clarity and
+        confidence.
+      </p>
+
+      <div class="ev_wee_wrapper mrtp60">
+        <div class="ev_wee_card">
+          <div class="ev_wc_left">
+            <h3>HR Strategy</h3>
+
+            <p align="left">
+              HR must adapt new strategies and refine existing ones to meet the
+              demands of today&rsquo;s rapidly changing work world. Get
+              2025&rsquo;s top insights on vision, goals, planning,
+              implementation, and more in this track!
+            </p>
+
+            <h3>HR Tech</h3>
+
+            <p align="left">
+              Technology&rsquo;s importance for HR is spiking, especially with
+              the rise of Generative AI. Learn the best practices, and insights
+              about specific technologies that will help improve your day-to-day
+              HR life and performance.
+            </p>
+          </div>
+
+          <div class="ev_wc_right">
+            <img
+              alt="Ideal Exhibiting Experience"
+              src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-collage-july-5.jpg"
+              style="max-height: 100%"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="ev_wee_wrapper">
+        <div class="ev_wee_card">
+          <div class="ev_wc_left1">
+            <img
+              alt="Ideal Exhibiting Experience"
+              src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-collage-july-5-v2.jpg"
+              style="max-height: 100%"
+            />
+          </div>
+
+          <div class="ev_wc_right1">
+            <h3>Talent</h3>
+
+            <p align="left">
+              This track covers EVERYTHING from your company&rsquo;s talent to
+              developing your HR skills and career. Talent acquisition, talent
+              management, retention, employee engagement, company culture, HR
+              development &mdash; they&rsquo;re all in here!
+            </p>
+
+            <h3>Legal and Compliance</h3>
+
+            <p align="left">
+              Employment attorneys and other experts share critical compliance
+              insights and updates to help you make sense of laws and
+              regulations. Sessions in this highly popular track are often
+              packed with attendees.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev_wee_wrapper mrtp60">
+        <div class="ev_wee_card">
+          <div class="ev_wc_left">
+            <h3>Health, Wellness, Benefits</h3>
+
+            <p align="left">
+              Discover how to plan for a healthier and more productive
+              workforce, and learn how to make your organization&rsquo;s
+              benefits and wellness offerings more modern and holistic to stand
+              out from the competition.
+            </p>
+
+            <h3>Leadership</h3>
+
+            <p align="left">
+              Learn what effective leadership looks like in the rapidly changing
+              world of 2025, the latest development approaches, and more.
+            </p>
+
+            <h3>DEIB</h3>
+
+            <p align="left">
+              It&rsquo;s time for real progress! Get clarity about your role in
+              DEIB, as well as on the challenges and opportunities for
+              organizations in this important and controversial area.
+            </p>
+          </div>
+
+          <div class="ev_wc_right">
+            <img
+              alt="Ideal Exhibiting Experience"
+              src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-collage-july-5-v3.jpg"
+              style="max-height: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- alliance logos -->
+<script>
+  const allianceLogoContainer = document.querySelector('#alliance-list')
+
+  const communityLogos = [
+    {
+      altText: `Advisory Board Community`,
+      imgSrc: `advisory-board-logo`,
+    },
+    {
+      altText: `Leadersip Community`,
+      imgSrc: `leadership-logo`,
+    },
+    {
+      altText: `Chief Diversity Leaders Community`,
+      imgSrc: `chief-diversity-leader-logo`,
+    },
+    {
+      altText: `Global EOR Community`,
+      imgSrc: `global-eor-logo`,
+    },
+    {
+      altText: `HR in HealthCare Community`,
+      imgSrc: `hr-in-healthcare-logo`,
+    },
+    {
+      altText: `Human Experience Community`,
+      imgSrc: `human-experience-logo`,
+    },
+    {
+      altText: `Payroll Community`,
+      imgSrc: `payroll-logo`,
+    },
+    {
+      altText: `People Analytics Community`,
+      imgSrc: `people-analytics-logo`,
+    },
+    // {
+    //   altText: `Sourcing and Recruiting Community`,
+    //   imgSrc: `sourcing-and-recruiting-logo`,
+    // },
+    {
+      altText: `Women in the workplace Community`,
+      imgSrc: `women-in-the-workplace-logo`,
+    },
+  ]
+
+  allianceLogoContainer.innerHTML = communityLogos
+    .map(({ altText, imgSrc }) => {
+      return `<img
+    src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/community-logos/${imgSrc}.jpg"
+    alt="${altText}"
+    class="community-logo"
+  />`
+    })
+    .join('')
+</script>
+<!-- end alliance logos--><!-- countdown js -->
+<script>
+  const daysEl = document.getElementById('days')
+  const hoursEl = document.getElementById('hours')
+  const minutesEl = document.getElementById('minutes')
+  const secondsEl = document.getElementById('seconds')
+  const countDownContainer = document.querySelector('.countdown-container')
+
+  const formatNumber = (number) => {
+    if (number < 10) {
+      return '0' + number
+    }
+    return number
+  }
+
+  const countdownTimer = () => {
+    const eventDate = new Date('03/11/2025').getTime()
+
+    // conver to milliseconds
+    const second = 1000
+    const minute = second * 60
+    const hour = minute * 60
+    const day = hour * 24
+
+    const interval = setInterval(() => {
+      // get current date
+      const now = new Date().getTime()
+      const distance = eventDate - now
+
+      daysEl.innerText = formatNumber(Math.floor(distance / day))
+      hoursEl.innerText = formatNumber(Math.floor((distance % day) / hour))
+      minutesEl.innerText = formatNumber(Math.floor((distance % hour) / minute))
+      secondsEl.innerText = formatNumber(
+        Math.floor((distance % minute) / second)
+      )
+
+      // when event data is reached
+      if (distance < 0) {
+        countDownContainer.style.display = 'none'
+        //  stop interval
+        clearInterval(interval)
+      }
+    }, 1000)
+  }
+
+  countdownTimer()
+</script>
+<!-- end countdown js -->
+<script type="text/javascript">
+  $('.slide_carousel').owlCarousel({
+    loop: true,
+    autoplay: true,
+    margin: 0,
+    navText: [
+      '<svg height="12" viewBox="0 0 14.142 14.142" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#ffffff" transform="translate(7.071) rotate(45)"></path></svg>',
+      '<svg height="12" viewBox="0 0 14.142 14.142" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#ffffff" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+    ],
+    navContainer: '.slide_wrapper .cust-nav',
+    dots: false,
+    items: 1,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 0,
+        nav: true,
+      },
+      768: {
+        items: 1,
+        stagePadding: 0,
+        nav: true,
+      },
+      1000: {
+        items: 1,
+        stagePadding: 0,
+        nav: true,
+      },
+    },
+  })
+</script>

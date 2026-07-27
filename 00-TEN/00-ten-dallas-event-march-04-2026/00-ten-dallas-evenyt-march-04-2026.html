@@ -1,0 +1,1528 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>
+      /**
+ * =======================================================================
+ *
+ * @format
+ */
+
+      /* =========================== TM PAGE CSS START ========================= */
+      /* === Force identical REM base on CMS & local (1rem = 16px) ============ */
+      :root {
+        font-size: 16px !important;
+      }
+      html,
+      body {
+        font-size: 16px !important;
+      }
+
+      /* ========================= Custom font faces =========================== */
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        src:
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Regular.woff2')
+            format('woff2'),
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Regular.woff')
+            format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        src:
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Bold.woff2')
+            format('woff2'),
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Bold.woff')
+            format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        src:
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-ExtraBold.woff2')
+            format('woff2'),
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-ExtraBold.woff')
+            format('woff');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* ============================ Scoped reset ============================= */
+      .tm-page,
+      .tm-page *,
+      .tm-page *::before,
+      .tm-page *::after {
+        box-sizing: border-box !important;
+      }
+      .tm-page {
+        background: #fff;
+      }
+
+      /* === FONT OVERRIDE: force our font everywhere inside .tm-page ========== */
+      .tm-page,
+      .tm-page p,
+      .tm-page a,
+      .tm-page li,
+      .tm-page button,
+      .tm-page small,
+      .tm-page h1,
+      .tm-page h2,
+      .tm-page h3,
+      .tm-page h4,
+      .tm-page h5,
+      .tm-page h6 {
+        font-family:
+          'Plus Jakarta Sans',
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Arial,
+          sans-serif !important;
+        margin-block: 0;
+        padding-block: 0;
+      }
+
+      /* =========================== Design Tokens ============================= */
+      .tm-page {
+        /* colors */
+        --clr-orange: #f26b01;
+        --clr-purple: #17012c;
+        --clr-white: #ffffff;
+        --clr-grey: #504e4e;
+        --clr-light-orange: #feddc6;
+        --clr-accent-pink: #e51069;
+        --clr-light-pink: #ff90c6;
+        --clr-mid-grey: #8a9199;
+        --clr-soft-white: #f9fafb;
+        --clr-midnight-blue: #1a2e45;
+        --clr-blush-beige: #f4ede4;
+        --clr-sky-blue: #87bfff;
+        --clr-warm-gold: #e9c46a;
+        --clr-teal-green: #2a9d8f;
+        --clr-steel-grey: #4b5563;
+        --clr-gradient-orange: linear-gradient(
+          90deg,
+          rgba(242, 107, 1, 1) 0%,
+          rgba(242, 159, 92, 1) 100%
+        );
+
+        /* type scale (px + vw so CMS rem changes cannot shrink it) */
+        --heading-2: clamp(32px, 2.5vw, 80px) !important;
+        --heading-3: clamp(28px, 1.5vw, 40px) !important;
+        --heading-4: clamp(40px, 3.5vw, 64px) !important;
+        --body: clamp(16px, 1.2vw, 18px) !important;
+
+        /* misc */
+        --transition: 0.3s ease-in-out all;
+        --borderRadius: 0.25rem;
+        --letterspacing: 1px;
+        --textColor: var(--clr-grey);
+        --shadow-2:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-3:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-4:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        /* CTA colors (scoped) */
+        --tm-cta-start: #20c997;
+        --tm-cta-end: #179a7a;
+      }
+
+      /* ========================= Base type utilities ========================= */
+      .tm-page .small {
+        font-size: clamp(12px, 0.25vw + 11px, 14px) !important;
+      }
+      .tm-page a {
+        text-decoration: none;
+      }
+      .tm-page ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .section {
+        width: 100%;
+        max-width: 1920px;
+      }
+      .tm-section-center {
+        max-width: 1200px;
+        width: 90vw;
+        margin: 0 auto;
+      }
+
+      /* ======================================================================= */
+      /* ======================= TM TITLE UTILITIES START ====================== */
+      .tm-title-block {
+        text-align: center;
+        margin-bottom: clamp(16px, 3.5vw, 36px);
+      }
+      .tm-title--left {
+        text-align: left;
+      }
+
+      .tm-title {
+        font-family:
+          'Plus Jakarta Sans',
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Arial,
+          sans-serif !important;
+        margin: 0;
+        padding: 0;
+        line-height: 1.15;
+        color: var(--clr-purple) !important;
+      }
+      .tm-title--section {
+        font-weight: 800;
+        font-size: clamp(26px, 4.2vw, 44px) !important;
+      }
+      .tm-title--hero {
+        font-weight: 800;
+        color: #ffffff !important;
+        font-size: clamp(38px, 6vw, 82px) !important;
+      }
+      .tm-title__accent {
+        color: var(--clr-teal-green) !important;
+      }
+      .tm-eyebrow {
+        font-family:
+          'Plus Jakarta Sans',
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Arial,
+          sans-serif !important;
+        color: var(--clr-grey) !important;
+        opacity: 0.85;
+        letter-spacing: 0.5px;
+        font-size: clamp(12px, 0.6vw + 11px, 19px) !important;
+        margin-bottom: clamp(6px, 1.4vw, 10px) !important;
+      }
+      .tm-subtitle {
+        font-family:
+          'Plus Jakarta Sans',
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Arial,
+          sans-serif !important;
+        color: var(--clr-purple) !important;
+        line-height: 1.4;
+        font-size: clamp(16px, 1.2vw, 20px) !important;
+        margin-top: clamp(6px, 1.5vw, 12px);
+      }
+      /* ======================== TM TITLE UTILITIES END ======================= */
+      /* ======================================================================= */
+
+      /* ======================================================================= */
+      /* ====================== TM HERO + STRIP START ========================= */
+
+      /* HERO BASE */
+      .tm-hero {
+        color: #fff !important;
+        background: #0e1a26
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/hero-img-dallas.webp')
+          center / cover no-repeat;
+        position: relative;
+        padding: 60px 0 0 0;
+      }
+
+      /* teal diagonal overlay */
+      .tm-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          315deg,
+          rgba(61, 67, 79, 0) 0%,
+          rgba(0, 255, 179, 0.28) 100%
+        );
+        clip-path: polygon(62% 0, 100% 0, 100% 100%, 80% 100%);
+        z-index: 0;
+      }
+
+      /* gold corner */
+      .tm-hero::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 140px;
+        height: 140px;
+        background: var(--clr-warm-gold);
+        clip-path: polygon(100% 60%, 100% 100%, 82% 100%);
+        z-index: 0;
+      }
+
+      .tm-hero > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* HERO LAYOUT */
+
+      .tm-hero__top {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        align-items: start;
+      }
+      .tm-hero__copy {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 24px !important;
+        min-height: 300px;
+        align-items: center !important;
+        align-content: center;
+      }
+
+      @media (max-width: 767px) {
+        .tm-hero__top {
+          grid-template-columns: 1fr;
+          text-align: left;
+          gap: 18px;
+        }
+      }
+
+      /* LOGO */
+
+      .tm-logo {
+        max-width: 200px;
+        justify-self: end;
+      }
+
+      @media (max-width: 767px) {
+        .tm-logo {
+          order: -1;
+          justify-self: center;
+          max-width: 200px;
+          /* margin-bottom: 10px; */
+        }
+        .tm-hero__copy {
+          min-height: fit-content;
+        }
+      }
+
+      /* TEXT */
+
+      .tm-hero__title {
+        font-size: clamp(30px, 5vw, 64px);
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 14px !important;
+        color: #ffffff
+      }
+
+      .tm-hero__subtitle {
+        font-size: clamp(16px, 1vw + 15px, 21px);
+        margin-bottom: 12px !important;
+        color: #ffffff
+      }
+
+      .tm-hero__support {
+        color: var(--clr-warm-gold);
+        font-size: clamp(14px, 0.5vw + 13px, 17px);
+        margin-bottom: 18px !important;
+      }
+
+      @media (max-width: 767px) {
+        .tm-hero__title {
+          margin-bottom: 16px;
+        }
+        .tm-hero__subtitle {
+          margin-bottom: 14px;
+        }
+        .tm-hero__support {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* ================= INFO STRIP ================= */
+
+      .tm-info-strip {
+        background: rgba(26, 46, 69, 0.96);
+        border-top: 3px solid var(--clr-teal-green);
+        padding: 24px 0;
+      }
+
+      /* Compact grid */
+
+      .tm-info-inner {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: start;
+        gap: 36px;
+        align-items: center;
+      }
+
+      @media (max-width: 767px) {
+        .tm-info-inner {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+      }
+
+      /* BLOCKS */
+
+      .tm-info-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .tm-info-icon {
+        width: 22px;
+        height: 22px;
+        fill: var(--clr-teal-green);
+        margin-top: 3px;
+      }
+
+      .tm-info-text strong {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .tm-info-text span {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* CTA IN STRIP */
+
+      .tm-strip-cta {
+        display: flex;
+        align-items: center;
+      }
+
+      .tm-button {
+        background: linear-gradient(
+          90deg,
+          var(--tm-cta-start),
+          var(--tm-cta-end)
+        ) !important;
+        color: #fff !important;
+        border: 0 !important;
+        border-radius: 999px !important;
+        padding: 12px 26px !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        box-shadow: var(--shadow-3) !important;
+        cursor: pointer;
+      }
+
+      .tm-button:hover {
+        transform: translateY(-1px);
+      }
+
+      /* MOBILE CTA */
+
+      @media (max-width: 767px) {
+        .tm-strip-cta {
+          width: 100%;
+        }
+
+        .tm-button {
+          width: 100%;
+          text-align: center;
+          padding: 14px 20px !important;
+          font-size: 17px !important;
+        }
+      }
+
+      /* ====================== TM HERO + STRIP END ========================== */
+      /* ======================================================================= */
+
+      /* =========================================================
+   TM CONTEXT SECTION
+========================================================= */
+
+      .tm-context-section {
+        background: var(--clr-soft-white);
+        padding: clamp(48px, 7vw, 100px) 0;
+      }
+
+      /* GRID */
+      .tm-context-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(32px, 5vw, 64px);
+        align-items: center;
+      }
+
+      /* TEXT */
+      .tm-context-text {
+        max-width: 680px;
+      }
+
+      .tm-context-text h2 {
+        margin-bottom: 20px !important;
+      }
+
+      /* LEAD PARAGRAPH */
+      .tm-context-lead {
+        font-size: clamp(16px, 1.1vw, 18px);
+        line-height: 1.7;
+        color: var(--clr-steel-grey);
+        margin-bottom: 18px !important;
+      }
+
+      /* BODY PARAGRAPH */
+      .tm-context-body {
+        font-size: clamp(15px, 1.05vw, 17px);
+        line-height: 1.7;
+        color: var(--clr-steel-grey);
+      }
+
+      /* IMAGE */
+      .tm-context-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        /* box-shadow: var(--shadow-2); */
+        object-fit: cover;
+      }
+
+      /* =========================================================
+   TABLET
+========================================================= */
+      @media (max-width: 992px) {
+        .tm-context-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .tm-context-text {
+          max-width: 100%;
+        }
+
+        .tm-context-image {
+          order: -1;
+          display: none;
+        }
+        .tm-context-lead {
+          margin-bottom: 15px !important;
+        }
+      }
+
+      /* =========================================================
+   MOBILE
+========================================================= */
+      @media (max-width: 576px) {
+        .tm-context-section {
+          padding: 40px 0;
+        }
+
+        .tm-context-text h2 {
+          margin-bottom: 16px !important;
+        }
+      }
+
+      /* =========================================================
+   TM CONTEXT SECTION end
+========================================================= */
+      /* ====================== TM DELIVERS SECTION CSS START ====================== */
+
+      .tm-delivers {
+        background: #f5f7f9;
+        padding: clamp(40px, 6vw, 80px) 0;
+      }
+
+      .tm-delivers__header {
+        /* max-width: 760px; */
+        margin-bottom: clamp(24px, 4vw, 40px) !important;
+      }
+
+      .tm-delivers__dots {
+        margin: 10px 0 14px 0;
+      }
+
+      .tm-delivers__intro {
+        color: var(--clr-steel-grey);
+        font-size: clamp(15px, 1vw + 14px, 18px);
+        line-height: 1.6;
+        margin-top: 10px;
+      }
+
+      /* GRID */
+
+      .tm-delivers__grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      @media (min-width: 768px) {
+        .tm-delivers__grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 26px;
+        }
+      }
+
+      /* CARD */
+
+      .tm-delivers__card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 24px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        box-shadow: var(--shadow-2);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      /* subtle hover */
+
+      .tm-delivers__card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-3);
+      }
+
+      /* NUMBER BADGE */
+
+      .tm-delivers__number {
+        min-width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--clr-teal-green);
+        color: #fff !important;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      /* CONTENT */
+
+      .tm-delivers__content h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px !important;
+        color: var(--clr-midnight-blue);
+      }
+
+      .tm-delivers__content p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--clr-steel-grey);
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 767px) {
+        .tm-delivers__header {
+          margin-bottom: 20px !important;
+        }
+
+        .tm-delivers__card {
+          padding: 18px;
+        }
+      }
+
+      /* ====================== TM DELIVERS SECTION CSS END ====================== */
+      /* ================= TM DISCUSSION + WHY ATTEND CSS START ================= */
+
+      .tm-duo-section {
+        padding: clamp(48px, 6vw, 72px) 0;
+        background: var(--clr-soft-white);
+      }
+
+      .tm-duo-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      @media (min-width: 900px) {
+        .tm-duo-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+      }
+
+      /* PANEL */
+
+      .tm-panel {
+        background: #ffffff;
+        border-radius: 14px;
+        overflow: hidden; /* required for image rounding */
+        box-shadow: var(--shadow-2);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .tm-panel:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-3);
+      }
+
+      /* IMAGE */
+
+      .tm-panel__image {
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+      }
+
+      .tm-panel__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* BODY */
+
+      .tm-panel__body {
+        padding: 26px;
+      }
+
+      /* TITLE */
+
+      .tm-panel__title {
+        font-weight: 700;
+        font-size: clamp(20px, 1.4vw, 24px);
+        color: var(--clr-purple);
+        margin-bottom: 14px !important;
+      }
+
+      /* TEXT */
+
+      .tm-panel__intro,
+      .tm-panel__closing {
+        font-size: clamp(15px, 1vw, 17px);
+        line-height: 1.6;
+        color: var(--clr-grey);
+        margin-bottom: 14px !important;
+      }
+
+      /* LIST */
+
+      .tm-check-list {
+        list-style: none;
+        padding: 0;
+        margin: 14px 0 18px 0;
+      }
+
+      .tm-check-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 10px !important;
+        line-height: 1.5;
+        color: var(--clr-grey);
+        font-size: clamp(15px, 1vw, 17px);
+      }
+
+      /* ICON */
+
+      .tm-check-icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+      }
+
+      .tm-check-icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: var(--clr-teal-green);
+        fill: none;
+        stroke-width: 2;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 768px) {
+        .tm-panel__body {
+          padding: 20px;
+        }
+      }
+
+      /* ================= TM DISCUSSION + WHY ATTEND CSS END ================= */
+
+      /* ========================= TM LOCATION CSS START ======================== */
+
+      .tm-location {
+        background: var(--clr-soft-white);
+        padding-block: clamp(48px, 7vw, 110px);
+      }
+
+      .tm-location__wrap {
+        display: grid;
+        gap: clamp(32px, 5vw, 72px);
+        align-items: center;
+      }
+
+      /* CONTENT */
+      .tm-location__info {
+        max-width: 560px;
+      }
+
+      .tm-location__accent {
+        color: var(--clr-teal-green);
+      }
+
+      .tm-location__address {
+        margin-top: 0.75rem;
+        font-size: 16px;
+        line-height: 1.55;
+        color: var(--clr-purple);
+      }
+
+      .tm-location__circles {
+        display: block;
+        margin: 16px 0 20px;
+        height: clamp(8px, 1.6vw, 14px);
+      }
+
+      .tm-location__desc {
+        margin-top: 1.25rem;
+        font-size: clamp(15px, 1.2vw, 18px) !important;
+        line-height: 1.7;
+        color: var(--clr-grey);
+      }
+
+      /* IMAGE */
+      .tm-location__image img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: var(--shadow-3);
+      }
+      /* ---------- FLOOR ROW (FINAL POLISH) ---------- */
+
+      .tm-location__floor {
+        margin-top: clamp(32px, 5vw, 56px);
+        background: var(--clr-white);
+      }
+
+      .tm-location__floor-frame {
+        position: relative;
+        border: 1px solid #e5e7eb; /* frame outline, not image */
+        padding: clamp(12px, 2vw, 20px);
+        border-radius: 12px;
+        padding-block: 16px;
+      }
+
+      .tm-location__floor-tag {
+        background: var(--clr-blush-beige);
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: var(--clr-teal-green);
+        /* border: 1px solid #e5e7eb; */
+      }
+
+      .tm-location__floor-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      /* RESPONSIVE */
+      @media (min-width: 768px) {
+        .tm-location__wrap {
+          grid-template-columns: 3fr 2fr;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .tm-location__wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ========================= TM LOCATION CSS END ========================== */
+
+      /* ---------- RESPONSIVE ---------- */
+
+      /* Tablet: 1:1 columns */
+      @media (min-width: 768px) {
+        .tm-location__wrap {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Desktop: 2:3 ratio */
+      @media (min-width: 992px) {
+        .tm-location__wrap {
+          grid-template-columns: 2fr 3fr;
+        }
+      }
+
+      /* Mobile: stacked */
+      @media (max-width: 767px) {
+        .tm-location__wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ========================= TM LOCATION CSS END ========================== */
+
+      /* ========================= TM CO-SPONSOR CSS START ===================== */
+
+      .tm-partners {
+        padding-block: clamp(40px, 6vw, 80px);
+        padding-top: 40px;
+
+        background: var(--clr-soft-white);
+      }
+
+      /* Grid */
+      .tm-partners__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(20px, 4vw, 48px);
+        align-items: stretch;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Card */
+      .tm-partners__card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: var(--shadow-2);
+        padding: clamp(20px, 4vw, 32px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 160px;
+        text-align: center;
+      }
+
+      /* Logo */
+      .tm-partners__card img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* Caption */
+      .tm-partners__card p {
+        font-size: clamp(14px, 1vw, 16px);
+        color: var(--clr-grey);
+      }
+
+      /* Tablet */
+      @media (max-width: 991px) {
+        .tm-partners__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 575px) {
+        .tm-partners__grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ========================== TM CO-SPONSOR CSS END ====================== */
+      /* ======================== TM FINAL CTA CSS START ======================= */
+
+      .tm-cta-final {
+        background: var(--clr-midnight-blue);
+        color: #fff !important;
+        padding: clamp(40px, 6vw, 80px) 0;
+      }
+      
+
+      .tm-cta-final__inner {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .tm-cta-final__title {
+        font-size: clamp(24px, 3vw, 36px);
+        font-weight: 700;
+        margin-bottom: 16px !important;
+        color: #ffffff;
+      }
+
+      .tm-cta-final__text {
+        font-size: clamp(15px, 1.2vw, 18px);
+        opacity: 0.9;
+        line-height: 1.6;
+        margin-bottom: 26px !important;
+        color: #ffffff;
+      }
+
+      /* CTA button spacing */
+      .tm-cta-final .tm-button {
+        margin-bottom: 28px !important;
+      }
+
+      /* Questions block */
+
+      .tm-cta-final__questions {
+        font-size: 14px;
+        opacity: 0.9;
+        color: #ffffff;
+      }
+
+      .tm-cta-final__questions-title {
+        font-weight: 600;
+        margin-bottom: 6px !important;
+        color: #ffffff;
+      }
+
+      /* Email highlight */
+
+      .tm-cta-final__email {
+        color: var(--clr-teal-green);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .tm-cta-final__email:hover {
+        text-decoration: underline;
+      }
+
+      /* Refreshments line */
+
+      .tm-cta-final__refreshments {
+        margin-top: 14px;
+        font-style: italic;
+        opacity: 0.8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        color: #ffffff;
+      }
+
+      .tm-cta-final__icon {
+        font-size: 16px;
+      }
+
+      /* Mobile */
+
+      @media (max-width: 768px) {
+        .tm-cta-final {
+          padding: 40px 0;
+        }
+
+        .tm-cta-final__inner {
+          text-align: center;
+        }
+      }
+
+      /* ========================= TM FINAL CTA CSS END ======================== */
+    </style>
+    <div class="tm-page">
+      <!-- wrapper to scope all styles ONLY to this landing --><!-- =================================================================== -->
+      <!-- ====================== TM HERO SECTION START ====================== -->
+      <section class="tm-hero">
+        <div class="tm-section-center">
+          <div class="tm-hero__top">
+            <!-- TEXT -->
+            <div class="tm-hero__copy">
+              <h1 class="tm-hero__title">Dallas HR Executive Roundtable</h1>
+
+              <p class="tm-hero__subtitle">
+                AI Orchestration: How HR Leads Successful Enterprise Adoption
+              </p>
+
+              <p class="tm-hero__support">
+                A Complimentary Event Experience for CHROs & Senior HR Leaders
+                Across Dallas
+              </p>
+            </div>
+
+            <!-- LOGO -->
+            <div class="tm-logo">
+              <a href="/en/about_us/trusted-executive-network_m5uvdzpx.html" target="_blank">
+              <img
+              alt="Trusted Executive Network Logo" style="width: 100%;"
+              
+              src="https://public-cdn.hr.com/logo_images/hrdotcom/trusted-executive-network-logo-white.webp"
+              /></a>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- INFO STRIP -->
+        <div class="tm-info-strip">
+          <div class="tm-section-center tm-info-inner">
+            <!-- DATE -->
+            <div class="tm-info-block">
+              <svg class="tm-info-icon" viewBox="0 0 24 24">
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 
+          2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 
+          2-2V6c0-1.1-.9-2-2-2zm0 
+          16H5V9h14v11zm0-13H5V6h14v1z"
+                />
+              </svg>
+
+              <div class="tm-info-text">
+                <strong>Wednesday, March 4, 2026</strong>
+                <span>4 PM to 6 PM</span>
+              </div>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="tm-info-block">
+              <svg class="tm-info-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 
+          5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+          9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 
+          6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 
+          11.5 12 11.5z"
+                />
+              </svg>
+
+              <div class="tm-info-text">
+                <strong>East Texas A&amp;M University</strong>
+                <span
+                  >8750 North Central Expressway · 19th Floor · Dallas, TX</span
+                >
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="tm-strip-cta">
+              <button
+                class="tm-button"
+                id="fc_1769714032647"
+                onclick="loadPopup('fc_1769714032647')"
+              >
+                RSVP Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====================== TM HERO SECTION END ====================== -->
+      <!-- ====================== TM CONTEXT SECTION START ====================== -->
+      <section class="tm-context-section tm-page">
+        <div class="tm-section-center">
+          <div class="tm-context-grid">
+            <!-- TEXT COLUMN -->
+            <div class="tm-context-text">
+              <h2 class="tm-title tm-title--section">
+                AI Orchestration:<br />
+                How HR Leads Successful Enterprise Adoption
+              </h2>
+              <!-- SVG BRAND DOTS -->
+              <div class="tm-delivers__dots" aria-hidden="true">
+                <svg width="120" height="20" viewBox="0 0 120 20">
+                  <circle cx="10" cy="10" r="6" fill="#e4574f" />
+                  <circle cx="40" cy="10" r="6" fill="#5bc0de" />
+                  <circle cx="70" cy="10" r="6" fill="#8bc34a" />
+                  <circle cx="100" cy="10" r="6" fill="#f4b400" />
+                </svg>
+              </div>
+              <p class="tm-context-lead">
+                Join an elite group of HR executives for
+                <strong
+                  >networking and this 90-minute, action-focused
+                  roundtable</strong
+                >, brought to you by the Trusted Executive Network. We’ll break
+                down exactly how HR and the C-suite can partner to drive
+                successful AI adoption across the enterprise.
+              </p>
+
+              <p class="tm-context-body">
+                Most AI initiatives fail — not because the technology doesn’t
+                work, but because organizations lack alignment, orchestration,
+                and a clear human + AI operating model. HR is uniquely
+                positioned to fix that. It’s time to make it happen.
+              </p>
+            </div>
+
+            <!-- IMAGE COLUMN -->
+            <div class="tm-context-image">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/senior-executives-collaborating-dallas-meetup.webp"
+                alt="senior executives roundtable meetup"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======================= TM CONTEXT SECTION END ======================= -->
+      <!-- ====================== TM DELIVERS SECTION START ====================== -->
+      <section class="tm-delivers">
+        <div class="tm-section-center">
+          <!-- HEADER -->
+          <div class="tm-delivers__header">
+            <h2 class="tm-title tm-title--section">
+              What This Session Delivers
+            </h2>
+
+            <!-- SVG BRAND DOTS -->
+            <div class="tm-delivers__dots" aria-hidden="true">
+              <svg width="120" height="20" viewBox="0 0 120 20">
+                <circle cx="10" cy="10" r="6" fill="#e4574f" />
+                <circle cx="40" cy="10" r="6" fill="#5bc0de" />
+                <circle cx="70" cy="10" r="6" fill="#8bc34a" />
+                <circle cx="100" cy="10" r="6" fill="#f4b400" />
+              </svg>
+            </div>
+
+            <p class="tm-delivers__intro">
+              This is <strong>not</strong> another “what is AI?” conversation.
+              You will walk out with <strong>3 concrete actions</strong> your
+              organization can execute within the next 30 days.
+            </p>
+          </div>
+
+          <!-- CARDS -->
+          <div class="tm-delivers__grid">
+            <!-- CARD 1 -->
+            <div class="tm-delivers__card">
+              <div class="tm-delivers__number">1</div>
+              <div class="tm-delivers__content">
+                <h3>Build Your AI Orchestration Coalition (AIOC)</h3>
+                <p>
+                  Learn how to align HR, IT, operations, legal, and business
+                  leaders around a shared AI “North Star” to eliminate the root
+                  causes of failed AI initiatives.
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="tm-delivers__card">
+              <div class="tm-delivers__number">2</div>
+              <div class="tm-delivers__content">
+                <h3>Map a Real Human + AI Workflow</h3>
+                <p>
+                  Identify which tasks stay human, which tasks AI can support,
+                  and which tasks agents can automate — creating a clear Human +
+                  AI operating model you can take back to your organization.
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="tm-delivers__card">
+              <div class="tm-delivers__number">3</div>
+              <div class="tm-delivers__content">
+                <h3>Launch a Responsible AI Quick-Start Policy</h3>
+                <p>
+                  Develop baseline guardrails — transparency, privacy, human
+                  review, and ethical guidelines — that enable safe, confident
+                  AI experimentation across your workforce.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====================== TM DELIVERS SECTION END ====================== -->
+
+      <!-- ================= TM DISCUSSION + WHY ATTEND SECTION START ================= -->
+      <section class="tm-duo-section">
+        <div class="tm-section-center tm-duo-grid">
+          <!-- PANEL 1 -->
+          <div class="tm-panel">
+            <div class="tm-panel__image">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/interactive-ai-dallas.webp"
+                alt="Leadership discussion"
+              />
+            </div>
+
+            <div class="tm-panel__body">
+              <h3 class="tm-panel__title">Interactive Leadership Discussion</h3>
+
+              <p class="tm-panel__intro">
+                You’ll collaborate with other HR leaders to:
+              </p>
+
+              <ul class="tm-check-list">
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  Identify friction points across functions
+                </li>
+
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  Design an aligned AI workflow
+                </li>
+
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  Draft practical governance guidelines
+                </li>
+
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  Produce one recommendation, one risk, and one next step per
+                  group
+                </li>
+              </ul>
+
+              <p class="tm-panel__closing">
+                This session is built to create
+                <strong>alignment, clarity, and momentum</strong> — the three
+                pillars CHROs need to lead AI readiness at scale.
+              </p>
+            </div>
+          </div>
+
+          <!-- PANEL 2 -->
+          <div class="tm-panel">
+            <div class="tm-panel__image">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ai-bridge-dallas.webp"
+                alt="Why attend event"
+              />
+            </div>
+
+            <div class="tm-panel__body">
+              <h3 class="tm-panel__title">Why Attend?</h3>
+
+              <p class="tm-panel__intro">
+                If your organization is experimenting with AI…<br />
+                If your C-suite expects faster progress…<br />
+                If you’re responsible for workforce readiness and talent
+                transformation…
+              </p>
+
+              <p class="tm-panel__intro">
+                This session will give you the
+                <strong>blueprint HR needs to become the bridge</strong>
+                between people, processes, and AI-powered systems.
+              </p>
+
+              <p class="tm-panel__intro">You will leave with:</p>
+
+              <ul class="tm-check-list">
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  Clear next steps
+                </li>
+
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  A unifying framework
+                </li>
+
+                <li>
+                  <span class="tm-check-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+                  </span>
+                  Tools your C-suite will immediately recognize as value-driving
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= TM DISCUSSION + WHY ATTEND SECTION END ================= -->
+
+      <!-- ======================= TM LOCATION SECTION START ==================== -->
+
+      <section
+        class="tm-location"
+        id="tm-location"
+        style="background: #ffffff; padding-block: 4rem"
+      >
+        <div class="tm-section-center tm-location__wrap">
+          <!-- ROW 1 -->
+          <div class="tm-location__info">
+            <p class="tm-eyebrow">Event Location</p>
+
+            <h2 class="tm-title tm-title--section">
+              <span class="tm-location__accent"
+                >East Texas A&amp;M University</span
+              >
+            </h2>
+
+            <p class="tm-location__address">
+              <strong>8750 North Central Expressway</strong><br />
+              <strong>19th Floor</strong><br />
+              <strong>Dallas, TX 75229</strong>
+            </p>
+
+            <img
+              class="tm-location__circles"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+              alt=""
+              aria-hidden="true"
+            />
+
+            <p class="tm-location__desc">
+              This first cohort gathering sets the foundation for a year of
+              meaningful connection and strategic dialogue — designed to elevate
+              how leaders learn from one another and make better decisions in an
+              era of rapid transformation.
+            </p>
+          </div>
+
+          <div class="tm-location__image">
+            <img
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/dallas-city.webp"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="tm-section-center tm-location__floor">
+          <div class="tm-location__floor-frame">
+            <span class="tm-location__floor-tag"
+              >19th Floor · A Place at the Top</span
+            >
+
+            <img
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/19-floor-etamu-v2.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= TM LOCATION SECTION END ====================== -->
+
+      <!-- ======================= TM CO-SPONSOR SECTION START ================= -->
+
+      <section class="tm-partners" id="tm-partners">
+        <div class="tm-section-center">
+          <div class="tm-title-block">
+            <h2 class="tm-title tm-title--section">Supporters</h2>
+          </div>
+
+          <div class="tm-partners__grid">
+            <div class="tm-partners__card">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/etamu.webp"
+                alt="ETAMU"
+              />
+            </div>
+
+            <div class="tm-partners__card">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/talent-net-media.webp"
+                alt="TalentNet Media"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================== TM CO-SPONSOR SECTION END ================== -->
+
+      <!-- ======================= TM FINAL CTA SECTION START ================== -->
+      <section class="tm-cta-final">
+        <div class="tm-section-center">
+          <div class="tm-cta-final__inner">
+            <h2 class="tm-cta-final__title">
+              Reserve Your Spot — Seats Are Limited for Executive-Level
+              Participation
+            </h2>
+
+            <p class="tm-cta-final__text">
+              This is your opportunity to shape how AI is adopted — and
+              orchestrated — across Dallas organizations in 2026. Better yet,
+              there is no cost to attend.
+            </p>
+
+            <button
+              class="tm-button"
+              id="fc_1769714032647"
+              onclick="loadPopup('fc_1769714032647')"
+            >
+              RSVP Now
+            </button>
+
+            <div class="tm-cta-final__questions">
+              <p class="tm-cta-final__questions-title">Questions?</p>
+
+              <p style="color: #ffffff">
+                Contact TEN Dallas Chapter Director Gene Brown at
+                <a
+                  href="mailto:gbrown@hr.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tm-cta-final__email" style="color: var(--clr-warm-gold); text-decoration: underline;"
+                >
+                  gbrown@hr.com
+                </a>
+              </p>
+
+              <p class="tm-cta-final__refreshments">
+                <span class="tm-cta-final__icon">☕</span>
+                Refreshments and snacks will be provided.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======================== TM FINAL CTA SECTION END =================== -->
+
+      <div>$vendorLeadForm</div>
+    </div>
+  </body>
+</html>

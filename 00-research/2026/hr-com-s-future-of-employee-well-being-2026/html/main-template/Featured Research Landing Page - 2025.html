@@ -1,0 +1,199 @@
+<!-- @format -->
+
+<link
+  href="$public/remoteimages/website-images/2023_siteRedesign/css/new_login_style_v3.css"
+  rel="stylesheet"
+/>
+<link
+  href="$public/remoteimages/research/css/research-webview-styles-v5.css"
+  rel="stylesheet"
+/>
+<style>
+  body > .ContentArea > .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+  }
+  body > .ContentArea > {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .container {
+    width: 100%;
+    max-width: 1350px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .mvgpoints.placetop {
+    /* position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index:100;*/
+  }
+  .mvgpoints {
+    width: auto;
+    padding: 3px 8px;
+    background: #e8ecf7;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2a343e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+  }
+  .ldbd_icon {
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background: url($public/remoteimages/website-images/2023_siteupdate/Images/leaderboard_icon.svg)
+      center center no-repeat;
+  }
+  .ContentArea {
+    margin-block: 0 !important;
+  }
+  #header {
+    border: none;
+  }
+
+  .hero-section {
+    background: var(--clr-lavendar) !important;
+  }
+  .cta .btn-container{
+    display: grid !important;
+  }
+</style>
+<!-- <link rel="stylesheet" href="$public/remoteimages/website-images/2022_siteupdate/custom-css/research-single-page-2024.css"> -->
+
+<header class="header" id="header">
+  <div class="section-center header-center">
+    <nav class="nave in-container">
+      <div class="nave__data">
+        <a class="nave__logo" href="/"
+          ><img
+            alt="Research logo"
+            src="$public/remoteimages/website-images/2021_siteupdate/Research/hrresearch_dark_logo.png"
+            style="width: 100%; max-width: 120px"
+          />
+        </a>
+        <div class="nave__toggle" id="nave-toggle">
+          <svg
+            class="nave__burger"
+            fill="none"
+            height="25px"
+            viewbox="0 0 24 24"
+            width="25px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 18L20 18"
+              stroke="#2a343e"
+              stroke-linecap="round"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M4 12L20 12"
+              stroke="#2a343e"
+              stroke-linecap="round"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M4 6L20 6"
+              stroke="#2a343e"
+              stroke-linecap="round"
+              stroke-width="2"
+            ></path>
+          </svg>
+          <svg
+            class="nave__close"
+            fill="none"
+            height="25px"
+            viewbox="0 0 24 24"
+            width="25px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18"
+                stroke="#2a343e"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="nave__menu" id="nave-menu">
+        <ul class="nave__list">
+          <li>
+            <a
+              class="nave__link"
+              href="/en/resources/free_research_white_papers/"
+              >Research Reports</a
+            >
+          </li>
+          <li>
+            <a class="nave__link" href="/en/resources/surveys/"
+              >Take a Survey</a
+            >
+          </li>
+          <li><a class="nave__link" href="#">Join our Panel</a></li>
+          <li>
+            <a
+              class="nave__link"
+              href="/en/magazines/hrp-editorial-calendar_k5mwwynh.html"
+              >Virtual Event Calendar</a
+            >
+          </li>
+          <li>
+            <a class="nave__link" href="/en?t=/CustomCode/hr/subscribe/research"
+              >Subscribe</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- header -->
+<!-- <div>$image2</div> -->
+<div>$desc_long</div>
+<div style="margin-top: 10px">
+  $designAttribute:story_edit_link $storyToolBar
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'top',
+        trigger: 'click',
+      })
+    })
+  })
+  /*=============== SHOW MENU ===============*/
+  const showMenu = (toggleId, naveId) => {
+    const toggle = document.getElementById(toggleId),
+      nave = document.getElementById(naveId)
+
+    toggle.addEventListener('click', () => {
+      // Add show-menu class to nav menu
+      nave.classList.toggle('show-menu')
+
+      // Add show-icon to show and hide the menu icon
+      toggle.classList.toggle('show-icon')
+    })
+  }
+  showMenu('nave-toggle', 'nave-menu')
+</script>
+$designAttribute:quick_login_m1 $designAttribute:masterD_no_sidebar
+
+<script src="$public/remoteimages/research/css/research-webview-script-v4.js"></script>

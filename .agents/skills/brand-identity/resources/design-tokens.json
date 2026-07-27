@@ -1,0 +1,105 @@
+{
+  "colors": {
+    "basic": {
+      "background": "#F5F5F5",
+      "pureBlack": "#000000",
+      "headerText": "#2A343E",
+      "bodyText": "rgba(42, 52, 62, 0.75)",
+      "linkText": "#02588E"
+    },
+    "primary": {
+      "deepRed": "#AB2117",
+      "tawnyBrown": "#6F4E06",
+      "darkGreen": "#435A1B",
+      "deepAqua": "#175E69",
+      "warmRed": "#F0493C",
+      "black": "#000000",
+      "deepPurple": "#A5125C",
+      "aegeanBlue": "#2A5A8D",
+      "crimsonRed": "#9E320A",
+      "blueGrey": "#354C4B",
+      "purple": "#EA4397",
+      "white": "#FFFFFF"
+    },
+    "secondary": {
+      "lightBlue1": "#E8ECF7",
+      "lightBlue2": "#BEE5FF",
+      "lightGreen": "#6DECD7",
+      "orangeRed": "#F0493C",
+      "orange": "#FD7114"
+    },
+    "additionalPrimary": {
+      "red": "#EF4A3D",
+      "teal": "#4AC4D6",
+      "lightGreen": "#94C83D",
+      "yellow": "#FDB414",
+      "blue1": "#2680EB",
+      "blue2": "#273A8F",
+      "pink": "#E51069",
+      "darkBlue": "#02588E"
+    },
+    "gradient": {
+      "pinkOrange1": "#EA4397",
+      "pinkOrange2": "#F26532"
+    }
+  },
+  "typography": {
+    "fontFamily": "Roboto, sans-serif",
+    "fontWeightRange": "300-900",
+    "headings": {
+      "h1": {
+        "fontSize": "50px",
+        "fontWeight": "300/900",
+        "lineHeight": "60px"
+      },
+      "h2": {
+        "fontSize": "40px",
+        "fontWeight": "600/900",
+        "lineHeight": "48px"
+      },
+      "h3": {
+        "fontSize": "30px",
+        "fontWeight": "600/900",
+        "lineHeight": "40px"
+      },
+      "h4": {
+        "fontSize": "24px",
+        "fontWeight": "600/900",
+        "lineHeight": "34px"
+      },
+      "h5": {
+        "fontSize": "20px",
+        "fontWeight": "600/900",
+        "lineHeight": "30px"
+      },
+      "h6": {
+        "fontSize": "18px",
+        "fontWeight": "600/900",
+        "lineHeight": "28px"
+      }
+    },
+    "body": {
+      "fontSize": "16px",
+      "fontWeight": "400/500",
+      "lineHeight": "26px",
+      "opacity": "0.75"
+    }
+  },
+  "layout": {
+    "clearspaceArea": "Minimum clearspace around the logo must be no less than one 'core' width on all sides.",
+    "minimumLogoSize": "125px/1.75in",
+    "button": {
+      "default": "Height 50px",
+      "small": "Height 30px",
+      "large": "Height 60px"
+    },
+    "inputBox": {
+      "height": "50px",
+      "border": "2px",
+      "borderRadius": "10px",
+      "fontSize": "13px",
+      "padding": "15px",
+      "margin": "20px"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<!-- @format -->
+
+<script
+  src="$public/hr_view/Scripts/AC_RunActiveContent.js"
+  type="text/javascript"
+></script>
+<style>
+  #PressReleaseTitle {
+    display: none;
+  }
+  #prH2 h2 {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    color: #555555 !important;
+    font-weight: 400 !important;
+    border-bottom: none !important;
+    text-transform: none !important;
+  }
+  #prH2 h4 {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: #555555 !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+  }
+  .PressRelease-Block {
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  .sfsStoryContainer .PressRelease-Block h1 {
+    font-size: 20px !important;
+    line-height: 26px !important;
+    color: #0171ca !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+  }
+</style>
+
+<h1 class="PageName">Press Release</h1>
+<div class="sfsStoryContainer">
+  <div style="float: left"></div>
+  <div class="sfsStoryTop"></div>
+  <div class="sfsStoryContent">
+    <div style="padding: 8px 1em 0pt 0.5em; height: 20px">
+      $designAttribute:sharethis_countstats
+      <div
+        class="link11"
+        style="
+          text-align: right;
+          color: rgb(204, 204, 204);
+          font-size: 11px;
+          float: right;
+        "
+      >
+        $designAttribute:story_edit_link $storyToolBar
+      </div>
+    </div>
+
+    <div class="PressRelease-Block">
+      <div class="row">
+        <div class="col-md-9 col-sm-12 col-xs-12">
+          <h1 id="PressReleaseTitle">$StoryName</h1>
+          <h1 class="ReleaseHeader">$var1</h1>
+        </div>
+
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          <img
+            alt="HR.com Press Releases"
+            src="$public/remoteimages/website-images/2017_SiteRedesign/images/HRcomPressReleasesDS.png"
+            style="width: 124px"
+          />
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-left: 15px">
+          <span class="text11bold">Date:&nbsp;</span
+          ><span class="text11b">$artDate</span>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <span class="link9">$story_actions</span>
+          <hr size="1" />
+        </div>
+
+        <div id="prH2" class="col-md-12 col-sm-12 col-xs-12">
+          <div class="text clear">$desc_long</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  $designAttribute:quick_login_m1 $designAttribute:helpdesk
+</div>

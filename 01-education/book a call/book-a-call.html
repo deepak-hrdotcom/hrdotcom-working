@@ -1,0 +1,174 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+<style type="text/css">
+    /* Reset default margins and set full height */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    /* Outer container with full-width gradient background (max-width 1920px) */
+    .outer-container {
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        min-height: 100vh;
+
+        /* Soft, professional background gradient (designer's choice) */
+        background: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    /* Center content area: 90vw width (max 1170px), centered text */
+    .center-content {
+        width: 90vw;
+        max-width: 1170px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        max-width: 800px;
+        padding-top: 3rem;
+    }
+
+    /* Logo at the top */
+    .logo {
+        max-width: 200px;
+        display: block;
+        margin: 0 auto 2em;
+        letter-spacing: normal;
+    }
+
+    /* Heading and subheading styles */
+    h1 {
+        font-weight: 600;
+        /* Roboto Bold */
+        font-size: 2em;
+        margin: 0 0 0.5em;
+        font-size: clamp(2rem, 3vw, 10rem)
+    }
+
+    .subheading {
+        font-weight: 400;
+        /* Roboto Regular */
+        font-size: 1.2em;
+        margin: 0 0 1em;
+        font-size: clamp(1.5rem, 2vw, 2.5rem) !important
+    }
+
+    /* Instructor cards container */
+    .instructors {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2em;
+        /* On mobile, cards stack vertically (default) */
+    }
+
+    @media (min-width: 768px) {
+        .instructors {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* Individual instructor card styling */
+    .card {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1em;
+        border-radius: 8px;
+        text-align: center;
+        /* Optional: add a subtle drop shadow for a card effect */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1.5rem;
+        border-radius: 50%;
+    }
+
+    .card .name {
+        font-weight: 700;
+        font-size: 2rem !important;
+        letter-spacing: normal;
+        margin: 0.5em 0 0.2em;
+    }
+
+    .card .title {
+        font-weight: 400;
+        font-size: 1em;
+        margin: 0;
+        color: #333;
+    }
+
+    /* Call-to-action button */
+    .call-button {
+        display: inline-block;
+        padding: 1em 2em;
+        font-weight: 700;
+        font-size: 1em;
+        font-size: clamp(1.5rem, 1.5vw, 2rem);
+        color: #ffffff !important;
+        text-decoration: none;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(to right, #EA4397, #F26532);
+        /* Center the button within .center-content */
+        margin-top: 1.5em;
+    }
+
+    .call-button:hover {
+        background: linear-gradient(to left, #EA4397, #F26532);
+        color: #ffffff !important
+    }
+
+    /* Bottom gradient strip fixed at bottom of screen */
+    .bottom-strip {
+        /* margin-top: 3rem; */
+        display: block;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(to right, #EF4A3D, #FDB414, #4AC4D6, #EF146E, #273A8F);
+    }
+</style>
+<div class="outer-container">
+    <div class="center-content"><!-- Logo --><img alt="HR Education logo" class="logo"
+            src="https://public-cdn.hr.com/remoteimages/website-images/2025_siteupdate/education/hr-education.png" />
+        <!-- Heading and Subheading -->
+        <h1>The exams are hard. But they don&#39;t have to be. Let&#39;s talk.</h1>
+
+        <p class="subheading">Book a call with one of us.</p>
+        <!-- Instructor Cards -->
+
+        <div class="instructors"><!-- Jennifer's Card -->
+            <div class="card"><img alt="Jennifer Marrants"
+                    src="https://public-cdn.hr.com/remoteimages/website-images/2025_siteupdate/education/jennifer.png" />
+                <h3 class="name">Jennifer Marants</h3>
+
+                <p class="title">Certification &amp; Recertification Ninja<br />
+                    (Program Director and Designer)</p>
+            </div>
+            <!-- Armie's Card -->
+
+            <div class="card"><img alt="Greg Osmond"
+                    src="https://public-cdn.hr.com/system/app/media/rs/2025/9/16/mfmrmke3/og.jpg"
+                    style="border-radius: 50%;" />
+                <h3 class="name">Greg Osmond</h3>
+
+                <p class="title">Trusted HR Certification Advisor<br />
+                    </p>
+            </div>
+        </div>
+        <!-- Call-to-Action Button --> <a class="call-button"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vn7JlDrxN5BtyFFdPcYZH1oP3xpfFoHhSTDV-Naq1YUXJ74Jqj2GAoKB-IuL2dWNKBEWXbhE-"
+            target="_blank"> Book a call with one of us </a>
+    </div>
+    <!-- <div class="bottom-strip"></div> -->
+</div>
+<!-- Bottom Gradient Strip -->

@@ -1,0 +1,248 @@
+ AI Is Automating Analysis While
+Also Increasing the Importance of
+Human Judgment
+ AI adoption within people analytics is accelerating rapidly, but
+organizational readiness appears to be evolving more slowly.
+Last year’s HR.com research on people analytics found a sharp decline
+in the percentage of organizations not using AI, signaling growing
+experimentation and investment in AI-enabled analytics tools. While
+many organizations are investing heavily in AI-enabled analytics tools,
+ the Delphi findings suggest that AI alone will not close the execution gap
+ without stronger decision-making, oversight, and business integration.
+During the advisory board discussion, Adam Murphy emphasized that
+people analytics becomes strategic only when connected directly
+to business priorities rather than isolated HR metrics. He noted that
+effective analytics “ starts with the business metrics, not the people
+metrics,”   reinforcing the idea that AI-generated insights create value only
+when tied to operational decision-making.
+Across all three rounds, experts repeatedly emphasize that AI is
+reshaping the role of people analytics rather than replacing it. As
+automation handles more technical and administrative work, analytics
+teams will increasingly differentiate themselves through interpretation,
+ operational influence, contextual judgment, and decision support.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+21 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ Experts describe AI as an accelerator, not a replacement
+ In the first Delphi round, panelists consistently describe AI as a tool that
+ can accelerate people analytics work by reducing manual reporting,
+data preparation, and repetitive analytical tasks.
+Fiona Jamison describes AI as an opportunity for people analytics
+teams to   “move faster and go deeper,”   helping leaders navigate
+increasing organizational complexity.
+Brian Kasen, Director of Data Engineering & Analytics at Mitratech,
+highlights how AI can dramatically expand analytical capability:
+ “The opportunity is to deliver insights at a breadth, depth, and speed that
+we’ve never seen before.”
+ Over-reliance on AI:   Leaders relying on Al without applying human judgment.
+Democratization: Allowing managers to access and use workforce data without
+relying on analysts.
+Automation: Automating tedious data preparation, cleaning, and scheduled
+reporting.
+Decision Accountability: Require leaders to justify major Al-assisted decisions.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+22 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ Viktor Mirovic, CEO of KeenCorp, suggests that AI simplifies work by
+ automating time-consuming tasks and that this gives HR a unique,
+timely opportunity to leverage its speed and clarity to become a
+strategic part of the boardroom conversation.
+ Ranjan Dutta, Ph.D., Founder and Managing Partner of ThothProAI,
+ cautions against viewing AI as a “monolithic concept,” emphasizing
+ its rapid progression from GPT models to agentic frameworks. He
+ argues that people analytics has a critical role in workforce planning
+for the “human plus AI workforce” by anticipating new roles, skills, and
+organizational process optimization.
+ This focus built on the foundational metrics established in Round 2,
+where experts initially identified automation and democratization as the
+ most valuable day-to-day applications of AI technology.
+When forced to select the single use of AI that will create the greatest
+long term value, Round 3 experts were split between automating tedious
+data preparation and reporting (36%) and allowing managers to access
+and use workforce data without relying on analysts (36%).
+ Which use of AI will create the greatest long-term value
+for PA over the next two years?   (select one)
+28%
+ 36%
+36%
+ Automation: Automating tedious data preparation,
+cleaning, and scheduled reporting
+Democratization: Allowing managers to access and use
+workforce data without relying on analysts
+Real-time insights: Providing signals and alerts for
+faster interventions
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+23 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ Over-reliance on AI emerges as the greatest risk
+ At the same time, participants repeatedly cautioned against treating
+ AI as a replacement for organizational judgment. Curtis Winegar
+ emphasized that easy access to AI-generated answers may create false
+ confidence if organizations fail to apply critical thinking:
+ “When AI makes answers easy to generate, it can mask bias, remove
+context, or encourage action without judgment.”
+ The second Delphi round clarifies expert concerns further. When asked
+ to identify the most critical risk associated with AI-enabled people
+analytics, the most common response was over-reliance on AI without
+ applying human judgment.
+This concern outranked:
+ ●   algorithmic bias
+ ●   data privacy risks
+ ●   lack of transparency in AI systems
+ Ranjan Dutta notes that while data integration challenges are not new, AI
+ is rapidly changing how organizations aggregate and analyze workforce
+data. He explains that modern AI tools can dramatically accelerate
+integration and analysis processes, increasing both the speed and
+complexity of workforce decision-making.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+24 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ Jeff Higgins expresses deep skepticism regarding AI's current
+autonomous capability across platforms, noting that running AI
+across multiple, un-integrated HR systems frequently produces highly
+contradictory advice. He raises the crucial question of how AI prioritizes
+ data to determine the “truth” when conflicting information from multiple
+ HR systems is present.
+ Accountability becomes more important as AI adoption expands
+ By Round 3, the panel focused increasingly on governance and
+accountability. When asked which safeguard best prevents leaders
+ from bypassing human judgment, about two-fifths of experts selected
+decision accountability requiring leaders to justify major AI-assisted
+ decisions.
+ The panel also shows a cautious approach toward AI investment. When
+ asked how to prioritize limited budgets in 2026, 92% of Round 2 experts
+recommended piloting and experimenting with new AI tools in small
+areas rather than aggressively rolling them out enterprise-wide.
+ Which safeguard best prevents leaders from bypassing
+human judgment when using AI insights?
+Decision accountability:
+ Require leaders to justify  43%
+major AI- assisted decisions
+ Human oversight:   Final
+decision- making authority
+29%
+remains with a human for
+critical HR actions
+ AI literacy:   Train leaders on
+21%
+AI limitations and risks
+ Auditing:   Regularly review
+7%
+AI- assisted decisions for
+overreliance
+ 0   10   20   30   40
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+25 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ Instead, 75% of respondents vote to aggressively scale both the
+integration of cross-functional business data and the systematic
+embedding of analytics into routine operational decision-making loops.
+ This clear consensus demonstrates that leaders recommend pausing
+ platform expansion to focus squarely on solving their data related
+issues.
+ Given limited budget and headcount, how should
+organizations prioritize the following initiatives in 2026?
+75%   8% 17%
+ Embedding analytics
+into routine business
+decision-making
+25% 0% 75%
+Integrating HR and
+business/financial data
+for measurable
+business outcomes
+33% 0% 67%
+Improving data quality
+and governance
+practices
+42%   8% 50%
+Building business
+leaders' ability to
+interpret data
+92%   0% 8%
+Investing in new AI
+tools and analytics
+platforms
+ 0   20   40   60   80   100
+Scale Aggressively: A top priority for organizationwide rollout
+Pilot/Experiment: Worth testing in small areas
+Do Not Pursue: Not relevant or effective for us
+ Taken together, the findings suggest that AI is fundamentally reshaping
+ the role of people analytics. As automation increasingly handles
+reporting, summarization, and basic analytical tasks, the differentiating
+value of people analytics teams will increasingly come from:
+ ●   interpretation
+ ●   business integration
+ ●   operational influence
+ ●   contextual judgment
+ ●   decision support
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+26 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ HRRI Strategic Recommendations
+ Based on our research, consider the following suggestions:
+ 1. Define where human oversight is mandatory.   The findings consistently emphasize that organizations should
+not rely entirely on AI-generated recommendations for high-impact workforce decisions. This helps prevent
+ over-reliance on automated outputs and reinforces accountability. Establish clear guidelines identifying which
+decisions always require human review, including:
+ ●   promotions
+ ●   performance evaluations
+ ●   terminations
+ ●   compensation decisions
+ ●   succession planning
+ ●   high-impact hiring decisions
+ 2. Pilot AI in focused, measurable use cases.   Experts strongly favor experimentation in smaller, targeted use
+cases rather than large-scale transformation initiatives. Measure operational value before scaling AI initiatives
+further. Begin with applications such as:
+ ●   turnover risk identification
+ ●   workforce planning scenarios
+ ●   automated reporting summaries
+ ●   skills gap analysis
+ ●   learning recommendations
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+27 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+
+ 3. Strengthen AI governance and transparency.   The findings repeatedly highlight the importance of governance
+ as AI adoption expands. Employees and leaders should understand how AI-generated insights are created,
+interpreted, and used. Develop governance frameworks covering:
+ ●   data privacy
+ ●   bias testing
+ ●   decision accountability
+ ●   AI usage policies
+ ●   audit processes
+ ●   communication standards
+ 4. Build AI and analytics literacy across leadership teams . Organizations should invest in practical AI literacy
+training for HR leaders, managers, and business partners. As AI-generated insights become more common,
+leaders need stronger capability to:
+ ●   question assumptions
+ ●   recognize bias
+ ●   interpret predictions carefully
+ ●   evaluate contextual limitations
+ ●   avoid treating AI outputs as absolute facts
+ 5. Reposition analytics teams around interpretation and decision support. A s AI automates technical reporting
+work, analytics professionals should spend more time on:
+ ●   workforce scenario planning
+ ●   strategic consulting
+ ●   stakeholder engagement
+ ●   organizational storytelling
+ ●   operational decision support
+ This helps ensure AI augments human judgment rather than replacing critical thinking and organizational context.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+28 HR.com’s S tate of P eople Analytics 2026
+
+--- PAGE BREAK ---
+

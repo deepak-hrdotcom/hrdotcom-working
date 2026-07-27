@@ -1,0 +1,815 @@
+<!-- @format -->
+<style type="text/css">
+  #hrEvtCarouse {
+    display: none;
+  }
+
+  #collapseMenubar .dropdown-backdrop {
+    display: none !important;
+  }
+
+  /* ===================== TESTIMONIALS CSS (START) ===================== */
+  .hr-testimonials {
+    width: 100% !important;
+    max-width: 1920px !important;
+    margin: 0 auto !important;
+    padding: 56px 0 40px 0 !important;
+    background: #ffffff !important;
+  }
+
+  .hr-testimonials__inner {
+    width: 90vw !important;
+    max-width: 1170px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .hr-testimonials__header {
+    margin-bottom: 24px !important;
+  }
+
+  .hr-testimonials__title {
+    margin: 0 0 6px 0;
+    font-size: 28px;
+    line-height: 1.25;
+    color: #0f172a;
+  }
+
+  .hr-testimonials__subtitle {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #475569 !important;
+  }
+
+  .hr-testimonials__viewport {
+    overflow: hidden !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  .hr-testimonials__track {
+    display: flex !important;
+    will-change: transform !important;
+    transition: transform 500ms ease !important;
+  }
+
+  .hr-testimonials__slide {
+    min-width: 100% !important;
+    padding: 24px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hr-testimonials__icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 auto 12px auto !important;
+    color: #ef4a3d !important;
+    /* brand accent */
+  }
+
+  .hr-testimonials__quote {
+    margin: 0 auto 14px auto !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    color: #0f172a !important;
+    max-width: 760px !important;
+  }
+
+  .hr-testimonials__person {
+    margin-top: 6px !important;
+  }
+
+  .hr-testimonials__name {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+  }
+
+  .hr-testimonials__meta {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #64748b !important;
+  }
+
+  .hr-testimonials__company {
+    color: #0ea5e9 !important;
+  }
+
+  .hr-testimonials__dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 14px !important;
+  }
+
+  .hr-testimonials__dot {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: #cbd5e1 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .hr-testimonials__dot[aria-current='true'] {
+    background: #ef4a3d !important;
+    transform: scale(1.15) !important;
+  }
+
+  /* Larger screens */
+  @media (min-width: 768px) {
+    .hr-testimonials {
+      padding: 70px 0 50px 0 !important;
+    }
+
+    .hr-testimonials__title {
+      font-size: 32px !important;
+    }
+
+    .hr-testimonials__quote {
+      font-size: 18px !important;
+    }
+
+    .hr-testimonials__name {
+      font-size: 17px !important;
+    }
+
+    .hr-testimonials__meta {
+      font-size: 15px !important;
+    }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hr-testimonials__track {
+      transition: none !important;
+    }
+  }
+
+  .section-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #2a343e;
+    margin: 40px 0px 12px 0px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .hr-testimonials__quote {
+    position: relative !important;
+    padding-left: 24px !important;
+    border: none;
+  }
+
+  .hr-testimonials__quote::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;
+    border-radius: 2px !important;
+    background: linear-gradient(0deg,
+        #00a0df 0%,
+        #232288 27.8%,
+        #e3007e 52.35%,
+        #e51f1f 79.42%,
+        #feed00 100%) !important;
+  }
+
+  /* ===================== TESTIMONIALS CSS (END) ===================== */
+
+  /* ================= HRWEST HOMEPAGE HERO START ================= */
+
+  .hrwest-home-hero {
+    width: 100%;
+    background: url("https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-2026-hero-img.webp") no-repeat center center;
+    background-size: cover;
+    padding: 60px 0;
+  }
+
+  .hrwest-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* mobile safe spacing */
+  }
+
+  .hrwest-content {
+    max-width: 620px;
+  }
+
+  .hrwest-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .hrwest-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #2a343e;
+    margin-bottom: 15px;
+  }
+
+  .hrwest-subtext {
+    font-size: 18px;
+    color: #2a343e;
+    margin-bottom: 12px;
+  }
+
+  .hrwest-offer {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #91278c;
+  }
+
+  .hrwest-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #e51069, #91278c);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 28px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+
+  .hrwest-btn:hover {
+    opacity: 0.9;
+    color: #ffffff !important
+  }
+
+  /* Tablet */
+  @media (max-width: 991px) {
+    .hrwest-title {
+      font-size: 32px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .hrwest-home-hero {
+      padding: 40px 0;
+      background-position: center;
+    }
+
+    .hrwest-title {
+      font-size: 26px;
+    }
+
+    .hrwest-content {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  /* ================= HRWEST HOMEPAGE HERO END ================= */
+</style>
+<!-- Bombora Tag -->
+<script>
+  //informer
+  ; (function (f, i, c) {
+    var a = decodeURIComponent,
+      e = '',
+      l = '',
+      o = '||',
+      g = ';;',
+      h = 'split',
+      b = 'length',
+      j = 'indexOf',
+      k = 0,
+      n = 'localStorage',
+      m = '_ccmdt'
+    f[c] = f[c] || {}
+    function d(q) {
+      var p
+      if (f[n]) {
+        return f[n][q] || ''
+      } else {
+        p = i.cookie.match(q + '=([^;]*)')
+        return (p && p[1]) || ''
+      }
+    }
+    f[c].us = {}
+    e = a(d(m))[h](o)
+    k = e[b]
+    if (k > 0) {
+      while (k--) {
+        l = e[k][h]('=')
+        if (l[b] > 1) {
+          if (l[1][j](g) > -1) {
+            f[c].us[l[0]] = l[1][h](g)
+            f[c].us[l[0]].pop()
+          } else {
+            f[c].us[l[0]] = l[1]
+          }
+        }
+      }
+    }
+  })(window, document, '_ml')
+
+    //tag
+    ; (function () {
+      _ml = window._ml || {}
+      _ml.eid = '82020'
+      _ml.fp = 'YourUserIDHere'
+      _ml.informer = {
+        callback: function (gaSet, gaSend) {
+          //call back when profile is loaded
+          if (typeof dataLayer != 'undefined' && !_ml.isEmptyObj(_ml.us)) {
+            dataLayer.push({
+              event: 'Bombora_Informer',
+              Bombora_Topic:
+                _ml.us.tp && _ml.us.tp.length > 0 ? _ml.us.tp[0] : '',
+              Bombora_Company_Revenue: _ml.us.cr,
+              Bombora_Company_Size: _ml.us.cs,
+              Bombora_Domain: _ml.us.dm,
+              Bombora_Seniority: _ml.us.sn,
+              Bombora_Predictive_Category:
+                _ml.us.pc && _ml.us.pc.length > 0 ? _ml.us.pc[0] : '',
+              Bombora_Decision_Maker: _ml.us.dcm,
+              Bombora_Functional_Area:
+                _ml.us.fa && _ml.us.fa.length > 0 ? _ml.us.fa[0] : '',
+              Bombora_Install_Data:
+                _ml.us.ins && _ml.us.ins.length > 0 ? _ml.us.ins[0] : '',
+              Bombora_Professional_Group:
+                _ml.us.pg && _ml.us.pg.length > 0 ? _ml.us.pg[0] : '',
+              Bombora_Education: _ml.us.edu,
+              Bombora_Industry: _ml.us.ind,
+            })
+          }
+        },
+        enable: true,
+      }
+      var s = document.getElementsByTagName('script')[0],
+        cd = new Date(),
+        mltag = document.createElement('script')
+      mltag.type = 'text/javascript'
+      mltag.async = true
+      mltag.src =
+        'https://ml314.com/tag.aspx?' +
+        cd.getDate() +
+        cd.getMonth() +
+        cd.getFullYear()
+      s.parentNode.insertBefore(mltag, s)
+    })()
+</script>
+<style type="text/css">
+  .st-sticky-share-buttons.st-right.st-toggleable.st-has-labels.st-show-total {
+    display: none !important;
+  }
+</style>
+<!-- ================= HRWEST HOMEPAGE HERO START ================= -->
+<section class="hrwest-home-hero" style="display: none;">
+  <div class="hrwest-container">
+    <div class="hrwest-content"><img alt="HRWest Logo" class="hrwest-logo"
+        src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png" />
+      <div class="hrwest-title">HRWest Is Back for 2026!</div>
+
+      <div class="hrwest-subtext">Join us on June 9&ndash;10 in San Francisco</div>
+
+      <div class="hrwest-offer">Incredible event value &mdash; register now for just $399</div>
+      <a class="hrwest-btn" href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html"> Grab the
+        Early Bird </a>
+    </div>
+  </div>
+</section>
+<!-- ================= HRWEST HOMEPAGE HERO END ================= -->
+
+<div class="hr_container-fluid bluebgbox">
+  <div class="hr_container">
+    <div class="hr_ve_section mrtp30"><svg height="10" viewbox="0 0 55 10" width="55"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+      </svg>
+
+      <h2>Earn HR credits while staying up-to-date on industry trends</h2>
+      $designAttribute:Upcoming_HybridEvent <img alt="HR Virtual Event Logo" class="hr_ve_img" height="120"
+        src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/VirtualEventLogo_new.png"
+        width="164" />
+      <h5>Continue your growth in this agile HR world with our extensive library of live and on-demand events and
+        webcasts</h5>
+      $include:/CustomCode/Homepage/UpcomingEvents
+    </div>
+  </div>
+</div>
+
+<div class="hr_container-fluid darkbluebgbox">
+  <div class="hr_container">
+    <div class="home_edu_section"><a class="hm_edu_logo" href=""><img alt="HR Education Logo" height="44"
+          src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/hreducation_v2_logo_white.png"
+          width="184" /></a>
+
+      <h3>3000+ hours of HR learning at your fingertips</h3>
+
+      <h5>Upskill with hr.education to unlock your FULL potential</h5>
+
+      <div class="hm_eduinfo_wrapper">
+        <div class="hm_eduinfo_card"><a href="/en/certifications/hrci_shrm_prep_courses/" target="_blank"><img
+              alt="Man sitting at desk doing HR Certification"
+              src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/hr_home_dls_01.jpg" /></a>
+
+          <h4><a href="/en/certifications/hrci_shrm_prep_courses/" target="_blank">HR Certification</a></h4>
+        </div>
+
+        <div class="hm_eduinfo_card"><a
+            href="/en?s=qqre26WnB9QAMI5TWyn&amp;t=/CustomCode/Education_Pages/Listing&amp;edu_type=Professional+Education"
+            target="_blank"><img alt="Woman sitting at desk attending Professional Education courses"
+              src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/hr_home_dls_02.jpg" /></a>
+
+          <h4><a
+              href="/en?s=qqre26WnB9QAMI5TWyn&amp;t=/CustomCode/Education_Pages/Listing&amp;edu_type=Professional+Education"
+              target="_blank">Professional Education</a></h4>
+        </div>
+
+        <div class="hm_eduinfo_card"><a
+            href="/en?s=qqre26WnB9QAMI5TWyn&amp;t=/CustomCode/Education_Pages/Listing&amp;edu_type=Micro+Lesson"
+            target="_blank"><img alt="Woman sitting on a chair doing Micro Lessons"
+              src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/hr_home_dls_03.jpg" /></a>
+
+          <h4><a href="/en?s=qqre26WnB9QAMI5TWyn&amp;t=/CustomCode/Education_Pages/Listing&amp;edu_type=Micro+Lesson"
+              target="_blank">Micro-Lessons</a></h4>
+        </div>
+
+        <div class="hm_eduinfo_card"><a
+            href="/en?s=qqre26WnB9QAMI5TWyn&amp;t=/CustomCode/Education_Pages/Listing&amp;edu_type=Certificates+of+Excellence"
+            target="_blank"><img alt="Man sitting on table getting Certificates of Excellence"
+              src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/hr_home_dls_04.jpg" /></a>
+
+          <h4><a
+              href="/en?s=qqre26WnB9QAMI5TWyn&amp;t=/CustomCode/Education_Pages/Listing&amp;edu_type=Certificates+of+Excellence"
+              target="_blank">Certificates of Excellence</a></h4>
+        </div>
+      </div>
+
+      <div class="ev_ag_btn"><a class="hr_custom_btn gradient_btn btn_large round mrtp30"
+          href="/en?t=/CustomCode/Education_Pages/Home">Explore Education</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="hr_container-fluid hr_cond">
+  <div class="hr_container custom_img">
+    <div class="hr_connect_box"><svg class="mrbt20" height="10" viewbox="0 0 55 10" width="55"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+      </svg>
+
+      <h3>Expand your HR community</h3>
+      <!--<h5>Expand your HR community</h5>-->
+
+      <div class="info_card">
+        <ul class="cnct_list">
+          <li>Connect with HR professionals who share your industry interests</li>
+          <li>Showcase your HR thought leadership</li>
+          <li>Network and collaborate with HR experts</li>
+        </ul>
+
+        <div class="hr_ag_btn"><a class="hr_custom_btn gradient_btn btn_large round"
+            href="/en/app/networkGroups">Explore All Groups</a> <svg height="10" viewbox="0 0 55 10" width="55"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+            <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+            <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+            <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+          </svg></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hr_container-fluid darkgraybox">
+  <div class="hr_container">
+    <div class="hr_resources_box"><svg height="10" style="display: block; margin: auto; margin-bottom: 40px"
+        viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+      </svg>
+
+      <h3>Thousands of resources in your pocket</h3>
+
+      <h5>As a free member, get access to thousands of perks to help you grow in your career.</h5>
+
+      <div class="hm_rsc_wrapper">
+        <div class="hm_rsc_card"><small>HR Excellence Magazines<br />
+            and Newsletters</small>
+
+          <h4><a href="/en/magazines/">News and Analysis </a></h4>
+
+          <p>Expert takes on the latest developments in HR to help you stay ahead.</p>
+          <a href="/en?t=/CustomCode/hr/subscribe/epubs">View More <svg height="16" viewbox="0 0 16 16" width="16"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5,9.5a8,8,0,1,0,8-8A8,8,0,0,0,1.5,9.5Zm9.4,0L7.754,6.381A.742.742,0,1,1,8.8,5.331l3.669,3.681a.742.742,0,0,1,.023,1.023L8.881,13.662a.741.741,0,1,1-1.05-1.046Z"
+                fill="#00FFEE" transform="translate(-1.5 -1.5)"></path>
+            </svg></a>
+        </div>
+
+        <div class="hm_rsc_card"><small>HR Research</small>
+
+          <h4><a href="/en/resources/free_research_white_papers/">Industry Research</a></h4>
+
+          <p>Companies are backing up their strategic decisions with informed and insightful HR.com research references
+          </p>
+          <a href="/en/resources/free_research_white_papers/">View More <svg height="16" viewbox="0 0 16 16" width="16"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5,9.5a8,8,0,1,0,8-8A8,8,0,0,0,1.5,9.5Zm9.4,0L7.754,6.381A.742.742,0,1,1,8.8,5.331l3.669,3.681a.742.742,0,0,1,.023,1.023L8.881,13.662a.741.741,0,1,1-1.05-1.046Z"
+                fill="#00FFEE" transform="translate(-1.5 -1.5)"></path>
+            </svg></a>
+        </div>
+
+        <div class="hm_rsc_card"><small>Directories</small>
+
+          <h4><a href="/buyersguide">HR Buyers Guide</a></h4>
+
+          <p>Make smart buying decisions with our guide to HR solution and service providers</p>
+          <a href="/buyersguide">View More <svg height="16" viewbox="0 0 16 16" width="16"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5,9.5a8,8,0,1,0,8-8A8,8,0,0,0,1.5,9.5Zm9.4,0L7.754,6.381A.742.742,0,1,1,8.8,5.331l3.669,3.681a.742.742,0,0,1,.023,1.023L8.881,13.662a.741.741,0,1,1-1.05-1.046Z"
+                fill="#00FFEE" transform="translate(-1.5 -1.5)"></path>
+            </svg></a>
+        </div>
+
+        <div class="hm_rsc_card"><small>Connecting People</small>
+
+          <h4><a href="/en/app/networkGroups">Endless Networking</a></h4>
+
+          <p>Connect with a pool of over 2M+ HR professionals</p>
+          <a href="/en/app/networkGroups">View More <svg height="16" viewbox="0 0 16 16" width="16"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5,9.5a8,8,0,1,0,8-8A8,8,0,0,0,1.5,9.5Zm9.4,0L7.754,6.381A.742.742,0,1,1,8.8,5.331l3.669,3.681a.742.742,0,0,1,.023,1.023L8.881,13.662a.741.741,0,1,1-1.05-1.046Z"
+                fill="#00FFEE" transform="translate(-1.5 -1.5)"></path>
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hr_container-fluid rcsbgbox">
+  <div class="hr_container">
+    <div class="hm_prime_section"><a class="home_hrprime" href=""><img alt="HR Prime" height="85"
+          src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/hrcomprimelogo.png"
+          width="170" /></a>
+
+      <h3><small>24/7 HR Guidance</small> Stay updated and compliant with our robust and best-value membership packages
+      </h3>
+
+      <div class="hm_prime_info">
+        <ul>
+          <li>Streamline your HR processes</li>
+          <li>Member pricing on HR training courses</li>
+          <li>Recertification credits</li>
+          <li>Exclusive event perks</li>
+        </ul>
+        <a class="hr_custom_btn gradient_btn btn_large round"
+          href="/en/about_us/premium-workplace-compliance-tool_jnovpwel.html">Get Prime Membership</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== TESTIMONIALS (START) ===================== -->
+
+<section aria-label="Member testimonials" class="hr-testimonials">
+  <div class="hr-testimonials__inner">
+    <header class="hr-testimonials__header">
+      <h2 class="hr-testimonials__title section-title">Loved by HR professionals</h2>
+
+      <p class="hr-testimonials__subtitle">Real stories from HR.com members</p>
+    </header>
+
+    <div class="hr-testimonials__viewport" id="hrTestimonialsViewport">
+      <div class="hr-testimonials__track" id="hrTestimonialsTrack" style="transform: translateX(0%)"><!-- Slide 1 -->
+        <article aria-label="1 of 4" aria-roledescription="slide" class="hr-testimonials__slide" role="group">
+          <div aria-hidden="true" class="hr-testimonials__icon"><!-- Quote Icon SVG --><svg aria-hidden="true"
+              focusable="false" height="40" viewbox="0 0 48 48" width="40">
+              <path
+                d="M18 10h-8a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h2v-8h-2a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h6V10zm28 0h-8a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h2v-8h-2a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h6V10z"
+                fill="currentColor"></path>
+            </svg></div>
+
+          <blockquote class="hr-testimonials__quote">HR.com offers an expansive selection that not only keeps me engaged
+            but has me coming back for more. Even if the topic isn&#39;t part of my job specs, it&rsquo;s great to be
+            able to add HR.com&#39;s information and data to my wheelhouse and it has always paid dividends by helping
+            me be more prepared for whatever is thrown my way. Thank you HR.com for helping me be the professional I
+            want to be!</blockquote>
+
+          <div class="hr-testimonials__person">
+            <div class="hr-testimonials__name">Henrietta Kopecky</div>
+
+            <div class="hr-testimonials__meta">Record Technician &mdash; <span class="hr-testimonials__company">City Of
+                Torrance</span></div>
+          </div>
+        </article>
+        <!-- Slide 2 -->
+
+        <article aria-label="2 of 4" aria-roledescription="slide" class="hr-testimonials__slide" role="group">
+          <div aria-hidden="true" class="hr-testimonials__icon"><svg aria-hidden="true" focusable="false" height="40"
+              viewbox="0 0 48 48" width="40">
+              <path
+                d="M18 10h-8a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h2v-8h-2a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h6V10zm28 0h-8a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h2v-8h-2a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h6V10z"
+                fill="currentColor"></path>
+            </svg></div>
+
+          <blockquote class="hr-testimonials__quote">As an HR veteran of 35+ years, I have &amp; my teams have
+            benefitted from the HR.com platform off-and-on for the past decade or thereabouts... and I keep coming back!
+            My latest return comes after only a few months away, as I&#39;ve learned my lesson&mdash;there simply
+            isn&#39;t another platform out there which helps an HR team... regardless of size... find answers about
+            benefits, changes to employment law, and allow our team members to focus on more strategic activities. And
+            for those of us who are certified, I love their tracking of any content offering CEUs!</blockquote>
+
+          <div class="hr-testimonials__person">
+            <div class="hr-testimonials__name">Brad Holliday, PHR, SHRM-CP, CBM</div>
+
+            <div class="hr-testimonials__meta">HR Manager&nbsp; &mdash; <span class="hr-testimonials__company">
+                Segra</span></div>
+          </div>
+        </article>
+        <!-- Slide 3 -->
+
+        <article aria-label="3 of 4" aria-roledescription="slide" class="hr-testimonials__slide" role="group">
+          <div aria-hidden="true" class="hr-testimonials__icon"><svg aria-hidden="true" focusable="false" height="40"
+              viewbox="0 0 48 48" width="40">
+              <path
+                d="M18 10h-8a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h2v-8h-2a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h6V10zm28 0h-8a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h2v-8h-2a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h6V10z"
+                fill="currentColor"></path>
+            </svg></div>
+
+          <blockquote class="hr-testimonials__quote">HR.com sessions are well organized and offer a variety of topics of
+            interest to me and my function. I lead a team of Strategic HR Partners and I like to bring them together to
+            watch and learn together through the HR.com virtual events. It provides growth for us and gives us
+            additional information to discuss and connect on together.</blockquote>
+
+          <div class="hr-testimonials__person">
+            <div class="hr-testimonials__name">Amber Tennant</div>
+
+            <div class="hr-testimonials__meta">Director, Strategic HR Partners&nbsp; &mdash; <span
+                class="hr-testimonials__company">West Virginia University/WVU Reed College of Media&nbsp;</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Dots -->
+
+    <div aria-label="Testimonial Slides" class="hr-testimonials__dots" id="hrTestimonialsDots" role="tablist">&nbsp;
+    </div>
+  </div>
+</section>
+<!-- ===================== TESTIMONIALS (END) ===================== -->
+
+<div class="hr_container-fluid whitebgbox">
+  <div class="hr_container">
+    <div class="hm_network_section">
+      <h2><small>OUR Members</small> Network with the best in the HR industry</h2>
+
+      <div class="hm_network_logobox">
+        <div class="hm_logobox"><img alt="Google Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Google_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="TikTok Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/TikTok_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="Instagram Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Instagram_Logo.png" />
+        </div>
+
+        <div class="hm_logobox"><img alt="Twitter Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Twitter_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="WaltDisney Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/WaltDisney_Logo.png" />
+        </div>
+
+        <div class="hm_logobox"><img alt="IBM Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/IBM_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="Apple_Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Apple_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="ADP_Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/ADP_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="Microsoft Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Microsoft_Logo.png" />
+        </div>
+
+        <div class="hm_logobox"><img alt="YouTube Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/YouTube_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="Nestle Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Nestle_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="Adidas Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Adidas_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="Amazon Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/Amazon_Logo.png" /></div>
+
+        <div class="hm_logobox"><img alt="CocaCola Logo"
+            src="$public/remoteimages/website-images/2023_siteupdate/logout_home/images/logo/CocaCola_Logo.png" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== TESTIMONIALS JS (START) ===================== -->
+<script>
+    ; (function () {
+      const viewport = document.getElementById('hrTestimonialsViewport')
+      const track = document.getElementById('hrTestimonialsTrack')
+      const slides = Array.from(track.children)
+      const dotsWrap = document.getElementById('hrTestimonialsDots')
+
+      let index = 0
+      const last = slides.length - 1
+      const ROTATE_MS = 4000
+      let timer = null
+      let prefersReduced = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const btn = document.createElement('button')
+        btn.className = 'hr-testimonials__dot'
+        btn.type = 'button'
+        btn.setAttribute('role', 'tab')
+        btn.setAttribute('aria-label', 'Go to slide ' + (i + 1))
+        if (i === 0) btn.setAttribute('aria-current', 'true')
+        btn.addEventListener('click', () => goTo(i, true))
+        dotsWrap.appendChild(btn)
+      })
+      const dots = Array.from(dotsWrap.children)
+
+      function setActive(newIndex) {
+        dots.forEach((d, i) => {
+          if (i === newIndex) {
+            d.setAttribute('aria-current', 'true')
+          } else {
+            d.removeAttribute('aria-current')
+          }
+        })
+        slides.forEach((s, i) => {
+          s.setAttribute('aria-label', i + 1 + ' of ' + slides.length)
+        })
+      }
+
+      function goTo(i, userAction) {
+        index = i
+        const offset = -100 * index
+        track.style.transform = 'translateX(' + offset + '%)'
+        setActive(index)
+        if (userAction) restart()
+      }
+
+      function next() {
+        index = index >= last ? 0 : index + 1
+        goTo(index, false)
+      }
+
+      function start() {
+        if (prefersReduced) return // do not auto-rotate for reduced motion
+        stop()
+        timer = setInterval(next, ROTATE_MS)
+      }
+      function stop() {
+        if (timer) {
+          clearInterval(timer)
+          timer = null
+        }
+      }
+      function restart() {
+        stop()
+        start()
+      }
+
+      // Pause on hover
+      viewport.addEventListener('mouseenter', stop)
+      viewport.addEventListener('mouseleave', start)
+
+      // Handle resize (percent-based, but restart to keep timing smooth)
+      window.addEventListener('resize', () => {
+        /* no width calc needed */
+      })
+
+      // Init
+      goTo(0, false)
+      start()
+    })()
+</script><!-- ===================== TESTIMONIALS JS (END) ===================== -->

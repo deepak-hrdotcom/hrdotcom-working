@@ -1,0 +1,128 @@
+<!-- @format -->
+
+<style>
+  span.fm-close {
+    float: right;
+    background-color: #ddd;
+    padding: 5px 7px;
+    border-radius: 100px;
+  }
+  .fm-form-container .fm-modal-content {
+    width: 50%;
+    max-width: 700px;
+  }
+
+  
+    .header {
+        background: #ffff !important;
+        border-bottom: 0;
+        padding: 12px 16px;
+        margin-bottom: 16px;
+    }
+       .nav-menu .active {
+        font-weight: bold !important;
+        color: var(--primary-color-2) !important;
+    }
+</style>
+<link href="$public/remoteimages/website-images/2024_Siteupdate/hrmi/hrmi-redesign-2024.css" rel="stylesheet" />
+
+<!-- <div class="row" >
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="PageLink-DarkBlock StickyMenu">
+      <ul>
+        <li><a href="/en?t=/webcasts/allHRMI">Webcasts</a></li>
+        <li><a href="/en/hrmi/research/">Research</a></li>
+        <li><a href="/en/hrmi/resources" class="active">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<header class="header">
+    <div style="align-self: center"><img alt="" class="img toggle-icon"
+            src="$public/remoteimages/website-images/2024_Siteupdate/hrmi/images/list.svg" />
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/en/hrmi">Why Join</a></li>
+                <li><a href="/en?t=/webcasts/allHRMI">Webcasts</a></li>
+                <li><a href="/en/hrmi/resources" class="active" >Resources</a></li>
+                <!-- <li><a href="/en/hrmi/summits/">Summits</a></li> -->
+            </ul>
+        </nav>
+    </div>
+    <img alt="HR Marketing Institute Logo" class="img hrmi-logo"
+        src="$public/remoteimages/website-images/2024_Siteupdate/hrmi/images/hr-marketing-institute-logo.png" />
+</header>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12 MarginBottom20">
+    <div class="UserDetail-Block BorderBlock">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 text-center" style="display: none;">
+          <img
+            class="HRMI-Logo-Inside"
+            src="$public/remoteimages/website-images/hrmi_survey/hrmarketinginstitute_color_logo.png"
+          /><br />
+          <button
+            class="btn btn-primary BlueBtn btn-lg"
+            data-target="#modal-5c38bb8099a0bc12d67e8d17"
+            type="button"
+          >
+            Talk to Us</button
+          ><a
+            class="btn GreenBtn quick-login-m1"
+            href="https://www.hr.com/en?t=/documentManager/sfdoc.file.supply&amp;fileID=1543430430825&amp;pt=20&amp;dealcat=38&amp;dealdesc=landing-hrmi-pdf"
+            >Learn More</a
+          >
+
+          <div class="fm-form-container">&nbsp;</div>
+          <script src="https://fm.hr.com/gw/5c38bb8099a0bc12d67e8d17/script.js"></script>
+        </div>
+
+        <div class="col-md-10 col-sm-12 col-xs-12 ">
+          <div class="Page-Header MarginBottom20">
+            <h3 class="Red">$StoryName</h3>
+          </div>
+
+          <div class="SubHeader">
+            $var1<br />
+            <!--<button type="submit" class="btn RedBtn MarginTop20 Helpful" onclick="window.location.href='#'"  data-toggle="modal" data-target="#myModal-ShortBio">Helpful Information</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Popup -->
+<div
+  class="modal fade"
+  id="myModal-ShortBio"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Helpful Information</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">$desc_long</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+$designAttribute:masterD_no_sidebar

@@ -1,0 +1,1024 @@
+<!-- @format -->
+<style type="text/css">
+    .edu_tab_block>.nav>li>a,
+    .edu_tab_block>.nav>li.active>a {
+        text-transform: none !important;
+    }
+
+    /* ethics section */
+
+    .ethics-course-container {
+        background: #ffffff;
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+
+    .ethics-course-center {
+        display: grid;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .ethics-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .ethics-img {
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        display: none;
+    }
+
+    .ethics-para {
+        font-size: 14px !important;
+        font-weight: 400;
+        color: #2a343e;
+        margin: 0 0 5px 0;
+        line-height: 1.7;
+    }
+
+    .ethics-info-block-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .ethics-course-block {
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: #f1f1f1;
+        border: 2px solid #e8ecf7;
+    }
+
+    .ethics-h5 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #e51069;
+        margin: 0 0 10px 0;
+        line-height: 1.3;
+    }
+
+    .ethics-list {
+        width: auto;
+        list-style: none;
+        margin: 0 0 20px 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #2a343e;
+        line-height: 1.6;
+    }
+
+    .ethics-list li {
+        display: block;
+        margin-bottom: 18px;
+        padding-left: 28px;
+        background: url($public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/ml_tick_icon.svg) top left no-repeat;
+    }
+
+    .ethics-list a {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    @media screen and (min-width: 992px) {
+        .ethics-img {
+            display: block;
+            border-radius: 1rem;
+        }
+
+        .ethics-course-center {
+            grid-template-columns: 2fr 4fr;
+            gap: 8rem;
+        }
+
+        .ethics-info-block-2 {
+            grid-template-columns: 3fr 2fr;
+        }
+
+        .ethics-info-block-2-single-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .ethics-alert-btn {
+        color: #0c4878;
+        font-weight: bold !important;
+        text-decoration: underline !important;
+        display: block;
+        text-align: center;
+        font-size: 16px !important;
+    }
+
+    /* end ethics section */
+</style>
+<link href="$public/remoteimages/website-images/2022_siteupdate/custom-css/education/hr-recertification-custom.css"
+    rel="stylesheet" />
+<!-- <link rel="stylesheet" href="$public/remoteimages/website-images/2022_siteupdate/custom-css/ethics.css"> -->
+<div>$vendorLeadForm</div>
+
+<div class="edu_container-fluid ml_bluebg" id="eduHome">
+    <div class="edu_container">
+        <div class="ml_header_wrapper recert_center">
+            <div class="ml_edu_logo"><a href="/en?t=/CustomCode/Education_Pages/Home"><img
+                        alt="Microlession HR Education" height="41px"
+                        src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/hreducation_v2_logo_white.png"
+                        width="172px" /></a> <!--<div class="ml_ptitle">HRCI &amp; SHRM Prep Courses</div>--></div>
+
+            <h1>HR Recertification Program</h1>
+
+            <div class="header-info-wrapper">
+                <div class="ml_ep_logo header-logo"><img alt="Certification Exam Training"
+                        src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg"
+                        style="max-width: 120px; border-radius: 0px !important" /></div>
+
+                <div class="h2-container">
+                    <h2 class="heading-two"><span> Congratulations, you&rsquo;ve found the easiest way to get
+                            recertified!</span><span> Earn all of your HR credits for HRCI or SHRM recertification.
+                        </span></h2>
+
+                    <div class="ml_call_dls header-cta">
+                        <h4>Call: <a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                href="tel:18774726648">1-877-472-6648</a></h4>
+
+                        <p>Email: <a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                href="mailto:certification@hr.com?subject=Tell me more about how I can get certified">certification@hr.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ml_ep_logo header-logo"><img alt="SHRM Recertification Provider"
+                        src="https://media-cdn.hr.com/media.hr.com/Logos/shrm-recertification-provider-2026-v2.png"
+                        style="max-width: 150px; border-radius: 40%" /></div>
+            </div>
+
+            <div class="ml_info_wrapper recert" style="display: none">
+                <div class="ml_info_dls exam_prep">
+                    <h2>Congratulations, you&rsquo;ve found the easiest way to get recertified!<br />
+                        Earn all of your HR credits for HRCI or SHRM recertification.</h2>
+
+                    <div class="ml_ep_logo"><img alt="Certification Exam Training"
+                            src="$public/remoteimages/website-images/ihr_certifications/recertification_provider_badge.jpg"
+                            style="max-width: 120px; border-radius: 0px !important" /></div>
+
+                    <div class="ml_rp_logo"><img alt="SHRM Pre Qualifier"
+                            src="https://media-cdn.hr.com/media.hr.com/shrm-recertification-provider.png"
+                            style="max-width: 150px; border-radius: 40%" /></div>
+
+                    <div class="ml_spt_dls">
+                        <div class="ml_call_dls">
+                            <h4>Call: <a href="tel:18774726648">1-877-472-6648</a></h4>
+
+                            <p>Email: <a
+                                    href="mailto:certification@hr.com?subject=Tell me more about how I can get certified">certification@hr.com</a>
+                            </p>
+                        </div>
+
+                        <div class="ml_trans_btn" style="display: none"><a class="ml_raf_btn wt100"
+                                data-target="#myModal-RecertificationFAQ" data-toggle="modal"
+                                href="javascript:void(0);"><svg height="24" viewbox="0 0 11 24" width="11"
+                                    xmlns="http://www.w3.org/2000/svg"> <text fill="#fff"
+                                        font-family="Roboto-Black, Roboto" font-size="20" font-weight="800">
+                                        <tspan x="0" y="19">?</tspan>
+                                    </text> </svg> FAQ</a>
+
+                            <div class="ml_social"><a href="https://www.linkedin.com/company/hrdotcom"><svg height="14"
+                                        viewbox="0 0 448 512" width="14">
+                                        <path
+                                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                                        </path>
+                                    </svg></a> <a href="http://twitter.com/hrdotcom"><svg height="14"
+                                        viewbox="0 0 512 512" width="14">
+                                        <path
+                                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                        </path>
+                                    </svg></a> <a href="http://www.facebook.com/hrdotcom"><svg height="14"
+                                        viewbox="0 0 13.3 28.788" width="14">
+                                        <path
+                                            d="M590.925,1195.4V1181h4.55l.825-4.863h-5.55v-2.975s-.055-1.85,2.3-1.85h3.65v-4.7h-5.95s-4.6-.187-4.6,5.1c-.05,2.925,0,4.425,0,4.425H583.4V1181h2.875v14.4Z"
+                                            transform="translate(-583.4 -1166.612)"></path>
+                                    </svg></a> <a id="copy_url"><svg height="15" viewbox="0 0 12 15" width="12">
+                                        <g transform="translate(-8 -6.5)">
+                                            <g fill="none" opacity="0.7" stroke="#fff" stroke-width="1.5"
+                                                transform="translate(8 6.5)">
+                                                <rect height="12" rx="2" stroke="none" width="9"></rect>
+                                                <rect fill="none" height="10.5" rx="1.25" width="7.5" x="0.75" y="0.75">
+                                                </rect>
+                                            </g>
+                                            <g fill="#2966b9" stroke="#fff" stroke-width="1.5"
+                                                transform="translate(11 9.5)">
+                                                <rect height="12" rx="2" stroke="none" width="9"></rect>
+                                                <rect fill="none" height="10.5" rx="1.25" width="7.5" x="0.75" y="0.75">
+                                                </rect>
+                                            </g>
+                                        </g>
+                                    </svg></a> <i id="copy"></i></div>
+                            <a class="ml_raf_btn" href="https://web.hr.com/ooo3"><svg height="13.461"
+                                    viewbox="0 0 15 13.461" width="15">
+                                    <path
+                                        d="M-3428.954,315.458c-.031-.319-.046-.643-.046-.96a9.451,9.451,0,0,1,2.152-6.059A8.055,8.055,0,0,1-3422,305.6V302l8,5.5-8,5.5v-3.666a10.124,10.124,0,0,0-6.952,6.124l0,0Z"
+                                        fill="#fff" transform="translate(3429 -302)"></path>
+                                </svg> Refer a friend</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container-fluid ml_graybg">
+    <div class="edu_container">
+        <div class="mls_stats_wrapper">
+            <div class="mls_stats_info">
+                <div class="mls_price"><small>1-year membership</small> <span>$250</span></div>
+
+                <div class="mls_btn"><a class="hr_custom_btn gradient_btn btn_large round scoPage quick-login-m1"
+                        href="/en?t=/merchant/basket.update&amp;ParentID=1119888054711&amp;vars=1355934656827&amp;productID=1355934656827&amp;basket.fill=1&amp;linkTo=product.show&amp;amp;pt=100&amp;amp;dealcat=5&amp;amp;dealdesc=buynow-recert-1year">Pay:
+                        $250</a></div>
+            </div>
+
+            <div class="mls_stats_info">
+                <div class="mls_price"><small>3-year membership</small> <span>$500 (1 year free)</span></div>
+
+                <div class="mls_btn"><a class="hr_custom_btn gradient_btn btn_large round scoPage quick-login-m1"
+                        href="/en?t=/merchant/product.show&amp;productID=1478809824322&amp;ParentID=1119888054711&amp;pt=100&amp;dealcat=5&amp;dealdesc=buynow-recert-3year">Pay:
+                        $500</a></div>
+            </div>
+
+            <div class="mls_stats_info">
+                <div class="mls_btnset"><a class="hr_custom_btn dark_line_button btn_large round" download=""
+                        href="/en?t=/documentManager/sfdoc.file.supply&amp;fileID=1535383670122&amp;mode=download&amp;pt=50&amp;dealcat=5&amp;dealdesc=downloadablepdf"><svg
+                            height="13.008" viewbox="0 0 10.052 13.008" width="10.052">
+                            <g transform="translate(-317.257 -42.258)">
+                                <path
+                                    d="M322.243,48.85a.7.7,0,0,0,.972,0l3.242-3.142a.7.7,0,0,0-.486-1.2h-1.944V40.956a.7.7,0,0,0-.7-.7h-1.2a.7.7,0,0,0-.7.7v3.553h-1.944a.7.7,0,0,0-.486,1.2Z"
+                                    transform="translate(-0.608 2)"></path>
+                                <rect height="2.615" rx="1.308" transform="translate(317.257 52.65)" width="10.052">
+                                </rect>
+                            </g>
+                        </svg> Download brochure</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container-fluid ml_graybgline">
+    <div class="edu_container">
+        <div class="ml_sec_nav">
+            <ul>
+                <li><a href="#eduHome"><svg height="18" viewbox="0 0 18 18" width="18">
+                            <g transform="translate(-9 27) rotate(-90)">
+                                <circle cx="9" cy="9" fill="#fff" r="9" transform="translate(9 9)"></circle>
+                                <path
+                                    d="M0,5.619V1.045A1.045,1.045,0,0,1,1.045,0H5.619a1.045,1.045,0,0,1,0,2.09H2.09V5.619a1.045,1.045,0,0,1-2.09,0Z"
+                                    fill="#2a343e" transform="translate(23.419 18) rotate(135)"></path>
+                                <rect fill="#fdb414" height="5" rx="1" transform="translate(18 17) rotate(90)"
+                                    width="2"></rect>
+                            </g>
+                        </svg></a></li>
+                <li><a href="#eduOverview">Overview</a></li>
+                <li><a href="#eduFandB">Features and benefits</a></li>
+                <li><a href="#eduPricing">Pricing</a></li>
+                <li><a href="#eduRproduct">Related products</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container" id="eduOverview" style="display: none">
+    <div class="ml_info_wrapper">
+        <div class="ml_desc_list">
+            <h2>Course overview</h2>
+
+            <ul>
+                <li>Unlimited webcasts</li>
+                <li>Unlimited virtual events</li>
+                <li>Earn credits to submit to HRCI<sup>&reg;</sup> and/or SHRM<sup>&reg;</sup></li>
+                <li>Watch webcasts anytime + earn credits</li>
+                <li>Credits per webcast</li>
+            </ul>
+        </div>
+
+        <div class="ml_img_box"><img alt="Course Overview"
+                src="$public/remoteimages/website-images/certification/businessmanagementslidecomputerimage.png" />
+        </div>
+    </div>
+</div>
+<!-- holiday offer banner -->
+
+<div class="edu_container" id="eduFandB" style="margin-top: 24px">
+    <div class="edu_tab_block">
+        <ul class="nav" role="tablist">
+            <li class="active" role="presentation"><a aria-controls="eduFtr" data-toggle="tab" href="#eduFtr"
+                    role="tab">Features</a></li>
+            <li role="presentation"><a aria-controls="eduWbc" data-toggle="tab" href="#eduWbc"
+                    role="tab">Recertification requirements</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="eduFtr" role="tabpanel">
+                <div class="rcert_col_wrapper">
+                    <div class="rcert_col"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-529 -999)">
+                                <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                            </g>
+                        </svg>
+
+                        <h2 class="eduSubHeader">HR.com&#39;s recertification program</h2>
+
+                        <div class="recert_tab_card"><img alt="Included in our program"
+                                src="$public/Certifications/icons/credittracking.png" />
+                            <h5>Included in our program</h5>
+
+                            <ul>
+                                <li>Unlimited webcasts</li>
+                                <li>400+ HRCI credits</li>
+                                <li>150+ SHRM credits</li>
+                                <li>50+ strategic HRCI credits</li>
+                                <li>20+ global/international credits</li>
+                                <li>Ethics credits</li>
+                            </ul>
+                        </div>
+
+                        <div class="recert_tab_card"><img alt="Credit Tracking"
+                                src="$public/Certifications/icons/varietyselection.png" />
+                            <h5>Credit tracking</h5>
+
+                            <p>HR.com tracks all of your earned credits, making it simple and organized when it comes
+                                time to submit your credits to HRCI or SHRM.</p>
+
+                            <p><i>(HRCI credits are pre-approved and a code will be provided. SHRM credits must be
+                                    manually entered by inputting the information requested during the recertification
+                                    process.)</i></p>
+                        </div>
+
+                        <div class="recert_tab_card"><img alt="Earn credits 24/7"
+                                src="$public/Certifications/icons/earncredits.png" />
+                            <h5>Earn credits 24/7</h5>
+
+                            <p>HR.com&#39;s recertification program features 1000s of webcasts and credits available
+                                on-demand.</p>
+                        </div>
+                    </div>
+
+                    <div class="rcert_col"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-529 -999)">
+                                <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                            </g>
+                        </svg>
+
+                        <h2 class="eduSubHeader">The #1 choice for SHRM and HRCI recertification</h2>
+
+                        <div class="recert_tab_card"><img alt="The lowest cost"
+                                src="$public/Certifications/icons/lowestcost.png" />
+                            <h5>The lowest cost</h5>
+
+                            <p>Our program is the lowest-cost one-stop shop for HRCI &amp; SHRM Recertification.</p>
+                        </div>
+
+                        <div class="recert_tab_card"><img alt="Safe &amp; secure"
+                                src="$public/Certifications/icons/safesecure.png" />
+                            <h5>Safe &amp; secure</h5>
+
+                            <p>HR.com keeps track of all of your earned credits. So, if you are ever audited (asked to
+                                show proof of your completed credits) we have all of the required documentation to back
+                                you up!</p>
+                        </div>
+
+                        <div class="recert_tab_card"><img alt="HR approved"
+                                src="$public/Certifications/icons/hrapproved2.png" />
+                            <h5>HR approved!</h5>
+
+                            <p>Join the thousands of HR professionals who use HR.com as their #1 choice for
+                                recertification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="eduWbc" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="BorderBlock">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="SubHeader">HR Certification Institute (HRCI) credits on HR.com</div>
+                                    <img alt="HRCI Approved" class="CertificateImg"
+                                        src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg" />
+                                    <p>HR Certification Institute&#39;s (<a href="http://www.hrci.org">www.HRCI.org</a>)
+                                        official seal confirms that HR.com meets the criteria for pre-approved
+                                        recertification credit(s) for any of HRCI&rsquo;s eight credentials, including
+                                        SPHR and PHR.<br />
+                                        HRCI is our preferred partner and if you were with us live, we&rsquo;ll email
+                                        you the code and place it in your HR.com account. If you view the archived
+                                        webcast, click the &lsquo;receive credit&rsquo; box to add your code to your
+                                        HR.com account.<br />
+                                        <!-- The program also meets recertification credit standards set
+                    by SHRM, but candidates must manually enter their activity
+                    into their records. &nbsp; -->
+                                    </p>
+                                    <!--<p>Our preferred partner, HRCI, has pre-approved each educational webcast for HRCI recertification credit. If you were with us live, we&rsquo;ll email you the code and place it in your HR.com account. If you viewed the archived webcast, click the &lsquo;receive credit&rsquo; box to add your code to your HR.com account. The program also meets recertification credit standards set by SHRM, but candidates must manually enter their activity into their records.</p>-->
+
+                                    <hr />
+                                    <div class="SubHeader">Here is what you need to accumulate in order to recertify
+                                        online:</div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <p><strong>PHR/PHRi:</strong></p>
+
+                                    <ul>
+                                        <li>60 general HRCI credits</li>
+                                    </ul>
+
+                                    <p><strong>GPHR:</strong></p>
+
+                                    <ul>
+                                        <li>15 international HRCI credits</li>
+                                        <li>45 general HRCI credits</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <p><strong>SPHR/SPHRi:</strong></p>
+
+                                    <ul>
+                                        <li>15 business strategic HRCI credits</li>
+                                        <li>45 general HRCI credits</li>
+                                    </ul>
+
+                                    <p><strong>aPHR:</strong></p>
+
+                                    <ul>
+                                        <li>45 general HRCI credits</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <p class="Red">You can now take all 60 of the required HRCI credits as webcast
+                                        credits (no eLearning or quizzes required)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="BorderBlock">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="SubHeader">Strategic Human Resource Management (SHRM) recertification on
+                                        HR.com</div>
+                                    <img alt="shrm seal" class="CertificateImg"
+                                        src="https://media-cdn.hr.com/media.hr.com/Logos/shrm-recertification-provider-2026-300px.png" />
+                                    <p><strong>Here is what you need to accumulate in order to recertify your SHRM-CP or
+                                            SHRM-SCP:</strong></p>
+
+                                    <ul>
+                                        <li>60 Professional Development Credits, every 3 years</li>
+                                    </ul>
+
+                                    <p><strong> HR.com is a preferred provider of SHRM</strong> and accepts webcast
+                                        credits as a form of recertification.</p>
+
+                                    <ul>
+                                        <li>Live webcast events on HR.com (instructor-led) - unlimited use towards
+                                            recertification</li>
+                                        <li>On-demand webcast events on HR.com (self-paced) - unlimited use towards
+                                            certification</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <p class="Red">Note: Candidates must manually enter their activities into their
+                                        records.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container-fluid" id="eduPricing" style="display: none">
+    <div class="edu_container">
+        <div class="edu_ps_wrapper">
+            <div class="edu_ps_pr">
+                <h2>HR Recertification Pricing</h2>
+
+                <div class="edu_pr_wrapper">
+                    <div class="edu_pr_card">
+                        <div><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(-529 -999)">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                                </g>
+                            </svg>
+
+                            <h3>$250</h3>
+
+                            <p>1-year membership</p>
+                        </div>
+                        <a class="hr_custom_btn gradient_btn btn_large round scoPage quick-login-m1"
+                            href="/en?t=/merchant/basket.update&amp;ParentID=1119888054711&amp;vars=1355934656827&amp;productID=1355934656827&amp;basket.fill=1&amp;linkTo=product.show&amp;amp;pt=100&amp;amp;dealcat=5&amp;amp;dealdesc=buynow-recert-1year">Purchase
+                            membership: $250</a>
+                    </div>
+
+                    <div class="edu_pr_card">
+                        <div><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(-529 -999)">
+                                    <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                                </g>
+                            </svg>
+
+                            <h3>$500</h3>
+
+                            <p>3-year membership (1 year free)</p>
+                        </div>
+                        <a class="hr_custom_btn gradient_btn btn_large round scoPage quick-login-m1"
+                            href="/en?t=/merchant/product.show&amp;productID=1478809824322&amp;ParentID=1119888054711&amp;pt=100&amp;dealcat=5&amp;dealdesc=buynow-recert-3year">Purchase
+                            membership: $500</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edu_ps_sr"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-529 -999)">
+                        <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                        <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                        <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                        <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                    </g>
+                </svg>
+
+                <h3>System requirements</h3>
+
+                <div class="pssr_col_wrapper">
+                    <div class="pssr_col">
+                        <h4><svg height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.582,17.856,2.571,8.1l12-1.63V17.856ZM16.571,6.184l16-2.328v14h-16Zm16,13.672,0,14-16-2.251V19.856Zm-18,11.495L2.58,29.707V19.856H14.571Z"
+                                    transform="translate(-2.571 -3.856)"></path>
+                            </svg> Windows</h4>
+
+                        <p>32- and 64-bit (unless noted): Microsoft<sup>&reg;</sup> Windows<sup>&reg;</sup> XP SP3
+                            (32-bit), Windows Vista<sup>&reg;</sup> (32-bit), Windows 7, Windows 8.1 and Windows 10</p>
+
+                        <p>Latest versions of Microsoft Internet Explorer, Microsoft Edge, Mozilla Firefox, Google
+                            Chrome and Opera</p>
+                    </div>
+
+                    <div class="pssr_col">
+                        <h4><svg height="30" viewbox="0 0 24.428 30" width="24.428" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M25.838,17.868a6.787,6.787,0,0,1,3.239-5.712,7.006,7.006,0,0,0-5.486-2.973c-2.336-.237-4.558,1.375-5.744,1.375s-3.012-1.34-4.95-1.305a7.34,7.34,0,0,0-6.205,3.761c-2.646,4.591-.678,11.392,1.9,15.115,1.26,1.822,2.762,3.869,4.735,3.8,1.9-.076,2.618-1.229,4.915-1.229s2.942,1.229,4.953,1.192c2.044-.038,3.339-1.857,4.591-3.685a16.536,16.536,0,0,0,2.078-4.266,6.626,6.626,0,0,1-4.026-6.068ZM22.06,6.719a6.612,6.612,0,0,0,1.561-4.791A6.725,6.725,0,0,0,19.2,4.2,6.289,6.289,0,0,0,17.61,8.842,5.564,5.564,0,0,0,22.06,6.719Z"
+                                    transform="translate(-5.436 -1.928)"></path>
+                            </svg> Mac OS</h4>
+
+                        <p>Mac OS X v10.9, or later</p>
+
+                        <p>Latest versions of Safari, Mozilla Firefox, Google Chrome, and Opera</p>
+                        <a class="hr_custom_btn dark_line_button btn_large round"
+                            href="https://www.adobe.com/products/flashplayer/tech-specs.html" target="_blank">Click here
+                            for more details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ethics course section -->
+
+<div class="edu_container-fluid" id="ethics-course" style="margin-bottom: 3rem">
+    <div class="edu_container">
+        <div class="ethics-course-container">
+            <div class="ethics-course-center"><img
+                    alt="professional woman in her 30s, a person of color, focused on her laptop while a guiding light shines beside her, symbolizing ethical decision-making for recertification courses."
+                    class="ethics-img" src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/images/renamed/woman-learning-ethics-recertification-2.jpg
+" />
+                <div class="ethics-info">
+                    <div class="ethics-info-block-1"><svg height="10" viewbox="0 0 55 10" width="55"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-529 -999)">
+                                <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                            </g>
+                        </svg>
+
+                        <h2 class="eduSubHeader">Fulfill Your Ethics Recertification Requirement</h2>
+
+                        <p class="ethics-para" style="margin-bottom: 1rem">As an HR professional, you are expected to
+                            consistently demonstrate and promote ethical practices in all human capital management
+                            processes. That is why you must fulfill an ethics credit requirement to earn your
+                            recertification.</p>
+
+                        <p class="ethics-para">We highly recommend taking one of our 1-hour ethics courses for ideal
+                            training and to fulfill your ethics credit requirement. Viewing the webcast recording also
+                            qualifies as fulfilling the requirement.</p>
+                    </div>
+
+                    <div class="ethics-info-block-2 ethics-info-block-2-single-col"><!-- <div class="ethics-course-block">
+              <h5 class="ethics-h5">Ethics Courses:</h5>
+
+              <ul class="ethics-list">
+                <li>
+                  <a
+                    href="https://www.hr.com/en/professional_education_courses/hr-strategies-for-building-an-ethical-workplace_l9po8cza.html"
+                    target="_blank"
+                    >HR Strategies for Building an Ethical Workplace</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.hr.com/en/professional_education_courses/principles-of-ethical-decision-making_l9eihbhq.html"
+                    target="_blank"
+                    >Principles of Ethical Decision Making</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.hr.com/en/professional_education_courses/consequences-of-ethical-decision-making_l9eic2om.html"
+                    target="_blank"
+                    >Consequences of Ethical Decision Making</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.hr.com/en/professional_education_courses/ethics_l97cv01x.html"
+                    target="_blank"
+                    >Organizational Ethics</a
+                  >
+                </li>
+              </ul>
+            </div> -->
+                        <div class="ethics-course-block"><a class="ethics-alert-btn" id="fc_1749496748012"
+                                name="fc_1749496748012" onclick="loadPopup('fc_1749496748012')">Know When It&#39;s Live
+                                - Sign Up Here!</a>
+
+                            <p style="
+                  text-align: center;
+                  display: block;
+                  margin-top: 1rem;
+                  line-height: 1.1;
+                  font-size: 14px
+                ">Reach out to our Recertification Success Ambassadors to discover the ways you can earn your
+                                requirement ethics credit. We&#39;ll provide options to help you get what you need!</p>
+                        </div>
+                        <!-- <div class="ethics-course-block">
+              <h5 class="ethics-h5">
+                Ethics Courses &ndash; Available Again Soon
+              </h5>
+
+              <ul class="ethics-list">
+                <li>HR Strategies for Building an Ethical Workplace</li>
+                <li>Principles of Ethical Decision Making</li>
+                <li>Consequences of Ethical Decision Making</li>
+                <li>Organizational Ethics</li>
+              </ul>
+              <a
+                class="ethics-alert-btn"
+                id="fc_1749496748012"
+                name="fc_1749496748012"
+                onclick="loadPopup('fc_1749496748012')"
+                >Know When It&#39;s Live - Sign Up Here!</a
+              >
+              <small
+                style="
+                  text-align: center;
+                  display: block;
+                  margin-top: 1rem;
+                  line-height: 1.1;
+                "
+                >We&rsquo;re currently upgrading our system to serve you better.
+                Our 1-hour Professional Education Ethics courses will be back
+                online shortly. Thank you for your patience&mdash;stay
+                tuned!</small
+              >
+            </div> --><!-- <div class="ethics-course-block">
+              <h5 class="ethics-h5">Webcast Recording:</h5>
+
+              <ul class="ethics-list">
+                <li>
+                  <a
+                    href="https://www.hr.com/en/webcasts_events/webcasts/archived_webcasts_podcasts/why-ethics-and-social-responsibility-are-key-to-be_lvr24ipp.html"
+                    target="_blank"
+                    >Why Ethics and Social Responsibility Are Key to Better
+                    Employee Experiences</a
+                  >&nbsp;
+                </li>
+              </ul>
+            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end ethics course section -->
+
+<div class="edu_container-fluid ml_whitebgbd">
+    <div class="edu_container">
+        <div class="en_jc_box"><img alt="Join a Class"
+                src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/en_jc_img.png" />
+            <p>Invite your friends to enroll for a cert prep course and earn <span>up to $50</span> per referral!</p>
+            <a class="hr_custom_btn dark_line_button btn_large round" href="https://web.hr.com/ooo3">Refer a friend</a>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container-fluid ml_rvbg mrtp20" style="display: none">
+    <div class="edu_container">
+        <div class="edu_review_box"><svg height="10" viewbox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(-529 -999)">
+                    <circle cx="5" cy="5" fill="#ef4a3d" r="5" transform="translate(529 999)"></circle>
+                    <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(559 999)"></circle>
+                    <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(544 999)"></circle>
+                    <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(574 999)"></circle>
+                </g>
+            </svg>
+
+            <h2>See what our customers are saying</h2>
+
+            <div class="swocas_wrapper">
+                <div class="team">
+                    <div class="swocas_slider owl-carousel owl-theme">
+                        <div class="item mot_js_card" target="1">
+                            <div class="js_card_img"><img alt="JD Sanders"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/edu_team_01.jpg" />
+                                <div class="js_card_dls">
+                                    <h3>JD<small>Sanders</small></h3>
+
+                                    <h4>SPHR, SHRM-SCP, PHRca</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>I just got done my test and I passed! I can&#39;t say enough good things about Sara
+                                    as an instructor and you as well! Just thought I would share. Thank you for
+                                    everything and I will, and already have, recommended hr.com prep class to my peers!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="item mot_js_card" target="2">
+                            <div class="js_card_img"><img alt="Chris Vokaty"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/edu_team_02.jpg" />
+                                <div class="js_card_dls">
+                                    <h3>Chris<small>Vokaty</small></h3>
+
+                                    <h4>SPHR, SHRM-SCP</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>I just want to thank you for the extra time you and your colleagues are putting in to
+                                    help us prepare for the exam. The extra class time on Sunday is just one more
+                                    opportunity for clarity. The examples you shared today helped the statistical
+                                    terminology make more sense. I hope to tune in each week regardless of the topics.
+                                    Thanks for going above and beyond. I can tell you love your job and care about us
+                                    passing the exam.</p>
+                            </div>
+                        </div>
+
+                        <div class="item mot_js_card" target="3">
+                            <div class="js_card_img"><img alt="Beverly Dance"
+                                    src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/edu_team_03.jpg" />
+                                <div class="js_card_dls">
+                                    <h3>Beverly<small>Dance</small></h3>
+
+                                    <h4>MBA, SHRM-SCP, PHRca</h4>
+                                </div>
+                            </div>
+
+                            <div class="js_card_info">
+                                <p>I honestly don&#39;t think I could&#39;ve passed the PHR exam without this course. I
+                                    highly recommend it, especially for those that need structure and interaction in
+                                    their studying. Between the workbooks, flashcards, practice tests, and online
+                                    classes, there&#39;s something for every type of learner. The added lunch sessions,
+                                    Sunday sessions, and overall availability and flexibility of the instructors is not
+                                    something you&#39;re going to find very many other places. I really appreciate what
+                                    hr.com has to offer here and I truly believe you will be happy if you take this
+                                    route!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="owl-theme">
+                        <div class="owl-controls">
+                            <div class="cust-nav owl-nav">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu_container-fluid ml_darkbg" id="eduRproduct">
+    <div class="edu_container">
+        <div class="edu_rtpd_wrapper">
+            <h2>Related products. Get certified by HR.com</h2>
+
+            <div class="edu_rtpd_box">
+                <div class="edu_rtpd_card">
+                    <h3>aPHR study program (eLearning)</h3>
+
+                    <div class="rtpd_info"><img alt="eLearning"
+                            src="$public/remoteimages/website-images/2017_SiteRedesign/images/aPHR-Instructor600.png" />
+                        <p>A self-paced course to help you pass your associate Professional in Human Resources Exam
+                            (aPHR).</p>
+                    </div>
+
+                    <div class="rtpd_link"><a
+                            href="/en/certifications/hrci_shrm_prep_courses/aphr-study-program-elearning_iphdj0js.html"
+                            target="_blank">View more <svg height="15" viewbox="0 0 11 15" width="11"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.7" transform="translate(-251 -2400)">
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(259 2406)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2406)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2403)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2400)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2412)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2409)">
+                                    </circle>
+                                </g>
+                            </svg></a></div>
+                </div>
+
+                <div class="edu_rtpd_card">
+                    <h3>eLearning course (self-paced)</h3>
+
+                    <div class="rtpd_info"><img alt="eLearning"
+                            src="https://www.hr.com/en/app/media/resource/_j1rwp970.deliver?&amp;layout=og.png" />
+                        <p>Industry leading LMS-based learning platform tailored specifically for HR certification exams
+                        </p>
+                    </div>
+
+                    <div class="rtpd_link"><a
+                            href="/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html"
+                            target="_blank">View more <svg height="15" viewbox="0 0 11 15" width="11"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.7" transform="translate(-251 -2400)">
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(259 2406)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2406)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2403)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2400)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2412)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2409)">
+                                    </circle>
+                                </g>
+                            </svg></a></div>
+                </div>
+
+                <div class="edu_rtpd_card">
+                    <h3>PHR and SPHR materials only</h3>
+
+                    <div class="rtpd_info"><img alt="Recertification"
+                            src="$public/story_images/Sitepages/StudyBooks2016.png" />
+                        <p>HRCP study program materials only (print + online). Get certified with HR.com</p>
+                    </div>
+
+                    <div class="rtpd_link"><a
+                            href="/en/certifications/hrci_shrm_prep_courses/hr-certification---materials-only_ipiuoeji.html"
+                            target="_blank">View more <svg height="15" viewbox="0 0 11 15" width="11"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.7" transform="translate(-251 -2400)">
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(259 2406)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2406)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2403)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2400)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2412)">
+                                    </circle>
+                                    <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2409)">
+                                    </circle>
+                                </g>
+                            </svg></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Modal--->
+
+<div aria-labelledby="myModalLabel2" class="modal right fade" id="myModal-RecertificationFAQ" role="dialog"
+    tabindex="-1">
+    <div class="modal-dialog SideModal" role="document">
+        <div class="modal-content">$designAttribute:Recert_FAQ</div>
+        <!-- modal-content -->
+    </div>
+    <!-- modal-dialog -->
+</div>
+<script>
+    $(document).ready(function () {
+        $('.edu_mot').owlCarousel({
+            loop: true,
+            autoplay: false,
+            margin: 15,
+            navText: [
+                '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#454F5B" transform="translate(7.071) rotate(45)"></path></svg>',
+                '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#454F5B" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+            ],
+            navContainer: '.edu_js_wrapper .team .cust-nav',
+            dots: false,
+            items: 3,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 20,
+                    nav: false,
+                },
+                767: {
+                    items: 2,
+                    stagePadding: 20,
+                    nav: false,
+                },
+                992: {
+                    items: 3,
+                    stagePadding: 20,
+                    nav: false,
+                },
+                1000: {
+                    items: 3,
+                    stagePadding: 20,
+                    nav: true,
+                },
+            },
+        })
+
+        $('.swocas_slider').owlCarousel({
+            loop: true,
+            autoplay: false,
+            margin: 30,
+            navText: [
+                '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#454F5B" transform="translate(7.071) rotate(45)"></path></svg>',
+                '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#454F5B" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+            ],
+            navContainer: '.swocas_wrapper .team .cust-nav',
+            dots: false,
+            items: 3,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 0,
+                    nav: false,
+                },
+                767: {
+                    items: 2,
+                    stagePadding: 0,
+                    nav: false,
+                },
+                992: {
+                    items: 3,
+                    stagePadding: 0,
+                    nav: false,
+                },
+                1000: {
+                    items: 3,
+                    stagePadding: 0,
+                    nav: true,
+                },
+            },
+        })
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $('.submenu_list>li:nth-child(5)>a').addClass('active')
+    })
+</script>$designAttribute:quick_login_m1 $designAttribute:splashCheckout $designAttribute:helpdesk

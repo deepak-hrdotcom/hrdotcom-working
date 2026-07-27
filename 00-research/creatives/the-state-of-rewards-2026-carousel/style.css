@@ -1,0 +1,991 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --red:    #EF4A3D;
+  --yellow: #FDB414;
+  --green:  #94C83D;
+  --teal:   #4AC4D6;
+  --navy:   #2A343E;
+  --dark:   #1B2A38;
+  --blue:   #02588E;
+  --white:  #FFFFFF;
+  --border-light: #E8EDF4;
+  --border-dark:  rgba(255,255,255,0.1);
+  --muted-light: rgba(42,52,62,0.58);
+  --muted-dark:  rgba(255,255,255,0.55);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #D8DFE8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* ============================================================
+   SLIDE — 1080 × 1080 px
+   ============================================================ */
+.slide {
+  width: 1080px;
+  height: 1080px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* no top padding — brand stripe sits flush at top */
+  padding-bottom: 0;
+  border-radius: 3px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+}
+
+.slide-dark  { background: #1B2A38; color: #FFFFFF; }
+.slide-light { background: #FFFFFF; color: #2A343E; }
+.slide-split { background: #FFFFFF; color: #2A343E; }
+
+/* ============================================================
+   BRAND STRIPE (rainbow bar at top of every slide)
+   ============================================================ */
+.brand-stripe {
+  height: 7px;
+  width: 100%;
+  background: linear-gradient(90deg, #EF4A3D 0%, #FDB414 25%, #94C83D 50%, #4AC4D6 75%, #02588E 100%);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   BACKGROUND DECORATIONS (SVG circles, fully inert)
+   ============================================================ */
+.bg-deco {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 52px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.slide-dark .slide-header  { border-bottom-color: var(--border-dark); }
+.slide-split .slide-header { border-bottom: 1px solid var(--border-light); }
+
+.brand-logo { height: 42px; width: auto; }
+
+/* white pill to make dark logo visible on dark slides */
+.logo-pill {
+  background: white;
+  border-radius: 10px;
+  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+}
+.logo-pill .brand-logo { height: 38px; }
+
+/* report tag */
+.report-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(2,88,142,0.08);
+  border-radius: 999px;
+  padding: 7px 16px;
+}
+
+/* outline variant for dark slides */
+.tag-outline {
+  color: var(--teal);
+  background: rgba(74,196,214,0.1);
+  border: 1px solid rgba(74,196,214,0.32);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.slide-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 52px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border-light);
+}
+
+.slide-dark .slide-footer { border-top-color: var(--border-dark); }
+
+.report-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2A343E;
+}
+.slide-dark .report-name { color: rgba(255,255,255,0.6); }
+
+.footer-right { display: flex; align-items: center; gap: 14px; }
+
+.swipe-pill {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(42,52,62,0.07);
+  color: #2A343E;
+}
+.slide-dark .swipe-pill { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); }
+
+.slide-num {
+  font-size: 17px;
+  font-weight: 800;
+  color: #2A343E;
+}
+.slide-dark .slide-num { color: rgba(255,255,255,0.75); }
+
+.interaction-prompt {
+  display: flex;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+/* ============================================================
+   SLIDE CONTENT AREA
+   ============================================================ */
+.slide-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 52px 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.visual-fill {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   SHARED TYPOGRAPHY
+   ============================================================ */
+.slide-title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.18;
+  color: #2A343E;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+.slide-dark .slide-title { color: #FFFFFF; }
+
+.section-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(42,52,62,0.82);
+  margin-bottom: 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--teal);
+  line-height: 1.4;
+}
+.muted-dark {
+  color: rgba(255,255,255,0.72);
+  border-left-color: var(--teal);
+}
+
+/* ============================================================
+   INSIGHT BOXES
+   ============================================================ */
+.insight-box {
+  border-left: 6px solid var(--yellow);
+  background: rgba(253,180,20,0.07);
+  border-radius: 0 12px 12px 0;
+  padding: 15px 20px;
+  flex-shrink: 0;
+}
+
+.insight-dark {
+  background: rgba(253,180,20,0.08);
+}
+
+.insight-badge {
+  display: block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #9B6800;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.slide-dark .insight-badge { color: var(--yellow); }
+
+.insight-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #2A343E;
+}
+.slide-dark .insight-text { color: rgba(255,255,255,0.88); }
+
+/* ============================================================
+   SLIDE 1 · COVER
+   ============================================================ */
+.centered-content {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.four-dots-motif { display: flex; gap: 13px; }
+.dot { width: 18px; height: 18px; border-radius: 50%; }
+.dot-red    { background: var(--red); }
+.dot-yellow { background: var(--yellow); }
+.dot-green  { background: var(--green); }
+.dot-teal   { background: var(--teal); }
+
+.main-title {
+  font-size: 66px;
+  font-weight: 900;
+  line-height: 1.08;
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
+  max-width: 880px;
+}
+
+.subtitle-text {
+  font-size: 24px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.6);
+  max-width: 760px;
+}
+
+/* ============================================================
+   SLIDE 2 · EFFECTIVENESS GAP
+   ============================================================ */
+.eff-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 98% hero */
+.eff-hero {
+  background: #1B2A38;
+  border-radius: 16px;
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.eff-big-num {
+  font-size: 100px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.eff-big-label {
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.35;
+}
+
+/* "BUT ONLY..." divider */
+.eff-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.div-line { flex: 1; height: 1.5px; background: var(--border-light); }
+
+.div-badge {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  color: var(--red);
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border: 1.5px solid rgba(239,74,61,0.3);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* compare row: 30% vs 32% */
+.eff-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.eff-compare-item {
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ec-yellow { background: rgba(253,180,20,0.08);  border: 1.5px solid rgba(253,180,20,0.28); }
+.ec-teal   { background: rgba(74,196,214,0.08);  border: 1.5px solid rgba(74,196,214,0.28); }
+
+.ec-num {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+  display: block;
+}
+.ec-yellow .ec-num { color: #C88B00; }
+.ec-teal   .ec-num { color: #2B9FA9; }
+
+.ec-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2A343E;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   SLIDE 3 · PROGRAM STRUCTURE (Split)
+   ============================================================ */
+.s3-header { background: white; }
+
+.s3-title-row {
+  padding: 18px 52px 14px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.split-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 44px;
+  justify-content: center;
+}
+
+.panel-leaders { background: linear-gradient(155deg, #285C08, #4A9A1E); }
+.panel-laggards { background: linear-gradient(155deg, #C43020, #F05A4E); }
+
+.panel-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 14px;
+}
+
+.panel-big-num {
+  font-size: 112px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.panel-desc {
+  font-size: 21px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+
+.panel-stack {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: 0;
+}
+
+.panel-stat-row {
+  padding: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-num {
+  font-size: 76px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.panel-desc-sm {
+  font-size: 19px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.35;
+}
+
+.panel-rule { height: 1px; background: rgba(255,255,255,0.18); }
+
+/* Insight below the split panel */
+.s3-insight {
+  margin: 0 52px 0;
+  border-radius: 0 12px 12px 0;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  padding: 15px 20px;
+}
+
+/* ============================================================
+   SLIDE 4 · CADENCE BANDS (Dark)
+   ============================================================ */
+.cadence-bands {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cband {
+  display: grid;
+  grid-template-columns: 68px 170px 1fr;
+  align-items: center;
+  gap: 22px;
+  padding: 20px 26px;
+  border-radius: 14px;
+  flex: 1;
+}
+
+.cband-red    { background: rgba(239,74,61,0.12);  border: 1px solid rgba(239,74,61,0.22); }
+.cband-yellow { background: rgba(253,180,20,0.12); border: 1px solid rgba(253,180,20,0.22); }
+.cband-teal   { background: rgba(74,196,214,0.12); border: 1px solid rgba(74,196,214,0.22); }
+
+.cband-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cband-num {
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cband-num-sm { font-size: 40px; }
+
+.cband-red    .cband-num { color: #FF7066; }
+.cband-yellow .cband-num { color: #FFD060; }
+.cband-teal   .cband-num { color: #6FD8E8; }
+
+.cband-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   SLIDE 5 · PERFORMANCE LINK
+   ============================================================ */
+.perf-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+}
+
+/* Left: dark navy hero block */
+.perf-hero {
+  background: #1B2A38;
+  border-radius: 18px;
+  padding: 34px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.perf-eyebrow {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.perf-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.perf-big-stat {
+  font-size: 64px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.perf-desc {
+  font-size: 19px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.45;
+}
+
+/* Right: two metric tiles */
+.perf-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.perf-tile {
+  background: #F6F9FC;
+  border: 1.5px solid var(--border-light);
+  border-radius: 14px;
+  padding: 22px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ptile-num {
+  font-size: 66px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.c-red    { color: var(--red); }
+.c-teal   { color: #2B9FA9; }
+.c-yellow { color: #C88B00; }
+
+.ptile-text {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #2A343E;
+}
+
+/* ============================================================
+   SLIDE 6 · CORE CHALLENGES
+   ============================================================ */
+.challenge-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ch-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid #F0F4F8;
+}
+.ch-row:last-child { border-bottom: none; }
+
+.ch-pct {
+  font-size: 68px;
+  font-weight: 900;
+  line-height: 1;
+  width: 115px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.cr-red    { color: var(--red); }
+.cr-yellow { color: #C88B00; }
+.cr-teal   { color: #2B9FA9; }
+
+.ch-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ch-track {
+  width: 100%;
+  height: 16px;
+  background: #EEF3F8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ch-fill { height: 100%; border-radius: 999px; }
+.cf-red    { background: var(--red); }
+.cf-yellow { background: var(--yellow); }
+.cf-teal   { background: var(--teal); }
+
+.ch-text {
+  font-size: 21px;
+  font-weight: 500;
+  color: #2A343E;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   SLIDE 7 · EMPLOYEE PRIORITIES (colored columns)
+   ============================================================ */
+.priority-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.pcol {
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--border-light);
+}
+
+.pcol-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px 24px;
+  gap: 14px;
+  flex: 1;
+}
+
+.pcol-teal   { background: linear-gradient(155deg, #2B9FA9, #4AC4D6); }
+.pcol-yellow { background: linear-gradient(155deg, #C88B00, #FDB414); }
+.pcol-red    { background: linear-gradient(155deg, #C43020, #EF4A3D); }
+
+.pcol-num {
+  font-size: 76px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.pcol-bottom {
+  background: #FFFFFF;
+  padding: 20px 18px;
+  border-top: 1.5px solid var(--border-light);
+}
+
+.pcol-desc {
+  font-size: 19px;
+  font-weight: 500;
+  color: #2A343E;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ============================================================
+   SLIDE 8 · FEEDBACK LOOP (dark, giant gauges)
+   ============================================================ */
+.gauges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.gauge-card {
+  border-radius: 18px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.gc-green { background: rgba(148,200,61,0.08); border: 1px solid rgba(148,200,61,0.22); }
+.gc-red   { background: rgba(239,74,61,0.08);  border: 1px solid rgba(239,74,61,0.22); }
+
+.gauge-desc-card {
+  font-size: 20px;
+  line-height: 1.42;
+  color: rgba(255,255,255,0.82);
+  font-weight: 500;
+}
+
+/* ============================================================
+   SLIDE 9 · TECHNOLOGY (horizontal stat rows)
+   ============================================================ */
+.tech-rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tech-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #F0F4F8;
+}
+.tech-row:last-child { border-bottom: none; }
+
+.tech-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 120px;
+  flex-shrink: 0;
+  padding: 14px 10px;
+  border-radius: 14px;
+}
+
+.tl-teal   { background: rgba(74,196,214,0.08);  border: 1.5px solid rgba(74,196,214,0.22); }
+.tl-yellow { background: rgba(253,180,20,0.08);  border: 1.5px solid rgba(253,180,20,0.22); }
+.tl-red    { background: rgba(239,74,61,0.06);   border: 1.5px solid rgba(239,74,61,0.18); }
+
+.tech-pct {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.tc-teal   { color: #2B9FA9; }
+.tc-yellow { color: #C88B00; }
+.tc-red    { color: var(--red); }
+
+.tech-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tech-track {
+  width: 100%;
+  height: 14px;
+  background: #EEF3F8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.tech-bar { height: 100%; border-radius: 999px; }
+.tb-teal   { background: var(--teal); }
+.tb-yellow { background: var(--yellow); }
+.tb-red    { background: var(--red); }
+
+.tech-label {
+  font-size: 21px;
+  font-weight: 500;
+  color: #2A343E;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   SLIDE 10 · TAKEAWAYS (dark banded)
+   ============================================================ */
+.takeaway-bands {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tband {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px 28px;
+  flex: 1;
+}
+
+.tband-num-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.tnc-red    { background: var(--red);    color: #FFFFFF; }
+.tnc-yellow { background: var(--yellow); color: #2A343E; }
+.tnc-teal   { background: var(--teal);   color: #2A343E; }
+
+.tband-body { flex: 1; }
+
+.tband-h {
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+.tband-p {
+  font-size: 20px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.35;
+}
+
+.supporting-box {
+  background: rgba(2,88,142,0.12);
+  border: 1px solid rgba(74,196,214,0.22);
+  border-radius: 14px;
+  padding: 18px 22px;
+  flex-shrink: 0;
+}
+
+.supporting-text {
+  font-size: 19px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.82);
+}
+
+/* ============================================================
+   SLIDE 11 · CTA (dark premium)
+   ============================================================ */
+.cta-slide {
+  background: linear-gradient(145deg, #1A2B39 0%, #0F1E2B 100%);
+}
+
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.cta-left { display: flex; flex-direction: column; }
+
+.cta-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.cta-list {
+  list-style: none;
+  margin-bottom: 34px;
+}
+
+.cta-list li {
+  font-size: 20px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.cta-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #E51069, #EF4A3D);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  height: 62px;
+  line-height: 62px;
+  padding: 0 38px;
+  border-radius: 999px;
+  box-shadow: 0 14px 32px rgba(239,74,61,0.32);
+  letter-spacing: 0.01em;
+}
+
+.cta-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,196,214,0.18) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.book-3d {
+  position: relative;
+  z-index: 1;
+  perspective: 1000px;
+}
+
+.book-img {
+  width: 260px;
+  height: auto;
+  border-radius: 3px 12px 12px 3px;
+  transform: rotateY(-12deg);
+  box-shadow: 22px 22px 52px rgba(0,0,0,0.4),
+              -4px 0 10px rgba(0,0,0,0.25) inset;
+  border-left: 4px solid rgba(0,0,0,0.3);
+}

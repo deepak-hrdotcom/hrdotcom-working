@@ -1,0 +1,678 @@
+<!-- @format -->
+<style type="text/css">
+  /* RESET */
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&display=swap');
+
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  #page-container {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/flat-lay-student-using-laptop.webp');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    padding: 1rem 0;
+    min-height: 100vh;
+    place-items: center;
+    display: grid;
+  }
+
+  .page-center {
+    max-width: 1350px;
+    width: 92%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  /* HEADER */
+  .sp-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  @media (min-width: 992px) {
+    .sp-header {
+      justify-content: center;
+      text-align: left;
+    }
+  }
+
+  .cert-logo {
+    max-width: 120px;
+  }
+
+  .sp-page-title {
+    font-size: clamp(2rem, 2.2vw, 3rem);
+    font-weight: 600;
+    color: #2a343e;
+  }
+
+  /* GRID */
+  .spl-col-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 992px) {
+    .spl-col-container {
+      grid-template-columns: 1fr 2fr;
+      max-width: 1170px;
+      gap: 8rem;
+      justify-self: center;
+    }
+  }
+
+  .spl-col {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  /* LEFT */
+  .spl-col-1 {
+    background: linear-gradient(135deg, #3c5fa0, #2e4f8f);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: space-around;
+    display: none;
+    /* hidden — replaced by v2 below */
+  }
+
+  /* LEFT V2 — full-height stay-updated, brand dark slate */
+  .spl-col-1-v2 {
+    background: #2A343E;
+    border-radius: 16px;
+    padding: 2.4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+  }
+
+  /* pink-red glow blob */
+  .spl-col-1-v2::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229, 16, 105, 0.18) 0%, transparent 70%);
+    top: -40px;
+    right: -40px;
+    pointer-events: none;
+  }
+
+  /* four-dot motif */
+  .su2-dots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0.3rem;
+  }
+
+  .su2-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .su2-dot-1 {
+    background: #EF4A3D;
+  }
+
+  .su2-dot-2 {
+    background: #FDB414;
+  }
+
+  .su2-dot-3 {
+    background: #94C83D;
+  }
+
+  .su2-dot-4 {
+    background: #4AC4D6;
+  }
+
+  .su2-inner {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    padding: 2rem 1.6rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .su2-headline {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(16px, 2vw, 22px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.2px !important;
+    text-transform: none !important;
+    margin: 0 !important;
+  }
+
+  .su2-sub {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(12px, 1.2vw, 14px) !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .su2-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #0f2f5c !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    padding: 0.75rem 1.8rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  }
+
+  .su2-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+    background: #e8f4ff;
+  }
+
+  @media (min-width: 992px) {
+    .spl-col-1-v2 {
+      min-height: 100%;
+      padding: 3rem 1.8rem;
+    }
+
+    .su2-inner {
+      padding: 2.5rem 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+  }
+
+  .early-bird-offer img {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 100%;
+  }
+
+  /* STAY UPDATED */
+  .stay-updated {
+    background: linear-gradient(90deg, #f36c6c, #b01b62);
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .stay-updated h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: clamp(15px, 2vw, 18px);
+  }
+
+  .stay-updated-btn {
+    background: #fff;
+    color: #2a343e;
+    font-weight: 600;
+    padding: 0.8rem 1.4rem;
+    border-radius: 40px;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  /* RIGHT — premium redesign */
+  .spl-col-2 {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 59, 113, 0.08);
+  }
+
+  /* decorative top gradient bar — brand rainbow motif */
+  .spl-col-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #EF4A3D, #FDB414, #94C83D, #4AC4D6);
+    border-radius: 20px 20px 0 0;
+  }
+
+  /* soft background blob */
+  .spl-col-2::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(148, 200, 61, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 992px) {
+    .spl-col-2 {
+      padding: 3rem 3.5rem;
+    }
+  }
+
+  /* MONEY BAR — brand dark slate */
+  .money-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #2A343E;
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(15px, 1.6vw, 19px) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.4px !important;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 24px rgba(42, 52, 62, 0.28);
+    position: relative;
+    z-index: 1;
+  }
+
+  .money-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #4AC4D6;
+    color: #2A343E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  /* TEXT + LIST */
+  .mb-text p {
+    margin-bottom: 1.2rem;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(13px, 1.3vw, 15px) !important;
+    font-weight: 400 !important;
+    color: #3a4a5c !important;
+    line-height: 1.7 !important;
+  }
+
+  .mb-text p strong {
+    font-weight: 700 !important;
+    color: #0a2a52 !important;
+  }
+
+  .mb-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .mb-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(13px, 1.3vw, 15px) !important;
+    font-weight: 500 !important;
+    color: #2a343e !important;
+    line-height: 1.55 !important;
+    padding: 0.55rem 0.9rem;
+    background: #f0f6ff;
+    border-radius: 10px;
+    border-left: 3px solid #4AC4D6;
+  }
+
+  .mb-list li::before {
+    content: '✔';
+    color: #4AC4D6;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 900;
+  }
+
+  /* COURSES — redesigned */
+  .sp-btn-container {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sp-btn-container h2 {
+    margin: 0 0 1.2rem;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(13px, 1.4vw, 16px) !important;
+    font-weight: 700 !important;
+    color: #0a2a52 !important;
+    text-align: center !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+  }
+
+  .ctas {
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 640px) {
+    .ctas {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .course-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1.5px solid #d0dff5;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(12px, 1.2vw, 14px) !important;
+    font-weight: 600 !important;
+    color: #0a2a52 !important;
+    background: #f8faff;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .course-cta::before {
+    content: '→';
+    font-size: 13px;
+    color: #1f6fd1;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .course-cta:hover {
+    background: linear-gradient(135deg, #E51069, #EF4A3D);
+    color: #ffffff !important;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(229, 16, 105, 0.28);
+    transform: translateY(-2px);
+  }
+
+  .course-cta:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+    color: #ffffff;
+  }
+
+  .btn-big {
+    background: #a5125c;
+    color: #fff !important;
+    border-radius: 40px;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+
+  /* FOOTER — brand dark slate, not blue */
+  .cta-container {
+    margin-top: 3rem;
+    background: #2A343E;
+    border-radius: 18px;
+    padding: 2.4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* pink-red glow accent */
+  .cta-container::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229, 16, 105, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-container h2 {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(18px, 2.2vw, 26px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.3px !important;
+    text-transform: none !important;
+    margin-bottom: 1.8rem !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .cta-icons {
+      flex-wrap: nowrap;
+      gap: 1.2rem;
+    }
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.7rem 1.4rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+    white-space: nowrap;
+  }
+
+  .cta:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta span,
+  .cta a {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(12px, 1.2vw, 14px) !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    letter-spacing: 0 !important;
+  }
+
+  .cta a:hover {
+    color: #4AC4D6 !important;
+  }
+
+  .cta img {
+    max-width: 32px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  h2 {
+    text-transform: none;
+  }
+</style>
+<div id="page-container">
+  <div class="page-center">
+    <div class="sp-header"><img class="cert-logo"
+        src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/2024-nov-special-offer/certprep-logo-white-bg.png" />
+      <h1 class="sp-page-title">SHRM &amp; HRCI Exam Preparation Specials &amp; Announcements</h1>
+    </div>
+ 
+
+    <div class="spl-col-container"><!-- LEFT: ORIGINAL (hidden) -->
+      <div class="spl-col spl-col-1" style="display:none">
+        <div class="early-bird-offer"><a href="/en/certifications/hrci_shrm_prep_courses/" target="_blank"><img
+              src="https://public-cdn.hr.com/remoteimages/hive_course_images/enrollment-save-50-popup.webp" /></a></div>
+
+        <div class="stay-updated">
+          <h2>Don&#39;t miss out on HR.com Certification Specials &amp; Announcements</h2>
+
+          <div>$vendorLeadForm</div>
+          <a class="stay-updated-btn" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+            id="fc_1730822628746" name="fc_1730822628746" onclick="loadPopup('fc_1730822628746')"> SIGN UP NOW TO STAY
+            UPDATED</a>
+        </div>
+      </div>
+      <!-- LEFT V2: Don't Miss — full height, no early-bird image -->
+
+      <div class="spl-col-1-v2">
+        <div class="su2-dots">
+          <div class="su2-dot su2-dot-1">&nbsp;</div>
+
+          <div class="su2-dot su2-dot-2">&nbsp;</div>
+
+          <div class="su2-dot su2-dot-3">&nbsp;</div>
+
+          <div class="su2-dot su2-dot-4">&nbsp;</div>
+        </div>
+
+        <div class="su2-inner">
+          <h2 class="su2-headline">Don&#39;t miss out on HR.com Certification Specials &amp; Announcements</h2>
+
+          <p class="su2-sub">Get the latest updates on courses, early-bird deals, and exclusive offers &mdash; delivered
+            directly to you.</p>
+
+          <div>$vendorLeadForm</div>
+          <a class="su2-btn" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+            id="fc_1730822628746_v2" name="fc_1730822628746" onclick="loadPopup('fc_1730822628746')">Sign Up Now to Stay
+            Updated</a>
+        </div>
+      </div>
+      <!-- RIGHT -->
+
+      <div class="spl-col spl-col-2">
+        <div class="money-bar"><span class="money-icon">✔</span> <span class="money-text">Money-Back Guarantee</span>
+        </div>
+
+        <div class="mb-text">
+          <p>If you meet the following eligibility requirements, and still aren&#39;t successful in passing your
+            HRCI&reg; or SHRM&reg; certification exam - <strong>we will refund your complete tuition cost back to
+              you!</strong></p>
+
+          <ul class="mb-list">
+            <li>Must attend 80% or more of the live, scheduled sessions.</li>
+            <li>Must score 80% or higher on all practice exams included in the program.</li>
+            <li>Must attempt your HRCI or SHRM exam within 90 days of completing the program.</li>
+          </ul>
+        </div>
+
+        <div class="sp-btn-container" style="
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            justify-content: center;
+          ">
+          <h2 style="text-align: center">Applicable courses that come with a money back guarantee</h2>
+
+          <div class="ctas"><a class="course-cta"
+              href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/phrsphr-shrm-cpshrm-scp-16-week-online-prep-course_jtafq075.html"
+              target="_blank">16-wk HRCI &amp; SHRM</a> <a class="course-cta"
+              href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/phr-sphr-shrm-hr-certification-exam-preparations_l6m916pu.html"
+              target="_blank">8-wk HRCI &amp; SHRM</a> <a class="course-cta"
+              href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html"
+              target="_blank">10-wk aPHR</a> <a class="course-cta"
+              href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/shrm-online-prep-course_lgagdxx6.html"
+              target="_blank">SHRM Exam Preparations</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-container">
+      <h2>Contact HR.com&rsquo;s Exam Preparation Team</h2>
+
+      <div class="cta-icons">
+        <div class="cta"><img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/2024-nov-special-offer/phone.png" /><span>1-877-472-6648
+            Ext. 102</span></div>
+
+        <div class="cta"><img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/2024-nov-special-offer/email.png" />
+          <a href="mailto:certification@hr.com" target="_blank">certification@hr.com</a></div>
+
+        <div class="cta"><img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/2024-nov-special-offer/globe.png" />
+          <a href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses" target="_blank">hr.com/prepcourse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

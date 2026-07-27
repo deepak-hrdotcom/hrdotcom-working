@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workplace Culture and Connection 2026 — HR.com Infographic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #e8e8e8;
+      display: flex;
+      justify-content: center;
+      padding: 32px 0 64px;
+    }
+
+    /* ============================================================
+       BRAND TOKENS
+    ============================================================ */
+    :root {
+      --navy:   #2A343E;
+      --pink:   #E51069;
+      --red:    #EF4A3D;
+      --teal:   #4AC4D6;
+      --green:  #94C83D;
+      --yellow: #FDB414;
+      --light:  #F7F8FA;
+      --white:  #FFFFFF;
+      --text:   #1F2D38;
+      --muted:  #5C6B78;
+    }
+
+    /* ============================================================
+       WRAPPER — exactly legal paper width
+    ============================================================ */
+    .infographic {
+      width: 816px;
+      background: var(--white);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+    }
+
+    /* ============================================================
+       MOTIF ELEMENTS
+    ============================================================ */
+    .motif-blocks {
+      display: flex;
+      height: 8px;
+      width: 100%;
+    }
+    .motif-blocks span {
+      flex: 1;
+    }
+    .motif-blocks .m-red    { background: #EF4A3D; }
+    .motif-blocks .m-yellow { background: #FDB414; }
+    .motif-blocks .m-green  { background: #94C83D; }
+    .motif-blocks .m-teal   { background: #4AC4D6; }
+
+    .motif-gradient {
+      height: 5px;
+      background: linear-gradient(90deg, #EF4A3D 0%, #FDB414 33%, #94C83D 66%, #4AC4D6 100%);
+      width: 100%;
+    }
+
+    .motif-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .motif-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+    .motif-dots .d-red    { background: #EF4A3D; }
+    .motif-dots .d-yellow { background: #FDB414; }
+    .motif-dots .d-green  { background: #94C83D; }
+    .motif-dots .d-teal   { background: #4AC4D6; }
+
+    /* ============================================================
+       SECTION HEADER BARS
+    ============================================================ */
+    .section-header {
+      background: var(--pink);
+      color: var(--white);
+      padding: 10px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-header .step-num {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0.25;
+      font-style: italic;
+    }
+    .section-header h2 {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 1.3;
+    }
+
+    /* ============================================================
+       HEADER SECTION
+    ============================================================ */
+    .header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0 0 22px;
+    }
+    .header-inner {
+      padding: 22px 28px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .header-text { flex: 1; }
+    .header-text h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .header-text h1 span { color: var(--teal); }
+    .header-tagline {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      max-width: 400px;
+    }
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 6px;
+    }
+    .header-logos img {
+      height: 36px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      object-fit: contain;
+    }
+    .header-logo-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.3);
+    }
+    .header-illus {
+      width: 200px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+    .header-illus img {
+      width: 200px;
+      height: 160px;
+      object-fit: contain;
+    }
+    .header-dots-row {
+      padding: 14px 28px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* ============================================================
+       INTRO BLOCK
+    ============================================================ */
+    .intro-block { background: var(--light); padding: 24px 28px; }
+
+    .intro-heading {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--pink);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: 18px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .intro-sub-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .stats-positive {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .stat-arc-card {
+      flex: 1;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .stat-arc-card p {
+      font-size: 11.5px;
+      color: var(--text);
+      text-align: center;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* SVG Donut */
+    .donut-svg { display: block; }
+
+    /* Challenge stats */
+    .challenge-section {
+      margin-bottom: 16px;
+    }
+    .challenge-intro {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      padding: 6px 12px;
+      background: rgba(229,16,105,0.08);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 6px 6px 0;
+    }
+    .challenge-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bar-gauge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .bar-pct {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--pink);
+      width: 52px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .bar-track {
+      flex: 1;
+    }
+    .bar-track-label {
+      font-size: 11px;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .bar-track-bg {
+      height: 8px;
+      background: #E8ECF0;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .bar-track-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--pink), var(--red));
+    }
+
+    /* Uneven connection row */
+    .uneven-row {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .uneven-heading {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .uneven-bars {
+      display: flex;
+      gap: 24px;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .uneven-bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      max-width: 200px;
+    }
+    .v-bar-wrap {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: flex-end;
+      background: #F0F3F6;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .v-bar-fill {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+    }
+    .uneven-pct {
+      font-size: 28px;
+      font-weight: 900;
+    }
+    .uneven-label {
+      font-size: 10.5px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .transition-q {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-top: 18px;
+      padding: 14px 20px;
+      background: var(--white);
+      border-radius: 10px;
+      border: 2px solid var(--teal);
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       SECTION 1 — OBSTACLES
+    ============================================================ */
+    .s1-body {
+      background: var(--white);
+      padding: 20px 28px;
+    }
+    .s1-intro {
+      font-size: 12px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    .s1-lead {
+      font-size: 12.5px;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .obstacles-layout {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .obstacles-cards {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .obstacle-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border-left: 4px solid transparent;
+    }
+    .obstacle-card:nth-child(1) { border-left-color: var(--pink); }
+    .obstacle-card:nth-child(2) { border-left-color: var(--teal); }
+    .obstacle-card:nth-child(3) { border-left-color: var(--yellow); }
+    .obstacle-num {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 36px;
+    }
+    .obstacle-card:nth-child(1) .obstacle-num { color: var(--pink); }
+    .obstacle-card:nth-child(2) .obstacle-num { color: var(--teal); }
+    .obstacle-card:nth-child(3) .obstacle-num { color: var(--yellow); }
+    .obstacle-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .s1-illus {
+      width: 170px;
+      flex-shrink: 0;
+    }
+    .s1-illus img {
+      width: 170px;
+      height: 170px;
+      object-fit: contain;
+    }
+
+    /* ============================================================
+       SECTION 2 — LEADERSHIP
+    ============================================================ */
+    .s2-body {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 28px;
+    }
+    .s2-observation {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--teal);
+      background: rgba(74,196,214,0.1);
+      border-radius: 0 8px 8px 0;
+    }
+    .s2-disconnect-lead {
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .disconnect-layout {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .disconnect-chart {
+      flex: 1;
+    }
+    .disconnect-row {
+      margin-bottom: 14px;
+    }
+    .disconnect-row-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .disconnect-bars-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .h-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .h-bar-role {
+      font-size: 10px;
+      color: rgba(255,255,255,0.6);
+      width: 60px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .h-bar-track {
+      flex: 1;
+      height: 18px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .h-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+    }
+    .h-bar-fill.exec  { background: var(--teal); }
+    .h-bar-fill.mgr   { background: var(--pink); }
+    .h-bar-pct {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .disconnect-trust {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      width: 180px;
+      flex-shrink: 0;
+    }
+    .trust-big {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .trust-label {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .s2-illus-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 4px;
+    }
+    .s2-illus {
+      width: 160px;
+      flex-shrink: 0;
+    }
+    .s2-illus img {
+      width: 160px;
+      height: 150px;
+      object-fit: contain;
+    }
+    .culture-leaders-block { flex: 1; }
+    .culture-leaders-intro {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .leader-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .leader-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .leader-mult {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--teal);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .leader-text {
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+    .footnote-box {
+      margin-top: 16px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       PAGE BREAK DIVIDER
+    ============================================================ */
+    .page-break-zone {
+      background: var(--navy);
+      padding: 0;
+    }
+
+    /* ============================================================
+       SECTION 3 — TOOLS
+    ============================================================ */
+    .s3-body {
+      background: var(--light);
+      padding: 20px 28px;
+    }
+    .s3-layout {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .s3-left { flex: 1; }
+    .s3-third-callout {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--red);
+    }
+    .third-big {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .third-text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .s3-lead {
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .tool-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 16px;
+    }
+    .tool-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tool-bar-label {
+      font-size: 11px;
+      color: var(--text);
+      width: 200px;
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+    .tool-bar-track {
+      flex: 1;
+      height: 22px;
+      background: #E4EBF0;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .tool-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+    }
+    .tool-bar-pct {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .s3-gap-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 2px;
+    }
+    .gap-card {
+      flex: 1;
+      background: var(--white);
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .gap-pct {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--pink);
+    }
+    .gap-label {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .s3-closing {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.6;
+      font-style: italic;
+      padding: 10px 14px;
+      background: var(--white);
+      border-radius: 8px;
+      border-left: 3px solid var(--teal);
+    }
+    .s3-illus {
+      width: 160px;
+      flex-shrink: 0;
+      padding-top: 8px;
+    }
+    .s3-illus img {
+      width: 160px;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    /* ============================================================
+       SECTION 4 — RECOGNITION
+    ============================================================ */
+    .s4-body {
+      background: var(--white);
+      padding: 20px 28px;
+    }
+    .s4-intro {
+      font-size: 12.5px;
+      color: var(--text);
+      margin-bottom: 14px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .s4-layout {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .s4-left { flex: 1; }
+    .gap-cards-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .recog-gap-card {
+      flex: 1;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      background: rgba(239,74,61,0.06);
+      border: 1px solid rgba(239,74,61,0.2);
+    }
+    .recog-gap-pct {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--red);
+    }
+    .recog-gap-label {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .vs-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .vs-line { flex: 1; height: 1px; background: #E0E4E8; }
+    .vs-text {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .leader-compare-intro {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .recog-leader-cards {
+      display: flex;
+      gap: 10px;
+    }
+    .recog-leader-card {
+      flex: 1;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(74,196,214,0.1), rgba(148,200,61,0.1));
+      border: 1px solid rgba(74,196,214,0.3);
+    }
+    .recog-mult {
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .recog-mult.teal { color: var(--teal); }
+    .recog-mult.green { color: var(--green); }
+    .recog-mult-label {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .s4-illus {
+      width: 160px;
+      flex-shrink: 0;
+    }
+    .s4-illus img {
+      width: 160px;
+      height: 190px;
+      object-fit: contain;
+    }
+    .not-to-mention {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .ntm-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+      padding: 4px 10px;
+      background: rgba(74,196,214,0.12);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       FINAL TAKEAWAY
+    ============================================================ */
+    .takeaway {
+      background: linear-gradient(135deg, #E51069 0%, #EF4A3D 100%);
+      color: var(--white);
+      padding: 24px 28px;
+    }
+    .takeaway-inner {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .takeaway-text { flex: 1; }
+    .takeaway h3 {
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .takeaway p {
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.92);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 28px 14px;
+    }
+    .footer-inner {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .footer-logos img {
+      height: 28px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      object-fit: contain;
+      opacity: 0.8;
+    }
+    .footer-logo-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255,255,255,0.2);
+    }
+    .footer-text { flex: 1; }
+    .footer-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 5px;
+    }
+    .footer-body {
+      font-size: 10px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       PRINT CSS
+    ============================================================ */
+    @media print {
+      @page {
+        size: 8.5in 14in portrait;
+        margin: 0;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        /* zoom scales the entire document so the infographic
+           height (~3476px screen) fits within 2 legal pages (2688px) */
+        zoom: 0.77;
+      }
+
+      body {
+        display: block;
+        padding: 0;
+      }
+
+      .infographic {
+        width: 816px;
+        box-shadow: none;
+        margin: 0;
+      }
+
+      /* Force page break cleanly after section 2 */
+      .page-break {
+        page-break-after: always;
+        break-after: page;
+      }
+
+      /* Prevent internal breaks within cards/sections */
+      .stat-arc-card,
+      .obstacle-card,
+      .leader-card,
+      .recog-leader-card,
+      .recog-gap-card,
+      .gap-card,
+      .s2-illus-row,
+      .takeaway,
+      .footer,
+      .s3-gap-row,
+      .s3-closing,
+      .s1-body,
+      .s2-body,
+      .s3-body,
+      .s4-body,
+      .intro-block,
+      .obstacles-layout,
+      .disconnect-layout,
+      .s4-layout,
+      .s3-layout {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Motif gradients and backgrounds must print */
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .divider-motif {
+      padding: 0 28px;
+      background: var(--white);
+    }
+    .divider-motif-navy {
+      padding: 0 28px;
+      background: var(--navy);
+    }
+  </style>
+</head>
+<body>
+<div class="infographic">
+
+  <!-- ══════ TOP MOTIF STRIPE ══════ -->
+  <div class="motif-blocks">
+    <span class="m-red"></span>
+    <span class="m-yellow"></span>
+    <span class="m-green"></span>
+    <span class="m-teal"></span>
+  </div>
+
+  <!-- ══════ HEADER ══════ -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-text">
+        <h1>Workplace <span>Culture and</span><br>Connection 2026</h1>
+        <p class="header-tagline">Make culture thrive by fostering communication, camaraderie, and trust at all levels of the organization.</p>
+        <div class="header-dots-row">
+          <div class="motif-dots">
+            <span class="d-red"></span>
+            <span class="d-yellow"></span>
+            <span class="d-green"></span>
+            <span class="d-teal"></span>
+          </div>
+          <div class="header-logos">
+            <img src="_reference/hr-research-logo.png" alt="HR Research Institute" />
+            <div class="header-logo-divider"></div>
+            <img src="_reference/motivosity-logo.png" alt="Motivosity" />
+          </div>
+        </div>
+      </div>
+      <div class="header-illus">
+        <img src="images/illus_intro.png" alt="Diverse colleagues connected by a network" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ MOTIF GRADIENT DIVIDER ══════ -->
+  <div class="motif-gradient"></div>
+
+  <!-- ══════ INTRO BLOCK ══════ -->
+  <div class="intro-block">
+
+    <!-- Big Heading (corrected per review) -->
+    
+    <p class="intro-heading">Organizations need to work on culture and connection</p>
+    <p class="intro-sub-label">Connection is the foundation of workplace culture and one of the strongest reasons people stay</p>
+   
+
+    <!-- 2 positive stat donuts -->
+    <div class="stats-positive">
+      <div class="stat-arc-card">
+        <!-- 83% semi-donut -->
+        <svg class="donut-svg" width="120" height="70" viewBox="0 0 120 70">
+          <path d="M10,65 A50,50 0 0,1 110,65" fill="none" stroke="#E8ECF0" stroke-width="12" stroke-linecap="round"/>
+          <path d="M10,65 A50,50 0 0,1 110,65" fill="none" stroke="#4AC4D6" stroke-width="12" stroke-linecap="round"
+                stroke-dasharray="157" stroke-dashoffset="26.7"/>
+          <text x="60" y="56" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="900" font-size="22" fill="#2A343E">83%</text>
+        </svg>
+        <p>of employees say they remain with an organization primarily because of <strong>culture and the people they work with</strong></p>
+      </div>
+      <div class="stat-arc-card">
+        <!-- 71% semi-donut -->
+        <svg class="donut-svg" width="120" height="70" viewBox="0 0 120 70">
+          <path d="M10,65 A50,50 0 0,1 110,65" fill="none" stroke="#E8ECF0" stroke-width="12" stroke-linecap="round"/>
+          <path d="M10,65 A50,50 0 0,1 110,65" fill="none" stroke="#94C83D" stroke-width="12" stroke-linecap="round"
+                stroke-dasharray="157" stroke-dashoffset="45.5"/>
+          <text x="60" y="56" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="900" font-size="22" fill="#2A343E">71%</text>
+        </svg>
+        <p>say they feel a <strong>sense of belonging</strong> at their organization</p>
+      </div>
+    </div>
+
+    <!-- Challenge stats -->
+    <div class="challenge-section">
+      <p class="challenge-intro">However, many organizations continue to face challenges</p>
+      <div class="challenge-bars">
+        <div class="bar-gauge">
+          <div class="bar-pct">20%</div>
+          <div class="bar-track">
+            <div class="bar-track-label">hesitate to recommend their organization as a great place to work</div>
+            <div class="bar-track-bg"><div class="bar-track-fill" style="width:20%"></div></div>
+          </div>
+        </div>
+        <div class="bar-gauge">
+          <div class="bar-pct" style="font-size:16px; color:var(--pink); padding-top:2px;">1 in 5</div>
+          <div class="bar-track">
+            <div class="bar-track-label">report their sense of connection declined over the past year</div>
+            <div class="bar-track-bg"><div class="bar-track-fill" style="width:20%"></div></div>
+          </div>
+        </div>
+        <div class="bar-gauge">
+          <div class="bar-pct">48%</div>
+          <div class="bar-track">
+            <div class="bar-track-label">report only moderate or low trust in leadership</div>
+            <div class="bar-track-bg"><div class="bar-track-fill" style="width:48%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 86% vs 58% uneven connection -->
+    <div class="uneven-row">
+      <p class="uneven-heading">On the surface, things look good, but connection across the organization is also uneven</p>
+      <div class="uneven-bars">
+        <div class="uneven-bar-item">
+          <div class="v-bar-wrap">
+            <div class="v-bar-fill" style="height:86%; background:linear-gradient(180deg,#4AC4D6,#2A9BB0);"></div>
+          </div>
+          <div class="uneven-pct" style="color:var(--teal)">86%</div>
+          <div class="uneven-label">feel connected to their immediate team</div>
+        </div>
+        <div class="uneven-bar-item">
+          <div class="v-bar-wrap">
+            <div class="v-bar-fill" style="height:58%; background:linear-gradient(180deg,#E51069,#EF4A3D);"></div>
+          </div>
+          <div class="uneven-pct" style="color:var(--pink)">58%</div>
+          <div class="uneven-label">say the organization fosters relationships beyond those teams</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transition question -->
+    <div class="transition-q">So how can organizations improve workplace culture and connection?</div>
+
+  </div><!-- /intro-block -->
+
+  <!-- ══════ MOTIF GRADIENT ══════ -->
+  <div class="motif-gradient"></div>
+
+  <!-- ══════ SECTION 1 — OBSTACLES ══════ -->
+  <div class="section-header">
+    <div class="step-num">01</div>
+    <h2>First, determine your biggest culture and connection obstacles</h2>
+  </div>
+  <div class="s1-body">
+    <p class="s1-intro">Cultural strain rarely shows up as a single issue. It accumulates through everyday experiences.</p>
+    <p class="s1-lead">When determining the biggest culture and connection obstacles, employees most often point to:</p>
+    <div class="obstacles-layout">
+      <div class="obstacles-cards">
+        <div class="obstacle-card">
+          <div class="obstacle-num">1</div>
+          <div class="obstacle-text">lack of clear communication and transparency</div>
+        </div>
+        <div class="obstacle-card">
+          <div class="obstacle-num">2</div>
+          <div class="obstacle-text">not feeling recognized or valued</div>
+        </div>
+        <div class="obstacle-card">
+          <div class="obstacle-num">3</div>
+          <div class="obstacle-text">change fatigue and declining morale</div>
+        </div>
+      </div>
+      <div class="s1-illus">
+        <img src="images/illus_s1.png" alt="Person at communication crossroads" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ MOTIF GRADIENT ══════ -->
+  <div class="motif-gradient"></div>
+
+  <!-- ══════ SECTION 2 — LEADERSHIP ══════ -->
+  <div class="section-header">
+    <div class="step-num">02</div>
+    <h2>Second, show that leadership cares</h2>
+  </div>
+  <div class="s2-body">
+    <p class="s2-observation">When leadership connection is visible, trust grows. When it is not, even well-intentioned culture efforts lose credibility.</p>
+    <p class="s2-disconnect-lead">There is a disconnect in perception of top leadership involvement. Executives are much more likely than managers to believe the C-suite is involved in improving the work environment to a high or very high degree:</p>
+
+    <div class="disconnect-layout">
+      <div class="disconnect-chart">
+        <!-- CHRO row -->
+        <div class="disconnect-row">
+          <div class="disconnect-row-label">CHROs</div>
+          <div class="disconnect-bars-group">
+            <div class="h-bar-row">
+              <div class="h-bar-role">Chief HR Execs</div>
+              <div class="h-bar-track">
+                <div class="h-bar-fill exec" style="width:71%"><span class="h-bar-pct">71%</span></div>
+              </div>
+            </div>
+            <div class="h-bar-row">
+              <div class="h-bar-role">Managers</div>
+              <div class="h-bar-track">
+                <div class="h-bar-fill mgr" style="width:54%"><span class="h-bar-pct">54%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CEO row -->
+        <div class="disconnect-row">
+          <div class="disconnect-row-label">CEOs</div>
+          <div class="disconnect-bars-group">
+            <div class="h-bar-row">
+              <div class="h-bar-role">Executives</div>
+              <div class="h-bar-track">
+                <div class="h-bar-fill exec" style="width:69%"><span class="h-bar-pct">69%</span></div>
+              </div>
+            </div>
+            <div class="h-bar-row">
+              <div class="h-bar-role">Managers</div>
+              <div class="h-bar-track">
+                <div class="h-bar-fill mgr" style="width:52%"><span class="h-bar-pct">52%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CFO row -->
+        <div class="disconnect-row">
+          <div class="disconnect-row-label">CFOs</div>
+          <div class="disconnect-bars-group">
+            <div class="h-bar-row">
+              <div class="h-bar-role">Executives</div>
+              <div class="h-bar-track">
+                <div class="h-bar-fill exec" style="width:60%"><span class="h-bar-pct">60%</span></div>
+              </div>
+            </div>
+            <div class="h-bar-row">
+              <div class="h-bar-role">Managers</div>
+              <div class="h-bar-track">
+                <div class="h-bar-fill mgr" style="width:39%"><span class="h-bar-pct">39%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Chart legend -->
+        <div style="display:flex;gap:16px;margin-top:8px;">
+          <div style="display:flex;align-items:center;gap:5px;font-size:9.5px;color:rgba(255,255,255,0.6)">
+            <div style="width:10px;height:10px;border-radius:2px;background:var(--teal);flex-shrink:0"></div> Exec perception
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:9.5px;color:rgba(255,255,255,0.6)">
+            <div style="width:10px;height:10px;border-radius:2px;background:var(--pink);flex-shrink:0"></div> Manager perception
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust stat -->
+      <div class="disconnect-trust">
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Moreover</div>
+        <div class="trust-big">16%</div>
+        <div class="trust-label">of employees and managers trust leadership to a very high extent</div>
+        <div style="margin-top:10px;">
+          <div class="motif-dots" style="justify-content:center;">
+            <span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span><span class="d-teal"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Culture leaders comparison -->
+    <div class="s2-illus-row">
+      <div class="s2-illus">
+        <img src="images/illus_s2.png" alt="Executive and manager viewing through different windows" />
+      </div>
+      <div class="culture-leaders-block">
+        <p class="culture-leaders-intro">Compared to culture laggard organizations, culture leader organizations are:</p>
+        <div class="leader-cards">
+          <div class="leader-card">
+            <div class="leader-mult">8X</div>
+            <div class="leader-text">more likely to report high trust in leadership <span style="color:rgba(255,255,255,0.5)">(83% vs. 10%)</span></div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-mult">3X+</div>
+            <div class="leader-text">more likely to say the CHRO takes an active role in improving the work environment <span style="color:rgba(255,255,255,0.5)">(70% vs. 22%)</span></div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-mult">3X+</div>
+            <div class="leader-text">more likely to say the CEO takes an active role in improving the work environment <span style="color:rgba(255,255,255,0.5)">(70% vs. 22%)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footnote -->
+    <div class="footnote-box">
+      <strong>Culture leaders:</strong> Organizations where employees responded with a rating of 8 to 10, when asked how likely they would be to recommend their organization as a great place to work.&nbsp;&nbsp;
+      <strong>Culture laggards:</strong> Organizations where employees responded with a rating of 0 to 6 to the same question.
+    </div>
+  </div><!-- /s2-body -->
+
+  <!-- ══════ PAGE BREAK ══════ -->
+  <div class="page-break" style="background:var(--navy);height:1px;"></div>
+
+  <!-- ══════ PAGE 2 TOP MOTIF STRIPE ══════ -->
+  <div class="motif-blocks">
+    <span class="m-red"></span>
+    <span class="m-yellow"></span>
+    <span class="m-green"></span>
+    <span class="m-teal"></span>
+  </div>
+
+  <!-- ══════ SECTION 3 — TOOLS ══════ -->
+  <div class="section-header" style="background:var(--navy);">
+    <div class="step-num">03</div>
+    <h2>Third, ensure you're using tools to build relationships and skills</h2>
+  </div>
+  <div class="s3-body">
+    <div class="s3-layout">
+      <div class="s3-left">
+        <!-- 1/3 callout -->
+        <div class="s3-third-callout">
+          <div class="third-big">⅓</div>
+          <div class="third-text">A third of organizations aren't measuring employee engagement, making it difficult to overcome culture &amp; connection challenges.</div>
+        </div>
+        <p class="s3-lead">And most aren't using the following to help build relationships, including:</p>
+        <!-- Tool bars -->
+        <div class="tool-bars">
+          <div class="tool-bar">
+            <div class="tool-bar-label">culture/engagement consultants</div>
+            <div class="tool-bar-track">
+              <div class="tool-bar-fill" style="width:82%; background:linear-gradient(90deg,#4AC4D6,#2A9BB0)"><span class="tool-bar-pct">82%</span></div>
+            </div>
+          </div>
+          <div class="tool-bar">
+            <div class="tool-bar-label">Employee Resource Groups (ERGs)</div>
+            <div class="tool-bar-track">
+              <div class="tool-bar-fill" style="width:73%; background:linear-gradient(90deg,#94C83D,#6EA82B)"><span class="tool-bar-pct">73%</span></div>
+            </div>
+          </div>
+          <div class="tool-bar">
+            <div class="tool-bar-label">coaching/mentoring programs</div>
+            <div class="tool-bar-track">
+              <div class="tool-bar-fill" style="width:68%; background:linear-gradient(90deg,#FDB414,#D99A00)"><span class="tool-bar-pct">68%</span></div>
+            </div>
+          </div>
+          <div class="tool-bar">
+            <div class="tool-bar-label">well-being/wellness apps</div>
+            <div class="tool-bar-track">
+              <div class="tool-bar-fill" style="width:61%; background:linear-gradient(90deg,#E51069,#EF4A3D)"><span class="tool-bar-pct">61%</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin:12px 0 8px;">Not to mention,</div>
+        <div class="s3-gap-row">
+          <div class="gap-card">
+            <div class="gap-pct">59%</div>
+            <div class="gap-label">of managers and executives do not know their organization's eNPS</div>
+          </div>
+          <div class="gap-card">
+            <div class="gap-pct">54%</div>
+            <div class="gap-label">do not know voluntary turnover rates</div>
+          </div>
+        </div>
+        <div class="s3-closing">Without this visibility, it is difficult to understand whether employees feel connected, valued, or willing to advocate for the organization.</div>
+      </div>
+      <div class="s3-illus">
+        <img src="images/illus_s3.png" alt="Person looking at empty dashboard" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ MOTIF GRADIENT ══════ -->
+  <div class="motif-gradient"></div>
+
+  <!-- ══════ SECTION 4 — RECOGNITION ══════ -->
+  <div class="section-header">
+    <div class="step-num">04</div>
+    <h2>Fourth, reinforce connection through consistent recognition</h2>
+  </div>
+  <div class="s4-body">
+    <p class="s4-intro">Recognition is one of the most direct ways employees experience connection, yet it's inconsistent across many organizations.</p>
+    <div class="s4-layout">
+      <div class="s4-left">
+        <!-- Recognition gap cards -->
+        <div class="gap-cards-row">
+          <div class="recog-gap-card">
+            <div class="recog-gap-pct">37%</div>
+            <div class="recog-gap-label">of employees rarely or never receive meaningful recognition from their direct manager</div>
+          </div>
+          <div class="recog-gap-card">
+            <div class="recog-gap-pct">35%</div>
+            <div class="recog-gap-label">rarely or never receive meaningful recognition from peers</div>
+          </div>
+        </div>
+
+        <!-- VS divider with motif -->
+        <div class="vs-divider">
+          <div class="vs-line"></div>
+          <div class="motif-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span><span class="d-teal"></span></div>
+          <div class="vs-text">vs. Culture Leader Organizations</div>
+          <div class="vs-line"></div>
+        </div>
+
+        <p class="leader-compare-intro">Compared to employees in culture laggard organizations, those in culture leader organizations are:</p>
+        <div class="recog-leader-cards">
+          <div class="recog-leader-card">
+            <div class="recog-mult teal">16X</div>
+            <div class="recog-mult-label">more likely to receive weekly or daily recognition from managers <span style="font-weight:700;color:var(--teal)">(94% vs. 6%)</span></div>
+          </div>
+          <div class="recog-leader-card">
+            <div class="recog-mult green">9X</div>
+            <div class="recog-mult-label">more likely to receive frequent peer recognition <span style="font-weight:700;color:var(--green)">(95% vs. 10%)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="s4-illus">
+        <img src="images/illus_s4.png" alt="Team celebrating with recognition badges" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ MOTIF GRADIENT ══════ -->
+  <div class="motif-gradient"></div>
+
+  <!-- ══════ FINAL TAKEAWAY ══════ -->
+  <div class="takeaway">
+    <div class="takeaway-inner">
+      <div class="takeaway-text">
+        <h3>
+          <div class="motif-dots">
+            <span class="d-red" style="width:12px;height:12px"></span>
+            <span class="d-yellow" style="width:12px;height:12px"></span>
+            <span class="d-green" style="width:12px;height:12px"></span>
+            <span class="d-teal" style="width:12px;height:12px"></span>
+          </div>
+          Final Key Takeaway
+        </h3>
+        <p>Connection is not just a nice-to-have. It is how culture produces trust, engagement, and results. Organizations that track connection, recognize it when it happens, and show visible leadership consistently perform better than those that don't. When you treat connection like a system rather than a feeling, culture becomes something you can build on, not something you just hope holds together.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ FOOTER ══════ -->
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="footer-logos">
+        <img src="_reference/hr-research-logo.png" alt="HR Research Institute" />
+        <div class="footer-logo-divider"></div>
+        <img src="_reference/motivosity-logo.png" alt="Motivosity" />
+      </div>
+      <div class="footer-text">
+        <div class="footer-label">About the Survey:</div>
+        <div class="footer-body">The HR Research Institute (HRRI) fielded "The State of Workplace Culture and Connection 2025-26" survey in October 2025 in collaboration with Motivosity. We gathered 5,538 total responses from participants located worldwide, though predominantly from North America. Participants span diverse industries, with 80% representing midsize or large organizations.</div>
+      </div>
+    </div>
+    <!-- Bottom motif stripe -->
+    <div class="motif-blocks" style="height:6px;">
+      <span class="m-red"></span>
+      <span class="m-yellow"></span>
+      <span class="m-green"></span>
+      <span class="m-teal"></span>
+    </div>
+  </div>
+
+</div><!-- /infographic -->
+</body>
+</html>

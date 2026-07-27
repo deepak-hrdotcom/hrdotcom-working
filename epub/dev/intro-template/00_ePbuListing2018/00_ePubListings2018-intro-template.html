@@ -1,0 +1,286 @@
+<!-- @format -->
+
+<!-- ============================= start header ================================= -->
+<style>
+  .WebcastBlock_card {
+    width: 100%;
+    height: auto;
+    min-height: 368px;
+    padding: 30px 30px 90px 30px;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #e8ecf7;
+    position: relative;
+    margin-top: 80px;
+  }
+  .WebcastBlock_card .epub_intro_info {
+    font-size: 15px;
+    font-weight: 500;
+    color: #e51069;
+    line-height: 1.6;
+    height: 48px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .WebcastBlock_card > h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2a343e;
+    line-height: 1.4;
+    margin: 20px 0px 15px 0px;
+  }
+  .WebcastBlock_card > h4 > a {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2a343e;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+  }
+  .WebcastBlock_card > h4 > a > span {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .WebcastBlock_card > h4 > a:hover {
+    color: #2680eb;
+    transition: all 0.3s ease;
+  }
+  .viewmore_pdf {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    padding: 0px 30px;
+    border-radius: 0px 0px 15px 15px;
+    background: linear-gradient(135deg, #e8ecf7, #e8ecf7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .viewmore_pdf .vm_link {
+    width: auto;
+    color: #273a8f;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+  .viewmore_pdf .vm_dwpdf {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .viewmore_pdf .vm_dwpdf > a {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    margin: 0px 5px;
+  }
+  .viewmore_pdf .vm_dwpdf > a > svg {
+    display: block;
+    max-width: 32px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    position: relative;
+    z-index: 2;
+  }
+  .viewmore_pdf .vm_dwpdf > a:hover > svg {
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+  }
+  .viewmore_pdf .vm_dwpdf > a > span {
+    display: block;
+    width: 104px;
+    padding: 4px 4px;
+    font-size: 8px;
+    font-weight: 400;
+    color: #fff;
+    background: #000c;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    text-transform: uppercase;
+    transform: scale(0) translate(0px, -30px);
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    text-align: center;
+    transform-origin: center;
+    line-height: 1.2;
+  }
+  .viewmore_pdf .vm_dwpdf > a:hover > span {
+    opacity: 1 !important;
+    transform-origin: center;
+    transform: scale(1) translate(0px, 0px);
+    z-index: 1;
+    transition: all 0.4s ease;
+  }
+  .viewmore_pdf .vm_dwpdf > a[href='Hide'],
+  .viewmore_pdf .vm_dwpdf > a[href='hide'] {
+    display: none !important;
+  }
+
+  .mag_image_wrap {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    min-height: 199px;
+    background: #fff;
+    position: relative;
+    margin-top: -110px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .mag_image_wrap > img {
+    display: block;
+    margin: 0 auto;
+    width: inherit;
+    max-width: 100%;
+    height: 199px;
+    max-height: 199px;
+  }
+  .WebcastBlock_card.rmdwbtn .viewmore_pdf .vm_dwpdf {
+    display: none;
+  }
+  @media screen and (min-width: 992px) {
+    .epdrgnone {
+      padding-right: 0px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <!-- ============================= end header ================================= -->
+    <!-- ============================= start midsection ================================= -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="WebcastBlock_card">
+            <a href="$storyURL" class="mag_image_wrap">$image1</a>
+            <h4><a href="$storyURL" class="epubStoryUrl">$StoryName</a></h4>
+            <div class="epub_intro_info">$var4</div>
+            <div class="viewmore_pdf">
+              <a href="$storyURL" class="vm_link">View Full Magazine</a>
+              <div class="vm_dwpdf">
+                <a href="$var2" target="_blank"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                  >
+                    <g transform="translate(-197 -1484)">
+                      <circle
+                        cx="18"
+                        cy="18"
+                        r="18"
+                        transform="translate(197 1484)"
+                        fill="#0c4878"
+                      />
+                      <g transform="translate(0.031 0.034)">
+                        <path
+                          d="M1.977,8.707v-2.3H.316a.5.5,0,0,1-.457-.7L2.494-.2a.5.5,0,0,1,.914,0L6.042,5.7a.5.5,0,0,1-.456.7H3.923v2.3a.973.973,0,1,1-1.946,0Z"
+                          transform="translate(211.854 1501.874) rotate(-30)"
+                          fill="#fff"
+                        />
+                        <rect
+                          width="1.993"
+                          height="4.982"
+                          rx="0.996"
+                          transform="translate(212.899 1493.726)"
+                          fill="#fff"
+                          opacity="0.6"
+                        />
+                        <rect
+                          width="1.993"
+                          height="4.982"
+                          rx="0.996"
+                          transform="translate(218.575 1495.853) rotate(60)"
+                          fill="#fff"
+                          opacity="0.4"
+                        />
+                        <rect
+                          width="1.993"
+                          height="4.982"
+                          rx="0.996"
+                          transform="translate(212.534 1499.34) rotate(60)"
+                          fill="#fff"
+                        />
+                        <rect
+                          width="1.993"
+                          height="4.982"
+                          rx="0.996"
+                          transform="translate(213.531 1498.344) rotate(120)"
+                          fill="#fff"
+                          opacity="0.8"
+                        />
+                      </g>
+                    </g></svg
+                  ><span style="opacity: 0">Interactive Magazine</span></a
+                ><a href="$var3" target="_blank"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                  >
+                    <g transform="translate(-243 -1484)">
+                      <circle
+                        cx="18"
+                        cy="18"
+                        r="18"
+                        transform="translate(243 1484)"
+                        fill="#ed0f69"
+                      />
+                      <g transform="translate(-62.56 1451.502)">
+                        <path
+                          d="M323.121,51.034a.875.875,0,0,0,1.219,0l4.066-3.941a.875.875,0,0,0-.609-1.5h-2.438V41.133a.875.875,0,0,0-.875-.875h-1.506a.875.875,0,0,0-.875.875v4.456h-2.438a.875.875,0,0,0-.609,1.5Z"
+                          transform="translate(-0.374 2)"
+                          fill="#fff"
+                        />
+                        <rect
+                          width="12.606"
+                          height="3.28"
+                          rx="1.64"
+                          transform="translate(317.257 54.458)"
+                          fill="#fff"
+                          opacity="0.8"
+                        />
+                      </g>
+                    </g></svg
+                  ><span style="opacity: 0">Download PDF</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================= end midsection ================================= -->
+
+    <!-- ============================= start footer ================================= -->
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('.epubStoryUrl').each(function () {
+      $(this).html($(this).html().replace(':', ':<span>'))
+    })
+  })
+</script>
+<!-- ============================= end footer ================================= -->

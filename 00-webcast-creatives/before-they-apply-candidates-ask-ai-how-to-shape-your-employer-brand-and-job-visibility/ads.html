@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webcast Ad Creatives – All Sizes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      overflow-x: auto;
+    }
+    body {
+      background: #d8d8e8;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 48px;
+      min-height: 100vh;
+      min-width: 1280px;
+      padding: 48px 48px 80px 48px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* ─── SIZE LABEL ─────────────────────────────────── */
+    .size-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8888aa;
+      margin-bottom: -36px;
+    }
+
+    /* ─── AD CANVAS ─────────────────────────────────── */
+    .ad {
+      width: 1200px;
+      height: 628px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      /* CollabWORK-inspired soft gradient background */
+      background: linear-gradient(130deg, #ede9ff 0%, #f9e6f3 45%, #e6f0ff 100%);
+
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* ─── TOP ACCENT BAR ─────────────────────────────── */
+    .ad .accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      display: flex;
+      z-index: 10;
+    }
+    .ad .accent-bar span { flex: 1; display: block; }
+
+    /* ─── LEFT PANEL ─────────────────────────────────── */
+    .left {
+      width: 640px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 52px 56px 40px 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* WEBCAST pill + dots */
+    .top-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .webcast-pill {
+      background: #444791;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 999px;
+    }
+    .dot-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .dot-row span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* Headline */
+    .headline-block {
+      flex: 1;
+    }
+    .kicker {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1677BE;
+      letter-spacing: 0.3px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 46px;
+      font-weight: 900;
+      color: #1a1a3a;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+    }
+    h1 .highlight {
+      color: #444791;
+    }
+    .sub {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: #4a4a6a;
+      margin-top: 14px;
+      line-height: 1.45;
+      max-width: 500px;
+    }
+
+    /* Bottom footer row */
+    .footer {
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .datetime {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .dt-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+    .dt-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .btn-cta {
+      background: linear-gradient(90deg, #E51069 0%, #EF4A3D 100%);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 0 32px;
+      height: 52px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(229,16,105,0.35);
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* ─── RIGHT PANEL ─────────────────────────────────── */
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 40px 40px 20px;
+      gap: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* White card containing the portrait + speaker info */
+    .speaker-card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(68,71,145,0.18), 0 4px 16px rgba(0,0,0,0.06);
+      padding: 32px 32px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 340px;
+    }
+
+    /* Portrait – fixed circle so image NEVER breaks */
+    .portrait-ring {
+      width: 196px;
+      height: 196px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 5px solid #444791;
+      box-shadow: 0 0 0 4px rgba(68,71,145,0.12);
+      margin-bottom: 20px;
+    }
+    .portrait-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .s-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #444791;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .s-role {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #555;
+      text-align: center;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    /* Divider line */
+    .card-divider {
+      width: 100%;
+      height: 1px;
+      background: #eee;
+      margin: 20px 0 18px 0;
+    }
+
+    /* Logos inside the card */
+    .logos-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .logos-row img {
+      height: 36px;
+      object-fit: contain;
+      max-width: 110px;
+      display: block;
+    }
+    .logo-sep {
+      width: 1px;
+      height: 28px;
+      background: #ddd;
+      flex-shrink: 0;
+    }
+
+    /* Subtle decorative blob behind the card */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .blob-1 {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(68,71,145,0.10) 0%, transparent 70%);
+      top: 60px;
+      right: 20px;
+    }
+    .blob-2 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(22,119,190,0.09) 0%, transparent 70%);
+      bottom: 40px;
+      right: 120px;
+    }
+
+    /* ─── BOTTOM STRIPE ───────────────────────────────── */
+    .bottom-stripe {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      display: flex;
+      z-index: 10;
+    }
+    .bottom-stripe span { flex: 1; display: block; }
+
+    /* ══════════════════════════════════════════════════
+       728 × 90  LEADERBOARD
+    ══════════════════════════════════════════════════ */
+    .ad-728 {
+      width: 728px;
+      height: 90px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: linear-gradient(130deg, #ede9ff 0%, #f9e6f3 45%, #e6f0ff 100%);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    /* top + bottom 4px stripes */
+    .ad-728 .lb-stripe-top,
+    .ad-728 .lb-stripe-bot {
+      position: absolute;
+      left: 0; width: 100%; height: 4px;
+      display: flex; z-index: 10;
+    }
+    .ad-728 .lb-stripe-top { top: 0; }
+    .ad-728 .lb-stripe-bot { bottom: 0; }
+    .ad-728 .lb-stripe-top span,
+    .ad-728 .lb-stripe-bot span { flex: 1; display: block; }
+    /* left purple edge */
+    .ad-728 .lb-edge {
+      flex-shrink: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(180deg, #444791, #1677BE);
+    }
+    /* speaker avatar */
+    .ad-728 .lb-avatar-wrap {
+      flex-shrink: 0;
+      margin: 0 14px 0 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #444791;
+    }
+    .ad-728 .lb-avatar-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    /* text zone */
+    .ad-728 .lb-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      padding-right: 12px;
+    }
+    .ad-728 .lb-kicker {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: #1677BE;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .ad-728 .lb-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: #1a1a3a;
+      line-height: 1.1;
+      letter-spacing: -0.2px;
+    }
+    .ad-728 .lb-title .lb-hl { color: #444791; }
+    .ad-728 .lb-speaker {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: #666;
+    }
+    /* right action column */
+    .ad-728 .lb-action {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 5px;
+      padding-right: 16px;
+    }
+    .ad-728 .lb-date {
+      font-family: 'Roboto', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: #555;
+      white-space: nowrap;
+      text-align: right;
+      line-height: 1.4;
+    }
+    .ad-728 .lb-cta {
+      background: linear-gradient(90deg, #E51069 0%, #EF4A3D 100%);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 0 18px;
+      height: 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(229,16,105,0.3);
+      flex-shrink: 0;
+    }
+    /* logos inside small white pill */
+    .ad-728 .lb-logos {
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      margin-right: 16px;
+      box-shadow: 0 2px 8px rgba(68,71,145,0.10);
+    }
+    .ad-728 .lb-logos img {
+      height: 22px;
+      object-fit: contain;
+      max-width: 72px;
+      display: block;
+    }
+    .ad-728 .lb-logo-sep {
+      width: 1px; height: 18px;
+      background: #ddd;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════════════
+       300 × 250  MEDIUM RECTANGLE
+    ══════════════════════════════════════════════════ */
+    .ad-300 {
+      width: 300px;
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: linear-gradient(130deg, #ede9ff 0%, #f9e6f3 45%, #e6f0ff 100%);
+      display: flex;
+      flex-direction: column;
+    }
+    /* top stripe */
+    .ad-300 .mr-stripe-top,
+    .ad-300 .mr-stripe-bot {
+      flex-shrink: 0;
+      height: 4px;
+      display: flex;
+    }
+    .ad-300 .mr-stripe-top span,
+    .ad-300 .mr-stripe-bot span { flex: 1; display: block; }
+    /* body */
+    .ad-300 .mr-body {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+    }
+    /* left purple bar */
+    .ad-300 .mr-edge {
+      flex-shrink: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #444791, #1677BE);
+    }
+    /* left text column */
+    .ad-300 .mr-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px 12px 14px 14px;
+      min-width: 0;
+    }
+    .ad-300 .mr-top { display: flex; flex-direction: column; gap: 6px; }
+    .ad-300 .mr-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #444791;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+    .ad-300 .mr-kicker {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5px;
+      font-weight: 600;
+      color: #1677BE;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .ad-300 .mr-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      color: #1a1a3a;
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+    }
+    .ad-300 .mr-title .mr-hl { color: #444791; }
+    .ad-300 .mr-date {
+      font-family: 'Roboto', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      color: #555;
+      line-height: 1.5;
+    }
+    .ad-300 .mr-cta {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(90deg, #E51069 0%, #EF4A3D 100%);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 0 14px;
+      height: 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(229,16,105,0.3);
+      align-self: flex-start;
+    }
+    /* right speaker card */
+    .ad-300 .mr-card {
+      flex-shrink: 0;
+      width: 110px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      gap: 6px;
+      box-shadow: -4px 0 16px rgba(68,71,145,0.08);
+    }
+    .ad-300 .mr-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #444791;
+      flex-shrink: 0;
+    }
+    .ad-300 .mr-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .ad-300 .mr-spk-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      color: #444791;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .ad-300 .mr-spk-role {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 500;
+      color: #777;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .ad-300 .mr-divider {
+      width: 80%;
+      height: 1px;
+      background: #eee;
+    }
+    .ad-300 .mr-logos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .ad-300 .mr-logos img {
+      height: 16px;
+      object-fit: contain;
+      max-width: 88px;
+      display: block;
+    }
+
+    /* Thin left-edge accent */
+    .left-edge {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 5px;
+      background: linear-gradient(180deg, #444791, #1677BE);
+      z-index: 5;
+      border-radius: 0 3px 3px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ad">
+
+    <!-- Top accent bar: HR.com 4-dot motif colors -->
+    <div class="accent-bar">
+      <span style="background:#EF4A3D;"></span>
+      <span style="background:#FDB414;"></span>
+      <span style="background:#94C83D;"></span>
+      <span style="background:#4AC4D6;"></span>
+    </div>
+
+    <!-- Left edge accent -->
+    <div class="left-edge"></div>
+
+    <!-- Decorative blobs (right side) -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- ─── LEFT COLUMN ─── -->
+    <div class="left">
+
+      <div class="top-row">
+        <span class="webcast-pill">Webcast</span>
+        <div class="dot-row">
+          <span style="background:#EF4A3D;"></span>
+          <span style="background:#FDB414;"></span>
+          <span style="background:#94C83D;"></span>
+          <span style="background:#4AC4D6;"></span>
+        </div>
+      </div>
+
+      <div class="headline-block">
+        <div class="kicker">Before They Apply, Candidates Ask AI</div>
+        <h1>How to Shape Your <span class="highlight">Employer Brand</span> and Job Visibility</h1>
+        <div class="sub">Discover how forward-thinking companies stay visible and compelling to today's AI-driven job seekers.</div>
+      </div>
+
+      <div class="footer">
+        <div class="datetime">
+          <span class="dt-item">
+            <!-- calendar icon -->
+            <svg class="dt-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="2.5" width="14" height="12" rx="2" stroke="#444791" stroke-width="1.5"/>
+              <path d="M1 6.5h14" stroke="#444791" stroke-width="1.5"/>
+              <path d="M5 1v3M11 1v3" stroke="#444791" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            March 31, 2026
+          </span>
+          <span class="dt-item">
+            <!-- clock icon -->
+            <svg class="dt-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="6.5" stroke="#444791" stroke-width="1.5"/>
+              <path d="M8 4.5V8.5l3 1.5" stroke="#444791" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            12:30 PM – 1:00 PM ET
+          </span>
+        </div>
+        <a class="btn-cta" href="#">Register — It's Free</a>
+      </div>
+
+    </div>
+
+    <!-- ─── RIGHT COLUMN ─── -->
+    <div class="right">
+      <div class="speaker-card">
+
+        <!-- Circular portrait — contained, never breaks -->
+        <div class="portrait-ring">
+          <img src="images/summer-delany.jpg" alt="Summer Delaney">
+        </div>
+
+        <div class="s-name">Summer Delaney</div>
+        <div class="s-role">Founder and CEO<br>CollabWORK</div>
+
+        <div class="card-divider"></div>
+
+        <!-- Logos inside card -->
+        <div class="logos-row">
+          <img src="images/hrdotcom.jpg" alt="HR.com">
+          <div class="logo-sep"></div>
+          <img src="images/collab-work.jpg" alt="CollabWORK">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom stripe: HR.com 4-dot motif colors -->
+    <div class="bottom-stripe">
+      <span style="background:#EF4A3D;"></span>
+      <span style="background:#FDB414;"></span>
+      <span style="background:#94C83D;"></span>
+      <span style="background:#4AC4D6;"></span>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       728 × 90 — LEADERBOARD
+  ══════════════════════════════════════════════════ -->
+  <p class="size-label">728 × 90 &mdash; Leaderboard Banner</p>
+  <div class="ad-728">
+
+    <!-- top stripe -->
+    <div class="lb-stripe-top">
+      <span style="background:#EF4A3D;"></span>
+      <span style="background:#FDB414;"></span>
+      <span style="background:#94C83D;"></span>
+      <span style="background:#4AC4D6;"></span>
+    </div>
+
+    <!-- left purple edge -->
+    <div class="lb-edge"></div>
+
+    <!-- speaker avatar -->
+    <div class="lb-avatar-wrap">
+      <img src="images/summer-delany.jpg" alt="Summer Delaney">
+    </div>
+
+    <!-- text -->
+    <div class="lb-text">
+      <div class="lb-kicker">Before They Apply, Candidates Ask AI</div>
+      <div class="lb-title">How to Shape Your <span class="lb-hl">Employer Brand</span> and Job Visibility</div>
+      <div class="lb-speaker">Summer Delaney &mdash; Founder &amp; CEO, CollabWORK</div>
+    </div>
+
+    <!-- logos -->
+    <div class="lb-logos">
+      <img src="images/hrdotcom.jpg" alt="HR.com">
+      <div class="lb-logo-sep"></div>
+      <img src="images/collab-work.jpg" alt="CollabWORK">
+    </div>
+
+    <!-- date + CTA -->
+    <div class="lb-action">
+      <div class="lb-date">March 31, 2026<br>12:30 PM – 1:00 PM ET</div>
+      <a class="lb-cta" href="#">Register — It's Free</a>
+    </div>
+
+    <!-- bottom stripe -->
+    <div class="lb-stripe-bot">
+      <span style="background:#EF4A3D;"></span>
+      <span style="background:#FDB414;"></span>
+      <span style="background:#94C83D;"></span>
+      <span style="background:#4AC4D6;"></span>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       300 × 250 — MEDIUM RECTANGLE
+  ══════════════════════════════════════════════════ -->
+  <p class="size-label">300 × 250 &mdash; Medium Rectangle</p>
+  <div class="ad-300">
+
+    <!-- top stripe -->
+    <div class="mr-stripe-top">
+      <span style="background:#EF4A3D;"></span>
+      <span style="background:#FDB414;"></span>
+      <span style="background:#94C83D;"></span>
+      <span style="background:#4AC4D6;"></span>
+    </div>
+
+    <!-- main body -->
+    <div class="mr-body">
+
+      <!-- left purple edge -->
+      <div class="mr-edge"></div>
+
+      <!-- left text column -->
+      <div class="mr-left">
+        <div class="mr-top">
+          <span class="mr-pill">Webcast</span>
+          <div class="mr-kicker">Before They Apply, Candidates Ask AI</div>
+          <div class="mr-title">How to Shape Your <span class="mr-hl">Employer Brand</span> and Job Visibility</div>
+        </div>
+        <div>
+          <div class="mr-date">March 31, 2026<br>12:30 PM – 1:00 PM ET</div>
+          <div style="height:8px;"></div>
+          <a class="mr-cta" href="#">Register — It's Free</a>
+        </div>
+      </div>
+
+      <!-- right white speaker card -->
+      <div class="mr-card">
+        <div class="mr-avatar">
+          <img src="images/summer-delany.jpg" alt="Summer Delaney">
+        </div>
+        <div class="mr-spk-name">Summer<br>Delaney</div>
+        <div class="mr-spk-role">Founder &amp; CEO<br>CollabWORK</div>
+        <div class="mr-divider"></div>
+        <div class="mr-logos">
+          <img src="images/hrdotcom.jpg" alt="HR.com">
+          <img src="images/collab-work.jpg" alt="CollabWORK">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- bottom stripe -->
+    <div class="mr-stripe-bot">
+      <span style="background:#EF4A3D;"></span>
+      <span style="background:#FDB414;"></span>
+      <span style="background:#94C83D;"></span>
+      <span style="background:#4AC4D6;"></span>
+    </div>
+
+  </div>
+
+</body>
+</html>

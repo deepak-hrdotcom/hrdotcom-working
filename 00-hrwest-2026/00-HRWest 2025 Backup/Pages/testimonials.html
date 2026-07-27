@@ -1,0 +1,383 @@
+<!-- HRWest Testimonials -->
+
+<!-- @format -->
+<link href="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr_west_style.css" rel="stylesheet" />
+<style type="text/css">.head {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 20px 0px 10px 0px !important;
+  }
+
+  .cta-block {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .cta-block p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2a343e;
+  }
+  .cta-block p span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(42, 52, 62, 0.7);
+    display: block;
+    margin-top: 10px;
+  }
+
+  @media screen and (min-width: 900px) {
+    .cta-block {
+      justify-content: start;
+      gap: 3rem;
+    }
+  }
+
+  /* title */
+  .title h1 {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 20px 0px 10px 0px;
+  }
+
+  .title h2 {
+    margin: 0;
+  }
+
+  /* end title */
+
+  .hr-west_wrapper {
+    min-height: auto;
+    align-items: end;
+  }
+
+  /* section title */
+  .section-title {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+  .section-title h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+  }
+  .gradient-bar {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .section-title {
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      margin-top: 8rem;
+    }
+    .section-title .gradient-bar {
+      height: 5px;
+      border-radius: 4px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        #00a0df 0%,
+        #232288 27.8%,
+        #e3007e 52.35%,
+        #e51f1f 79.42%,
+        #feed00 100%
+      );
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  /* end section title */
+
+  /* testimoinias */
+  .testimonials {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 't1' 't2' 't3' 't4' 't5' 't6' 't7';
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .testimonials-sponsors {
+    grid-template-areas: 'ts1' 'ts2' 'ts3';
+  }
+
+  .testimonial {
+    border-radius: 0.5rem 50px 0.5rem 0.5rem;
+    padding: 2rem;
+    line-height: 1.5;
+    margin: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    align-content: start;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .testimonial:hover {
+    transform: scale(1.01);
+    box-shadow: rgba(1px);
+    -webkit-box-shadow: 0px 3px 9px 4px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 3px 9px 4px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 3px 9px 4px rgba(0, 0, 0, 0.14);
+    font-weight: 600;
+  }
+
+  .testimonial p {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    margin: 0;
+    line-height: 1.7;
+    margin-top: 5rem;
+  }
+
+  .testimonial .author {
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-weight: 500;
+  }
+  .testimonial::before {
+    content: '';
+    background-image: url('https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/double-quote.svg');
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 40px;
+    height: 30px;
+    background-position: bottom top 20px, right 20px;
+  }
+
+  .t1 {
+    grid-area: t1;
+    background-color: rgba(249, 232, 0, 15%);
+  }
+  .t2 {
+    grid-area: t2;
+    background-color: rgba(0, 146, 75, 15%);
+  }
+  .t3 {
+    grid-area: t3;
+    background-color: rgba(142, 39, 138, 15%);
+  }
+  .t4 {
+    grid-area: t4;
+    background-color: rgba(224, 31, 31, 15%);
+  }
+  .t5 {
+    grid-area: t5;
+    background-color: rgba(249, 232, 0, 15%);
+  }
+  .t6 {
+    grid-area: t6;
+    background-color: rgba(0, 146, 75, 15%);
+  }
+  .t7 {
+    grid-area: t7;
+    background-color: rgba(35, 34, 131, 15%);
+  }
+
+  .ts1 {
+    grid-area: ts1;
+    background-color: rgba(249, 232, 0, 15%);
+  }
+  .ts2 {
+    grid-area: ts2;
+    background-color: rgba(0, 146, 75, 15%);
+  }
+  .ts3 {
+    grid-area: ts3;
+    background-color: rgba(142, 39, 138, 15%);
+  }
+  @media screen and (min-width: 768px) {
+    .testimonials {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 't1 t2' 't3 t4' 't5 t6' 't7 .';
+      margin-top: 5rem;
+    }
+
+    .testimonials-sponsors {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'ts1 ts2' 'ts3 .';
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .testimonials {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: 't1 t2 t3' 't4 t4 t5' 't6 t7 .';
+      gap: 4rem;
+    }
+    .testimonials-sponsors {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: 'ts1 ts2 ts3';
+    }
+  }
+  /* end testimonials */
+
+  /* videos */
+  .videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: masonry;
+    gap: 4rem;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+
+  .video video {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .videos{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: masonry;
+    }
+  }
+  /* end videos */
+</style>
+<!-- @format -->
+<div class="hr-west_container-fluid">
+<div class="hr-west_container">
+<div class="hr-west_wrapper">
+<div class="hr-wrapper_info">
+<div class="hr-west_info"><img alt="HRWest Logo" height="125" src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR_West_Logo.png" width="155" />
+<div class="title">
+<h1>Testimonials</h1>
+
+<h2>Attendee and Sponsor Raves!</h2>
+</div>
+</div>
+<!--<h2>HR Strategy / HR Technology / Talent / Compliance</h2>-->
+
+<div class="cta-block"><a class="hr_custom_btn gradient_btn btn_medium round" href="https://www.hr.com/en/webcasts_events/live_events/hr-west-2025-registration_lt8ybqxq.html" target="_blank">Register Now</a> <a class="hr_custom_btn gradient_btn btn_medium round" href="https://www.hr.com/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" target="_blank">Sponsor Information</a></div>
+
+<p><span>Call-in Reservations:</span>Toll Free: 1-877-901-6632 / Local Phone: 1-506-474-2009</p>
+</div>
+
+<div class="hr-west-banner"><img alt="Two happy female professionals in HRWest conference
+" src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/two-happy-female-hr-professionals-in-hrwest-conference.webp
+" style="max-width: 500px" /></div>
+</div>
+</div>
+</div>
+
+<div class="hr-west_container">
+<div class="section-title">
+<h2>Have You Heard What People Are Saying? ...</h2>
+<span class="gradient-bar"></span></div>
+
+<div class="videos">
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/1h.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/2.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/3h.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/4h.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/5.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/6h.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/7.mp4" type="video/mp4" /></video>
+</div>
+
+<div class="video">
+<video controls=""><source src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/8.mp4" type="video/mp4" /></video>
+</div>
+</div>
+</div>
+
+<div class="hr-west_container">
+<div class="section-title">
+<h2>Attendees Say ...</h2>
+<span class="gradient-bar"></span></div>
+
+<div class="testimonials">
+<article class="testimonial t1">
+<p>I picked up some great practical tips that I can take back to my office and use right away.</p>
+</article>
+
+<article class="testimonial t2">
+<p>Things are ever-evolving, so to be able to attend something like this with like-minded individuals is great.</p>
+</article>
+
+<article class="testimonial t3">
+<p>I think it was very insightful, very informative. It&#39;s good to know that the people who are speaking are experts in this field. There&rsquo;s a lot to gain from that.</p>
+</article>
+
+<article class="testimonial t4">
+<p>I absolutely loved the sponsors at HRWest this year. You talk about the gamut of softwares or products that really impact how to do our jobs easier. Sometimes in HR we&rsquo;re a small team of people and we have to put together all these resources, and I&rsquo;ll tell you the sponsors are full of fantastic ideas that will take our HR work to the next level.</p>
+</article>
+
+<article class="testimonial t5">
+<p>I couldn&rsquo;t be happier to be part of this community and contribute to it, because it is so incredibly important, now more than ever.</p>
+</article>
+
+<article class="testimonial t6">
+<p>The roundtables provided good discussion and collaboration.</p>
+</article>
+
+<article class="testimonial t7">
+<p>Loved the face-to-face interaction with the HR crowd.</p>
+</article>
+</div>
+</div>
+
+<div class="hr-west_container">
+<div class="section-title">
+<h2>Sponsors Say ...</h2>
+<span class="gradient-bar"></span></div>
+
+<div class="testimonials testimonials-sponsors">
+<article class="testimonial ts1">
+<p>My team and I were really well taken care of by the HR.com staff &hellip; We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back.</p>
+
+<p class="author">&nbsp;&mdash; Gregg Ward<br />
+The Center for Respectful Leadership</p>
+</article>
+
+<article class="testimonial ts2">
+<p>It was a really good experience &mdash; met some wonderful people and had amazing conversations.</p>
+
+<p class="author">-Chezuba</p>
+</article>
+
+<article class="testimonial ts3">
+<p>I had a great time at the event. I was able to connect and meet new people, share the value of our software, and join in a couple of sessions myself.</p>
+</article>
+</div>
+</div>
+<!-- title: HRWest HR Conference Location -->

@@ -1,0 +1,1461 @@
+<!-- @format -->
+
+<link
+  href="$public/remoteimages/website-images/2022_siteupdate/Splash_pages/splash.css"
+  media="screen"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  media="screen"
+  href="https://public-cdn.hr.com/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  media="screen"
+  href="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/march_event_2023/css/march_event_together_2023.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  media="screen"
+  href="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr_west_style.css"
+/>
+<style>
+  .sf-nav-main {
+    display: none !important;
+  }
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+  section#intro-header {
+    display: none !important;
+  }
+  footer#footer {
+    display: none !important;
+  }
+  body > a.new-login {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+  }
+  @media screen and (max-width: 600px) {
+    .RoundedStickyMenuNew .btn_large {
+      display: none;
+    }
+    #fb-root {
+      display: none;
+    }
+    body > a.new-login {
+      height: 32px;
+      top: 9px;
+      right: 20px;
+    }
+    body > a.new-login > img {
+      height: 100%;
+    }
+  }
+  .evnt_btnset {
+    gap: 30px !important;
+  }
+  .ev_social > a.chat {
+    display: none;
+  }
+  #content {
+    display: none;
+  }
+  .logo_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .rgs_msg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .rgs_msg > small {
+    line-height: 1.5;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    color: #2a343e;
+  }
+
+  /* May Event Landing page top banner design start here */
+  .evnt_lp_banner {
+    width: 100%;
+    position: relative;
+  }
+  .wht {
+    background: #fff;
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    z-index: 1;
+  }
+  .evnt_lp_info {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .evnt_lp_info .evnt_lp_dls {
+    width: 50%;
+    position: relative;
+    padding: 0 0 50px 0;
+  }
+
+  .evnt_lp_info .evnt_lp_dls > .spkr-info > h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2a343e;
+    line-height: 1.3;
+    margin: 0px 0px 10px 0px;
+  }
+  .evnt_lp_info .evnt_lp_dls > .spkr-info > h4 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #2a343e;
+    line-height: 1.5;
+    margin: 0;
+    text-transform: none;
+    position: relative;
+  }
+  .evnt_lp_info .evnt_lp_dls > .spkr-info > h4::before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 50%;
+    max-width: 150px;
+    background: var(
+      --HR-West-Gradient-1,
+      linear-gradient(
+        90deg,
+        #00a0df -2.97%,
+        #232288 25.65%,
+        #e3007e 50.93%,
+        #e51f1f 78.81%,
+        #feed00 100%
+      )
+    );
+    bottom: -16px;
+    left: 0;
+    border-radius: 10%;
+  }
+
+  .evnt_lp_info .evnt_lp_dls > h4 > small {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .evnt_lp_info .evnt_lp_dls > h4 > span {
+    display: block;
+    font-size: 20px;
+    color: #00ffee;
+  }
+  .evnt_lp_info .evnt_lp_dls > .spkr-info > h5 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #2a343e;
+    line-height: 1.5;
+    text-transform: none;
+  }
+  .evnt_ib_logo.newlp {
+    border-radius: 5px;
+    background: linear-gradient(
+      150deg,
+      #22258a 16.89%,
+      #ae0981 71.66%,
+      #e41344 121.52%
+    );
+    padding: 24px 32px;
+    width: 40%;
+  }
+  .evnt_ib_logo.newlp .evnt_logo_set {
+    border-bottom: 0px solid #fff;
+    padding-bottom: 20px;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 0px;
+  }
+  .evnt_logo_set > .evnt_ls {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .evnt_logo_set > .evnt_ls > div {
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > div > img {
+    max-width: 110px;
+    height: auto;
+  }
+
+  .evnt_logo_set > .evnt_ls > div > small {
+    margin-top: 10px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.4;
+    gap: 5px;
+  }
+  .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > div > .logo_info > span {
+    color: #fff;
+    max-width: 200px;
+    line-height: 1.5;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > div > .logo_info > h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin: 20px 0 0 0;
+  }
+  .loc_head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-left: -30px;
+  }
+  .loc_head > h2 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: none;
+  }
+
+  .loc_head_left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .loc_head_left > h3 {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 32px;
+    font-weight: 500;
+    color: #2a343e;
+    text-transform: none;
+  }
+  .help_footer_wrapper .help_footer_info > h4 {
+    text-transform: none;
+  }
+  .bt_list {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    max-width: 330px;
+    gap: 10%;
+  }
+
+  .bt_list .btl_name {
+    padding-left: 0px;
+    position: relative;
+    min-height: 46px;
+  }
+  .bt_list .btl_name > h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.4;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .spkr_img {
+    display: block;
+    max-width: 180px;
+    border-radius: 60px;
+  }
+  .spkr_img > img {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    margin-bottom: 30px;
+    background: #f5f5f5;
+    border-radius: 15px;
+  }
+  .ev_social {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  .ev_social > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #e8ecf7;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .ev_social > a > svg {
+    fill: #2a343e;
+  }
+
+  .grey {
+    background: #f5f5f5;
+  }
+  .ve_section {
+    width: 100%;
+    height: auto;
+    padding: 0px 60px;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .ve_section::before {
+    height: 100%;
+    width: 4px;
+    background: #2a343e;
+    border-radius: 4px;
+    position: absolute;
+    left: 20px;
+    top: 0%;
+    content: '';
+  }
+
+  .ve_section > h3 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #2a343e;
+    max-width: 800px;
+    margin: 20px 0;
+  }
+
+  .ve_section > p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2a343e;
+    text-align: left;
+    margin: 20px 0;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+
+  .ve_section > span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2a343e;
+    text-align: left;
+    margin: 10px 0;
+  }
+
+  .ve_section > ul {
+    list-style: none;
+    margin: 30px 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  .ve_section > ul > li {
+    font-size: 14px;
+    font-weight: 500;
+    list-style: none;
+    color: #2a343e;
+    padding: 0px 0px 15px 30px;
+    position: relative;
+    background: url($public/remoteimages/website-images/2023_siteupdate/inspire_hrwest_speakers/bullet.svg)
+      top 1px left no-repeat;
+  }
+  .ve_dt {
+    width: 100%;
+    padding-left: 40px;
+    position: relative;
+    margin: 40px 0;
+  }
+
+  .ve_dt > span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a343e;
+  }
+  .ve_dt > svg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .hr_container-fluid {
+    max-width: none !important;
+  }
+  .ev_vote {
+    max-width: 874px;
+    width: 100%;
+
+    background: #00214a;
+    border-radius: 20px;
+    position: relative;
+    margin: 60px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .ev_vote .ev_vote_cont {
+    margin-top: 20px;
+    width: 50%;
+    padding-right: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .vote_img {
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .vote_img > svg {
+    margin-left: 30px;
+  }
+
+  .ev_vote .vote_img > img {
+    margin-bottom: -4px;
+    max-width: 120px;
+    border-radius: 20px 0px 0px 20px;
+  }
+  .ev_vote .ev_vote_cont > h3 {
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 15px 0;
+  }
+  .ev_vote .ev_vote_cont > h4 {
+    font-size: 24px;
+    width: 100%;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 15px 0;
+    text-transform: none;
+  }
+
+  .cta {
+    display: flex;
+    margin: 40px 0px 0 40px;
+    gap: 15px;
+  }
+  .call_fan {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 60px 0 0 0;
+    gap: 20px;
+  }
+  .call_out {
+    background: url(https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/speaker-page/topic-background.svg)
+      top left / contain no-repeat;
+    width: 175px;
+    height: 65px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c353f;
+    padding: 10px;
+    text-align: right;
+  }
+  .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > h3 {
+    font-size: 55px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > h3 > span {
+    display: block;
+    font-size: 32px;
+    color: #fff;
+  }
+  .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > h3 > small {
+    margin-top: 10px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.4;
+    gap: 5px;
+    letter-spacing: normal;
+  }
+  .evnt_ib_logo.newlp .evnt_loc_set {
+    padding-left: 40px;
+  }
+
+  .evnt_grad_card {
+    display: table;
+    background: linear-gradient(45deg, #6decd7, #bee5ff);
+    width: auto;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 30px 40px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2a343e;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+  .clr-box {
+    background: #f5f5f5
+      url(https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/speaker-page/swirly-backgournd.jpg)
+      center bottom no-repeat;
+    background-size: 100%;
+  }
+  .clr-box::after {
+    display: none;
+  }
+  .spkr-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .hrw-spkr-footer-gradient-bar {
+    width: 100%;
+    height: 40px;
+    background: var(
+      --HR-West-Gradient-1,
+      linear-gradient(
+        90deg,
+        #00a0df -2.97%,
+        #232288 25.65%,
+        #e3007e 50.93%,
+        #e51f1f 78.81%,
+        #feed00 100%
+      )
+    );
+  }
+  @media screen and (max-width: 991px) {
+    .evnt_lp_info {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .evnt_lp_info .evnt_lp_dls {
+      width: 100%;
+      padding-right: 0px;
+      text-align: center;
+      order: 2;
+    }
+
+    .evnt_lp_info .evnt_lp_dls > svg {
+      margin-bottom: 20px;
+    }
+    .spkr_img {
+      margin: auto;
+    }
+    .ev_social {
+      justify-content: center;
+    }
+    .evnt_ib_logo.newlp {
+      width: 100%;
+      order: 1;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set {
+      gap: 60px;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > span {
+      max-width: 100%;
+      text-align: center;
+    }
+    .evnt_ib_logo.newlp .evnt_loc_set {
+      margin: 0px 20px;
+    }
+    .ev_vote {
+      margin: 40px 0px 40px 0px;
+    }
+    .evnt_logo_set > .evnt_ls {
+      text-align: left;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > h3::after {
+      display: none;
+    }
+    .bt_list::before {
+      display: none;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set::after {
+      display: none;
+    }
+    .bt_list .btl_name > h4::after {
+      display: none;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set::before {
+      display: none;
+    }
+    .evnt_ib_logo.newlp {
+      padding: 20px;
+    }
+    .loc_head {
+      margin-left: 0;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set > .evnt_ls > div > .logo_info > span {
+      width: 100%;
+      text-align: left;
+    }
+    .bt_list {
+      justify-content: center;
+      width: 100%;
+    }
+    .evnt_lp_info {
+      padding: 30px 0px;
+    }
+    .evnt_lp_info .evnt_lp_dls {
+      padding: 0px;
+      flex-direction: column;
+    }
+    .evnt_lp_info .evnt_lp_dls > .spkr-info > h4::before {
+      display: none;
+    }
+    .evnt_lp_info .evnt_lp_dls > h1 {
+      font-size: 24px;
+    }
+    .ve_section > h3 {
+      font-size: 18px;
+      max-width: 100%;
+      text-align: center;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set {
+      gap: 30px;
+    }
+    .evnt_ib_logo.newlp .evnt_logo_set {
+      margin-bottom: 0px;
+    }
+    .evnt_ib_logo.newlp .evnt_loc_set {
+      margin-top: 30px;
+    }
+    .ve_section::after {
+      display: none;
+    }
+    .ve_section::before {
+      display: none;
+    }
+    .ve_section {
+      padding: 0;
+    }
+    .ev_vote {
+      flex-direction: column;
+      margin: 40px 0;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .ev_vote .ev_vote_cont {
+      width: 100%;
+      align-items: center;
+      padding-right: 0;
+    }
+    .vote_img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .vote_img > img {
+      border-radius: 20px !important;
+    }
+    .cta {
+      margin: auto;
+      justify-content: center;
+    }
+    .ve_dt > span {
+      font-size: 16px;
+    }
+    .call_fan {
+      flex-direction: column;
+      margin: 60px 0 0 0px;
+    }
+    .vote_img > svg {
+      margin-left: 0;
+    }
+    .loc_head_left {
+      margin-left: 0;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+  }
+
+  .sessions-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    justify-content: start;
+  }
+   #hradbtmwrapper {
+    display: none !important;
+  }
+  .FooterBG .container,
+  .FooterMidBG .container {
+    gap: 0 !important;
+  }
+  .header {
+    border: 0 !important;
+    padding-block: 0;
+    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .header::before {
+    display: none !important;
+  }
+
+  /* .editlink {
+    position: absolute;
+    left: 20px;
+  } */
+  .nave {
+    max-height: 80px !important;
+  }
+  @media screen and (min-width: 1118px) {
+    .dropdown__item:hover .dropdown__menu {
+      top: 60px !important;
+    }
+  }
+  .hr-west-head-info {
+    margin-bottom: 12px !important;
+    margin-top: 20px !important;
+  }
+</style>
+
+<div id="fb-root">&nbsp;</div>
+<script>
+  ;(function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0]
+    if (d.getElementById(id)) return
+    js = d.createElement(s)
+    js.id = id
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0'
+    fjs.parentNode.insertBefore(js, fjs)
+  })(document, 'script', 'facebook-jssdk')
+</script>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">
+  lang: en_US
+</script>
+<script type="text/javascript">
+  !(function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0],
+      p = /^http:/.test(d.location) ? 'http' : 'https'
+    if (!d.getElementById(id)) {
+      js = d.createElement(s)
+      js.id = id
+      js.src = p + '://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+    }
+  })(document, 'script', 'twitter-wjs')
+</script>
+<header class="header" id="header">
+  <nav class="nave in-container">
+    <div class="nave__data">
+      <a
+        href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html"
+        class="nave__logo"
+        data-feathr-click-track="true"
+        data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+      >
+        HRWest 2026
+      </a>
+      <div class="separator"></div>
+      <div class="nave__toggle" id="nave-toggle">
+        <svg
+          class="nave__burger"
+          width="25px"
+          height="25px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 18L20 18"
+            stroke="#2a343e"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M4 12L20 12"
+            stroke="#2a343e"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M4 6L20 6"
+            stroke="#2a343e"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <svg
+          class="nave__close"
+          width="25px"
+          height="25px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18"
+              stroke="#2a343e"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!--=============== NAV MENU ===============-->
+    <div class="nave__menu" id="nave-menu">
+      <ul class="nave__list">
+        <li class="dropdown__item">
+          <div class="nave__link">
+            Program
+            <svg
+              class="dropdown__arrow"
+              fill="#2a343e"
+              width="10px"
+              height="10px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 30.021 30.021"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Speakers
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-2025-agenda-listing_m4h79bdy.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                2025 Agenda
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Sponsors
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hr-awards_m1829lxd.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                HR.com Awards
+              </a>
+            </li> -->
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/futurehr-the-ultimate-startup-showdown_ln398wxu.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                FutureHR: The Ultimate Startup Showdown
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/the-hrcom-awards_lne1ek46.html"
+                class="dropdown__link"
+              >
+                The HR.com Awards
+              </a>
+            </li> -->
+          </ul>
+        </li>
+        <li class="dropdown__item">
+          <div class="nave__link">
+            Attend
+            <svg
+              class="dropdown__arrow"
+              fill="#2a343e"
+              width="10px"
+              height="10px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 30.021 30.021"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Attend as Team
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-experiences_lmrcoc0x.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Experiences
+              </a>
+            </li> -->
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Volunteer
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Location
+              </a>
+            </li> -->
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Get Your Employer to Send You to HRWest
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- <li class="dropdown__item">
+          <div class="nave__link">
+            2023 Program
+            <svg
+              class="dropdown__arrow"
+              fill="#2a343e"
+              width="10px"
+              height="10px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 30.021 30.021"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"
+                />
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/2023-speakers_ljco3fo1.html"
+                class="dropdown__link"
+              >
+                2023 Speakers
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/agenda-2023_ljz8l2gh.html"
+                class="dropdown__link"
+              >
+                2023 Agenda
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <li>
+          <a
+            href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html"
+            class="nave__link"
+            data-feathr-click-track="true"
+            data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+            >Why Sponsor/Exhibit</a
+          >
+        </li>
+        <li>
+          <a
+            href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html"
+            class="nave__link"
+            data-feathr-click-track="true"
+            data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+            >Testimonials</a
+          >
+        </li>
+        <!-- <li>
+          <a href="#" class="nave__link">FAQ</a>
+        </li>-->
+        <li class="reg-btn">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            href="https://www.hr.com/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html"
+            onclick="window.location = this.href"
+          >
+            Register Now
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="hr_container-fluid">
+  <div class="evnt_lp_banner clr-box">
+    <div class="hr_container" style="padding-top: 60px">
+      <div class="evnt_lp_info">
+        <div class="evnt_lp_dls" style="display: flex; gap: 20px">
+          <div class="spkr_img">
+            <img
+              src="$speakerImageURL"
+              alt="$speakerName"
+            />
+            <!-- <img src="https://public-cdn.mypeople001.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/Speakers/Yoram-Solomon.jpg" alt="Yoram Soloman">-->
+          </div>
+          <div class="spkr-info">
+            <div class="loc_head_left">
+              <h3>Hi, I am</h3>
+            </div>
+            <!-- loc_head_left closed -->
+
+            <h1>$speakerName</h1>
+            <h4>$speakerPosition, &nbsp; $speakerCompany</h4>
+            <h5>Meet me at <strong>HRWest 2025</strong></h5>
+          </div>
+
+          <!-- <div class="evnt_btnset">
+           <a href="" class="hr_custom_btn gradient_btn btn_large round ">Get My Free Ticket</a>
+          <div class="rgs_msg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+  <path id="Icon_awesome-bell" data-name="Icon awesome-bell" d="M7,16a2,2,0,0,0,2-2H5A2,2,0,0,0,7,16Zm6.731-4.678C13.127,10.673,12,9.7,12,6.5A4.935,4.935,0,0,0,8,1.651V1A1,1,0,1,0,6,1v.651A4.935,4.935,0,0,0,2,6.5C2,9.7.873,10.673.269,11.322A.976.976,0,0,0,0,12a1,1,0,0,0,1,1H13a1,1,0,0,0,1-1,.976.976,0,0,0-.269-.678Z" transform="translate(0)" fill="#e51069"/>
+</svg><small>I have 10 free passes to give away!</small></div>
+
+            
+          </div>-->
+          <!-- <div class="ev_social">
+           
+            <a class="linkedin"
+              ><svg width="14" height="14" viewBox="0 0 448 512">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                ></path></svg
+            ></a>
+            <a class="twitter"
+              ><svg width="14" height="14" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg
+            ></a>
+            <a class="facebook"><svg width="14" height="14" viewBox="0 0 13.3 28.788">
+                <path
+                  d="M590.925,1195.4V1181h4.55l.825-4.863h-5.55v-2.975s-.055-1.85,2.3-1.85h3.65v-4.7h-5.95s-4.6-.187-4.6,5.1c-.05,2.925,0,4.425,0,4.425H583.4V1181h2.875v14.4Z"
+                  transform="translate(-583.4 -1166.612)"
+                ></path></svg
+            ></a>
+
+            <a class="chat"
+              ><svg width="14" height="14" viewBox="0 0 12.681 12.681">
+                <path
+                  d="M14.413,4H4.268A1.272,1.272,0,0,0,3,5.268V16.681l3.593-3.593h7.82a1.272,1.272,0,0,0,1.268-1.268V5.268A1.272,1.272,0,0,0,14.413,4Z"
+                  transform="translate(-3 -4)"
+                /></svg
+            ></a>
+          </div>-->
+        </div>
+        <div id="content"></div>
+        <div class="evnt_ib_logo newlp">
+          <div class="evnt_logo_set">
+            <div class="evnt_ls">
+              <div style="flex-direction: column">
+                <img
+                  src="https://public-cdn.mypeople001.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/speaker-page/hrwest_logo_white.png"
+                  alt="HRWest Logo"
+                  style="max-width: 110px"
+                />
+                <small
+                  ><svg width="24" height="24" viewBox="0 0 72 72">
+                    <path
+                      d="M54.5,62.75h-37A8.26,8.26,0,0,1,9.25,54.5v-32a8.26,8.26,0,0,1,8.25-8.25h3.75V10.5a1.25,1.25,0,0,1,2.5,0v3.75h23.5V10.5a1.25,1.25,0,0,1,2.5,0v3.75H54.5a8.26,8.26,0,0,1,8.25,8.25v32A8.26,8.26,0,0,1,54.5,62.75ZM11.75,30.9V54.5a5.76,5.76,0,0,0,5.75,5.75h37a5.76,5.76,0,0,0,5.75-5.75V30.9Zm0-2.5h48.5V22.5a5.76,5.76,0,0,0-5.75-5.75H49.75V18.5a1.25,1.25,0,0,1-2.5,0V16.75H23.75V18.5a1.25,1.25,0,0,1-2.5,0V16.75H17.5a5.76,5.76,0,0,0-5.75,5.75Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                  Mar 11-12, 2025
+                </small>
+              </div>
+              <h3>
+                HR Evolved:
+                <span>Thriving in Change</span>
+                <small style="text-align: left; display: none;"
+                  ><svg width="22" height="22" viewBox="0 0 72 72">
+                    <path
+                      d="M36,69.75h0a4.8,4.8,0,0,1-3.58-1.64,116,116,0,0,1-14.6-19.86A57.51,57.51,0,0,1,12,34.95a25.31,25.31,0,0,1,.88-17.33c3.5-8,9.47-12.95,17.74-14.73,9-1.95,16.94.48,23.5,7.2a23.94,23.94,0,0,1,6.94,16.52v0a33.26,33.26,0,0,1-2.31,12,71.16,71.16,0,0,1-7.3,14A121.53,121.53,0,0,1,39.59,68.11,4.82,4.82,0,0,1,36,69.75Zm.46-65a25.14,25.14,0,0,0-5.29.58c-7.44,1.6-12.82,6.07-16,13.29-2.1,4.8-2.35,9.92-.76,15.66A55.11,55.11,0,0,0,20,47,113.57,113.57,0,0,0,34.27,66.44a2.32,2.32,0,0,0,1.72.81h0a2.35,2.35,0,0,0,1.74-.82A119,119,0,0,0,49.39,51.33a68.71,68.71,0,0,0,7-13.56,30.86,30.86,0,0,0,2.15-11.12,21.48,21.48,0,0,0-6.22-14.81C47.76,7.12,42.43,4.75,36.46,4.75Zm-.39,32.51a10.68,10.68,0,0,1-7.61-3.13,10.57,10.57,0,0,1-3.11-7.54,10.65,10.65,0,1,1,21.3.05h0A10.66,10.66,0,0,1,36.09,37.26ZM36,18.44h0a8.16,8.16,0,1,0,.1,16.32h0a8.16,8.16,0,0,0,8.07-8.1h0a8.23,8.23,0,0,0-2.43-5.87A8.05,8.05,0,0,0,36,18.44Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                  Oakland Marriott City Center<br />
+                  1001 Broadway, Oakland, CA 94607</small
+                >
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="hr_container-fluid grey">
+  <div class="hr_container">
+    
+    <div class="ev_vote">
+      <div class="vote_img">
+        <svg xmlns="http://www.w3.org/2000/svg" width="68.571" height="48" viewBox="0 0 68.571 48">
+          <path id="Icon_awesome-vote-yea" data-name="Icon awesome-vote-yea"
+            d="M65.143,33.107H58.286v6.857h2.4a.956.956,0,0,1,1.029.857v1.714a.956.956,0,0,1-1.029.857H7.886a.956.956,0,0,1-1.029-.857V40.821a.956.956,0,0,1,1.029-.857h2.4V33.107H3.429A3.425,3.425,0,0,0,0,36.536V46.821A3.425,3.425,0,0,0,3.429,50.25H65.143a3.425,3.425,0,0,0,3.429-3.429V36.536A3.425,3.425,0,0,0,65.143,33.107ZM54.857,39.964V5.711A3.459,3.459,0,0,0,51.4,2.25H17.186a3.468,3.468,0,0,0-3.471,3.461V39.964Zm-32.229-19.5,2.732-2.711a1.142,1.142,0,0,1,1.629.011l4.425,4.457,10.2-10.114a1.142,1.142,0,0,1,1.629.011l2.711,2.732a1.142,1.142,0,0,1-.011,1.629L32.2,30.107a1.142,1.142,0,0,1-1.629-.011l-7.939-8a1.142,1.142,0,0,1,0-1.629Z"
+            fill="#e8ecf7"/>
+        </svg>
+      </div>
+
+      <div class="ev_vote_cont">
+        <h3>Elevate my discussion to a bigger stage</h3>
+        <h4>Vote for me and my topic choice</h4>
+      </div>
+
+      <a class="hr_custom_btn white_line_btn btn_large round mrtp20"
+         target="_blank"
+         href="NULL"
+         data-feathr-click-track="true"
+         data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+         Vote for me
+      </a>
+    </div>
+   
+  </div>
+</div> -->
+
+<!-- <div class="evnt_btnset">
+   ...
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hr_container-fluid grey">
+  <div class="hr_container">-->
+
+<!-- Active content resumes here -->
+
+<div class="sessions-container">
+  <div class="call_fan">
+    <div class="call_out">Topic</div>
+    <div class="ve_section">$speakerSessions</div>
+  </div>
+  <!-- call_fan closed -->
+
+  <div class="cta">
+    <!--<a href="#" class="hr_custom_btn gradient_btn btn_large round">Register for Conference</a>-->
+  </div>
+  <!-- cta closed -->
+</div>
+<!-- wrapper div closed -->
+
+<div class="hr-west_container-fluid etnthelpbg">
+  <div class="hr-west_container">
+    <div class="help_footer_wrapper">
+      <div class="help_footer_info">
+        <h4>Need additional help?</h4>
+        <h6>Contact the HR.com Events Team!</h6>
+
+        <a
+          href="tel:18774726648"
+          target="_blank"
+          data-feathr-click-track="true"
+          data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'
+        >
+          Call: 1-877-472-6648
+        </a>
+
+        <a
+          href="mailto:hrwest@hr.com"
+          target="_blank"
+          data-feathr-click-track="true"
+          data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'
+        >
+          Email: hrwest@hr.com
+        </a>
+      </div>
+      <!-- help_footer_info closed -->
+
+      <div class="help_footer_info foot-grad">
+        <h4>Join HRWest 2025</h4>
+
+        <h6 style="margin-bottom: 0">
+          Mar 11-12, 2025
+          <span style="margin-bottom: 0; display: none;" >
+            <strong>Oakland Marriott City Center</strong><br />
+            1001 Broadway, Oakland, CA 94607
+          </span>
+        </h6>
+
+        <div class="help_btnset">
+          <a
+            class="hr_custom_btn gradient_btn btn_large round"
+            href="/en/webcasts_events/live_events/hrwest/hr-west-2024-registration_lg2jb7k2.html"
+            data-feathr-click-track="true"
+            data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+          >
+            Register Now
+          </a>
+
+          <div class="reg_info" style="display: none">
+            <div class="reg-detail">
+              <p>SPECIAL OFFER: Register for</p>
+              <h6><span>$199</span> until Jan 14, 2024</h6>
+            </div>
+            <!-- reg-detail closed -->
+          </div>
+          <!-- reg_info closed -->
+        </div>
+        <!-- help_btnset closed -->
+      </div>
+      <!-- help_footer_info foot-grad closed -->
+    </div>
+    <!-- help_footer_wrapper closed -->
+  </div>
+  <!-- hr-west_container closed -->
+</div>
+<!-- hr-west_container-fluid closed -->
+
+<div class="hrw-spkr-footer-gradient-bar"></div>
+
+<!-- End Content -->
+
+$designAttribute:splashPagesAffiliateToolkit
+
+<!-- Modal -->
+<div
+  aria-labelledby="myModalLabel2"
+  class="modal right fade"
+  id="myModal-EmailFriends"
+  role="dialog"
+  tabindex="-1"
+>
+  <div class="modal-dialog SideModal modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="text-transform: none">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <label>Send to:</label><br />
+            <textarea
+              class="ep to"
+              id="emails"
+              name="recipients-emails"
+            ></textarea>
+          </div>
+          <!-- column closed -->
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <button
+              class="hr_custom_btn_new gradient_btn_new btn_medium blue mrtp20"
+              type="button"
+            >
+              Previous Email Addresses
+            </button>
+
+            <div class="prev-email-list hidden">&nbsp;</div>
+
+            <p class="Green mrtp20">Valid Email Addresses:</p>
+            <div class="ep valid cf valid-emails">&nbsp;</div>
+          </div>
+          <!-- column closed -->
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr />
+            <label class="Dark">Subject:</label>
+            <div class="ep subject FullWidth" id="message-subject">&nbsp;</div>
+          </div>
+          <!-- column closed -->
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <label>Message:</label>
+            <div class="ep message" id="message-body">&nbsp;</div>
+          </div>
+          <!-- column closed -->
+        </div>
+        <!-- row closed -->
+      </div>
+      <!-- modal-body closed -->
+
+      <div class="modal-footer">
+        <div
+          style="
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            justify-content: flex-start;
+          "
+        >
+          <button
+            class="hr_custom_btn_new gradient_btn_new btn_large red mrtp20 send-emails-btn"
+            type="button"
+          >
+            Send Mail
+          </button>
+
+          <button class="btn mrtp20" data-dismiss="modal" type="button">
+            <span class="hr_custom_btn_new gray_noline_btn btn_large"></span>
+            Close
+          </button>
+        </div>
+        <!-- flex wrapper closed -->
+      </div>
+      <!-- modal-footer closed -->
+    </div>
+    <!-- modal-content closed -->
+  </div>
+  <!-- modal-dialog closed -->
+</div>
+<!-- modal closed -->
+
+<script>
+  var pageUrl = encodeURIComponent(document.URL)
+  $(document).ready(function () {})
+</script>
+<script>
+  setShareLinks()
+  function socialWindow(url) {
+    var left = (screen.width - 570) / 2
+    var top = (screen.height - 570) / 2
+    var params =
+      'menubar=no,toolbar=no,status=no,width=570,height=570,top=' +
+      top +
+      ',left=' +
+      left
+    window.open(url, 'NewWindow', params)
+  }
+
+  function setShareLinks() {
+    var tweet =
+      "We're thrilled to co-locate InspireHR West and EmpowerHR Tech Americas for the first time. It's a perfect pairing to help you maximize your HR potential."
+    var hashtag = 'InspireHRWest, EmpowerHRTechAmericas'
+    var title = '2 Great Events One Awesome Experience.'
+
+    $('.facebook').on('click', function () {
+      url = 'https://www.facebook.com/sharer.php?u=' + pageUrl
+      socialWindow(url)
+    })
+
+    $('.twitter').on('click', function () {
+      url =
+        'https://twitter.com/intent/tweet?url=' +
+        pageUrl +
+        '&text=' +
+        tweet +
+        '&hashtags=' +
+        hashtag
+      socialWindow(url)
+    })
+
+    $('.linkedin').on('click', function () {
+      url =
+        'https://www.linkedin.com/shareArticle?mini=true&url=' +
+        pageUrl +
+        '&title=' +
+        title
+      socialWindow(url)
+    })
+  }
+</script>
+
+$designAttribute:story_edit_Meta $designAttribute:masterD_no_sidebar
+<script src="$public/Certifications/scripts/menu/index.js"></script>
+$designAttribute:quick_login_m1 $designAttribute:helpdesk

@@ -1,0 +1,2926 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style type="text/css">
+      /** @format */
+
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box !important;
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth !important;
+      }
+
+      @font-face {
+        font-family: 'plus_jakarta_sansitalic';
+        src:
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Regular.woff2')
+            format('woff2'),
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Regular.woff')
+            format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'plus_jakarta_sansitalic';
+        src:
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Bold.woff2')
+            format('woff2'),
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-Bold.woff')
+            format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'plus_jakarta_sansitalic';
+        src:
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-ExtraBold.woff2')
+            format('woff2'),
+          url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/PlusJakartaSans-ExtraBold.woff')
+            format('woff');
+        font-weight: 800;
+        font-style: normal;
+      }
+
+      /* fonts */
+      /* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'); */
+      /*  */
+      .page-container {
+        font-size: 100% !important;
+        background: #ffffff;
+        /* colors */
+
+        --clr-orange: #f26b01;
+        --clr-purple: #17012c;
+        --clr-white: #ffffff;
+        --clr-grey: #504e4e;
+        --clr-light-orange: #feddc6;
+        --clr-accent-pink: #e51069;
+        --clr-light-pink: #ff90c6;
+        --clr-mid-grey: #8a9199;
+        --clr-soft-white: #f9fafb;
+        --clr-midnight-blue: #1a2e45;
+        --clr-blush-beige: #f4ede4;
+        --clr-sky-blue: #87bfff;
+        --clr-warm-gold: #e9c46a;
+        --clr-teal-green: #2a9d8f;
+        --clr-steel-grey: #4b5563;
+        --clr-gradient-orange: linear-gradient(
+          90deg,
+          rgba(242, 107, 1, 1) 0%,
+          rgba(242, 159, 92, 1) 100%
+        );
+
+        /* fonts */
+        --plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+        --heading-2: clamp(2rem, 2.5vw, 5rem) !important;
+        --heading-3: clamp(1.8rem, 1.5vw, 2.5rem) !important;
+        --heading-4: clamp(2.5rem, 3.5vw, 4rem) !important;
+        --body: clamp(1.5rem, 1.5vw, 1.7rem) !important;
+
+        /* other vars */
+        --transition: 0.3s ease-in-out all;
+        --borderRadius: 0.25rem;
+        --letterspacing: 1px;
+        --textColor: var(--clr-grey);
+
+        /* box shadow*/
+        --shadow-2:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-3:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-4:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .page-container {
+        font-family: var(--plus-jakarta-sans) !important;
+      }
+      .page-container body,
+      .page-container p,
+      .page-container a,
+      .page-container ul li {
+        font-family: var(--plus-jakarta-sans);
+        font-size: var(--body);
+        line-height: 1.5;
+        color: var(--textColor) !important;
+        margin: 0;
+      }
+
+      .small {
+        font-size: 13px !important;
+      }
+      .page-container a {
+        text-decoration: none;
+      }
+      .page-container ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .page-container .img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        max-height: 100%;
+      }
+
+      /* global classes */
+
+      .button {
+        font-family: var(--plus-jakarta-sans);
+        background: linear-gradient(to right, #ea4397, #f26532);
+        border: 0px solid #fff;
+        color: #fff;
+        box-shadow: none;
+        outline: none;
+        text-decoration: none;
+        padding: 13px 25px;
+        border-radius: 50px;
+        transition: var(--transition);
+        display: inline-block;
+        text-transform: none;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background: linear-gradient(to left, #ea4397, #f26532);
+      }
+
+      .button,
+      .button:visited,
+      .button:active,
+      .button:hover {
+        color: var(--clr-white) !important;
+      }
+
+      /* disabled button */
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* global classes */
+      .section {
+        max-width: 1920px;
+        margin: 0 auto;
+        padding-block: 3rem;
+      }
+
+      .section-center {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 90vw;
+      }
+
+      @media screen and (min-width: 992px) {
+        .section {
+          padding-block: 5rem;
+        }
+      }
+
+      @media screen and (min-width: 1720px) {
+        .section-center {
+          max-width: 1350px;
+        }
+      }
+
+      .rainbow-bar {
+        height: 30px;
+        background: linear-gradient(
+          270deg,
+          #4ac3d5 0%,
+          #94c83f 31.58%,
+          #fab416 67.8%,
+          #ef4a3c 100%
+        );
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        border-radius: var(--radius);
+      }
+
+      .blue-gradient {
+        background: rgb(111, 67, 214);
+        background: linear-gradient(
+          263deg,
+          rgba(111, 67, 214, 1) 0%,
+          rgba(145, 39, 143, 1) 100%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      /* typography */
+      .page-container h1,
+      .page-container h2,
+      .page-container h3,
+      .page-container h4,
+      .page-container h5,
+      .page-container h6,
+      .page-container li,
+      .page-container p,
+      .page-container button,
+      .page-container a {
+        font-family: var(--plus-jakarta-sans) !important;
+        margin: 0;
+        padding: 0;
+        text-transform: none;
+      }
+
+      .heading-2 {
+        font-family: var(--plus-jakarta-sans);
+        font-size: var(--heading-2);
+        color: var(--clr-purple) !important;
+        line-height: 1.3;
+        margin: 0;
+        font-weight: 800;
+      }
+
+      .heading-3 {
+        font-family: var(--plus-jakarta-sans);
+        font-size: var(--heading-3);
+
+        color: var(--clr-purple) !important;
+        line-height: 1.3;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .heading-4 {
+        font-family: var(--plus-jakarta-sans);
+        font-size: var(--heading-4);
+        color: var(--clr-purple) !important;
+        line-height: 1.3;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .custom-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .custom-list li {
+        line-height: 1.3;
+        position: relative;
+        margin-left: 2rem !important;
+      }
+      .custom-list li::before {
+        position: absolute;
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: var(--clr-gradient-orange);
+        top: 5px;
+        left: -2rem;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .gradient-fill {
+        background: var(--clr-gradient-orange);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .button {
+        color: var(--clr-white) !important;
+      }
+
+      /* end global classes */
+
+      /* =================
+Hero Section
+================== */
+
+      .hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/diverse-leaders-discussion.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        padding-block: 6rem 4rem;
+      }
+
+      .hero-center * {
+        color: var(--clr-white) !important;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-top: 3rem !important;
+      }
+
+      /* LEFT CONTENT */
+      .hero-content {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-title {
+        font-size: clamp(4rem, 5vw, 8rem);
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .hero-title span {
+        color: var(--clr-orange) !important;
+      }
+
+      .hero-sub-content {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .cta-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .button-hero {
+        background: var(--clr-white) !important;
+        color: var(--clr-orange) !important;
+        font-weight: bold;
+        padding: 1rem 2rem !important;
+        font-size: clamp(1.5rem, 1.1vw, 3rem) !important;
+        margin-bottom: 2rem !important;
+      }
+
+      .button-hero:hover {
+        background: var(--clr-orange) !important;
+        color: var(--clr-white) !important;
+      }
+
+      .img-cta-arrow {
+        max-width: 40px;
+        display: none;
+      }
+
+      /* RIGHT VIDEO */
+      .hero-video {
+        width: 100%;
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* LOGO */
+      .img-logo {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 140px;
+        z-index: 10;
+      }
+
+      /* =================
+Desktop
+================== */
+      @media screen and (min-width: 768px) {
+        .hero-grid {
+          grid-template-columns: 3fr 2fr;
+          gap: 4rem;
+        }
+
+        .hero-content {
+          text-align: left;
+        }
+
+        .cta-container {
+          justify-content: flex-start;
+        }
+
+        .img-logo {
+          left: 4rem;
+          transform: none;
+          max-width: 160px;
+        }
+      }
+
+      .section-orange {
+        padding: 0;
+        position: relative;
+      }
+
+      .orange-center {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/orange-bg.webp')
+          no-repeat center/cover;
+        padding-block: 1rem;
+        text-align: center;
+        border-radius: 1rem;
+        text-align: center;
+        color: var(--clr-white) !important;
+        margin-top: -3rem;
+        z-index: 10;
+        max-width: 900px;
+      }
+
+      .orange-center .heading-3 {
+        color: var(--clr-white) !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .orange-center {
+          padding-block: 4rem;
+        }
+      }
+
+      /* ============
+what is ten section
+============== */
+
+      .two-third-section {
+        padding-top: 5rem;
+      }
+
+      .two-third-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 570px;
+      }
+
+      .two-third-title-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .img-four-circles {
+        max-width: 70px;
+      }
+
+      .img-right {
+        display: none !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .img-right {
+          display: block !important;
+        }
+        .two-third-center {
+          display: grid;
+          grid-template-columns: 3fr 2fr;
+          align-items: center;
+          justify-items: center;
+          justify-content: center;
+        }
+        /* .what-is-ten-section {
+    padding-top: 0;
+  } */
+      }
+
+      /* ten blocks */
+      .what-is-ten-blocks-center {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+      .single-block {
+        background: var(--clr-light-orange);
+        padding: 2rem 4rem;
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        align-items: start;
+        align-content: start;
+      }
+
+      .single-block-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .img-icon {
+        max-width: 80px;
+      }
+
+      /* ============
+how ten works
+============== */
+
+      .how-ten-works-section {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/orange-blurred-bg.webp')
+          no-repeat center/cover;
+      }
+
+      .how-ten-works-title-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .how-ten-works-blocks {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'b1' 'b2' 'b3' 'b4' 'b5' 'b6';
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .how-ten-works-block {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        background: var(--clr-white);
+        border-radius: 1rem;
+        overflow: hidden;
+        align-items: center;
+        align-content: center;
+      }
+
+      .how-ten-works-block:nth-child(1) img {
+        display: none !important;
+      }
+      .how-ten-works-block:nth-child(1) {
+        grid-area: b1;
+        grid-template-columns: 1fr;
+      }
+      .how-ten-works-block:nth-child(2) {
+        grid-area: b2;
+      }
+      .how-ten-works-block:nth-child(3) {
+        grid-area: b3;
+      }
+      .how-ten-works-block:nth-child(4) {
+        grid-area: b4;
+      }
+      .how-ten-works-block:nth-child(5) {
+        grid-area: b5;
+      }
+      .how-ten-works-block:nth-child(6) {
+        grid-area: b6;
+      }
+
+      .how-ten-works-info {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .img-how-ten-works {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+      }
+
+      @media screen and (min-width: 768px) {
+        .how-ten-works-blocks {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas: 'b1 b1 b1 b1 b1 b2 b2 b2' 'b3 b3 b3 b3 b4 b4 b4 b4' 'b5 b5 b5 b5 b6 b6 b6 b6';
+        }
+      }
+
+      /* who should apply */
+      .who-should-apply-section {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/who-should-apply-sec-bg.webp')
+          no-repeat center/cover;
+      }
+
+      .who-should-apply-center {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .who-should-apply-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .who-should-apply-center .custom-list {
+        margin-top: 1rem;
+      }
+
+      .who-should-apply-center .custom-list li,
+      .custom-list li a {
+        font-weight: 800 !important;
+        color: var(--clr-purple) !important;
+      }
+
+      .custom-list li a:hover {
+        text-decoration: underline !important;
+      }
+
+      .button-who-should-apply {
+        background: var(--clr-orange) !important;
+        color: var(--clr-white) !important;
+      }
+      .button-who-should-apply:hover {
+        background: var(--clr-purple) !important;
+      }
+      .img-who-should-apply {
+        display: none !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .who-should-apply-center {
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          justify-content: center;
+          justify-items: center;
+        }
+        .img-who-should-apply {
+          display: block !important;
+          max-width: 450px;
+        }
+      }
+
+      /* ten members */
+      .ten-members-section {
+        background: var(--clr-purple);
+      }
+      @media screen and (min-width: 1200px) {
+        .ten-members-section {
+          position: relative;
+          background-image:
+            url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/top-circles.webp'),
+            url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/bottom-circles.webp');
+          background-position:
+            top 0rem left 0rem,
+            bottom 0rem right 0rem;
+          background-repeat: no-repeat;
+          background-size: auto;
+        }
+      }
+
+      .ten-members-section h2,
+      .ten-members-list-item {
+        color: var(--clr-white) !important;
+      }
+
+      /* leaders transition */
+      .leaders-transition-center {
+        margin-top: 0;
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .leaders-transition-center p,
+      .leaders-transition-center .heading-3 {
+        color: var(--clr-white) !important;
+      }
+      .leaders-transition-center .heading-3 {
+        font-weight: 800 !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .leaders-transition-center {
+          padding: 3rem 5rem;
+        }
+      }
+
+      /* price */
+      .price-section {
+        padding-top: 0;
+      }
+      .price-center {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        justify-content: center;
+        justify-items: center;
+      }
+      .price-title {
+        text-align: center;
+      }
+      .price {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        justify-content: center;
+        justify-items: center;
+        border: 2px solid var(--clr-purple);
+        padding: 2rem 3rem;
+        border-radius: 1rem;
+        text-align: center;
+        min-width: 270px;
+      }
+      .price-orange {
+        border-color: var(--clr-orange) !important;
+      }
+      .price-orange .heading-2 {
+        color: var(--clr-orange) !important;
+      }
+      .img-price {
+        max-width: 200px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .price-title {
+          text-align: left;
+          max-width: 400px;
+        }
+        .price-center {
+          grid-template-columns: 2fr 1fr 1fr;
+          align-items: center;
+        }
+      }
+
+      @media screen and (min-width: 1712px) {
+        .price-title {
+          text-align: left;
+          max-width: 500px;
+        }
+      }
+
+      /* why-apply now */
+      .why-apply-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 550px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+      }
+      .why-apply-info p {
+        color: var(--clr-white) !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .why-apply-info {
+          justify-content: start;
+          justify-items: start;
+          text-align: left;
+        }
+      }
+
+      /* lead form css */
+      .box li {
+        font-family: 'Roboto', sans-serif !important;
+        list-style-type: disc !important;
+      }
+
+      /* =========================================================================================================
+====================================TEN CHRO==============================================================
+========================================================================================================== */
+
+      #chro-page-container p {
+        color: var(--clr-steel-grey) !important;
+      }
+
+      #chro-page-container h2,
+      #chro-page-container h3,
+      #chro-page-container h4,
+      #chro-page-container h5,
+      #chro-page-container h6 {
+        color: var(--clr-midnight-blue) !important;
+        font-weight: bold !important;
+      }
+
+      #chro-page-container .heading-2 span {
+        color: var(--clr-teal-green);
+      }
+      /* hero section */
+      .chro-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ten-network-hero-image-executive-meeting.webp');
+        padding-top: 2rem;
+      }
+
+      .chro-hero-center {
+        margin-block: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .chro-nav-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'chro-nav-items' 'chro-nav-text';
+        justify-content: center;
+        justify-items: center;
+        gap: 2rem;
+        width: 100%;
+        /* margin-top: -2rem; */
+        align-items: start;
+      }
+
+      @media screen and (min-width: 768px) {
+        .chro-nav-container {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'chro-nav-text chro-nav-items';
+        }
+        .chro-nav-items {
+          justify-self: end;
+          justify-items: start;
+          justify-content: start;
+        }
+        .chro-nav-text {
+          justify-items: start;
+          justify-self: start;
+        }
+      }
+
+      .chro-nav-text {
+        grid-area: chro-nav-text;
+        color: var(--clr-blush-beige);
+        font-size: clamp(2rem, 2vw, 4rem);
+        font-weight: 600;
+      }
+      .chro-nav-text span {
+        color: var(--clr-warm-gold) !important;
+      }
+      .chro-nav-items {
+        grid-area: chro-nav-items;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .chro-nav-items li a {
+        background: var(--clr-warm-gold);
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        color: var(--clr-midnight-blue) !important;
+        transition: var(--transition);
+        font-size: 1.5rem;
+      }
+      .chro-nav-items li a:hover {
+        background: var(--clr-sky-blue);
+        color: var(--clr-soft-white) !important;
+      }
+      .chro-nav-items li a.active {
+        background: var(--clr-teal-green) !important;
+        color: var(--clr-soft-white) !important;
+      }
+
+      .chro-hero-title {
+        color: var(--clr-blush-beige) !important;
+        font-weight: 700 !important;
+        font-size: clamp(4rem, 10vw, 15rem) !important;
+      }
+
+      .chro-hero-title span {
+        color: var(--clr-soft-white) !important;
+        display: block;
+        font-size: clamp(2rem, 6vw, 4rem) !important;
+        font-weight: 500 !important;
+        margin-bottom: 1rem !important;
+        margin-left: -0.5rem;
+      }
+
+      .button-hero-chro {
+        background-color: var(--clr-teal-green) !important;
+        color: var(--clr-soft-white) !important;
+        font-size: clamp(2rem, 1.5vw, 3.5rem) !important;
+      }
+
+      .button-hero-chro:hover {
+        background-color: var(--clr-sky-blue) !important;
+        color: var(--clr-midnight-blue) !important;
+      }
+
+      .chro-hero-content {
+        padding-block: 5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media screen and (min-width: 992px) {
+        .chro-hero-section {
+          /* min-height: 70vh; */
+          display: grid;
+          padding-top: 6rem;
+          /* padding-bottom: 8rem; */
+        }
+        .chro-hero-content {
+          padding-block: 5rem;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+
+      /* why join */
+      .why-join-section {
+        padding-block: 6rem;
+      }
+      .why-join-blocks .single-block {
+        background: var(--clr-soft-white);
+      }
+
+      .why-join-blocks img {
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 992px) {
+        .why-join-blocks {
+          grid-template-columns: 2fr 3fr 2fr;
+        }
+        .why-join-blocks .single-block {
+          gap: 3rem;
+          padding: 4rem;
+        }
+      }
+
+      /* section highlighted */
+      .section-highlighted {
+        background-color: var(--clr-teal-green);
+        padding-block: 3rem;
+      }
+
+      .section-highlighted-heading {
+        text-align: center;
+        color: var(--clr-soft-white) !important;
+      }
+
+      /* how ten works chro */
+      .how-ten-works-section-chro {
+        background-image: none;
+      }
+      .how-ten-works-blocks-chro {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+      .how-ten-works-block-chro {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        background: var(--clr-white);
+        border-radius: 1rem;
+        overflow: hidden;
+        align-items: center;
+        align-content: center;
+        background-color: var(--clr-soft-white);
+      }
+
+      @media screen and (min-width: 768px) {
+        .how-ten-works-blocks-chro {
+          grid-template-columns: 1fr 1fr;
+          margin-top: 5rem;
+        }
+      }
+
+      /* local chapters */
+
+      .chapter-region {
+        background: var(--clr-soft-white);
+        padding: 3rem;
+        margin-top: 3rem;
+        position: relative;
+      }
+
+      .region-label-img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+      }
+
+      .region-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        position: relative;
+
+        gap: 3rem;
+        /* max-width: 1000px; */
+        margin: 0 auto;
+      }
+      .region-content-us {
+        grid-template-areas: 'map-us' 'cl-us';
+      }
+      .region-content-can {
+        grid-template-areas: 'map-can' 'cl-can';
+      }
+
+      .chapter-name {
+        color: var(--clr-midnight-blue) !important;
+        font-weight: bold;
+      }
+      @media screen and (min-width: 992px) {
+        .chapter-region {
+          padding: 6rem;
+          padding-block: 2rem;
+        }
+        .region-content {
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          align-content: center;
+          gap: 2rem;
+        }
+        .region-content-us {
+          grid-template-areas: 'cl-us map-us';
+        }
+        .region-content-can {
+          grid-template-areas: 'cl-can map-can';
+        }
+        /* .chapter-list li {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  } */
+      }
+
+      .chapter-list-usa {
+        grid-area: cl-us;
+      }
+      .chapter-list-can {
+        grid-area: cl-can;
+      }
+      .img-map-usa {
+        grid-area: map-us;
+      }
+      .img-map-cana {
+        grid-area: map-can;
+      }
+
+      .chapter-list ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        /* max-height: 450px;
+  overflow-y: auto;
+  padding-right: 2rem; 
+  scrollbar-width: thin;
+   scrollbar-color: var(--clr-teal-green) var(--clr-white); */
+      }
+
+      .usa-chapters h3,
+      .canada-chapters h3 {
+        margin-bottom: 2rem;
+      }
+
+      /* .chapter-list-usa ul::-webkit-scrollbar {
+  width: 14px;
+}
+
+.chapter-list-usa ul::-webkit-scrollbar-track {
+  background: var(--clr-white);
+}
+
+.chapter-list-usa ul::-webkit-scrollbar-thumb {
+  background-color:var(--clr-teal-green);
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+.chapter-list-usa ul::-webkit-scrollbar-thumb:vertical {
+  height: 40px; 
+} */
+
+      /* .chapter-list li {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+} */
+
+      /* .chapter-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+} */
+
+      .chapter-list-na {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        .chapter-list-na {
+          grid-template-columns: 1fr 1fr;
+          justify-content: start;
+          align-items: start;
+        }
+      }
+
+      .chapter-list li button {
+        background-color: transparent !important;
+        border: transparent !important;
+        color: var(--textColor) !important;
+      }
+
+      .btn-apply {
+        display: inline-block;
+        background: var(--clr-teal-green);
+        min-width: 150px;
+        padding: 1rem 0.75rem !important;
+        color: var(--clr-soft-white) !important;
+        text-align: center;
+        font-size: 1.5rem;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+      .btn-waitlist {
+        background: var(--clr-mid-grey);
+      }
+
+      .btn-apply:hover {
+        background: var(--clr-warm-gold) !important;
+      }
+
+      /* express intrest */
+      .btn-interest {
+        text-align: center;
+        background: var(--clr-teal-green) !important;
+        color: var(--clr-soft-white) !important;
+        padding: 1rem 2rem !important;
+        border-radius: 3rem;
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 3rem;
+        font-weight: bold !important;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn-interest:hover {
+        background-color: var(--clr-warm-gold) !important;
+      }
+
+      /* special offer */
+      .special-offer-center {
+        background: var(--clr-midnight-blue);
+        padding: 4rem;
+        max-width: 1000px;
+        border-radius: 1rem;
+      }
+
+      .btn-special-offer {
+        background-color: var(--clr-warm-gold) !important;
+      }
+
+      .btn-special-offer:hover {
+        background-color: var(--clr-teal-green) !important;
+      }
+
+      @media screen and (min-width: 992px) {
+        .section-special-offer {
+          padding-block: 8rem;
+        }
+      }
+
+      .chapter-list ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .chapter-list li {
+        margin-bottom: 0.5em;
+      }
+      .chapter-list button {
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: #003366;
+        cursor: pointer;
+        position: relative;
+        padding-left: 1.5em;
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease;
+        text-align: left;
+        text-decoration: none;
+      }
+      .chapter-list button::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--clr-sky-blue);
+        opacity: 0.6;
+        font-size: 0.9em;
+        transition: opacity 0.2s ease;
+      }
+      .chapter-list button:hover,
+      .chapter-list button:focus {
+        color: var(--clr-sky-blue);
+        background-color: rgba(0, 85, 165, 0.1);
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      .chapter-list button:hover::before,
+      .chapter-list button:focus::before {
+        opacity: 1;
+      }
+      .chapter-list button:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 85, 165, 0.4);
+      }
+      .usa-chapters h3,
+      .canada-chapters h3 {
+        margin-bottom: 0.5em;
+      }
+
+      .map-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 650px; /* Adjust as needed */
+      }
+
+      .map-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .city-dots-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .city-circle {
+        position: absolute;
+        width: clamp(6px, 1.8vw, 8px);
+        height: clamp(6px, 1.8vw, 8px);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+        transition: transform 0.2s ease;
+      }
+
+      .city-circle.apply {
+        background-color: #2aae9f;
+      }
+
+      .city-circle.waitlist {
+        background-color: #999;
+      }
+
+      .city-circle::after {
+        content: attr(data-city);
+        position: absolute;
+        bottom: 130%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        font-size: clamp(10px, 2vw, 12px);
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .city-circle:hover::after {
+        opacity: 1;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(42, 174, 159, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(42, 174, 159, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(42, 174, 159, 0);
+        }
+      }
+
+      /* =========================two categories============================== */
+      .two-categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 5rem;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .two-category {
+        display: grid;
+        grid-template-columns: auto 2fr;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        background: var(--clr-blush-beige);
+        padding: 3rem 4rem;
+        border-radius: 1rem;
+      }
+
+      .category-img {
+        max-height: 75px;
+      }
+
+      .two-category:first-child {
+        background: var(--clr-warm-gold);
+      }
+
+      @media screen and (min-width: 768px) {
+        .two-categories {
+          grid-template-columns: 1fr 1fr;
+        }
+        .category-img {
+          min-height: 104px;
+        }
+      }
+
+      /* ==============================
+   TEN Memberships For Organizations
+   MOBILE-FIRST GRID
+   ============================== */
+
+      /* â€” Container & Background â€” */
+      .ten-categories-section {
+        /* background-color: var(--clr-teal-green); */
+        color: var(--clr-white);
+        border-radius: 0.5rem;
+      }
+
+      .ten-categories-center {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        background: var(--clr-teal-green);
+        padding-block: 5rem;
+        margin-top: 3rem;
+        border-radius: 1rem;
+      }
+
+      /* â€” Headings & Subhead â€” */
+      .ten-heading {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--clr-white) !important;
+      }
+
+      .ten-subheading {
+        font-size: 0.9rem;
+        margin: 0.5rem 0 1rem;
+        opacity: 0.9;
+        color: var(--clr-white) !important;
+      }
+
+      /* â€” Star Rating â€” */
+      .ten-rating {
+        margin-block: 2rem;
+      }
+      .ten-rating .star {
+        color: var(--clr-warm-gold);
+        font-size: 2.5rem;
+        margin: 0 0.2rem;
+      }
+
+      /* â€” Section Title â€” */
+      .categories-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--clr-white) !important;
+      }
+
+      /* â€” Base Grid (mobile): 1 col â€” */
+      .categories-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem 1rem;
+        margin: 1.5rem auto;
+        max-width: 100%;
+        justify-items: center;
+      }
+
+      /* â€” Pill styling â€” */
+      .category-item {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        max-width: 320px;
+        padding: 0.5rem 1rem;
+        background-color: #dcf6f0;
+        color: #00403f;
+        font-weight: 600;
+        border-radius: 0.25rem;
+        white-space: nowrap;
+      }
+      .category-item .dot {
+        flex-shrink: 0;
+        width: 0.75rem;
+        height: 0.75rem;
+        margin-right: 0.5rem;
+        background-color: var(--clr-warm-gold);
+        border-radius: 50%;
+      }
+
+      .category-item a {
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .category-item a:hover {
+        text-decoration: underline;
+      }
+
+      .category-item a.disabled {
+        /* color: #888; */
+        /* text-decoration: underline dotted; */
+        pointer-events: none;
+        cursor: not-allowed;
+        /* background-color: #d7f0ec;  */
+      }
+
+      /* â€” Tablet (â‰¥768px): 2 equal cols â€” */
+      @media (min-width: 768px) {
+        .categories-list {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 700px;
+          justify-items: start;
+        }
+        .category-item {
+          justify-content: center;
+        }
+      }
+
+      /* â€” Desktop (â‰¥992px): 6-unit grid with 1-2-3 / 1-2-3 spans â€” */
+      @media (min-width: 992px) {
+        .categories-list {
+          grid-template-columns: repeat(6, 1fr);
+          gap: 0.75rem 1rem;
+          max-width: 900px;
+          justify-items: start;
+        }
+        .category-item {
+          justify-content: flex-start;
+          max-width: none;
+        }
+        /* 1-2-3 on row one */
+        .category-item:nth-child(1) {
+          grid-column: span 1;
+        }
+        .category-item:nth-child(2) {
+          grid-column: span 2;
+        }
+        .category-item:nth-child(3) {
+          grid-column: span 3;
+        }
+        /* 1-2-3 on row two */
+        .category-item:nth-child(4) {
+          grid-column: span 1;
+        }
+        .category-item:nth-child(5) {
+          grid-column: span 2;
+        }
+        .category-item:nth-child(6) {
+          grid-column: span 3;
+        }
+      }
+
+      .btn-ten-organizations {
+        background: var(--clr-midnight-blue) !important;
+      }
+
+      .btn-ten-organizations:hover {
+        background: var(--clr-warm-gold) !important;
+      }
+
+      /* chro price section =================================================================================*/
+      .chro-price-section {
+        padding-block: 8rem;
+      }
+
+      .chro-price-section .price:nth-child(2) {
+        background: var(--clr-blush-beige) !important;
+        border: none;
+      }
+
+      .chro-price-section .price:nth-child(3) {
+        background: var(--clr-warm-gold) !important;
+        border: none;
+      }
+
+      .category-page-footer-section {
+        background: var(--clr-teal-green);
+        padding-block: 0 !important;
+        padding-block: 3rem !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .category-page-footer-section {
+          padding-top: 3rem !important;
+          padding-bottom: 0 !important;
+        }
+      }
+
+      .category-page-footer-section h2 {
+        color: var(--clr-white) !important;
+      }
+      .btn-apply-category-page {
+        font-size: clamp(1.5rem, 2vw, 2rem) !important;
+        background: var(--clr-midnight-blue) !important;
+      }
+      .btn-apply-category-page:hover {
+        background: var(--clr-warm-gold) !important;
+      }
+
+      .category-page-cta-container {
+        display: block !important;
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================NEXT GEN CHROS==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .nextgen-chro-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/nextgen-chro-hero-image.webp');
+      }
+
+      .nextgen-chro-title {
+        font-size: clamp(4rem, 10vw, 9rem) !important;
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================TA EMPLOYER BRAND LEADERS =================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .ta-employer-branding-leaders-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ta-employer-branding-hero-image.webp');
+      }
+
+      .ta-employer-branding-leaders-hero-title {
+        font-size: clamp(4rem, 10vw, 7rem) !important;
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================DEI LEADERS==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .dei-leaders-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/dei-leaders-hero-image.webp');
+      }
+
+      .dei-leaders-hero-title {
+        font-size: clamp(4rem, 10vw, 9rem) !important;
+      }
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================VP PAYROLL==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .vp-payroll-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/vp-payroll-hero-image.webp');
+      }
+
+      .vp-payroll-title {
+        font-size: clamp(4rem, 10vw, 9rem) !important;
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================VP PAYROLL==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .wfp-talent-leaders-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/wfp-hr-leaders-hero-image.webp');
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================TEN ORGANIZATION MEMBERSHIPL==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .org-membership-hero-section {
+        background-image: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ten-orgnaizations-page-hero-img.webp');
+      }
+
+      @media screen and (min-width: 992px) {
+        .org-membership-why-join-blocks {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      .org-membership-why-join-blocks .single-block {
+        background: var(--clr-blush-beige) !important;
+      }
+
+      .how-ten-works-section-org-membership {
+        background: var(--clr-teal-green) !important;
+      }
+
+      .org-membership-chapter-list li button {
+        pointer-events: none !important;
+      }
+      .how-ten-works-title-container-org-membership * {
+        color: var(--clr-white) !important;
+      }
+
+      .category-page-footer-para a {
+        color: #ffffff !important;
+      }
+      .category-page-footer-para a:hover {
+        text-decoration: underline !important;
+      }
+
+      .om-membership-section {
+        padding-top: 0;
+      }
+      .om-membership-center {
+        background: var(--clr-warm-gold);
+        max-width: 950px;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 2rem;
+      }
+
+      .om-membership-content {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      .how-ten-works-center ul li:before {
+        background: var(--clr-warm-gold) !important;
+      }
+
+      /* ten groups */
+      .ten-groups {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin: 0 auto;
+        margin-top: 3rem;
+        justify-content: center;
+        max-width: 1170px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .ten-groups {
+          grid-template-columns: 1fr 1fr;
+          gap: 5rem;
+        }
+      }
+
+      .ten-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--clr-soft-white);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: var(--transition);
+        box-shadow: var(--shadow-2);
+      }
+
+      .ten-group:hover {
+        transform: scale(1.015);
+        box-shadow: var(--shadow-4);
+      }
+
+      .ten-group-title {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        height: 125px;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        justify-self: stretch;
+        justify-items: center;
+      }
+
+      .ten-group-title h3 {
+        color: var(--clr-white) !important;
+        text-align: center !important;
+      }
+
+      .ten-group-title-chro {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/chro-bg-img.webp');
+      }
+      .ten-group-title-nextgen-chro {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/next-gen-chro-bg-img.webp');
+      }
+      .ten-group-title-ta {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/ta-bg-img.webp');
+      }
+      .ten-group-title-dei {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/dei-bg-img.webp');
+      }
+      .ten-group-title-vp-payroll {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/vp-payroll-bg-img.webp');
+      }
+      .ten-group-title-wfa {
+        background: url('https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/wfa-bg-img.webp');
+      }
+
+      .ten-group-info-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .ten-group .custom-list {
+        margin-top: 1.5rem;
+      }
+
+      .ten-group .custom-list li {
+        color: var(--clr-steel-grey) !important;
+        font-size: clamp(1.5rem, 1.5vw, 1.7rem) !important;
+      }
+
+      .ten-group .custom-list li:before {
+        background: var(--clr-warm-gold) !important;
+      }
+
+      .ten-group-info {
+        align-self: start;
+      }
+
+      .button-group {
+        margin: 0 1.5rem 1.5rem !important;
+        margin-top: auto;
+        align-self: flex-start;
+        font-size: clamp(2rem, 1.1vw, 3.5rem) !important;
+      }
+
+      .ten-hero-subtext {
+        color: var(--clr-warm-gold);
+        font-size: clamp(1.2rem, 1.15vw, 2rem) !important;
+        margin-top: 1rem !important;
+        font-weight: normal !important;
+      }
+      .om-hero-title span {
+        font-size: clamp(2rem, 2vw, 2.2rem) !important;
+
+        margin-left: 0 !important;
+        margin-top: 1rem !important;
+      }
+
+      @media screen and (min-width: 768px) {
+        .om-how-ten-works-blocks {
+          grid-template-areas:
+            'b1 b1 b1 b1 b2 b2 b2 b2'
+            'b3 b3 b3 b3 b4 b4 b4 b4'
+            'b5 b5 b5 b5 b6 b6 b6 b6';
+        }
+      }
+
+      .om-how-ten-works-block {
+        grid-template-columns: 2fr 1fr !important;
+      }
+      .om-how-ten-works-block img {
+        display: block !important;
+      }
+      /* end ten groups */
+      /* =-========================================= */
+
+      /* disabled link */
+      .disabled-link {
+        color: #888;
+        cursor: not-allowed;
+        text-decoration: underline dotted;
+        pointer-events: none;
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================PURCHASE PAGES==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .purchase-page-memberships {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 5rem;
+        padding-top: 5rem;
+        max-width: 1170px;
+        margin: 0 auto;
+      }
+
+      .purchase-page-memberships .price {
+        padding-block: 6rem;
+      }
+
+      .purchase-page-footer-section {
+        padding-top: 2rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        .purchase-page-memberships {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .purchase-page-footer {
+        text-align: center;
+      }
+
+      .purchase-page-footer a {
+        text-decoration: underline !important;
+        color: var(--clr-orange) !important;
+      }
+
+      .button-purchase-page {
+        color: var(--clr-white) !important;
+      }
+
+      /* ===============================================================================================================================
+==================================================================================================================================
+=========================================CONFIRMATION PAGE==========================================================================
+================================================================================================================================
+================================================================================================================================= */
+
+      .cp-hero-section {
+        background: var(--clr-teal-green);
+      }
+
+      .cp-hero-subtitle p {
+        color: var(--clr-white) !important;
+      }
+
+      .img-cp-hero {
+        display: none !important;
+      }
+      .cp-hero-content-container {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      @media screen and (min-width: 992px) {
+        .cp-hero-content-container {
+          grid-template-columns: 3fr 2fr;
+          gap: 3rem;
+          align-items: center;
+          align-content: center;
+          margin-top: -5rem;
+        }
+        .img-cp-hero {
+          display: block !important;
+        }
+        .cp-hero-section {
+          padding-bottom: 0;
+          padding-top: 4rem;
+        }
+        .cp-hero-section .chro-hero-content {
+          padding-block: 0;
+          padding-bottom: 2rem;
+        }
+        .cp-hero-section .chro-hero-center {
+          gap: 0;
+        }
+        .cp-hero-text-content {
+          margin-top: 3rem;
+        }
+      }
+
+      /* ten logo */
+      .ten-logo {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      /* appended css do not delete ====================================================================================*/
+      /* ten logo */
+      .ten-logo {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .button-hero-chro {
+        background: var(--clr-orange) !important;
+      }
+      .button-hero-chro:hover {
+        background: var(--clr-purple) !important;
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-center {
+          margin-top: 12rem;
+        }
+      }
+    </style>
+    <div class="page-container">
+      <!-- hero section -->
+      <div>$vendorLeadForm</div>
+
+      <section class="section hero-section">
+        <img
+          alt="Trusted Executive Network Logo"
+          class="img img-logo"
+          src="https://public-cdn.hr.com/logo_images/hrdotcom/trusted-executive-network-logo-white.webp"
+        />
+        <div class="section-center hero-center hero-grid">
+          <!-- LEFT: CONTENT -->
+          <div class="hero-content">
+            <h1 class="hero-title heading-1">
+              <span>T</span>rusted<br />
+              <span>E</span>xecutive<br />
+              <span>N</span>etwork
+            </h1>
+
+            <div class="hero-sub-content">
+              <!-- <h2 class="hero-subtitle heading-3">
+                The Ultimate in HR Strategic Relationship-Building
+              </h2> -->
+              <div class="cta-container">
+                <button
+                  class="button button-hero"
+                  id="fc_1737146503429"
+                  onclick="loadPopup('fc_1737146503429')"
+                >
+                  Apply To Be a Charter Member</button
+                ><!-- <img
+                  alt="CTA Arrow Icon"
+                  class="img img-cta-arrow"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/cta-arrow.webp"
+                /> -->
+              </div>
+            </div>
+          </div>
+          <!-- RIGHT: VIDEO -->
+
+          <div class="hero-video">
+            <div class="video-wrapper">
+              <iframe
+                allow="
+                  autoplay;
+                  accelerometer;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen=""
+                loading="lazy"
+                src="https://www.youtube.com/embed/eKwRZ0i2hf0?autoplay=1&amp;mute=1"
+                style="width: 100%; aspect-ratio: 16/9; border: 0"
+                title="Trusted Executive Network - HR.com"
+              ></iframe>
+            </div>
+
+            <p
+              style="
+                font-size: 13px;
+                color: #000 !important;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.85);
+                padding-block: 0.25rem;
+                border-radius: 4px;
+                margin-top: 0.5rem;
+                font-weight: bold;
+              "
+            >
+              Scenes from a TEN event in Toronto.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- end hero section -->
+
+      <section class="section section-orange">
+        <div class="section-center orange-center">
+          <h2 class="heading-3">
+            The ultimate in HR strategic relationship building in a city near
+            you.
+          </h2>
+        </div>
+      </section>
+      <!-- what is ten -->
+
+      <section class="section what-is-ten-section two-third-section">
+        <div class="section-center what-is-ten-center two-third-center">
+          <div class="two-third-info">
+            <div class="two-third-title-container">
+              <img
+                alt="Orange Blurred Background"
+                class="img img-four-circles"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+              />
+              <h2 class="heading-2 two-third-title">
+                What Is the Trusted Executive Network?
+              </h2>
+            </div>
+
+            <p>
+              TEN is the confidential, exclusive peer network where you build
+              trusting, mutually beneficial relationships with fellow senior HR
+              leaders. Executive peer groups have gained immense popularity, and
+              now TEN brings this powerful model to HR.
+            </p>
+          </div>
+          <img
+            alt="Orange Blurred Background"
+            class="img img-right"
+            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/team-meeting-collaboration.webp"
+          />
+        </div>
+        <!-- three blocks -->
+
+        <div class="section-center what-is-ten-blocks-center">
+          <!-- single block -->
+          <article class="single-block">
+            <img
+              alt="collaboration Icon"
+              class="img img-icon"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/collaboration.webp"
+            />
+            <div class="single-block-info">
+              <h3 class="heading-3">Discuss Shared Concerns</h3>
+
+              <p>
+                A dedicated network to explore challenges and opportunities with
+                high-caliber peers.
+              </p>
+            </div>
+          </article>
+          <!-- end single block --><!-- single block -->
+
+          <article class="single-block">
+            <img
+              alt="Feedback Icon"
+              class="img img-icon"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/feedback.webp"
+            />
+            <div class="single-block-info">
+              <h3 class="heading-3">Safe and Supportive</h3>
+
+              <p>
+                Ask questions and share professional and personal matters (such
+                as ones you may not feel comfortable discussing in your
+                organization) with peers who understand.
+              </p>
+            </div>
+          </article>
+          <!-- end single block --><!-- single block -->
+
+          <article class="single-block">
+            <img
+              alt=" Rewards Icon."
+              class="img img-icon"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/rewards.webp"
+            />
+            <div class="single-block-info">
+              <h3 class="heading-3">Exclusive Opportunities</h3>
+
+              <p>
+                Enjoy special events and access learning, networking, and
+                branding opportunities tailored for senior HR leaders.
+              </p>
+            </div>
+          </article>
+          <!-- end single block -->
+        </div>
+        <!-- three blocks -->
+      </section>
+      <!-- end what is ten --><!-- how ten works -->
+
+      <section class="section how-ten-works-section">
+        <div class="section-center how-ten-works-center">
+          <!-- title -->
+          <div class="how-ten-works-title-container">
+            <h2 class="heading-2">
+              How <span class="gradient-fill">TEN</span> Works For You
+            </h2>
+            <img
+              alt="Four Circles"
+              class="img img-four-circles"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+            />
+            <h3 class="heading-3">
+              Grow Relationships, Gain Insights and Build Your Brand.
+            </h3>
+          </div>
+          <!-- end title -->
+
+          <div class="how-ten-works-blocks">
+            <!-- single-block 1-->
+            <article class="how-ten-works-block">
+              <div class="how-ten-works-info">
+                <h3 class="heading-3">Confidential Peer Groups</h3>
+
+                <p>Join up to 16 like-minded executives* in:</p>
+
+                <ul class="custom-list">
+                  <li>
+                    5 in-person facilitated meetings (2-3 hours) hosted by
+                    members.
+                  </li>
+                  <li>
+                    5 virtual meetups for monthly check-ins and collaborative
+                    problem-solving.
+                  </li>
+                  <li>
+                    1 exclusive executive retreat experience involving the full
+                    network.
+                  </li>
+                </ul>
+
+                <p class="small">
+                  * NOTE: Your peer group will be determined by your location
+                  and your title.
+                </p>
+              </div>
+              <img
+                alt=" Online meeting with multiple participants displayed on a laptop screen during a remote session."
+                class="img img-how-ten-works"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/virtual-meeting-on-laptop.webp"
+              />
+            </article>
+            <!-- end single block --><!-- single-block 2-->
+
+            <article class="how-ten-works-block">
+              <div class="how-ten-works-info">
+                <h3 class="heading-3">Peer-to-Peer Discussion Forums</h3>
+
+                <p>Get answers and advice from your peers in real time.</p>
+              </div>
+              <img
+                alt=" Online meeting with multiple participants displayed on a laptop screen during a remote session."
+                class="img img-how-ten-works"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/virtual-meeting-on-laptop.webp"
+              />
+            </article>
+            <!-- end single block --><!-- single-block 3-->
+
+            <article class="how-ten-works-block">
+              <div class="how-ten-works-info">
+                <h3 class="heading-3">Tailored Research &amp; Benchmarking</h3>
+
+                <p>Stay ahead with custom reports and data insights.</p>
+              </div>
+              <img
+                alt=" A woman reviewing business analytics and charts on a laptop at her desk."
+                class="img img-how-ten-works"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/woman-analyzing-business-data.webp"
+              />
+            </article>
+            <!-- end single block --><!-- single-block 4-->
+
+            <article class="how-ten-works-block">
+              <div class="how-ten-works-info">
+                <h3 class="heading-3">Special Interest Groups (SIGs)</h3>
+
+                <p>
+                  Join one industry- or technology-focused group for targeted
+                  learning and networking.
+                </p>
+              </div>
+              <img
+                alt=" A diverse group of professionals working together on laptops and discussing strategies around a table."
+                class="img img-how-ten-works"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/group-discussing-at-table.webp"
+              />
+            </article>
+            <!-- end single block --><!-- single-block 5 -->
+
+            <article class="how-ten-works-block">
+              <div class="how-ten-works-info">
+                <h3 class="heading-3">Leadership Branding</h3>
+
+                <p>
+                  Enhance your personal and company brand through speaking
+                  opportunities, articles, and events.
+                </p>
+              </div>
+              <img
+                alt=" Man wearing headphones while focused on a laptop screen during a remote work session."
+                class="img img-how-ten-works"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/man-working-on-laptop-headset.webp"
+              />
+            </article>
+            <!-- end single block --><!-- single-block 6 -->
+
+            <article class="how-ten-works-block">
+              <div class="how-ten-works-info">
+                <h3 class="heading-3">Strategic Impact</h3>
+
+                <p>
+                  Help shape the Future of Work conference in your local
+                  community and serve on HR.com advisory boards.
+                </p>
+              </div>
+              <img
+                alt=" Business team conducting a brainstorming session with notes and a whiteboard in a modern office."
+                class="img img-how-ten-works"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/team-brainstorming-meeting.webp"
+              />
+            </article>
+            <!-- end single block -->
+          </div>
+        </div>
+      </section>
+      <!-- end how ten works --><!-- who should apply - -->
+
+      <section class="section who-should-apply-section" style="display: none">
+        <div class="section-center who-should-apply-center">
+          <div class="who-should-apply-info">
+            <div class="two-third-title-container">
+              <img
+                alt="Orange Blurred Background"
+                class="img img-four-circles"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+              />
+              <h2 class="heading-2 two-third-title">Who Should Apply?</h2>
+
+              <p>
+                TEN is designed for senior HR leaders ready to connect,
+                collaborate, and grow.
+              </p>
+            </div>
+
+            <div class="who-should-apply-list">
+              <p>Key groups include:</p>
+
+              <ul class="custom-list">
+                <li>
+                  <a
+                    href="/en/memberships/trusted_executive_network/chro"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >CHROs (under and over 1000 employees)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/en/memberships/trusted_executive_network/nextgen_chros/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Next-Generation CHROs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/en/memberships/trusted_executive_network/talent_acquisition_employer_branding_leaders/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Talent Acquisition &amp; Employer Branding Leaders
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/en/memberships/trusted_executive_network/dei_leaders/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Diversity and Equity Leaders - DEI Leaders
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/en/memberships/trusted_executive_network/vp_of_payroll_benefits"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >VPs Of Payroll &amp; Benefits
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/en/memberships/trusted_executive_network/workforce_planning_hr_analytics_leaders/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Workforce Planning &amp; HR Analytics Leaders
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="cta-container">
+              <button
+                class="button button-hero button-who-should-apply"
+                id="fc_1737146503429"
+                name="fc_1737146503429"
+                onclick="loadPopup('fc_1737146503429')"
+              >
+                Apply To Be a Charter Member</button
+              ><!-- <img
+                alt="CTA Arrow Icon"
+                class="img img-cta-arrow"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/cta-arrow.webp"
+              /> -->
+            </div>
+          </div>
+          <img
+            alt=" A confident woman in a burgundy suit and a smiling senior man in a blue suit standing with arms crossed, representing diverse business professionals."
+            class="img img-who-should-apply"
+            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/diverse-professionals-smiling.webp"
+          />
+        </div>
+      </section>
+      <!-- end who should apply --><!-- ten peer groups section start -->
+
+      <section class="section ten-groups-section" id="groups">
+        <div class="section-center ten-groups-center">
+          <!-- title -->
+          <div class="how-ten-works-title-container">
+            <h2 class="heading-2">
+              <span class="gradient-fill">TEN Peer Group</span> Categories
+            </h2>
+            <img
+              alt="Four Circles"
+              class="img img-four-circles"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+            />
+            <!-- <h3 class="heading-3">
+          Choose a city to join local HR executive peer group(s)
+        </h3> -->
+          </div>
+          <!-- end title -->
+
+          <div class="ten-groups">
+            <!-- single group -->
+            <div class="ten-group">
+              <div class="ten-group-title ten-group-title-chro">
+                <h3 class="heading-3" style="color: #ffffff !important">
+                  CHRO
+                </h3>
+              </div>
+
+              <div class="ten-group-info-container">
+                <div class="ten-group-info">
+                  <p>
+                    For executives who head HR departments, with two group
+                    categories to maximize relevance and value for members and
+                    their organizations.
+                  </p>
+
+                  <ul class="custom-list">
+                    <li>Enterprise CHROs (1000+ Employees)</li>
+                    <li>Mid-Market CHROs (Under 1000 Employees)</li>
+                  </ul>
+                </div>
+              </div>
+              <a
+                class="button button-hero button-hero-chro button-group"
+                href="/en/memberships/trusted_executive_network/chro"
+                style="color: #ffffff !important"
+                target="_blank"
+                >Visit Page
+              </a>
+            </div>
+            <!-- end single group --><!-- single group -->
+
+            <div class="ten-group">
+              <div class="ten-group-title ten-group-title-nextgen-chro">
+                <h3 class="heading-3" style="color: #ffffff !important">
+                  Next-Generation CHROs
+                </h3>
+              </div>
+
+              <div class="ten-group-info-container">
+                <div class="ten-group-info">
+                  <p>
+                    Connecting rising HR leaders and giving them strategies to
+                    succeed in their current roles and to prepare to lead
+                    departments.
+                  </p>
+                </div>
+              </div>
+              <a
+                class="button button-hero button-hero-chro button-group"
+                href="/en/memberships/trusted_executive_network/nextgen_chros/"
+                style="color: #ffffff !important"
+                target="_blank"
+                >Visit Page
+              </a>
+            </div>
+            <!-- end single group --><!-- single group -->
+
+            <div class="ten-group">
+              <div class="ten-group-title ten-group-title-ta">
+                <h3 class="heading-3" style="color: #ffffff !important">
+                  Talent Acquisition &amp; Employer Branding Leaders
+                </h3>
+              </div>
+
+              <div class="ten-group-info-container">
+                <div class="ten-group-info">
+                  <p>
+                    Bringing together those who lead efforts to bring great
+                    people into their organizations to uncover new possibilities
+                    and opportunities.
+                  </p>
+                </div>
+              </div>
+              <a
+                class="button button-hero button-hero-chro button-group"
+                href="/en/memberships/trusted_executive_network/talent_acquisition_employer_branding_leaders/"
+                style="color: #ffffff !important"
+                target="_blank"
+                >Visit Page
+              </a>
+            </div>
+            <!-- end single group -->
+             <!-- single group -->
+
+            <!-- <div class="ten-group">
+              <div class="ten-group-title ten-group-title-dei">
+                <h3 class="heading-3" style="color: #ffffff !important">
+                  DEI Leaders
+                </h3>
+              </div>
+
+              <div class="ten-group-info-container">
+                <div class="ten-group-info">
+                  <p>
+                    For those facing the many challenges associated with leading
+                    diversity and inclusion efforts in today&rsquo;s workplaces.
+                  </p>
+                </div>
+              </div>
+              <a
+                class="button button-hero button-hero-chro button-group"
+                href="/en/memberships/trusted_executive_network/dei_leaders/"
+                style="color: #ffffff !important"
+                target="_blank"
+                >Visit Page
+              </a>
+            </div> -->
+            <!-- end single group -->
+             <!-- single group -->
+
+            <div class="ten-group">
+              <div class="ten-group-title ten-group-title-vp-payroll">
+                <h3 class="heading-3" style="color: #ffffff !important">
+                  VPs of Payroll &amp; Benefits
+                </h3>
+              </div>
+
+              <div class="ten-group-info-container">
+                <div class="ten-group-info">
+                  <p>
+                    Opportunity to collaborate on payroll strategy and modernize
+                    employee benefits.
+                  </p>
+                </div>
+              </div>
+              <a
+                class="button button-hero button-hero-chro button-group"
+                href="/en/memberships/trusted_executive_network/vp_of_payroll_benefits"
+                style="color: #ffffff !important"
+                target="_blank"
+                >Visit Page
+              </a>
+            </div>
+            <!-- end single group --><!-- single group -->
+
+            <div class="ten-group">
+              <div class="ten-group-title ten-group-title-wfa">
+                <h3 class="heading-3" style="color: #ffffff !important">
+                  Workforce Planning &amp; HR Analytics Leaders
+                </h3>
+              </div>
+
+              <div class="ten-group-info-container">
+                <div class="ten-group-info">
+                  <p>
+                    Building relationships and discussing better ways to use
+                    data to drive better decision making.
+                  </p>
+                </div>
+              </div>
+              <a
+                class="button button-hero button-hero-chro button-group"
+                href="/en/memberships/trusted_executive_network/workforce_planning_hr_analytics_leaders/"
+                style="color: #ffffff !important"
+                target="_blank"
+                >Visit Page
+              </a>
+            </div>
+            <!-- end single group -->
+          </div>
+        </div>
+      </section>
+      <!-- end ten peer groups section --><!-- find your local chapter north america-->
+
+      <section class="section section-local-chapters" id="local-chapters">
+        <div class="section-center local-chapters-center">
+          <!-- title -->
+          <div class="how-ten-works-title-container">
+            <h2 class="heading-2">
+              TEN <span class="gradient-fill">Connects</span> HR Leaders From
+              <span class="gradient-fill">Coast to Coast</span>
+            </h2>
+            <img
+              alt="Four Circles"
+              class="img img-four-circles"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+            />
+            <h3 class="heading-3">
+              Choose a city to join local HR executive peer group(s)
+            </h3>
+          </div>
+          <!-- end title -->
+
+          <div class="chapter-region">
+            <div class="region-content region-content-us region-content-na">
+              <div
+                class="chapter-list chapter-list-usa chapter-list-na org-membership-chapter-list"
+              >
+                <!-- Apply to Join chapters -->
+                <div class="usa-chapters apply-list">
+                  <!-- <h3>Apply to Join</h3> -->
+                  <ul>
+                    <li><button>1. Atlanta</button></li>
+                    <li><button>2. Birmingham</button></li>
+                    <li><button>3. Buffalo</button></li>
+                    <li><button>4. Calgary</button></li>
+                    <li><button>5. East Bay</button></li>
+                    <li><button>6. Edmonton</button></li>
+                    <li><button>7. Jacksonville</button></li>
+                    <li><button>8. Montreal</button></li>
+                    <li><button>9. Sacramento</button></li>
+                    <li><button>10. San Francisco</button></li>
+                    <li>
+                      <button
+                        style="pointer-events: all !important"
+                        onclick="
+                          window.open(
+                            '/en/memberships/trusted_executive_network/ten-toronto-chapter_mkb0mekk.html',
+                            '_blank',
+                          )
+                        "
+                      >
+                        11. Toronto
+                      </button>
+                    </li>
+
+                    <li><button>12. Vancouver</button></li>
+                  </ul>
+                </div>
+                <!-- Join the Waitlist chapters -->
+
+                <div class="canada-chapters waitlist">
+                  <!-- <h3>Join the Waitlist</h3> -->
+                  <ul>
+                    <li><button>13. Boise</button></li>
+                    <li><button>14. Las Vegas</button></li>
+                    <li><button>15. Los Angeles</button></li>
+                    <li><button>16. Salt Lake City</button></li>
+                    <li><button>17. San Diego</button></li>
+                    <li><button>18. San Jose</button></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="map-container">
+                <img
+                  alt="Map of North America"
+                  class="map-image"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/north-america-map-without-dots.webp"
+                />
+                <div class="city-dots-overlay">
+                  <!-- Apply to Join (Green) -->
+                  <div
+                    class="city-circle apply"
+                    data-city="Atlanta"
+                    style="top: 86.8%; left: 69.5%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Birmingham"
+                    style="top: 86.2%; left: 66%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Buffalo"
+                    style="top: 73%; left: 72%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Calgary"
+                    style="top: 62%; left: 38.9%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="East Bay"
+                    style="top: 79.5%; left: 28.2%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Edmonton"
+                    style="top: 57.3%; left: 38.5%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Jacksonville"
+                    style="top: 83.2%; left: 75.2%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Montreal"
+                    style="top: 67.3%; left: 76.5%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Sacramento"
+                    style="top: 78.3%; left: 28%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="San Francisco"
+                    style="top: 78.7%; left: 27.3%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Toronto"
+                    style="top: 70.8%; left: 72%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle apply"
+                    data-city="Vancouver"
+                    style="top: 63.5%; left: 31%"
+                  >
+                    &nbsp;
+                  </div>
+                  <!-- Waitlist (Gray) -->
+
+                  <div
+                    class="city-circle waitlist"
+                    data-city="Boise"
+                    style="top: 72.6%; left: 35.8%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle waitlist"
+                    data-city="Las Vegas"
+                    style="top: 82.8%; left: 34%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle waitlist"
+                    data-city="Los Angeles"
+                    style="top: 83.9%; left: 29.8%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle waitlist"
+                    data-city="Salt Lake City"
+                    style="top: 77.3%; left: 38.8%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle waitlist"
+                    data-city="San Diego"
+                    style="top: 80.7%; left: 27.4%"
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    class="city-circle waitlist"
+                    data-city="San Jose"
+                    style="top: 80.7%; left: 27.4%"
+                  >
+                    &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end find your local chapter north america --><!-- who should apply -->
+
+      <section class="section who-should-apply-section ten-members-section">
+        <div class="section-center who-should-apply-center">
+          <div class="who-should-apply-info">
+            <div class="two-third-title-container">
+              <img
+                alt="Orange Blurred Background"
+                class="img img-four-circles"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+              />
+              <h2 class="heading-2 two-third-title">TEN Members</h2>
+            </div>
+
+            <div class="who-should-apply-list">
+              <ul class="custom-list">
+                <li
+                  style="color: #ffffff !important; font-weight: 700 !important"
+                >
+                  Fit the role and job level aligned with your TEN Network
+                  application
+                </li>
+                <li
+                  style="color: #ffffff !important; font-weight: 700 !important"
+                >
+                  Have a predisposition for TEN Networks&rsquo; culture of
+                  participation and sharing of information/experience;
+                </li>
+                <li
+                  style="color: #ffffff !important; font-weight: 700 !important"
+                >
+                  Be willing to table personal and/or company specific interests
+                </li>
+                <li
+                  style="color: #ffffff !important; font-weight: 700 !important"
+                >
+                  Have an interest in contributing to the future of HR and an
+                  affinity for contributing to the community.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <img
+            alt=" A diverse group of professionals engaging in a productive conversation in a bright office setting."
+            class="img img-who-should-apply"
+            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/diverse-team-in-conversation.webp"
+          />
+        </div>
+      </section>
+      <!-- end who should apply --><!-- leaders-transition -->
+
+      <section class="section leaders-transition-section">
+        <div class="section-center leaders-transition-center orange-center">
+          <h2 class="heading-3">HR Leaders In Transition</h2>
+
+          <p>
+            Candidates who are currently in transition can join provided they
+            have exemplary backgrounds and experience, and have the ability to
+            contribute to TEN strategy or content.
+          </p>
+        </div>
+      </section>
+      <!-- end leaders transition --><!-- pricing -->
+
+      <section class="section price-section">
+        <div class="section-center price-center">
+          <div class="price-title">
+            <p class="gradient-fill">MEMBERSHIP COSTS</p>
+
+            <h2 class="heading-2">
+              <span class="gradient-fill">Special</span> Charter Member Offer:
+            </h2>
+          </div>
+
+          <div class="price">
+            <img
+              alt=" Individual Membership."
+              class="img img-price"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/individual-membership.webp"
+            />
+            <h3 class="heading-2">$2,200</h3>
+
+            <p>per year per TEN group</p>
+          </div>
+
+          <div class="price price-orange">
+            <img
+              alt=" Organization Membership."
+              class="img img-price"
+              src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/orgnanization-membership.webp"
+            />
+            <h3 class="heading-2">$10,000</h3>
+
+            <p>per year for up to 5 members</p>
+          </div>
+        </div>
+      </section>
+      <!-- end pricing --><!-- Why  apply -->
+
+      <section
+        class="section who-should-apply-section ten-members-section why-apply-section"
+      >
+        <div class="section-center who-should-apply-center">
+          <img
+            alt=" A senior woman with short gray hair smiling while using a laptop, depicted in a stylized background."
+            class="img img-who-should-apply"
+            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/mature-woman-with-laptop-smiling.webp"
+          />
+          <div class="who-should-apply-info">
+            <div class="two-third-title-container why-apply-info">
+              <img
+                alt="Orange Blurred Background"
+                class="img img-four-circles"
+                src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/four-circles.webp"
+              />
+              <h2 class="heading-2 two-third-title">Why Apply Now?</h2>
+
+              <p>
+                As a Charter Member, you&rsquo;ll shape TEN&rsquo;s mission,
+                enjoy exclusive benefits, and help build a legacy of trust and
+                collaboration among HR leaders.
+              </p>
+
+              <div class="cta-container">
+                <button
+                  class="button button-hero"
+                  id="fc_1737146503429"
+                  name="fc_1737146503429"
+                  onclick="loadPopup('fc_1737146503429')"
+                >
+                  Apply To Be a Charter Member</button
+                ><!-- <img
+                  alt="CTA Arrow Icon"
+                  class="img img-cta-arrow"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/ten-network/cta-arrow.webp"
+                /> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end why  apply -->
+    </div>
+  </body>
+</html>

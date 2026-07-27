@@ -1,0 +1,4425 @@
+<!-- @format -->
+
+<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
+<link rel="stylesheet" type="text/css" media="screen"
+  href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" media="screen"
+  href="$public/remoteimages/website-images/2017_SiteRedesign/css/Custom-Style.css" />
+
+<link href="$public/remoteimages/website-images/2022_siteupdate/Splash_pages/css/splash.css" media="screen"
+  rel="stylesheet" type="text/css" />
+<style type="text/css">
+  body>.container-fluid>.row>.ContentArea>.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body>.container-fluid>.row>.ContentArea> {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #intro-header {
+    display: none;
+  }
+
+  a,
+  a:hover,
+  a:link {
+    text-decoration: none;
+  }
+
+  .sf-nav-main,
+  .socialshare {
+    display: none !important;
+  }
+
+  .js_event_card .js_card_img {
+    width: 100%;
+  }
+
+  .js_event_card .js_card_img>img {
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+  }
+</style>
+
+<!--==========================================================================
+===================== template css start======================================
+============================================================================-->
+
+<style>
+  /**
+ * ===============================================
+ *
+ * @format
+ */
+
+  /* =========== TOKENS UPDATE (START) ============= */
+  /* =============================================== */
+
+  /* 1) Google Font: Plus Jakarta Sans */
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  /* 2) Global reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  html {
+    font-size: 100% !important;
+    scroll-behavior: smooth !important;
+  }
+
+  /* 3) Design tokens (scoped) */
+  .custom-container {
+    background: #ffffff;
+
+    /* Typography */
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI',
+      Roboto, Helvetica, Arial, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI',
+      Roboto, Helvetica, Arial, sans-serif;
+
+    /* Spacing */
+    --s1: 4px;
+    --s2: 8px;
+    --s3: 12px;
+    --s4: 16px;
+    --s5: 24px;
+    --s6: 32px;
+    --s7: 48px;
+    --s8: 60px;
+    --s9: 72px;
+    --s10: 96px;
+    --s-full: 100%;
+
+    /* Radii */
+    --r1: var(--s1);
+    --r2: var(--s2);
+    --r3: var(--s3);
+    --r4: var(--s4);
+    --r-full: var(--s-full);
+
+    /* Type scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --text-7xl: 4.5rem;
+
+    /* Container widths */
+    --w-xs: 240px;
+    --w-sm: 640px;
+    --w-md: 768px;
+    --w-lg: 1024px;
+    --w-xl: 1350px;
+    /* updated max container */
+    --w-2xl: 1600px;
+    --w-full: 100%;
+
+    /* Colors */
+    --clr-text-heading: #010205;
+    --clr-text-body: rgb(51, 52, 53);
+    --clr-primary: #61b50c;
+    --clr-accent: #61b50c;
+    --clr-secondary: #515456;
+    --clr-neutral: #f2f2f2;
+    --clr-dark: #010205;
+    --clr-light: #ffffff;
+
+    /* Optional gradient */
+    --gradient-from: #0a2f0c;
+    --gradient-to: #3b9810;
+    --gradient-1: linear-gradient(to right,
+        var(--gradient-from),
+        var(--gradient-to));
+
+    /* REM-based text measures (override-friendly) */
+    --measure-sm: 36rem;
+    /* mobile hero/content ~576px */
+    --measure-md: 46rem;
+    /* tablet hero/content ~736px */
+    --measure-lg: 52rem;
+    /* default body/intro ~832px */
+    --measure-xl: 60rem;
+    /* roomy desktop ~960px */
+
+    /* Defaults */
+    color: var(--clr-text-body);
+    font-family: var(--font-body);
+  }
+
+  /* Headings */
+  .custom-container h1,
+  .custom-container h2,
+  .custom-container h3,
+  .custom-container h4,
+  .custom-container h5,
+  .custom-container h6 {
+    font-family: var(--font-heading) !important;
+    color: var(--clr-text-heading);
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  /* Mobile-first sizes */
+  .custom-container h1 {
+    font-weight: 700;
+    font-size: var(--text-3xl);
+  }
+
+  .custom-container h2 {
+    font-weight: 600;
+    font-size: var(--text-2xl);
+  }
+
+  .custom-container h3 {
+    font-weight: 500;
+    font-size: var(--text-xl);
+  }
+
+  .custom-container h4 {
+    font-weight: 500;
+    font-size: var(--text-lg);
+  }
+
+  .custom-container h5 {
+    font-weight: 400;
+    font-size: var(--text-base);
+  }
+
+  .custom-container h6 {
+    font-weight: 400;
+    font-size: var(--text-sm);
+  }
+
+  .custom-container p,
+  .custom-container a,
+  .custom-container small,
+  .custom-container li,
+  .custom-container blockquote,
+  .custom-container label,
+  .custom-container input,
+  .custom-container button,
+  .custom-container textarea {
+    font-family: var(--font-body) !important;
+    color: var(--clr-text-body);
+    font-weight: 400;
+    line-height: 1.6;
+    text-transform: none;
+  }
+
+  /* Breakpoints */
+  @media (min-width: 768px) {
+    .custom-container h1 {
+      font-size: var(--text-4xl);
+    }
+
+    .custom-container h2 {
+      font-size: var(--text-3xl);
+    }
+
+    .custom-container h3 {
+      font-size: var(--text-2xl);
+    }
+
+    .custom-container h4 {
+      font-size: var(--text-xl);
+    }
+
+    .custom-container h5 {
+      font-size: var(--text-lg);
+    }
+
+    .custom-container h6 {
+      font-size: var(--text-base);
+    }
+
+    .custom-container p,
+    .custom-container a,
+    .custom-container small,
+    .custom-container li {
+      font-size: var(--text-lg) !important;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .custom-container h1 {
+      font-size: var(--text-5xl);
+    }
+
+    .custom-container h2 {
+      font-size: var(--text-4xl);
+    }
+
+    .custom-container h3 {
+      font-size: var(--text-2xl);
+    }
+
+    .custom-container h4 {
+      font-size: var(--text-2xl);
+    }
+
+    .custom-container h5 {
+      font-size: var(--text-xl);
+    }
+
+    .custom-container h6 {
+      font-size: var(--text-lg);
+    }
+  }
+
+  /* Global images */
+  .custom-container img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  /* Links */
+  .custom-container a {
+    text-decoration: underline;
+  }
+
+  .custom-container a:hover {
+    opacity: 0.9;
+  }
+
+  /* Sections */
+  .cs-section {
+    width: var(--w-full);
+    background: var(--clr-light);
+    padding-block: var(--s6);
+  }
+
+  @media (min-width: 992px) {
+    .cs-section {
+      padding-block: var(--s9);
+    }
+  }
+
+  /* Center container */
+  .cs-section-center {
+    width: min(94vw, var(--w-xl));
+    margin: 0 auto;
+  }
+
+  /* =============================================== */
+  /* ============ TOKENS UPDATE (END) ============== */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* =============== CS-HEADER (START) ============= */
+  /* =============================================== */
+
+  .cs-header {
+    padding-block: var(--s5);
+    background: var(--clr-light);
+  }
+
+  .cs-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s4);
+  }
+
+  .cs-header__logo-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cs-header__brand-img {
+    display: block;
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Reusable outline pill */
+  .cs-btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--text-base);
+    padding: var(--s3) var(--s5);
+    border-radius: 999px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+  }
+
+  .cs-btn--outline {
+    background: transparent;
+    border: 1px solid var(--clr-text-heading);
+    color: var(--clr-text-heading);
+  }
+
+  .cs-btn--outline:hover {
+    background: var(--clr-neutral);
+  }
+
+  /* Hide CTA on mobile */
+  .cs-header__cta {
+    display: none !important;
+  }
+
+  /* Desktop layout */
+  @media (min-width: 767px) {
+    .cs-header__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
+
+    .cs-header__brand-img {
+      max-width: 180px;
+    }
+
+    .cs-header__cta {
+      display: inline-flex !important;
+      align-items: center;
+      text-decoration: none !important;
+    }
+  }
+
+  /* =============================================== */
+  /* ================ CS-HEADER (END) ============== */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ================= CS-HERO (START) ============= */
+  /* =============================================== */
+
+  .cs-hero {
+    background: var(--clr-neutral);
+  }
+
+  /* layout */
+  .cs-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s7);
+    align-items: start;
+  }
+
+  /* content */
+  .cs-hero__content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: var(--measure-sm) !important;
+  }
+
+  .cs-hero__title {
+    /* bigger at all sizes, with a higher clamp ceiling */
+    font-size: clamp(2.2rem, 8vw, var(--text-5xl)) !important;
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: var(--clr-text-heading);
+    margin-bottom: var(--s4);
+  }
+
+  .cs-hero__sub {
+    font-size: var(--text-lg);
+    color: var(--clr-text-body);
+    margin-bottom: var(--s4);
+  }
+
+  .cs-hero__dots {
+    margin-bottom: var(--s6);
+  }
+
+  .cs-hero__dots svg {
+    display: inline-block;
+  }
+
+  /* CTAs */
+  .cs-hero__ctas {
+    display: flex;
+    gap: var(--s5);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--s6);
+  }
+
+  .cs-btn--primary {
+    background: var(--clr-primary);
+    border: none;
+    color: var(--clr-light) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s3);
+  }
+
+  .cs-hero__arrow {
+    width: 22px;
+    height: 22px;
+  }
+
+  .cs-hero__link {
+    font-weight: 600;
+    color: var(--clr-text-heading);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* meta (date + “future date”); we’ll also use this selector for the
+   under-image note since you already positioned it in your CSS */
+  .cs-hero__meta {
+    color: var(--clr-text-body);
+    text-align: center;
+  }
+
+  .cs-hero__date {
+    margin-bottom: var(--s5);
+    line-height: 0.8 !important;
+    text-align: center;
+  }
+
+  .cs-hero__date strong {
+    color: var(--clr-text-heading);
+  }
+
+  .cs-hero__curr {
+    display: block;
+    font-size: var(--text-2xl) !important;
+  }
+
+  .cs-hero__future {
+    /* margin-left: var(--s4); */
+    opacity: 0.85;
+  }
+
+  .cs-hero__note a {
+    color: var(--clr-text-heading);
+  }
+
+  /* media */
+  .cs-hero__img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cs-hero__note--desk {
+    display: none;
+  }
+
+  .cs-hero__note span {
+    font-size: var(--text-sm) !important;
+    display: inline-block;
+    line-height: 1;
+    margin-top: 1rem;
+  }
+
+  /* ===== Tablet & up ===== */
+  @media (min-width: 768px) {
+    .cs-hero__inner {
+      /* Make left column larger, right smaller */
+      grid-template-columns: 1.35fr 0.9fr;
+      align-items: center;
+      gap: var(--s8);
+    }
+
+    .cs-hero__content {
+      text-align: center;
+      margin: 0;
+      max-width: var(--measure-md) !important;
+      justify-self: center;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+    }
+
+    .cs-hero__sub {
+      font-size: var(--text-2xl) !important;
+    }
+
+    .cs-hero__ctas {
+      justify-content: flex-start;
+    }
+
+    .cs-hero__meta {
+      text-align: left;
+    }
+
+    /* Tighter/shorter image so the two columns feel balanced */
+    .cs-hero__img {
+      max-height: 460px;
+      /* <— dial this up/down if needed */
+      border-radius: 24px;
+      margin-bottom: var(--s1);
+    }
+
+    /* Smaller “to see future virtual events…” line under the image */
+    .cs-hero__note {
+      font-size: clamp(0.9rem, 1vw, 1rem);
+      line-height: 1.55;
+      opacity: 0.92;
+    }
+
+    .cs-hero__note--mobile {
+      display: none;
+    }
+
+    .cs-hero__note--desk,
+    .cs-hero__note--desk a {
+      display: inline-block;
+      text-align: center;
+      font-size: var(--text-sm) !important;
+    }
+
+    .cs-hero__date {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ===== Desktop XL ===== */
+  @media (min-width: 1280px) {
+
+    /* Bigger title at XL */
+    .cs-hero__title {
+      /* aim a bit larger than your previous var(--text-6xl) */
+      font-size: clamp(3.2rem, 3.8vw, 4.5rem) !important;
+    }
+
+    /* Keep image from dominating the layout */
+    .cs-hero__img {
+      max-height: 440px;
+    }
+  }
+
+  /* ===== Mobile: hide the image entirely ===== */
+  @media (max-width: 767px) {
+    .cs-hero__media {
+      display: none;
+    }
+
+    /* Date: larger and black, future date placed below */
+    .cs-hero__date strong {
+      font-size: clamp(1.4rem, 6.2vw, 1.85rem);
+      color: var(--clr-text-heading);
+    }
+
+    .cs-hero__future {
+      display: block;
+      margin: var(--s2) 0 0 0;
+      /* drop under the main date */
+    }
+  }
+
+  /* =============================================== */
+  /* ================== CS-HERO (END) ============== */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ================= CS-INTRO (START) ============ */
+  /* =============================================== */
+
+  .cs-intro {
+    background: var(--clr-light);
+  }
+
+  /* layout */
+  .cs-intro__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s7);
+    align-items: start;
+  }
+
+  /* content */
+  .cs-intro__content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: var(--measure-lg) !important;
+  }
+
+  .cs-intro__title {
+    font-weight: 700;
+    font-size: clamp(1.75rem, 5.5vw, var(--text-4xl));
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--clr-text-heading);
+    margin-bottom: var(--s4);
+  }
+
+  .cs-intro__dots {
+    margin-bottom: var(--s5);
+  }
+
+  .cs-intro__dots svg {
+    display: inline-block;
+  }
+
+  .cs-intro__copy {
+    margin-bottom: var(--s6);
+    color: var(--clr-text-body);
+  }
+
+  /* supporting image (hidden on mobile) */
+  .cs-intro__figure {
+    margin: 0;
+    display: none;
+  }
+
+  .cs-intro__img {
+    width: 100% !important;
+    height: 300px !important;
+    max-height: 300px !important;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  }
+
+  /* awards ad (right) */
+  .cs-intro__aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cs-intro__ad {
+    height: auto !important;
+    max-height: 600px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    border-radius: 18px;
+    display: block !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    .cs-intro__inner {
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: var(--s8);
+      align-items: center;
+    }
+
+    .cs-intro__content {
+      text-align: left;
+      margin: 0;
+    }
+
+    .cs-intro__figure {
+      display: block;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1280px) {
+    .cs-intro__title {
+      font-size: var(--text-5xl);
+    }
+
+    .cs-intro__ad {
+      max-width: 420px;
+    }
+
+    .cs-intro__content {
+      max-width: var(--measure-xl) !important;
+    }
+  }
+
+  /* =============================================== */
+  /* ================== CS-INTRO (END) ============= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ================ CS-REVEAL (START) ============ */
+  /* =============================================== */
+
+  /* Very light section background */
+  .cs-reveal {
+    background: var(--clr-neutral);
+  }
+
+  /* Dark rounded inner panel */
+  .cs-reveal__panel {
+    position: relative;
+    color: #fff;
+    background: radial-gradient(80% 70% at 20% 0%,
+        rgba(255, 255, 255, 0.1),
+        transparent 50%),
+      linear-gradient(135deg, #0c1116 0%, #171c22 60%, #0c1116 100%);
+    border-radius: 28px;
+    padding: var(--s6);
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(1, 5, 12, 0.45);
+  }
+
+  /* Title + dots */
+  .cs-reveal__title {
+    text-align: center;
+    color: #fff !important;
+    margin-bottom: var(--s3);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  .cs-reveal__dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--s6);
+  }
+
+  .cs-reveal__dots svg {
+    display: block;
+  }
+
+  /* GRID
+   Mobile:   lede | card | info (stack)
+   Tablet+:  lede lede  (full-width row)
+             card info  (two columns)
+*/
+  .cs-reveal__grid {
+    display: grid;
+    grid-template-areas:
+      'lede'
+      'card'
+      'info';
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+    align-items: start;
+  }
+
+  /* named areas */
+  .cs-reveal__lede {
+    grid-area: lede;
+  }
+
+  .cs-reveal__card {
+    grid-area: card;
+  }
+
+  .cs-reveal__info {
+    grid-area: info;
+  }
+
+  /* Lede (full-width row, centered) */
+  .cs-reveal__lede {
+    max-width: var(--measure-lg);
+    margin-inline: auto;
+    color: #fff;
+  }
+
+  .cs-reveal__lede p {
+    color: var(--clr-light);
+    opacity: 0.7;
+  }
+
+  /* Question card */
+  .cs-reveal__card {
+    background: #fff;
+    color: var(--clr-text-heading);
+    border-radius: 20px;
+    padding: var(--s5);
+    box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+
+  .cs-reveal__card-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--s4);
+  }
+
+  .cs-reveal__list {
+    margin-left: 1rem;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .cs-reveal__list li {
+    line-height: 1.5;
+  }
+
+  .cs-reveal__card p {
+    margin-top: 1rem;
+  }
+
+  /* Right infographic */
+  .cs-reveal__figure {
+    margin: 0;
+    text-align: center;
+  }
+
+  .cs-reveal__info-link {
+    display: inline-block;
+    line-height: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cs-reveal__info-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 46px rgba(0, 0, 0, 0.14);
+  }
+
+  .cs-reveal__info-link:focus-visible {
+    outline: 3px solid var(--clr-primary);
+    outline-offset: 4px;
+    border-radius: 14px;
+  }
+
+  .cs-reveal__infographic {
+    max-height: 450px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    border-radius: 14px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    background: #fff;
+  }
+
+  .cs-reveal__figcap {
+    margin-top: var(--s3);
+    font-size: var(--text-sm);
+    color: var(--clr-light);
+  }
+
+  .cs-reveal__figcap a {
+    color: var(--clr-light) !important;
+    font-size: var(--text-sm) !important;
+  }
+
+  /* Lede container that can hold multiple <p> */
+  #revealLede {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* ===== Tablet (≥768px): lede full width, then card + info side-by-side ===== */
+  @media (min-width: 768px) {
+    .cs-reveal__panel {
+      padding: var(--s7);
+    }
+
+    .cs-reveal__grid {
+      grid-template-areas:
+        'lede lede'
+        'card info';
+      grid-template-columns: 1.35fr 1fr;
+      /* adjust balance between card & image */
+      gap: var(--s6);
+      align-items: start;
+    }
+
+    .cs-reveal__lede {
+      margin-inline: 0;
+      max-width: unset;
+    }
+
+    .cs-reveal__lede p {
+      text-align: center;
+    }
+  }
+
+  /* ===== Desktop (≥1280px) ===== */
+  @media (min-width: 1280px) {
+    .cs-reveal__panel {
+      padding: var(--s8);
+    }
+
+    .cs-reveal__grid {
+      grid-template-columns: 1.6fr 1fr;
+      gap: var(--s7);
+    }
+
+    .cs-reveal__card {
+      padding: var(--s6);
+    }
+
+    .cs-reveal__card-title {
+      font-size: var(--text-xl);
+    }
+
+    .cs-reveal__list li,
+    .cs-reveal__card p {
+      font-size: var(--text-base);
+    }
+  }
+
+  /* Sub-list styling (safe addon) */
+  .cs-reveal__sublist {
+    margin-top: 0.4rem;
+    margin-left: 1.5rem;
+    list-style-type: circle;
+    font-size: 0.95em;
+    color: var(--clr-text-body, #475569);
+  }
+
+  .cs-reveal__sublist li {
+    margin: 0.25rem 0;
+    line-height: 1.4;
+  }
+
+  /* =============================================== */
+  /* ================= CS-REVEAL (END) ============= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* =============== CS-SPONSORS (START) ============ */
+  /* =============================================== */
+
+  .cs-sponsors {
+    background: var(--clr-neutral);
+    /* light grey section bg */
+    padding-block: 0;
+  }
+
+  /* white rounded inner panel */
+  .cs-sponsors__panel {
+    background: var(--clr-light);
+    border-radius: 24px;
+    padding: var(--s6);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  /* layout */
+  .cs-sponsors__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile stack */
+    gap: var(--s6);
+    align-items: start;
+    /* keep blocks aligned to the top */
+  }
+
+  /* left side (mobile: CENTER) */
+  .cs-sponsors__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center on mobile */
+    text-align: center;
+    /* center on mobile */
+  }
+
+  .cs-sponsors__dots {
+    margin-bottom: var(--s3);
+  }
+
+  .cs-sponsors__dots svg {
+    display: inline-block;
+  }
+
+  .cs-sponsors__title {
+    margin: 0 0 var(--s3) 0;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--clr-text-heading);
+    max-width: 800px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    .cs-sponsors__title__sponsor {
+      margin-left: 0 !important;
+    }
+  }
+
+  .cs-sponsors__lede {
+    margin: 0;
+    color: var(--clr-text-body);
+  }
+
+  /* right side list */
+  .cs-sponsors__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+  }
+
+  .cs-sponsors__item {
+    padding: var(--s5) 0;
+    border-bottom: 1px solid rgba(1, 2, 5, 0.18);
+    color: var(--clr-text-heading);
+    line-height: 1.5;
+  }
+
+  .cs-sponsors__item:last-child {
+    border-bottom: none;
+  }
+
+  /* tablet+ */
+  @media (min-width: 768px) {
+    .cs-sponsors__item {
+      font-size: var(--text-base) !important;
+    }
+
+    .cs-sponsors__panel {
+      padding: var(--s7);
+    }
+
+    .cs-sponsors__grid {
+      grid-template-columns: 1fr 1.35fr;
+      /* left / right */
+      gap: var(--s8);
+      align-items: center;
+    }
+
+    /* LEFT align the header on tablet & up (overrides mobile center) */
+    .cs-sponsors__header {
+      align-items: flex-start;
+      /* left align items */
+      text-align: left;
+      /* left align text */
+    }
+
+    .cs-sponsors__title,
+    .cs-sponsors__lede {
+      margin-left: 0;
+      /* ensure no centering margins */
+      margin-right: 0;
+    }
+
+    .cs-sponsors__dots {
+      margin-left: 0;
+      /* keep dots left */
+      margin-right: 0;
+    }
+
+    .cs-sponsors__listwrap {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  /* desktop XL */
+  @media (min-width: 1280px) {
+    .cs-sponsors__panel {
+      padding: var(--s8);
+    }
+
+    .cs-sponsors__grid {
+      gap: var(--s8);
+    }
+
+    .cs-sponsors__title {
+      font-size: var(--text-4xl);
+    }
+
+    .cs-sponsors__item {
+      font-size: var(--text-xl) !important;
+    }
+  }
+
+  /* =============================================== */
+  /* ================ CS-SPONSORS (END) ============= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* =========== CS-DELIVERABLES (START) ============ */
+  /* =============================================== */
+
+  .cs-deliverables {
+    background: var(--clr-neutral);
+    padding-block: var(--s7);
+  }
+
+  /* add comfy left/right padding on mobile just for this section */
+  .cs-deliverables .cs-section-center {
+    padding-inline: var(--s6);
+    /* more space L/R on phones */
+  }
+
+  .cs-deliverables__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile */
+    gap: var(--s8);
+    align-items: start;
+  }
+
+  .cs-deliverables__header {
+    margin-bottom: 1rem;
+  }
+
+  /* Heading */
+  .cs-deliverables__title {
+    margin-bottom: var(--s6);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--clr-text-heading);
+    text-align: center;
+  }
+
+  /* List grid */
+  .cs-deliverables__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* single column on mobile */
+    gap: var(--s6);
+    /* space between cards */
+  }
+
+  /* Card item */
+  .cs-deliverables__item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    /* icon + text */
+    grid-template-columns: 1fr;
+
+    column-gap: var(--s5);
+    gap: 1rem;
+    align-items: start;
+    background: var(--clr-light);
+    /* white card */
+    border-radius: var(--r3);
+    /* rounded */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    /* subtle shadow */
+    padding: var(--s5);
+    transition: transform 180ms ease, box-shadow 220ms ease;
+    will-change: transform, box-shadow;
+  }
+
+  .cs-deliverables__item:hover,
+  .cs-deliverables__item:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Icon bubble */
+  .cs-deliverables__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    /* allow img to fill circle */
+  }
+
+  /* icons fill container */
+  .cs-deliverables__icon img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Icon color variants (reusing your palette) */
+  .cs-icn--green {
+    background: #61b50c;
+  }
+
+  .cs-icn--gold {
+    background: #fdb414;
+  }
+
+  .cs-icn--red {
+    background: #ef4a3d;
+  }
+
+  .cs-icn--blue {
+    background: #4a72c6;
+  }
+
+  .cs-icn--teal {
+    background: #4ac4d6;
+  }
+
+  .cs-deliverables__text {
+    color: var(--clr-text-heading);
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    .cs-deliverables__item {
+      grid-template-columns: 64px 1fr;
+      /* icon + text */
+    }
+
+    .cs-deliverables__list {
+      grid-template-columns: 1fr 1fr;
+      /* two columns of cards */
+      gap: var(--s7);
+    }
+
+    .cs-deliverables__title {
+      text-align: center;
+    }
+
+    .cs-deliverables__header {
+      align-items: anchor-center;
+    }
+
+    /* slightly reduce the extra side padding */
+    .cs-deliverables .cs-section-center {
+      padding-inline: var(--s5);
+    }
+  }
+
+  /* Desktop (3 columns of cards) */
+  @media (min-width: 1024px) {
+    .cs-deliverables__list {
+      grid-template-columns: 1fr 1fr 1fr;
+      /* three columns on desktop and up */
+    }
+  }
+
+  /* =============================================== */
+  /* ============ CS-DELIVERABLES (END) ============= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ============ CS-LINKS-CTA (START) ============= */
+  /* =============================================== */
+
+  .cs-links {
+    background: var(--clr-light);
+  }
+
+  /* Dark rounded panel with subtle white “lightning” highlight */
+  .cs-links__panel {
+    color: #fff;
+    background:
+      /* white streak */
+      linear-gradient(70deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.1) 13%,
+        rgba(255, 255, 255, 0) 32%),
+      /* soft glow */
+      radial-gradient(80% 70% at 18% 8%,
+        rgba(255, 255, 255, 0.14),
+        rgba(255, 255, 255, 0) 55%),
+      /* base dark */
+      linear-gradient(135deg, #0c1116 0%, #171c22 60%, #0c1116 100%);
+    border-radius: 28px;
+    padding: var(--s6);
+  }
+
+  .cs-links__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile */
+    gap: var(--s6);
+    align-items: center;
+  }
+
+  /* -------- Left: links -------- */
+
+  .cs-links__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s5);
+  }
+
+  /* Use flex so icon + multi-line text are perfectly centered */
+  .cs-links__row {
+    display: flex;
+    align-items: center;
+    /* vertical centering */
+    gap: var(--s4);
+    min-height: 40px;
+    /* match icon size */
+  }
+
+  .cs-links__icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    /* fixed icon column */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cs-links__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    min-width: 40px;
+    /* requested min-width */
+  }
+
+  .cs-links__anchor {
+    flex: 1 1 auto;
+    line-height: 1.5;
+    color: #ffffff !important;
+    /* white link text */
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* -------- Right: buttons -------- */
+
+  .cs-links__actions {
+    display: grid;
+    gap: var(--s4);
+    justify-items: center;
+    /* center on mobile */
+  }
+
+  .cs-links__btn {
+    background: var(--clr-primary);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding-inline: var(--s6);
+    border-radius: 999px;
+    display: flex;
+    /* ensure true centering */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* -------- Tablet+ -------- */
+  @media (min-width: 768px) {
+    .cs-links__panel {
+      padding: var(--s7);
+    }
+
+    .cs-links__grid {
+      grid-template-columns: 1fr 260px;
+      /* links | buttons column */
+      gap: var(--s7);
+    }
+
+    .cs-links__actions {
+      justify-items: stretch;
+    }
+
+    .cs-links__btn {
+      width: 100%;
+    }
+
+    /* equal width buttons */
+  }
+
+  /* -------- Desktop XL -------- */
+  @media (min-width: 1280px) {
+    .cs-links__panel {
+      padding: var(--s8);
+    }
+
+    .cs-links__btn {
+      text-align: center;
+    }
+
+    .cs-links__anchor {
+      font-size: var(--text-2xl) !important;
+    }
+  }
+
+  /* =============================================== */
+  /* ============== CS-LINKS-CTA (END) ============== */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ======= CS-SPONSOR-LOGOS STYLES (START) ======= */
+  /* =============================================== */
+
+  .cs-sponsors {
+    background: var(--clr-light);
+  }
+
+  .cs-sponsors__title {
+    text-align: center;
+    margin-bottom: var(--s3);
+    color: var(--clr-text-heading);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .cs-sponsors__dots {
+    text-align: center;
+    margin-bottom: var(--s3);
+  }
+
+  .cs-sponsors__dots svg {
+    display: inline-block;
+  }
+
+  /* Marquee shell */
+  .ev_marquee_wrapper {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-block: var(--s4);
+
+    /* ✅ Center all content inside wrapper */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Row (animated) */
+  .ev_marquee {
+    display: flex;
+    /* ✅ flex instead of inline-flex */
+    align-items: center;
+    justify-content: center;
+    /* ✅ center logos horizontally */
+    gap: 22px;
+    white-space: nowrap;
+    animation: ev-scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .ev_marquee_wrapper:hover .ev_marquee {
+    animation-play-state: paused;
+  }
+
+  /* Logo tiles */
+  .logo-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .logo-box img {
+    display: block;
+    height: 72px;
+    /* <- explicit height prevents 0×0 */
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+  }
+
+  /* Mobile tweak */
+  @media (max-width: 767px) {
+    .logo-box img {
+      height: 56px;
+    }
+  }
+
+  /* Simple loop animation. Cloning the first row once makes this seamless. */
+  @keyframes ev-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* =============================================== */
+  /* ======== CS-SPONSOR-LOGOS STYLES (END) ========= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ========== CS-DASHBOARD (FULL CSS) ============ */
+  /* =============================================== */
+  /* Section: “Deliverables from this collaborative…”
+   - Dark, glossy panel with a subtle white “sheen”
+   - Mobile: single column, tight side padding
+   - Desktop: two columns (narrow copy / wide images)
+   - Title + copy forced to white
+   - Dashboard shots with small radius + soft shadow
+*/
+  /* ---------- wrapper ---------- */
+  .custom-container .cs-dash {
+    background: #fff;
+    /* page bg stays white */
+    padding-block: var(--s8, 60px);
+  }
+
+  .custom-container .cs-dash__wrap {
+    width: min(96vw, 1700px);
+    /* larger max-width per your request */
+    margin: 0 auto;
+    padding-inline: var(--s4, 16px);
+    /* tighter side padding on mobile */
+  }
+
+  /* ---------- dark panel with white “lightning” sheen ---------- */
+  .custom-container .cs-dash__panel {
+    position: relative;
+    border-radius: 28px;
+    padding: clamp(20px, 4vw, 56px);
+    color: #fff;
+    /* dark gradient + subtle vignette */
+    background: radial-gradient(120% 150% at 100% -10%,
+        rgba(255, 255, 255, 0.14) 0%,
+        rgba(255, 255, 255, 0) 60%) no-repeat,
+      radial-gradient(80% 100% at 10% 0%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 70%) no-repeat,
+      radial-gradient(90% 120% at 50% 120%,
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0) 65%) no-repeat,
+      linear-gradient(180deg, #0e141b 0%, #0a0f15 100%);
+    box-shadow: 0 18px 60px rgba(1, 5, 12, 0.45);
+  }
+
+  /* (decoration layer) a soft white sheen; no pointer events */
+  .custom-container .cs-dash__panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(50% 60% at 18% 6%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 60%) no-repeat,
+      radial-gradient(40% 50% at 65% -10%,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0) 55%) no-repeat;
+    pointer-events: none;
+  }
+
+  /* ---------- layout ---------- */
+  .custom-container .cs-dash__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile */
+    gap: clamp(18px, 3.5vw, 44px);
+    align-items: start;
+  }
+
+  /* desktop/tablet breakpoints */
+  @media (min-width: 992px) {
+    .custom-container .cs-dash__inner {
+      grid-template-columns: 1fr 1.6fr;
+      /* two columns */
+      gap: clamp(24px, 4.5vw, 72px);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .custom-container .cs-dash__inner {
+      grid-template-columns: 0.85fr 2.15fr;
+      /* narrower copy, wider images */
+    }
+  }
+
+  /* ---------- left column (copy) ---------- */
+  .custom-container .cs-dash__title {
+    color: #fff !important;
+    /* ensure white over site styles */
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    margin-bottom: var(--s4, 16px);
+  }
+
+  .custom-container .cs-dash__dots {
+    margin-bottom: var(--s5, 24px);
+  }
+
+  .custom-container .cs-dash__dots svg {
+    display: inline-block;
+  }
+
+  .custom-container .cs-dash__lede,
+  .custom-container .cs-dash__note {
+    color: #e6eaef !important;
+    /* brighter for dark bg */
+    max-width: 64ch;
+  }
+
+  .custom-container .cs-dash__lede {
+    margin-bottom: var(--s6, 32px);
+  }
+
+  .custom-container .cs-dash__note {
+    margin-top: var(--s5, 24px);
+  }
+
+  /* ---------- right column (images) ---------- */
+  .custom-container .cs-dash__shots {
+    display: grid;
+    gap: clamp(12px, 2.2vw, 20px);
+  }
+
+  .custom-container .cs-dash__shot {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    /* smaller radius (as requested) */
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    object-fit: cover;
+  }
+
+  .custom-container .cs-dash__media {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* ---------- responsiveness: tighten mobile side padding even more ---------- */
+  @media (max-width: 480px) {
+    .custom-container .cs-dash__wrap {
+      padding-inline: var(--s3,
+          12px);
+      /* reduce left/right space on very small viewports */
+    }
+  }
+
+  /* =============================================== */
+  /* ============ CS-DASHBOARD (END) =============== */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* =============== CS-TIMELINE (START) ============ */
+  /* =============================================== */
+
+  .cs-timeline {
+    /* light grey canvas like other sections */
+    background: var(--clr-neutral);
+    --cs-timeline-green: #58b600;
+    /* date color (non-virtual) */
+  }
+
+  .cs-time__panel {
+    background: var(--clr-light);
+    border-radius: 24px;
+    padding: var(--s6);
+    box-shadow: 0 18px 60px rgba(1, 5, 12, 0.45);
+  }
+
+  .cs-time__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile stack */
+    gap: var(--s6);
+    align-items: start;
+  }
+
+  /* Header (center on mobile) */
+  .cs-time__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cs-time__dots {
+    margin-bottom: var(--s3);
+  }
+
+  .cs-time__title {
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--clr-text-heading);
+  }
+
+  /* Right column list */
+  .cs-time__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s5);
+  }
+
+  .cs-time__item {
+    padding-bottom: var(--s5);
+    border-bottom: 1px solid rgba(1, 2, 5, 0.18);
+  }
+
+  .cs-time__item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Date line (first line) */
+  .cs-time__date {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-bottom: 0.35rem;
+  }
+
+  /* Main date: big + green (except virtual) */
+  .cs-time__date-main {
+    font-weight: 700;
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    line-height: 1.1;
+    color: var(--cs-timeline-green);
+    letter-spacing: 0.005em;
+  }
+
+  /* Year: smaller */
+  .cs-time__date-year {
+    font-size: 0.95rem;
+    color: var(--cs-timeline-green);
+    opacity: 0.9;
+  }
+
+  /* Description */
+  .cs-time__desc {
+    margin: 0;
+    color: var(--clr-text-body);
+    line-height: 1.55;
+  }
+
+  /* Virtual event: date should be black & bold  */
+  .cs-time__item.is-virtual .cs-time__date-main,
+  .cs-time__item.is-virtual .cs-time__date-year {
+    color: var(--clr-text-heading);
+    font-weight: 800;
+  }
+
+  /* Tablet+ layout */
+  @media (min-width: 768px) {
+    .cs-time__panel {
+      padding: var(--s7);
+    }
+
+    .cs-time__grid {
+      grid-template-columns: 1fr 1.4fr;
+      /* left / right */
+      gap: var(--s8);
+      align-items: center;
+    }
+
+    /* Left-align header on tablet+ */
+    .cs-time__header {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  /* Desktop XL refinements */
+  @media (min-width: 1280px) {
+    .cs-time__panel {
+      padding: var(--s8);
+    }
+
+    .cs-time__grid {
+      gap: var(--s8);
+    }
+
+    .cs-time__title {
+      font-size: var(--text-4xl);
+    }
+  }
+
+  /* =============================================== */
+  /* ================ CS-TIMELINE (END) ============= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* ================= CS-HRRI (START) ============= */
+  /* =============================================== */
+
+  .cs-hrri {
+    background: #fff;
+    padding-block: var(--s8, 60px);
+  }
+
+  .cs-hrri .cs-section-center--wide {
+    max-width: 1700px;
+  }
+
+  /* Dark glossy panel (same family as your dashboard sheen) */
+  .cs-hrri__panel {
+    position: relative;
+    color: #fff;
+    border-radius: 28px;
+    padding: clamp(20px, 4vw, 56px);
+    background: radial-gradient(120% 150% at 100% -10%,
+        rgba(255, 255, 255, 0.14) 0%,
+        rgba(255, 255, 255, 0) 60%) no-repeat,
+      radial-gradient(80% 100% at 10% 0%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 70%) no-repeat,
+      radial-gradient(90% 120% at 50% 120%,
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0) 65%) no-repeat,
+      linear-gradient(180deg, #0e141b 0%, #0a0f15 100%);
+    box-shadow: 0 18px 60px rgba(1, 5, 12, 0.45);
+  }
+
+  .cs-hrri__panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(50% 60% at 18% 6%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 60%) no-repeat,
+      radial-gradient(40% 50% at 65% -10%,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0) 55%) no-repeat;
+    pointer-events: none;
+  }
+
+  /* Header */
+  .cs-hrri__header {
+    text-align: center;
+    margin-bottom: clamp(18px, 3.5vw, 32px);
+  }
+
+  .cs-hrri__title {
+    margin: 0 0 var(--s3, 12px) 0;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #fff !important;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  }
+
+  .cs-hrri__dots svg {
+    display: inline-block;
+  }
+
+  /* Content grid */
+  .cs-hrri__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile stack */
+    gap: clamp(18px, 3.2vw, 36px);
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .cs-hrri__content {
+      grid-template-columns: minmax(240px, 380px) 1fr;
+      /* circle / card */
+      gap: clamp(24px, 4.5vw, 64px);
+    }
+  }
+
+  /* Circular media with double ring */
+  .cs-hrri__badge {
+    margin: 0;
+    position: relative;
+    width: clamp(220px, 28vw, 360px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    place-self: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .cs-hrri__badge::before,
+  .cs-hrri__badge::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cs-hrri__badge::before {
+    /* outer soft ring */
+    inset: -10px;
+    border: 8px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .cs-hrri__badge::after {
+    /* inner crisp ring */
+    inset: -2px;
+    border: 2px solid rgba(255, 255, 255, 0.38);
+  }
+
+  .cs-hrri__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Light rounded copy card */
+  .cs-hrri__card {
+    background: #eef2f6;
+    color: #1b2330;
+    border: 2px solid #d5dbe3;
+    border-radius: 22px;
+    padding: clamp(16px, 2.2vw, 28px) clamp(18px, 2.4vw, 32px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  .cs-hrri__card p {
+    margin: 0 0 1rem 0;
+    line-height: 1.65;
+  }
+
+  .cs-hrri__card p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Tighten side padding on very small screens */
+  @media (max-width: 480px) {
+    .cs-hrri {
+      padding-block: var(--s7, 48px);
+    }
+  }
+
+  /* =============================================== */
+  /* ================== CS-HRRI (END) ============== */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* == CS-RESEARCH-CARDS (HOW RESEARCH DRIVES) ==== */
+  /* ====== Tweaks: more vertical padding & hover === */
+  /* =============================================== */
+
+  .cs-research-cards {
+    background: #fff;
+    padding: clamp(40px, 6vw, 80px) 0;
+  }
+
+  /* header (unchanged) */
+  .cs-research-cards .cs-rc__header {
+    text-align: center;
+    margin-bottom: clamp(22px, 3vw, 36px);
+  }
+
+  .cs-research-cards .cs-rc__title {
+    margin: 0 0 8px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    color: var(--clr-text-heading, #0b0f14);
+  }
+
+  .cs-research-cards .cs-rc__dots svg {
+    display: inline-block;
+  }
+
+  /* grid (unchanged) */
+  .cs-research-cards .cs-rc__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(18px, 3vw, 28px);
+  }
+
+  @media (min-width: 768px) {
+    .cs-research-cards .cs-rc__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(22px, 2.8vw, 32px);
+    }
+  }
+
+  /* card – add a touch more inner padding */
+  .cs-research-cards .cs-rc__card {
+    background: #fff;
+    border-radius: 14px;
+    padding: clamp(16px, 2.4vw, 22px);
+    /* was 12–16px */
+    box-shadow: 0 6px 18px rgba(10, 15, 22, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .cs-research-cards .cs-rc__card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(10, 15, 22, 0.12);
+  }
+
+  /* media */
+  .cs-research-cards .cs-rc__media {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f3f5f7;
+    margin-bottom: clamp(12px, 2vw, 16px);
+  }
+
+  /* slightly larger space above title */
+  .cs-research-cards .cs-rc__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .cs-research-cards .cs-rc__card:hover .cs-rc__media img {
+    transform: scale(1.04);
+  }
+
+  /* title – add more space before the button */
+  .cs-research-cards .cs-rc__cardTitle {
+    font-size: clamp(0.98rem, 1.6vw, 1.05rem);
+    line-height: 1.45;
+    color: var(--clr-text-heading, #0b0f14);
+    margin: 6px 0 clamp(16px, 2vw, 20px);
+    /* was ~12px – gives more vertical room */
+    font-weight: 600;
+  }
+
+  /* button – beefier padding + green hover */
+  .cs-research-cards .cs-rc__btn {
+    --cs-rc-primary: var(--clr-primary,
+        #69c40f);
+    /* your brand green fallback */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    /* was 8px 14px */
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cs-research-cards .cs-rc__btn:hover {
+    background: var(--cs-rc-primary);
+    /* turn green on hover */
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(105, 196, 15, 0.28);
+  }
+
+  .cs-research-cards .cs-rc__btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--cs-rc-primary);
+    background: var(--cs-rc-primary);
+  }
+
+  /* =============================================== */
+  /* ========== END CS-RESEARCH-CARDS STYLES ======= */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* =========== CS-TESTIMONIALS (START) =========== */
+  /* =============================================== */
+
+  .cs-testimonials {
+    padding: clamp(28px, 4vw, 56px) 0;
+    background: #f6f8fa;
+  }
+
+  .cs-testimonials__panel {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(2, 8, 20, 0.08);
+    padding: clamp(22px, 3.5vw, 40px);
+  }
+
+  .cs-testimonials__viewport {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cs-testimonials__track {
+    display: flex;
+    transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .cs-testimonial {
+    min-width: 100%;
+  }
+
+  /* ---------- quote row ---------- */
+  .cs-testimonial__quote {
+    display: flex;
+    justify-content: center;
+    /* center on mobile */
+    margin: 6px 0 clamp(12px, 2.5vw, 18px);
+  }
+
+  .cs-quote {
+    width: clamp(80px, 12vw, 100px);
+    height: clamp(80px, 12vw, 100px);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #65c328;
+    background: radial-gradient(120% 120% at 30% 20%,
+        rgba(101, 195, 40, 0.12) 0%,
+        rgba(101, 195, 40, 0) 60%),
+      #f0f4f8;
+    box-shadow: 0 10px 24px rgba(2, 8, 20, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .cs-quote svg {
+    width: clamp(36px, 6vw, 44px);
+    height: clamp(36px, 6vw, 44px);
+  }
+
+  /* text */
+  .cs-testimonial__text {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.7;
+    color: #1a2433;
+    margin: 0 0 clamp(18px, 3vw, 26px);
+  }
+
+  /* divider dots (visible on all viewports) */
+  .cs-testimonials__divider {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 6px 0 10px;
+  }
+
+  .cs-testimonials__divider .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cfd7e3;
+    transition: background 0.2s ease;
+  }
+
+  .cs-testimonials__divider .dot.is-active:nth-child(1) {
+    background: #ef4a3d;
+  }
+
+  .cs-testimonials__divider .dot.is-active:nth-child(2) {
+    background: #4ac4d6;
+  }
+
+  .cs-testimonials__divider .dot.is-active:nth-child(3) {
+    background: #94c83d;
+  }
+
+  /* footer = author · arrows/counter */
+  .cs-testimonials__footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+
+  /* author */
+  .cs-testimonials__author {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .cs-testimonials__avatar {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 999px;
+    object-fit: cover;
+    display: block;
+    box-shadow: none;
+  }
+
+  .cs-testimonials__meta {
+    display: grid;
+    gap: 2px;
+  }
+
+  .cs-testimonials__name {
+    font-weight: 600;
+    color: #0e1726;
+  }
+
+  .cs-testimonials__role {
+    font-size: 0.92rem;
+    color: #6b778c;
+  }
+
+  /* (legacy bullets under author are hidden) */
+  .cs-testimonials__bullets {
+    display: none;
+  }
+
+  /* nav (ARROWS with COUNT BETWEEN) */
+  .cs-testimonials__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cs-testimonials__count {
+    color: #6b778c;
+    font-size: 0.94rem;
+    order: 2;
+    /* PUT THE COUNT BETWEEN ARROWS */
+    margin: 0 8px;
+  }
+
+  .cs-nav {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e3e8ef;
+    background: #fff;
+    color: #0e1726;
+    transition: background 160ms, color 160ms, border-color 160ms,
+      box-shadow 160ms;
+    cursor: pointer;
+  }
+
+  .cs-testimonials__nav .cs-prev {
+    order: 1;
+  }
+
+  .cs-testimonials__nav .cs-next {
+    order: 3;
+  }
+
+  .cs-nav:hover {
+    color: #fff;
+    background: var(--clr-primary, #65c328);
+    border-color: var(--clr-primary, #65c328);
+    box-shadow: 0 6px 18px rgba(101, 195, 40, 0.28);
+  }
+
+  /* ====== TABLET & DESKTOP ====== */
+  @media (min-width: 768px) {
+    .cs-testimonial__quote {
+      justify-content: flex-start;
+    }
+
+    /* left align */
+    .cs-testimonials__footer {
+      grid-template-columns: 1fr auto;
+    }
+
+    /* author · nav (nav contains arrows+count) */
+    .cs-testimonial__text {
+      font-size: var(--text-xl) !important;
+    }
+  }
+
+  /* ====== MOBILE ====== */
+  @media (max-width: 767px) {
+    .cs-testimonials__author {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cs-testimonials__avatar {
+      width: 100px !important;
+      height: 100px !important;
+      margin: 0 auto;
+    }
+
+    .cs-testimonials__nav {
+      justify-content: center;
+    }
+  }
+
+  /* =============================================== */
+  /* ============ CS-TESTIMONIALS (END) ============ */
+  /* =============================================== */
+
+  /* =============================================== */
+  /* =============== CS-HELP (START) =============== */
+  /* =============================================== */
+
+  .cs-help {
+    padding: clamp(28px, 4vw, 56px) 0;
+    background: var(--clr-neutral, #f6f8fa);
+    padding-block: 0;
+  }
+
+  /* Dark glossy panel with rounded corners */
+  .cs-help__panel {
+    color: #fff !important;
+    /* border-radius: 28px; */
+    width: 100%;
+    max-width: 1920px;
+
+    padding: clamp(22px, 4vw, 44px);
+    /* box-shadow: 0 24px 60px rgba(2, 8, 20, 0.18); */
+    background:
+      /* white streak */
+      linear-gradient(70deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.1) 13%,
+        rgba(255, 255, 255, 0) 32%),
+      /* soft glow top-left */
+      radial-gradient(80% 70% at 18% 8%,
+        rgba(255, 255, 255, 0.14),
+        rgba(255, 255, 255, 0) 55%),
+      /* base dark vignette */
+      linear-gradient(135deg, #0c1116 0%, #171c22 60%, #0c1116 100%);
+    margin: 0 auto;
+  }
+
+  .cs-help__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobile */
+    gap: clamp(20px, 4vw, 40px);
+    align-items: center;
+  }
+
+  #helpButtons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  /* Left column ---------------------------------- */
+
+  .cs-help__title {
+    margin: 0 0 clamp(12px, 1.6vw, 18px);
+    font-weight: 700;
+    line-height: 1.15;
+    font-size: clamp(26px, 3vw, 40px);
+    color: #fff !important;
+    /* force white */
+    text-align: center;
+  }
+
+  .cs-help__row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: clamp(8px, 1.2vw, 12px) 0;
+    color: #fff !important;
+    text-decoration: none;
+    justify-content: center;
+  }
+
+  .cs-help__icon {
+    width: clamp(28px, 2.5vw, 36px);
+    height: clamp(28px, 2.5vw, 36px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  .cs-help__icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .cs-help__linktext {
+    color: #fff !important;
+    font-size: clamp(15px, 1.6vw, 24px);
+    /* large, like mockup */
+    text-decoration: none !important;
+    text-underline-offset: 4px;
+  }
+
+  .cs-help__or {
+    opacity: 0.9;
+    padding: 0 6px;
+  }
+
+  /* Right column --------------------------------- */
+
+  .cs-help__right {
+    display: grid;
+    gap: clamp(12px, 2vw, 16px);
+    justify-items: center;
+    /* center buttons/socials */
+  }
+
+  .cs-help__btn {
+    background: var(--clr-primary, #65c328);
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 14px 28px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(260px, 100%);
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(101, 195, 40, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease,
+      background 0.15s ease;
+    cursor: pointer;
+  }
+
+  .cs-help__btn:hover {
+    transform: translateY(-1px);
+    background: #5bb11f;
+    /* subtle hover */
+    box-shadow: 0 10px 22px rgba(101, 195, 40, 0.32);
+  }
+
+  /* Social row */
+  .cs-help__social {
+    display: flex;
+    gap: 12px;
+    margin-top: clamp(6px, 1.4vw, 10px);
+    /* space under buttons */
+    justify-content: center;
+  }
+
+  .cs-help__soc {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    /* background: var(--clr-primary, #65c328); */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 6px 16px rgba(101, 195, 40, 0.25); */
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .cs-help__soc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(101, 195, 40, 0.35);
+  }
+
+  .cs-help__soc img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Tablet / Desktop ----------------------------- */
+  @media (min-width: 900px) {
+    .cs-help__title {
+      text-align: left;
+    }
+
+    .cs-help__grid {
+      grid-template-columns: 1fr 320px;
+      /* left | right */
+    }
+
+    .cs-help__right {
+      justify-items: end;
+      /* align with right edge */
+    }
+
+    .cs-help__social {
+      justify-content: center;
+      /* centered under buttons */
+    }
+
+    .cs-help__row {
+      justify-content: start;
+    }
+  }
+
+  /* =============================================== */
+  /* ================ CS-HELP (END) ================= */
+  /* =============================================== */
+
+  /* =================start animated background grey================ */
+  /* ===================== Reusable Animated Background ===================== */
+  /* Apply to any container: class="u-animated-bg"
+   Optional inner wrapper to ensure stacking: class="u-animated-bg__content" */
+
+  .u-animated-bg {
+    /* Tunables */
+    --abg-tone-1: #eef2f6;
+    /* very light gray */
+    --abg-tone-2: #f1f4f8;
+    /* very light gray */
+    --abg-sweep-opacity: 0.35;
+    /* 0.2–0.5 recommended */
+    --abg-drift-duration: 11s;
+    /* slower -> larger value */
+    --abg-sweep-duration: 16s;
+    /* slower -> larger value */
+
+    position: relative;
+    z-index: 0;
+    /* create stacking context for -1 layers */
+    overflow: hidden;
+    /* clip animated layers */
+    isolation: isolate;
+    /* keep overlays behind content */
+    background: var(--clr-neutral, #fff);
+    /* safe fallback */
+  }
+
+  /* If you don't use the wrapper, this keeps all children above overlays */
+  .u-animated-bg>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Optional wrapper (use instead of the selector above if preferred) */
+  .u-animated-bg__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Layer 1 — soft drifting gradient (GPU-friendly via transform) */
+  .u-animated-bg::before {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    /* overscan so edges never show */
+    z-index: -1;
+    /* keep behind content */
+    pointer-events: none;
+    background: radial-gradient(120% 90% at 18% 22%,
+        #ffffff 0%,
+        var(--abg-tone-1) 55%,
+        #ffffff 100%),
+      radial-gradient(95% 80% at 82% 70%,
+        #ffffff 0%,
+        var(--abg-tone-2) 60%,
+        #ffffff 100%);
+    transform: translate3d(-10%, -6%, 0) scale(1.08) rotate(-1deg);
+    animation: abg-drift var(--abg-drift-duration) ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* Layer 2 — subtle angled spotlight sweep */
+  .u-animated-bg::after {
+    content: '';
+    position: absolute;
+    width: 160%;
+    height: 200%;
+    top: -50%;
+    left: -30%;
+    z-index: -1;
+    /* keep behind content */
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 28%,
+        rgba(255, 255, 255, var(--abg-sweep-opacity)) 50%,
+        rgba(255, 255, 255, 0) 72%);
+    filter: blur(18px);
+    transform: translateX(-55%) rotate(8deg);
+    animation: abg-sweep var(--abg-sweep-duration) ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  /* Keyframes */
+  @keyframes abg-drift {
+    0% {
+      transform: translate3d(-12%, -6%, 0) scale(1.06) rotate(-1deg);
+    }
+
+    50% {
+      transform: translate3d(6%, 5%, 0) scale(1.08) rotate(0.6deg);
+    }
+
+    100% {
+      transform: translate3d(14%, -3%, 0) scale(1.07) rotate(1.2deg);
+    }
+  }
+
+  @keyframes abg-sweep {
+    0% {
+      transform: translateX(-60%) rotate(8deg);
+    }
+
+    100% {
+      transform: translateX(60%) rotate(8deg);
+    }
+  }
+
+  /* Motion safety */
+  @media (prefers-reduced-motion: reduce) {
+
+    .u-animated-bg::before,
+    .u-animated-bg::after {
+      animation: none;
+    }
+  }
+
+  /* =================end animated background grey================ */
+
+  /* ================== start dark animated background================= */
+  /* ==================== CS-LINKS Dark Panel (base) ==================== */
+  /* Softer static highlight so text stays readable */
+  .cs-links__panel {
+    color: #fff;
+    background:
+      /* very subtle white streak (softened) */
+      linear-gradient(70deg,
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0.03) 13%,
+        rgba(255, 255, 255, 0) 32%),
+      /* softer glow (reduced) */
+      radial-gradient(80% 70% at 18% 8%,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0) 55%),
+      /* base dark */
+      linear-gradient(135deg, #0c1116 0%, #171c22 60%, #0c1116 100%);
+    border-radius: 28px;
+    padding: var(--s6);
+    position: relative;
+    /* for animated overlay stacking */
+    overflow: hidden;
+    /* clip overlay to rounded corners */
+  }
+
+  /* ================= Reusable Dark Animated Background ================= */
+  /* Apply to any container (e.g., .cs-links__panel): class="u-animated-dark" */
+
+  .u-animated-dark {
+    /* Tunables (reduced highlight + slower by default) */
+    --dabg-sheen-1: rgba(255, 255, 255, 0.06);
+    --dabg-sheen-2: rgba(255, 255, 255, 0.04);
+    --dabg-sweep-opacity: 0.22;
+    /* lower = less white highlight */
+    --dabg-drift-duration: 20s;
+    /* slower motion */
+    --dabg-sweep-duration: 32s;
+    /* slower sweep */
+
+    position: relative;
+    z-index: 0;
+    /* allows -1 pseudo layers */
+    overflow: hidden;
+    /* respect border-radius */
+    isolation: isolate;
+    /* keep overlays behind content */
+  }
+
+  /* If you don't have a dedicated content wrapper, keep children above overlays */
+  .u-animated-dark>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Optional wrapper if you prefer it: <div class="u-animated-dark__content">… */
+  .u-animated-dark__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Layer 1 — drifting soft highlights (GPU transform) */
+  .u-animated-dark::before {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    border-radius: inherit;
+    z-index: -1;
+    /* behind content */
+    pointer-events: none;
+    background: radial-gradient(120% 90% at 18% 22%,
+        var(--dabg-sheen-1) 0%,
+        transparent 58%),
+      radial-gradient(95% 80% at 82% 70%,
+        var(--dabg-sheen-2) 0%,
+        transparent 62%);
+    transform: translate3d(-10%, -6%, 0) scale(1.08) rotate(-1deg);
+    animation: dabg-drift var(--dabg-drift-duration) ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* Layer 2 — angled spotlight sweep (soft, slowed) */
+  .u-animated-dark::after {
+    content: '';
+    position: absolute;
+    width: 160%;
+    height: 200%;
+    top: -50%;
+    left: -30%;
+    border-radius: inherit;
+    z-index: -1;
+    /* behind content */
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 28%,
+        rgba(255, 255, 255, var(--dabg-sweep-opacity)) 50%,
+        rgba(255, 255, 255, 0) 72%);
+    filter: blur(20px);
+    transform: translateX(-60%) rotate(8deg);
+    animation: dabg-sweep var(--dabg-sweep-duration) ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  /* Keyframes */
+  @keyframes dabg-drift {
+    0% {
+      transform: translate3d(-12%, -6%, 0) scale(1.06) rotate(-1deg);
+    }
+
+    50% {
+      transform: translate3d(6%, 5%, 0) scale(1.08) rotate(0.6deg);
+    }
+
+    100% {
+      transform: translate3d(14%, -3%, 0) scale(1.07) rotate(1.2deg);
+    }
+  }
+
+  @keyframes dabg-sweep {
+    0% {
+      transform: translateX(-60%) rotate(8deg);
+    }
+
+    100% {
+      transform: translateX(60%) rotate(8deg);
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+
+    .u-animated-dark::before,
+    .u-animated-dark::after {
+      animation: none;
+    }
+  }
+
+  /* ===== Optional stronger/subtle presets you can add/remove ===== */
+  .u-animated-dark--subtle {
+    --dabg-sheen-1: rgba(255, 255, 255, 0.04);
+    --dabg-sheen-2: rgba(255, 255, 255, 0.03);
+    --dabg-sweep-opacity: 0.16;
+    --dabg-drift-duration: 24s;
+    --dabg-sweep-duration: 36s;
+  }
+
+  .u-animated-dark--strong {
+    --dabg-sheen-1: rgba(255, 255, 255, 0.1);
+    --dabg-sheen-2: rgba(255, 255, 255, 0.08);
+    --dabg-sweep-opacity: 0.32;
+    --dabg-drift-duration: 16s;
+    --dabg-sweep-duration: 24s;
+  }
+
+  /* ================== end dark animated background================= */
+</style>
+<!--============================================================
+===================== template css end======================================
+============================================================================-->
+
+<div class="custom-container">
+  <!-- =============================================== -->
+  <!-- =============== CS-HEADER (START) ============= -->
+  <!-- =============================================== -->
+  <section class="cs-section cs-header">
+    <div class="cs-section-center cs-header__inner">
+      <div class="cs-header__logo-container">
+        <a href="https://www.hr.com" target="_blank" class="cs-header__brand" aria-label="HR.com ">
+          <img class="cs-header__brand-img"
+            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/hr-dot-com.jpg"
+            alt="HR.com " loading="eager" />
+        </a>
+        <a href="https://www.hr.com/en/about_us/advertise/webcast-and-events_joerdg5d.html" target="_blank"
+          class="cs-header__brand" aria-label="HR Virtual Events">
+          <img class="cs-header__brand-img"
+            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/hr-virtual-events-2.jpg"
+            alt="HR Virtual Events " loading="eager" />
+        </a>
+      </div>
+
+      <a href="mailto:sales@hr.com" target="_blank" class="cs-btn cs-btn--outline cs-header__cta">Contact Us</a>
+    </div>
+  </section>
+  <!-- =============================================== -->
+  <!-- ================ CS-HEADER (END) ============== -->
+  <!-- =============================================== -->
+
+  <!-- ==================== CS-HERO (Template) ==================== -->
+  <section class="cs-section cs-hero">
+    <div class="cs-section-center cs-hero__inner">
+      <!-- Left: Content -->
+      <div class="cs-hero__content">
+        <h1 class="cs-hero__title" id="heroTitle"><!-- injected --></h1>
+
+        <p class="cs-hero__sub">Virtual Event Sponsorship Opportunity</p>
+
+        <div class="cs-hero__dots" aria-hidden="true">
+          <!-- svg dots unchanged -->
+          <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+            <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+            <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+            <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+          </svg>
+        </div>
+
+        <div class="cs-hero__ctas">
+          <!-- CTA buttons will have dynamic ids/names/onclick -->
+          <a class="cs-btn cs-btn--primary">
+            <span>Talk to a Rep</span>
+            <svg class="cs-hero__arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a class="cs-hero__link">Apply To Speak</a>
+        </div>
+
+        <div class="cs-hero__meta">
+          <p class="cs-hero__date">
+            <span class="cs-hero__curr"><strong id="heroDate"></strong></span><br />
+            <span class="cs-hero__future" id="heroFutureWrap">
+              Future Dates: <span id="heroFuture"></span>
+            </span>
+          </p>
+
+          <!-- Mobile-only note (static) -->
+          <p class="cs-hero__note cs-hero__note--mobile">
+            <span>
+              To see future virtual events on this or other topics, view
+              <a href="https://www.hr.com/en/webcasts_events/hrcom-virtual-and-in-person-event-schedule_l940kx8t.html"
+                target="_blank">Event Schedule</a>
+              or contact
+              <a href="mailto:sales@hr.com" target="_blank">sales@hr.com</a>.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Media -->
+      <div class="cs-hero__media">
+        <img class="cs-hero__img" id="heroImg" src="" alt="" loading="eager" width="960" height="640" />
+
+        <!-- Desktop/tablet-only note (static) -->
+        <p class="cs-hero__note cs-hero__note--desk">
+          <span>
+            To see future virtual events on this or other topics, view
+            <a href="https://www.hr.com/en/webcasts_events/hrcom-virtual-and-in-person-event-schedule_l940kx8t.html"
+              target="_blank">Event Schedule</a>
+            or contact <a href="mailto:sales@hr.com">sales@hr.com</a>.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== END CS-HERO ===================== -->
+
+  <!-- ==================== [VE_INTRO] START ==================== -->
+  <section class="cs-section cs-intro">
+    <div class="cs-section-center cs-intro__inner">
+      <!-- Left: Copy + supporting image -->
+      <div class="cs-intro__content">
+        <h2 class="cs-intro__title" id="introTitle"></h2>
+
+        <div class="cs-intro__dots" aria-hidden="true">
+          <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+            <circle cx="20" cy="5" fill="#4ac4d6" r="5"></circle>
+            <circle cx="35" cy="5" fill="#94c83d" r="5"></circle>
+            <circle cx="50" cy="5" fill="#fdb414" r="5"></circle>
+          </svg>
+        </div>
+
+        <div id="introCopy"><!-- paragraphs injected here --></div>
+
+        <figure class="cs-intro__figure">
+          <img class="cs-intro__img" id="introImg" src="" alt="" width="960" height="640" loading="lazy" />
+        </figure>
+      </div>
+
+      <!-- Right: Awards ad (optional) -->
+      <div class="cs-intro__aside" id="introAside">
+        <a class="cs-intro__ad-link" id="introAdLink" href="" target="_blank" rel="noopener noreferrer">
+          <img class="cs-intro__ad" id="introAdImg" src="" alt="" width="420" height="820" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_INTRO] END ===================== -->
+
+  <!-- ==================== [VE_REVEAL] START ==================== -->
+  <section class="cs-section cs-reveal" id="revealSection">
+    <div class="cs-section-center">
+      <div class="cs-reveal__panel">
+        <h2 class="cs-reveal__title" id="revealTitle"></h2>
+
+        <div class="cs-reveal__dots" aria-hidden="true">
+          <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+            <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+            <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+            <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+          </svg>
+        </div>
+
+        <div class="cs-reveal__grid">
+          <!-- Left: lede (supports multiple paragraphs) -->
+          <div class="cs-reveal__lede" id="revealLedeWrap">
+            <div id="revealLede"></div>
+          </div>
+
+          <!-- Middle: question card -->
+          <div class="cs-reveal__card" id="revealCard">
+            <h3 class="cs-reveal__card-title" id="revealCardTitle"></h3>
+            <ul class="cs-reveal__list" id="revealList"></ul>
+            <div id="revealAfterList"></div>
+          </div>
+
+          <!-- Right: infographic (optional) -->
+          <div class="cs-reveal__info" id="revealInfo">
+            <figure class="cs-reveal__figure" id="revealFigure">
+              <a class="cs-reveal__info-link" id="revealInfoLink" href="" target="_blank" rel="noopener noreferrer">
+                <img class="cs-reveal__infographic" id="revealInfoImg" src="" alt="" width="480" height="680"
+                  loading="lazy" />
+              </a>
+              <figcaption class="cs-reveal__figcap" id="revealFigcap"></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_REVEAL] END ===================== -->
+
+  <!-- ==================== [VE_SPONSORS] START ==================== -->
+  <section class="cs-section cs-sponsors" id="sponsorsSection">
+    <div class="cs-section-center">
+      <div class="cs-sponsors__panel" id="sponsorsPanel">
+        <div class="cs-sponsors__grid">
+          <!-- Left: Heading + dots + lede -->
+          <header class="cs-sponsors__header" id="sponsorsHeader">
+            <div class="cs-sponsors__dots" aria-hidden="true">
+              <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+                <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+                <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+                <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+              </svg>
+            </div>
+            <h2 class="cs-sponsors__title cs-sponsors__title__sponsor" id="sponsorsTitle"></h2>
+            <p class="cs-sponsors__lede" id="sponsorsLede"></p>
+          </header>
+
+          <!-- Right: Criteria list with dividers -->
+          <div class="cs-sponsors__listwrap" id="sponsorsListWrap">
+            <ul class="cs-sponsors__list" id="sponsorsList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_SPONSORS] END ===================== -->
+
+  <!-- =============================================== -->
+  <!-- =========== CS-DELIVERABLES (START) =========== -->
+  <!-- =============================================== -->
+  <section class="cs-section cs-deliverables u-animated-bg">
+    <div class="cs-section-center cs-deliverables__inner">
+      <div class="cs-deliverables__content">
+        <header class="cs-sponsors__header cs-deliverables__header">
+          <div class="cs-sponsors__dots" aria-hidden="true" style="margin: 0 auto; margin-bottom: 1rem">
+            <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+              <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+              <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+              <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+            </svg>
+          </div>
+          <h2 class="cs-sponsors__title">
+            Deliverables From This Collaborative Sponsorship
+          </h2>
+          <!-- <p class="cs-sponsors__lede">
+                  Ideal sponsors for this research and event include:
+                </p> -->
+        </header>
+
+        <!-- Cards list (9 items) -->
+        <ul class="cs-deliverables__list">
+          <!-- 1 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--green">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-webcast.svg"
+                alt="" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              One-hour webcast presentation showcasing your expertise
+            </p>
+          </li>
+
+          <!-- 2 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--gold">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-dashboard.svg"
+                alt="" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              Access to a real-time dashboard tracking and reporting on all
+              leads — live and archived viewers
+            </p>
+          </li>
+
+          <!-- 3 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--red">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-megaphone.png"
+                alt="Megaphone Icon" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              HR.com’s promotion of your virtual event and webcast
+            </p>
+          </li>
+
+          <!-- 4 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--blue">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-phone-message.png"
+                alt="Phone and Message Icon" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              Full contact information for all virtual event registrants
+              (including your webcast registrants) so you can create your own HR
+              email list and fill your sales funnel
+            </p>
+          </li>
+
+          <!-- 5 -->
+          <!-- <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--teal">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-attendees.png"
+                alt="Attendees Icon" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              An average of 800+ registrants per virtual event
+            </p>
+          </li> -->
+
+          <!-- 6 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--green">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-certificate.png"
+                alt="certificate icon" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              Attendees can earn HRCI/SHRM recertification credits
+            </p>
+          </li>
+
+          <!-- 7 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--gold">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-poll.png"
+                alt="Polling Icon" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              Ability to poll your webcast audience in real time, with live
+              reports
+            </p>
+          </li>
+
+          <!-- 8 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--red">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-video.png"
+                alt="Video Icon" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              An archive and MP4 of your webcast is downloadable for your
+              clients, prospects, and HR.com members
+            </p>
+          </li>
+
+          <!-- 9 -->
+          <li class="cs-deliverables__item">
+            <span class="cs-deliverables__icon cs-icn--blue">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/women-in-the-workplace-2026/icon-booth.png"
+                alt="" aria-hidden="true" />
+            </span>
+            <p class="cs-deliverables__text">
+              Booth customization — let your creativity run wild!
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- =============================================== -->
+  <!-- ============ CS-DELIVERABLES (END) ============ -->
+  <!-- =============================================== -->
+
+  <!-- ==================== [VE_LINKS_CTA] START ==================== -->
+  <section class="cs-section cs-links" id="linksCtaSection">
+    <div class="cs-section-center">
+      <div class="cs-links__panel u-animated-dark u-animated-dark--subtle" id="linksCtaPanel">
+        <div class="u-animated-dark__content">
+          <div class="cs-links__grid">
+            <!-- Left: Links list (items injected) -->
+            <ul class="cs-links__list" id="linksCtaList"></ul>
+
+            <!-- Right: Actions (buttons default hidden until JS confirms codes) -->
+            <div class="cs-links__actions" id="linksCtaActions">
+              <a class="cs-btn cs-btn--primary cs-links__btn cs-help__btn" style="display: none">Talk to a Rep</a>
+              <a class="cs-btn cs-btn--primary cs-links__btn cs-help__btn" style="display: none">Apply to Speak</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_LINKS_CTA] END ===================== -->
+
+  <!-- ==================== [VE_SPONSOR-LOGOS] START ==================== -->
+  <section class="cs-section cs-sponsors" id="wiiwSponsorLogosSection">
+    <div class="cs-section-center">
+      <h2 class="cs-sponsors__title" id="wiiwSponsorLogosTitle"></h2>
+
+      <div class="cs-sponsors__dots" aria-hidden="true">
+        <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="5" cy="5" fill="#ef4a3d" r="5"></circle>
+          <circle cx="5" cy="5" fill="#4ac4d6" r="5" transform="translate(15)"></circle>
+          <circle cx="5" cy="5" fill="#94c83d" r="5" transform="translate(30)"></circle>
+          <circle cx="5" cy="5" fill="#fdb414" r="5" transform="translate(45)"></circle>
+        </svg>
+      </div>
+
+      <!-- Marquee shell (rows injected by JS) -->
+      <div class="ev_marquee_wrapper" id="wiiwSponsorLogosWrapper" aria-label="Scrolling list of sponsor logos"></div>
+    </div>
+  </section>
+  <!-- ===================== [VE_SPONSOR-LOGOS] END ===================== -->
+
+  <!-- ==================== [VE_DASHBOARDS] START ==================== -->
+  <section class="cs-section cs-dash" id="dashSection">
+    <div class="cs-section-center cs-section-center--wide">
+      <div class="cs-dash__panel">
+        <div class="cs-dash__inner">
+          <!-- Left: Title + copy -->
+          <div class="cs-dash__content">
+            <h2 class="cs-dash__title" id="dashTitle"></h2>
+
+            <div class="cs-dash__dots" aria-hidden="true">
+              <svg height="10" viewBox="0 0 55 10" width="55" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="5" fill="#ef4a3d"></circle>
+                <circle cx="5" cy="5" r="5" transform="translate(15)" fill="#4ac4d6"></circle>
+                <circle cx="5" cy="5" r="5" transform="translate(30)" fill="#94c83d"></circle>
+                <circle cx="5" cy="5" r="5" transform="translate(45)" fill="#fdb414"></circle>
+              </svg>
+            </div>
+
+            <!-- Iterable paragraphs injected here -->
+            <div id="dashParas"></div>
+          </div>
+
+          <!-- Right: Dashboards -->
+          <div class="cs-dash__media" id="dashMedia"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_DASHBOARDS] END ===================== -->
+
+  <!-- ==================== [VE_TIMELINE] START ==================== -->
+  <section class="cs-section cs-timeline" id="timeSection">
+    <div class="cs-section-center">
+      <div class="cs-time__panel">
+        <div class="cs-time__grid">
+          <!-- Left: heading -->
+          <header class="cs-time__header" id="timeHeader">
+            <div class="cs-time__dots" aria-hidden="true">
+              <svg width="55" height="10" viewBox="0 0 55 10" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="5" fill="#ef4a3d" />
+                <circle cx="20" cy="5" r="5" fill="#4ac4d6" />
+                <circle cx="35" cy="5" r="5" fill="#94c83d" />
+                <circle cx="50" cy="5" r="5" fill="#fdb414" />
+              </svg>
+            </div>
+            <h2 class="cs-time__title" id="timeTitle"></h2>
+          </header>
+
+          <!-- Right: timeline items -->
+          <ol class="cs-time__list" id="timeList"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_TIMELINE] END ===================== -->
+
+  <!-- =============================================== -->
+  <!-- =========== CS-TESTIMONIALS (HTML) ============ -->
+  <!-- =============================================== -->
+  <section class="cs-testimonials">
+    <div class="cs-testimonials__panel">
+      <div class="cs-testimonials__viewport">
+        <div class="cs-testimonials__track">
+          <!-- ========= Slide 1 ========= -->
+          <article class="cs-testimonial">
+            <p class="cs-testimonial__text">
+              HR.com’s timely and transparent communication throughout our
+              partnership continues to make us happy and helps us stay on track.
+              We have a 100% success rate of achieving our demand generating
+              goals when partnering with them, allowing us to accurately
+              forecast and prepare sales teams for efficient follow-up. The
+              research reports HR.com provides have greatly exceeded our
+              expectations. They’re super in-depth, and they allow us to
+              validate our products in the market and identify new opportunities
+              to better help our customers achieve their needs. We can’t
+              recommend working with HR.com enough!
+            </p>
+
+            <!-- Center divider dots (visible on all viewports) -->
+            <div class="cs-testimonials__divider" aria-hidden="true">
+              <span class="dot is-active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+
+            <!-- Footer row: Author · Arrows -->
+            <div class="cs-testimonials__footer">
+              <!-- Author -->
+              <div class="cs-testimonials__author">
+                <img class="cs-testimonials__avatar"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/kelci-marx.jpg"
+                  alt="Author headshot" width="60" height="60" loading="lazy" />
+                <div class="cs-testimonials__meta">
+                  <span class="cs-testimonials__name">Kelci Marx</span>
+                  <span class="cs-testimonials__role">Senior Marketing Manager, SeekOut</span>
+                </div>
+              </div>
+
+              <!-- Arrows + counter -->
+              <div class="cs-testimonials__nav">
+                <button class="cs-nav cs-prev" aria-label="Previous testimonial">
+                  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <span class="cs-testimonials__count" aria-live="polite">01/03</span>
+                <button class="cs-nav cs-next" aria-label="Next testimonial">
+                  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ========= Slide 2 ========= -->
+          <article class="cs-testimonial">
+            <p class="cs-testimonial__text">
+              The HR.com research team worked closely with us to update and
+              improve a set of research questions we had used for a study a few
+              years prior. Once set, the survey was deployed and we received
+              regular updates on survey completion progress. The team
+              collaborated with us to determine the main analysis thrusts and
+              emergent insights, and then did a terrific job of writing a
+              top-quality report. Overall, the combination of our mentoring
+              domain expertise with HR.com’s research capability, delivered a
+              first-class piece of research. HR.com’s team was responsive,
+              proactive and easy to work with through the whole process.
+            </p>
+
+            <div class="cs-testimonials__divider" aria-hidden="true">
+              <span class="dot"></span>
+              <span class="dot is-active"></span>
+              <span class="dot"></span>
+            </div>
+
+            <div class="cs-testimonials__footer">
+              <div class="cs-testimonials__author">
+                <img class="cs-testimonials__avatar"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/2022_siteupdate/market_solution/images/Melissa_Richardson.jpeg"
+                  alt="Author headshot" width="60" height="60" loading="lazy" />
+                <div class="cs-testimonials__meta">
+                  <span class="cs-testimonials__name">Melissa Richardson</span>
+                  <span class="cs-testimonials__role">Founder, Art of Mentoring</span>
+                </div>
+              </div>
+
+              <div class="cs-testimonials__nav">
+                <button class="cs-nav cs-prev" aria-label="Previous testimonial">
+                  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <span class="cs-testimonials__count" aria-live="polite">02/03</span>
+                <button class="cs-nav cs-next" aria-label="Next testimonial">
+                  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ========= Slide 3 ========= -->
+          <article class="cs-testimonial">
+            <p class="cs-testimonial__text">
+              I've used all these different platforms and HR.com gave me such a
+              great experience. The team was ready to reiterate and think about
+              my ideas to get a true and actual depiction of what this research
+              said. HR.com was such a great partner over months helping us get
+              it right. We have a lot of people working on it and I found it to
+              be one of the best experiences with working with vendors. It's not
+              about marketing it to the right people to make people feel good
+              about it but to get the story out there and help people do what
+              they need to do. So, personally, it is a solid experience!
+            </p>
+
+            <div class="cs-testimonials__divider" aria-hidden="true">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot is-active"></span>
+            </div>
+
+            <div class="cs-testimonials__footer">
+              <div class="cs-testimonials__author">
+                <img class="cs-testimonials__avatar"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/joselyn-tomaka.jpg"
+                  alt="Author headshot" width="60" height="60" loading="lazy" />
+                <div class="cs-testimonials__meta">
+                  <span class="cs-testimonials__name">Dr. Jocelyn Tomaka</span>
+                  <span class="cs-testimonials__role">Senior Marketing Manager, SeekOut</span>
+                </div>
+              </div>
+
+              <div class="cs-testimonials__nav">
+                <button class="cs-nav cs-prev" aria-label="Previous testimonial">
+                  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <span class="cs-testimonials__count" aria-live="polite">03/03</span>
+                <button class="cs-nav cs-next" aria-label="Next testimonial">
+                  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =============================================== -->
+  <!-- ========= END CS-TESTIMONIALS (HTML) =========== -->
+  <!-- =============================================== -->
+
+  <!-- ==================== [VE_HELP] START ==================== -->
+  <section class="cs-help" id="helpSection">
+    <div class="cs-help__panel">
+      <div class="cs-help__grid">
+        <!-- Left: Title + contact -->
+        <div class="cs-help__left">
+          <h2 class="cs-help__title">Need Additional help?</h2>
+
+          <a class="cs-help__row" href="tel:+18774726648" aria-label="Call 1-877-472-6648 or 1-905-727-1340">
+            <span class="cs-help__icon">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-phone.svg"
+                alt="" />
+            </span>
+            <span class="cs-help__linktext">
+              1–877–472–6648
+              <span class="cs-help__or">or</span> 1–905–727–1340
+            </span>
+          </a>
+
+          <a class="cs-help__row" href="mailto:sales@hr.com" aria-label="Email sales at hr dot com">
+            <span class="cs-help__icon">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-mail.svg"
+                alt="" />
+            </span>
+            <span class="cs-help__linktext">sales@hr.com</span>
+          </a>
+        </div>
+
+        <!-- Right: Buttons + socials -->
+        <div class="cs-help__right">
+          <div id="helpButtons"></div>
+
+          <div class="cs-help__social" aria-label="HR.com social links">
+            <a href="https://www.facebook.com/hrdotcom" class="cs-help__soc" aria-label="Facebook" target="_blank"
+              rel="noopener">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-facebook.svg"
+                alt="" />
+            </a>
+            <a href="https://www.linkedin.com/company/hrdotcom" class="cs-help__soc" aria-label="LinkedIn"
+              target="_blank" rel="noopener">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-linkedin.svg"
+                alt="" />
+            </a>
+            <a href="https://www.hr.com/en/app/my/subscription?abo_part=rss" class="cs-help__soc" aria-label="RSS"
+              target="_blank" rel="noopener">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-rss.svg"
+                alt="" />
+            </a>
+            <a href="https://www.instagram.com/hrdotcom" class="cs-help__soc" aria-label="Instagram" target="_blank"
+              rel="noopener">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-instagram.svg"
+                alt="" />
+            </a>
+            <a href="https://www.youtube.com/hrcomonline" class="cs-help__soc" aria-label="YouTube" target="_blank"
+              rel="noopener">
+              <img
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-youtube.svg"
+                alt="" />
+            </a>
+            <a href="https://twitter.com/hrdotcom" class="cs-help__soc" aria-label="X" target="_blank" rel="noopener">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/icon-x.svg"
+                alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== [VE_HELP] END ===================== -->
+</div>
+
+<!-- ======= CS-SPONSOR-LOGOS SCRIPT (START) ======= -->
+<!-- =============================================== -->
+<script>
+  // Tiny duplication for seamless loop (kept intentionally minimal)
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.ev_marquee_wrapper')
+    if (!wrapper) return
+    const firstRow = wrapper.querySelector('.ev_marquee')
+    if (!firstRow) return
+    wrapper.append(firstRow.cloneNode(true)) // duplicate once
+  })
+</script>
+<!-- =============================================== -->
+<!-- ========= CS-SPONSOR-LOGOS SCRIPT (END) ======== -->
+<!-- =============================================== -->
+
+<!-- =============================================== -->
+<!-- ===== CS-TESTIMONIALS (JAVASCRIPT START) ======= -->
+<!-- =============================================== -->
+<script>
+    ; (() => {
+      const root = document.querySelector('.cs-testimonials')
+      if (!root) return
+
+      const track = root.querySelector('.cs-testimonials__track')
+      const slides = Array.from(track.children)
+      const prevBtns = root.querySelectorAll('.cs-prev')
+      const nextBtns = root.querySelectorAll('.cs-next')
+      const bulletGroups = root.querySelectorAll('.cs-testimonials__bullets')
+      const counters = root.querySelectorAll('.cs-testimonials__count')
+      const dividerGroups = root.querySelectorAll('.cs-testimonials__divider')
+
+      let index = 0
+
+      // --- autoplay state ---
+      const AUTO_DELAY = 5000 // 5s
+      let timer = null
+
+      const stopAuto = () => {
+        if (timer) {
+          clearInterval(timer)
+          timer = null
+        }
+      }
+
+      const startAuto = () => {
+        stopAuto() // reset if already running
+        timer = setInterval(() => go(index + 1), AUTO_DELAY)
+      }
+
+      const update = () => {
+        track.style.transform = `translateX(${-100 * index}%)`
+
+        // Update hidden bullets (if present)
+        bulletGroups.forEach((group) => {
+          const bullets = group.querySelectorAll('.cs-bullet')
+          bullets.forEach((b, bi) =>
+            b.classList.toggle('is-active', bi === index)
+          )
+        })
+
+        // Update center divider dots
+        dividerGroups.forEach((group) => {
+          const dots = group.querySelectorAll('.dot')
+          dots.forEach((d, di) => d.classList.toggle('is-active', di === index))
+        })
+
+        // Update counters
+        const total = String(slides.length).padStart(2, '0')
+        counters.forEach((c) => {
+          c.textContent = `${String(index + 1).padStart(2, '0')}/${total}`
+        })
+      }
+
+      const go = (i) => {
+        index = (i + slides.length) % slides.length // loop both sides
+        update()
+      }
+
+      const restartAfterInteraction = () => {
+        startAuto() // restart 5s window after any click
+      }
+
+      // Click interactions
+      prevBtns.forEach((btn) =>
+        btn.addEventListener('click', () => {
+          go(index - 1)
+          restartAfterInteraction()
+        })
+      )
+      nextBtns.forEach((btn) =>
+        btn.addEventListener('click', () => {
+          go(index + 1)
+          restartAfterInteraction()
+        })
+      )
+      bulletGroups.forEach((group) => {
+        group.querySelectorAll('.cs-bullet').forEach((b, bi) => {
+          b.addEventListener('click', () => {
+            go(bi)
+            restartAfterInteraction()
+          })
+        })
+      })
+
+      // --- Pause/resume on hover (pointer + mouse + touch) ---
+      const hoverTarget = root.querySelector('.cs-testimonials__panel') || root
+
+      // Pointer events (best cross-device support)
+      hoverTarget.addEventListener('pointerenter', stopAuto, {
+        passive: true,
+      })
+      hoverTarget.addEventListener('pointerleave', startAuto, {
+        passive: true,
+      })
+
+      // Mouse fallback (older browsers)
+      hoverTarget.addEventListener('mouseenter', stopAuto)
+      hoverTarget.addEventListener('mouseleave', startAuto)
+
+      // Touch fallback (pause while touching)
+      hoverTarget.addEventListener('touchstart', stopAuto, { passive: true })
+      hoverTarget.addEventListener('touchend', startAuto, { passive: true })
+      hoverTarget.addEventListener('touchcancel', startAuto, {
+        passive: true,
+      })
+
+      // Pause when tab is hidden
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopAuto()
+        else startAuto()
+      })
+
+      // init
+      update()
+      startAuto()
+    })()
+</script>
+<!-- =============================================== -->
+<!-- ====== CS-TESTIMONIALS (JAVASCRIPT END) ======== -->
+<!-- =============================================== -->
+<!-- vendor form modal -->
+<div>$vendorLeadForm</div>
+
+<!-- data js -->
+<!-- <script src="$var1"></script> -->
+$desc_long
+
+<!-- vendor form modal -->
+<div>$vendorLeadForm</div>
+<script src="./data-non-research-virtual-event.js"></script>
+<!-- js binder function -->
+<script>
+  // ==============================================hero ====================================
+  function bindHero(data) {
+    // Title (supports \n for line breaks)
+    document.getElementById('heroTitle').innerHTML = (data.title || '').replace(
+      /\n/g,
+      '<br/>'
+    )
+
+    // Date
+    document.getElementById('heroDate').textContent = data.date || ''
+
+    // Future date (hide if missing)
+    const futureWrap = document.getElementById('heroFutureWrap')
+    if (data.futureDate && data.futureDate.trim() !== '') {
+      document.getElementById('heroFuture').textContent = data.futureDate
+      futureWrap.style.display = ''
+    } else {
+      futureWrap.style.display = 'none'
+    }
+
+    // Buttons (ensure id, name, onclick all match full fc_xxx code)
+    const ctas = document.querySelectorAll('.cs-hero__ctas a')
+    if (ctas[0]) {
+      ctas[0].id = data.fcRep
+      ctas[0].name = data.fcRep
+      ctas[0].setAttribute('onclick', `loadPopup('${data.fcRep}')`)
+    }
+    if (ctas[1]) {
+      ctas[1].id = data.fcSpeak
+      ctas[1].name = data.fcSpeak
+      ctas[1].setAttribute('onclick', `loadPopup('${data.fcSpeak}')`)
+    }
+
+    // Hero image
+    const img = document.getElementById('heroImg')
+    if (img && data.image) {
+      img.src = data.image.src || ''
+      img.alt = data.image.alt || 'Event image'
+    }
+  }
+
+  // ========================================= intro =========================================
+  function bindIntro(data) {
+    if (!data) return
+
+    // Title
+    const titleEl = document.getElementById('introTitle')
+    if (titleEl) titleEl.innerHTML = data.title || ''
+
+    // Paragraphs
+    const copyEl = document.getElementById('introCopy')
+    if (copyEl) {
+      copyEl.innerHTML = ''
+        ; (data.paragraphs || []).forEach((p) => {
+          const para = document.createElement('p')
+          para.className = 'cs-intro__copy'
+          para.textContent = p
+          copyEl.appendChild(para)
+        })
+    }
+
+    // Left image (can be hidden via image.hide, supports custom maxHeight)
+    const img = document.getElementById('introImg')
+    const figure = img?.closest('.cs-intro__figure')
+    if (img && figure) {
+      const showImg = data.image && data.image.src && !data.image.hide
+      if (showImg) {
+        img.src = data.image.src
+        img.alt = data.image.alt || 'Supporting image'
+
+        // Apply optional sizing with !important
+        let styleStr = 'height:auto !important;'
+        if (data.image.maxHeight) {
+          styleStr += `max-height:${data.image.maxHeight} !important;`
+        }
+        img.setAttribute('style', styleStr)
+
+        figure.style.display = ''
+      } else {
+        figure.style.display = 'none'
+      }
+    }
+
+    // Right ad (optional; can hide column or disable link; supports custom maxHeight)
+    const aside = document.getElementById('introAside')
+    const adImg = document.getElementById('introAdImg')
+    const adLink = document.getElementById('introAdLink')
+
+    if (aside && adImg && adLink) {
+      const hasAdImg = data.ad && data.ad.img && !data.ad.hide
+      if (hasAdImg) {
+        adImg.src = data.ad.img
+        adImg.alt = data.ad.alt || 'Ad'
+
+        // Apply optional sizing with !important
+        let styleStr = 'height:auto !important;'
+        if (data.ad.maxHeight) {
+          styleStr += `max-height:${data.ad.maxHeight} !important;`
+        }
+        adImg.setAttribute('style', styleStr)
+
+        // clickable toggle
+        if (data.ad.clickable === false) {
+          adLink.removeAttribute('href')
+          adLink.style.pointerEvents = 'none'
+          adLink.setAttribute('aria-disabled', 'true')
+        } else {
+          if (data.ad.link) adLink.href = data.ad.link
+          adLink.style.pointerEvents = ''
+          adLink.removeAttribute('aria-disabled')
+        }
+
+        aside.style.display = ''
+      } else {
+        aside.style.display = 'none'
+      }
+    }
+  }
+
+  // ===========================
+  // Helpers (safe + tiny “rich” rendering)
+  // ===========================
+  const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+  const escapeHTML = (s) =>
+    String(s).replace(
+      /[&<>"']/g,
+      (m) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      }[m])
+    )
+
+  // Option A (safest): allow **bold** only, escape everything else
+  const renderRich = (s) =>
+    escapeHTML(String(s)).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+
+  // Option B (still safe): allow **bold** and literal <strong>/<em>/<br> tags
+  // (any other tags are stripped). Use this if you want to write <strong>..</strong> in data.
+  const renderRichAllowStrong = (s) =>
+    String(s)
+      .replace(/<(?!\/?(strong|em|br)\b)[^>]*>/gi, '') // strip all but allowed tags
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') // **bold** → <strong>
+
+  // Choose which renderer to use for list/afterList text:
+  const RICH = renderRichAllowStrong // or: renderRich
+
+  // Build a <li> that supports:
+  // 1) string item
+  // 2) object item: { text: string, sub?: string[] }
+  function buildListItem(item) {
+    const li = document.createElement('li')
+
+    if (typeof item === 'string') {
+      li.innerHTML = RICH(item.trim())
+      return li
+    }
+
+    if (item && typeof item === 'object' && nonEmpty(item.text)) {
+      li.innerHTML = RICH(item.text.trim())
+
+      // Optional sub-list
+      if (Array.isArray(item.sub) && item.sub.length > 0) {
+        const subUl = document.createElement('ul')
+        subUl.classList.add('cs-reveal__sublist')
+        item.sub.forEach((subItem) => {
+          if (typeof subItem === 'string' && subItem.trim() !== '') {
+            const subLi = document.createElement('li')
+            subLi.innerHTML = RICH(subItem.trim())
+            subUl.appendChild(subLi)
+          }
+        })
+        li.appendChild(subUl)
+      }
+      return li
+    }
+
+    // Fallback: ignore invalid item
+    return null
+  }
+
+  // ========================================= reveal (binding) =========================================
+  function bindReveal(data) {
+    if (!data) return
+
+    // Title (supports \n line breaks)
+    const titleEl = document.getElementById('revealTitle')
+    if (titleEl) titleEl.innerHTML = (data.title || '').replace(/\n/g, '<br/>')
+
+    // Lede (string OR array). Hide wrapper if empty.
+    const ledeWrap = document.getElementById('revealLedeWrap')
+    const ledeRoot = document.getElementById('revealLede')
+    if (ledeWrap && ledeRoot) {
+      ledeRoot.innerHTML = ''
+      const parts = Array.isArray(data.lede)
+        ? data.lede
+        : nonEmpty(data.lede)
+          ? [data.lede]
+          : []
+      parts.forEach((t) => {
+        if (!nonEmpty(t)) return
+        const p = document.createElement('p')
+        p.textContent = t // keep lede strictly plain text
+        ledeRoot.appendChild(p)
+      })
+      ledeWrap.style.display = ledeRoot.childElementCount ? '' : 'none'
+    }
+
+    // Card (title + list + afterList)
+    const cardEl = document.getElementById('revealCard')
+    const cardTitleEl = document.getElementById('revealCardTitle')
+    const listEl = document.getElementById('revealList')
+    const afterListEl = document.getElementById('revealAfterList')
+
+    const hasCardTitle = nonEmpty(data.cardTitle)
+    const hasList = Array.isArray(data.list) && data.list.length > 0
+    const afterParts = Array.isArray(data.afterList)
+      ? data.afterList
+      : nonEmpty(data.afterList)
+        ? [data.afterList]
+        : []
+    const hasAfterList = afterParts.length > 0
+
+    if (cardEl) {
+      if (!hasCardTitle && !hasList && !hasAfterList) {
+        cardEl.style.display = 'none'
+      } else {
+        cardEl.style.display = ''
+
+        if (cardTitleEl)
+          cardTitleEl.textContent = hasCardTitle ? data.cardTitle : ''
+
+        if (listEl) {
+          listEl.innerHTML = ''
+          if (hasList) {
+            data.list.forEach((item) => {
+              const li = buildListItem(item)
+              if (li) listEl.appendChild(li)
+            })
+          }
+        }
+
+        if (afterListEl) {
+          afterListEl.innerHTML = ''
+          afterParts.forEach((t) => {
+            if (!nonEmpty(t)) return
+            const p = document.createElement('p')
+            // afterList can also use the bold inline markup:
+            p.innerHTML = RICH(t.trim())
+            afterListEl.appendChild(p)
+          })
+          afterListEl.style.display = afterListEl.childElementCount
+            ? ''
+            : 'none'
+        }
+      }
+    }
+
+    // Right-side infographic (image, link, caption)
+    const infoCol = document.getElementById('revealInfo')
+    const figureEl = document.getElementById('revealFigure')
+    const linkEl = document.getElementById('revealInfoLink')
+    const imgEl = document.getElementById('revealInfoImg')
+    const capEl = document.getElementById('revealFigcap')
+
+    if (infoCol && figureEl && linkEl && imgEl && capEl) {
+      const hasImg = data.info && data.info.img && nonEmpty(data.info.img.src)
+
+      if (!hasImg) {
+        infoCol.style.display = 'none'
+      } else {
+        infoCol.style.display = ''
+        figureEl.style.display = ''
+
+        // Image src/alt
+        imgEl.src = data.info.img.src
+        imgEl.alt = nonEmpty(data.info.img.alt)
+          ? data.info.img.alt
+          : 'Research infographic'
+
+        // Default sizing + optional maxHeight override (WITH !important)
+        imgEl.style.height = 'auto'
+        imgEl.style.removeProperty('max-height')
+        if (nonEmpty(data.info.maxHeight)) {
+          imgEl.style.setProperty(
+            'max-height',
+            data.info.maxHeight,
+            'important'
+          )
+        } else {
+          imgEl.style.setProperty('max-height', '100%', 'important')
+        }
+
+        // Link behavior (3 modes)
+        const hasLink = nonEmpty(data.info.link)
+        const clickable = data.info.clickable !== false // default true
+
+        if (!hasLink) {
+          linkEl.removeAttribute('href')
+          linkEl.style.pointerEvents = 'none'
+          linkEl.style.cursor = 'default'
+        } else if (!clickable) {
+          linkEl.setAttribute('href', data.info.link)
+          linkEl.style.pointerEvents = 'none'
+          linkEl.style.cursor = 'default'
+        } else {
+          linkEl.setAttribute('href', data.info.link)
+          linkEl.style.pointerEvents = ''
+          linkEl.style.cursor = 'pointer'
+        }
+
+        // Caption (clickable only when link exists AND clickable)
+        if (nonEmpty(data.info.caption)) {
+          if (hasLink && clickable) {
+            capEl.innerHTML = `<a href="${data.info.link
+              }" target="_blank" rel="noopener">${escapeHTML(
+                data.info.caption
+              )}</a>`
+          } else {
+            capEl.textContent = data.info.caption
+          }
+          capEl.style.display = ''
+        } else {
+          capEl.style.display = 'none'
+        }
+      }
+    }
+  }
+
+  // ===========================
+  // Init (example)
+  // ===========================
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   bindReveal(EVENT_DATA.reveal);
+  // });
+
+  // ========================================= sponsors =========================================
+  function bindSponsors(data) {
+    if (!data) return
+    const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+    const section = document.getElementById('sponsorsSection')
+    const panel = document.getElementById('sponsorsPanel')
+    const header = document.getElementById('sponsorsHeader')
+    const titleEl = document.getElementById('sponsorsTitle')
+    const ledeEl = document.getElementById('sponsorsLede')
+    const listWrap = document.getElementById('sponsorsListWrap')
+    const listEl = document.getElementById('sponsorsList')
+
+    // Title + lede
+    const hasTitle = nonEmpty(data.title)
+    const hasLede = nonEmpty(data.lede)
+
+    if (titleEl) titleEl.textContent = hasTitle ? data.title : ''
+    if (ledeEl) ledeEl.textContent = hasLede ? data.lede : ''
+
+    if (header) {
+      header.style.display = hasTitle || hasLede ? '' : 'none'
+    }
+
+    // List items
+    let hasList = false
+    if (listEl) {
+      listEl.innerHTML = ''
+      if (Array.isArray(data.items) && data.items.length) {
+        data.items.forEach((txt) => {
+          if (nonEmpty(txt)) {
+            const li = document.createElement('li')
+            li.className = 'cs-sponsors__item'
+            li.textContent = txt
+            listEl.appendChild(li)
+            hasList = true
+          }
+        })
+      }
+    }
+    if (listWrap) listWrap.style.display = hasList ? '' : 'none'
+
+    // Hide the entire panel/section if nothing to show
+    const showPanel = hasTitle || hasLede || hasList
+    if (panel) panel.style.display = showPanel ? '' : 'none'
+    if (section) section.style.display = showPanel ? '' : 'none'
+  }
+
+  // ========================================= links-cta =========================================
+  function bindLinksCta(data) {
+    if (!data) return
+    const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+    const section = document.getElementById('linksCtaSection')
+    const panel = document.getElementById('linksCtaPanel')
+
+    // ----- Left: links list -----
+    const listEl = document.getElementById('linksCtaList')
+    let hasLinks = false
+
+    if (listEl) {
+      listEl.innerHTML = ''
+      if (Array.isArray(data.links) && data.links.length) {
+        data.links.forEach((item) => {
+          if (!item || !nonEmpty(item.text)) return
+
+          const li = document.createElement('li')
+          li.className = 'cs-links__row'
+
+          // optional icon
+          if (nonEmpty(item.iconSrc)) {
+            const iconWrap = document.createElement('span')
+            iconWrap.className = 'cs-links__icon'
+            iconWrap.setAttribute('aria-hidden', 'true')
+
+            const img = document.createElement('img')
+            img.className = 'cs-links__img'
+            img.src = item.iconSrc
+            img.alt = ''
+            iconWrap.appendChild(img)
+            li.appendChild(iconWrap)
+          }
+
+          // anchor or plain text
+          if (nonEmpty(item.href)) {
+            const a = document.createElement('a')
+            a.className = 'cs-links__anchor'
+            a.href = item.href
+            a.target = '_blank'
+            a.rel = 'noopener'
+            a.textContent = item.text
+            li.appendChild(a)
+          } else {
+            const span = document.createElement('span')
+            span.className = 'cs-links__anchor'
+            span.textContent = item.text
+            li.appendChild(span)
+          }
+
+          listEl.appendChild(li)
+          hasLinks = true
+        })
+      }
+      listEl.style.display = hasLinks ? '' : 'none'
+    }
+
+    // ----- Right: actions (buttons visible only if codes exist) -----
+    const actionsWrap = document.getElementById('linksCtaActions')
+    let hasAnyCta = false
+
+    if (actionsWrap) {
+      const btns = actionsWrap.querySelectorAll('.cs-links__btn')
+
+      // Map: [button index, data.actions key]
+      const map = [
+        { idx: 0, key: 'rep' }, // Talk to a Rep
+        { idx: 1, key: 'speak' }, // Apply to Speak
+      ]
+
+      map.forEach(({ idx, key }) => {
+        const btn = btns[idx]
+        if (!btn) return
+
+        const code =
+          data.actions && nonEmpty(data.actions[key]) ? data.actions[key] : ''
+        if (code) {
+          btn.id = code
+          btn.name = code
+          btn.setAttribute('onclick', `loadPopup('${code}')`)
+          btn.style.display = ''
+          hasAnyCta = true
+        } else {
+          // hide when code missing
+          btn.removeAttribute('id')
+          btn.removeAttribute('name')
+          btn.removeAttribute('onclick')
+          btn.style.display = 'none'
+        }
+      })
+
+      actionsWrap.style.display = hasAnyCta ? '' : 'none'
+    }
+
+    // ----- Hide whole panel/section if nothing to show -----
+    const showPanel = hasLinks || hasAnyCta
+    if (panel) panel.style.display = showPanel ? '' : 'none'
+    if (section) section.style.display = showPanel ? '' : 'none'
+  }
+
+  // ========================================= sponsor-logos =========================================
+  function bindSponsorLogos(data) {
+    if (!data) return
+    const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+    const section = document.getElementById('wiiwSponsorLogosSection')
+    const titleEl = document.getElementById('wiiwSponsorLogosTitle')
+    const wrapper = document.getElementById('wiiwSponsorLogosWrapper')
+
+    // NEW: explicit hide override from data
+    if (data.hidden === true) {
+      if (section) {
+        section.style.display = 'none'
+        section.setAttribute('aria-hidden', 'true')
+      }
+      if (wrapper) wrapper.innerHTML = ''
+      if (titleEl) titleEl.innerHTML = ''
+      return
+    } else {
+      // ensure section isn't stuck hidden from a previous render
+      if (section) {
+        section.style.display = ''
+        section.removeAttribute('aria-hidden')
+      }
+    }
+
+    // Title
+    const hasTitle = nonEmpty(data.title)
+    if (titleEl) {
+      if (hasTitle) {
+        titleEl.innerHTML = data.title.replace(/\n/g, '<br/>')
+        titleEl.style.display = ''
+      } else {
+        titleEl.style.display = 'none'
+      }
+    }
+
+    // Build row
+    let count = 0
+    if (wrapper) {
+      wrapper.innerHTML = ''
+      const row = document.createElement('div')
+      row.className = 'ev_marquee' // has animation in CSS by default
+
+      if (Array.isArray(data.logos)) {
+        data.logos.forEach((item) => {
+          const hasImg = item && item.img && nonEmpty(item.img.src)
+          if (!hasImg) return
+
+          const tag = nonEmpty(item.href) ? 'a' : 'div'
+          const box = document.createElement(tag)
+          box.className = 'logo-box'
+          if (tag === 'a') {
+            box.href = item.href
+            box.target = '_blank'
+            box.rel = 'noopener'
+          }
+
+          const img = document.createElement('img')
+          img.src = item.img.src
+          img.alt = nonEmpty(item.img.alt) ? item.img.alt : 'Sponsor logo'
+          box.appendChild(img)
+
+          row.appendChild(box)
+          count++
+        })
+      }
+
+      if (count === 0) {
+        wrapper.style.display = 'none'
+        if (section && !hasTitle) section.style.display = 'none'
+        return
+      }
+
+      wrapper.appendChild(row)
+      wrapper.style.display = ''
+
+      if (count < 4) {
+        // Disable marquee animation + no duplication
+        row.style.animation = 'none'
+        row.style.justifyContent = 'flex-start'
+      } else {
+        // Keep animation + clone once for seamless loop
+        const clone = row.cloneNode(true)
+        clone.setAttribute('aria-hidden', 'true')
+        wrapper.appendChild(clone)
+      }
+    }
+
+    if (section) section.style.display = hasTitle || count > 0 ? '' : 'none'
+  }
+
+  // ========================================= dashboards =========================================
+  function bindDashboards(data) {
+    if (!data) return
+    const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+    const section = document.getElementById('dashSection')
+    const titleEl = document.getElementById('dashTitle')
+    const parasEl = document.getElementById('dashParas')
+    const mediaEl = document.getElementById('dashMedia')
+
+    // Title
+    const hasTitle = nonEmpty(data.title)
+    if (titleEl) {
+      if (hasTitle) {
+        titleEl.innerHTML = data.title.replace(/\n/g, '<br/>')
+        titleEl.style.display = ''
+      } else {
+        titleEl.style.display = 'none'
+      }
+    }
+
+    // Paragraphs (iterate; all use cs-dash__lede style)
+    let hasParas = false
+    if (parasEl) {
+      parasEl.innerHTML = ''
+        ; (data.paragraphs || []).forEach((txt) => {
+          if (!nonEmpty(txt)) return
+          const p = document.createElement('p')
+          p.className = 'cs-dash__lede'
+          p.textContent = txt
+          parasEl.appendChild(p)
+          hasParas = true
+        })
+      parasEl.style.display = hasParas ? '' : 'none'
+    }
+
+    // Images (0..N)
+    let hasImages = false
+    if (mediaEl) {
+      mediaEl.innerHTML = ''
+        ; (data.images || []).forEach((img) => {
+          if (!img || !nonEmpty(img.src)) return
+          const el = document.createElement('img')
+          el.className = 'cs-dash__img'
+          el.src = img.src
+          el.alt = nonEmpty(img.alt) ? img.alt : 'Dashboard image'
+          if (img.loading) el.loading = img.loading
+          if (img.width) el.width = img.width
+          if (img.height) el.height = img.height
+          mediaEl.appendChild(el)
+          hasImages = true
+        })
+      mediaEl.style.display = hasImages ? '' : 'none'
+    }
+
+    // Hide whole section if nothing meaningful
+    const show = hasTitle || hasParas || hasImages
+    if (section) section.style.display = show ? '' : 'none'
+  }
+
+  // ========================================= timeline =========================================
+  function bindTimeline(data) {
+    if (!data) return
+    const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+    const section = document.getElementById('timeSection')
+    const titleEl = document.getElementById('timeTitle')
+    const listEl = document.getElementById('timeList')
+
+    // Title
+    const hasTitle = nonEmpty(data.title)
+    if (titleEl) {
+      titleEl.innerHTML = hasTitle ? data.title.replace(/\n/g, '<br/>') : ''
+      titleEl.parentElement.style.display = hasTitle ? '' : 'none'
+    }
+
+    // Items
+    let hasItems = false
+    if (listEl) {
+      listEl.innerHTML = ''
+        ; (data.items || []).forEach((item) => {
+          const main = item?.date?.main
+          const year = item?.date?.year
+
+          // Hide/skip if there's no date (either part missing)
+          if (!nonEmpty(main) || !nonEmpty(year)) return
+
+          const li = document.createElement('li')
+          li.className = 'cs-time__item' + (item.isVirtual ? ' is-virtual' : '')
+
+          // Date block
+          const dateWrap = document.createElement('div')
+          dateWrap.className = 'cs-time__date'
+
+          const mainEl = document.createElement('span')
+          mainEl.className = 'cs-time__date-main'
+          mainEl.textContent = main
+
+          const yearEl = document.createElement('span')
+          yearEl.className = 'cs-time__date-year'
+          yearEl.textContent = year
+
+          dateWrap.appendChild(mainEl)
+          dateWrap.appendChild(yearEl)
+
+          // Description (optional)
+          if (nonEmpty(item.desc)) {
+            const p = document.createElement('p')
+            p.className = 'cs-time__desc'
+            p.textContent = item.desc
+            li.appendChild(dateWrap)
+            li.appendChild(p)
+          } else {
+            li.appendChild(dateWrap)
+          }
+
+          listEl.appendChild(li)
+          hasItems = true
+        })
+
+      listEl.style.display = hasItems ? '' : 'none'
+    }
+
+    // Hide the whole section if nothing to show
+    if (section) section.style.display = hasTitle || hasItems ? '' : 'none'
+  }
+
+  // ========================================= help / footer =========================================
+  function bindHelp(data) {
+    const nonEmpty = (v) => typeof v === 'string' && v.trim() !== ''
+
+    const section = document.getElementById('helpSection')
+    const btnWrap = document.getElementById('helpButtons')
+    if (!btnWrap) return
+
+    btnWrap.innerHTML = ''
+    let hasButtons = false
+
+    // Button 1: Talk to a Rep
+    if (nonEmpty(data.fcRep)) {
+      const btn = document.createElement('a')
+      btn.className = 'cs-help__btn'
+      btn.textContent = (data.labels && data.labels.rep) || 'Talk to a Rep'
+      btn.id = data.fcRep
+      btn.name = data.fcRep
+      btn.setAttribute('onclick', `loadPopup('${data.fcRep}')`)
+      // no href needed; popup handles it
+      btnWrap.appendChild(btn)
+      hasButtons = true
+    }
+
+    // Button 2: Apply to Speak
+    if (nonEmpty(data.fcSpeak)) {
+      const btn = document.createElement('a')
+      btn.className = 'cs-help__btn'
+      btn.textContent = (data.labels && data.labels.speak) || 'Apply to Speak'
+      btn.id = data.fcSpeak
+      btn.name = data.fcSpeak
+      btn.setAttribute('onclick', `loadPopup('${data.fcSpeak}')`)
+      btnWrap.appendChild(btn)
+      hasButtons = true
+    }
+
+    // If no buttons, hide the wrapper
+    btnWrap.style.display = hasButtons ? '' : 'none'
+
+    // Hide entire right column if no buttons and no socials
+    const right = section?.querySelector('.cs-help__right')
+    const hasSocials = right?.querySelectorAll('.cs-help__social a').length > 0
+    if (right) right.style.display = hasButtons || hasSocials ? '' : 'none'
+  }
+</script>
+<!-- end js binder functions -->
+
+$designAttribute:story_edit_Meta
+
+<script src="$public/Certifications/scripts/menu/index.js"></script>
+$designAttribute:quick_login_m1 $designAttribute:masterD_new_splashpage

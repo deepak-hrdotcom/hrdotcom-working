@@ -1,0 +1,1035 @@
+<!-- @format -->
+
+<div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
+<link rel="stylesheet" type="text/css" media="screen"
+  href="$public/remoteimages/website-images/2023_siteupdate/HR-west-2024/css/hr_west_style.css" />
+<style>
+  body {
+    background: #ffffff;
+  }
+
+  body>.ContentArea {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  body>.ContentArea>.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #hradbtmwrapper {
+    display: none !important;
+  }
+
+  .FooterBG .container,
+  .FooterMidBG .container {
+    gap: 0 !important;
+  }
+
+  .header {
+    border: 0 !important;
+    padding-block: 0;
+    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header::before {
+    display: none !important;
+  }
+
+  /* .editlink {
+    position: absolute;
+    left: 20px;
+  } */
+  .nave {
+    max-height: 80px !important;
+  }
+
+  @media screen and (min-width: 1118px) {
+    .dropdown__item:hover .dropdown__menu {
+      top: 60px !important;
+    }
+  }
+
+  .hr-west-head-info {
+    margin-bottom: 12px !important;
+    margin-top: 20px !important;
+  }
+</style>
+
+<style>
+  /** @format */
+
+  :root {
+    /* Text */
+    --color-text-primary: #2a343e;
+    --color-text-secondary: #273a8f;
+    --color-text-muted: #6b7280;
+
+    /* Background */
+    --color-bg-base: #ffffff;
+    --color-bg-soft: #f5f5f5;
+
+    /* Brand Accents */
+    --accent-purple: #91278c;
+    --accent-pink: #ef146e;
+    --accent-orange: #ef5924;
+    --accent-yellow: #fdb414;
+    --accent-blue: #273a8f;
+    --accent-cyan: #29a8df;
+
+    /* UI */
+    --border-soft: rgba(42, 52, 62, 0.2);
+    --hover-bg: #eeeeee;
+    --shadow-soft: rgba(0, 0, 0, 0.1);
+  }
+
+  /* =========================
+   TYPOGRAPHY TOKENS
+========================= */
+
+  /* h2 – Section Title */
+  .section-title {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* h3 – Section Subtitle */
+  .section-subtitle {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* h4 – Small Title */
+  .section-small-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Paragraph */
+  .para {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+  }
+
+  /* Small Paragraph */
+  .para-sm {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    margin: 0;
+    padding: 0;
+  }
+
+  .hrw-link {
+    color: var(--accent-pink) !important;
+    font-weight: 500 !important;
+  }
+
+  /* =========================
+   TEXT ALIGNMENT
+========================= */
+  .center {
+    text-align: center;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  /* =========================
+   LAYOUT TOKENS
+========================= */
+
+  .layout-full {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-block: 48px;
+  }
+
+  @media (min-width: 768px) {
+    .layout-full {
+      padding-block: 72px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .layout-full {
+      padding-block: 96px;
+    }
+  }
+
+  .layout-container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-inline: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .layout-container {
+      padding-inline: 24px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .layout-container {
+      padding-inline: 32px;
+    }
+  }
+
+  /* =========================
+   SPACING UTILITIES
+========================= */
+
+  /* Padding */
+  .pt4 {
+    padding-top: 4px;
+  }
+
+  .pt8 {
+    padding-top: 8px;
+  }
+
+  .pt12 {
+    padding-top: 12px;
+  }
+
+  .pt16 {
+    padding-top: 16px;
+  }
+
+  .pt20 {
+    padding-top: 20px;
+  }
+
+  .pt24 {
+    padding-top: 24px;
+  }
+
+  .pt28 {
+    padding-top: 28px;
+  }
+
+  .pt32 {
+    padding-top: 32px;
+  }
+
+  .pb4 {
+    padding-bottom: 4px;
+  }
+
+  .pb8 {
+    padding-bottom: 8px;
+  }
+
+  .pb12 {
+    padding-bottom: 12px;
+  }
+
+  .pb16 {
+    padding-bottom: 16px;
+  }
+
+  .pb20 {
+    padding-bottom: 20px;
+  }
+
+  .pb24 {
+    padding-bottom: 24px;
+  }
+
+  .pb28 {
+    padding-bottom: 28px;
+  }
+
+  .pb32 {
+    padding-bottom: 32px;
+  }
+
+  .pl4 {
+    padding-left: 4px;
+  }
+
+  .pl8 {
+    padding-left: 8px;
+  }
+
+  .pl12 {
+    padding-left: 12px;
+  }
+
+  .pl16 {
+    padding-left: 16px;
+  }
+
+  .pl20 {
+    padding-left: 20px;
+  }
+
+  .pl24 {
+    padding-left: 24px;
+  }
+
+  .pl28 {
+    padding-left: 28px;
+  }
+
+  .pl32 {
+    padding-left: 32px;
+  }
+
+  .pr4 {
+    padding-right: 4px;
+  }
+
+  .pr8 {
+    padding-right: 8px;
+  }
+
+  .pr12 {
+    padding-right: 12px;
+  }
+
+  .pr16 {
+    padding-right: 16px;
+  }
+
+  .pr20 {
+    padding-right: 20px;
+  }
+
+  .pr24 {
+    padding-right: 24px;
+  }
+
+  .pr28 {
+    padding-right: 28px;
+  }
+
+  .pr32 {
+    padding-right: 32px;
+  }
+
+  /* Margin */
+  .mt4 {
+    margin-top: 4px;
+  }
+
+  .mt8 {
+    margin-top: 8px;
+  }
+
+  .mt12 {
+    margin-top: 12px;
+  }
+
+  .mt16 {
+    margin-top: 16px;
+  }
+
+  .mt20 {
+    margin-top: 20px;
+  }
+
+  .mt24 {
+    margin-top: 24px;
+  }
+
+  .mt28 {
+    margin-top: 28px;
+  }
+
+  .mt32 {
+    margin-top: 32px;
+  }
+
+  .mb4 {
+    margin-bottom: 4px;
+  }
+
+  .mb8 {
+    margin-bottom: 8px;
+  }
+
+  .mb12 {
+    margin-bottom: 12px;
+  }
+
+  .mb16 {
+    margin-bottom: 16px;
+  }
+
+  .mb20 {
+    margin-bottom: 20px;
+  }
+
+  .mb24 {
+    margin-bottom: 24px;
+  }
+
+  .mb28 {
+    margin-bottom: 28px;
+  }
+
+  .mb32 {
+    margin-bottom: 32px;
+  }
+
+  .ml4 {
+    margin-left: 4px;
+  }
+
+  .ml8 {
+    margin-left: 8px;
+  }
+
+  .ml12 {
+    margin-left: 12px;
+  }
+
+  .ml16 {
+    margin-left: 16px;
+  }
+
+  .ml20 {
+    margin-left: 20px;
+  }
+
+  .ml24 {
+    margin-left: 24px;
+  }
+
+  .ml28 {
+    margin-left: 28px;
+  }
+
+  .ml32 {
+    margin-left: 32px;
+  }
+
+  .mr4 {
+    margin-right: 4px;
+  }
+
+  .mr8 {
+    margin-right: 8px;
+  }
+
+  .mr12 {
+    margin-right: 12px;
+  }
+
+  .mr16 {
+    margin-right: 16px;
+  }
+
+  .mr20 {
+    margin-right: 20px;
+  }
+
+  .mr24 {
+    margin-right: 24px;
+  }
+
+  .mr28 {
+    margin-right: 28px;
+  }
+
+  .mr32 {
+    margin-right: 32px;
+  }
+
+  /*scrolling logos whitebox fix*/
+  div.ev_marquee>a.logo-box {
+    padding: 24px !important;
+  }
+</style>
+<div>$vendorLeadForm</div>
+<header class="header" id="header">
+  <nav class="nave in-container">
+    <div class="nave__data">
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="nave__logo"
+        data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+        HRWest 2026
+      </a>
+      <div class="separator"></div>
+      <div class="nave__toggle" id="nave-toggle">
+        <svg class="nave__burger" width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 18L20 18" stroke="#2a343e" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M4 12L20 12" stroke="#2a343e" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M4 6L20 6" stroke="#2a343e" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="nave__close" width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#2a343e" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!--=============== NAV MENU ===============-->
+    <div class="nave__menu" id="nave-menu">
+      <ul class="nave__list">
+        <li class="dropdown__item">
+          <div class="nave__link">
+            Program
+            <svg class="dropdown__arrow" fill="#2a343e" width="10px" height="10px" version="1.1" id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30.021 30.021"
+              xml:space="preserve">
+              <g>
+                <path d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"></path>
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Speakers
+              </a>
+            </li>
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Agenda
+              </a>
+            </li>
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="dropdown__link"
+                data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Sponsors
+              </a>
+            </li>
+            <li>
+              <a href="https://drive.google.com/file/d/1sYNxMXeXc_NHx88klSo8omNLfeAS5A0s/view" class="dropdown__link" target="_blank"
+                data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                 Schedule at a Glance
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hr-awards_m1829lxd.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                HR.com Awards
+              </a>
+            </li> -->
+            <!-- <li>
+              <a href="/en/webcasts_events/live_events/hrwest/futurehr-the-ultimate-startup-showdown_ln398wxu.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                FutureHR: The Ultimate Startup Showdown
+              </a>
+            </li> -->
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/the-hrcom-awards_lne1ek46.html"
+                class="dropdown__link"
+              >
+                The HR.com Awards
+              </a>
+            </li> -->
+          </ul>
+        </li>
+        <li class="dropdown__item">
+          <div class="nave__link">
+            Attend
+            <svg class="dropdown__arrow" fill="#2a343e" width="10px" height="10px" version="1.1" id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30.021 30.021"
+              xml:space="preserve">
+              <g>
+                <path d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"></path>
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Attend as Team
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-experiences_lmrcoc0x.html"
+                class="dropdown__link"
+                data-feathr-click-track="true"
+                data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+              >
+                Experiences
+              </a>
+            </li> -->
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Volunteer
+              </a>
+            </li>
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Conference Location
+              </a>
+            </li>
+            <li>
+              <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html"
+                class="dropdown__link" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">
+                Get Your Employer to Send You to HRWest
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- <li class="dropdown__item">
+          <div class="nave__link">
+            2023 Program
+            <svg
+              class="dropdown__arrow"
+              fill="#2a343e"
+              width="10px"
+              height="10px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 30.021 30.021"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385
+      c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151
+      c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"
+                />
+              </g>
+            </svg>
+          </div>
+          <ul class="dropdown__menu">
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/2023-speakers_ljco3fo1.html"
+                class="dropdown__link"
+              >
+                2023 Speakers
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/webcasts_events/live_events/agenda-2023_ljz8l2gh.html"
+                class="dropdown__link"
+              >
+                2023 Agenda
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <li>
+          <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="nave__link"
+            data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">Why Sponsor/Exhibit</a>
+        </li>
+        <li>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" class="nave__link"
+            data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed">Testimonials</a>
+        </li>
+        <!-- <li>
+          <a href="#" class="nave__link">FAQ</a>
+        </li>-->
+        <li class="reg-btn">
+          <button id="fc_1678200607921" name="fc_1678200607921" class="RedBtn btn" onclick="loadPopup('fc_1678200607921')">Pre-register for 2027</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="hr-west_container">
+  <div class="hr-west-head-info">
+    <ul>
+      <li>June 9-10, 2026</li>
+      <li>South San Francisco Conference Center</li>
+    </ul>
+    <h5>
+      <svg xmlns="http://www.w3.org/2000/svg" width="34.286" height="24" viewBox="0 0 34.286 24">
+        <path
+          d="M5.143,12.536A3.429,3.429,0,1,0,1.714,9.107,3.432,3.432,0,0,0,5.143,12.536Zm24,0a3.429,3.429,0,1,0-3.429-3.429A3.432,3.432,0,0,0,29.143,12.536Zm1.714,1.714H27.429a3.418,3.418,0,0,0-2.416,1,7.836,7.836,0,0,1,4.023,5.861h3.536a1.712,1.712,0,0,0,1.714-1.714V17.679A3.432,3.432,0,0,0,30.857,14.25Zm-13.714,0a6,6,0,1,0-6-6A6,6,0,0,0,17.143,14.25Zm4.114,1.714h-.445a8.284,8.284,0,0,1-7.339,0h-.445a6.173,6.173,0,0,0-6.171,6.171v1.543A2.572,2.572,0,0,0,9.429,26.25H24.857a2.572,2.572,0,0,0,2.571-2.571V22.136A6.173,6.173,0,0,0,21.257,15.964ZM9.273,15.246a3.418,3.418,0,0,0-2.416-1H3.429A3.432,3.432,0,0,0,0,17.679v1.714a1.712,1.712,0,0,0,1.714,1.714h3.53A7.856,7.856,0,0,1,9.273,15.246Z"
+          transform="translate(0 -2.25)" fill="#91278C"></path>
+      </svg>
+      <a href="/en/webcasts_events/live_events/hrwest/attend-as-team_laaqzi6t.html" data-feathr-click-track="true"
+        data-feathr-link-aids="6127cfab0dc20e810ab012ed">Bring Your Team</a>
+    </h5>
+  </div>
+</div>
+
+$desc_long
+<div class="hr-west_container-fluid">
+  <div class="ev_logoMarqueeSection">
+
+    <h3 style="font-weight: 1000;">HRWest 2026 Title Sponsor:</h3>
+    <div class="title-sponsor" style="text-align: center; margin: 0 0 40px 0;">
+      <a href="https://www.hr.com/directory/company/sap_successfactors_4" target="_blank">
+        <img alt="HRWest HR conference Sponsor SAP SuccessFactors Logo"
+          src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png"
+          style="background: white; padding: 10px; border-radius: 20px; max-height: 100px;" /></a>
+    </div>
+
+
+    <h3>HRWest 2026 Conference Sponsors</h3>
+    <div id="evlogoMarqueeSection">
+      <div class="ev_content_container">
+        <div class="ev_marquee_wrapper">
+          <div class="ev_marquee" style="animation-duration: 30s">
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/alliant_insurance_services" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Alliant Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/built__1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Built Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/built-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/guidedchoice" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Guided Choice Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/guidedchoice-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/hrcp_1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor HRCP Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/hrcp-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/hub_international_ltd_2" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor HUB International Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/insperity_28" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Insperity Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/pacific_service_credit_union_2"
+              target="_blank" data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Pacific Service Credit Union Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/pacific-service-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/performyard_1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor PerformYard Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/robert_half_intl_inc_1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Robert Half Talent Solutions Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/sap_successfactors_4" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor SAP SuccessFactors Logo"
+                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png"
+                style="max-height: 100px; max-width: 250px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/scholarshare_529" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor ScholarShare 529 Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/scholarshare-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/the_fruitguys" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor The Fruitguys Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/the-fruitguys-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/united_concordia_dental" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor United Concordia Dental Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/united-concordia-dental-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/xobin" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor Xobin Logo"
+                src="$public/remoteimages/website-images/Vendor_SplashPages/2026-awards/xobin-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/v_a_brown_consulting_3" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Sponsor V.A. Brown Consulting Logo"
+                src="$public/remoteimages/website-images/Vendor_SplashPages/2026-awards/va-brown-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/awardco_1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference AwardCo Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/zapier_1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Zapier Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/lee_hecht_harrison_knightsbridge_2"
+              target="_blank" data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference LHH (Lee Hecht Harrison) Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/changeengine" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference ChangeEngine Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/change-engine-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/stadium" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Stadium Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/stadium-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+            
+            <a class="logo-box" href="https://www.hr.com/directory/company/complyeq" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference ComplyEQ Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/complyeq-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+            <a class="logo-box" href="https://www.hr.com/directory/company/bamboohr_2" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference BambooHR Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/bamboohr-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+             <a class="logo-box" href="https://www.hr.com/directory/company/capturely_1" target="_blank"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"],6127cfab0dc20e810ab012ed'>
+              <img alt="HRWest HR conference Capturely Logo"
+                src="$public/remoteimages/website-images/2026_siteupdate/hrwest-2026/capturely-logo.jpg"
+                style="max-height: 100px; max-width: 180px" />
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="hr-west_container-fluid etnthelpbg">
+  <div class="hr-west_container">
+    <div class="help_footer_wrapper">
+      <div class="help_footer_info">
+        <h4>Need additional help?</h4>
+        <h6>Contact the HR.com Events Team!</h6>
+        <a href="tel:18774726648" target="_blank" 
+          >Call: 1-877-472-6648</a>
+        <a href="mailto:HRWest@hr.com" target="_blank" 
+          >Email: HRWest@hr.com</a>
+        <!-- <h6>
+          Frequently asked questions<span
+            >If you have any questions, kindly refer them to this page.
+          </span>
+        </h6>-->
+      </div>
+      <div class="help_footer_info foot-grad">
+        <h4>Experience HRWest 2026</h4>
+        <h6>
+          June 9-10, 2026
+          <span> <strong>South San Francisco Conference Center </strong></span>
+        </h6>
+        <!-- <h4>Join HRWest 2025</h4>
+        <h6>
+          March 11-12, 2025<span>
+            <strong>Oakland Marriott City Center</strong><br />
+            1001 Broadway, Oakland, CA 94607</span
+          >
+        </h6> -->
+
+        <div class="help_btnset">
+          <button id="fc_1678200607921" name="fc_1678200607921" class="RedBtn btn" onclick="loadPopup('fc_1678200607921')">Pre-register for 2027</button>
+          <div class="reg_info" style="display: none">
+            <div class="reg-detail">
+              <p>SPECIAL OFFER: Register for</p>
+              <h6><span>$199</span> until Jan 14, 2024</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  /*=============== SHOW MENU ===============*/
+  const showMenu = (toggleId, naveId) => {
+    const toggle = document.getElementById(toggleId),
+      nave = document.getElementById(naveId)
+
+    toggle.addEventListener('click', () => {
+      // Add show-menu class to nav menu
+      nave.classList.toggle('show-menu')
+
+      // Add show-icon to show and hide the menu icon
+      toggle.classList.toggle('show-icon')
+    })
+  }
+  showMenu('nave-toggle', 'nave-menu')
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.swocas_slider').owlCarousel({
+      loop: true,
+      autoplay: false,
+      margin: 0,
+      navText: [
+        '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#fff" transform="translate(7.071) rotate(45)"></path></svg>',
+        '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#fff" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+      ],
+      navContainer: '.swocas_wrapper .team .cust-nav',
+      dots: true,
+      items: 3,
+      responsive: {
+        0: {
+          items: 1,
+          stagePadding: 0,
+          nav: false,
+        },
+        767: {
+          items: 2,
+          stagePadding: 0,
+          nav: false,
+        },
+        992: {
+          items: 3,
+          stagePadding: 0,
+          nav: false,
+        },
+        1000: {
+          items: 3,
+          stagePadding: 0,
+          nav: true,
+        },
+      },
+    })
+  })
+</script>
+<script>
+  $(document).ready(function () {
+    $('html, body').animate(
+      {
+        scrollTop: $('#header').offset().top,
+      },
+      'slow',
+    )
+  })
+  $(document).ready(function () {
+    $('#navMenuXS').on('click', function () {
+      $('#navMenuList').slideToggle('fast')
+    })
+    $('#hradbtmwrapper').empty()
+  })
+
+  // loop sponsor logos
+  const sliderCopy = document.querySelector('.ev_marquee').cloneNode(true)
+  document.querySelector('.ev_marquee_wrapper').append(sliderCopy)
+</script>
+
+$designAttribute:masterD_no_sidebar

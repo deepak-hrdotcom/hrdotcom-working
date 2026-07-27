@@ -1,0 +1,1081 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style type="text/css">
+      body > .container-fluid > .row > .ContentArea > .container {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 100%;
+        max-width: 100%;
+      }
+      body > .container-fluid > .row > .ContentArea > {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      #intro-header {
+        display: none;
+      }
+      a,
+      a:hover,
+      a:link {
+        text-decoration: none;
+      }
+      .sf-nav-main,
+      .socialshare {
+        display: none !important;
+      }
+      .js_event_card .js_card_img {
+        width: 100%;
+      }
+      .js_event_card .js_card_img > img {
+        height: auto;
+        max-height: 400px;
+        max-width: 100%;
+      }
+    </style>
+    <!--==========================================================================
+===================== template css start======================================
+============================================================================-->
+    <style type="text/css">
+      /**
+ * ===============================================
+ *
+ * @format
+ */
+
+      /* =========== TOKENS UPDATE (START) ============= */
+      /* =============================================== */
+
+      /* 1) Google Font: Plus Jakarta Sans */
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+      /* 2) Global reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box !important;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      html {
+        font-size: 100% !important;
+        scroll-behavior: smooth !important;
+      }
+
+      /* 3) Design tokens (scoped) */
+      .custom-container {
+        background: #ffffff;
+
+        /* Typography */
+        --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system,
+          'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI',
+          Roboto, Helvetica, Arial, sans-serif;
+
+        /* Spacing */
+        --s1: 4px;
+        --s2: 8px;
+        --s3: 12px;
+        --s4: 16px;
+        --s5: 24px;
+        --s6: 32px;
+        --s7: 48px;
+        --s8: 60px;
+        --s9: 72px;
+        --s10: 96px;
+        --s-full: 100%;
+
+        /* Radii */
+        --r1: var(--s1);
+        --r2: var(--s2);
+        --r3: var(--s3);
+        --r4: var(--s4);
+        --r-full: var(--s-full);
+
+        /* Type scale */
+        --text-xs: 0.75rem;
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 1.875rem;
+        --text-4xl: 2.25rem;
+        --text-5xl: 3rem;
+        --text-6xl: 3.75rem;
+        --text-7xl: 4.5rem;
+
+        /* Container widths */
+        --w-xs: 240px;
+        --w-sm: 640px;
+        --w-md: 768px;
+        --w-lg: 1024px;
+        --w-xl: 1350px; /* updated max container */
+        --w-2xl: 1600px;
+        --w-full: 100%;
+
+        /* Colors */
+        --clr-text-heading: #010205;
+        --clr-text-body: rgb(51, 52, 53);
+        --clr-primary: #61b50c;
+        --clr-accent: #61b50c;
+        --clr-secondary: #515456;
+        --clr-neutral: #f2f2f2;
+        --clr-dark: #010205;
+        --clr-light: #ffffff;
+
+        /* Optional gradient */
+        --gradient-from: #0a2f0c;
+        --gradient-to: #3b9810;
+        --gradient-1: linear-gradient(
+          to right,
+          var(--gradient-from),
+          var(--gradient-to)
+        );
+
+        /* REM-based text measures (override-friendly) */
+        --measure-sm: 36rem; /* mobile hero/content ~576px */
+        --measure-md: 46rem; /* tablet hero/content ~736px */
+        --measure-lg: 52rem; /* default body/intro ~832px */
+        --measure-xl: 60rem; /* roomy desktop ~960px */
+
+        /* Defaults */
+        color: var(--clr-text-body);
+        font-family: var(--font-body);
+      }
+
+      /* Headings */
+      .custom-container h1,
+      .custom-container h2,
+      .custom-container h3,
+      .custom-container h4,
+      .custom-container h5,
+      .custom-container h6 {
+        font-family: var(--font-heading) !important;
+        color: var(--clr-text-heading);
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-transform: none;
+      }
+
+      /* Mobile-first sizes */
+      .custom-container h1 {
+        font-weight: 700;
+        font-size: var(--text-3xl);
+      }
+      .custom-container h2 {
+        font-weight: 600;
+        font-size: var(--text-2xl);
+      }
+      .custom-container h3 {
+        font-weight: 500;
+        font-size: var(--text-xl);
+      }
+      .custom-container h4 {
+        font-weight: 500;
+        font-size: var(--text-lg);
+      }
+      .custom-container h5 {
+        font-weight: 400;
+        font-size: var(--text-base);
+      }
+      .custom-container h6 {
+        font-weight: 400;
+        font-size: var(--text-sm);
+      }
+
+      .custom-container p,
+      .custom-container a,
+      .custom-container small,
+      .custom-container li,
+      .custom-container blockquote,
+      .custom-container label,
+      .custom-container input,
+      .custom-container button,
+      .custom-container textarea {
+        font-family: var(--font-body) !important;
+        color: var(--clr-text-body);
+        font-weight: 400;
+        line-height: 1.6;
+        text-transform: none;
+      }
+
+      /* Breakpoints */
+      @media (min-width: 768px) {
+        .custom-container h1 {
+          font-size: var(--text-4xl);
+        }
+        .custom-container h2 {
+          font-size: var(--text-3xl);
+        }
+        .custom-container h3 {
+          font-size: var(--text-2xl);
+        }
+        .custom-container h4 {
+          font-size: var(--text-xl);
+        }
+        .custom-container h5 {
+          font-size: var(--text-lg);
+        }
+        .custom-container h6 {
+          font-size: var(--text-base);
+        }
+
+        .custom-container p,
+        .custom-container a,
+        .custom-container small,
+        .custom-container li {
+          font-size: var(--text-lg) !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .custom-container h1 {
+          font-size: var(--text-5xl);
+        }
+        .custom-container h2 {
+          font-size: var(--text-4xl);
+        }
+        .custom-container h3 {
+          font-size: var(--text-2xl);
+        }
+        .custom-container h4 {
+          font-size: var(--text-2xl);
+        }
+        .custom-container h5 {
+          font-size: var(--text-xl);
+        }
+        .custom-container h6 {
+          font-size: var(--text-lg);
+        }
+      }
+
+      /* Global images */
+      .custom-container img {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: cover;
+      }
+
+      /* Links */
+      .custom-container a {
+        text-decoration: underline;
+      }
+      .custom-container a:hover {
+        opacity: 0.9;
+      }
+
+      /* Sections */
+      .cs-section {
+        width: var(--w-full);
+        background: var(--clr-light);
+        padding-block: var(--s6);
+      }
+      @media (min-width: 992px) {
+        .cs-section {
+          padding-block: var(--s9);
+        }
+      }
+
+      /* Center container */
+      .cs-section-center {
+        width: min(94vw, var(--w-xl));
+        margin: 0 auto;
+      }
+
+      /* =============================================== */
+      /* ============ TOKENS UPDATE (END) ============== */
+      /* =============================================== */
+    </style>
+
+    <div class="custom-container">
+      <!-- =============================================== --><!-- =============== CS-HEADER (START) ============= --><!-- =============================================== -->
+      <div>$vendorLeadForm</div>
+      <style>
+        /* =============================================== */
+        /* ================= CS-HERO (START) ============= */
+        /* =============================================== */
+
+        .cs-hero {
+          background: var(--clr-neutral);
+        }
+
+        /* layout */
+        .cs-hero__inner {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--s7);
+          align-items: start;
+        }
+
+        /* content */
+        .cs-hero__content {
+          text-align: center;
+          margin: 0 auto;
+          max-width: var(--measure-sm) !important;
+        }
+
+        .cs-hero__title {
+          font-size: clamp(2.2rem, 8vw, var(--text-5xl)) !important;
+          line-height: 1.06;
+          letter-spacing: -0.01em;
+          font-weight: 700;
+          color: var(--clr-text-heading);
+          margin-bottom: var(--s4);
+        }
+
+        .cs-hero__sub {
+          font-size: var(--text-lg);
+          color: var(--clr-text-body);
+          margin-bottom: var(--s4);
+        }
+
+        .cs-hero__dots {
+          margin-bottom: var(--s6);
+        }
+        .cs-hero__dots svg {
+          display: inline-block;
+        }
+
+        /* CTAs */
+        .cs-hero__ctas {
+          display: flex;
+          gap: var(--s5);
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: var(--s6);
+        }
+
+        .cs-btn--primary {
+          background: var(--clr-primary);
+          border: none;
+          color: var(--clr-light) !important;
+          text-decoration: none !important;
+          display: inline-flex;
+          align-items: center;
+          gap: var(--s3);
+        }
+
+        .cs-hero__arrow {
+          width: 22px;
+          height: 22px;
+        }
+
+        .cs-hero__link {
+          font-weight: 600;
+          color: var(--clr-text-heading);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        /* meta */
+        .cs-hero__meta {
+          color: var(--clr-text-body);
+          text-align: center;
+        }
+
+        .cs-hero__date {
+          margin-bottom: var(--s5);
+          line-height: 0.8 !important;
+          text-align: center;
+        }
+
+        .cs-hero__date strong {
+          color: var(--clr-text-heading);
+        }
+
+        .cs-hero__curr {
+          display: block;
+          font-size: var(--text-2xl) !important;
+        }
+
+        .cs-hero__future {
+          opacity: 0.85;
+        }
+
+        .cs-hero__note a {
+          color: var(--clr-text-heading);
+        }
+
+        /* media */
+        .cs-hero__img {
+          width: 100%;
+          height: auto;
+          border-radius: 20px;
+          object-fit: cover;
+          display: block;
+        }
+
+        .cs-hero__note--desk {
+          display: none;
+        }
+
+        .cs-hero__note span {
+          font-size: var(--text-sm) !important;
+          display: inline-block;
+          line-height: 1;
+          margin-top: 1rem;
+        }
+
+        /* ===== Tablet & up ===== */
+        @media (min-width: 768px) {
+          .cs-hero__inner {
+            grid-template-columns: 1.35fr 0.9fr;
+            align-items: center;
+            gap: var(--s8);
+          }
+
+          .cs-hero__content {
+            text-align: center;
+            margin: 0;
+            max-width: var(--measure-md) !important;
+            justify-self: center;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+          }
+
+          .cs-hero__sub {
+            font-size: var(--text-2xl) !important;
+          }
+
+          .cs-hero__ctas {
+            justify-content: flex-start;
+          }
+
+          .cs-hero__meta {
+            text-align: left;
+          }
+
+          .cs-hero__img {
+            max-height: 460px;
+            border-radius: 24px;
+            margin-bottom: var(--s1);
+          }
+
+          .cs-hero__note {
+            font-size: clamp(0.9rem, 1vw, 1rem);
+            line-height: 1.55;
+            opacity: 0.92;
+          }
+
+          .cs-hero__note--mobile {
+            display: none;
+          }
+
+          .cs-hero__note--desk,
+          .cs-hero__note--desk a {
+            display: inline-block;
+            text-align: center;
+            font-size: var(--text-sm) !important;
+          }
+
+          .cs-hero__date {
+            margin-bottom: 0;
+          }
+        }
+
+        /* ===== Desktop XL ===== */
+        @media (min-width: 1280px) {
+          .cs-hero__title {
+            font-size: clamp(3.2rem, 3.8vw, 4.5rem) !important;
+          }
+
+          .cs-hero__img {
+            max-height: 440px;
+          }
+        }
+
+        /* ===== Mobile: hide the image entirely ===== */
+        @media (max-width: 767px) {
+          .cs-hero__media {
+            display: none;
+          }
+
+          .cs-hero__date strong {
+            font-size: clamp(1.4rem, 6.2vw, 1.85rem);
+            color: var(--clr-text-heading);
+          }
+
+          .cs-hero__future {
+            display: block;
+            margin: var(--s2) 0 0 0;
+          }
+        }
+
+        /* ================= FULL-WIDTH EVENT ROW ================= */
+
+        .cs-hero__events-row {
+          margin-top: var(--s7);
+          text-align: center;
+        }
+
+        .cs-hero__events-label {
+          font-weight: 600;
+          color: var(--clr-text-heading);
+          margin-bottom: var(--s4);
+        }
+
+        /* UPDATED: flex-based pills */
+        .cs-hero__events-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          gap: var(--s2);
+          justify-content: center;
+        }
+
+        /* Pill */
+        .cs-hero__event-pill {
+          padding: 0.45rem 0.9rem;
+          border-radius: 999px;
+          background: rgba(148, 200, 61, 0.14);
+          color: var(--clr-text-heading);
+          font-weight: 600;
+          font-size: var(--text-sm);
+          white-space: nowrap;
+        }
+
+        /* =============================================== */
+        /* ================== CS-HERO (END) ============== */
+        /* =============================================== */
+      </style>
+
+      <section class="cs-section cs-hero">
+        <div class="cs-section-center">
+          <!-- ===================== -->
+          <!-- ROW 1: HERO CONTENT -->
+          <!-- ===================== -->
+          <div class="cs-hero__inner">
+            <!-- Left -->
+            <div class="cs-hero__content">
+              <h1 class="cs-hero__title">AI4HR Live!</h1>
+
+             <p class="cs-hero__date">
+                  <strong>Monthly Virtual Event</strong><br />
+                 
+                </p>
+
+              <div aria-hidden="true" class="cs-hero__dots">
+                <svg height="10" viewBox="0 0 55 10" width="55">
+                  <circle cx="5" cy="5" r="5" fill="#ef4a3d"></circle>
+                  <circle cx="20" cy="5" r="5" fill="#4ac4d6"></circle>
+                  <circle cx="35" cy="5" r="5" fill="#94c83d"></circle>
+                  <circle cx="50" cy="5" r="5" fill="#fdb414"></circle>
+                </svg>
+              </div>
+
+              <div class="cs-hero__ctas">
+                <a
+                  class="cs-btn cs-btn--primary"
+                  onclick="loadPopup('fc_1767158035591')"
+                >
+                  <span>Talk to a Rep</span>
+                  <svg class="cs-hero__arrow" viewBox="0 0 24 24">
+                    <path
+                      d="M5 12h14M13 5l7 7-7 7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  class="cs-hero__link"
+                  onclick="loadPopup('fc_1767158285275')"
+                >
+                  Apply To Speak
+                </a>
+              </div>
+
+              <p class="cs-hero__meta-title">Monthly Virtual Event</p>
+            </div>
+
+            <!-- Right -->
+            <div class="cs-hero__media">
+              <img
+                class="cs-hero__img"
+                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-ai-for-hr/hr-woman-using-ai.webp"
+                alt="AI for HR"
+              />
+            </div>
+          </div>
+
+          <!-- ===================== -->
+          <!-- ROW 2: EVENT PILLS -->
+          <!-- ===================== -->
+          <div class="cs-hero__events-row">
+            <p class="cs-hero__events-label">2026 Monthly Virtual Events</p>
+
+            <ul class="cs-hero__events-list" id="heroEventPills">
+              <!-- JS injects pills -->
+            </ul>
+
+            <p class="cs-hero__events-footnote">
+              <a href="#timelineTabs"
+                    >Click Here to See Future Event Dates</a
+                  >
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      /** @format */
+
+      const eventTimelineData = {
+        'February Event': [
+          {
+            day: 27,
+            month: 'January',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 5,
+            month: 'February',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 19,
+            month: 'February',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 26,
+            month: 'February',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'March Event': [
+          {
+            day: 1,
+            month: 'March',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 10,
+            month: 'March',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 24,
+            month: 'March',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 31,
+            month: 'March',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'April Event': [
+          {
+            day: 30,
+            month: 'March',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 8,
+            month: 'April',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 22,
+            month: 'April',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 29,
+            month: 'April',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'May Event': [
+          {
+            day: 27,
+            month: 'April',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 6,
+            month: 'May',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 20,
+            month: 'May',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 27,
+            month: 'May',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'June Event': [
+          {
+            day: 26,
+            month: 'May',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 4,
+            month: 'June',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 18,
+            month: 'June',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 25,
+            month: 'June',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'July Event': [
+          {
+            day: 23,
+            month: 'June',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 2,
+            month: 'July',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 16,
+            month: 'July',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 23,
+            month: 'July',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'August Event': [
+          {
+            day: 28,
+            month: 'July',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 6,
+            month: 'August',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 20,
+            month: 'August',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 27,
+            month: 'August',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'September Event': [
+          {
+            day: 30,
+            month: 'August',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 8,
+            month: 'September',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 22,
+            month: 'September',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 29,
+            month: 'September',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'October Event': [
+          {
+            day: 29,
+            month: 'September',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 8,
+            month: 'October',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 22,
+            month: 'October',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 29,
+            month: 'October',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'November Event': [
+          {
+            day: 20,
+            month: 'October',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 29,
+            month: 'October',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 12,
+            month: 'November',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 19,
+            month: 'November',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+
+        'December Event': [
+          {
+            day: 16,
+            month: 'November',
+            year: 2026,
+            description:
+              'Booking deadline to guarantee participation in full promotion schedule',
+          },
+          {
+            day: 25,
+            month: 'November',
+            year: 2026,
+            description:
+              'Deadline to submit Webcast Abstract, Webcast title, and Speaker Bio',
+          },
+          {
+            day: 9,
+            month: 'December',
+            year: 2026,
+            description: 'Webcast Slide Deck due to HR.com',
+          },
+          {
+            day: 16,
+            month: 'December',
+            year: 2026,
+            description: 'Virtual Event Date',
+          },
+        ],
+      }
+
+      const timelineData = {}
+
+      Object.keys(eventTimelineData).forEach((eventTitle) => {
+        const items = eventTimelineData[eventTitle]
+
+        // Identify Virtual Event Date (used to build tab key)
+        const virtualItem = items.find(
+          (item) => item.description === 'Virtual Event Date'
+        )
+
+        if (!virtualItem) return
+
+        // Create key like: feb26, mar31, apr29, etc.
+        const key =
+          virtualItem.month.slice(0, 3).toLowerCase() + virtualItem.day
+
+        timelineData[key] = items.map((item) => ({
+          date: `${item.month} ${item.day}`,
+          year: String(item.year),
+          desc: item.description,
+          isVirtual: item.description === 'Virtual Event Date',
+        }))
+      })
+
+      /* =========================================
+   DOM REFERENCES
+========================================= */
+
+      const timelineList = document.getElementById('timeList')
+      const tabButtons = document.querySelectorAll('.tab-button')
+
+      /* =========================================
+   RENDER FUNCTION
+========================================= */
+
+      function renderTimeline(dateKey) {
+        const data = timelineData[dateKey]
+        if (!data) return
+
+        timelineList.innerHTML = data
+          .map(
+            (item) => `
+      <li class="cs-time__item ${item.isVirtual ? 'is-virtual' : ''}">
+        <div class="cs-time__date">
+          <span class="cs-time__date-main">${item.date}</span>
+          <span class="cs-time__date-year">${item.year}</span>
+        </div>
+        <p class="cs-time__desc">${item.desc}</p>
+      </li>
+    `
+          )
+          .join('')
+      }
+
+      /* =========================================
+   TAB INTERACTION
+========================================= */
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach((b) => b.classList.remove('active'))
+          btn.classList.add('active')
+          renderTimeline(btn.dataset.date)
+        })
+      })
+
+      /* =========================================
+   INITIAL LOAD (MATCHES ACTIVE TAB)
+========================================= */
+
+      const activeTab = document.querySelector('.tab-button.active')
+      if (activeTab) {
+        renderTimeline(activeTab.dataset.date)
+      }
+
+      // date pills in the hero section==================================================================================
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const pillsContainer = document.getElementById('heroEventPills')
+        if (!pillsContainer) return
+
+        const monthOrder = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ]
+
+        // Extract Virtual Event Dates
+        const virtualEvents = Object.values(eventTimelineData)
+          .map((events) =>
+            events.find((item) => item.description === 'Virtual Event Date')
+          )
+          .filter(Boolean)
+          .sort(
+            (a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month)
+          )
+
+        // Render pills
+        pillsContainer.innerHTML = virtualEvents
+          .map(
+            (event) => `
+          <li class="cs-hero__event-pill">
+            ${event.month.slice(0, 3)} ${event.day}
+          </li>
+        `
+          )
+          .join('')
+      })
+    </script>
+  </body>
+</html>
