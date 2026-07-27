@@ -242,6 +242,7 @@ Best Practices & Rules for the 10 Subject Line Options:
   * 2 Strategic / High-Impact Benefit Hooks (unlocking efficiency or workflow gains)
 - Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
 - Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
+- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
 - Strict Exclusions: NO colons (:). NO dates or time hooks (do NOT use "June 23", "this Wednesday", "tomorrow", etc.). NO spammy hype (no ALL-CAPS words, no fake RE:/FWD:).
 
 2. PREHEADER: Max 90 chars. Focus on visual proof, time-saving, or ease-of-use. End with soft urgency (e.g., 'register for walkthrough').
@@ -278,6 +279,7 @@ Best Practices & Rules for the 10 Subject Line Options:
   * 2 Strategic / High-Impact Benefit Hooks (unlocking leadership or productivity gains)
 - Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
 - Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
+- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
 - Strict Exclusions: NO colons (:). NO live dates or upcoming time hooks (do NOT use "this Wednesday", "tomorrow", "[Jun 23]", or specific dates). NEVER include the words "ondemand", "on-demand", or "on demand" (or their capitalizations). NO spammy hype.
 
 2. PREHEADER: Max 90 chars. Focus on instant learning on their own schedule. End with soft urgency (e.g., 'watch now free').
@@ -314,6 +316,7 @@ Best Practices & Rules for the 10 Subject Line Options:
   * 2 Strategic / High-Impact Benefit Hooks (unlocking HR or business advantages)
 - Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
 - Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
+- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
 - Strict Exclusions: NO colons (:). NO dates or time hooks (do NOT use "June 23", "this Wednesday", "tomorrow", etc.). NO spammy hype (no ALL-CAPS words, no fake RE:/FWD:).
 
 2. PREHEADER: Max 90 chars. Complements subject, never repeats it. End with soft urgency (e.g., 'register now').
@@ -349,6 +352,7 @@ Best Practices & Rules for the 10 Subject Line Options:
   * 2 Strategic / High-Impact Benefit Hooks (unlocking HR or leadership gains)
 - Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
 - Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
+- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
 - Strict Exclusions: NO colons (:). NO dates or time hooks (do NOT use "June 23", "this Wednesday", "tomorrow", etc.). NO spammy hype.
 
 2. PREHEADER: Max 90 chars. Mention that the full-day virtual event is free. End with soft urgency (e.g., 'get your free pass').
@@ -509,9 +513,32 @@ Generate EXACTLY this JSON structure:
           .trim();
       };
 
+      const formatSubjectLines = (rawSubject) => {
+        if (!rawSubject || typeof rawSubject !== 'string') return "";
+        const lines = rawSubject
+          .replace(/(?:\s+)?(\d+\.)\s*/g, '\n$1 ')
+          .split('\n')
+          .map(l => l.trim())
+          .filter(Boolean);
+
+        const questionWordsRegex = /^(?:\d+\.\s*)?(?:Is|Are|Why|How|Can|Do|Does|Should|Would|What|Which|Who|Where|When|Could|Has|Have|Will)\b/i;
+
+        const formatted = lines.map(line => {
+          if (!line) return line;
+          if (questionWordsRegex.test(line)) {
+            if (!line.endsWith('?')) {
+              line = line.replace(/[\.\s]+$/, '') + '?';
+            }
+          }
+          return line;
+        });
+
+        return formatted.join('\n');
+      };
+
       setFields(prev => ({
         ...prev,
-        subject: (data.subject || prev.subject || "").replace(/(?:\\s+)?(\\d+\\.)\\s/g, '\\n$1 ').trim(),
+        subject: formatSubjectLines(data.subject || prev.subject || ""),
         preheader: data.preheader || prev.preheader || "",
         logo: cleanUrl(data.logo) || prev.logo || "",
         logoAlt: data.logoAlt || prev.logoAlt || "",
