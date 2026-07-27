@@ -529,11 +529,17 @@ function splitTakeaways(colors = ['#EF4A3D','#4AC4D6','#94C83D','#FDB414']) {
                                 What You'll Learn</p>
 ${[1,2,3,4].map((n,i) => `
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:${i<3?'12':'0'}px;background-color:#F8FAFC;border-radius:8px;overflow:hidden;">
-                                <tr><td style="background-color:${colors[i]};height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
+                                <tr><td style="background-color:${colors[i]};height:2px;font-size:0;line-height:0;">&nbsp;</td></tr>
                                 <tr>
-                                    <td class="takeaway-card-cell" style="padding:14px 16px 16px 16px;">
-                                        <span style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;color:${colors[i]};text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px;">0${n}</span>
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">{{LEARN${n}}}</span>
+                                    <td class="takeaway-card-cell" style="padding:14px 16px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td width="20" valign="top" style="width:20px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:20px;font-weight:700;color:${colors[i]};line-height:23px;padding:0;">&bull;</td>
+                                                <td valign="top" style="padding:0;">
+                                                    <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#2A343E;line-height:23px;display:block;">{{LEARN${n}}}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>`).join('')}
