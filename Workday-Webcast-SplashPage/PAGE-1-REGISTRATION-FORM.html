@@ -1,0 +1,386 @@
+<div class="workday-splash-page">
+
+  <!-- ==========================================
+       CMS-SCOPED STYLESHEET (PAGE 1: REGISTRATION)
+       ========================================== -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    .workday-splash-page {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #001229 !important;
+      color: #022043 !important;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+      box-sizing: border-box !important;
+      line-height: 1.5 !important;
+      -webkit-font-smoothing: antialiased !important;
+      overflow-x: hidden !important;
+      position: relative !important;
+      min-height: 100vh !important;
+    }
+
+    .workday-splash-page *,
+    .workday-splash-page *::before,
+    .workday-splash-page *::after {
+      box-sizing: border-box !important;
+    }
+
+    .workday-splash-page img {
+      display: block !important;
+      max-width: 100% !important;
+      height: auto !important;
+      border: 0 !important;
+    }
+
+    .workday-splash-page h1, 
+    .workday-splash-page h2, 
+    .workday-splash-page h3, 
+    .workday-splash-page p, 
+    .workday-splash-page a, 
+    .workday-splash-page button {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    }
+
+    /* Standardized Pill Button Styles */
+    .workday-splash-page .wd-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      border-radius: 999px !important;
+      font-weight: 700 !important;
+      font-size: 16px !important;
+      cursor: pointer !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      border: none !important;
+      outline: none !important;
+      white-space: nowrap !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .workday-splash-page .wd-btn-orange {
+      background: linear-gradient(135deg, #F78B1E 0%, #E25217 100%) !important;
+      color: #FFFFFF !important;
+      padding: 0 32px !important;
+      height: 56px !important;
+    }
+
+    .workday-splash-page .wd-btn-orange:hover {
+      transform: translateY(-2px) scale(1.02) !important;
+      box-shadow: 0 8px 24px rgba(247, 139, 30, 0.4) !important;
+      background: linear-gradient(135deg, #FF9933 0%, #ED5A1F 100%) !important;
+    }
+
+    /* Layout Containers */
+    .workday-splash-page .wd-container {
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+    }
+
+    /* Header */
+    .workday-splash-page .wd-header {
+      width: 100% !important;
+      padding: 16px 0 !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      background-color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-header-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    .workday-splash-page .wd-logo-container {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+    }
+
+    .workday-splash-page .wd-logo-img {
+      height: 38px !important;
+      width: auto !important;
+    }
+
+    .workday-splash-page .wd-logo-separator {
+      width: 1px !important;
+      height: 24px !important;
+      background-color: #CBD5E1 !important;
+    }
+
+    .workday-splash-page .wd-header-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 6px 16px !important;
+      border-radius: 999px !important;
+      background: rgba(0, 87, 174, 0.08) !important;
+      border: 1px solid rgba(0, 87, 174, 0.25) !important;
+      color: #0057AE !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+    }
+
+    /* Registration Card Wrapper */
+    .workday-splash-page .wd-reg-wrapper {
+      padding: 40px 0 60px 0 !important;
+      background: radial-gradient(circle at 50% 20%, #003B73 0%, #001A3A 60%, #000F24 100%) !important;
+      min-height: 85vh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .workday-splash-page .wd-reg-card {
+      background: #FFFFFF !important;
+      border-radius: 24px !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4) !important;
+      width: 100% !important;
+      max-width: 840px !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .workday-splash-page .wd-reg-card-header {
+      background: linear-gradient(135deg, #001A3A 0%, #003B73 100%) !important;
+      color: #FFFFFF !important;
+      padding: 20px 24px !important;
+      text-align: center !important;
+    }
+
+    .workday-splash-page .wd-reg-card-tag {
+      display: inline-block !important;
+      padding: 6px 16px !important;
+      background: rgba(247, 139, 30, 0.2) !important;
+      border: 1px solid #F78B1E !important;
+      color: #F78B1E !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      margin: 0 !important;
+    }
+
+    .workday-splash-page .wd-reg-card-body {
+      padding: 0 !important;
+      background: #F8FAFC !important;
+    }
+
+    /* INCREASED HEIGHT GOOGLE FORM IFRAME (920px) */
+    .workday-splash-page #googleFormIframe {
+      width: 100% !important;
+      height: 920px !important;
+      min-height: 920px !important;
+      display: block !important;
+      border: none !important;
+      border-radius: 0 0 24px 24px !important;
+      overflow-y: scroll !important;
+    }
+
+    /* ------------------------------------------
+       NON-DISMISSIBLE THANK YOU POPUP MODAL
+       ------------------------------------------ */
+    .workday-splash-page .wd-thanks-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(0, 18, 41, 0.92) !important;
+      backdrop-filter: blur(16px) !important;
+      z-index: 9999999 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 24px !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .workday-splash-page .wd-thanks-overlay.active {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .workday-splash-page .wd-thanks-card {
+      background: #FFFFFF !important;
+      border-radius: 24px !important;
+      width: 100% !important;
+      max-width: 540px !important;
+      padding: 40px 32px !important;
+      text-align: center !important;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7) !important;
+      border: 1px solid #E2E8F0 !important;
+      transform: scale(0.85) translateY(20px) !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .workday-splash-page .wd-thanks-overlay.active .wd-thanks-card {
+      transform: scale(1) translateY(0) !important;
+    }
+
+    .workday-splash-page .wd-thanks-badge-icon {
+      width: 80px !important;
+      height: 80px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #F78B1E 0%, #E25217 100%) !important;
+      color: #FFFFFF !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-bottom: 20px !important;
+      box-shadow: 0 12px 28px rgba(247, 139, 30, 0.4) !important;
+    }
+
+    .workday-splash-page .wd-thanks-title {
+      font-size: 26px !important;
+      font-weight: 800 !important;
+      color: #022043 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .workday-splash-page .wd-thanks-desc {
+      font-size: 15px !important;
+      color: #64748B !important;
+      line-height: 1.6 !important;
+      margin-bottom: 30px !important;
+    }
+
+    /* Footer */
+    .workday-splash-page .wd-footer {
+      background-color: #000F24 !important;
+      padding: 30px 0 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      color: #64748B !important;
+      font-size: 13px !important;
+      text-align: center !important;
+    }
+  </style>
+
+
+  <!-- ==========================================
+       HEADER BRANDING
+       ========================================== -->
+  <header class="wd-header">
+    <div class="wd-container wd-header-inner">
+      <div class="wd-logo-container">
+        <a href="https://www.workday.com" target="_blank" rel="noopener" aria-label="Workday Homepage">
+          <img class="wd-logo-img" src="https://public-cdn.hr.com/system/app/media/rs/2026/7/7/mrau8ek8/120.jpg" alt="Workday Logo" />
+        </a>
+        <div class="wd-logo-separator"></div>
+        <a href="https://www.hr.com" target="_blank" rel="noopener" aria-label="HR.com Homepage">
+          <img class="wd-logo-img" src="https://public-cdn.hr.com/logo_images/hrcom_25years_logo.png" alt="HR.com Logo" />
+        </a>
+      </div>
+
+      <div class="wd-header-badge">
+        <span>●</span> Registration Page
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       PAGE 1: INCREASED HEIGHT GOOGLE FORM EMBED CARD
+       ========================================== -->
+  <div class="wd-reg-wrapper">
+    <div class="wd-container" style="display:flex; justify-content:center;">
+      
+      <div class="wd-reg-card">
+        
+        <!-- BLUE HEADER WITH ONLY THE EXCLUSIVE BADGE -->
+        <div class="wd-reg-card-header">
+          <span class="wd-reg-card-tag">Workday + Paradox Exclusive</span>
+        </div>
+
+        <!-- INCREASED HEIGHT GOOGLE FORM IFRAME (920px) -->
+        <div class="wd-reg-card-body">
+          <iframe 
+            id="googleFormIframe"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe2hOs7Q6ZfciM-Fre1k3xmiHKXL4ZbVWin0mH9RWjsJhaYYw/viewform?embedded=true" 
+            width="100%" 
+            height="920" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            style="border:none; width:100%; height:920px !important; min-height:920px !important; display:block; overflow-y:scroll !important;">
+            Loading form...
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       NON-DISMISSIBLE POPUP MODAL (PROMINENT CTA TO ONDEMAND PAGE)
+       ========================================== -->
+  <div id="workdayThanksModal" class="wd-thanks-overlay">
+    <div class="wd-thanks-card">
+      
+      <div class="wd-thanks-badge-icon">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+
+      <h2 class="wd-thanks-title">Registration Successful!</h2>
+      <p class="wd-thanks-desc">
+        Thank you for registering. Click the button below to watch the on-demand webcast video.
+      </p>
+
+      <!-- PROMINENT BUTTON LEADING TO ONDEMAND PAGE -->
+      <a href="https://www.hr.com/en/about_us/splash_pages/a-faster-workday-for-the-frontline_mrwy8ik3.html" class="wd-btn wd-btn-orange" style="width: 100% !important; height: 56px !important; font-size: 17px !important; border-radius: 12px !important;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Watch On-Demand Webcast Video Now →
+      </a>
+
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="wd-footer">
+    <div class="wd-container">
+      <p>© 2026 HR.com & Workday Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================
+       SUBMISSION DETECTOR SCRIPT
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const googleIframe = document.getElementById('googleFormIframe');
+      const thanksModal = document.getElementById('workdayThanksModal');
+      let iframeLoads = 0;
+
+      // SUBMIT DETECTOR: Shows modal when Google Form is submitted
+      if (googleIframe) {
+        googleIframe.addEventListener('load', function() {
+          iframeLoads++;
+          // Load 1 = Initial form view
+          // Load 2 = Form submitted inside iframe!
+          if (iframeLoads > 1) {
+            if (thanksModal) {
+              thanksModal.classList.add('active');
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</div>

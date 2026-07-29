@@ -1,0 +1,433 @@
+ Software System Integration, Architecture
+Failures, and Performance Gaps
+ Finding: Over two-thirds of organizations
+use a Learning Management System (LMS)
+or Learning Experience Platform (LXP)
+ Traditional learning platforms continue to serve as the foundation of
+most learning technology ecosystems. Over two-thirds of organizations
+(67%) report using an LMS or LXP, making these platforms the most
+widely adopted learning technologies in the study. Although learning
+ platforms remain dominant, longitudinal findings suggest that
+ organizations are gradually expanding their technology portfolios beyond
+traditional systems. LMS adoption stood at 72% in 2023 and 75% in 2024
+and dropped to 51% in 2025, indicating that growth has largely plateaued
+as organizations explore additional learning technologies.
+Which of the following learning technologies does your
+organization currently use?   (select all that apply)
+75%
+ 72%  
+ 80%
+55%
+52%
+50%
+51%
+60%
+40%
+15%
+14%  
+20%
+0%
+0%
+2023   2024   2025
+ Learning Management Systems (LMS) or Learning Experience Platforms (LXP)
+Online learning platforms (e.g., Udemy, Coursera, LinkedIn Learning, etc.)
+AI-based learning tools / AI-powered learning tools
+Note on Methodology: In 2023 and 2024, Learning Management Systems (LMS) and Learning Experience
+Platforms (LXP) were tracked as separate answer selections. The 2025 report combined these choices into a
+ single line item ("LMS and/or LXP platforms"). The 2026 survey tool modified this combined phrasing slightly
+ to "Learning Management Systems (LMS) or Learning Experience Platforms (LXP)". AI utility was not formally
+measured in the 2023 dataset.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+30 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ The most notable change in the technology landscape is the rapid growth
+of AI-powered learning tools. Adoption increased from 14% in 2024
+and 15% in 2025 to 37% in 2026, making AI one of the fastest-growing
+categories in the learning technology stack. Although AI can accelerate
+content creation and summarization, excessive reliance on these
+capabilities risks promoting standardized thinking rather than reinforcing
+organizational strengths.
+As workforce development becomes increasingly dynamic, organizations
+may need to evaluate whether their technology investments align with how
+employees actually learn and develop skills.
+ Which of the following learning technologies does your
+organization regularly use?   (select all that apply)
+Learning Management Systems
+ 67%
+(LMS) or Learning Experience
+Platforms (LXP)
+Online learning platforms (e.g.,
+49%
+Coursera, LinkedIn Learning)
+AI-powered learning tools 37%
+Learning analytics or data
+32%
+dashboards
+Content creation/authoring tools 28%
+Skills assessment and mapping
+26%
+tools
+Specialized micro-learning or
+24%
+mobile-learning apps
+Dedicated social or peer-to-peer
+23%
+learning platforms
+Immersive technologies (Virtual or
+13%
+Augmented Reality)
+We do not use any learning
+9%
+technologies
+ 0   10   20   30   40   50   60
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+31 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Only 37% of organizations report that
+their primary LMS is fully integrated with their
+core HR system
+ Organizations that use LMS reveal a fragmented approach to learning
+system integration. Organizations are divided almost evenly between those
+with fully integrated systems (37%), partially integrated systems (32%), and
+systems that are not integrated at all (32%).
+Without integration, organizations often struggle to connect learning with
+performance, retention, internal mobility, and workforce planning outcomes.
+When learning and talent data reside in separate systems, visibility
+and decision-making suffer. As expectations for learning ROI increase,
+integration between learning and talent systems will become increasingly
+important for demonstrating business value.
+ How integrated is your organization's primary
+LMS with the Human Resource Management or
+Information System?
+Not integrated  32%
+Partially integrated 32%
+37%
+Fully integrated
+ 0   10   20   30
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+32 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Almost nine in ten respondents rate
+their learning technologies as moderately
+or extremely effective for compliance and
+regulatory training
+ There is a gap between the administrative and developmental capabilities
+of learning technologies. Compliance and regulatory training remain the
+area where learning technologies perform best, with 88% of respondents
+rating their systems as moderately or extremely effective.
+However, effectiveness declines sharply when organizations evaluate
+outcomes that are more closely tied to workforce capability. Only 13% rate
+their learning technologies as extremely effective at closing skill gaps, while
+14% say the same for personalizing learning experiences.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+33 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Overall, how effective are your learning
+technologies at the following?
+ 35% 53%
+ Supporting compliance and
+regulatory training
+27% 27%
+Supporting a culture of
+continuous learning
+39% 14%
+Delivering personalized
+learning experiences
+32% 20%
+Onboarding new employees
+e   ciently
+29% 21%
+Tracking and measuring
+learning outcomes
+31% 18%
+Enabling on-the-job or
+just-in-time learning
+35% 13%
+Closing skills gaps
+30% 16%
+Supporting career growth
+30% 16%
+Improving employee
+performance
+29% 14%
+Increasing employee
+engagement and motivation
+ 0   20   40   60   80   100
+Moderately effective   Extremely effective
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+34 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Sixty-three percent of respondents
+ agree that most employees know how to find
+ and access learning technologies
+ Employee access to learning technologies appears to be a relative strength
+for many organizations. Over six in ten (63%) respondents agree or strongly
+ agree that employees know how to find and access learning technologies
+ and 57% say their learning technologies work well across employees'
+preferred devices. This suggests that awareness and basic accessibility are
+not the primary barriers to learning technology adoption. Organizations also
+have improved capabilities in tracking learning data (64%).
+However, the data reveals a gap between accessibility and integration.
+Many organizations continue to struggle with connecting learning
+technologies to one another and to broader "enterprise resource planning
+ (ERP) systems." Under two-fifths (37%) of respondents agree or strongly
+ agree that their learning technologies integrate effectively with one another,
+while under half (44%) agree or strongly agree that learning systems are
+well integrated with HR, ERP, and other business platforms. This disconnect
+may help explain why organizations continue to face challenges translating
+learning activity into workforce insights and business outcomes.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+35 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ To what extent do you agree with the following statements
+about learning technologies in your organization?
+ 53% 11%
+ We can easily track and
+analyze learning data
+The vast majority of
+54% 9%
+employees know where and
+how to access our
+organization's learning
+technologies
+50% 7%
+Our learning technologies
+are available on employees'
+devices of choice
+43% 7%
+Most employees have a good
+experience with our learning
+technologies
+37% 7%
+Our learning technologies
+are integrated with our major
+systems (such as ERP or
+HRMS)
+28% 9%
+Our learning technologies
+are well integrated with one
+another
+ 0   10   20   30   40   50   60   70   80
+Agree  
+Strongly agree
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+36 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Two-fifths identify lack of integration
+into the flow of work as a weakness of
+ learning technologies
+ Lack of integration into the flow of work is the most frequently cited
+ weakness of learning technologies (39%). In addition, 37% identify lack
+of personalization and 32% say poor integration with other systems
+ are challenges. Together, these findings indicate that organizations are
+ concerned less with access to learning and more with how seamlessly
+ learning fits into employees' day-to-day work experiences.
+ Research by the Harvard Business Review and the American Psychological
+Association   suggests that frequent switching between applications creates
+a significant "toggle tax" that reduces productivity and fragments attention,
+ making seamless learning integration increasingly important.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+37 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ What are the 3 biggest technological weaknesses
+ of your learning technology system?   (select up to
+three)
+Not integrated into the
+ 39%
+ow of work
+37%
+Lacks personalization
+Poor ability to
+32%
+integrate with other
+systems
+Limited collaboration
+22%
+functionality
+Not accessible to
+deskless/frontline 20%
+workers
+Not user-friendly
+19%
+and/or mobile-friendly
+17%
+Outdated interface
+Lacks AI functionality
+13%
+(GenAI and deep
+search)
+Not easily scalable 9%
+We have no
+7%
+weaknesses
+ 0   10   20   30
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+38 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Longitudinal data highlights how organizational priorities have evolved.
+Lack of personalization was the leading concern in 2023 at 50% but
+declined to 22% in 2025 before reaching 37% in 2026. While personalization
+ remains important, workflow integration has emerged as a leading
+ challenge, suggesting that organizations are increasingly focused on
+making learning easier to access, apply, and sustain within the context of
+work.
+ Finding: Nearly two-thirds of organizations
+evaluate L&D value primarily through
+immediate knowledge or skill improvement
+ Organizations continue to rely heavily on short-term indicators when
+measuring the success of learning initiatives. The most common measures
+ of L&D value are knowledge or skill acquisition (65%), compliance
+ outcomes (61%), and learner satisfaction (41%). While these metrics
+provide useful insight into whether employees completed training and
+gained new knowledge, they do not necessarily indicate whether learning
+translated into improved performance or organizational results.
+Measures tied more directly to business outcomes remain less common.
+Only a third assess behavioral change on the job, scalability and cost-
+effectiveness. Most notably, just 28% calculate return on investment (ROI),
+ suggesting that relatively few organizations formally quantify the business
+ value generated by learning initiatives.
+This measurement imbalance makes it harder for L&D teams to
+demonstrate strategic value. As executives increasingly prioritize
+productivity improvements and ROI, organizations may face growing
+pressure to adopt more outcome-focused measurement approaches.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+39 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ How does your organization assess the impact
+of employee learning technologies in terms of
+organizational value?   (select all that apply)
+Knowledge or skill
+ 65%
+improvement
+Compliance (e.g.,
+61%
+sexual harassment
+prevention)
+Employee satisfaction
+41%
+with learning
+Behavior change or
+33%
+application of learning
+at work
+Ability to scale
+33%
+learning to more
+employees
+Cost-effectiveness
+32%
+compared to traditional
+methods
+Reduction in time to
+30%
+competency or
+pro  
+ciency
+Integration with other
+30%
+HR or performance
+systems
+Return on investment
+28%
+(ROI)
+Automation of learning
+28%
+delivery or
+personalization
+ 0   10   20   30   40   50   60
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+40 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ Experts agree that successful organizations distinguish themselves by
+shifting their focus away from surface-level engagement metrics toward
+tangible employee outcomes and integrated ecosystems. David Creelman
+advises organizations to   “rationally assess the impact of the technology
+without falling for tools that ‘sound good’ or get good scores on unreliable
+metrics (e.g., smile sheets).”
+ Matthew Casey-Sudvary notes that the ultimate differentiator for a
+successful learning stack is simply whether it yields   “successful outcomes
+for employees.”   JD Dillon explains that market leaders do not view learning
+tech through functional silos.
+ “The organizations that foster continuous readiness and adaptation expand
+their perspective on ‘learning technology.’ They do not rely on isolated
+ systems owned by specific functions. Instead, they adopt an ecosystem
+ approach that activates the full range of tools, tactics, and technologies that
+enable people to improve their performance and drive outcomes—regardless
+ of pre-defined categories or functional owners.” – JD Dillon
+ Expanding on this ecosystem perspective, Becky Willis underscores that
+realizing true value from technology depends heavily on organizational
+culture and leadership alignment. She notes that top-performing
+organizations are distinguished by a culture of support for TD (Talent
+Development), high employee engagement and retention, leadership
+support and value, alongside TD leaders able to increase learning maturity.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+41 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ HRRI Strategic Recommendations
+ Based on our research, please consider the following suggestions:
+ 1. Focus technology investments on integration, not expansion
+ Many organizations already have a broad mix of learning technologies in place. Before adding new
+platforms, evaluate whether existing systems work together effectively and support a seamless
+learner experience.   Consider:
+ ●   reviewing connections between learning, HR, and talent systems
+ ●   reducing duplicate tools and overlapping functionality
+ ●   improving data sharing across platforms
+ ●   prioritizing technologies that support a unified employee experience
+ 2. Connect learning data to talent and business outcomes
+ Learning data becomes more valuable when it is linked to workforce and business metrics.
+Organizations should move beyond tracking course completions and begin connecting learning
+activity to broader talent outcomes. Consider:
+ ●   linking learning data to performance and career progression
+ ●   tracking the impact of development efforts on critical skill gaps
+ ●   integrating learning data into workforce planning discussions
+ ●   using skills data to support talent decisions
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+42 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+
+ 3. Use technology to support capability development, not just compliance
+ Learning technologies are often highly effective at delivering mandatory training but less effective at
+developing critical workforce capabilities. Organizations should evaluate whether their technology
+investments are helping employees build the skills needed for future success. Consider:
+ ●   strengthening skills-based learning pathways
+ ●   using technology to support personalized development
+ ●   identifying technologies that help employees apply learning on the job
+ ●   aligning learning tools with workforce capability priorities
+ 4. Measure the impact of learning, not just participation
+ As expectations for workforce development increase, organizations need stronger evidence that
+learning investments are delivering value. Measurement approaches should focus on outcomes as
+well as activity. Consider:
+ ●   evaluating behavioral change and skill development
+ ●   tracking workforce readiness for critical roles
+ ●   measuring internal mobility and promotion outcomes
+ ●   assessing the business impact of learning initiatives
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+43 HR.com’s F uture of Learning Technology and U pskilling 2026
+
+--- PAGE BREAK ---
+

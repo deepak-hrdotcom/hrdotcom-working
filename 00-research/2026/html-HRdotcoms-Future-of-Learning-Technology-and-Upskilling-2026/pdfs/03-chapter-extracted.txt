@@ -1,0 +1,396 @@
+ Strategic Priorities, Executive
+Alignment, and Skill Gaps
+ Finding: Only 30% rate their organization's
+L&D efforts as highly effective
+ When asked to what degree their organization’s L&D efforts produce
+meaningful results such as improving performance or closing skill gaps,
+only 30% of respondents rate the overall effectiveness of their efforts at
+8 or higher on a 10-point scale, while 55% assign ratings between 5 and
+7. This suggests that although many organizations believe their learning
+programs are producing acceptable results, relatively few view them as a
+strong driver of organizational performance.
+ Please rate the overall effectiveness of learning and
+ development in your organization.
+ 3%
+10
+ High-
+7%
+9
+performers
+20%
+8
+20%
+7
+18%
+6
+5 17%
+7%
+4
+Low-
+performers
+3%
+3
+2%
+2
+2%
+1
+ 0   5   10   15   20
+Note: Effectiveness refers to the degree to which your organization's L&D efforts produce
+meaningful results (e.g., improving performance, closing skill gaps).
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+7 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Although the 2026 survey measures effectiveness rather than quality,
+the results continue a pattern observed over the past several years. In
+2023, just 14% rated the quality of their L&D efforts highly, increasing to
+21% in both 2024 and 2025. In 2026, 30% rate their L&D efforts as highly
+effective, suggesting some improvement over time. Across all four years,
+most respondents have consistently placed their organizations in the
+middle of the performance scale rather than at the high end.
+ Please rate the overall quality of learning and development
+in your organization
+ (% rating 8 and above on a 10-point scale)
+30%
+ 30%
+ 25%
+21%
+21%  
+20%
+14%
+15%
+10%
+5%
+0%
+2023   2024   2026
+2025  
+ Note: The questions remained identical across the 2023, 2024, and 2025 surveys. In 2025, the
+phrase “top-notch culture of learning in my organization” was slightly shortened to “culture of
+learning in my organization.” The 2026 survey measures “effectiveness” rather than “quality.”
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+8 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Almost three-fifths report that
+skills gaps occur often or extremely often
+ among mid-level managers
+ Mid-level managers are the employee group most likely to experience
+skills gaps, with 56% of respondents reporting that these gaps occur
+often or extremely often.
+Global data shows that up to 60% of frontline and mid-level managers
+receive no formal leadership training after promotion. At the same time,
+Gartner's latest workforce research shows that automation has slowed
+entry-level hiring, increasing organizational reliance on mid-level talent
+while weakening traditional leadership pipelines. As a result, many
+managers are stepping into strategic roles without adequate preparation.
+ In your organization, how often do you see skills gaps
+among the following employee groups:
+39%   17%
+ Mid-level
+managers
+ 36%   17%
+New
+hires/entry-level
+talent
+37%   10%
+Frontline
+managers
+40%   7%
+Individual
+contributors
+28%   5%
+Top
+leadership
+27%   5%
+Frontline/deskless
+workers
+14%   4%
+HR
+professionals
+0   10   20   30   40   50   60
+ Often   Extremely often
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+9 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ When asked where organizations most need to focus their reskilling
+efforts to drive future success, experts heavily emphasized automation
+and real-time operational agility. David Creelman, CEO of Creelman
+Research, notes that automation is a critical priority, while Matthew
+ Casey-Sudvary, PhD, specifies that organizations must prioritize
+ “Identifying redundant tasks that can be automated.”
+ JD Dillon, Advisor, Speaker, and Author, highlights a shift in necessary
+core competencies.
+ “As work becomes increasingly tech-driven and organizations continue
+to push for short-term gains, employees must develop their ability to
+foster relationships, build trust, adapt to ongoing change, and develop
+new capabilities to execute evolving systems and processes. Change
+management is out, adaptation and readiness are in.” - JD Dillon
+ Becky Willis, Chief Learning Officer at Tractus, points to specific target
+ roles across the enterprise that require immediate focus, stating that
+organizations must prioritize upskilling efforts for managers, IT, L&D/TD,
+ data architects, and most office workers.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+10 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: A third of respondents say that
+upskilling is not a priority for top leadership
+ Perceptions of the importance of upskilling vary across stakeholder
+groups. Employees place the greatest urgency on development, with 35%
+ranking upskilling as their top priority or among their top three priorities.
+Executives report a similar level of urgency, with 35% also placing
+upskilling within their top three priorities, although 32% do not consider it
+a priority at all.
+One possible explanation is that many leaders remain focused on
+ immediate operational and financial priorities, making investments in
+workforce development more difficult to justify despite growing evidence
+ that skill shortages and technological change are increasing the need
+for continuous learning. HR professionals appear somewhat less likely
+to view upskilling as a top-tier issue, with fewer ranking it among their
+highest priorities.
+ These findings suggest that while a segment of leaders recognize
+ the strategic importance of upskilling, employees may feel a stronger
+need for development opportunities and clearer pathways for skill
+growth. Mercer's comprehensive evaluation outlines a structural “triple
+misalignment” among employees, HR, and the C-suite. Their data
+ confirms that most employees are deeply concerned about lacking
+ future-ready skills, to the extent that 63% of workers would willingly trade
+a 10% pay raise for guaranteed upskilling opportunities.
+Organizations that successfully position upskilling as a business priority
+ rather than an employee benefit may be better equipped to secure
+ executive support and sustained investment.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+11 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ How high a priority is upskilling among the following groups in
+your organization?   (select the one that best applies)
+42%   28%   7% 23%
+ Employees
+ 40% 23% 6% 31%
+HR
+professionals
+33% 18% 17% 32%
+Top
+leadership
+ 0   20   40   60   80   100
+Among the top 10 priorities Not among the top priorities
+ Among the top 3 priorities   It is the top priority
+ Editor’s note: Respondents who answered “Don’t know” were removed from the data set.
+They accounted for 1% to 10% of responses.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+12 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Thirty percent describe their L&D
+efforts as mostly aligned with broader talent
+ management strategies
+ While 30% of respondents report that L&D efforts are mostly aligned with
+broader talent management strategies, relatively few organizations have
+achieved full alignment. Just 17% say that learning, talent acquisition,
+succession planning, and performance management share common goals
+and data.
+At the same time, 26% report that L&D operates largely independently of
+broader talent strategy, and 25% say the two functions are not aligned at all.
+Together, this means that more than half of organizations report only limited
+alignment or outright separation between learning and talent management.
+This lack of integration can limit an organization's ability to identify, develop,
+and deploy talent effectively. When learning, recruitment, performance
+management, and career development operate separately, organizations may
+struggle to connect skill development with workforce planning and internal
+mobility goals. To address this strategic misalignment, McKinsey & Company
+recommends aligning business, HR, and technology leaders around critical
+skills rather than managing learning in functional silos.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+13 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ How well aligned are your organization's learning and development
+efforts with its broader talent management strategy?
+ (select the one that best applies)
+Not aligned:   L&D
+and talent
+ 25%
+management are
+siloed
+ Somewhat aligned:
+ L&D operates
+largely
+26%
+independently of
+broader talent
+strategy
+ Mostly aligned:
+ there is
+collaboration but
+30%
+gaps remain
+between L&D and
+talent functions
+ Fully aligned:   L&D,
+talent acquisition,
+succession
+planning, and
+17%
+performance
+management share
+common goals and
+ 0   5   10   15   20   25   30
+data
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+14 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Finding: Two-thirds of respondents expect
+employee upskilling to become more
+important over the next two years
+ Upskilling has become an established workforce priority rather than
+a temporary response to disruption. Two-thirds of respondents (66%)
+expect upskilling to become either more important or much more
+important over the next two years, while only 4% expect it to become less
+or much less important. Coursera’s research shows that organizations
+have stopped treating Generative AI–driven upskilling as a crisis to
+manage and started treating it as the new normal. As the report puts it,
+"acceleration is now the baseline."
+ Will employee upskilling in your organization become more or less
+important over the next two years?   (select the one that best applies)
+Much more important  17%
+More important 49%
+About the same 30%
+Less important 3%
+Much less important 1%
+ 0   10   20   30   40   50
+Longitudinal analysis reveals a consistent pattern. Since 2023, the
+percentage of respondents who expect upskilling to become more
+important or much more important has decreased slightly, but remains
+high, ranging from 69% to 77%. The modest decline may track the
+steady rise in perceived L&D effectiveness over the same period, as
+organizations that feel better equipped to deliver on upskilling may feel
+ less pressure to flag its importance as sharply.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+15 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Will employee upskilling in your organization become
+more or less important over the next two years?
+ (% responding more or much more important)
+77%   77%
+ 78%
+76%
+74%
+72%
+69% 70%
+68%
+66%
+64%
+ 2024 2023   2025
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+16 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ Pulse Poll Finding: Leadership support is
+viewed as the single most important factor
+separating organizations that successfully
+ leverage learning technologies from those
+ that struggle to realize value
+ A companion HR Research Institute poll of 141 HR professionals found
+active leadership support (57%) to be the strongest differentiator
+between organizations that realize value from learning technology
+and those that don't, ahead of content quality (44%) and dedicated
+ learning time (43%), reinforcing this report's core finding that leadership
+ engagement drives results.
+Organizations are more likely to realize value from learning technologies
+when leaders actively champion learning initiatives, align learning with
+business priorities, and create the conditions that enable employees to
+develop new skills.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+17 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ What three factors distinguish organizations that
+successfully leverage learning technologies from those
+ that struggle to realize value?   (select up to three)
+Leaders actively
+ 57%
+support adoption
+Content matches
+44%
+employee needs
+Employees have time
+43%
+to learn
+Clear goals for learning
+34%
+technology
+Learning is linked to
+31%
+job tasks
+Outcomes are regularly
+30%
+measured
+Technologies are easy
+23%
+to use
+Platforms allow
+just-in-time 9%
+performance support
+Technologies are fun
+8%
+to use
+ 0   10   20   30   40   50   60
+ Note: These findings are from the HR Research Institute Question of the Day poll.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+18 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
+ HRRI Strategic Recommendations
+ Based on our research, please consider the following suggestions:
+ 1. Connect learning initiatives to business priorities
+ Learning programs are more likely to gain leadership support when they address specific business
+ challenges. Rather than building programs around available content, focus development efforts on the
+skills and capabilities that will have the greatest impact on organizational success. Consider:
+ ●   identifying the top workforce challenges facing the organization
+ ●   prioritizing development efforts that address critical skill gaps
+ ●   aligning learning objectives with business goals
+ ●   regularly communicating the business value of learning initiatives
+ 2. Make manager development a top priority
+ Managers have a significant influence on employee performance, engagement, and growth. Investing
+ in manager capability can improve team effectiveness while strengthening the overall learning culture.
+Consider:
+ ●   providing leadership development for new and experienced managers
+ ●   strengthening coaching and feedback skills
+ ●   helping managers identify and address skill gaps within their teams
+ ●   equipping managers to support employee development conversations
+ 3. Align learning with talent management processes
+ Learning should not operate independently from hiring, performance management, succession
+planning, and career development. Connecting these processes helps ensure development efforts
+support broader talent goals. Consider:
+ ●   partnering with talent acquisition and talent management teams
+ ●   aligning learning pathways with career progression opportunities
+ ●   incorporating skill development into performance discussions
+ ●   using workforce planning data to inform learning priorities
+ 4. Measure whether learning is making a difference
+ Tracking course completions and participation rates is important, but it does not show whether
+learning is improving workforce capability. Focus on measures that demonstrate impact. Consider:
+ ●   assessing whether critical skill gaps are decreasing
+ ●   tracking internal promotions and mobility
+ ●   evaluating manager and leadership readiness
+ ●   gathering feedback on how learning is being applied on the job
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+19 HR.com’s Future of Learning Technology and Upskilling 2026
+
+--- PAGE BREAK ---
+
