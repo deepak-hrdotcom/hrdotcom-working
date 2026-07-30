@@ -405,16 +405,25 @@ export const HomePage: React.FC = () => {
   };
 
   const { scrollY } = useScroll();
-  // Parallax: as page scrolls 0→700px, image drifts down 0%→15% within its clipped container
   const heroImgY = useTransform(scrollY, [0, 700], ['0%', '15%']);
 
-  // Days to event countdown
-  const [daysToEvent, setDaysToEvent] = useState(0);
+  // Live countdown to HRWest 2027 — updates every second
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   useEffect(() => {
-    const event = new Date('2027-03-23');
-    const now = new Date();
-    const diff = Math.ceil((event.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    setDaysToEvent(diff);
+    const eventDate = new Date('2027-03-23T08:00:00');
+    const tick = () => {
+      const now = new Date();
+      const diff = Math.max(0, eventDate.getTime() - now.getTime());
+      setCountdown({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((diff % (1000 * 60)) / 1000),
+      });
+    };
+    tick();
+    const interval = setInterval(tick, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -439,33 +448,44 @@ export const HomePage: React.FC = () => {
           position: 'relative',
           zIndex: 2,
         }}>
-          {/* Countdown chip */}
+          {/* Live DD:HH:MM:SS Countdown */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: 'linear-gradient(135deg, rgba(145,39,140,0.1), rgba(239,20,110,0.1))',
-              border: '1px solid rgba(145,39,140,0.25)',
-              borderRadius: 'var(--radius-full)',
-              padding: '0.45rem 1rem 0.45rem 0.65rem',
-              marginBottom: '1.75rem',
-              width: 'fit-content',
-            }}
+            style={{ marginBottom: '2rem', width: 'fit-content' }}
           >
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              background: 'var(--gradient-brand)', color: '#fff',
-              borderRadius: 'var(--radius-full)', width: '28px', height: '28px',
-              fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.75rem',
-            }}>
-              {daysToEvent > 0 ? `${daysToEvent}` : '–'}
-            </span>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--color-brand-purple)' }}>
-              days until HRWest 2027 · March 23–24
-            </span>
-            <Clock size={14} style={{ color: 'var(--color-brand-pink)' }} />
+            <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-display)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', marginBottom: '0.6rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <Clock size={12} style={{ color: 'var(--color-brand-pink)' }} /> Conference Countdown · March 23–24, 2027
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              {[
+                { value: countdown.days, label: 'Days' },
+                { value: countdown.hours, label: 'Hrs' },
+                { value: countdown.minutes, label: 'Min' },
+                { value: countdown.seconds, label: 'Sec' },
+              ].map((unit, i) => (
+                <React.Fragment key={unit.label}>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{
+                      fontFamily: 'var(--font-display)', fontWeight: 900,
+                      fontSize: 'clamp(1.6rem, 2.5vw, 2.25rem)', lineHeight: 1,
+                      minWidth: '2.5ch', display: 'block',
+                      padding: '0.4rem 0.65rem',
+                      background: 'var(--color-elevated)',
+                      border: '1.5px solid rgba(145,39,140,0.2)',
+                      borderRadius: 'var(--radius-md)',
+                      boxShadow: '0 4px 12px rgba(145,39,140,0.1)',
+                      color: 'var(--color-text-primary)',
+                    }}>
+                      {String(unit.value).padStart(2, '0')}
+                    </div>
+                    <div style={{ fontSize: '0.65rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: '0.3rem' }}>{unit.label}</div>
+                  </div>
+                  {i < 3 && <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.5rem', color: 'var(--color-brand-purple)', marginBottom: '1.2rem', lineHeight: 1 }}>:</div>}
+                </React.Fragment>
+              ))}
+            </div>
           </motion.div>
 
           {/* Hero headline lockup — logo inline beside title */}
@@ -724,6 +744,56 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
+          1.5. EARLY BIRD URGENCY STRIP
+         ══════════════════════════════════════════ */}
+      <div style={{
+        background: 'linear-gradient(90deg, var(--color-brand-purple) 0%, var(--color-brand-pink) 100%)',
+        padding: '0.85rem 2rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1.5rem',
+        flexWrap: 'wrap',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Animated shimmer */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)',
+          animation: 'shimmer 3s infinite',
+          pointerEvents: 'none',
+        }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span style={{ fontSize: '1.1rem' }}>🔥</span>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.9rem', color: '#fff', letterSpacing: '-0.01em' }}>
+            Early Bird Registration Open
+          </span>
+          <span style={{
+            background: 'rgba(255,255,255,0.2)', color: '#fff',
+            fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.72rem',
+            padding: '0.2rem 0.55rem', borderRadius: 'var(--radius-full)',
+            border: '1px solid rgba(255,255,255,0.3)',
+          }}>Save up to 30%</span>
+        </div>
+        <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.3)' }} />
+        <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>
+          Rates increase after September 30 — lock in your spot now.
+        </span>
+        <Link to="/register" style={{
+          background: '#fff',
+          color: 'var(--color-brand-purple)',
+          fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.82rem',
+          padding: '0.4rem 1rem', borderRadius: 'var(--radius-full)',
+          textDecoration: 'none', whiteSpace: 'nowrap',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
+        }}>
+          Register Now <ArrowRight size={14} />
+        </Link>
+      </div>
+
+      {/* ══════════════════════════════════════════
           2. SOCIAL PROOF — Dual-Row Photo & Sponsor Marquee
          ══════════════════════════════════════════ */}
       <section style={{
@@ -947,6 +1017,173 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
 
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          4.5. TESTIMONIALS — Real Attendee Voices
+         ══════════════════════════════════════════ */}
+      <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+        {/* Background mesh */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse at 20% 50%, rgba(145,39,140,0.05) 0%, transparent 55%), radial-gradient(ellipse at 80% 30%, rgba(239,20,110,0.04) 0%, transparent 50%)' }} />
+
+        <div className="container-wide" style={{ position: 'relative', zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ textAlign: 'center', marginBottom: '3.5rem' }}
+          >
+            <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'block' }}>In Their Own Words</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em', textWrap: 'balance', maxWidth: '720px', margin: '0 auto' }}>
+              Have You Heard What HR Leaders Are Saying?
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', marginTop: '0.85rem' }}>
+              Real quotes from real attendees — no PR spin.
+            </p>
+          </motion.div>
+
+          {/* 3-column masonry-style testimonials grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
+            {[
+              {
+                quote: "I picked up some great practical tips that I can take back to my office and use right away.",
+                author: "HR Director",
+                company: "Fortune 500 Company",
+                color: 'rgba(145,39,140,0.08)',
+                accent: 'var(--color-brand-purple)',
+                stars: 5,
+              },
+              {
+                quote: "Things are ever-evolving, so to be able to attend something like this with like-minded individuals is great.",
+                author: "VP of People",
+                company: "Bay Area Tech Firm",
+                color: 'rgba(239,20,110,0.06)',
+                accent: 'var(--color-brand-pink)',
+                stars: 5,
+              },
+              {
+                quote: "It was very insightful, very informative. The people speaking are experts in this field. There's a lot to gain from that.",
+                author: "CHRO",
+                company: "Healthcare Organization",
+                color: 'rgba(145,39,140,0.08)',
+                accent: 'var(--color-brand-purple)',
+                stars: 5,
+              },
+              {
+                quote: "I absolutely loved the sponsors at HRWest. The gamut of software and products that really impact how to do our jobs easier — the sponsors are full of fantastic ideas.",
+                author: "HR Manager",
+                company: "Regional Enterprise",
+                color: 'rgba(239,20,110,0.06)',
+                accent: 'var(--color-brand-pink)',
+                stars: 5,
+              },
+              {
+                quote: "The roundtables provided good discussion and collaboration. Loved the face-to-face interaction with the HR crowd.",
+                author: "Talent Acquisition Lead",
+                company: "Silicon Valley Startup",
+                color: 'rgba(145,39,140,0.08)',
+                accent: 'var(--color-brand-purple)',
+                stars: 5,
+              },
+              {
+                quote: "I couldn't be happier to be part of this community and contribute to it, because it is so incredibly important, now more than ever.",
+                author: "Chief People Officer",
+                company: "Professional Services Firm",
+                color: 'rgba(239,20,110,0.06)',
+                accent: 'var(--color-brand-pink)',
+                stars: 5,
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                whileHover={{ y: -4, boxShadow: '0 16px 40px rgba(145,39,140,0.14)' }}
+                style={{
+                  background: t.color,
+                  border: `1.5px solid ${t.accent}22`,
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1.75rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                  cursor: 'default',
+                  transition: 'all 0.3s ease',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                {/* Quote mark watermark */}
+                <div style={{ fontFamily: 'Georgia, serif', fontSize: '5rem', lineHeight: 0.8, color: t.accent, opacity: 0.12, position: 'absolute', top: '0.75rem', left: '1rem', userSelect: 'none', pointerEvents: 'none' }}>“</div>
+
+                {/* Stars */}
+                <div style={{ display: 'flex', gap: '3px', position: 'relative', zIndex: 1 }}>
+                  {[...Array(t.stars)].map((_, si) => (
+                    <Star key={si} size={14} fill={t.accent} color={t.accent} />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', lineHeight: 1.65, fontWeight: 500, margin: 0, position: 'relative', zIndex: 1 }}>
+                  "{t.quote}"
+                </p>
+
+                {/* Author */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginTop: 'auto', paddingTop: '0.75rem', borderTop: `1px solid ${t.accent}20`, position: 'relative', zIndex: 1 }}>
+                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: `linear-gradient(135deg, ${t.accent}30, ${t.accent}60)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 900, color: t.accent, flexShrink: 0 }}>
+                    {t.author.charAt(0)}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>{t.author}</div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>{t.company}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Sponsor testimonials — featured row */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
+            {[
+              { quote: "My team and I were really well taken care of by the HR.com staff. We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back.", author: "Gregg Ward", company: "The Center for Respectful Leadership", type: 'sponsor' },
+              { quote: "It was a really good experience — met some wonderful people and had amazing conversations.", author: "Chezuba", company: "Sponsor Partner", type: 'sponsor' },
+              { quote: "I had a great time at the event. I was able to connect and meet new people, share the value of our software, and join in a couple of sessions myself.", author: "Solution Provider", company: "HR Tech Vendor", type: 'sponsor' },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                style={{
+                  background: 'var(--color-elevated)',
+                  border: '1.5px solid var(--color-subtle)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.85rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-brand-purple)', background: 'rgba(145,39,140,0.08)', padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-full)', border: '1px solid rgba(145,39,140,0.15)' }}>Sponsor</span>
+                </div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: 1.65, fontStyle: 'italic', margin: 0 }}>
+                  "{t.quote}"
+                </p>
+                <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-text-primary)', borderTop: '1px solid var(--color-subtle)', paddingTop: '0.75rem' }}>
+                  — {t.author}, <span style={{ fontWeight: 400, color: 'var(--color-text-muted)' }}>{t.company}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <Link to="/testimonials" className="btn btn-outline btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Read More Testimonials <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
 
