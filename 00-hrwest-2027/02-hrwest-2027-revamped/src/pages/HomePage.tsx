@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'; // useRef kept for StatCounter
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import {
   MapPin, Award, Users, BookOpen, Layers, ArrowRight, Star, Cpu, Heart,
   CheckCircle, Sparkles, Building2, ChevronRight, ChevronLeft, Calculator, FileText,
@@ -395,7 +395,6 @@ const SpeakerCard: React.FC<{ spk: typeof REAL_SPEAKERS[0]; idx: number }> = ({ 
 
 /* ─── Main Component ─── */
 export const HomePage: React.FC = () => {
-  const [activeTrack, setActiveTrack] = useState('ai');
   const trackSliderRef = useRef<HTMLDivElement>(null);
 
   const scrollTracks = (direction: 'left' | 'right') => {
@@ -846,7 +845,7 @@ export const HomePage: React.FC = () => {
                 padding: '2.5rem 2rem',
                 display: 'flex',
                 flexDirection: 'column',
-                justify: 'center',
+                justifyContent: 'center',
                 alignItems: 'center',
                 textAlign: 'center',
                 boxShadow: '0 12px 35px rgba(145,39,140,0.1)',
@@ -1012,7 +1011,7 @@ export const HomePage: React.FC = () => {
                     boxShadow: 'var(--shadow-md)',
                     display: 'flex',
                     flexDirection: 'column',
-                    justify: 'space-between',
+                    justifyContent: 'space-between',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                   }}
