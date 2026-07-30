@@ -1,0 +1,81 @@
+/* =============================================
+   HR West 2027 — Typography System
+   ============================================= */
+
+/* === Base Reset === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-canvas);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* === Display Headings (Outfit) === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.display-hero { font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 900; letter-spacing: -0.04em; }
+.display-3xl  { font-size: clamp(2.5rem, 5vw, 4.25rem); font-weight: 900; letter-spacing: -0.03em; }
+.display-2xl  { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; }
+.display-xl   { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; }
+.display-lg   { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; }
+.display-md   { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 700; }
+.display-sm   { font-size: clamp(1.1rem, 1.5vw, 1.35rem); font-weight: 700; }
+
+/* === Gradient Text === */
+.gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-glow {
+  background: var(--gradient-brand-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 20px rgba(145, 39, 140, 0.25));
+}
+
+/* === Eyebrow Label === */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.825rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-brand-purple);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand-soft);
+  border: 1px solid rgba(145, 39, 140, 0.18);
+}
+
+/* === Body Text === */
+.body-xl { font-size: 1.25rem;  line-height: 1.65; color: var(--color-text-secondary); font-weight: 400; }
+.body-lg { font-size: 1.125rem; line-height: 1.7;  color: var(--color-text-muted); }
+.body-md { font-size: 1rem;     line-height: 1.65; color: var(--color-text-muted); }
+.body-sm { font-size: 0.875rem; line-height: 1.6;  color: var(--color-text-muted); }
+.caption  { font-size: 0.8rem;  line-height: 1.5;  color: var(--color-text-soft); }
+
+/* === Font Weights === */
+.font-medium   { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold     { font-weight: 700; }
+.font-black    { font-weight: 900; }

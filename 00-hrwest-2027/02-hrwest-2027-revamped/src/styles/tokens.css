@@ -1,0 +1,81 @@
+/* =============================================
+   HR West 2027 — Design Token System
+   Brand-accurate HSL Color System
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* === Core Brand Colors === */
+  --color-brand-purple:      hsl(302, 58%, 36%);   /* #91278c */
+  --color-brand-purple-dark: hsl(302, 58%, 24%);
+  --color-brand-pink:        hsl(335, 89%, 51%);   /* #ef146e */
+  --color-brand-pink-dark:   hsl(335, 89%, 40%);
+  --color-brand-purple-light: hsl(302, 58%, 95%);  /* Ultra-light purple tint */
+  --color-brand-pink-light:  hsl(335, 89%, 95%);   /* Ultra-light pink tint */
+
+  /* === Gradient System === */
+  --gradient-brand:       linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(335, 89%, 51%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(302, 58%, 42%), hsl(335, 89%, 51%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(302, 58%, 96%) 0%, hsl(335, 89%, 96%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(320, 75%, 44%) 50%, hsl(335, 89%, 51%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(145, 39, 140, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(239, 20, 110, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(145, 39, 140, 0.06) 0%, transparent 50%);
+
+  /* === Surface Colors === */
+  --color-canvas:     hsl(240, 33%, 99%);   /* #fbfbfe - Primary page background */
+  --color-surface:    hsl(210, 40%, 98%);   /* #f8fafc - Section alternates */
+  --color-elevated:   hsl(0, 0%, 100%);     /* #ffffff  - Card surfaces */
+  --color-subtle:     hsl(214, 32%, 91%);   /* #e2e8f0  - Dividers/borders */
+
+  /* === Text Colors === */
+  --color-text-primary:  hsl(220, 35%, 7%);   /* #0f172a - Dark headlines */
+  --color-text-secondary:hsl(215, 25%, 27%);  /* #334155 - Subheadings */
+  --color-text-muted:    hsl(215, 16%, 47%);  /* #64748b - Body copy */
+  --color-text-soft:     hsl(214, 20%, 69%);  /* #94a3b8 - Captions */
+  --color-text-white:    hsl(210, 40%, 98%);  /* #f8fafc - On dark surfaces */
+
+  /* === Glass System === */
+  --glass-bg:            rgba(255, 255, 255, 0.82);
+  --glass-bg-strong:     rgba(255, 255, 255, 0.95);
+  --glass-border:        rgba(145, 39, 140, 0.18);
+  --glass-border-subtle: rgba(226, 232, 240, 0.8);
+  --glass-blur:          blur(20px);
+  --glass-blur-sm:       blur(12px);
+
+  /* === Shadow System === */
+  --shadow-sm:   0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md:   0 4px 16px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-lg:   0 10px 40px rgba(15, 23, 42, 0.10), 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-xl:   0 20px 60px rgba(15, 23, 42, 0.14), 0 8px 20px rgba(15, 23, 42, 0.08);
+  --shadow-brand:0 8px 32px rgba(145, 39, 140, 0.28), 0 2px 8px rgba(239, 20, 110, 0.18);
+  --shadow-glow: 0 0 50px rgba(145, 39, 140, 0.25), 0 0 100px rgba(239, 20, 110, 0.15);
+
+  /* === Spacing System === */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 5rem;
+  --space-4xl: 7rem;
+
+  /* === Border Radius === */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* === Typography === */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* === Transitions === */
+  --transition-fast:   all 0.15s ease;
+  --transition-base:   all 0.25s ease;
+  --transition-slow:   all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
