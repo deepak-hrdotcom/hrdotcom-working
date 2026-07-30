@@ -91,3 +91,45 @@
 .page-enter {
   animation: fadeInUp 0.5s ease forwards;
 }
+
+/* === Live Flashing Green Indicator Light === */
+@keyframes live-green-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8);
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(34, 197, 94, 0);
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.live-green-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  display: inline-block;
+  animation: live-green-pulse 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+  flex-shrink: 0;
+}
+
+/* === Continuous Arrow Nudge Animation === */
+@keyframes arrow-nudge {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(4px); }
+}
+
+.animate-arrow-nudge {
+  display: inline-flex;
+  align-items: center;
+  animation: arrow-nudge 1.4s ease-in-out infinite;
+}

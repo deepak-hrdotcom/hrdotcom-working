@@ -173,8 +173,10 @@ export const Header: React.FC = () => {
 
         {/* CTA + Mobile Toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <Link to="/register" className="btn btn-primary btn-sm animate-pulse-glow" style={{ fontSize: '0.875rem' }}>
-            Pre-Register 2027 <ArrowRight size={15} />
+          <Link to="/register" className="btn btn-primary btn-sm animate-pulse-glow" style={{ fontSize: '0.875rem', gap: '0.45rem', padding: '0.55rem 1.15rem' }}>
+            <span className="live-green-dot" style={{ width: '8px', height: '8px', backgroundColor: '#4ade80' }} />
+            <span>Pre-Register 2027</span>
+            <span className="animate-arrow-nudge"><ArrowRight size={15} /></span>
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -224,8 +226,10 @@ export const Header: React.FC = () => {
                   <Link to="/attend/volunteer" style={{ textDecoration: 'none', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }} onClick={() => setMobileMenuOpen(false)}>Volunteer for Free Pass</Link>
                 </div>
               </div>
-              <Link to="/register" className="btn btn-primary btn-sm" style={{ width: '100%', marginTop: '0.5rem', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>
-                Pre-Register 2027 <ArrowRight size={15} />
+              <Link to="/register" className="btn btn-primary btn-sm" style={{ width: '100%', marginTop: '0.5rem', justifyContent: 'center', gap: '0.45rem' }} onClick={() => setMobileMenuOpen(false)}>
+                <span className="live-green-dot" style={{ width: '8px', height: '8px', backgroundColor: '#4ade80' }} />
+                <span>Pre-Register 2027</span>
+                <span className="animate-arrow-nudge"><ArrowRight size={15} /></span>
               </Link>
             </div>
           </motion.div>

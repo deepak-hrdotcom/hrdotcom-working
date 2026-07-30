@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, Mic2, ChevronRight, BadgeCheck, ArrowRight, Users } from 'lucide-react';
+import { Search, Filter, Mic2, ChevronRight, BadgeCheck, ArrowRight, Users, Sparkles } from 'lucide-react';
 
 interface Speaker {
   id: number;
@@ -10,17 +10,20 @@ interface Speaker {
   track: string;
   sessionTitle: string;
   isKeynote?: boolean;
+  isFeatured?: boolean;
+  badgeLabel?: string;
   photo?: string;
   companyLogo?: string;
 }
 
 const SPEAKERS_DATA: Speaker[] = [
-  { id: 1, name: "Nancy Hauge", role: "Chief People Experience Officer", company: "Automation Anywhere", track: "HR Strategy & AI", sessionTitle: "AI-Driven Employee Experience: Transforming Workplace Culture at Scale", isKeynote: true, photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg" },
-  { id: 2, name: "Treena Diebolt", role: "Vice President, People", company: "Otter.ai", track: "HR Tech & Analytics", sessionTitle: "People Analytics That Move the Needle: Building Data-Driven HR Organizations", isKeynote: true, photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg" },
-  { id: 3, name: "Edie Goldberg", role: "Founder & President", company: "E. L. Goldberg & Associates", track: "Talent Acquisition", sessionTitle: "Skills-Based Hiring in the Age of Generative AI Recruitment", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/edie-goldberg-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2013/2/1/hco5svrr/120.jpg" },
-  { id: 4, name: "Lee Cage Jr.", role: "Director, Enterprise Transformation", company: "BDO USA", track: "Leadership & Culture", sessionTitle: "Coaching Hybrid Executives for Maximum Team Engagement", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg" },
-  { id: 5, name: "Rosalind 'Roz' Cohen", role: "CEO & Founder", company: "Socius Strategies", track: "Legal & Compliance", sessionTitle: "2027 Employment Law Mastery: Workplace Investigations & Legal Updates", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/roz-cohen-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morqbiut/120.jpg" },
-  { id: 6, name: "Debbie McGrath", role: "CEO, Founder & Chief Instigator", company: "HR.com", track: "HR Strategy & AI", sessionTitle: "Opening Keynote: The Future of HR is Human-Centered AI", isKeynote: true, photo: "https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" },
+  { id: 1, name: "Jason Averbook", role: "Global HR Transformation Leader & Author", company: "Now to Next", track: "HR Strategy & AI", sessionTitle: "Opening Keynote: The Future of HR in the Age of Generative AI & Digital Transformation", isKeynote: true, isFeatured: true, badgeLabel: "⭐ Global Thought Leader", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp", companyLogo: "" },
+  { id: 2, name: "Allison West, Esq., SHRM-SCP", role: "Principal & Employment Law Specialist", company: "Employment Practices Specialists", track: "Legal & Compliance", sessionTitle: "Mastering Workplace Investigations & 2027 Employment Law Mandates", isKeynote: true, isFeatured: true, badgeLabel: "❤️ Attendee Favorite", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp", companyLogo: "" },
+  { id: 3, name: "Nancy Hauge", role: "Chief People Experience Officer", company: "Automation Anywhere", track: "HR Strategy & AI", sessionTitle: "AI-Driven Employee Experience: Transforming Workplace Culture at Scale", isKeynote: true, photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg" },
+  { id: 4, name: "Treena Diebolt", role: "Vice President, People", company: "Otter.ai", track: "HR Tech & Analytics", sessionTitle: "People Analytics That Move the Needle: Building Data-Driven HR Organizations", isKeynote: true, photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg" },
+  { id: 5, name: "Edie Goldberg", role: "Founder & President", company: "E. L. Goldberg & Associates", track: "Talent Acquisition", sessionTitle: "Skills-Based Hiring in the Age of Generative AI Recruitment", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/edie-goldberg-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2013/2/1/hco5svrr/120.jpg" },
+  { id: 6, name: "Lee Cage Jr.", role: "Director, Enterprise Transformation", company: "BDO USA", track: "Leadership & Culture", sessionTitle: "Coaching Hybrid Executives for Maximum Team Engagement", photo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg" },
+  { id: 7, name: "Debbie McGrath", role: "CEO, Founder & Chief Instigator", company: "HR.com", track: "HR Strategy & AI", sessionTitle: "Opening Remarks: Welcome to HRWest 2027", isKeynote: true, photo: "https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg", companyLogo: "https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" },
 ];
 
 const TRACKS = ['All', 'HR Strategy & AI', 'Legal & Compliance', 'HR Tech & Analytics', 'Talent Acquisition', 'Leadership & Culture', 'Health & Wellness'];
@@ -167,45 +170,103 @@ export const SpeakersPage: React.FC = () => {
                 transition={{ duration: 0.5, delay: idx * 0.06, ease: 'easeOut' }}
                 whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
                 style={{
-                  background: 'var(--color-elevated)',
-                  border: '1px solid var(--color-subtle)',
+                  background: s.isFeatured ? 'linear-gradient(180deg, rgba(145,39,140,0.06) 0%, var(--color-elevated) 100%)' : 'var(--color-elevated)',
+                  border: s.isFeatured ? '2px solid rgba(145, 39, 140, 0.45)' : '1px solid var(--color-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   overflow: 'hidden',
-                  boxShadow: 'var(--shadow-sm)',
+                  boxShadow: s.isFeatured ? '0 14px 40px rgba(145, 39, 140, 0.22), 0 0 20px rgba(239, 20, 110, 0.15)' : 'var(--shadow-sm)',
                   display: 'flex', flexDirection: 'column',
                   cursor: 'pointer',
                   position: 'relative',
                 }}
                 onClick={() => setSelectedSpeaker(s)}
               >
-                {/* Photo header */}
-                <div style={{ position: 'relative', height: '220px', overflow: 'hidden', background: 'var(--gradient-brand-soft)' }}>
+                {/* 100% Unobstructed Photo Header */}
+                <div style={{ position: 'relative', height: '260px', overflow: 'hidden', background: 'var(--color-surface)' }}>
                   {s.photo ? (
-                    <img src={s.photo} alt={s.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                    <img src={s.photo} alt={s.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
                   ) : (
                     <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2.5rem', color: 'rgba(145,39,140,0.2)' }}>
                       {s.name.split(' ').map(n => n[0]).join('')}
                     </div>
                   )}
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, transparent, var(--color-elevated))' }} />
-                  <div style={{ position: 'absolute', top: '12px', left: '12px', display: 'flex', gap: '0.4rem' }}>
-                    {s.isKeynote && <span className="badge badge-purple" style={{ fontSize: '0.65rem', padding: '0.2rem 0.6rem' }}><BadgeCheck size={11} /> Keynote</span>}
-                    <span className="badge badge-brand" style={{ fontSize: '0.65rem', padding: '0.2rem 0.6rem' }}>{s.track}</span>
-                  </div>
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '30px', background: 'linear-gradient(to bottom, transparent, var(--color-elevated))' }} />
+
                   {s.companyLogo && (
-                    <div style={{ position: 'absolute', bottom: '10px', right: '12px', background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(12px)', borderRadius: 'var(--radius-md)', padding: '0.3rem 0.65rem', border: '1px solid var(--color-subtle)' }}>
-                      <img src={s.companyLogo} alt={s.company} style={{ maxHeight: '24px', maxWidth: '72px', objectFit: 'contain' }} />
+                    <div style={{ position: 'absolute', bottom: '10px', right: '12px', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)', borderRadius: 'var(--radius-md)', padding: '0.3rem 0.65rem', border: '1px solid var(--color-subtle)', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 2 }}>
+                      <img
+                        src={s.companyLogo}
+                        alt={s.company}
+                        style={{ maxHeight: '22px', maxWidth: '72px', objectFit: 'contain', display: 'block' }}
+                        onError={(e) => {
+                          (e.currentTarget.parentElement as HTMLElement).style.display = 'none';
+                        }}
+                      />
                     </div>
                   )}
                 </div>
 
+                {/* Card body — Clean, structured typography with zero photo overlap */}
                 <div style={{ padding: '1.25rem 1.5rem 1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '0.25rem' }}>{s.name}</h3>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.82rem', color: 'var(--color-brand-purple)', marginBottom: '0.75rem' }}>{s.role} · {s.company}</div>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', fontStyle: 'italic', lineHeight: 1.5, marginBottom: '1rem' }}>"{s.sessionTitle}"</p>
+                  {s.isFeatured && (
+                    <div style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      background: 'var(--gradient-brand)',
+                      color: '#ffffff',
+                      padding: '0.3rem 0.75rem',
+                      borderRadius: 'var(--radius-full)',
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 800,
+                      fontSize: '0.72rem',
+                      letterSpacing: '0.03em',
+                      marginBottom: '0.75rem',
+                      width: 'fit-content',
+                      boxShadow: '0 4px 14px rgba(145,39,140,0.3)',
+                    }}>
+                      <Sparkles size={12} /> {s.badgeLabel || 'Featured Leader'}
+                    </div>
+                  )}
+
+                  <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.65rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                    <span className="badge badge-purple" style={{ fontSize: '0.68rem', padding: '0.2rem 0.6rem' }}>
+                      <BadgeCheck size={11} /> {s.isKeynote ? 'Keynote Speaker' : s.track}
+                    </span>
+                    <span className="badge badge-brand" style={{ fontSize: '0.68rem', padding: '0.2rem 0.6rem' }}>
+                      {s.track}
+                    </span>
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: s.isFeatured ? 900 : 800,
+                    fontSize: s.isFeatured ? '1.3rem' : '1.15rem',
+                    lineHeight: 1.2,
+                    color: 'var(--color-text-primary)',
+                    marginBottom: '0.3rem',
+                    letterSpacing: '-0.02em',
+                  }}>
+                    {s.name}
+                  </h3>
+
+                  <div style={{
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 700,
+                    fontSize: s.isFeatured ? '0.9rem' : '0.82rem',
+                    color: 'var(--color-brand-purple)',
+                    marginBottom: '0.75rem',
+                  }}>
+                    {s.role} · <strong>{s.company}</strong>
+                  </div>
+
+                  <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', fontStyle: 'italic', lineHeight: 1.5, marginBottom: '1rem' }}>
+                    "{s.sessionTitle}"
+                  </p>
+
                   <div style={{ flex: 1 }} />
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--color-brand-purple)', paddingTop: '0.75rem', borderTop: '1px solid var(--color-subtle)' }}>
-                    View Full Bio <ChevronRight size={15} />
+                    View Full Bio & Session <ChevronRight size={15} />
                   </div>
                 </div>
               </motion.div>

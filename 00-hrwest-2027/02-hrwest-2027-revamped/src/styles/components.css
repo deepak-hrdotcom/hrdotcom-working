@@ -34,25 +34,61 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
 .marquee-container {
   display: flex;
   overflow: hidden;
   user-select: none;
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .marquee-content {
   display: flex;
-  gap: 3.5rem;
+  gap: 2.5rem;
   align-items: center;
   flex-shrink: 0;
-  animation: marquee 35s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
-.marquee-container:hover .marquee-content {
+.marquee-content-reverse {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  flex-shrink: 0;
+  animation: marquee-reverse 45s linear infinite;
+}
+
+.marquee-container:hover .marquee-content,
+.marquee-container:hover .marquee-content-reverse {
   animation-play-state: paused;
+}
+
+.photo-marquee-card {
+  width: 260px;
+  height: 160px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-subtle);
+  flex-shrink: 0;
+  position: relative;
+  transition: transform 0.3s ease, boxShadow 0.3s ease;
+}
+.photo-marquee-card:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-brand-purple);
+}
+.photo-marquee-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sponsor-logo-pill {

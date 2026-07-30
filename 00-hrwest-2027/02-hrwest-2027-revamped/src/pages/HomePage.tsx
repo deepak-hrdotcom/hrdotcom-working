@@ -3,18 +3,20 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 import {
   MapPin, Award, Users, BookOpen, Layers, ArrowRight, Star, Cpu, Heart,
-  CheckCircle, Sparkles, Building2, ChevronRight, Calculator, FileText,
+  CheckCircle, Sparkles, Building2, ChevronRight, ChevronLeft, Calculator, FileText,
   Calendar, TrendingUp, Mic2, Clock, BadgeCheck
 } from 'lucide-react';
 
 import heroConference from '../assets/generated/hero_conference.png';
 import hrWestLogo from '../assets/hr-west-logo.png';
-import trackAI from '../assets/generated/track_ai.png';
-import trackLegal from '../assets/generated/track_legal.png';
-import trackTalent from '../assets/generated/track_talent.png';
-import trackWellness from '../assets/generated/track_wellness.png';
-import trackLeadership from '../assets/generated/track_leadership.png';
-import trackHRTech from '../assets/generated/track_hrtech.png';
+import trackAI from '../assets/generated/track_ai_real.png';
+import trackLegal from '../assets/generated/track_legal_real.png';
+import trackTalent from '../assets/generated/track_talent_real.png';
+import trackWellness from '../assets/generated/track_wellness_real.png';
+import trackLeadership from '../assets/generated/track_leadership_real.png';
+import trackHRTech from '../assets/generated/track_hrtech_real.png';
+import ssfVenue from '../assets/generated/ssf_venue.png';
+import ctaCheeringHR from '../assets/generated/cta_cheering_hr.png';
 
 /* ─── Data ─── */
 const SPONSORS = [
@@ -30,13 +32,98 @@ const SPONSORS = [
   { name: 'PerformYard', logo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg', wide: false },
 ];
 
+const HRWEST_PHOTOS = [
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp', title: 'Allison West Keynote' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp', title: 'Attendees Networking' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp', title: 'Exhibitor Expo' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp', title: 'Closing Keynote' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp', title: 'Yael Schy Emcee' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp', title: 'Jane Kow Legal Session' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp', title: 'Jason Averbook Opening' },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp', title: "Let's Build Workshop" },
+  { url: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp', title: "Let's Build Part 1" },
+];
+
 const REAL_SPEAKERS = [
-  { name: 'Nancy Hauge', title: 'Chief People Experience Officer', company: 'Automation Anywhere', photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg', companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg', track: 'HR Strategy & AI', isKeynote: true, day: 'Day 1 Keynote' },
-  { name: 'Treena Diebolt', title: 'Vice President, People', company: 'Otter.ai', photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg', companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg', track: 'HR Tech & Analytics', isKeynote: true, day: 'Day 2 Keynote' },
-  { name: 'Edie Goldberg', title: 'Founder & President', company: 'E. L. Goldberg & Associates', photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/edie-goldberg-350x350.jpg', companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2013/2/1/hco5svrr/120.jpg', track: 'Talent Acquisition', isKeynote: false, day: 'Featured Session' },
-  { name: 'Lee Cage Jr.', title: 'Director, Enterprise Transformation', company: 'BDO USA', photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg', companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg', track: 'Leadership & Culture', isKeynote: false, day: 'Featured Session' },
-  { name: "Rosalind 'Roz' Cohen", title: 'CEO & Founder', company: 'Socius Strategies', photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/roz-cohen-350x350.jpg', companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morqbiut/120.jpg', track: 'Legal & Compliance', isKeynote: false, day: 'Featured Session' },
-  { name: 'Debbie McGrath', title: 'CEO, Founder & Chief Instigator', company: 'HR.com', photo: 'https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg', companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg', track: 'HR Strategy & AI', isKeynote: true, day: 'Opening Remarks' },
+  {
+    name: 'Jason Averbook',
+    title: 'Global HR Transformation Leader & Author',
+    company: 'Now to Next',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp',
+    companyLogo: '',
+    track: 'HR Strategy & AI',
+    isKeynote: true,
+    isFeatured: true,
+    day: 'Opening Keynote',
+    badgeLabel: '⭐ Global Thought Leader',
+  },
+  {
+    name: 'Allison West, Esq., SHRM-SCP',
+    title: 'Principal & Employment Law Specialist',
+    company: 'Employment Practices Specialists',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp',
+    companyLogo: '',
+    track: 'Legal & Compliance',
+    isKeynote: true,
+    isFeatured: true,
+    day: 'Day 2 Keynote',
+    badgeLabel: '❤️ Attendee Favorite',
+  },
+  {
+    name: 'Nancy Hauge',
+    title: 'Chief People Experience Officer',
+    company: 'Automation Anywhere',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg',
+    companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg',
+    track: 'HR Strategy & AI',
+    isKeynote: true,
+    isFeatured: false,
+    day: 'Featured Keynote',
+  },
+  {
+    name: 'Treena Diebolt',
+    title: 'Vice President, People',
+    company: 'Otter.ai',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg',
+    companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg',
+    track: 'HR Tech & Analytics',
+    isKeynote: true,
+    isFeatured: false,
+    day: 'Featured Keynote',
+  },
+  {
+    name: 'Debbie McGrath',
+    title: 'CEO, Founder & Chief Instigator',
+    company: 'HR.com',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg',
+    companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg',
+    track: 'HR Strategy & AI',
+    isKeynote: true,
+    isFeatured: false,
+    day: 'Opening Remarks',
+  },
+  {
+    name: 'Lee Cage Jr.',
+    title: 'Director, Enterprise Transformation',
+    company: 'BDO USA',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg',
+    companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg',
+    track: 'Leadership & Culture',
+    isKeynote: false,
+    isFeatured: false,
+    day: 'Featured Session',
+  },
+  {
+    name: "Rosalind 'Roz' Cohen",
+    title: 'CEO & Founder',
+    company: 'Socius Strategies',
+    photo: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/roz-cohen-350x350.jpg',
+    companyLogo: 'https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morqbiut/120.jpg',
+    track: 'Legal & Compliance',
+    isKeynote: false,
+    isFeatured: false,
+    day: 'Featured Session',
+  },
 ];
 
 const TRACKS = [
@@ -167,63 +254,132 @@ const SpeakerCard: React.FC<{ spk: typeof REAL_SPEAKERS[0]; idx: number }> = ({ 
     transition={{ duration: 0.5, delay: idx * 0.08, ease: 'easeOut' }}
     whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
     style={{
-      background: 'var(--color-elevated)',
-      border: '1px solid var(--color-subtle)',
+      background: spk.isFeatured ? 'linear-gradient(180deg, rgba(145,39,140,0.05) 0%, var(--color-elevated) 100%)' : 'var(--color-elevated)',
+      border: spk.isFeatured ? '2px solid rgba(145, 39, 140, 0.5)' : '1px solid var(--color-subtle)',
       borderRadius: 'var(--radius-lg)',
       overflow: 'hidden',
-      boxShadow: 'var(--shadow-sm)',
+      boxShadow: spk.isFeatured ? '0 16px 45px rgba(145, 39, 140, 0.2), 0 0 25px rgba(239, 20, 110, 0.15)' : 'var(--shadow-sm)',
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
     }}
   >
-    {/* Full-width photo header */}
-    <div style={{ position: 'relative', height: '220px', overflow: 'hidden', background: 'var(--gradient-brand-soft)' }}>
+    {/* 100% Unobstructed Photo Header — No labels overlapping the portrait */}
+    <div style={{ position: 'relative', height: '260px', overflow: 'hidden', background: 'var(--color-surface)' }}>
       <img
         src={spk.photo}
         alt={spk.name}
-        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }}
       />
-      {/* Gradient fade to white at bottom */}
+      {/* Soft gradient fade to card body */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0,
-        height: '80px',
+        height: '30px',
         background: 'linear-gradient(to bottom, transparent, var(--color-elevated))',
       }} />
-      {/* Top badges */}
-      <div style={{ position: 'absolute', top: '12px', left: '12px', display: 'flex', gap: '0.4rem' }}>
-        {spk.isKeynote && (
-          <span className="badge badge-purple" style={{ fontSize: '0.65rem', padding: '0.2rem 0.6rem', backdropFilter: 'blur(8px)' }}>
-            <BadgeCheck size={11} /> Keynote
-          </span>
-        )}
-        <span className="badge badge-brand" style={{ fontSize: '0.65rem', padding: '0.2rem 0.6rem', backdropFilter: 'blur(8px)' }}>
-          {spk.day}
-        </span>
-      </div>
-      {/* Company logo in a pill at bottom right */}
-      <div style={{
-        position: 'absolute', bottom: '10px', right: '12px',
-        background: 'rgba(255,255,255,0.92)',
-        backdropFilter: 'blur(12px)',
-        borderRadius: 'var(--radius-md)',
-        padding: '0.3rem 0.65rem',
-        border: '1px solid var(--color-subtle)',
-      }}>
-        <img src={spk.companyLogo} alt={spk.company} style={{ maxHeight: '24px', maxWidth: '72px', objectFit: 'contain' }} />
-      </div>
+
+      {/* Company logo pill at bottom right (if available) */}
+      {spk.companyLogo && (
+        <div style={{
+          position: 'absolute', bottom: '10px', right: '12px',
+          background: 'rgba(255,255,255,0.95)',
+          backdropFilter: 'blur(12px)',
+          borderRadius: 'var(--radius-md)',
+          padding: '0.3rem 0.65rem',
+          border: '1px solid var(--color-subtle)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          zIndex: 2,
+        }}>
+          <img
+            src={spk.companyLogo}
+            alt={spk.company}
+            style={{ maxHeight: '22px', maxWidth: '72px', objectFit: 'contain', display: 'block' }}
+            onError={(e) => {
+              (e.currentTarget.parentElement as HTMLElement).style.display = 'none';
+            }}
+          />
+        </div>
+      )}
     </div>
 
-    {/* Card body */}
+    {/* Card body — Clean, structured typography with zero photo overlap */}
     <div style={{ padding: '1.25rem 1.5rem 1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-      <span className="badge badge-brand" style={{ marginBottom: '0.65rem', fontSize: '0.7rem' }}>{spk.track}</span>
-      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '0.25rem' }}>
+
+      {/* Featured Leader Banner */}
+      {spk.isFeatured && (
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.35rem',
+          background: 'var(--gradient-brand)',
+          color: '#ffffff',
+          padding: '0.3rem 0.75rem',
+          borderRadius: 'var(--radius-full)',
+          fontFamily: 'var(--font-display)',
+          fontWeight: 800,
+          fontSize: '0.72rem',
+          letterSpacing: '0.03em',
+          marginBottom: '0.75rem',
+          width: 'fit-content',
+          boxShadow: '0 4px 14px rgba(145,39,140,0.3)',
+        }}>
+          <Sparkles size={12} /> {spk.badgeLabel || 'Featured Leader'}
+        </div>
+      )}
+
+      {/* Session Day & Track Badges */}
+      <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.65rem', flexWrap: 'wrap', alignItems: 'center' }}>
+        <span className="badge badge-purple" style={{ fontSize: '0.68rem', padding: '0.2rem 0.6rem' }}>
+          <BadgeCheck size={11} /> {spk.day}
+        </span>
+        <span className="badge badge-brand" style={{ fontSize: '0.68rem', padding: '0.2rem 0.6rem' }}>
+          {spk.track}
+        </span>
+      </div>
+
+      {/* Speaker Name */}
+      <h3 style={{
+        fontFamily: 'var(--font-display)',
+        fontWeight: spk.isFeatured ? 900 : 800,
+        fontSize: spk.isFeatured ? '1.3rem' : '1.15rem',
+        lineHeight: 1.2,
+        color: 'var(--color-text-primary)',
+        marginBottom: '0.3rem',
+        letterSpacing: '-0.02em',
+      }}>
         {spk.name}
       </h3>
-      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.82rem', color: 'var(--color-brand-purple)', marginBottom: '1rem' }}>
-        {spk.title} · {spk.company}
+
+      {/* Title & Company */}
+      <div style={{
+        fontFamily: 'var(--font-display)',
+        fontWeight: 700,
+        fontSize: spk.isFeatured ? '0.9rem' : '0.82rem',
+        color: 'var(--color-brand-purple)',
+        marginBottom: '0.85rem',
+      }}>
+        {spk.title} · <strong>{spk.company}</strong>
       </div>
+
+      {/* Featured Thought Leader Spotlight Callout */}
+      {spk.isFeatured && (
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(145,39,140,0.06), rgba(239,20,110,0.06))',
+          borderLeft: '3px solid var(--color-brand-purple)',
+          padding: '0.65rem 0.85rem',
+          borderRadius: '0 8px 8px 0',
+          fontSize: '0.82rem',
+          color: 'var(--color-text-secondary)',
+          lineHeight: 1.5,
+          marginBottom: '1rem',
+          fontWeight: 600,
+        }}>
+          💡 Headline Keynote: Delivering high-impact strategic frameworks for 1,000+ HR decision-makers.
+        </div>
+      )}
+
       <div style={{ flex: 1 }} />
+
       <Link to="/agenda" style={{
         display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
         fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem',
@@ -231,7 +387,7 @@ const SpeakerCard: React.FC<{ spk: typeof REAL_SPEAKERS[0]; idx: number }> = ({ 
         paddingTop: '0.75rem',
         borderTop: '1px solid var(--color-subtle)',
       }}>
-        View Session <ChevronRight size={15} />
+        View Keynote Details <ChevronRight size={15} />
       </Link>
     </div>
   </motion.div>
@@ -240,6 +396,15 @@ const SpeakerCard: React.FC<{ spk: typeof REAL_SPEAKERS[0]; idx: number }> = ({ 
 /* ─── Main Component ─── */
 export const HomePage: React.FC = () => {
   const [activeTrack, setActiveTrack] = useState('ai');
+  const trackSliderRef = useRef<HTMLDivElement>(null);
+
+  const scrollTracks = (direction: 'left' | 'right') => {
+    if (trackSliderRef.current) {
+      const scrollAmount = direction === 'left' ? -360 : 360;
+      trackSliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const { scrollY } = useScroll();
   // Parallax: as page scrolls 0→700px, image drifts down 0%→15% within its clipped container
   const heroImgY = useTransform(scrollY, [0, 700], ['0%', '15%']);
@@ -413,10 +578,18 @@ export const HomePage: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT: Parallax conference image */}
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
-          {/* Diagonal clip mask */}
-          <div style={{
+        {/* RIGHT: Parallax Auditorium Background + Centered Video Card Lockup */}
+        <div style={{
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '3rem 2rem',
+          minHeight: '100%',
+        }}>
+          {/* Background Auditorium Image with Gradient Overlay */}
+          <div className="hero-image-clip" style={{
             position: 'absolute', inset: 0,
             clipPath: 'polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)',
             overflow: 'hidden',
@@ -427,12 +600,82 @@ export const HomePage: React.FC = () => {
               alt="HRWest 2027 Conference"
               style={{ width: '100%', height: '110%', objectFit: 'cover', objectPosition: 'center 30%', y: heroImgY }}
             />
-            {/* Inner gradient overlay */}
+            {/* Inner gradient overlay for background legibility */}
             <div style={{
               position: 'absolute', inset: 0,
-              background: 'linear-gradient(to left, transparent 60%, var(--color-canvas) 100%)',
+              background: 'linear-gradient(to left, rgba(11,15,23,0.3) 0%, var(--color-canvas) 100%), linear-gradient(to top, rgba(11,15,23,0.7) 0%, transparent 60%)',
             }} />
           </div>
+
+          {/* Centered Glassmorphic Video Card — Muted Autoplay, Loop, No Suggested Videos (rel=0) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.55 }}
+            style={{
+              position: 'relative',
+              zIndex: 3,
+              width: '92%',
+              maxWidth: '520px',
+              margin: 'auto',
+            }}
+          >
+            <div style={{
+              background: 'rgba(11, 15, 23, 0.85)',
+              backdropFilter: 'blur(24px)',
+              WebkitBackdropFilter: 'blur(24px)',
+              borderRadius: 'var(--radius-xl)',
+              padding: '1.25rem',
+              border: '1.5px solid rgba(255, 255, 255, 0.22)',
+              boxShadow: '0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(145, 39, 140, 0.25)',
+              color: '#ffffff',
+            }}>
+              {/* 16:9 Video Frame: Autoplay=1, Mute=1, Rel=0, Loop=1 */}
+              <div style={{
+                position: 'relative',
+                paddingTop: '56.25%',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                boxShadow: '0 12px 32px rgba(0,0,0,0.65)',
+                marginBottom: '1rem',
+                border: '1px solid rgba(255,255,255,0.15)',
+              }}>
+                <iframe
+                  src="https://www.youtube.com/embed/noHEBlrp1EU?autoplay=1&mute=1&rel=0&loop=1&playlist=noHEBlrp1EU"
+                  title="HRWest 2027 Conference Experience"
+                  style={{
+                    position: 'absolute',
+                    top: 0, left: 0,
+                    width: '100%', height: '100%',
+                    border: 'none',
+                  }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+
+              {/* High-Converting Title & Subtitle */}
+              <div>
+                <div style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 900,
+                  fontSize: '1.1rem',
+                  color: '#ffffff',
+                  letterSpacing: '-0.01em',
+                }}>
+                  Experience the Energy of HRWest 2027
+                </div>
+                <div style={{
+                  fontSize: '0.85rem',
+                  color: 'rgba(255, 255, 255, 0.85)',
+                  marginTop: '0.3rem',
+                  lineHeight: 1.55,
+                }}>
+                  Join 1,000+ HR leaders and solution providers in South San Francisco to drive your career and company forward.
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Floating stats in the image zone */}
           <motion.div
@@ -470,35 +713,6 @@ export const HomePage: React.FC = () => {
               <div style={{ fontSize: '0.75rem', color: 'var(--color-text-soft)' }}>across 6 tracks</div>
             </div>
           </motion.div>
-
-          {/* Floating "Open" chip top-left area */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            style={{
-              position: 'absolute', top: '2.5rem', left: '15%',
-              background: 'rgba(255,255,255,0.92)',
-              backdropFilter: 'blur(16px)',
-              borderRadius: 'var(--radius-full)',
-              padding: '0.55rem 1.1rem',
-              border: '1px solid rgba(145,39,140,0.2)',
-              boxShadow: 'var(--shadow-md)',
-              zIndex: 2,
-              display: 'flex', alignItems: 'center', gap: '0.5rem',
-            }}
-          >
-            <span style={{
-              width: '9px', height: '9px', borderRadius: '50%',
-              background: '#22c55e',
-              display: 'inline-block',
-              boxShadow: '0 0 0 3px rgba(34,197,94,0.25)',
-              animation: 'pulse-dot 2s ease infinite',
-            }} />
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--color-text-primary)' }}>
-              Pre-Registration Open
-            </span>
-          </motion.div>
         </div>
 
         {/* Left ambient glow */}
@@ -511,29 +725,57 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
-          2. SOCIAL PROOF — Sponsor Marquee
+          2. SOCIAL PROOF — Dual-Row Photo & Sponsor Marquee
          ══════════════════════════════════════════ */}
       <section style={{
         background: 'var(--color-surface)',
-        padding: '2.5rem 0',
+        padding: '3.5rem 0',
         borderTop: '1px solid var(--color-subtle)',
         borderBottom: '1px solid var(--color-subtle)',
         overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '1.25rem', padding: '0 2rem' }}>
-          <span style={{
-            fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.78rem',
-            textTransform: 'uppercase', letterSpacing: '0.14em',
-            color: 'var(--color-text-muted)',
+        <div style={{ textAlign: 'center', padding: '0 2rem' }}>
+          <span className="eyebrow" style={{ marginBottom: '0.5rem', display: 'block' }}>Experience & Partners</span>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 900,
+            fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', letterSpacing: '-0.03em',
+            margin: 0,
           }}>
-            Join Industry Leaders Who've Partnered With HRWest
-          </span>
+            Life at HRWest & Industry Partners
+          </h2>
         </div>
+
+        {/* Row 1 — Photos from HRWest 2026 (Scrolls Left) */}
         <div className="marquee-container">
           <div className="marquee-content">
+            {HRWEST_PHOTOS.concat(HRWEST_PHOTOS).map((p, i) => (
+              <div key={i} className="photo-marquee-card">
+                <img src={p.url} alt={p.title} loading="lazy" />
+                <div style={{
+                  position: 'absolute', bottom: 0, insetInline: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.85), transparent)',
+                  padding: '1.25rem 0.85rem 0.6rem',
+                  color: '#ffffff',
+                  fontSize: '0.78rem',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                }}>
+                  {p.title}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — Enterprise Sponsor Logos (Scrolls Right) */}
+        <div className="marquee-container">
+          <div className="marquee-content-reverse">
             {SPONSORS.concat(SPONSORS).map((s, i) => (
               <div key={i} className="sponsor-logo-pill">
-                <img src={s.logo} alt={s.name} />
+                <img src={s.logo} alt={s.name} loading="lazy" />
               </div>
             ))}
           </div>
@@ -551,7 +793,7 @@ export const HomePage: React.FC = () => {
             style={{ marginBottom: '3.5rem' }}
           >
             <span className="eyebrow" style={{ marginBottom: '0.75rem' }}>By the Numbers</span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em', textWrap: 'balance', maxWidth: '750px', margin: '0 auto' }}>
               Why 1,000 HR Leaders Choose HRWest
             </h2>
           </motion.div>
@@ -564,38 +806,120 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
-          4. SPEAKERS — Full-Bleed Photo Cards
+          4. SPEAKERS — Featured Spotlight & 4-Column Faculty
          ══════════════════════════════════════════ */}
       <section className="section" style={{ background: 'var(--color-surface)', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div className="container-wide">
+
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}
+            style={{ textAlign: 'center', marginBottom: '3.5rem', maxWidth: '720px', marginInline: 'auto' }}
           >
-            <div>
-              <span className="eyebrow" style={{ marginBottom: '0.75rem' }}>Learn From the Best</span>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', letterSpacing: '-0.03em' }}>
-                2026 Speaker Faculty
-              </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', maxWidth: '500px' }}>
-                Executive HR leaders, legal authorities, and tech founders — all in one room.
-              </p>
-            </div>
-            <Link to="/speakers" className="btn btn-outline">
-              All Speakers <ArrowRight size={16} />
-            </Link>
+            <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'block' }}>Learn From World-Class Thought Leaders</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em', margin: 0, textWrap: 'balance' }}>
+              Real Experts Who Help HR Move Forward
+            </h2>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
-            {REAL_SPEAKERS.map((spk, idx) => (
-              <SpeakerCard key={spk.name} spk={spk} idx={idx} />
+          {/* ROW 1: 3-Column Spotlight Grid (Jason Averbook | Editorial Callout | Allison West) */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '2rem',
+            alignItems: 'stretch',
+            marginBottom: '3rem',
+          }}>
+            {/* Left: Jason Averbook */}
+            <SpeakerCard spk={REAL_SPEAKERS[0]} idx={0} />
+
+            {/* Center: Editorial Conversion Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              style={{
+                background: 'var(--gradient-brand-soft)',
+                border: '2px solid rgba(145,39,140,0.25)',
+                borderRadius: 'var(--radius-lg)',
+                padding: '2.5rem 2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justify: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                boxShadow: '0 12px 35px rgba(145,39,140,0.1)',
+              }}
+            >
+              <span className="badge badge-purple" style={{ marginBottom: '1.25rem', padding: '0.35rem 0.85rem' }}>
+                <Sparkles size={13} /> Caliber of Expertise
+              </span>
+
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontWeight: 900,
+                fontSize: 'clamp(1.4rem, 2.2vw, 1.85rem)', letterSpacing: '-0.02em',
+                color: 'var(--color-text-primary)', marginBottom: '1rem', lineHeight: 1.25
+              }}>
+                Real Experts Who Help HR Move Forward
+              </h3>
+
+              <p style={{ fontSize: '0.98rem', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '2rem' }}>
+                HRWest features thought leaders and practitioners who deliver inspiring and practical insights. View our 2026/2027 Keynote speakers including global thought leader <strong>Jason Averbook</strong> and attendee favorite <strong>Allison West</strong> to see the caliber of expertise you can expect.
+              </p>
+
+              <Link to="/speakers" className="btn btn-primary btn-lg" style={{
+                width: '100%',
+                justifyContent: 'center',
+                boxShadow: '0 8px 25px rgba(145,39,140,0.4)',
+                gap: '0.6rem',
+                padding: '0.9rem 1.5rem',
+              }}>
+                Explore All Speakers <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+
+            {/* Right: Allison West */}
+            <SpeakerCard spk={REAL_SPEAKERS[1]} idx={1} />
+          </div>
+
+          {/* ROW 2: 4-Column Sub-Faculty Grid (Full Justified) */}
+          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+            <span style={{
+              fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.8rem',
+              textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--color-brand-purple)'
+            }}>
+              2026/2027 Keynote & Session Faculty
+            </span>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '1.5rem',
+            width: '100%',
+          }}>
+            {REAL_SPEAKERS.slice(2, 6).map((spk, idx) => (
+              <SpeakerCard key={spk.name} spk={spk} idx={idx + 2} />
             ))}
           </div>
+
+          {/* Prominent Bottom Action Banner */}
+          <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+            <Link to="/speakers" className="btn btn-primary btn-lg" style={{
+              padding: '1rem 2.5rem', fontSize: '1.05rem',
+              boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
+              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+            }}>
+              View Full 2027 Speaker Roster & Bios <ArrowRight size={18} />
+            </Link>
+          </div>
+
         </div>
       </section>
 
       {/* ══════════════════════════════════════════
-          5. INTERACTIVE TRACK EXPLORER
+          5. 6 DEEP-DIVE CONFERENCE TRACKS (Horizontal Slider — 2.5 Peek View)
          ══════════════════════════════════════════ */}
       <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
         {/* Background mesh */}
@@ -605,116 +929,182 @@ export const HomePage: React.FC = () => {
         }} />
 
         <div className="container-wide" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="section-header-centered" style={{ marginBottom: '3rem' }}
-          >
-            <span className="eyebrow" style={{ marginBottom: '0.75rem' }}>Curate Your Experience</span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', letterSpacing: '-0.03em' }}>
-              6 Deep-Dive Conference Tracks
-            </h2>
-          </motion.div>
 
-          {/* Tab pills */}
-          <div style={{ display: 'flex', gap: '0.65rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.75rem' }}>
-            {TRACKS.map(t => {
-              const Icon = t.icon;
-              const active = activeTrack === t.id;
-              return (
-                <button
-                  key={t.id}
-                  onClick={() => setActiveTrack(t.id)}
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.45rem',
-                    padding: '0.6rem 1.35rem',
-                    borderRadius: 'var(--radius-full)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.875rem',
-                    transition: 'all 0.2s ease',
-                    background: active ? 'var(--gradient-brand)' : 'var(--color-elevated)',
-                    color: active ? '#fff' : 'var(--color-text-secondary)',
-                    boxShadow: active ? '0 6px 20px rgba(145,39,140,0.35)' : 'var(--shadow-sm)',
-                    transform: active ? 'translateY(-2px)' : 'none',
-                  }}
-                >
-                  <Icon size={15} />
-                  {t.label}
-                </button>
-              );
-            })}
+          {/* Section Header with Slider Navigation Controls */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
+            <div>
+              <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'block' }}>Curate Your Experience</span>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em', margin: 0, textWrap: 'balance' }}>
+                6 Deep-Dive Conference Tracks
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', maxWidth: '560px' }}>
+                Tailor your HRWest 2027 agenda across 6 specialized learning tracks. Drag or use controls to explore.
+              </p>
+            </div>
+
+            {/* Slider Controls (Left / Right Arrow Navigation Buttons) */}
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+              <button
+                onClick={() => scrollTracks('left')}
+                aria-label="Previous Track"
+                style={{
+                  width: '46px', height: '46px', borderRadius: '50%',
+                  background: 'var(--color-elevated)', border: '1.5px solid var(--color-subtle)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer', color: 'var(--color-brand-purple)',
+                  boxShadow: 'var(--shadow-sm)', transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-brand-purple)'; e.currentTarget.style.background = 'var(--gradient-brand-soft)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-subtle)'; e.currentTarget.style.background = 'var(--color-elevated)'; }}
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <button
+                onClick={() => scrollTracks('right')}
+                aria-label="Next Track"
+                style={{
+                  width: '46px', height: '46px', borderRadius: '50%',
+                  background: 'var(--gradient-brand)', border: 'none',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer', color: '#ffffff',
+                  boxShadow: '0 6px 20px rgba(145,39,140,0.35)', transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
           </div>
 
-          {/* Active track panel */}
-          <AnimatePresence mode="wait">
-            {TRACKS.filter(t => t.id === activeTrack).map(track => {
+          {/* Horizontal Track Slider (Cards: 2.5 visible peek layout) */}
+          <div
+            ref={trackSliderRef}
+            style={{
+              display: 'flex',
+              gap: '1.5rem',
+              overflowX: 'auto',
+              scrollSnapType: 'x mandatory',
+              scrollBehavior: 'smooth',
+              paddingBottom: '1.5rem',
+              paddingTop: '0.5rem',
+              scrollbarWidth: 'none', // Firefox
+              msOverflowStyle: 'none', // IE/Edge
+            }}
+          >
+            {TRACKS.map((track, idx) => {
               const Icon = track.icon;
               return (
                 <motion.div
                   key={track.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
                   style={{
-                    display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: '3rem', alignItems: 'center',
+                    flex: '0 0 clamp(300px, 30.5vw, 390px)',
+                    scrollSnapAlign: 'start',
                     background: 'var(--color-elevated)',
                     borderRadius: 'var(--radius-xl)',
-                    border: '1.5px solid rgba(145,39,140,0.2)',
-                    padding: '3rem',
-                    boxShadow: 'var(--shadow-xl)',
+                    border: '1.5px solid var(--color-subtle)',
+                    overflow: 'hidden',
+                    boxShadow: 'var(--shadow-md)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justify: 'space-between',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'rgba(145,39,140,0.5)';
+                    e.currentTarget.style.boxShadow = '0 16px 40px rgba(145,39,140,0.18)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'var(--color-subtle)';
+                    e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <div>
-                    <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '1.25rem' }}>
-                      <span className="badge badge-brand">{track.tag}</span>
-                      <span className="badge badge-purple">{track.credits}</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1rem' }}>
+                  <Link to="/agenda" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    {/* Top Image Banner */}
+                    <div style={{ position: 'relative', height: '180px', overflow: 'hidden', background: 'var(--color-surface)' }}>
+                      <img
+                        src={track.image}
+                        alt={track.label}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      {/* Gradient overlay */}
                       <div style={{
-                        width: '52px', height: '52px', borderRadius: 'var(--radius-md)',
-                        background: 'var(--gradient-brand)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        boxShadow: '0 6px 20px rgba(145,39,140,0.3)',
-                        flexShrink: 0,
-                      }}>
-                        <Icon size={28} color="#fff" />
+                        position: 'absolute', inset: 0,
+                        background: 'linear-gradient(to top, var(--color-elevated) 0%, transparent 60%)',
+                      }} />
+                      {/* Top Badges over image */}
+                      <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                        <div style={{
+                          width: '40px', height: '40px', borderRadius: 'var(--radius-md)',
+                          background: 'var(--gradient-brand)',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          boxShadow: '0 4px 14px rgba(145,39,140,0.4)',
+                        }}>
+                          <Icon size={20} color="#fff" />
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.4rem' }}>
+                          <span className="badge badge-brand" style={{ fontSize: '0.68rem', padding: '0.25rem 0.65rem', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.92)' }}>{track.tag}</span>
+                          <span className="badge badge-purple" style={{ fontSize: '0.68rem', padding: '0.25rem 0.65rem', backdropFilter: 'blur(8px)' }}>{track.credits}</span>
+                        </div>
                       </div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.75rem', letterSpacing: '-0.03em', color: 'var(--color-text-primary)' }}>
+                    </div>
+
+                    {/* Card Content Area */}
+                    <div style={{ padding: '1.5rem 1.75rem 1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                      {/* Track Title */}
+                      <h3 style={{
+                        fontFamily: 'var(--font-display)', fontWeight: 900,
+                        fontSize: '1.35rem', letterSpacing: '-0.02em',
+                        color: 'var(--color-text-primary)', marginBottom: '0.6rem',
+                      }}>
                         {track.label}
                       </h3>
-                    </div>
-                    <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
-                      {track.desc}
-                    </p>
-                    <div style={{
-                      padding: '1.25rem 1.5rem',
-                      background: 'var(--gradient-brand-soft)',
-                      borderRadius: 'var(--radius-md)',
-                      borderLeft: '4px solid var(--color-brand-purple)',
-                      marginBottom: '2rem',
-                    }}>
-                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.78rem', color: 'var(--color-brand-purple)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.35rem' }}>
-                        Key Takeaway
-                      </div>
-                      <div style={{ fontSize: '0.975rem', fontWeight: 600, color: 'var(--color-text-primary)', lineHeight: 1.55 }}>
-                        {track.highlight}
-                      </div>
-                    </div>
-                    <Link to="/agenda" className="btn btn-primary">
-                      View Track Agenda <ArrowRight size={18} />
-                    </Link>
-                  </div>
 
-                  {/* Track image with gradient overlay */}
-                  <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '340px', position: 'relative', boxShadow: 'var(--shadow-lg)' }}>
-                    <img src={track.image} alt={track.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(145,39,140,0.15), transparent)' }} />
-                  </div>
+                      {/* Track Description */}
+                      <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                        {track.desc}
+                      </p>
+
+                      {/* Highlight Box */}
+                      <div style={{
+                        padding: '0.9rem 1.1rem',
+                        background: 'var(--gradient-brand-soft)',
+                        borderRadius: 'var(--radius-md)',
+                        borderLeft: '3.5px solid var(--color-brand-purple)',
+                      }}>
+                        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.72rem', color: 'var(--color-brand-purple)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>
+                          Key Takeaway
+                        </div>
+                        <div style={{ fontSize: '0.86rem', fontWeight: 600, color: 'var(--color-text-primary)', lineHeight: 1.45 }}>
+                          {track.highlight}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                 </motion.div>
               );
             })}
-          </AnimatePresence>
+          </div>
+
+          {/* Bottom Action CTA Banner */}
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <Link to="/agenda" className="btn btn-primary btn-lg" style={{
+              padding: '1rem 2.5rem', fontSize: '1.05rem',
+              boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
+              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+            }}>
+              View Full 2-Day Conference Agenda <ArrowRight size={18} />
+            </Link>
+          </div>
+
         </div>
       </section>
 
@@ -864,8 +1254,8 @@ export const HomePage: React.FC = () => {
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65, delay: 0.1 }}>
               <div style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: '0 25px 70px rgba(0,0,0,0.35)', height: '400px', border: '2px solid rgba(255,255,255,0.25)' }}>
                 <img
-                  src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/hrwest-sponsors-page-banner-image.webp"
-                  alt="South San Francisco Conference Center"
+                  src={ssfVenue}
+                  alt="South San Francisco Conference Center Atrium"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -875,38 +1265,43 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
-          8. FINAL CTA BLOCK
+          8. FINAL CTA BLOCK — Split High-Converting Banner
          ══════════════════════════════════════════ */}
       <section style={{ background: 'var(--color-canvas)', padding: '5rem 0' }}>
         <div className="container-wide">
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.65 }}
             style={{
               background: 'var(--gradient-brand-soft)',
               borderRadius: 'var(--radius-xl)',
-              padding: '5rem 2rem',
-              textAlign: 'center',
+              padding: '3.5rem 3.5rem',
               border: '1.5px solid rgba(145,39,140,0.2)',
               boxShadow: 'var(--shadow-xl)',
               position: 'relative',
               overflow: 'hidden',
+              display: 'grid',
+              gridTemplateColumns: '1.15fr 0.85fr',
+              gap: '3.5rem',
+              alignItems: 'center',
             }}
           >
             {/* Glow blobs */}
             <div style={{ position: 'absolute', top: '-30%', left: '10%', width: '40%', height: '80%', background: 'radial-gradient(circle, rgba(145,39,140,0.12) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: '-30%', right: '5%', width: '35%', height: '80%', background: 'radial-gradient(circle, rgba(239,20,110,0.1) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
+
+            {/* Left Content */}
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <span className="eyebrow" style={{ marginBottom: '1.1rem' }}>
+              <span className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
                 <TrendingUp size={13} /> Lock In Your 2027 Spot
               </span>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3.5rem)', letterSpacing: '-0.04em', marginBottom: '1.1rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.2vw, 3rem)', letterSpacing: '-0.04em', marginBottom: '1.1rem', textWrap: 'balance' }}>
                 Your Most Impactful HR Year Starts Here
               </h2>
-              <p style={{ fontSize: '1.15rem', color: 'var(--color-text-muted)', maxWidth: '600px', margin: '0 auto 2.75rem auto', lineHeight: 1.7 }}>
+              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', marginBottom: '2.25rem', lineHeight: 1.65 }}>
                 Join thousands of HR professionals on the leading edge of AI, culture, and workforce innovation. Pre-register today — early access rates won't last.
               </p>
-              <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link to="/register" className="btn btn-primary btn-lg" style={{ boxShadow: 'var(--shadow-brand)' }}>
                   Pre-Register for HRWest 2027 <ArrowRight size={20} />
                 </Link>
@@ -915,6 +1310,29 @@ export const HomePage: React.FC = () => {
                 </Link>
               </div>
             </div>
+
+            {/* Right Cheering HR Leaders Photo Frame */}
+            <div style={{ position: 'relative', zIndex: 1, borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '320px', boxShadow: 'var(--shadow-lg)', border: '2px solid rgba(145,39,140,0.25)' }}>
+              <img
+                src={ctaCheeringHR}
+                alt="Cheering HR Professionals at HRWest"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(to top, rgba(145,39,140,0.25) 0%, transparent 60%)',
+              }} />
+              <div style={{
+                position: 'absolute', bottom: '1rem', left: '1rem', right: '1rem',
+                background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(10px)',
+                borderRadius: 'var(--radius-md)', padding: '0.65rem 1rem',
+                fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-brand-purple)',
+                display: 'flex', alignItems: 'center', gap: '0.5rem',
+              }}>
+                <Sparkles size={16} /> 1,000+ HR Leaders Joining in 2027
+              </div>
+            </div>
+
           </motion.div>
         </div>
       </section>
