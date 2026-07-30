@@ -1011,185 +1011,6 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
-          4.5. TESTIMONIALS SPOTLIGHT — 2 Featured Stories + Hub CTA
-         ══════════════════════════════════════════ */}
-      <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
-        <div className="container-wide" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            style={{ textAlign: 'center', marginBottom: '3.5rem' }}
-          >
-            <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'block' }}>Verified Attendee & Partner Feedback</span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em', textWrap: 'balance', maxWidth: '720px', margin: '0 auto' }}>
-              Why 1,000+ HR Leaders Return to HRWest
-            </h2>
-            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', marginTop: '0.85rem' }}>
-              Real experiences from HR decision-makers and solution providers.
-            </p>
-          </motion.div>
-
-          {/* 2 High-Impact Spotlight Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-            {/* Card 1: Attendee Spotlight */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ y: -6, boxShadow: '0 20px 45px rgba(145,39,140,0.15)' }}
-              style={{
-                background: 'var(--color-elevated)',
-                border: '2px solid rgba(145,39,140,0.2)',
-                borderRadius: 'var(--radius-xl)',
-                padding: '2.5rem 2rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                boxShadow: 'var(--shadow-md)',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, rgba(145,39,140,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  <span className="badge badge-purple" style={{ padding: '0.35rem 0.85rem' }}>
-                    <Sparkles size={12} /> Attendee Spotlight
-                  </span>
-                  <div style={{ display: 'flex', gap: '3px' }}>
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
-                    ))}
-                  </div>
-                </div>
-
-                <p style={{
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  fontSize: 'clamp(1.15rem, 1.8vw, 1.35rem)',
-                  lineHeight: 1.5,
-                  color: 'var(--color-text-primary)',
-                  marginBottom: '1.5rem',
-                  letterSpacing: '-0.01em',
-                }}>
-                  "I picked up some great practical tips that I can take back to my office and use right away. The caliber of speakers was phenomenal!"
-                </p>
-              </div>
-
-              <div style={{ borderTop: '1px solid var(--color-subtle)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                <div style={{
-                  width: '44px', height: '44px', borderRadius: '50%',
-                  background: 'var(--gradient-brand)', color: '#fff',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
-                  boxShadow: '0 4px 12px rgba(145,39,140,0.25)',
-                }}>
-                  H
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-text-primary)' }}>
-                    HR Director & Practitioner
-                  </div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
-                    Fortune 500 Enterprise
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 2: Sponsor Spotlight */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              whileHover={{ y: -6, boxShadow: '0 20px 45px rgba(239,20,110,0.15)' }}
-              style={{
-                background: 'var(--gradient-brand-soft)',
-                border: '2px solid rgba(239,20,110,0.25)',
-                borderRadius: 'var(--radius-xl)',
-                padding: '2.5rem 2rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                boxShadow: 'var(--shadow-md)',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, rgba(239,20,110,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  <span className="badge" style={{ background: 'rgba(239,20,110,0.12)', color: 'var(--color-brand-pink)', border: '1px solid rgba(239,20,110,0.25)', padding: '0.35rem 0.85rem' }}>
-                    <Sparkles size={12} /> Sponsor Success Story
-                  </span>
-                  <div style={{ display: 'flex', gap: '3px' }}>
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
-                    ))}
-                  </div>
-                </div>
-
-                <p style={{
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  fontSize: 'clamp(1.15rem, 1.8vw, 1.35rem)',
-                  lineHeight: 1.5,
-                  color: 'var(--color-text-primary)',
-                  marginBottom: '1.5rem',
-                  letterSpacing: '-0.01em',
-                }}>
-                  "We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back!"
-                </p>
-              </div>
-
-              <div style={{ borderTop: '1px solid rgba(145,39,140,0.15)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                <div style={{
-                  width: '44px', height: '44px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--color-brand-pink), var(--color-brand-purple))', color: '#fff',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
-                  boxShadow: '0 4px 12px rgba(239,20,110,0.25)',
-                }}>
-                  G
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-brand-purple)' }}>
-                    Gregg Ward
-                  </div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
-                    The Center for Respectful Leadership
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Prominent CTA to Full Testimonials Page */}
-          <div style={{ textAlign: 'center' }}>
-            <Link
-              to="/testimonials"
-              className="btn btn-primary btn-lg"
-              style={{
-                padding: '1rem 2.5rem',
-                fontSize: '1.05rem',
-                boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.65rem',
-              }}
-            >
-              View All Attendee & Sponsor Testimonials <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
           5. 6 DEEP-DIVE CONFERENCE TRACKS (Horizontal Slider — 2.5 Peek View)
          ══════════════════════════════════════════ */}
       <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
@@ -1398,7 +1219,7 @@ export const HomePage: React.FC = () => {
       {/* ══════════════════════════════════════════
           6. BOSS CONVINCER WIDGET TEASER — On-Brand Glass Split
          ══════════════════════════════════════════ */}
-      <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+      <section className="section" style={{ background: 'var(--color-surface)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
         {/* Subtle ambient glow */}
         <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '40%', height: '80%', background: 'radial-gradient(circle, rgba(145,39,140,0.07) 0%, transparent 65%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '35%', height: '70%', background: 'radial-gradient(circle, rgba(239,20,110,0.05) 0%, transparent 65%)', pointerEvents: 'none' }} />
@@ -1530,6 +1351,185 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          7. TESTIMONIALS SPOTLIGHT — 2 Featured Stories + Hub CTA
+         ══════════════════════════════════════════ */}
+      <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+        <div className="container-wide" style={{ position: 'relative', zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ textAlign: 'center', marginBottom: '3.5rem' }}
+          >
+            <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'block' }}>Verified Attendee & Partner Feedback</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.03em', textWrap: 'balance', maxWidth: '720px', margin: '0 auto' }}>
+              Why 1,000+ HR Leaders Return to HRWest
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', marginTop: '0.85rem' }}>
+              Real experiences from HR decision-makers and solution providers.
+            </p>
+          </motion.div>
+
+          {/* 2 High-Impact Spotlight Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+            {/* Card 1: Attendee Spotlight */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -6, boxShadow: '0 20px 45px rgba(145,39,140,0.15)' }}
+              style={{
+                background: 'var(--color-elevated)',
+                border: '2px solid rgba(145,39,140,0.2)',
+                borderRadius: 'var(--radius-xl)',
+                padding: '2.5rem 2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: 'var(--shadow-md)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, rgba(145,39,140,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                  <span className="badge badge-purple" style={{ padding: '0.35rem 0.85rem' }}>
+                    <Sparkles size={12} /> Attendee Spotlight
+                  </span>
+                  <div style={{ display: 'flex', gap: '3px' }}>
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
+                    ))}
+                  </div>
+                </div>
+
+                <p style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(1.15rem, 1.8vw, 1.35rem)',
+                  lineHeight: 1.5,
+                  color: 'var(--color-text-primary)',
+                  marginBottom: '1.5rem',
+                  letterSpacing: '-0.01em',
+                }}>
+                  "I picked up some great practical tips that I can take back to my office and use right away. The caliber of speakers was phenomenal!"
+                </p>
+              </div>
+
+              <div style={{ borderTop: '1px solid var(--color-subtle)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                <div style={{
+                  width: '44px', height: '44px', borderRadius: '50%',
+                  background: 'var(--gradient-brand)', color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
+                  boxShadow: '0 4px 12px rgba(145,39,140,0.25)',
+                }}>
+                  H
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-text-primary)' }}>
+                    HR Director & Practitioner
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
+                    Fortune 500 Enterprise
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2: Sponsor Spotlight */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              whileHover={{ y: -6, boxShadow: '0 20px 45px rgba(239,20,110,0.15)' }}
+              style={{
+                background: 'var(--gradient-brand-soft)',
+                border: '2px solid rgba(239,20,110,0.25)',
+                borderRadius: 'var(--radius-xl)',
+                padding: '2.5rem 2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: 'var(--shadow-md)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, rgba(239,20,110,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                  <span className="badge" style={{ background: 'rgba(239,20,110,0.12)', color: 'var(--color-brand-pink)', border: '1px solid rgba(239,20,110,0.25)', padding: '0.35rem 0.85rem' }}>
+                    <Sparkles size={12} /> Sponsor Success Story
+                  </span>
+                  <div style={{ display: 'flex', gap: '3px' }}>
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
+                    ))}
+                  </div>
+                </div>
+
+                <p style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(1.15rem, 1.8vw, 1.35rem)',
+                  lineHeight: 1.5,
+                  color: 'var(--color-text-primary)',
+                  marginBottom: '1.5rem',
+                  letterSpacing: '-0.01em',
+                }}>
+                  "We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back!"
+                </p>
+              </div>
+
+              <div style={{ borderTop: '1px solid rgba(145,39,140,0.15)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                <div style={{
+                  width: '44px', height: '44px', borderRadius: '50%',
+                  background: 'linear-gradient(135deg, var(--color-brand-pink), var(--color-brand-purple))', color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
+                  boxShadow: '0 4px 12px rgba(239,20,110,0.25)',
+                }}>
+                  G
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-brand-purple)' }}>
+                    Gregg Ward
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
+                    The Center for Respectful Leadership
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Prominent CTA to Full Testimonials Page */}
+          <div style={{ textAlign: 'center' }}>
+            <Link
+              to="/testimonials"
+              className="btn btn-primary btn-lg"
+              style={{
+                padding: '1rem 2.5rem',
+                fontSize: '1.05rem',
+                boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.65rem',
+              }}
+            >
+              View All Attendee & Sponsor Testimonials <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
 

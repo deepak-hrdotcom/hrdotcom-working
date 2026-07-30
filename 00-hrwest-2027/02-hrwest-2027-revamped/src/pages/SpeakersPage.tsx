@@ -159,6 +159,24 @@ export const SpeakersPage: React.FC = () => {
               paddingRight: '2rem',
             }}
           >
+            {/* Call for Speakers Badge Pill */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.35rem 0.95rem',
+              background: 'rgba(239, 20, 110, 0.15)',
+              border: '1px solid rgba(239, 20, 110, 0.35)',
+              backdropFilter: 'blur(12px)',
+              borderRadius: 'var(--radius-full)',
+              marginBottom: '1rem',
+            }}>
+              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#ef146e', boxShadow: '0 0 10px #ef146e' }} />
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: '#ff6ba0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                Call for Speakers Open • Deadline Oct 30, 2026
+              </span>
+            </div>
+
             {/* Main headline */}
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 900,
@@ -190,26 +208,28 @@ export const SpeakersPage: React.FC = () => {
 
             {/* CTAs */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <Link
-                to="/register"
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdxGKEwwyJEk9YtOt3CpKH5pIp6DS6Gnq4MTWaG7i074H1nUg/viewform"
+                target="_blank"
+                rel="noreferrer"
                 style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                  padding: '0.65rem 1.5rem',
+                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                  padding: '0.75rem 1.75rem',
                   background: 'linear-gradient(135deg, #91278c, #ef146e)',
                   color: '#fff', borderRadius: 'var(--radius-full)',
-                  fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
+                  fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.88rem',
                   textDecoration: 'none',
                   boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
                   transition: 'all 0.25s ease',
                 }}
               >
-                Pre-Register 2027 <ChevronRight size={15} />
-              </Link>
+                <Mic2 size={16} /> Apply to Speak <ChevronRight size={15} />
+              </a>
               <Link
-                to="/attend/volunteer"
+                to="/register"
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                  padding: '0.6rem 1.3rem',
+                  padding: '0.7rem 1.4rem',
                   background: 'rgba(255,255,255,0.1)',
                   backdropFilter: 'blur(12px)',
                   border: '1.5px solid rgba(255,255,255,0.3)',
@@ -218,11 +238,8 @@ export const SpeakersPage: React.FC = () => {
                   textDecoration: 'none', transition: 'all 0.2s',
                 }}
               >
-                <Mic2 size={14} /> Apply to Speak
+                Pre-Register 2027
               </Link>
-              <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.5)', fontWeight: 500 }}>
-                Deadline: <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Oct 30, 2026</strong>
-              </span>
             </div>
           </motion.div>
 

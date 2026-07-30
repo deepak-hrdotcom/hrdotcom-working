@@ -1,32 +1,174 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Clock, MapPin, Bookmark, Check, ArrowRight, Award } from 'lucide-react';
+import { Calendar, Clock, MapPin, Bookmark, Check, ArrowRight, Award, User, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import agendaHero from '../assets/agenda_hero.png';
 
+interface Presenter {
+  name: string;
+  title: string;
+  company: string;
+  avatar: string;
+}
+
 interface Session {
   id: string;
+  day: number;
+  dateStr: string;
   time: string;
   title: string;
-  speaker: string;
+  description: string;
   track: string;
   room: string;
-  day: number;
   credits?: string;
+  presenters: Presenter[];
 }
 
 const AGENDA_DATA: Session[] = [
-  { id: 's1', day: 1, time: '08:00 AM – 09:00 AM', title: 'Registration, Breakfast & Sponsor Hall Opening', speaker: 'All Attendees', track: 'General', room: 'Main Exhibit Hall', credits: '—' },
-  { id: 's2', day: 1, time: '09:00 AM – 10:15 AM', title: 'Opening Keynote: Designing the Future of Work with AI & Empathy', speaker: 'Nancy Hauge — Automation Anywhere', track: 'HR Strategy & AI', room: 'Grand Auditorium A', credits: '1.25' },
-  { id: 's3', day: 1, time: '10:30 AM – 11:30 AM', title: '2027 Employment Law Mastery & California Legal Updates', speaker: 'Rosalind Cohen — Socius Strategies', track: 'Legal & Compliance', room: 'Auditorium B', credits: '1.0' },
-  { id: 's4', day: 1, time: '11:45 AM – 12:45 PM', title: 'Building High-Impact People Analytics Dashboards', speaker: 'Treena Diebolt — Otter.ai', track: 'HR Tech & Analytics', room: 'Breakout Room 1', credits: '1.0' },
-  { id: 's5', day: 1, time: '01:00 PM – 02:00 PM', title: 'Networking Lunch & Sponsor Showcase', speaker: 'All Attendees', track: 'General', room: 'Exhibit Hall', credits: '—' },
-  { id: 's6', day: 1, time: '02:15 PM – 03:15 PM', title: 'Leadership in the Age of AI: Building Trust at Scale', speaker: 'Lee Cage Jr. — BDO USA', track: 'Leadership & Culture', room: 'Breakout Room 2', credits: '1.0' },
-  { id: 's7', day: 2, time: '09:00 AM – 10:15 AM', title: 'Day 2 Keynote: Skills-Based Hiring & AI Talent Acquisition', speaker: 'Edie Goldberg — E. L. Goldberg & Associates', track: 'Talent Acquisition', room: 'Grand Auditorium A', credits: '1.25' },
-  { id: 's8', day: 2, time: '10:30 AM – 11:30 AM', title: 'Coaching Hybrid Leadership Teams for Retention', speaker: 'Lee Cage Jr. — BDO USA', track: 'Leadership & Culture', room: 'Auditorium B', credits: '1.0' },
-  { id: 's9', day: 2, time: '11:45 AM – 12:45 PM', title: 'Preventing Workplace Burnout: Sustainable Wellness ROI', speaker: 'Debbie McGrath — HR.com', track: 'Health & Wellness', room: 'Breakout Room 2', credits: '1.0' },
-  { id: 's10', day: 2, time: '02:00 PM – 03:00 PM', title: 'Closing Panel: What West Coast HR Leaders Will Do Differently in 2027', speaker: 'Speaker Panel', track: 'General', room: 'Grand Auditorium A', credits: '1.0' },
+  {
+    id: 's1',
+    day: 1,
+    dateStr: 'Jun 9, 2026',
+    time: '8:30 am – 9:05 am PT',
+    title: 'Welcome to HRWest 2026!',
+    description: 'Welcome to HRWest 2026! In this opening session, Yael Schy and Jason Averbook will welcome attendees and set the tone for a conference built on community, learning, and shared growth as we work together to Rise Above the Fog.',
+    track: 'HR Strategy & AI',
+    room: 'Main Stage',
+    credits: '1.0 Credits',
+    presenters: [
+      { name: 'Debbie McGrath', title: 'CEO / Founder and Chief Instigator', company: 'HR.com', avatar: 'https://public-cdn.hr.com/profile_images/2005/6/22/1119462527946_120' },
+      { name: 'Jason Averbook', title: 'Co-Founder', company: 'Now to Next', avatar: 'https://public-cdn.hr.com/profile_images/2026/3/27/1774614743093_120' },
+      { name: 'Yael Schy', title: 'Founder', company: 'Zoomers to Boomers Improv', avatar: 'https://public-cdn.hr.com/profile_images/2026/4/1/1775062601734_120' },
+    ],
+  },
+  {
+    id: 's2',
+    day: 1,
+    dateStr: 'Jun 9, 2026',
+    time: '9:10 am – 10:00 am PT',
+    title: 'The AI-First HR Function: Strategy, Structure, and Systems',
+    description: 'This is an immersive, hands-on workshop for HR leaders to gain the education and inspiration needed to produce a clear vision and scalable strategies for enabling AI for workforce and business outcomes. Attendees will get a clear understanding of the different types and applications of AI in workforce technologies, a framework for deployment, success, and a scaled approach for realizing business value.',
+    track: 'HR Strategy & AI',
+    room: 'Main Stage',
+    credits: '1.25 Credits',
+    presenters: [
+      { name: 'Jason Averbook', title: 'Co-Founder', company: 'Now to Next', avatar: 'https://public-cdn.hr.com/profile_images/2026/3/27/1774614743093_120' },
+    ],
+  },
+  {
+    id: 's3',
+    day: 1,
+    dateStr: 'Jun 9, 2026',
+    time: '10:00 am – 10:45 am PT',
+    title: 'Expo Time, Coffee Break and Intro to Replit',
+    description: 'Take this time to visit the exhibit hall to learn about the latest HR solutions, grab some coffee, and hear a brief demo from Replit. It’s the perfect opportunity to reconnect with HR friends and make new connections.',
+    track: 'HR Tech & Analytics',
+    room: 'Exhibit Hall',
+    credits: '—',
+    presenters: [
+      { name: 'Stacey La Torre', title: 'Chief People Officer', company: 'Replit', avatar: 'https://public-cdn.hr.com/profile_images/2023/3/31/1680271725473_120' },
+    ],
+  },
+  {
+    id: 's4',
+    day: 1,
+    dateStr: 'Jun 9, 2026',
+    time: '10:45 am – 11:15 am PT',
+    title: 'Rethinking Leadership in Modern Organizations',
+    description: 'Most organizations don’t have a retention problem—they have a leadership blind spot. Leaders often make assumptions about why employees stay or leave without ever truly understanding their people. In this session, Natalie Grabher challenges common misconceptions around retention and performance, showing why hiring is not a quick fix but a long-term investment. Attendees will leave with practical strategies to lead more intentionally.',
+    track: 'Leadership & Culture',
+    room: 'Baden 2',
+    credits: '1.0 Credits',
+    presenters: [
+      { name: 'Natalie Grabher', title: 'VP of HR', company: 'Hall of Frames', avatar: 'https://public-cdn.hr.com/profile_images/2026/4/1/1775070992009_120' },
+    ],
+  },
+  {
+    id: 's5',
+    day: 1,
+    dateStr: 'Jun 9, 2026',
+    time: '10:45 am – 11:15 am PT',
+    title: 'The 2026 Workplace Reset: Employment Law Shifts Employers Can’t Ignore',
+    description: 'This interactive session will tackle some of the most challenging areas for in-house counsel and HR professionals in 2026, including the latest developments on remote-work accommodations and leave requests, as well as updates on new "stay-or-pay" restrictions that every practitioner should know.',
+    track: 'Legal & Compliance',
+    room: 'Oyster Room',
+    credits: '1.0 Legal Credits',
+    presenters: [
+      { name: 'Holly Sutton', title: 'Co-Managing Partner', company: 'Farella Braun + Martel LLP', avatar: 'https://public-cdn.hr.com/profile_images/2022/12/19/1671474471189_120' },
+    ],
+  },
+  {
+    id: 's6',
+    day: 1,
+    dateStr: 'Jun 9, 2026',
+    time: '10:45 am – 11:15 am PT',
+    title: 'The Road Ahead: Predictions and Possibilities for the Future of Work',
+    description: 'The future of work will not follow a single path—multiple, competing futures are already emerging. This session explores predictions across the Future of Working and also examines diverging future scenarios—from AI-driven productivity to AI-enabled human amplification.',
+    track: 'HR Strategy & AI',
+    room: 'Main Stage',
+    credits: '1.0 Credits',
+    presenters: [
+      { name: 'Dr. Lauren S. Park', title: 'Quantitative Science Team Lead', company: 'SAP SuccessFactors', avatar: 'https://public-cdn.hr.com/profile_images/2019/4/2/1554228707129_120' },
+    ],
+  },
+  {
+    id: 's7',
+    day: 2,
+    dateStr: 'Jun 10, 2026',
+    time: '9:00 am – 10:00 am PT',
+    title: 'Day 2 Keynote: Skills-Based Hiring & AI Talent Acquisition',
+    description: 'Discover how top West Coast tech employers transition to skills-based hiring frameworks using AI talent acquisition tools, boosting retention and speed-to-hire across competitive tech talent markets.',
+    track: 'Talent Acquisition',
+    room: 'Main Stage',
+    credits: '1.25 Credits',
+    presenters: [
+      { name: 'Edie Goldberg', title: 'President & Founder', company: 'E. L. Goldberg & Associates', avatar: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/edie-goldberg.jpg' },
+    ],
+  },
+  {
+    id: 's8',
+    day: 2,
+    dateStr: 'Jun 10, 2026',
+    time: '10:30 am – 11:30 am PT',
+    title: 'Coaching Hybrid Leadership Teams for Retention',
+    description: 'Practical executive coaching frameworks to build psychological safety, improve manager effectiveness, and drive team performance across hybrid enterprise structures.',
+    track: 'Leadership & Culture',
+    room: 'Baden 1',
+    credits: '1.0 Credits',
+    presenters: [
+      { name: 'Lee Cage Jr.', title: 'Director, Enterprise Transformation', company: 'BDO USA', avatar: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg' },
+    ],
+  },
+  {
+    id: 's9',
+    day: 2,
+    dateStr: 'Jun 10, 2026',
+    time: '11:45 am – 12:45 pm PT',
+    title: 'Preventing Workplace Burnout: Sustainable Wellness ROI',
+    description: 'How to design mental health and wellness benefits that cut corporate healthcare spend while driving a 40% boost in employee retention across distributed teams.',
+    track: 'Health & Wellness',
+    room: 'Oyster Room',
+    credits: '1.0 Credits',
+    presenters: [
+      { name: 'Debbie McGrath', title: 'CEO & Founder', company: 'HR.com', avatar: 'https://public-cdn.hr.com/profile_images/2005/6/22/1119462527946_120' },
+    ],
+  },
+  {
+    id: 's10',
+    day: 2,
+    dateStr: 'Jun 10, 2026',
+    time: '2:00 pm – 3:00 pm PT',
+    title: 'Closing Panel: What West Coast HR Leaders Will Do Differently in 2027',
+    description: 'Executive CHRO roundtable reflecting on key conference insights, AI adoption roadmaps, and actionable strategies to take back to your organization on Monday morning.',
+    track: 'HR Strategy & AI',
+    room: 'Main Stage',
+    credits: '1.0 Credits',
+    presenters: [
+      { name: 'Jason Averbook', title: 'Co-Founder', company: 'Now to Next', avatar: 'https://public-cdn.hr.com/profile_images/2026/3/27/1774614743093_120' },
+      { name: 'Treena Diebolt', title: 'Vice President, People', company: 'Otter.ai', avatar: 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg' },
+    ],
+  },
 ];
 
 const TRACK_COLORS: Record<string, string> = {
@@ -39,7 +181,7 @@ const TRACK_COLORS: Record<string, string> = {
   'General': 'var(--color-text-muted)',
 };
 
-const TRACKS = ['All', 'HR Strategy & AI', 'Legal & Compliance', 'HR Tech & Analytics', 'Talent Acquisition', 'Leadership & Culture', 'Health & Wellness', 'General'];
+const TRACKS = ['All', 'HR Strategy & AI', 'Legal & Compliance', 'HR Tech & Analytics', 'Talent Acquisition', 'Leadership & Culture', 'Health & Wellness'];
 
 export const AgendaPage: React.FC = () => {
   const [activeDay, setActiveDay] = useState(1);
@@ -55,15 +197,15 @@ export const AgendaPage: React.FC = () => {
   return (
     <div style={{ width: '100%', overflowX: 'hidden' }}>
 
-      {/* ══════════ CINEMATIC HERO ══════════ */}
+      {/* ══════════ HERO SECTION ══════════ */}
       <section style={{
         position: 'relative',
-        height: '480px',
+        minHeight: '440px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
       }}>
-        {/* 1. Full-bleed background image */}
+        {/* Full-bleed background image */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `url(${agendaHero})`,
@@ -71,7 +213,7 @@ export const AgendaPage: React.FC = () => {
           backgroundPosition: '55% center',
         }} />
 
-        {/* 2. Multi-layer gradient overlay */}
+        {/* Multi-layer gradient overlay */}
         <div style={{
           position: 'absolute', inset: 0,
           background: `
@@ -90,7 +232,7 @@ export const AgendaPage: React.FC = () => {
           `,
         }} />
 
-        {/* 3. Ambient glow orbs */}
+        {/* Ambient glow orbs */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
@@ -98,15 +240,9 @@ export const AgendaPage: React.FC = () => {
             background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
-          <div style={{
-            position: 'absolute', bottom: '-60px', left: '30%',
-            width: '300px', height: '300px',
-            background: 'radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%)',
-            borderRadius: '50%', filter: 'blur(50px)',
-          }} />
         </div>
 
-        {/* 4. Content grid */}
+        {/* Content Container */}
         <div className="container-wide" style={{
           position: 'relative', zIndex: 2,
           display: 'grid',
@@ -118,8 +254,7 @@ export const AgendaPage: React.FC = () => {
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
-
-          {/* LEFT: Text content */}
+          {/* LEFT: Main Hero Text Block */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -133,16 +268,35 @@ export const AgendaPage: React.FC = () => {
               paddingRight: '2rem',
             }}
           >
+            {/* Live Context Badge Pill */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.35rem 0.95rem',
+              background: 'rgba(239, 20, 110, 0.15)',
+              border: '1px solid rgba(239, 20, 110, 0.35)',
+              backdropFilter: 'blur(12px)',
+              borderRadius: 'var(--radius-full)',
+              marginBottom: '1rem',
+            }}>
+              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#ef146e', boxShadow: '0 0 10px #ef146e' }} />
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: '#ff6ba0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                Stay Tuned for the 2027 Schedule
+              </span>
+            </div>
+
+            {/* Title in ONE SINGLE LINE */}
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 900,
-              fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
-              letterSpacing: '-0.04em', lineHeight: 1.05,
+              fontSize: 'clamp(1.9rem, 3.2vw, 3rem)',
+              letterSpacing: '-0.04em', lineHeight: 1.1,
               color: '#fff',
-              marginBottom: '1.1rem',
+              marginBottom: '0.85rem',
               textAlign: 'left',
-              textWrap: 'initial' as const,
+              whiteSpace: 'nowrap',
             }}>
-              Explore the<br />
+              HRWest{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
                 WebkitBackgroundClip: 'text',
@@ -151,17 +305,18 @@ export const AgendaPage: React.FC = () => {
               }}>2027 Agenda</span>
             </h1>
 
+            {/* Reduced description text */}
             <p style={{
-              fontSize: '1rem', color: 'rgba(255,255,255,0.72)',
-              lineHeight: 1.6, marginBottom: '2.25rem', maxWidth: '400px',
-              fontFamily: 'var(--font-body)', fontWeight: 400,
+              fontSize: '0.98rem', color: 'rgba(255,255,255,0.85)',
+              lineHeight: 1.5, marginBottom: '1.75rem', maxWidth: '440px',
+              fontFamily: 'var(--font-body)', fontWeight: 500,
             }}>
-              Two days of sessions across 6 tracks — build your personalized schedule and earn up to 20+ recertification credits.
+              Stay tuned for the 2027 Schedule. Previous year's session lineup displayed below for reference.
             </p>
 
             {/* CTA Row */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <a href="#agenda-grid" style={{
+              <Link to="/register" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.65rem 1.5rem',
                 background: 'linear-gradient(135deg, #91278c, #ef146e)',
@@ -170,9 +325,9 @@ export const AgendaPage: React.FC = () => {
                 textDecoration: 'none',
                 boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
               }}>
-                Build My Schedule <ArrowRight size={15} />
-              </a>
-              <a href="#" style={{
+                Pre-Register for 2027 <ArrowRight size={15} />
+              </Link>
+              <a href="#agenda-grid" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.6rem 1.3rem',
                 background: 'rgba(255,255,255,0.1)',
@@ -182,28 +337,59 @@ export const AgendaPage: React.FC = () => {
                 fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem',
                 textDecoration: 'none',
               }}>
-                <Award size={14} /> Download PDF
+                <Calendar size={14} /> View Reference Agenda
               </a>
             </div>
           </motion.div>
 
-          {/* CENTRE: Empty spacer */}
+          {/* CENTRE COLUMN: transparent spacer — lets stage photo bleed through */}
           <div />
 
-          {/* RIGHT: Mini session cards widget */}
+          {/* RIGHT COLUMN: Floating Glass Mini Session Cards Mosaic */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             style={{
-              position: 'relative', height: '360px', display: 'flex',
-              flexDirection: 'column', justifyContent: 'center'
+              position: 'relative',
+              height: '360px',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
             }}
           >
             {[
-              { time: '09:00 AM (Day 1)', title: 'Designing the Future of Work with AI', speaker: 'Nancy Hauge — Automation Anywhere', track: 'HR Strategy', color: '#ff6ba0', rotate: '-2deg', delay: 0.2 },
-              { time: '10:30 AM (Day 1)', title: '2027 Employment Law Mastery & CA Legal', speaker: 'Rosalind Cohen — Socius Strategies', track: 'Legal', color: '#fbbf24', rotate: '1.5deg', delay: 0.32 },
-              { time: '09:00 AM (Day 2)', title: 'Skills-Based Hiring & AI Talent Acquisition', speaker: 'Edie Goldberg — E. L. Goldberg & Assoc.', track: 'Talent', color: '#34d399', rotate: '-1deg', delay: 0.44 },
+              {
+                time: '8:30 AM – 9:05 AM',
+                title: 'Welcome to HRWest 2026!',
+                speaker: 'Debbie McGrath & Jason Averbook',
+                track: 'HR Strategy & AI',
+                color: '#e07ee0',
+                offset: '0px',
+                rotate: '-2deg',
+                delay: 0.2,
+              },
+              {
+                time: '9:10 AM – 10:00 AM',
+                title: 'The AI-First HR Function',
+                speaker: 'Jason Averbook — Now to Next',
+                track: 'HR Strategy & AI',
+                color: '#ef146e',
+                offset: '16px',
+                rotate: '1.5deg',
+                delay: 0.32,
+              },
+              {
+                time: '10:45 AM – 11:15 AM',
+                title: '2026 Employment Law Shifts',
+                speaker: 'Holly Sutton — Farella Braun',
+                track: 'Legal & Compliance',
+                color: '#ff6ba0',
+                offset: '8px',
+                rotate: '-1deg',
+                delay: 0.44,
+              },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -213,84 +399,122 @@ export const AgendaPage: React.FC = () => {
                 style={{
                   position: 'absolute',
                   top: `${i * 110 + 5}px`,
-                  left: i === 1 ? '16px' : i === 2 ? '8px' : '0px',
-                  width: '270px',
+                  left: item.offset,
+                  width: '280px',
                   background: 'rgba(255,255,255,0.09)',
                   backdropFilter: 'blur(24px)',
                   border: '1px solid rgba(255,255,255,0.18)',
                   borderRadius: '16px',
-                  padding: '0.75rem 0.9rem',
+                  padding: '0.85rem 1rem',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
                   zIndex: 3 - i,
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                  <span style={{ fontSize: '0.65rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)', background: 'rgba(255,255,255,0.12)', padding: '0.12rem 0.5rem', borderRadius: '99px', display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
+                  <span style={{ fontSize: '0.68rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)', background: 'rgba(255,255,255,0.12)', padding: '0.15rem 0.5rem', borderRadius: '99px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                     <Clock size={10} />{item.time}
                   </span>
-                  <span style={{ fontSize: '0.6rem', fontWeight: 700, color: item.color, background: 'rgba(255,255,255,0.12)', border: `1px solid ${item.color}40`, padding: '0.1rem 0.45rem', borderRadius: '99px', textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: '0.62rem', fontWeight: 800, color: item.color, background: 'rgba(255,255,255,0.15)', border: `1px solid ${item.color}40`, padding: '0.1rem 0.5rem', borderRadius: '99px', textTransform: 'uppercase' }}>
                     {item.track}
                   </span>
                 </div>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.82rem', color: '#fff', lineHeight: 1.25, marginBottom: '0.2rem' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.88rem', color: '#fff', lineHeight: 1.25, marginBottom: '0.2rem' }}>
                   {item.title}
                 </div>
-                <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.65)', fontWeight: 500 }}>
+                <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>
                   {item.speaker}
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
-
-        {/* Bottom fade */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0,
-          height: '60px',
-          background: 'linear-gradient(0deg, var(--color-canvas) 0%, transparent 100%)',
-        }} />
       </section>
 
       {/* ── Day Tabs + Track Filters ── */}
-      <section id="agenda-grid" style={{ background: 'var(--color-canvas)', padding: '2rem 0 1rem' }}>
+      <section id="agenda-grid" style={{ background: 'var(--color-canvas)', padding: '2.5rem 0 1rem' }}>
         <div className="container-wide">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            {/* Day toggle */}
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              {[1, 2].map(day => (
+          {/* Clean Unified Section Header */}
+          <div style={{ marginBottom: '1.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.8vw, 2.25rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)', margin: '0 0 0.4rem 0' }}>
+              HRWest Conference Sessions
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, fontWeight: 500 }}>
+              Browse keynotes, interactive workshops, and recertification tracks for June 9 & June 10, 2026.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.25rem',
+            background: 'var(--color-elevated)',
+            padding: '0.85rem 1.5rem',
+            borderRadius: 'var(--radius-xl)',
+            border: '1.5px solid var(--color-subtle)',
+            boxShadow: 'var(--shadow-sm)',
+          }}>
+            {/* GROUP 1: DISTINCT DAY SELECTOR SEGMENT */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              background: 'var(--color-surface)',
+              padding: '0.3rem',
+              borderRadius: 'var(--radius-full)',
+              border: '1.5px solid rgba(145,39,140,0.2)',
+            }}>
+              {[
+                { day: 1, label: 'Day 1 — June 9' },
+                { day: 2, label: 'Day 2 — June 10' },
+              ].map(item => (
                 <button
-                  key={day}
-                  onClick={() => setActiveDay(day)}
+                  key={item.day}
+                  onClick={() => setActiveDay(item.day)}
                   style={{
-                    padding: '0.85rem 2rem', borderRadius: 'var(--radius-full)',
-                    border: 'none', cursor: 'pointer',
-                    fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem',
-                    background: activeDay === day ? 'var(--gradient-brand)' : 'var(--color-elevated)',
-                    color: activeDay === day ? '#fff' : 'var(--color-text-secondary)',
-                    boxShadow: activeDay === day ? 'var(--shadow-brand)' : 'var(--shadow-sm)',
+                    padding: '0.5rem 1.25rem',
+                    borderRadius: 'var(--radius-full)',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 800,
+                    fontSize: '0.86rem',
+                    background: activeDay === item.day ? 'var(--gradient-brand)' : 'transparent',
+                    color: activeDay === item.day ? '#fff' : 'var(--color-text-secondary)',
+                    boxShadow: activeDay === item.day ? 'var(--shadow-brand)' : 'none',
                     transition: 'all 0.25s ease',
-                    display: 'flex', alignItems: 'center', gap: '0.5rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.45rem',
                   }}
                 >
-                  <Calendar size={16} />
-                  Day {day} — {day === 1 ? 'Tuesday, March 23' : 'Wednesday, March 24'}
+                  <Calendar size={14} />
+                  {item.label}
                 </button>
               ))}
             </div>
 
-            {/* Track pills */}
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            {/* VERTICAL DIVIDER */}
+            <div style={{ width: '1.5px', height: '28px', background: 'rgba(145,39,140,0.2)', display: 'inline-block' }} />
+
+            {/* GROUP 2: TRACK TOPIC FILTERS */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap', flex: 1, justifyContent: 'flex-end' }}>
               {TRACKS.map(track => (
                 <button
                   key={track}
                   onClick={() => setSelectedTrack(track)}
                   style={{
-                    padding: '0.4rem 0.9rem', borderRadius: 'var(--radius-full)',
-                    border: 'none', cursor: 'pointer',
-                    fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem',
-                    background: selectedTrack === track ? 'var(--gradient-brand)' : 'var(--color-elevated)',
+                    padding: '0.4rem 0.95rem',
+                    borderRadius: 'var(--radius-full)',
+                    border: selectedTrack === track ? '1px solid transparent' : '1px solid var(--color-subtle)',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 700,
+                    fontSize: '0.8rem',
+                    background: selectedTrack === track ? 'var(--gradient-brand)' : 'var(--color-surface)',
                     color: selectedTrack === track ? '#fff' : 'var(--color-text-muted)',
-                    boxShadow: selectedTrack === track ? '0 4px 14px rgba(145,39,140,0.3)' : 'var(--shadow-sm)',
+                    boxShadow: selectedTrack === track ? '0 4px 14px rgba(145,39,140,0.3)' : 'none',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -302,7 +526,7 @@ export const AgendaPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Sessions Timeline ── */}
+      {/* ── SESSIONS TIMELINE (MATCHING LIVE SITE CARDS & PRESENTERS) ── */}
       <section className="section" style={{ background: 'var(--color-canvas)', paddingTop: '1rem', paddingBottom: '5rem' }}>
         <div className="container-wide">
           <AnimatePresence mode="wait">
@@ -312,7 +536,7 @@ export const AgendaPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.25 }}
-              style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
             >
               {filteredSessions.map((session, idx) => {
                 const isBookmarked = bookmarkedSessions.includes(session.id);
@@ -320,54 +544,130 @@ export const AgendaPage: React.FC = () => {
                 return (
                   <motion.div
                     key={session.id}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.05, ease: 'easeOut' }}
-                    whileHover={{ x: 4, transition: { duration: 0.2 } }}
                     style={{
                       background: 'var(--color-elevated)',
-                      border: `1px solid ${isBookmarked ? 'rgba(145,39,140,0.3)' : 'var(--color-subtle)'}`,
-                      borderRadius: 'var(--radius-lg)',
-                      padding: '1.5rem 2rem',
-                      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                      flexWrap: 'wrap', gap: '1.25rem',
-                      boxShadow: isBookmarked ? '0 4px 20px rgba(145,39,140,0.12)' : 'var(--shadow-sm)',
-                      borderLeft: `4px solid ${trackColor}`,
-                      transition: 'var(--transition-base)',
+                      border: '1.5px solid var(--color-subtle)',
+                      borderRadius: 'var(--radius-xl)',
+                      padding: '2rem',
+                      boxShadow: 'var(--shadow-md)',
+                      borderLeft: `5px solid ${trackColor}`,
+                      transition: 'all 0.25s ease',
+                      display: 'grid',
+                      gridTemplateColumns: '220px 1fr',
+                      gap: '2rem',
+                      alignItems: 'start',
                     }}
                   >
-                    <div style={{ flex: 1, minWidth: '280px' }}>
-                      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem', color: trackColor }}>
-                          <Clock size={14} /> {session.time}
+                    {/* LEFT COLUMN: Date, Time & Metadata */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        {session.dateStr}
+                      </span>
+                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: 'var(--color-text-primary)', lineHeight: 1.2 }}>
+                        {session.time}
+                      </div>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
+                        <span style={{
+                          display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
+                          fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                          color: trackColor, background: `${trackColor}12`, padding: '0.25rem 0.65rem',
+                          borderRadius: 'var(--radius-sm)', border: `1px solid ${trackColor}30`,
+                          width: 'fit-content',
+                        }}>
+                          <Sparkles size={12} /> {session.track}
                         </span>
-                        <span style={{ fontSize: '0.75rem', color: 'var(--color-text-soft)' }}>•</span>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
-                          <MapPin size={13} /> {session.room}
+
+                        <span style={{
+                          display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
+                          fontSize: '0.75rem', color: 'var(--color-text-muted)', fontWeight: 600,
+                        }}>
+                          <MapPin size={13} style={{ color: 'var(--color-brand-purple)' }} /> {session.room}
                         </span>
-                        <span className="badge badge-brand" style={{ fontSize: '0.65rem' }}>{session.track}</span>
-                        {session.credits !== '—' && (
-                          <span style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', fontSize: '0.72rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--color-brand-purple)' }}>
-                            <Award size={12} /> {session.credits} Credits
+
+                        {session.credits && session.credits !== '—' && (
+                          <span style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
+                            fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                            color: 'var(--color-brand-purple)', background: 'var(--gradient-brand-soft)',
+                            padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-sm)', width: 'fit-content',
+                          }}>
+                            <Award size={13} /> {session.credits}
                           </span>
                         )}
                       </div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-text-primary)', marginBottom: '0.3rem', lineHeight: 1.3 }}>
-                        {session.title}
-                      </h3>
-                      <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-muted)' }}>
-                        {session.speaker}
-                      </div>
                     </div>
 
-                    <button
-                      onClick={() => toggleBookmark(session.id)}
-                      className={isBookmarked ? 'btn btn-primary btn-sm' : 'btn btn-outline btn-sm'}
-                      style={{ flexShrink: 0 }}
-                    >
-                      {isBookmarked ? <><Check size={15} /> Saved</> : <><Bookmark size={15} /> Save</>}
-                    </button>
+                    {/* RIGHT COLUMN: Title, Description & Presenters */}
+                    <div>
+                      <h3 style={{
+                        fontFamily: 'var(--font-display)', fontWeight: 900,
+                        fontSize: '1.3rem', color: 'var(--color-text-primary)',
+                        marginBottom: '0.75rem', lineHeight: 1.3, letterSpacing: '-0.01em',
+                      }}>
+                        {session.title}
+                      </h3>
+
+                      <p style={{
+                        fontSize: '0.9rem', color: 'var(--color-text-muted)',
+                        lineHeight: 1.65, marginBottom: '1.5rem', margin: '0 0 1.5rem 0',
+                      }}>
+                        {session.description}
+                      </p>
+
+                      {/* PRESENTERS SECTION (MATCHING LIVE SITE) */}
+                      {session.presenters && session.presenters.length > 0 && (
+                        <div style={{
+                          background: 'var(--color-surface)',
+                          borderRadius: 'var(--radius-lg)',
+                          padding: '1.1rem 1.25rem',
+                          border: '1px solid var(--color-subtle)',
+                        }}>
+                          <div style={{
+                            fontFamily: 'var(--font-display)', fontWeight: 800,
+                            fontSize: '0.75rem', textTransform: 'uppercase',
+                            letterSpacing: '0.08em', color: 'var(--color-brand-purple)',
+                            marginBottom: '0.85rem',
+                          }}>
+                            Presenters
+                          </div>
+
+                          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+                            {session.presenters.map((p, i) => (
+                              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                <img
+                                  src={p.avatar}
+                                  alt={p.name}
+                                  style={{
+                                    width: '42px', height: '42px', borderRadius: '50%',
+                                    objectFit: 'cover', border: '1.5px solid var(--color-brand-purple)',
+                                    flexShrink: 0, boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                                  }}
+                                  onError={(e) => {
+                                    (e.target as HTMLElement).style.display = 'none';
+                                  }}
+                                />
+                                <div>
+                                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.88rem', color: 'var(--color-text-primary)' }}>
+                                    {p.name}
+                                  </div>
+                                  <div style={{ fontSize: '0.76rem', color: 'var(--color-text-muted)', lineHeight: 1.3 }}>
+                                    {p.title}
+                                  </div>
+                                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--color-brand-purple)' }}>
+                                    {p.company}
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </motion.div>
                 );
               })}
@@ -383,7 +683,7 @@ export const AgendaPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Bottom CTA ── */}
+      {/* ── BOTTOM CTA ── */}
       <section style={{ background: 'var(--color-surface)', padding: '4rem 0' }}>
         <div className="container-wide" style={{ textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -402,3 +702,5 @@ export const AgendaPage: React.FC = () => {
     </div>
   );
 };
+
+export default AgendaPage;

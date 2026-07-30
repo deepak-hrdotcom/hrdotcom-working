@@ -250,6 +250,157 @@ ${attendeeName}`;
         }} />
       </section>
 
+      {/* ── 5 Key Reasons / Business Case Pillars ── */}
+      <section style={{ background: 'var(--color-surface)', padding: '4rem 0', borderBottom: '1px solid var(--color-subtle)' }}>
+        <div className="container-wide">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
+              <CheckCircle size={14} /> Business Case Framework
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>
+              5 Reasons Your Organization Benefits
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', maxWidth: '650px', margin: '0.5rem auto 0' }}>
+              Use these 5 core arguments when discussing your HRWest attendance with leadership:
+            </p>
+          </div>
+
+          {/* Row 1: First 3 Cards */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem',
+            marginBottom: '1.5rem',
+          }}>
+            {[
+              { num: '1', title: 'Boosting Knowledge & Skills', desc: 'Perform your job with great confidence thanks to being up to date on rising HR challenges, innovative strategies, and HR tech best practices.' },
+              { num: '2', title: 'Compliance. Compliance. Compliance.', desc: "Renowned employment law and compliance sessions help prevent your organization from getting into costly legal hot water." },
+              { num: '3', title: 'Exchange Ideas with HR Leaders', desc: 'Small-group roundtables on major HR issues let you collaborate with peers and benchmark what strategies are working for top Bay Area employers.' },
+            ].map((p, idx) => (
+              <motion.div
+                key={p.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                style={{
+                  background: 'var(--color-elevated)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1.75rem',
+                  border: '1.5px solid rgba(145,39,140,0.15)',
+                  boxShadow: 'var(--shadow-sm)',
+                  display: 'flex',
+                  gap: '1.25rem',
+                  alignItems: 'flex-start',
+                  height: '100%',
+                }}
+              >
+                <div style={{
+                  width: '42px', height: '42px', borderRadius: '50%',
+                  background: 'var(--gradient-brand)', color: '#fff',
+                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  flexShrink: 0, boxShadow: '0 4px 14px rgba(145,39,140,0.3)'
+                }}>
+                  {p.num}
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.4rem', lineHeight: 1.3 }}>
+                    {p.title}
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                    {p.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Row 2: Remaining 2 Cards Centered */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem',
+            maxWidth: '840px',
+            margin: '0 auto',
+          }}>
+            {[
+              { num: '4', title: 'Incredible ROI & Event Value', desc: 'Registration fees are a fraction of similar national conferences, plus early bird and group savings lower costs significantly.' },
+              { num: '5', title: 'Actionable Knowledge Sharing', desc: 'Commit to briefing your team post-event with session slides, key insights, and actionable recommendations tied directly to company OKRs.' },
+            ].map((p, idx) => (
+              <motion.div
+                key={p.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (idx + 3) * 0.08 }}
+                style={{
+                  background: 'var(--color-elevated)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1.75rem',
+                  border: '1.5px solid rgba(145,39,140,0.15)',
+                  boxShadow: 'var(--shadow-sm)',
+                  display: 'flex',
+                  gap: '1.25rem',
+                  alignItems: 'flex-start',
+                  height: '100%',
+                }}
+              >
+                <div style={{
+                  width: '42px', height: '42px', borderRadius: '50%',
+                  background: 'var(--gradient-brand)', color: '#fff',
+                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  flexShrink: 0, boxShadow: '0 4px 14px rgba(145,39,140,0.3)'
+                }}>
+                  {p.num}
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.4rem', lineHeight: 1.3 }}>
+                    {p.title}
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                    {p.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Official Google Docs Template Link Box */}
+          <div style={{
+            marginTop: '2.5rem',
+            background: 'var(--gradient-brand-soft)',
+            borderRadius: 'var(--radius-xl)',
+            padding: '1.5rem 2rem',
+            border: '1.5px solid rgba(145,39,140,0.25)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1rem'
+          }}>
+            <div>
+              <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-brand-purple)', margin: '0 0 0.3rem 0' }}>
+                📄 Download Official Sample Request Letter
+              </h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-primary)', margin: 0 }}>
+                Prefer a pre-formatted document? Download or copy the official HRWest Justification Letter template on Google Docs.
+              </p>
+            </div>
+            <a
+              href="https://docs.google.com/document/d/1Lr9ehy0qBExMf0c5nIu6lGazQp9YxVFx7rRNtN8hGLY/edit"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+            >
+              Open Google Docs Template <FileText size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Generator ── */}
       <section id="toolkit" style={{ background: 'var(--color-canvas)', padding: '4rem 0 5rem' }}>
         <div className="container-wide">

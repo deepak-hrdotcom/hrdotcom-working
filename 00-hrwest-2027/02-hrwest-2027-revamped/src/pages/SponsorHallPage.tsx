@@ -2,27 +2,75 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import sponsorsHero from '../assets/sponsors_hero.png';
-import { ArrowRight, Sparkles, ChevronRight, FileText } from 'lucide-react';
+import { ArrowRight, Sparkles, ChevronRight, Download, ExternalLink } from 'lucide-react';
 
-const PAST_SPONSORS = [
-  { name: "SAP SuccessFactors", category: "HCM & Payroll Platform", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png", tier: "Diamond" },
-  { name: "UKG", category: "Workforce Management", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg", tier: "Platinum" },
-  { name: "Robert Half", category: "Talent Solutions & Staffing", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg", tier: "Gold" },
-  { name: "Insperity", category: "HR Outsourcing & PEO", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg", tier: "Gold" },
-  { name: "Alliant Insurance", category: "Benefits & Employee Brokerage", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg", tier: "Gold" },
-  { name: "AwardCo", category: "Employee Recognition", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg", tier: "Silver" },
-  { name: "Zapier", category: "Workflow Automation", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg", tier: "Silver" },
-  { name: "LHH", category: "Talent Development & Transition", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg", tier: "Silver" },
-  { name: "HUB International", category: "Insurance & Benefits", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg", tier: "Silver" },
-  { name: "PerformYard", category: "Performance Management", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg", tier: "Silver" },
+interface SponsorLogo {
+  name: string;
+  logo: string;
+  url: string;
+}
+
+const ALL_SPONSORS: SponsorLogo[] = [
+  { name: "SAP SuccessFactors", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png", url: "https://www.hr.com/directory/company/sap_successfactors_4" },
+  { name: "UKG", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg", url: "https://www.hr.com/directory/company/ukg_ultimate_kronos_group__2" },
+  { name: "Robert Half", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg", url: "https://www.hr.com/directory/company/robert_half_intl_inc_1" },
+  { name: "Insperity", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg", url: "https://www.hr.com/directory/company/insperity_28" },
+  { name: "Alliant Insurance", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg", url: "https://www.hr.com/directory/company/alliant_insurance_services" },
+  { name: "Built", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/built-logo.jpg", url: "https://www.hr.com/directory/company/built__1" },
+  { name: "GuidedChoice", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/guidedchoice-logo.jpg", url: "https://www.hr.com/directory/company/guidedchoice" },
+  { name: "HRCP", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hrcp-logo.jpg", url: "https://www.hr.com/directory/company/hrcp_1" },
+  { name: "HUB International", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg", url: "https://www.hr.com/directory/company/hub_international_ltd_2" },
+  { name: "Pacific Service Credit Union", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/pacific-service-logo.jpg", url: "https://www.hr.com/directory/company/pacific_service_credit_union_2" },
+  { name: "PerformYard", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg", url: "https://www.hr.com/directory/company/performyard_1" },
+  { name: "ScholarShare 529", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/scholarshare-logo.jpg", url: "https://www.hr.com/directory/company/scholarshare_529" },
+  { name: "The FruitGuys", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/the-fruitguys-logo.jpg", url: "https://www.hr.com/directory/company/the_fruitguys" },
+  { name: "United Concordia Dental", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/united-concordia-dental-logo.jpg", url: "https://www.hr.com/directory/company/united_concordia_dental" },
+  { name: "Xobin", logo: "https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/xobin-logo.jpg", url: "https://www.hr.com/directory/company/xobin" },
+  { name: "V.A. Brown Consulting", logo: "https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/va-brown-logo.jpg", url: "https://www.hr.com/directory/company/v_a_brown_consulting_3" },
+  { name: "AwardCo", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg", url: "https://www.hr.com/directory/company/awardco_1" },
+  { name: "Zapier", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg", url: "https://www.hr.com/directory/company/zapier_1" },
+  { name: "LHH", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg", url: "https://www.hr.com/directory/company/lee_hecht_harrison_knightsbridge_2" },
+  { name: "ChangeEngine", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/change-engine-logo.jpg", url: "https://www.hr.com/directory/company/changeengine" },
+  { name: "Stadium", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/stadium-logo.jpg", url: "https://www.hr.com/directory/company/stadium" },
+  { name: "Wellify", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/wellify-logo.jpg", url: "https://www.hr.com/directory/company/wellify_app" },
+  { name: "ComplyEQ", logo: "https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/complyeq-logo.jpg", url: "https://www.hr.com/directory/company/complyeq" },
+  { name: "Bay Area Commuter Benefits", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-bay-area-commuter-benefits-program-logo.jpg", url: "https://www.hr.com/directory/company/bay_area_commuter_benefits_program_1" },
+  { name: "Corporate Traditions", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-corporate-traditions-logo.jpg", url: "https://www.hr.com/directory/company/corporate_traditions" },
+  { name: "Express Evaluations", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-express-evaluations-logo.jpg", url: "https://www.hr.com/directory/company/express_evaluations_1" },
+  { name: "Performance Pro", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-performance-pro-logo.jpg", url: "https://www.hr.com/directory/company/hr_performance_solutions" },
+  { name: "RXBenefits", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-rxbenefits-logo.jpg", url: "https://www.hr.com/directory/company/rxbenefits" },
+  { name: "VM Mastered", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-vm-mastered-logo.jpg", url: "https://www.hr.com/directory/company/vm_mastered_llc" },
+  { name: "Wave Life", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-wave-logo.jpg", url: "https://www.hr.com/directory/company/wave_life_inc_" },
+  { name: "Teamtailor", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-teamtailor-logo.jpg", url: "https://www.hr.com/directory/company/teamtailor" },
+  { name: "CandorIQ", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-candor-logo.png", url: "https://www.hr.com/directory/company/candoriq_1" },
+  { name: "Akwentis", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-akwentis-logo.png", url: "https://www.hr.com/directory/company/akwentis_llc" },
+  { name: "Tremendous", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-tremendous-logo.jpg", url: "https://www.hr.com/directory/company/tremendous" },
+  { name: "Printfection", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-printfection-logo.jpg", url: "https://www.hr.com/directory/company/printfection_1" },
+  { name: "OneSpan", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-onespan2-logo.jpg", url: "https://www.hr.com/directory/company/onespan_1" },
+  { name: "Center for Respectful Leadership", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-CRL-logo.jpg", url: "https://www.hr.com/directory/company/the_center_for_respectful_leadership" },
+  { name: "Nava Benefits", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-nava-logo.jpg", url: "https://www.hr.com/directory/company/nava_benefits" },
+  { name: "Tango", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-tango-logo.jpg", url: "https://www.hr.com/directory/company/tango_card" },
+  { name: "Cypress Resilience", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-cypress-resilience-project-logo.jpg", url: "https://www.hr.com/directory/company/cypress_resilience_project" },
+  { name: "Ramsey SmartDollar", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-ramsey-smartdollar-logo.jpg", url: "https://www.hr.com/directory/company/smartdollar__ramsey_solutions" },
+  { name: "OrgChart", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-orgchart-logo.jpg", url: "https://www.hr.com/directory/company/orgchart" },
+  { name: "Rocket Station", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-rocket-station-logo.jpg", url: "https://www.hr.com/directory/company/rocket_station_1" },
+  { name: "Sparrow", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-sparrow-logo.jpg", url: "https://www.hr.com/directory/company/sparrow" },
+  { name: "Inspira Financial", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-inspira-financial-logo.jpg", url: "https://www.hr.com/directory/company/inspira_financial__1" },
+  { name: "Scalis", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-scalis-logo.jpg", url: "https://www.hr.com/directory/company/scalis" },
+  { name: "Spot Pet Insurance", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-spot-pet-insurance-logo.jpg", url: "https://www.hr.com/directory/company/spot_pet_insurance" },
+  { name: "SimpliVerified", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-simpli-verified-logo.jpg", url: "https://www.hr.com/directory/company/simpliverified_1" },
+  { name: "Brown & Brown", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-brown-and-brown-logo.jpg", url: "https://www.hr.com/directory/company/brown__brown_2" },
+  { name: "Genomic Life", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-genomic-life-logo.jpg", url: "https://www.hr.com/directory/company/genomic_life" },
+  { name: "OneDigital", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-onedigital-logo.jpg", url: "https://www.hr.com/directory/company/onedigital_4" },
+  { name: "WorkBright", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-workbright-logo.jpg", url: "https://www.hr.com/directory/company/workbright_1" },
+  { name: "RemoFirst", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-remofirst-logo.jpg", url: "https://www.hr.com/directory/company/remofirst" },
+  { name: "Benepass", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-benepass-logo.jpg", url: "https://www.hr.com/directory/company/benepass" },
+  { name: "Bevi", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-bevi-logo.jpg", url: "https://www.hr.com/directory/company/bevi_1" },
+  { name: "AlignHQ", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-AlignHQ-Logo.webp", url: "https://www.hr.com/buyersguide/company/alignhq" },
+  { name: "McAfee", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-McAfee-Digital-Wellness-Logo.webp", url: "https://www.hr.com/buyersguide/company/mcafee" },
+  { name: "Take Command", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-Take-Command-Logo.webp", url: "https://www.hr.com/buyersguide/company/take_command_health" },
+  { name: "Motus", logo: "https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-Conference-Sponsor-Motus-Logo.jpg", url: "https://www.hr.com/buyersguide/company/motus" },
 ];
-
-const TIER_STYLES: Record<string, { bg: string; color: string }> = {
-  Diamond: { bg: 'var(--gradient-brand)', color: '#ffffff' },
-  Platinum: { bg: 'linear-gradient(135deg, #475569, #1e293b)', color: '#ffffff' },
-  Gold: { bg: 'linear-gradient(135deg, #f59e0b, #d97706)', color: '#ffffff' },
-  Silver: { bg: 'linear-gradient(135deg, #94a3b8, #64748b)', color: '#ffffff' },
-};
 
 export const SponsorHallPage: React.FC = () => {
   return (
@@ -31,12 +79,12 @@ export const SponsorHallPage: React.FC = () => {
       {/* ══════════ CINEMATIC HERO ══════════ */}
       <section style={{
         position: 'relative',
-        height: '480px',
+        height: '460px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
       }}>
-        {/* 1. Full-bleed background image */}
+        {/* Full-bleed background image */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `url(${sponsorsHero})`,
@@ -44,7 +92,7 @@ export const SponsorHallPage: React.FC = () => {
           backgroundPosition: '55% center',
         }} />
 
-        {/* 2. Multi-layer gradient overlay */}
+        {/* Multi-layer gradient overlay */}
         <div style={{
           position: 'absolute', inset: 0,
           background: `
@@ -63,7 +111,7 @@ export const SponsorHallPage: React.FC = () => {
           `,
         }} />
 
-        {/* 3. Ambient glow orbs */}
+        {/* Ambient glow orbs */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
@@ -71,15 +119,9 @@ export const SponsorHallPage: React.FC = () => {
             background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
-          <div style={{
-            position: 'absolute', bottom: '-60px', left: '30%',
-            width: '300px', height: '300px',
-            background: 'radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%)',
-            borderRadius: '50%', filter: 'blur(50px)',
-          }} />
         </div>
 
-        {/* 4. Content grid */}
+        {/* Content Container */}
         <div className="container-wide" style={{
           position: 'relative', zIndex: 2,
           display: 'grid',
@@ -106,78 +148,68 @@ export const SponsorHallPage: React.FC = () => {
               paddingRight: '2rem',
             }}
           >
+            {/* Title in ONE SINGLE LINE */}
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 900,
-              fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
-              letterSpacing: '-0.04em', lineHeight: 1.05,
+              fontSize: 'clamp(2rem, 3.5vw, 3.4rem)',
+              letterSpacing: '-0.04em', lineHeight: 1.1,
               color: '#fff',
-              marginBottom: '1.1rem',
+              marginBottom: '1rem',
               textAlign: 'left',
-              textWrap: 'initial' as const,
+              whiteSpace: 'nowrap',
             }}>
-              Our<br />
+              HRWest{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>2027 Sponsors</span>
+              }}>Sponsors</span>
             </h1>
 
             <p style={{
-              fontSize: '1rem', color: 'rgba(255,255,255,0.72)',
-              lineHeight: 1.6, marginBottom: '2.25rem', maxWidth: '400px',
-              fontFamily: 'var(--font-body)', fontWeight: 400,
+              fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)',
+              lineHeight: 1.5, marginBottom: '2rem', maxWidth: '420px',
+              fontFamily: 'var(--font-body)', fontWeight: 500,
             }}>
-              Leading HR solution providers who've partnered with HRWest to connect with 1,000+ decision-makers.
+              Companies that have used HRWest to connect with the West Coast HR community.
             </p>
 
-            {/* CTA Row */}
+            {/* CTA Button */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <Link to="/sponsor" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                padding: '0.65rem 1.5rem',
+              <Link to="/why-sponsor" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                padding: '0.75rem 1.75rem',
                 background: 'linear-gradient(135deg, #91278c, #ef146e)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
-                fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
+                fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.88rem',
                 textDecoration: 'none',
                 boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                transition: 'all 0.25s ease',
               }}>
-                Become a Sponsor <ChevronRight size={15} />
+                <Download size={16} /> Download Sponsorship Brochure
               </Link>
-              <a href="#" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                padding: '0.6rem 1.3rem',
-                background: 'rgba(255,255,255,0.1)',
-                backdropFilter: 'blur(12px)',
-                border: '1.5px solid rgba(255,255,255,0.3)',
-                color: '#fff', borderRadius: 'var(--radius-full)',
-                fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem',
-                textDecoration: 'none',
-              }}>
-                <FileText size={14} /> View Prospectus
-              </a>
             </div>
           </motion.div>
 
           {/* CENTRE: Empty spacer */}
           <div />
 
-          {/* RIGHT: Sponsor logo pills widget */}
+          {/* RIGHT: Floating Sponsor Logo Cards */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             style={{
-              position: 'relative', height: '360px', display: 'flex',
+              position: 'relative', height: '360px', width: '100%', display: 'flex',
               flexDirection: 'column', justifyContent: 'center'
             }}
           >
             {[
-              { sp: PAST_SPONSORS[0], offset: '0px', rotate: '-2deg', delay: 0.2 },
-              { sp: PAST_SPONSORS[1], offset: '16px', rotate: '1.5deg', delay: 0.3 },
-              { sp: PAST_SPONSORS[2], offset: '8px', rotate: '-1deg', delay: 0.4 },
-              { sp: PAST_SPONSORS[3], offset: '20px', rotate: '2deg', delay: 0.5 },
+              { sp: ALL_SPONSORS[0], offset: '0px', rotate: '-2deg', delay: 0.2 },
+              { sp: ALL_SPONSORS[1], offset: '16px', rotate: '1.5deg', delay: 0.3 },
+              { sp: ALL_SPONSORS[2], offset: '8px', rotate: '-1deg', delay: 0.4 },
+              { sp: ALL_SPONSORS[3], offset: '20px', rotate: '2deg', delay: 0.5 },
             ].map(({ sp, offset, rotate, delay }, i) => (
               <motion.div
                 key={sp.name}
@@ -191,150 +223,125 @@ export const SponsorHallPage: React.FC = () => {
                   width: '260px',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.75rem',
-                  background: 'rgba(255,255,255,0.11)',
+                  justifyContent: 'center',
+                  background: 'rgba(255,255,255,0.92)',
                   backdropFilter: 'blur(24px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: '14px',
-                  padding: '0.65rem 0.85rem',
+                  border: '1.5px solid rgba(255,255,255,0.4)',
+                  borderRadius: '16px',
+                  padding: '0.85rem 1.25rem',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
                   zIndex: 4 - i,
+                  height: '75px',
                 }}
               >
-                <div style={{
-                  width: '36px', height: '36px', borderRadius: '10px',
-                  background: 'rgba(255,255,255,0.95)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexShrink: 0, overflow: 'hidden', padding: '3px'
-                }}>
-                  <img src={sp.logo} alt={sp.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
-                </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.82rem', color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                    {sp.name}
-                  </div>
-                  <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.65)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                    {sp.category}
-                  </div>
-                </div>
-                <span style={{
-                  fontSize: '0.58rem', fontWeight: 800, textTransform: 'uppercase',
-                  letterSpacing: '0.05em', padding: '0.15rem 0.4rem', borderRadius: '4px',
-                  background: sp.tier === 'Diamond' ? 'rgba(239,20,110,0.3)' : 'rgba(255,255,255,0.15)',
-                  color: sp.tier === 'Diamond' ? '#ff6ba0' : 'rgba(255,255,255,0.85)'
-                }}>
-                  {sp.tier}
-                </span>
+                <img src={sp.logo} alt={sp.name} style={{ maxHeight: '48px', maxWidth: '200px', objectFit: 'contain' }} />
               </motion.div>
             ))}
           </motion.div>
         </div>
-
-        {/* Bottom fade */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0,
-          height: '60px',
-          background: 'linear-gradient(0deg, var(--color-canvas) 0%, transparent 100%)',
-        }} />
       </section>
 
-      {/* ── CTA Banner ── */}
-      <section style={{ background: 'var(--color-canvas)', padding: '2.5rem 0' }}>
+      {/* ── SPONSOR LOGO WALL GRID (LOGO ONLY, NO NAMES, NO TIERS) ── */}
+      <section style={{ background: 'var(--color-canvas)', padding: '4rem 0 6rem' }}>
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            style={{
-              background: 'var(--gradient-brand-soft)',
-              border: '1.5px solid rgba(145,39,140,0.2)',
-              borderRadius: 'var(--radius-xl)',
-              padding: '2.25rem 2.5rem',
-              display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem',
-              boxShadow: 'var(--shadow-md)',
-            }}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-                <span className="badge badge-purple"><Sparkles size={12} /> 2027 Open</span>
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '0.25rem' }}>
-                Become a 2027 Featured Sponsor or Exhibitor
-              </h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', maxWidth: '550px' }}>
-                68% of HRWest attendees hold Manager/Director/CHRO authority with active HR technology and benefits budgets.
-              </p>
-            </div>
-            <Link to="/sponsor" className="btn btn-primary btn-lg">
-              Become a Sponsor <ArrowRight size={18} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Sponsor Grid ── */}
-      <section style={{ background: 'var(--color-canvas)', padding: '2rem 0 5rem' }}>
-        <div className="container-wide">
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            style={{ marginBottom: '2rem' }}
-          >
-            <span className="eyebrow" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-muted)' }}>
-              Past HRWest Sponsors & Exhibitors
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="eyebrow" style={{ marginBottom: '0.5rem' }}>
+              <Sparkles size={13} /> Trusted Enterprise Partners
             </span>
-          </motion.div>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)' }}>
+              Past HRWest Sponsors & Exhibitors
+            </h2>
+          </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
-            {PAST_SPONSORS.map((sponsor, idx) => {
-              const tierStyle = TIER_STYLES[sponsor.tier] || TIER_STYLES.Silver;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: idx * 0.04 }}
-                  whileHover={{ y: -6, transition: { duration: 0.25 } }}
+          {/* Logo Wall Grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+            gap: '1.5rem',
+            alignItems: 'stretch',
+          }}>
+            {ALL_SPONSORS.map((sponsor, idx) => (
+              <motion.a
+                key={idx}
+                href={sponsor.url}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (idx % 8) * 0.03 }}
+                whileHover={{ y: -6, boxShadow: '0 12px 30px rgba(145,39,140,0.18)', borderColor: 'rgba(145,39,140,0.35)' }}
+                style={{
+                  background: '#ffffff',
+                  borderRadius: 'var(--radius-xl)',
+                  border: '1.5px solid var(--color-subtle)',
+                  padding: '2.25rem 1.5rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minHeight: '120px',
+                  boxShadow: 'var(--shadow-sm)',
+                  textDecoration: 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
                   style={{
-                    background: 'var(--color-elevated)',
-                    borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--color-subtle)',
-                    boxShadow: 'var(--shadow-sm)',
-                    overflow: 'hidden',
-                    display: 'flex', flexDirection: 'column',
+                    maxHeight: '65px',
+                    maxWidth: '170px',
+                    objectFit: 'contain',
+                    filter: 'grayscale(10%) contrast(105%)',
+                    transition: 'all 0.25s ease',
                   }}
-                >
-                  {/* Logo area */}
-                  <div style={{
-                    padding: '2rem',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    minHeight: '100px',
-                    background: 'var(--color-canvas)',
-                  }}>
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      style={{ maxHeight: '50px', maxWidth: '160px', objectFit: 'contain' }}
-                    />
-                  </div>
-                  {/* Info */}
-                  <div style={{ padding: '1.25rem 1.5rem', borderTop: '1px solid var(--color-subtle)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', color: 'var(--color-text-primary)' }}>{sponsor.name}</h3>
-                      <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.65rem',
-                        textTransform: 'uppercase', letterSpacing: '0.06em',
-                        background: tierStyle.bg, color: tierStyle.color,
-                        padding: '0.2rem 0.55rem', borderRadius: 'var(--radius-full)',
-                      }}>
-                        {sponsor.tier}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>{sponsor.category}</div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                  }}
+                />
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Bottom CTA Banner */}
+          <div style={{ marginTop: '5rem', textAlign: 'center' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              style={{
+                background: 'var(--gradient-brand-soft)',
+                border: '1.5px solid rgba(145,39,140,0.2)',
+                borderRadius: 'var(--radius-xl)',
+                padding: '3rem 2.5rem',
+                maxWidth: '850px',
+                margin: '0 auto',
+                boxShadow: 'var(--shadow-md)',
+              }}
+            >
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.6rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem' }}>
+                Partner with HRWest 2027
+              </h3>
+              <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)', maxWidth: '580px', margin: '0 auto 1.75rem auto', lineHeight: 1.6 }}>
+                Connect directly with over 1,000+ HR directors, CHROs, and talent executives in Silicon Valley.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link to="/why-sponsor" className="btn btn-primary btn-lg">
+                  Download Sponsorship Brochure <Download size={18} />
+                </Link>
+                <Link to="/register" className="btn btn-outline btn-lg">
+                  Pre-Register for 2027 <ArrowRight size={18} />
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
     </div>
   );
 };
+
+export default SponsorHallPage;

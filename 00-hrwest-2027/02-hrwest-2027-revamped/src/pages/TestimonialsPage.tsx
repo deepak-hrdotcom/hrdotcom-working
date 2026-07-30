@@ -122,10 +122,14 @@ const SPONSOR_TESTIMONIALS: TestimonialItem[] = [
 ];
 
 const VIDEO_TESTIMONIALS = [
-  { id: 'v1', title: 'Attendee Experience & Key Takeaways', duration: '1:28', thumbnail: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80' },
-  { id: 'v2', title: 'Networking & Community Impact', duration: '1:45', thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80' },
-  { id: 'v3', title: 'HR Leaders Share Their Favorite Sessions', duration: '2:10', thumbnail: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80' },
-  { id: 'v4', title: 'Sponsor & Solution Provider Perspectives', duration: '1:15', thumbnail: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80' },
+  { id: 'v1', title: 'HRWest Conference Experience & Keynotes', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/1h.mp4' },
+  { id: 'v2', title: 'Community & Peer Networking Impact', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/2.mp4' },
+  { id: 'v3', title: 'HR Leaders Share Real Session Takeaways', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/3h.mp4' },
+  { id: 'v4', title: 'Sponsor & Solution Provider Insights', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/4h.mp4' },
+  { id: 'v5', title: 'Practical Strategies for HR Professionals', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/5.mp4' },
+  { id: 'v6', title: 'Collaborative Roundtables & Peer Discussions', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/6h.mp4' },
+  { id: 'v7', title: 'Why HR Decision-Makers Love HRWest', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/7.mp4' },
+  { id: 'v8', title: 'Transforming HR Practice & Career Growth', videoUrl: 'https://www.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/8.mp4' },
 ];
 
 export const TestimonialsPage: React.FC = () => {
@@ -429,52 +433,38 @@ export const TestimonialsPage: React.FC = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem' }}>
             {VIDEO_TESTIMONIALS.map((v, i) => (
               <motion.div
                 key={v.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
                 style={{
                   background: 'var(--color-elevated)',
                   borderRadius: 'var(--radius-lg)',
                   overflow: 'hidden',
-                  border: '1px solid var(--color-subtle)',
-                  boxShadow: 'var(--shadow-sm)',
+                  border: '1.5px solid rgba(145, 39, 140, 0.2)',
+                  boxShadow: 'var(--shadow-md)',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
-                <div style={{ position: 'relative', paddingTop: '56.25%', background: '#000' }}>
-                  <img src={v.thumbnail} alt={v.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
-                  <div style={{
-                    position: 'absolute', inset: 0,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: 'rgba(11,15,23,0.3)',
-                  }}>
-                    <div style={{
-                      width: '52px', height: '52px', borderRadius: '50%',
-                      background: 'var(--gradient-brand)', color: '#fff',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      boxShadow: '0 8px 25px rgba(145,39,140,0.5)',
-                      paddingLeft: '3px',
-                    }}>
-                      <Play size={22} fill="#fff" />
-                    </div>
-                  </div>
-                  <span style={{
-                    position: 'absolute', bottom: '0.75rem', right: '0.75rem',
-                    background: 'rgba(0,0,0,0.75)', color: '#fff',
-                    padding: '0.2rem 0.5rem', borderRadius: 'var(--radius-sm)',
-                    fontSize: '0.72rem', fontWeight: 700,
-                  }}>
-                    {v.duration}
-                  </span>
+                <div style={{ position: 'relative', width: '100%', background: '#000', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0', overflow: 'hidden' }}>
+                  <video
+                    controls
+                    preload="metadata"
+                    style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }}
+                  >
+                    <source src={v.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-                <div style={{ padding: '1.25rem' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', margin: 0, lineHeight: 1.4, color: 'var(--color-text-primary)' }}>
-                    {v.title}
+                <div style={{ padding: '1.25rem', background: 'var(--color-elevated)', flex: 1, display: 'flex', alignItems: 'center' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.92rem', margin: 0, lineHeight: 1.4, color: 'var(--color-text-primary)' }}>
+                    <span style={{ color: 'var(--color-brand-purple)', marginRight: '0.4rem' }}>#{i + 1}</span> {v.title}
                   </h3>
                 </div>
               </motion.div>

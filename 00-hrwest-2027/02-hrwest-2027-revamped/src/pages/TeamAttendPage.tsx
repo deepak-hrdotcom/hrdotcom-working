@@ -271,6 +271,75 @@ export const TeamAttendPage: React.FC = () => {
         </div>
       </section>
 
+      {/* ── Official Group Pricing Breakdown Table ── */}
+      <section style={{ background: 'var(--color-surface)', padding: '3rem 0', borderTop: '1px solid var(--color-subtle)', borderBottom: '1px solid var(--color-subtle)' }}>
+        <div className="container-wide">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
+              <Users size={14} /> Official Group Rates
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.5vw, 2.25rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>
+              Group Pricing Schedule
+            </h2>
+            <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>
+              All prices shown are per-person rates based on registration timeframe.
+            </p>
+          </div>
+
+          <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.18)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+              <thead>
+                <tr style={{ background: 'var(--gradient-brand)', color: '#fff' }}>
+                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Tier / Rate</th>
+                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Timeframe</th>
+                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Individual</th>
+                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Group (5–9)</th>
+                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Group (10+)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid var(--color-subtle)' }}>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700, color: 'var(--color-brand-purple)' }}>Early-Bird Rate</td>
+                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>Ends Jan 15, 2027</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 600 }}>$399 / person</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 800, color: 'var(--color-brand-purple)' }}>$299 / person</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 900, color: 'var(--color-brand-pink)' }}>$229 / person</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--color-subtle)' }}>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>Regular Rate</td>
+                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>Jan 16 – Mar 22, 2027</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 600 }}>$799 / person</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700 }}>$699 / person</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 800, color: 'var(--color-brand-purple)' }}>$579 / person</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700, color: 'var(--color-text-muted)' }}>On-Site Rate</td>
+                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>March 23–24, 2027</td>
+                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 600 }}>$999 / person</td>
+                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)' }}>N/A</td>
+                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)' }}>N/A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Exclusive 10+ Perks Box */}
+          <div style={{ marginTop: '2rem', padding: '1.5rem 2rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+            <div>
+              <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-brand-purple)', margin: '0 0 0.3rem 0' }}>
+                🌟 Exclusive Perk for Teams of 10+
+              </h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5 }}>
+                Teams of 10 or more receive <strong>accelerated VIP on-site check-in</strong> and a <strong>facilitated private team roundtable session</strong> on the topic of your choice!
+              </p>
+            </div>
+            <a href="mailto:hrwest@hr.com" className="btn btn-primary btn-sm" style={{ flexShrink: 0 }}>
+              Claim 10+ Team Offer
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Calculator + Benefits ── */}
       <section id="calculator" style={{ background: 'var(--color-canvas)', padding: '2rem 0 5rem' }}>
         <div className="container-wide">

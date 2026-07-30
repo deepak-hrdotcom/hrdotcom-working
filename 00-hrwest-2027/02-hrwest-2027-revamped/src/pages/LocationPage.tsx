@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import locationHero from '../assets/location_hero.png';
-import { MapPin, Plane, Car, Train, Hotel, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, Plane, Car, Train, Hotel, ExternalLink, Navigation, Sparkles, CheckCircle } from 'lucide-react';
 
 export const LocationPage: React.FC = () => {
   return (
@@ -215,8 +215,112 @@ export const LocationPage: React.FC = () => {
         }} />
       </section>
 
+      {/* ── Seamless Brand-Aligned Venue Spotlight Card ── */}
+      <section style={{ background: 'var(--color-canvas)', padding: '3.5rem 0 1.5rem' }}>
+        <div className="container-wide">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{
+              background: 'var(--color-elevated)',
+              borderRadius: 'var(--radius-xl)',
+              border: '1.5px solid rgba(145,39,140,0.2)',
+              boxShadow: 'var(--shadow-lg)',
+              overflow: 'hidden',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '0',
+            }}
+          >
+            {/* LEFT: Premium Brand Gradient & Golden Gate Bridge Photo Overlay Tile */}
+            <div style={{
+              backgroundImage: 'url("https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1200&auto=format&fit=crop")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              padding: '3rem 2.5rem',
+              color: '#ffffff',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative',
+              overflow: 'hidden',
+              minHeight: '340px',
+            }}>
+              {/* Gradient Overlay for Brand Colors & Crisp Contrast */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(180deg, rgba(239,20,110,0.82) 0%, rgba(145,39,140,0.92) 100%)',
+              }} />
+
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                  fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase',
+                  letterSpacing: '0.1em', background: 'rgba(255,255,255,0.22)',
+                  backdropFilter: 'blur(10px)', padding: '0.35rem 0.85rem',
+                  borderRadius: 'var(--radius-full)', marginBottom: '1.5rem',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+                }}>
+                  <Sparkles size={12} /> Silicon Valley 2027
+                </span>
+
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.4rem', opacity: 0.95, lineHeight: 1.1 }}>
+                  San Francisco
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2.5rem, 4vw, 3.6rem)', letterSpacing: '-0.04em', lineHeight: 1, margin: '0.2rem 0 1rem 0', color: '#ffffff' }}>
+                  California
+                </h2>
+              </div>
+
+              <div style={{
+                position: 'relative', zIndex: 2,
+                paddingTop: '1.5rem',
+                borderTop: '1px solid rgba(255,255,255,0.25)',
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                opacity: 0.95,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+              }}>
+                <MapPin size={16} /> South San Francisco Conference Center
+              </div>
+            </div>
+
+            {/* RIGHT: Detailed Copy & Action CTAs */}
+            <div style={{ padding: '3.25rem 2.75rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <span className="eyebrow" style={{ marginBottom: '0.5rem', color: 'var(--color-brand-purple)' }}>
+                Venue & Accommodation Overview
+              </span>
+              
+              <p style={{
+                fontSize: '1.05rem',
+                lineHeight: 1.7,
+                color: 'var(--color-text-secondary)',
+                marginBottom: '2rem',
+                fontFamily: 'var(--font-body)',
+                fontWeight: 400,
+              }}>
+                We’re thrilled to bring the <strong style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>HRWest Conference</strong> back to the San Francisco Bay Area! Hosted at the modern <strong style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>South San Francisco Conference Center</strong>, with our official partner hotel at the <strong style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>DoubleTree by Hilton San Francisco Airport North Bayfront</strong> just steps away — offering a seamless setting for learning, executive networking, and team growth.
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+                <a href="#map" className="btn btn-primary btn-sm">
+                  View Map & Directions <MapPin size={15} />
+                </a>
+                <a href="#hotels" className="btn btn-outline btn-sm">
+                  Book Hotel Group Rate <Hotel size={15} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Quick Travel Stats ── */}
-      <section style={{ background: 'var(--color-canvas)', padding: '3.5rem 0' }}>
+      <section style={{ background: 'var(--color-canvas)', padding: '2.5rem 0 3.5rem' }}>
         <div className="container-wide">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
             {[
@@ -257,7 +361,7 @@ export const LocationPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Hotel Deals ── */}
+      {/* ── Hotel Deals & Parking Details ── */}
       <section style={{ background: 'var(--color-surface)', padding: '4rem 0 5rem' }}>
         <div className="container-wide">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
@@ -266,74 +370,113 @@ export const LocationPage: React.FC = () => {
                 <Hotel size={22} color="#fff" />
               </div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)' }}>
-                Official Partner Hotels & Discount Blocks
+                Official Accommodations & Dining Guide
               </h2>
             </div>
             <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', marginBottom: '2.5rem', maxWidth: '600px' }}>
-              Discounted room rates secured for HRWest 2027 attendees. Reserve early before block rates expire.
+              Special group room rates and nearby amenities for HRWest 2027 attendees.
             </p>
           </motion.div>
 
-          <div className="grid-2">
-            {[
-              { name: 'Embassy Suites by Hilton SFO', address: '250 Gateway Blvd, South San Francisco, CA', rate: '$219', perks: 'Complimentary breakfast, evening reception, shuttle to venue' },
-              { name: 'DoubleTree by Hilton SFO Bayfront', address: '835 Airport Blvd, Burlingame, CA', rate: '$199', perks: 'Bay views, pool, fitness center, 10 min from venue' },
-            ].map((hotel, idx) => (
-              <motion.div
-                key={hotel.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                style={{
-                  background: 'var(--color-elevated)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: '2rem',
-                  border: '1px solid var(--color-subtle)',
-                  boxShadow: 'var(--shadow-sm)',
-                }}
+          <div className="grid-2" style={{ marginBottom: '2.5rem' }}>
+            {/* Official Hotel */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+              style={{
+                background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem',
+                border: '1.5px solid rgba(145, 39, 140, 0.25)', boxShadow: 'var(--shadow-sm)'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', color: 'var(--color-text-primary)' }}>
+                  DoubleTree by Hilton San Francisco South Airport Blvd
+                </h3>
+                <span className="badge badge-purple">Official Hotel</span>
+              </div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '0.75rem' }}>
+                275 South Airport Blvd, South San Francisco, CA 94080 • Tel: +1 650-873-3550
+              </div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '1.25rem', padding: '0.75rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--color-brand-purple)' }}>
+                Steps away from the conference center • Bayfront walking paths • On-site dining & lounge • Fitness center
+              </div>
+              <a href="tel:+16508733550" className="btn btn-outline btn-sm" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                Contact Hotel for Group Rate <ExternalLink size={14} />
+              </a>
+            </motion.div>
+
+            {/* Dining & Cafes Guide */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
+              style={{
+                background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem',
+                border: '1.5px solid rgba(239, 20, 110, 0.2)', boxShadow: 'var(--shadow-sm)'
+              }}
+            >
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem' }}>
+                Nearby Restaurants & Cafes Guide
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+                Explore curated dining options, coffee shops, and lunch spots within walking distance or a short drive from the South San Francisco Conference Center.
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1z1sFpPJC-fvZcnRpm2xKzJ_svqWfCwt9/view"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary btn-sm"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', color: 'var(--color-text-primary)' }}>{hotel.name}</h3>
-                  <span className="badge badge-purple">{hotel.rate}/night</span>
-                </div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '0.75rem' }}>{hotel.address}</div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '1.25rem', padding: '0.75rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--color-brand-purple)' }}>
-                  {hotel.perks}
-                </div>
-                <a href="#" className="btn btn-outline btn-sm" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
-                  Book Hotel Block <ExternalLink size={14} />
-                </a>
-              </motion.div>
-            ))}
+                View Restaurants & Cafes Guide <ExternalLink size={14} />
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Parking & Transit Information Box */}
+          <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem', border: '1px solid var(--color-subtle)' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--color-text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Car size={20} style={{ color: 'var(--color-brand-pink)' }} /> Parking & Shuttles Information
+            </h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '1rem' }}>
+              <strong>Complimentary Parking:</strong> Free shared parking is available across the South San Francisco Conference Center, Park Pointe Hotel, and DoubleTree Hotel lots, plus an off-site lot located between Travelodge and Best Western Plus Grosvenor Hotel. No permit or validation required.
+            </p>
+            <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+              <strong>Public Transit Shuttles:</strong> Free commuter shuttles run Monday through Friday during commute hours connecting the Conference Center directly to the South San Francisco BART Station, CalTrain Station, and Ferry Terminal.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── Map Embed Placeholder ── */}
-      <section style={{ background: 'var(--color-canvas)', padding: '4rem 0' }}>
-        <div className="container-wide" style={{ textAlign: 'center' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div style={{
-              background: 'var(--gradient-brand-soft)',
-              borderRadius: 'var(--radius-xl)',
-              padding: '4rem 2rem',
-              border: '1.5px solid rgba(145,39,140,0.2)',
-              boxShadow: 'var(--shadow-md)',
-            }}>
-              <MapPin size={36} style={{ color: 'var(--color-brand-purple)', marginBottom: '1rem' }} />
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.5rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
-                South San Francisco Conference Center
-              </h3>
-              <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
-                255 South Airport Blvd, South San Francisco, CA 94080
-              </p>
-              <a href="https://maps.google.com/?q=South+San+Francisco+Conference+Center" target="_blank" rel="noreferrer" className="btn btn-primary">
-                Open in Google Maps <ExternalLink size={16} />
-              </a>
-            </div>
-          </motion.div>
+      {/* ── Interactive Map Embed ── */}
+      <section id="map" style={{ background: 'var(--color-canvas)', padding: '4rem 0' }}>
+        <div className="container-wide">
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
+              <MapPin size={14} /> Venue Location
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)', letterSpacing: '-0.02em', margin: 0 }}>
+              South San Francisco Conference Center
+            </h2>
+            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginTop: '0.3rem' }}>
+              255 South Airport Blvd, South San Francisco, CA 94080
+            </p>
+          </div>
+
+          <div style={{
+            borderRadius: 'var(--radius-xl)',
+            overflow: 'hidden',
+            border: '2px solid rgba(145,39,140,0.2)',
+            boxShadow: 'var(--shadow-md)',
+            height: '420px',
+          }}>
+            <iframe
+              title="South San Francisco Conference Center Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3159.0741560366914!2d-122.4043781!3d37.647460599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f79b47d5d81ad%3A0xfd9c1f0af6155a3d!2sSouth%20San%20Francisco%20Conference!5e0!3m2!1sen!2sin!4v1773852453849!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
     </div>
