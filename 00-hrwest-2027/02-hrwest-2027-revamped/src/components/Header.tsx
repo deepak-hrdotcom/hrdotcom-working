@@ -44,7 +44,7 @@ export const Header: React.FC = () => {
       transition: 'all 0.3s ease',
     }}>
       {/* Top Announcement Strip */}
-      <div style={{
+      <div className="top-announcement-strip" style={{
         background: 'var(--gradient-brand)',
         color: '#ffffff',
         padding: '0.4rem 0',
@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
         fontWeight: 600,
       }}>
         <div className="container-wide" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <div className="top-announcement-strip-items" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
               <Calendar size={13} /> March 23–24, 2027
             </span>
@@ -68,8 +68,8 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Main Navigation */}
-      <div className="container-wide" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
-        {/* Logo */}
+      <div className="container-wide header-main-bar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
+        {/* Logo — clean text wordmark */}
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <div style={{
             fontFamily: 'var(--font-display)',
@@ -90,7 +90,7 @@ export const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }}>
+        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }}>
           <Link to="/" style={navLinkStyle(isActive('/'))}>Home</Link>
           <Link to="/speakers" style={navLinkStyle(isActive('/speakers'))}>Speakers</Link>
           <Link to="/agenda" style={navLinkStyle(isActive('/agenda'))}>Agenda</Link>
@@ -193,6 +193,44 @@ export const Header: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Drawer Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            style={{
+              overflow: 'hidden',
+              background: 'var(--color-elevated)',
+              borderBottom: '1px solid var(--color-subtle)',
+              padding: '1rem 1.25rem 1.5rem',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <Link to="/" style={navLinkStyle(isActive('/'))} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link to="/speakers" style={navLinkStyle(isActive('/speakers'))} onClick={() => setMobileMenuOpen(false)}>Speakers</Link>
+              <Link to="/agenda" style={navLinkStyle(isActive('/agenda'))} onClick={() => setMobileMenuOpen(false)}>Agenda</Link>
+              <Link to="/sponsors" style={navLinkStyle(isActive('/sponsors'))} onClick={() => setMobileMenuOpen(false)}>Sponsors</Link>
+              <Link to="/sponsor" style={navLinkStyle(isActive('/sponsor'))} onClick={() => setMobileMenuOpen(false)}>Why Sponsor</Link>
+              <div style={{ padding: '0.5rem 0', borderTop: '1px solid var(--color-subtle)' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-brand-purple)', marginBottom: '0.5rem' }}>ATTEND</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingLeft: '0.5rem' }}>
+                  <Link to="/attend/team" style={{ textDecoration: 'none', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }} onClick={() => setMobileMenuOpen(false)}>Attend as a Team</Link>
+                  <Link to="/attend/convince-boss" style={{ textDecoration: 'none', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }} onClick={() => setMobileMenuOpen(false)}>Convince Your Boss</Link>
+                  <Link to="/attend/location" style={{ textDecoration: 'none', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }} onClick={() => setMobileMenuOpen(false)}>Venue & Travel</Link>
+                  <Link to="/attend/volunteer" style={{ textDecoration: 'none', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }} onClick={() => setMobileMenuOpen(false)}>Volunteer for Free Pass</Link>
+                </div>
+              </div>
+              <Link to="/register" className="btn btn-primary btn-sm" style={{ width: '100%', marginTop: '0.5rem', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>
+                Pre-Register 2027 <ArrowRight size={15} />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

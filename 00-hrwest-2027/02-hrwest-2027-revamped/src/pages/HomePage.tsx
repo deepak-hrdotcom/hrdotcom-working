@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 
 import heroConference from '../assets/generated/hero_conference.png';
+import hrWestLogo from '../assets/hr-west-logo.png';
 import trackAI from '../assets/generated/track_ai.png';
 import trackLegal from '../assets/generated/track_legal.png';
 import trackTalent from '../assets/generated/track_talent.png';
@@ -258,7 +259,7 @@ export const HomePage: React.FC = () => {
       {/* ══════════════════════════════════════════
           1. HERO — Parallax Split Layout
          ══════════════════════════════════════════ */}
-      <section style={{
+      <section className="hero-split-grid" style={{
         position: 'relative',
         minHeight: '92vh',
         display: 'grid',
@@ -266,7 +267,7 @@ export const HomePage: React.FC = () => {
         background: 'var(--color-canvas)',
       }}>
         {/* LEFT: Content column */}
-        <div style={{
+        <div className="hero-content-col" style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -303,31 +304,68 @@ export const HomePage: React.FC = () => {
             <Clock size={14} style={{ color: 'var(--color-brand-pink)' }} />
           </motion.div>
 
-          {/* Giant headline */}
-          <motion.h1
+          {/* Hero headline lockup — logo inline beside title */}
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: 'easeOut', delay: 0.1 }}
+            className="hero-headline-lockup"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 900,
-              fontSize: 'clamp(3rem, 5.5vw, 5.25rem)',
-              lineHeight: 1.05,
-              letterSpacing: '-0.04em',
-              color: 'var(--color-text-primary)',
-              marginBottom: '1.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.5rem',
+              marginBottom: '1.75rem',
             }}
           >
-            HRWest 2027:<br />
-            <span style={{
-              background: 'var(--gradient-brand-glow)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+            {/* HR West PNG logo — white card, flush beside title */}
+            <div style={{
+              background: '#ffffff',
+              padding: '8px 12px',
+              borderRadius: '12px',
+              boxShadow: '0 8px 28px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(145, 39, 140, 0.1)',
+              border: '1.5px solid rgba(145, 39, 140, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
             }}>
-              Imagine What's Possible
-            </span>
-          </motion.h1>
+              <img
+                src={hrWestLogo}
+                alt="HR West Logo"
+                className="hero-headline-logo"
+                style={{
+                  height: '88px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
+              />
+            </div>
+
+            {/* Title text stack */}
+            <div>
+              <h1 style={{
+                fontFamily: 'var(--font-display)',
+                fontWeight: 900,
+                fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.03em',
+                color: 'var(--color-text-primary)',
+                margin: 0,
+              }}>
+                HRWest 2027:
+                <br />
+                <span style={{
+                  background: 'var(--gradient-brand-glow)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>
+                  Imagine What's Possible
+                </span>
+              </h1>
+            </div>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}

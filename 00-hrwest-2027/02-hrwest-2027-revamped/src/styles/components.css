@@ -264,3 +264,123 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* =============================================
+   RESPONSIVE DESIGN & MOBILE BREAKPOINTS
+   ============================================= */
+
+/* Tablet & Mobile Layout Adjustments (max-width: 992px) */
+@media (max-width: 992px) {
+  .container,
+  .container-wide,
+  .container-full {
+    padding: 0 1.25rem !important;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Grid Fallbacks */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Hero Splits */
+  .hero-split-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .hero-content-col {
+    padding: 3rem 1.25rem 3rem 1.25rem !important;
+  }
+
+  .hero-image-col {
+    min-height: 300px !important;
+  }
+
+  .hero-image-clip {
+    clip-path: none !important;
+  }
+
+  /* Hero Headline Lockup */
+  .hero-headline-lockup {
+    flex-direction: row;
+    gap: 1rem !important;
+  }
+
+  /* Footer Grid */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Section Padding */
+  .section {
+    padding: var(--space-2xl) 0 !important;
+  }
+  .section-sm {
+    padding: var(--space-xl) 0 !important;
+  }
+}
+
+/* Small Mobile Devices (max-width: 640px) */
+@media (max-width: 640px) {
+  .hero-headline-lockup {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .hero-headline-logo {
+    height: 64px !important;
+  }
+
+  .top-announcement-strip {
+    font-size: 0.75rem !important;
+  }
+
+  .top-announcement-strip .container-wide {
+    flex-direction: column !important;
+    gap: 0.3rem !important;
+    text-align: center !important;
+  }
+
+  .top-announcement-strip-items {
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+  }
+
+  .header-main-bar {
+    height: 64px !important;
+  }
+
+  .btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn-sm {
+    width: auto;
+  }
+
+  /* Footer responsiveness */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1rem !important;
+  }
+}

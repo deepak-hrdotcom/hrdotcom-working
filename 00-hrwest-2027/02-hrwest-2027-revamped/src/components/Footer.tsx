@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Mail, Globe, Share2, Link2, Rss, Sparkles, ExternalLink } from 'lucide-react';
+import hrWestLogo from '../assets/hr-west-logo.png';
 
 const NAV_LINKS = {
   attend: [
@@ -101,28 +102,48 @@ export const Footer: React.FC = () => {
       {/* ── Main footer body ── */}
       <div style={{ background: 'var(--color-elevated)', padding: '4rem 0 3rem' }}>
         <div className="container-wide">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3.5rem' }}>
+          <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3.5rem' }}>
 
             {/* Col 1: Brand identity */}
             <div>
               {/* Logo wordmark */}
-              <div style={{ marginBottom: '1.25rem' }}>
+              <Link to="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.5rem' }}>
+                <div style={{
+                  background: '#ffffff',
+                  padding: '6px 12px',
+                  borderRadius: 'var(--radius-md)',
+                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.08)',
+                  border: '1px solid rgba(145, 39, 140, 0.18)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  <img
+                    src={hrWestLogo}
+                    alt="HR West Logo"
+                    style={{
+                      height: '72px',
+                      width: 'auto',
+                      objectFit: 'contain',
+                      display: 'block',
+                    }}
+                  />
+                </div>
                 <span style={{
                   fontFamily: 'var(--font-display)',
                   fontWeight: 900,
-                  fontSize: '1.65rem',
-                  letterSpacing: '-0.03em',
-                  color: 'var(--color-text-primary)',
+                  fontSize: '1.2rem',
+                  padding: '0.35rem 0.8rem',
+                  borderRadius: 'var(--radius-full)',
+                  background: 'var(--gradient-brand)',
+                  color: '#ffffff',
+                  boxShadow: '0 2px 10px rgba(239, 20, 110, 0.25)',
+                  letterSpacing: '0.02em',
+                  whiteSpace: 'nowrap',
                 }}>
-                  HR<span style={{
-                    background: 'var(--gradient-brand)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}>West</span>
-                  <span style={{ color: 'var(--color-text-soft)', fontWeight: 400, fontSize: '1.1rem', marginLeft: '0.25rem' }}>2027</span>
+                  2027
                 </span>
-              </div>
+              </Link>
 
               <p style={{
                 fontSize: '0.9rem',
@@ -308,7 +329,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* ── Bottom bar ── */}
-          <div style={{
+          <div className="footer-bottom-bar" style={{
             borderTop: '1px solid var(--color-subtle)',
             paddingTop: '1.75rem',
             display: 'flex',
