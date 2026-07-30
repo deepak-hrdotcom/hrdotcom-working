@@ -11,6 +11,7 @@ import { ConvinceBossPage } from './pages/ConvinceBossPage';
 import { LocationPage } from './pages/LocationPage';
 import { VolunteerPage } from './pages/VolunteerPage';
 import { RegisterPage } from './pages/RegisterPage';
+import { TestimonialsPage } from './pages/TestimonialsPage';
 
 export const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ export const App: React.FC = () => {
           <Route path="/agenda" element={<AgendaPage />} />
           <Route path="/sponsors" element={<SponsorHallPage />} />
           <Route path="/sponsor" element={<WhySponsorPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/attend/team" element={<TeamAttendPage />} />
           <Route path="/attend/convince-boss" element={<ConvinceBossPage />} />
           <Route path="/attend/location" element={<LocationPage />} />
