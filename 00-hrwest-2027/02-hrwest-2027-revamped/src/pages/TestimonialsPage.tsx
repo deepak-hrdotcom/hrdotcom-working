@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Star, ArrowRight, Video, Sparkles, Building2, UserCheck, Play } from 'lucide-react';
+import speakersHero from '../assets/speakers_hero.png';
+import { Star, ArrowRight, Video, Building2, UserCheck, Play, ChevronRight, Users } from 'lucide-react';
 
 interface TestimonialItem {
   id: string;
@@ -48,9 +49,9 @@ const ATTENDEE_TESTIMONIALS: TestimonialItem[] = [
   {
     id: 't4',
     quote: "I absolutely loved the sponsors at HRWest this year. You talk about the gamut of software or products that really impact how to do our jobs easier. Sometimes in HR we're a small team and have to put together resources — the sponsors are full of fantastic ideas!",
-    author: 'HR Generalist & Operations Lead',
-    role: 'HR Business Partner',
-    company: 'Mid-Market Services',
+    author: 'Director of People Experience',
+    role: 'Director',
+    company: 'Innovate Bay Area',
     category: 'attendee',
     bgAccent: 'rgba(239, 20, 110, 0.06)',
     stars: 5,
@@ -130,84 +131,205 @@ const VIDEO_TESTIMONIALS = [
 export const TestimonialsPage: React.FC = () => {
   return (
     <div style={{ width: '100%', overflowX: 'hidden', background: 'var(--color-canvas)' }}>
-      {/* ─── HERO HEADER ─── */}
+
+      {/* ══════════ CINEMATIC HERO ══════════ */}
       <section style={{
-        background: 'linear-gradient(135deg, rgba(145,39,140,0.06) 0%, rgba(239,20,110,0.04) 100%)',
-        padding: '5rem 0 4rem 0',
-        borderBottom: '1px solid var(--color-subtle)',
         position: 'relative',
+        height: '480px',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        <div className="container-wide" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto' }}>
-          <motion.span
-            className="eyebrow"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{ marginBottom: '1rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
-          >
-            <Sparkles size={14} /> Verified Attendee & Sponsor Raves
-          </motion.span>
+        {/* 1. Full-bleed background image */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: `url(${speakersHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: '55% center',
+        }} />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 900,
-              fontSize: 'clamp(2.4rem, 4vw, 3.5rem)',
-              letterSpacing: '-0.03em',
-              color: 'var(--color-text-primary)',
-              lineHeight: 1.15,
-              marginBottom: '1.25rem',
-            }}
-          >
-            What HR Leaders & Partners Say About <span style={{ background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>HRWest</span>
-          </motion.h1>
+        {/* 2. Multi-layer gradient overlay */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: `
+            linear-gradient(90deg,
+              rgba(11,8,20,0.96) 0%,
+              rgba(60,15,80,0.88) 38%,
+              rgba(100,10,80,0.55) 62%,
+              rgba(0,0,0,0.15) 100%
+            ),
+            linear-gradient(180deg,
+              rgba(11,8,20,0.6) 0%,
+              transparent 30%,
+              transparent 65%,
+              rgba(11,8,20,0.75) 100%
+            )
+          `,
+        }} />
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            style={{
-              fontSize: '1.15rem',
-              color: 'var(--color-text-secondary)',
-              lineHeight: 1.7,
-              marginBottom: '2rem',
-            }}
-          >
-            Discover why 1,000+ HR decision-makers, executives, and industry vendors return to HRWest year after year to learn, network, and grow.
-          </motion.p>
+        {/* 3. Ambient glow orbs */}
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+          <div style={{
+            position: 'absolute', top: '-80px', left: '-80px',
+            width: '400px', height: '400px',
+            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            borderRadius: '50%', filter: 'blur(40px)',
+          }} />
+          <div style={{
+            position: 'absolute', bottom: '-60px', left: '30%',
+            width: '300px', height: '300px',
+            background: 'radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%)',
+            borderRadius: '50%', filter: 'blur(50px)',
+          }} />
+        </div>
 
-          {/* Quick Metrics Bar */}
+        {/* 4. Content grid */}
+        <div className="container-wide" style={{
+          position: 'relative', zIndex: 2,
+          display: 'grid',
+          gridTemplateColumns: '5fr 3fr 4fr',
+          gap: '0',
+          alignItems: 'center',
+          justifyItems: 'start',
+          height: '100%',
+          paddingTop: '3rem',
+          paddingBottom: '3rem',
+        }}>
+
+          {/* LEFT: Text content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              display: 'inline-flex',
-              gap: '2rem',
-              background: 'var(--color-elevated)',
-              border: '1.5px solid rgba(145,39,140,0.18)',
-              borderRadius: 'var(--radius-lg)',
-              padding: '1rem 2rem',
-              boxShadow: 'var(--shadow-sm)',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
+              textAlign: 'left',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              maxWidth: '520px',
+              paddingRight: '2rem',
+            }}
+          >
+            <h1 style={{
+              fontFamily: 'var(--font-display)', fontWeight: 900,
+              fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
+              letterSpacing: '-0.04em', lineHeight: 1.05,
+              color: '#fff',
+              marginBottom: '1.1rem',
+              textAlign: 'left',
+              textWrap: 'initial' as const,
+            }}>
+              Voices from<br />
+              <span style={{
+                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>HRWest Alumni</span>
+            </h1>
+
+            <p style={{
+              fontSize: '1rem', color: 'rgba(255,255,255,0.72)',
+              lineHeight: 1.6, marginBottom: '2.25rem', maxWidth: '400px',
+              fontFamily: 'var(--font-body)', fontWeight: 400,
+            }}>
+              Hear directly from HR professionals who've transformed their careers and teams after attending HRWest.
+            </p>
+
+            {/* CTA Row */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <Link to="/register" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                padding: '0.65rem 1.5rem',
+                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                color: '#fff', borderRadius: 'var(--radius-full)',
+                fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
+                textDecoration: 'none',
+                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+              }}>
+                Pre-Register 2027 <ChevronRight size={15} />
+              </Link>
+              <Link to="/speakers" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                padding: '0.6rem 1.3rem',
+                background: 'rgba(255,255,255,0.1)',
+                backdropFilter: 'blur(12px)',
+                border: '1.5px solid rgba(255,255,255,0.3)',
+                color: '#fff', borderRadius: 'var(--radius-full)',
+                fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem',
+                textDecoration: 'none',
+              }}>
+                <Users size={14} /> Browse Speakers
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* CENTRE: Empty spacer */}
+          <div />
+
+          {/* RIGHT: Floating testimonial quote cards stack */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            style={{
+              position: 'relative', height: '360px', display: 'flex',
+              flexDirection: 'column', justifyContent: 'center'
             }}
           >
             {[
-              { label: 'Overall Satisfaction', val: '92%' },
-              { label: 'Repeat Attendees', val: '8 in 10' },
-              { label: 'Recertification Credits', val: '20+ SHRM/HRCI' },
-            ].map((stat, i) => (
-              <div key={i} style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.35rem', color: 'var(--color-brand-purple)' }}>{stat.val}</div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>{stat.label}</div>
-              </div>
+              { item: ATTENDEE_TESTIMONIALS[0], tag: 'ATTENDEE', rotate: '-2deg', offset: '0px', top: '15px', delay: 0.2 },
+              { item: SPONSOR_TESTIMONIALS[0], tag: 'SPONSOR', rotate: '1.5deg', offset: '16px', top: '165px', delay: 0.35 },
+            ].map(({ item, tag, rotate, offset, top, delay }, i) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20, rotate: 0 }}
+                animate={{ opacity: 1, y: 0, rotate }}
+                transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  position: 'absolute',
+                  top,
+                  left: offset,
+                  width: '270px',
+                  background: 'rgba(255,255,255,0.09)',
+                  backdropFilter: 'blur(24px)',
+                  border: '1px solid rgba(255,255,255,0.18)',
+                  borderRadius: '16px',
+                  padding: '0.85rem 1rem',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
+                  zIndex: 2 - i,
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+                  <div style={{ display: 'flex', gap: '2px' }}>
+                    {[...Array(5)].map((_, idx) => (
+                      <Star key={idx} size={11} fill="#ef146e" color="#ef146e" />
+                    ))}
+                  </div>
+                  <span style={{ fontSize: '0.58rem', fontWeight: 800, textTransform: 'uppercase', color: '#ff6ba0', background: 'rgba(239,20,110,0.2)', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>
+                    {tag}
+                  </span>
+                </div>
+                <p style={{ fontSize: '0.74rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.4, fontStyle: 'italic', marginBottom: '0.5rem' }}>
+                  "{item.quote.length > 90 ? item.quote.slice(0, 90) + '...' : item.quote}"
+                </p>
+                <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#fff' }}>
+                  {item.author}
+                </div>
+                <div style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.6)' }}>
+                  {item.role} {item.company ? `• ${item.company}` : ''}
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* Bottom fade */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0,
+          height: '60px',
+          background: 'linear-gradient(0deg, var(--color-canvas) 0%, transparent 100%)',
+        }} />
       </section>
 
       {/* ─── SECTION 1: ATTENDEE REVIEWS ─── */}

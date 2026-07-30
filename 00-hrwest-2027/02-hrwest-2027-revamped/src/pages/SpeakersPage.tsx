@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Mic2, Users, Sparkles, Star } from 'lucide-react';
+import { Search, Mic2, Sparkles, Star, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import speakersHero from '../assets/speakers_hero.png';
 
@@ -71,94 +71,266 @@ export const SpeakersPage: React.FC = () => {
   return (
     <div style={{ width: '100%', overflowX: 'hidden' }}>
 
-      {/* ── COMPACT SPLIT HERO ── */}
+      {/* ══════════════════════════════════════════
+          CINEMATIC FULL-BLEED HERO
+          ══════════════════════════════════════════ */}
       <section style={{
-        display: 'grid',
-        gridTemplateColumns: '1.3fr 0.7fr',
-        height: '280px',
         position: 'relative',
+        height: '520px',
         overflow: 'hidden',
-        background: 'var(--gradient-brand)',
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        {/* Left: Brand gradient content */}
+        {/* Background: Stage image full-cover — speaker centred in frame */}
         <div style={{
-          padding: '1.75rem 2.5rem 1.75rem 5vw',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          position: 'relative',
-          zIndex: 1,
+          position: 'absolute', inset: 0,
+          backgroundImage: `url(${speakersHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: '55% center',
+        }} />
+
+        {/* Multi-layer gradient overlay — deep purple left, transparent right */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: `
+            linear-gradient(90deg,
+              rgba(11,8,20,0.96) 0%,
+              rgba(60,15,80,0.88) 38%,
+              rgba(100,10,80,0.55) 62%,
+              rgba(0,0,0,0.15) 100%
+            ),
+            linear-gradient(180deg,
+              rgba(11,8,20,0.6) 0%,
+              transparent 30%,
+              transparent 65%,
+              rgba(11,8,20,0.75) 100%
+            )
+          `,
+        }} />
+
+        {/* Animated floating orbs (CSS approach via inline keyframes) */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          overflow: 'hidden',
+          pointerEvents: 'none',
         }}>
-          {/* Noise texture */}
-          <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundSize: 'cover', pointerEvents: 'none' }} />
+          <div style={{
+            position: 'absolute',
+            top: '-80px', left: '-80px',
+            width: '400px', height: '400px',
+            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            borderRadius: '50%',
+            filter: 'blur(40px)',
+          }} />
+          <div style={{
+            position: 'absolute',
+            bottom: '-60px', left: '30%',
+            width: '300px', height: '300px',
+            background: 'radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%)',
+            borderRadius: '50%',
+            filter: 'blur(50px)',
+          }} />
+        </div>
 
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: 'easeOut' }} style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.65rem', flexWrap: 'wrap' }}>
-              <span style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
-                fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.7rem',
-                textTransform: 'uppercase', letterSpacing: '0.08em',
-                background: 'rgba(255,255,255,0.2)', padding: '0.22rem 0.7rem',
-                borderRadius: 'var(--radius-full)', color: '#fff',
-              }}>
-                <Users size={12} /> HRWest 2027 Faculty
-              </span>
-              <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', fontWeight: 600 }}>
-                23+ Speakers · 6 Tracks · 20+ Credits
-              </span>
-            </div>
+        {/* ── CONTENT LAYER ── */}
+        <div className="container-wide" style={{
+          position: 'relative', zIndex: 2,
+          display: 'grid',
+          gridTemplateColumns: '5fr 3fr 4fr',
+          gap: '0',
+          alignItems: 'center',
+          justifyItems: 'start',
+          height: '100%',
+          paddingTop: '3rem',
+          paddingBottom: '3rem',
+        }}>
 
+          {/* LEFT: Content Block — clean, focused, no badge clutter */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              textAlign: 'left',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              maxWidth: '520px',
+              paddingRight: '2rem',
+            }}
+          >
+            {/* Main headline */}
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 900,
-              fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-              letterSpacing: '-0.03em', color: '#fff',
-              marginBottom: '0.5rem', lineHeight: 1.1,
+              fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
+              letterSpacing: '-0.04em', lineHeight: 1.05,
+              color: '#fff',
+              marginBottom: '1.1rem',
+              textAlign: 'left',
+              textWrap: 'initial' as const,
             }}>
-              Meet the 2027 Speakers
+              Meet the<br />
+              <span style={{
+                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>2027 Speakers</span>
             </h1>
 
-            <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.5, marginBottom: '1.25rem', maxWidth: '460px' }}>
-              Executive HR leaders, legal authorities, and tech founders — sharing actionable insights you can implement Monday morning.
+            {/* Subheading — tighter, punchier */}
+            <p style={{
+              fontSize: '1rem', color: 'rgba(255,255,255,0.72)',
+              lineHeight: 1.6, marginBottom: '2.25rem', maxWidth: '400px',
+              fontFamily: 'var(--font-body)', fontWeight: 400,
+            }}>
+              Executive HR leaders, legal authorities, and tech founders —
+              sharing insights you can implement Monday morning.
             </p>
 
-            {/* Speak at HRWest CTA */}
+            {/* CTAs */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <Link
+                to="/register"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                  padding: '0.65rem 1.5rem',
+                  background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                  color: '#fff', borderRadius: 'var(--radius-full)',
+                  fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                Pre-Register 2027 <ChevronRight size={15} />
+              </Link>
               <Link
                 to="/attend/volunteer"
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                  padding: '0.4rem 1.1rem',
-                  background: '#fff',
-                  color: 'var(--color-brand-purple)', borderRadius: 'var(--radius-full)',
-                  fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.8rem',
+                  padding: '0.6rem 1.3rem',
+                  background: 'rgba(255,255,255,0.1)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1.5px solid rgba(255,255,255,0.3)',
+                  color: '#fff', borderRadius: 'var(--radius-full)',
+                  fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem',
                   textDecoration: 'none', transition: 'all 0.2s',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.18)',
                 }}
               >
                 <Mic2 size={14} /> Apply to Speak
               </Link>
-              <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>
-                Deadline: <strong style={{ color: '#fff' }}>Oct 30, 2026</strong>
+              <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.5)', fontWeight: 500 }}>
+                Deadline: <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Oct 30, 2026</strong>
               </span>
             </div>
           </motion.div>
+
+          {/* CENTRE COLUMN: transparent spacer — lets the background image breathe */}
+          <div />
+
+          {/* RIGHT: Floating Speaker Card Mosaic */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            style={{
+              position: 'relative',
+              height: '360px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            {/* Keynote speaker floating cards — evenly spaced vertically */}
+            {[
+              { spk: SPEAKERS_DATA[0], offset: '0px', rotate: '-2deg', delay: 0.2 },
+              { spk: SPEAKERS_DATA[1], offset: '16px', rotate: '1.5deg', delay: 0.32 },
+              { spk: SPEAKERS_DATA[2], offset: '8px', rotate: '-1deg', delay: 0.44 },
+            ].map(({ spk, offset, rotate, delay }, i) => (
+              <motion.div
+                key={spk.id}
+                initial={{ opacity: 0, y: 20, rotate: 0 }}
+                animate={{ opacity: 1, y: 0, rotate }}
+                transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  position: 'absolute',
+                  top: `${i * 110 + 5}px`,
+                  left: offset,
+                  width: '260px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.85rem',
+                  background: 'rgba(255,255,255,0.09)',
+                  backdropFilter: 'blur(24px)',
+                  border: '1px solid rgba(255,255,255,0.18)',
+                  borderRadius: '16px',
+                  padding: '0.75rem',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
+                  zIndex: 3 - i,
+                }}
+              >
+                {/* Headshot */}
+                <div style={{
+                  width: '56px', height: '56px', borderRadius: '12px',
+                  overflow: 'hidden', flexShrink: 0,
+                  border: '2px solid rgba(239,20,110,0.5)',
+                  boxShadow: '0 4px 16px rgba(145,39,140,0.3)',
+                }}>
+                  <img
+                    src={spk.photo}
+                    alt={spk.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                  />
+                </div>
+                {/* Info */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{
+                    fontFamily: 'var(--font-display)', fontWeight: 800,
+                    fontSize: '0.82rem', color: '#fff',
+                    whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                    marginBottom: '0.15rem',
+                  }}>
+                    {spk.name.split(',')[0]}
+                  </div>
+                  <div style={{
+                    fontSize: '0.68rem', color: 'rgba(255,255,255,0.6)',
+                    lineHeight: 1.35, fontWeight: 500,
+                    display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                  }}>
+                    {spk.role}
+                  </div>
+                  {/* Track pip */}
+                  <div style={{
+                    marginTop: '0.35rem',
+                    display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+                    background: 'rgba(239,20,110,0.25)', border: '1px solid rgba(239,20,110,0.4)',
+                    borderRadius: '99px', padding: '0.12rem 0.5rem',
+                    fontSize: '0.6rem', color: '#ff6ba0', fontWeight: 700,
+                    textTransform: 'uppercase', letterSpacing: '0.06em',
+                  }}>
+                    <Star size={8} fill="#ff6ba0" /> Keynote
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Decorative glow behind cards */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              background: 'radial-gradient(circle at 50% 50%, rgba(145,39,140,0.15) 0%, transparent 70%)',
+              pointerEvents: 'none',
+              filter: 'blur(20px)',
+            }} />
+          </motion.div>
         </div>
 
-        {/* Right: Hero image */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          style={{ position: 'relative', overflow: 'hidden', height: '100%' }}
-        >
-          <img
-            src={speakersHero}
-            alt="HRWest 2027 Speakers on Stage"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
-          />
-          {/* Gradient overlay blending into the left panel */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, var(--color-brand-purple) 0%, transparent 40%)' }} />
-        </motion.div>
+        {/* Bottom fade into page */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0,
+          height: '60px',
+          background: 'linear-gradient(0deg, var(--color-canvas) 0%, transparent 100%)',
+        }} />
       </section>
 
       {/* ── STREAMLINED 1-ROW SEARCH & FILTER BAR ── */}
