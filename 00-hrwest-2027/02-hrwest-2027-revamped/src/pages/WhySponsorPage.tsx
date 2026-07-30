@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BarChart3, Users, Target, CheckCircle, Send, ArrowRight, Sparkles, Building2, Zap, TrendingUp } from 'lucide-react';
+import { BarChart3, Users, Target, CheckCircle, Send, Sparkles, Building2, Zap, TrendingUp } from 'lucide-react';
 
 export const WhySponsorPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
