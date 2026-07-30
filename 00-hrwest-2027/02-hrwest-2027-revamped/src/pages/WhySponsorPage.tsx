@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Users, Target, CheckCircle, Send, Sparkles, Zap, TrendingUp, ChevronRight, Download, Award, ShieldCheck } from 'lucide-react';
+import { Target, CheckCircle, Send, Download } from 'lucide-react';
 import whySponsorHero from '../assets/why_sponsor_hero.png';
 import sponsorsHero from '../assets/sponsors_hero.png';
 

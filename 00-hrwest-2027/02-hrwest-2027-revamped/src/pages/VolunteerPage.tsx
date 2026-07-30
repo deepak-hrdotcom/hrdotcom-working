@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import volunteerHero from '../assets/volunteer_hero.png';
-import { HeartHandshake, CheckCircle, Send, Award, Calendar, Sparkles, ChevronRight, Gift, Users, ShieldCheck, Mail, Clock } from 'lucide-react';
+import { HeartHandshake, CheckCircle, Send, Sparkles, ChevronRight, Gift, Users, ShieldCheck, Mail, Clock } from 'lucide-react';
 
 export const VolunteerPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);

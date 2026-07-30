@@ -273,7 +273,7 @@ export const RegisterPage: React.FC = () => {
                   <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2.75rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     $399
                   </span>
-                  <strike style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>$799</strike>
+                  <span style={{ textDecoration: 'line-through', fontSize: '1.1rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>$799</span>
                   <span style={{ fontSize: '0.84rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>/ early rate</span>
                 </div>
 
@@ -343,7 +343,7 @@ export const RegisterPage: React.FC = () => {
                   <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2.75rem', color: 'var(--color-brand-pink)' }}>
                     $899
                   </span>
-                  <strike style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>$1,299</strike>
+                  <span style={{ textDecoration: 'line-through', fontSize: '1.1rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>$1,299</span>
                   <span style={{ fontSize: '0.84rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>/ early rate</span>
                 </div>
 

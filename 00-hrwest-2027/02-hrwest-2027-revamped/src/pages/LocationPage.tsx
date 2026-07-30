@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import locationHero from '../assets/location_hero.png';
-import { MapPin, Plane, Car, Train, Hotel, ExternalLink, Navigation, Sparkles, CheckCircle } from 'lucide-react';
+import { MapPin, Plane, Car, Train, Hotel, ExternalLink, Navigation, Sparkles } from 'lucide-react';
 
 export const LocationPage: React.FC = () => {
   return (
