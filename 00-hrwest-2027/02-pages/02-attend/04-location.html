@@ -1,0 +1,915 @@
+<!-- @format -->
+
+<!-- title: HRWest HR Conference Location -->
+<!-- @format -->
+<style type="text/css">
+  .head {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #2a343e;
+    line-height: 1.2;
+    margin: 20px 0px 10px 0px !important;
+  }
+
+  .cta-block {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .cta-block p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2a343e;
+  }
+
+  .cta-block p span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(42, 52, 62, 0.7);
+    display: block;
+    margin-top: 10px;
+  }
+
+  @media screen and (min-width: 900px) {
+    .cta-block {
+      justify-content: start;
+      gap: 3rem;
+    }
+  }
+
+  .spons_card > p {
+    line-height: 1.4 !important;
+  }
+
+  /* New Venue & Hotel Card Styles */
+  .info-cards-section {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .info-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .info-card {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-card.blue-top {
+    border-top: 5px solid #273a8f;
+  }
+
+  .info-card.purple-top {
+    border-top: 5px solid #91278c;
+  }
+
+  .info-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .info-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a343e;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .info-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #4a5568;
+  }
+
+  .map-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #e8ecf7;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    gap: 8px;
+    color: #273a8f;
+    text-decoration: none;
+  }
+
+  .restaurant-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #f3e8f7;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    gap: 8px;
+    color: #91278c;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .restaurant-pill:hover {
+    background: #e8d0f0;
+    color: #6b1a6b;
+  }
+
+  .conf-card-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .conf-card-row-top {
+    flex: 1;
+  }
+
+  .conf-card-divider {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 20px 0;
+  }
+
+  .conf-card-row-bottom h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2a343e;
+    margin-bottom: 8px;
+  }
+
+  .conf-card-row-bottom p {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 12px;
+  }
+
+  .room-rate-box {
+    margin-top: auto;
+    background: #fff0f5;
+    border-left: 4px solid #e51069;
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .room-rate-box h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e51069;
+    margin: 0 0 5px 0;
+  }
+
+  .deadline-text {
+    color: #e51069 !important;
+    font-weight: 800 !important;
+    font-size: 28px !important;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Venue & Parking Enhanced Grid styles */
+  .venue-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .venue-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .venue-text-col p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #2a343e;
+    margin-bottom: 25px;
+  }
+
+  .venue-text-col p:last-child {
+    margin-bottom: 0;
+  }
+
+  .parking-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid #e51069;
+  }
+
+  .parking-card h5 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2a343e;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .parking-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 15px;
+  }
+
+  .parking-card p:first-of-type {
+    color: #273a8f;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .parking-card .parking-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .parking-card .parking-footer small {
+    font-size: 13px;
+    color: #4a5568;
+    line-height: 1.5;
+    display: block;
+  }
+
+  .parking-card .parking-footer small a {
+    color: #91278c;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+</style>
+<!-- @format -->
+<div class="hr-west_container-fluid">
+  <div class="hr-west_container">
+    <div class="hr-west_wrapper">
+      <div class="hr-wrapper_info">
+        <div class="hr-west_info">
+          <img
+            alt="HRWest Logo"
+            height="125"
+            src="https://hrcom-public.s3.wasabisys.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR_West_Logo.png"
+            width="155"
+          />
+          <h1>HRWest Venue &amp; Accommodation</h1>
+        </div>
+        <!--<h2>HR Strategy / HR Technology / Talent / Compliance</h2>-->
+
+        <h2>Conference, Hotel and Parking</h2>
+
+        <div class="cta-block" style="display: none;">
+          <a
+            class="hr_custom_btn gradient_btn btn_medium round"
+            href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=SFOSADT&arrivalDate=2026-06-09&departureDate=2026-06-11&groupCode=905&room1NumAdults=1&displayCurrency=USD&aarpRate=" target="_blank"
+       
+            >Book Room </a
+          >
+
+          <p style="max-width: 500px">
+            <span class="deadline-text">Booking Deadline: May 12, 2026</span>
+            After this date, guests must call the hotel directly and reference
+            the HRWest group rate to check availability at the discounted rate.
+          </p>
+        </div>
+      </div>
+
+      <div class="hr-west-banner">
+        <img
+          alt="Woman with a luggage"
+          src="https://hrcommedia-public.s3.amazonaws.com/LiveEvents/HRWest2024/locationaccomadation.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hr-west_container info-cards-section">
+  <div class="info-cards-wrapper">
+    <div class="info-card blue-top">
+      <div class="conf-card-row-top">
+        <h3 style="color: #273a8f">Conference</h3>
+        <h4>South San Francisco Conference Center</h4>
+        <p>
+          255 S Airport Blvd<br />
+          South San Francisco, CA 94080
+        </p>
+        <a
+          class="map-pill"
+          href="https://www.google.com/maps/place/South+San+Francisco+Conference/@37.6474648,-122.406953,17z/data=!3m1!4b1!4m6!3m5!1s0x808f79b47d5d81ad:0xfd9c1f0af6155a3d!8m2!3d37.6474606!4d-122.4043781!16s%2Fm%2F0k06vq2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+        >
+          <svg
+            fill="#273A8F"
+            height="14"
+            viewBox="0 0 384 512"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+            />
+          </svg>
+          Open in Google Maps
+        </a>
+      </div>
+
+      <hr class="conf-card-divider" />
+
+      <div class="conf-card-row-bottom">
+        <h4 style="color: #91278c">Restaurants &amp; Cafes Nearby</h4>
+        <p>Explore dining options close to the conference venue.</p>
+        <a
+          class="restaurant-pill"
+          href="https://drive.google.com/file/d/1z1sFpPJC-fvZcnRpm2xKzJ_svqWfCwt9/view"
+          target="_blank"
+        >
+          <svg
+            fill="#91278c"
+            height="14"
+            viewBox="0 0 576 512"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+            />
+          </svg>
+          View Restaurants &amp; Cafes Guide
+        </a>
+      </div>
+    </div>
+
+    <div class="info-card purple-top">
+      <h3 style="color: #91278c">Hotel Accommodations</h3>
+      <h4>DoubleTree by Hilton San Francisco South Airport Blvd</h4>
+      <p>
+        275 South Airport Blvd<br />
+        South San Francisco, CA 94080<br />
+        <span style="display: block; margin-top: 10px"
+          ><strong>Phone:</strong> +1 650-873-3550</span
+        >
+      </p>
+      <div class="room-rate-box" style="display: none;">
+        <h5>Room Rate</h5>
+        <p style="font-weight: 600; color: #2a343e; margin: 0">
+          $189/night before taxes and fees
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hr-west_container">
+  <div class="loc_tile">
+    <div class="gen_img">
+      <h4>San Francisco <span>California</span></h4>
+    </div>
+
+    <div class="strip_banner">
+      <p>
+        We’re thrilled to bring the <strong>HRWest Conference</strong> back to
+        the San Francisco Bay Area! This year, the event will take place at the
+        <strong>South San Francisco Conference Center,</strong> with our
+        official conference hotel located just steps away at the
+        <strong
+          >DoubleTree by Hilton San Francisco Airport North Bayfront.</strong
+        >
+        Together, they provide a convenient and comfortable setting for
+        learning, networking, and connecting with your fellow HR professionals.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="hr-west_container">
+  <div class="venue-details-grid">
+    <div class="venue-text-col">
+      <p>
+        The <strong>South San Francisco Conference Center</strong> is a premier
+        event venue offering modern meeting spaces, spacious networking areas,
+        and easy access for attendees traveling from across the region. Located
+        just minutes from
+        <strong>San Francisco International Airport (SFO)</strong> and close to
+        major highways, the venue is simple to reach whether you're flying in or
+        driving in or taking other transportation (e.g. BART) from nearby
+        cities.
+      </p>
+
+      <p>
+        Our conference hotel, the
+        <strong
+          >DoubleTree by Hilton San Francisco Airport North Bayfront,</strong
+        >
+        offers beautiful waterfront views of the San Francisco Bay and is
+        located just a short walk from the conference center. Guests can enjoy
+        comfortable accommodations, an on-site restaurant and bar, a fitness
+        center, and convenient access to nearby walking paths along the bay.
+      </p>
+    </div>
+
+    <div class="parking-card">
+      <h5>Parking</h5>
+
+      <p>Complimentary parking is available, but it is limited.</p>
+      <p>
+        No validation or permit is required—attendees may park directly in any
+        designated lot.
+      </p>
+      <p>
+        The Conference Center, Park Pointe Hotel, and DoubleTree Hotel operate
+        under an agreement to share their parking lots; therefore, event
+        attendees may park automobiles in any of the 3 lots. In addition, an
+        off-site lot, located across the street between the Travelodge and the
+        Best Western Plus Grosvenor Hotel, is also available for parking.
+      </p>
+      <p>
+        Due to the limited parking, the Conference Center strongly urges guests
+        to take public transportation. The Conference Center has complimentary
+        shuttle service (Monday through Friday during commute hours) to the
+        South San Francisco BART Station, CalTrain Station, and the Ferry
+        Terminal.
+      </p>
+
+      <div class="parking-footer">
+        <small
+          >Additional venue information can be found on the
+          <a
+            href="https://ssfconf.com/bay-area/transportation-options/"
+            target="_blank"
+            >South San Francisco Conference Center website.</a
+          ></small
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hr-west_container" id="map">
+  <div class="loc-view">
+    <iframe
+      allowfullscreen=""
+      height="100%"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3159.0741560366914!2d-122.4043781!3d37.647460599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f79b47d5d81ad%3A0xfd9c1f0af6155a3d!2sSouth%20San%20Francisco%20Conference!5e0!3m2!1sen!2sin!4v1773852453849!5m2!1sen!2sin"
+      style="border: 0; width: 100%; min-height: 350px"
+    ></iframe>
+  </div>
+
+  <!-- <h3 class="centitle mrtp50 mrtb40" >Directions</h3>
+
+  <div class="loc_main">
+    <div class="loc_info">
+      <svg
+        height="40"
+        viewbox="0 0 40 40"
+        width="40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g transform="translate(-874 -470)">
+          <circle
+            cx="20"
+            cy="20"
+            fill="#273a8f"
+            r="20"
+            transform="translate(874 470)"
+          ></circle>
+          <path
+            d="M14.5,3a7,7,0,0,0-7,7c0,5.25,7,13,7,13s7-7.75,7-13A7,7,0,0,0,14.5,3Zm0,9.5A2.5,2.5,0,1,1,17,10,2.5,2.5,0,0,1,14.5,12.5Z"
+            fill="#fff"
+            transform="translate(879.5 477)"
+          ></path>
+        </g>
+      </svg>
+
+      <div class="loc-detail">
+        <h6>Oakland Marriott City Center,</h6>
+
+        <p>1001 Broadway, Oakland, CA 94607</p>
+      </div>
+    </div>
+
+
+    <div
+      aria-multiselectable="true"
+      class="panel-group"
+      id="accordionResources"
+      role="tablist"
+    >
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesOne" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesOne"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesOne"
+              role="button"
+              ><span> From Oakland International Airport (OAK) - 9 Miles </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesOne"
+          class="panel-collapse collapse"
+          id="collapseResourcesOne"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              Take Interstate 880 North to Broadway exit, turn right. For
+              parking turn left onto 10th Street and right onto Clay Street.
+              Self-parking entrance is on 11th street.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesTwo" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesTwo"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesTwo"
+              role="button"
+              ><span>
+                From San Francisco International Airport (SFO) - 23 Miles
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesTwo"
+          class="panel-collapse collapse"
+          id="collapseResourcesTwo"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              Take I-101 North to San Francisco and continue to the Bay Bridge.
+              Head east on the Bay Bridge and stay in the center lane, following
+              signs for I-580 East. Follow all signs for downtown Oakland until
+              taking the 12th/11th St. exit. Turn left on 11th St. Self parking
+              is four blocks ahead on the right, and our entrance and valet
+              parking is available at the Oakland Marriott City Center.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div
+          class="panel-heading"
+          id="headingResourcesTwoVersionTwo"
+          role="tab"
+        >
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesTwoVersionTwo"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesTwoVersionTwo"
+              role="button"
+              ><span>
+                From Norman Y Mineta San Jose International Airport (SJC)
+                &mdash; 40 Miles
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesTwoVersionTwo"
+          class="panel-collapse collapse"
+          id="collapseResourcesTwoVersionTwo"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              Get on I-880 N from E Brokaw Rd, Follow I-880 N to 6th St in
+              Oakland. Take exit 41B from I-880 N, Take Broadway to 10th St.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesThree" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesThree"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesThree"
+              role="button"
+              ><span> From Berkeley, Sacramento &amp; Marin County </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesThree"
+          class="panel-collapse collapse"
+          id="collapseResourcesThree"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              Head west on I-80 to I-580 East. Continue heading east to I-980
+              and follow signs to downtown Oakland. Take the 11th/12th St. exit.
+              Continue one block and make a left at 11th St. Continue on 11th
+              St. four blocks to the self parking entrance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesFour" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesFour"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesFour"
+              role="button"
+              ><span> From The East Bay, Walnut Creek &amp; Concord </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesFour"
+          class="panel-collapse collapse"
+          id="collapseResourcesFour"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              Head west on Highway 24 through the Caldecott Tunnel three miles
+              to I-980. Follow the signs to downtown Oakland then take the
+              11th/12th St. exit. Continue one block and turn left at 11th St.
+              Continue on 11th St. four blocks to the self parking entrance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesNine" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesFour"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesNine"
+              role="button"
+              ><span>
+                BART Public Transportation To Oakland Marriott City Center
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesNine"
+          class="panel-collapse collapse"
+          id="collapseResourcesNine"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              The 12th Street BART station is just across the street from the
+              Oakland Marriott City Center, making public transportation a great
+              option when visiting.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesFour" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesFive"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesFive"
+              role="button"
+              ><span> BART From Oakland International Airport (OAK) </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesFive"
+          class="panel-collapse collapse"
+          id="collapseResourcesFive"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              Take the Oakland AirBART Shuttle ($3, exact change required) from
+              the airport, which leaves from the baggage claim doors every 10
+              minutes and goes to the Coliseum BART Station. From the Coliseum
+              station, take the Richmond BART train ($1.40) to the 12th Street
+              City Center Station.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesFour" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesSix"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesSix"
+              role="button"
+              ><span>
+                BART From San Francisco International Airport (SFO)
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesSix"
+          class="panel-collapse collapse"
+          id="collapseResourcesSix"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              The BART Station at San Francisco International Airport is located
+              on level three of the international terminal. The station has two
+              entrances, a walk-in entrance on level three and another which is
+              accessible from Air Train, the airport&#39;s unmanned shuttle
+              train that connects all airport terminals. From SFO BART Station
+              take the Pittsburg/Bay Point train ($5.40) to 12th Street City
+              Center Station.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesSeven" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesSeven"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesSeven"
+              role="button"
+              ><span> BART</span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesFour"
+          class="panel-collapse collapse"
+          id="collapseResourcesSeven"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              The Oakland International Airport has its own BART station called
+              the Coliseum Station. The AirBART shuttle service operates between
+              the airport terminals and Coliseum Station. You can take the
+              Orange Line North to the <strong>12th St / Oakland stop</strong>;
+              the closest stop to the Oakland Marriott City Center. San
+              Francisco International Airport has its own BART station. You can
+              take the Yellow Line North to the
+              <strong>12th St / Oakland stop</strong> &mdash; the closest stop
+              to the Oakland Marriott City Center.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading" id="headingResourcesFour" role="tab">
+          <div class="panel-title">
+            <a
+              aria-controls="collapseResourcesEight"
+              aria-expanded="false"
+              class="collapsed"
+              data-feathr-click-track="true"
+              data-feathr-link-aids='["6127cfab0dc20e810ab012ed"]'
+              data-parent="#accordionResources"
+              data-toggle="collapse"
+              href="#collapseResourcesEight"
+              role="button"
+              ><span> BART (Bay Area Rapid Transit) Schedules and Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          aria-expanded="false"
+          aria-labelledby="headingResourcesEight"
+          class="panel-collapse collapse"
+          id="collapseResourcesEight"
+          role="tabpanel"
+          style="height: 0px"
+        >
+          <div class="panel-body">
+            <p>
+              <strong style="display: block; margin-bottom: 15px"
+                >Other Modes of Transport</strong
+              >
+              In addition to BART, there are other modes of transportation you
+              can consider for traveling from Oakland to San Francisco. These
+              include ride-sharing services such as Uber or Lyft, taxis, and
+              private airport shuttles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div> -->
+</div>
