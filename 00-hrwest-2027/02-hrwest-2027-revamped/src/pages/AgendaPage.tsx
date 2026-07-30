@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Clock, MapPin, Bookmark, Check, ArrowRight, Award, User, Sparkles } from 'lucide-react';
+import { Calendar, Clock, MapPin, ArrowRight, Award, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import agendaHero from '../assets/agenda_hero.png';
@@ -186,11 +186,6 @@ const TRACKS = ['All', 'HR Strategy & AI', 'Legal & Compliance', 'HR Tech & Anal
 export const AgendaPage: React.FC = () => {
   const [activeDay, setActiveDay] = useState(1);
   const [selectedTrack, setSelectedTrack] = useState('All');
-  const [bookmarkedSessions, setBookmarkedSessions] = useState<string[]>([]);
-
-  const toggleBookmark = (id: string) => {
-    setBookmarkedSessions(prev => prev.includes(id) ? prev.filter(b => b !== id) : [...prev, id]);
-  };
 
   const filteredSessions = AGENDA_DATA.filter(s => s.day === activeDay && (selectedTrack === 'All' || s.track === selectedTrack));
 
@@ -539,7 +534,6 @@ export const AgendaPage: React.FC = () => {
               style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
             >
               {filteredSessions.map((session, idx) => {
-                const isBookmarked = bookmarkedSessions.includes(session.id);
                 const trackColor = TRACK_COLORS[session.track] || 'var(--color-text-muted)';
                 return (
                   <motion.div
