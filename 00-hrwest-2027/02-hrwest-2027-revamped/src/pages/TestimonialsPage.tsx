@@ -187,15 +187,9 @@ export const TestimonialsPage: React.FC = () => {
           }} />
         </div>
 
-        {/* 4. Content grid */}
-        <div className="container-wide" style={{
+        {/* Content Container */}
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
@@ -307,7 +301,7 @@ export const TestimonialsPage: React.FC = () => {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
                   <div style={{ display: 'flex', gap: '2px' }}>
                     {[...Array(5)].map((_, idx) => (
-                      <Star key={idx} size={11} fill="#ef146e" color="#ef146e" />
+                      <Star key={idx} size={11} fill="var(--color-accent-amber)" color="var(--color-accent-amber)" />
                     ))}
                   </div>
                   <span style={{ fontSize: '0.58rem', fontWeight: 800, textTransform: 'uppercase', color: '#ff6ba0', background: 'rgba(239,20,110,0.2)', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>
@@ -348,7 +342,7 @@ export const TestimonialsPage: React.FC = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem' }}>
             {ATTENDEE_TESTIMONIALS.map((item, idx) => (
               <motion.div
                 key={item.id}
@@ -371,13 +365,13 @@ export const TestimonialsPage: React.FC = () => {
                 }}
               >
                 {/* Decorative left accent line */}
-                <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: '4px', background: idx % 2 === 0 ? 'var(--gradient-brand)' : 'var(--color-brand-pink)' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: '4px', background: idx % 2 === 0 ? 'var(--gradient-brand)' : 'var(--color-brand-authority)' }} />
 
                 <div>
                   {/* Star Rating */}
                   <div style={{ display: 'flex', gap: '3px', marginBottom: '1.25rem' }}>
                     {[...Array(item.stars || 5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
+                      <Star key={i} size={15} fill="var(--color-accent-amber)" color="var(--color-accent-amber)" />
                     ))}
                   </div>
 
@@ -485,7 +479,7 @@ export const TestimonialsPage: React.FC = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem' }}>
             {SPONSOR_TESTIMONIALS.map((item, idx) => (
               <motion.div
                 key={item.id}

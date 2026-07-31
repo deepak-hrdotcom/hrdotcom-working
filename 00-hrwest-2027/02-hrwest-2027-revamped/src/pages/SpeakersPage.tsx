@@ -132,15 +132,9 @@ export const SpeakersPage: React.FC = () => {
           }} />
         </div>
 
-        {/* ── CONTENT LAYER ── */}
-        <div className="container-wide" style={{
+        {/* Content Container */}
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
@@ -171,7 +165,7 @@ export const SpeakersPage: React.FC = () => {
               borderRadius: 'var(--radius-full)',
               marginBottom: '1rem',
             }}>
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#ef146e', boxShadow: '0 0 10px #ef146e' }} />
+              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--color-brand-purple)', boxShadow: '0 0 10px var(--color-brand-purple)' }} />
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: '#ff6ba0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Call for Speakers Open • Deadline Oct 30, 2026
               </span>

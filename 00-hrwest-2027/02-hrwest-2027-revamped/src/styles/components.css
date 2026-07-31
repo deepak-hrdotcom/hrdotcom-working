@@ -24,9 +24,75 @@
 .section { padding: var(--space-4xl) 0; }
 .section-sm { padding: var(--space-3xl) 0; }
 
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-xl); }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl); }
 .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg); }
+
+/* === Universal Responsive Grid Utilities === */
+.hero-3col-grid {
+  display: grid;
+  grid-template-columns: 5fr 3fr 4fr;
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: start;
+  height: 100%;
+}
+
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.responsive-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.responsive-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.agenda-session-card-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Breakpoints for Responsive Grid Utilities */
+@media (max-width: 992px) {
+  .hero-3col-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    height: auto !important;
+  }
+  .responsive-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .responsive-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .agenda-session-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* === Marquee Infinite Scroll === */
 @keyframes marquee {
@@ -219,9 +285,9 @@
   border: 2px solid var(--color-brand-purple);
 }
 .btn-outline:hover {
-  background: var(--gradient-brand-soft);
-  border-color: var(--color-brand-pink);
-  color: var(--color-brand-pink);
+  background: var(--color-brand-authority-light);
+  border-color: var(--color-brand-authority);
+  color: var(--color-brand-authority);
   transform: translateY(-2px);
 }
 
@@ -301,6 +367,11 @@
   background-clip: text;
 }
 
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 /* =============================================
    RESPONSIVE DESIGN & MOBILE BREAKPOINTS
    ============================================= */
@@ -325,8 +396,14 @@
   .grid-2,
   .grid-3,
   .grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  .bento-grid-2,
+  .bento-grid-3 {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
   }
 
   /* Hero Splits */
@@ -336,11 +413,11 @@
   }
 
   .hero-content-col {
-    padding: 3rem 1.25rem 3rem 1.25rem !important;
+    padding: 2.5rem 1.25rem !important;
   }
 
   .hero-image-col {
-    min-height: 300px !important;
+    min-height: 250px !important;
   }
 
   .hero-image-clip {
@@ -366,10 +443,25 @@
   .section-sm {
     padding: var(--space-xl) 0 !important;
   }
+
+  /* Responsive Table Container */
+  .table-glass {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Small Mobile Devices (max-width: 640px) */
 @media (max-width: 640px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
   .hero-headline-lockup {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -377,7 +469,7 @@
   }
 
   .hero-headline-logo {
-    height: 64px !important;
+    height: 52px !important;
   }
 
   .top-announcement-strip {
@@ -419,4 +511,125 @@
     text-align: center;
     gap: 1rem !important;
   }
+
+  .bento-card {
+    padding: 1.25rem !important;
+  }
+
+  .stat-number {
+    font-size: 2.5rem !important;
+  }
 }
+
+/* =============================================
+   Elevation Utility Classes (Post-Hero Redesign)
+   ============================================= */
+
+/* --- Bento Grid Layout --- */
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.bento-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.bento-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.bento-card {
+  background: var(--color-elevated);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-subtle);
+  padding: 2rem;
+  transition: var(--transition-slow);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(145, 39, 140, 0.35);
+}
+
+/* --- Custom Range Slider --- */
+input[type='range'].slider-brand {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(
+    to right,
+    var(--color-brand-purple) 0%,
+    var(--color-brand-pink) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+input[type='range'].slider-brand::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(145, 39, 140, 0.45);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+input[type='range'].slider-brand::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 14px rgba(145, 39, 140, 0.55);
+}
+
+/* --- Glass Table --- */
+.table-glass {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  background: var(--color-elevated);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1.5px solid rgba(145, 39, 140, 0.2);
+  box-shadow: var(--shadow-lg);
+}
+.table-glass thead tr {
+  background: var(--gradient-brand);
+  color: #fff;
+}
+.table-glass th {
+  padding: 1.1rem 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-align: left;
+}
+.table-glass tbody tr {
+  border-bottom: 1px solid var(--color-subtle);
+  transition: background 0.15s ease;
+}
+.table-glass tbody tr:last-child { border-bottom: none; }
+.table-glass tbody tr:hover { background: var(--gradient-brand-soft); }
+.table-glass td {
+  padding: 1.1rem 1.5rem;
+  font-size: 0.94rem;
+}
+
+/* --- Tier Selector Card --- */
+.tier-card {
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: var(--color-elevated);
+  transition: var(--transition-spring);
+  box-shadow: var(--shadow-sm);
+}
+.tier-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.tier-card.active {
+  background: var(--gradient-brand);
+  color: #fff;
+  box-shadow: var(--shadow-brand);
+}
+

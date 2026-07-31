@@ -122,14 +122,8 @@ export const SponsorHallPage: React.FC = () => {
         </div>
 
         {/* Content Container */}
-        <div className="container-wide" style={{
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>

@@ -62,14 +62,8 @@ export const WhySponsorPage: React.FC = () => {
         </div>
 
         {/* Content grid */}
-        <div className="container-wide" style={{
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
@@ -239,7 +233,7 @@ export const WhySponsorPage: React.FC = () => {
         <div className="container-wide">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2.5rem',
             alignItems: 'center',
           }}>
@@ -307,7 +301,7 @@ export const WhySponsorPage: React.FC = () => {
               }}
             >
               <div>
-                <span className="eyebrow" style={{ marginBottom: '0.4rem', color: 'var(--color-brand-pink)' }}>Exhibitor Experience</span>
+                <span className="eyebrow" style={{ marginBottom: '0.4rem', color: 'var(--color-brand-authority)' }}>Exhibitor Experience</span>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.75rem, 2.8vw, 2.25rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)', marginBottom: '0.75rem' }}>
                   Action-Packed Exhibiting
                 </h2>

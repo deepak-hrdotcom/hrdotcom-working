@@ -59,15 +59,9 @@ export const VolunteerPage: React.FC = () => {
           }} />
         </div>
 
-        {/* Content grid */}
-        <div className="container-wide" style={{
+        {/* Content Container */}
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
@@ -213,7 +207,7 @@ export const VolunteerPage: React.FC = () => {
         <div className="container-wide">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2.5rem',
             alignItems: 'start',
           }}>
@@ -241,7 +235,7 @@ export const VolunteerPage: React.FC = () => {
                 {/* Block 2 */}
                 <div style={{ background: 'var(--color-elevated)', padding: '1.5rem 1.75rem', borderRadius: 'var(--radius-xl)', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-sm)' }}>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <HeartHandshake size={18} color="var(--color-brand-pink)" /> Why Volunteer With Us?
+                    <HeartHandshake size={18} color="var(--color-brand-purple)" /> Why Volunteer With Us?
                   </h3>
                   <p style={{ fontSize: '0.94rem', color: 'var(--color-text-secondary)', lineHeight: 1.7, margin: 0 }}>
                     This is a great option if the registration fee is over your budget, if your company won't support your attendance, or if you'd just like to play a key role in making the conference a success. It's also an incredible way to network and meet new HR friends.

@@ -7,12 +7,14 @@
 
 :root {
   /* === Core Brand Colors === */
-  --color-brand-purple:      hsl(302, 58%, 36%);   /* #91278c */
+  --color-brand-authority:    hsl(255, 60%, 28%);   /* #2d1b6b — Deep Indigo: stat numbers, headings, authority moments */
+  --color-brand-purple:      hsl(302, 58%, 36%);   /* #91278c — HR.com Brand Identity: nav, icons, logo accent */
   --color-brand-purple-dark: hsl(302, 58%, 24%);
-  --color-brand-pink:        hsl(335, 89%, 51%);   /* #ef146e */
+  --color-brand-pink:        hsl(335, 89%, 51%);   /* #ef146e — Urgency Accent ONLY: CTAs, deadlines, pricing */
   --color-brand-pink-dark:   hsl(335, 89%, 40%);
   --color-brand-purple-light: hsl(302, 58%, 95%);  /* Ultra-light purple tint */
   --color-brand-pink-light:  hsl(335, 89%, 95%);   /* Ultra-light pink tint */
+  --color-brand-authority-light: hsl(255, 60%, 96%); /* Ultra-light authority tint */
 
   /* === Gradient System === */
   --gradient-brand:       linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(335, 89%, 51%) 100%);
@@ -78,4 +80,16 @@
   --transition-base:   all 0.25s ease;
   --transition-slow:   all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* === Dark Surface Tokens (for glass cards on dark bg) === */
+  --color-surface-dark:       #0b0f17;
+  --color-surface-dark-accent:#160a22;
+  --glass-dark-bg:            rgba(255, 255, 255, 0.06);
+  --glass-dark-border:        rgba(255, 255, 255, 0.13);
+
+  /* === Dynamic Accent Colors === */
+  --color-accent-amber:  hsl(38, 96%, 54%);
+  --color-accent-emerald:hsl(160, 60%, 45%);
+  --color-accent-cyan:   hsl(196, 80%, 48%);
+  --color-accent-rose:   hsl(349, 89%, 60%);
 }

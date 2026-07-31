@@ -435,8 +435,6 @@ export const HomePage: React.FC = () => {
       <section className="hero-split-grid" style={{
         position: 'relative',
         minHeight: '92vh',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
         background: 'var(--color-canvas)',
       }}>
         {/* LEFT: Content column */}
@@ -474,7 +472,7 @@ export const HomePage: React.FC = () => {
               March 23–24, 2027
             </span>
             <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--color-brand-purple)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-              South San Francisco, CA · <Clock size={13} style={{ color: 'var(--color-brand-pink)' }} /> {countdown.days} Days Away
+              South San Francisco, CA · <Clock size={13} style={{ color: 'var(--color-brand-purple)' }} /> {countdown.days} Days Away
             </span>
           </motion.div>
 
@@ -708,7 +706,7 @@ export const HomePage: React.FC = () => {
             <div>
               <div style={{ display: 'flex', gap: '4px', marginBottom: '0.35rem' }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="#ef146e" color="#ef146e" />
+                  <Star key={i} size={14} fill="var(--color-accent-amber)" color="var(--color-accent-amber)" />
                 ))}
               </div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.6rem', color: 'var(--color-text-primary)', lineHeight: 1 }}>1,000+</div>
@@ -884,7 +882,7 @@ export const HomePage: React.FC = () => {
           {/* ROW 1: 3-Column Spotlight Grid (Jason Averbook | Editorial Callout | Allison West) */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2rem',
             alignItems: 'stretch',
             marginBottom: '3rem',
@@ -921,7 +919,7 @@ export const HomePage: React.FC = () => {
                 </span>
 
                 {/* Social proof stats grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.75rem' }}>
+                <div className="responsive-grid-2" style={{ gap: '1rem', marginBottom: '1.75rem' }}>
                   {[
                     { value: '92%', label: 'Satisfaction rate', sub: 'post-event survey' },
                     { value: '8 in 10', label: 'Attendees return', sub: 'year after year' },
@@ -1240,7 +1238,7 @@ export const HomePage: React.FC = () => {
 
           <motion.div
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3.5rem', alignItems: 'start' }}
+            className="responsive-grid-2" style={{ gap: '2.5rem', alignItems: 'start' }}
           >
             {/* Left: ROI bars + checklist + CTAs */}
             <div>
@@ -1373,7 +1371,7 @@ export const HomePage: React.FC = () => {
           </motion.div>
 
           {/* 2 High-Impact Spotlight Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
             {/* Card 1: Attendee Spotlight */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1404,7 +1402,7 @@ export const HomePage: React.FC = () => {
                   </span>
                   <div style={{ display: 'flex', gap: '3px' }}>
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
+                      <Star key={i} size={15} fill="var(--color-accent-amber)" color="var(--color-accent-amber)" />
                     ))}
                   </div>
                 </div>
@@ -1468,12 +1466,12 @@ export const HomePage: React.FC = () => {
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  <span className="badge" style={{ background: 'rgba(239,20,110,0.12)', color: 'var(--color-brand-pink)', border: '1px solid rgba(239,20,110,0.25)', padding: '0.35rem 0.85rem' }}>
+                  <span className="badge" style={{ background: 'rgba(45,27,107,0.08)', color: 'var(--color-brand-authority)', border: '1px solid rgba(45,27,107,0.2)', padding: '0.35rem 0.85rem' }}>
                     <Sparkles size={12} /> Sponsor Success Story
                   </span>
                   <div style={{ display: 'flex', gap: '3px' }}>
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#ef146e" color="#ef146e" />
+                      <Star key={i} size={15} fill="var(--color-accent-amber)" color="var(--color-accent-amber)" />
                     ))}
                   </div>
                 </div>
@@ -1494,10 +1492,10 @@ export const HomePage: React.FC = () => {
               <div style={{ borderTop: '1px solid rgba(145,39,140,0.15)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
                 <div style={{
                   width: '44px', height: '44px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--color-brand-pink), var(--color-brand-purple))', color: '#fff',
+                  background: 'linear-gradient(135deg, var(--color-brand-authority), var(--color-brand-purple))', color: '#fff',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
-                  boxShadow: '0 4px 12px rgba(239,20,110,0.25)',
+                  boxShadow: '0 4px 12px rgba(45,27,107,0.3)',
                 }}>
                   G
                 </div>
@@ -1546,7 +1544,7 @@ export const HomePage: React.FC = () => {
         }} />
 
         <div className="container-wide">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4.5rem', alignItems: 'center' }}>
+          <div className="responsive-grid-2" style={{ gap: '2.5rem', alignItems: 'center' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -1602,19 +1600,18 @@ export const HomePage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.65 }}
-            style={{
-              background: 'var(--gradient-brand-soft)',
-              borderRadius: 'var(--radius-xl)',
-              padding: '3.5rem 3.5rem',
-              border: '1.5px solid rgba(145,39,140,0.2)',
-              boxShadow: 'var(--shadow-xl)',
-              position: 'relative',
-              overflow: 'hidden',
-              display: 'grid',
-              gridTemplateColumns: '1.15fr 0.85fr',
-              gap: '3.5rem',
-              alignItems: 'center',
-            }}
+              className="responsive-grid-2"
+              style={{
+                background: 'var(--gradient-brand-soft)',
+                borderRadius: 'var(--radius-xl)',
+                padding: '3rem 2rem',
+                border: '1.5px solid rgba(145,39,140,0.2)',
+                boxShadow: 'var(--shadow-xl)',
+                position: 'relative',
+                overflow: 'hidden',
+                gap: '2.5rem',
+                alignItems: 'center',
+              }}
           >
             {/* Glow blobs */}
             <div style={{ position: 'absolute', top: '-30%', left: '10%', width: '40%', height: '80%', background: 'radial-gradient(circle, rgba(145,39,140,0.12) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />

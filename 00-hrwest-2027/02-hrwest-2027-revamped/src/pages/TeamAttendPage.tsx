@@ -83,15 +83,9 @@ export const TeamAttendPage: React.FC = () => {
           }} />
         </div>
 
-        {/* 4. Content grid */}
-        <div className="container-wide" style={{
+        {/* Content Container */}
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
@@ -232,38 +226,39 @@ export const TeamAttendPage: React.FC = () => {
         }} />
       </section>
 
-      {/* ── Discount Tiers Row ── */}
-      <section style={{ background: 'var(--color-canvas)', padding: '3rem 0 1rem' }}>
+      {/* ── INTERACTIVE DISCOUNT TIER SELECTOR ── */}
+      <section style={{ background: 'var(--color-canvas)', padding: '3rem 0 1.5rem' }}>
         <div className="container-wide">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
+              <Users size={13} /> Group Discount Tiers
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.8vw, 2.25rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)', margin: 0 }}>Select Your Team Size to Unlock Savings</h2>
+            <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>Click a tier below to instantly calculate your group discount.</p>
+          </div>
+          <div className="responsive-grid-4">
             {discountTiers.map((tier, idx) => {
               const isActive = (
-                (tier.range === '1–2' && teamSize <= 2) ||
-                (tier.range === '3–5' && teamSize >= 3 && teamSize <= 5) ||
-                (tier.range === '6–9' && teamSize >= 6 && teamSize <= 9) ||
+                (tier.range === '1-2' && teamSize <= 2) ||
+                (tier.range === '3-5' && teamSize >= 3 && teamSize <= 5) ||
+                (tier.range === '6-9' && teamSize >= 6 && teamSize <= 9) ||
                 (tier.range === '10+' && teamSize >= 10)
               );
+              const targetSize = idx === 0 ? 1 : idx === 1 ? 3 : idx === 2 ? 6 : 10;
               return (
                 <motion.div
                   key={tier.range}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  style={{
-                    background: isActive ? 'var(--gradient-brand)' : 'var(--color-elevated)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: '1.5rem',
-                    textAlign: 'center',
-                    border: isActive ? 'none' : '1px solid var(--color-subtle)',
-                    boxShadow: isActive ? 'var(--shadow-brand)' : 'var(--shadow-sm)',
-                    color: isActive ? '#fff' : 'var(--color-text-primary)',
-                    transition: 'var(--transition-base)',
-                  }}
+                  initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: idx * 0.07 }}
+                  onClick={() => setTeamSize(targetSize)}
+                  style={{ background: isActive ? 'var(--gradient-brand)' : 'var(--color-elevated)', borderRadius: 'var(--radius-lg)', padding: '1.75rem 1.25rem', textAlign: 'center', border: isActive ? '2px solid transparent' : '1.5px solid var(--color-subtle)', boxShadow: isActive ? 'var(--shadow-brand)' : 'var(--shadow-sm)', color: isActive ? '#fff' : 'var(--color-text-primary)', transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)', cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
+                  onMouseEnter={e => { if (!isActive) { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; } }}
+                  onMouseLeave={e => { if (!isActive) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; } }}
                 >
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.75rem' }}>{tier.discount}</div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.88rem', opacity: 0.85 }}>{tier.range} attendees</div>
-                  <div style={{ fontSize: '0.75rem', opacity: 0.7, marginTop: '0.25rem' }}>{tier.label}</div>
+                  {isActive && <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '80px', height: '80px', background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)', pointerEvents: 'none' }} />}
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2.25rem', lineHeight: 1, marginBottom: '0.35rem' }}>{tier.discount}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem', opacity: 0.9, marginBottom: '0.2rem' }}>{tier.range} attendees</div>
+                  <div style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 600 }}>{tier.label}</div>
+                  {isActive && <div style={{ marginTop: '0.75rem', fontSize: '0.7rem', fontWeight: 800, background: 'rgba(255,255,255,0.2)', borderRadius: 'var(--radius-full)', padding: '0.2rem 0.6rem', display: 'inline-block' }}>ACTIVE</div>}
                 </motion.div>
               );
             })}
@@ -271,125 +266,118 @@ export const TeamAttendPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Official Group Pricing Breakdown Table ── */}
+      {/* ── GLASS GROUP PRICING TABLE ── */}
       <section style={{ background: 'var(--color-surface)', padding: '3rem 0', borderTop: '1px solid var(--color-subtle)', borderBottom: '1px solid var(--color-subtle)' }}>
         <div className="container-wide">
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
-              <Users size={14} /> Official Group Rates
-            </span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.5vw, 2.25rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>
-              Group Pricing Schedule
-            </h2>
-            <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>
-              All prices shown are per-person rates based on registration timeframe.
-            </p>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}><Users size={14} /> Official Group Rates</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.5vw, 2.25rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>Group Pricing Schedule</h2>
+            <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>All prices are per-person rates based on team size and registration timeframe.</p>
           </div>
-
-          <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.18)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+          <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.18)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
               <thead>
                 <tr style={{ background: 'var(--gradient-brand)', color: '#fff' }}>
-                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Tier / Rate</th>
-                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Timeframe</th>
-                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Individual</th>
-                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Group (5–9)</th>
-                  <th style={{ padding: '1.1rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.9rem' }}>Group (10+)</th>
+                  <th style={{ padding: '1.15rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.92rem' }}>Tier / Rate</th>
+                  <th style={{ padding: '1.15rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.92rem' }}>Timeframe</th>
+                  <th style={{ padding: '1.15rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.92rem', textAlign: 'center' }}>Individual</th>
+                  <th style={{ padding: '1.15rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.92rem', textAlign: 'center' }}>Group (5-9)</th>
+                  <th style={{ padding: '1.15rem 1.5rem', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.92rem', textAlign: 'center' }}>Group (10+)</th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: '1px solid var(--color-subtle)' }}>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700, color: 'var(--color-brand-purple)' }}>Early-Bird Rate</td>
-                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>Ends Jan 15, 2027</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 600 }}>$399 / person</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 800, color: 'var(--color-brand-purple)' }}>$299 / person</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 900, color: 'var(--color-brand-pink)' }}>$229 / person</td>
+                <tr style={{ borderBottom: '1px solid var(--color-subtle)', background: 'var(--gradient-brand-soft)' }}>
+                  <td style={{ padding: '1.15rem 1.5rem' }}><strong style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--color-brand-purple)', fontSize: '0.98rem' }}>Early-Bird Rate</strong></td>
+                  <td style={{ padding: '1.15rem 1.5rem', color: 'var(--color-brand-pink)', fontSize: '0.88rem', fontWeight: 700 }}>Ends Jan 15, 2027</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 700, fontFamily: 'var(--font-display)' }}>$399 / person</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 900, fontFamily: 'var(--font-display)', color: 'var(--color-brand-purple)', fontSize: '1.05rem' }}>$299 / person</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 900, fontFamily: 'var(--font-display)', color: 'var(--color-brand-pink)', fontSize: '1.05rem' }}>$229 / person</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--color-subtle)' }}>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>Regular Rate</td>
-                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>Jan 16 – Mar 22, 2027</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 600 }}>$799 / person</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700 }}>$699 / person</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 800, color: 'var(--color-brand-purple)' }}>$579 / person</td>
+                  <td style={{ padding: '1.15rem 1.5rem' }}><strong style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--color-text-primary)', fontSize: '0.95rem' }}>Regular Rate</strong></td>
+                  <td style={{ padding: '1.15rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>Jan 16 - Mar 22, 2027</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 600, fontFamily: 'var(--font-display)' }}>$799 / person</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 700, fontFamily: 'var(--font-display)' }}>$699 / person</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'var(--color-brand-purple)' }}>$579 / person</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 700, color: 'var(--color-text-muted)' }}>On-Site Rate</td>
-                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>March 23–24, 2027</td>
-                  <td style={{ padding: '1.1rem 1.5rem', fontWeight: 600 }}>$999 / person</td>
-                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)' }}>N/A</td>
-                  <td style={{ padding: '1.1rem 1.5rem', color: 'var(--color-text-muted)' }}>N/A</td>
+                  <td style={{ padding: '1.15rem 1.5rem' }}><strong style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>On-Site Rate</strong></td>
+                  <td style={{ padding: '1.15rem 1.5rem', color: 'var(--color-text-muted)', fontSize: '0.88rem' }}>March 23-24, 2027</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', fontWeight: 600, fontFamily: 'var(--font-display)' }}>$999 / person</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', color: 'var(--color-text-muted)' }}>N/A</td>
+                  <td style={{ padding: '1.15rem 1.5rem', textAlign: 'center', color: 'var(--color-text-muted)' }}>N/A</td>
                 </tr>
               </tbody>
             </table>
           </div>
-
-          {/* Exclusive 10+ Perks Box */}
-          <div style={{ marginTop: '2rem', padding: '1.5rem 2rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+          {/* VIP Perk Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
+            style={{ marginTop: '2rem', padding: '1.5rem 2rem', background: 'linear-gradient(135deg, rgba(145,39,140,0.08) 0%, rgba(239,20,110,0.08) 100%)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', backdropFilter: 'blur(8px)' }}
+          >
             <div>
-              <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-brand-purple)', margin: '0 0 0.3rem 0' }}>
-                🌟 Exclusive Perk for Teams of 10+
-              </h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#fff', background: 'var(--gradient-brand)', padding: '0.15rem 0.6rem', borderRadius: 'var(--radius-full)' }}>VIP EXCLUSIVE</span>
+                <span style={{ fontSize: '1rem' }}>🌟</span>
+              </div>
+              <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-brand-purple)', margin: '0 0 0.3rem 0' }}>Exclusive Perk for Teams of 10+</h4>
               <p style={{ fontSize: '0.88rem', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5 }}>
-                Teams of 10 or more receive <strong>accelerated VIP on-site check-in</strong> and a <strong>facilitated private team roundtable session</strong> on the topic of your choice!
+                Teams of 10+ receive <strong>accelerated VIP on-site check-in</strong> and a <strong>facilitated private team roundtable session</strong> on the topic of your choice.
               </p>
             </div>
-            <a href="mailto:hrwest@hr.com" className="btn btn-primary btn-sm" style={{ flexShrink: 0 }}>
-              Claim 10+ Team Offer
-            </a>
-          </div>
+            <a href="mailto:hrwest@hr.com" className="btn btn-primary btn-sm" style={{ flexShrink: 0 }}>Claim 10+ Team Offer</a>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── Calculator + Benefits ── */}
-      <section id="calculator" style={{ background: 'var(--color-canvas)', padding: '2rem 0 5rem' }}>
+      {/* ── CALCULATOR + BENEFITS ── */}
+      <section id="calculator" style={{ background: 'var(--color-canvas)', padding: '4rem 0 5rem' }}>
         <div className="container-wide">
-          <div className="grid-2" style={{ alignItems: 'start' }}>
+          <div className="grid-2" style={{ alignItems: 'start', gap: '2.5rem' }}>
 
-            {/* Calculator */}
+            {/* Interactive ROI Calculator */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.5rem', border: '1px solid var(--color-subtle)', boxShadow: 'var(--shadow-md)' }}
+              style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.5rem', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-lg)' }}
             >
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.3rem', color: 'var(--color-text-primary)', marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Calculator size={22} style={{ color: 'var(--color-brand-purple)' }} /> Group Discount Calculator
               </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginBottom: '2rem' }}>Drag the slider or click a tier above to see real-time savings.</p>
 
-              {/* Slider */}
               <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.85rem' }}>
                   <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.95rem', color: 'var(--color-text-primary)' }}>Team Size</span>
-                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                    {teamSize} Attendees
-                  </span>
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.3rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{teamSize} Attendees</span>
                 </div>
                 <input
                   type="range" min="1" max="20" value={teamSize}
                   onChange={e => setTeamSize(parseInt(e.target.value))}
-                  style={{ width: '100%', height: '8px', accentColor: 'var(--color-brand-purple)', cursor: 'pointer' }}
+                  className="slider-brand"
+                  style={{ width: '100%' }}
                 />
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.4rem' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>1</span>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>20+</span>
+                </div>
               </div>
 
-              {/* Results */}
-              <div style={{
-                background: 'var(--gradient-brand)',
-                borderRadius: 'var(--radius-lg)',
-                padding: '1.75rem',
-                color: '#fff',
-              }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                  {[
-                    { label: 'Applied Discount', value: `${Math.round(discountRate * 100)}% Off` },
-                    { label: 'Per-Ticket Rate', value: `$${discountedPricePerTicket}` },
-                  ].map(row => (
-                    <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.95rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(255,255,255,0.2)' }}>
-                      <span style={{ color: 'rgba(255,255,255,0.8)' }}>{row.label}</span>
-                      <strong>{row.value}</strong>
-                    </div>
-                  ))}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.35rem', fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-                    <span>Total Savings</span>
-                    <span>${totalSavings.toLocaleString()}</span>
-                  </div>
+              {/* Results dual-pane */}
+              <div className="responsive-grid-2" style={{ gap: '1rem', marginBottom: '1.75rem' }}>
+                <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.25rem', border: '1px solid rgba(145,39,140,0.15)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '0.74rem', fontFamily: 'var(--font-display)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-brand-purple)', marginBottom: '0.4rem' }}>Group Discount</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{Math.round(discountRate * 100)}% Off</div>
+                </div>
+                <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.25rem', border: '1px solid rgba(145,39,140,0.15)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '0.74rem', fontFamily: 'var(--font-display)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-brand-purple)', marginBottom: '0.4rem' }}>Per-Ticket Rate</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>${discountedPricePerTicket}</div>
+                </div>
+              </div>
+
+              <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', border: '1.5px solid rgba(145,39,140,0.22)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                  <span style={{ fontSize: '0.92rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', fontWeight: 800 }}>Total Team Savings</span>
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>${totalSavings.toLocaleString()}</span>
                 </div>
               </div>
 
@@ -398,33 +386,30 @@ export const TeamAttendPage: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Benefits */}
+            {/* Why Attend Together */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', letterSpacing: '-0.03em', marginBottom: '1.5rem', color: 'var(--color-text-primary)' }}>
-                Why Leading HR Teams Attend Together
-              </h2>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', letterSpacing: '-0.03em', marginBottom: '1.5rem', color: 'var(--color-text-primary)' }}>Why Leading HR Teams Attend Together</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {[
-                  { icon: Sparkles, title: 'Divide & Conquer All 6 Tracks', desc: 'Send team members to different concurrent breakouts (AI, Legal, Benefits, Analytics) and debrief together to cover 100% of session content.' },
-                  { icon: CheckCircle, title: 'Team SHRM/HRCI Recertification', desc: 'Fulfill annual recertification credit requirements for your entire HR department in one 2-day conference.' },
-                  { icon: TrendingUp, title: 'Post-Conference Debrief Workshop', desc: 'Groups of 5+ receive a complimentary post-event strategy debrief template to present key takeaways to your executive team.' },
-                ].map(({ icon: Icon, title, desc }) => (
-                  <div key={title} style={{
-                    background: 'var(--color-elevated)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: '1.5rem',
-                    border: '1px solid var(--color-subtle)',
-                    boxShadow: 'var(--shadow-sm)',
-                    display: 'flex', gap: '1rem', alignItems: 'flex-start',
-                  }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: 'var(--radius-md)', background: 'var(--gradient-brand-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(145,39,140,0.15)' }}>
-                      <Icon size={20} style={{ color: 'var(--color-brand-purple)' }} />
+                  { icon: Sparkles, title: 'Divide & Conquer All 6 Tracks', desc: 'Send team members to different concurrent breakouts (AI, Legal, Benefits, Analytics) and debrief together to cover 100% of session content.', color: 'var(--color-brand-purple)' },
+                  { icon: CheckCircle, title: 'Team SHRM/HRCI Recertification', desc: 'Fulfill annual recertification credit requirements for your entire HR department in one 2-day conference.', color: 'var(--color-brand-authority)' },
+                  { icon: TrendingUp, title: 'Post-Conference Debrief Workshop', desc: 'Groups of 5+ receive a complimentary post-event strategy debrief template to present key takeaways to your executive team.', color: '#7c3aed' },
+                ].map(({ icon: Icon, title, desc, color }, i) => (
+                  <motion.div
+                    key={title}
+                    initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}
+                    style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-sm)', display: 'flex', gap: '1rem', alignItems: 'flex-start', transition: 'all 0.25s ease' }}
+                    onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.borderColor = `${color}40`; }}
+                    onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; e.currentTarget.style.transform = 'translateX(0)'; e.currentTarget.style.borderColor = 'var(--color-subtle)'; }}
+                  >
+                    <div style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-md)', background: `linear-gradient(135deg, ${color}18, ${color}30)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: `1.5px solid ${color}30` }}>
+                      <Icon size={22} style={{ color }} />
                     </div>
                     <div>
                       <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-text-primary)', marginBottom: '0.3rem' }}>{title}</div>
-                      <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>{desc}</p>
+                      <p style={{ fontSize: '0.87rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>{desc}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -434,3 +419,5 @@ export const TeamAttendPage: React.FC = () => {
     </div>
   );
 };
+
+export default TeamAttendPage;

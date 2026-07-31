@@ -58,15 +58,9 @@ export const LocationPage: React.FC = () => {
           }} />
         </div>
 
-        {/* 4. Content grid */}
-        <div className="container-wide" style={{
+        {/* Content Container */}
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
@@ -230,7 +224,7 @@ export const LocationPage: React.FC = () => {
               boxShadow: 'var(--shadow-lg)',
               overflow: 'hidden',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '0',
             }}
           >
@@ -433,7 +427,7 @@ export const LocationPage: React.FC = () => {
           {/* Parking & Transit Information Box */}
           <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem', border: '1px solid var(--color-subtle)' }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--color-text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Car size={20} style={{ color: 'var(--color-brand-pink)' }} /> Parking & Shuttles Information
+              <Car size={20} style={{ color: 'var(--color-brand-purple)' }} /> Parking & Shuttles Information
             </h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '1rem' }}>
               <strong>Complimentary Parking:</strong> Free shared parking is available across the South San Francisco Conference Center, Park Pointe Hotel, and DoubleTree Hotel lots, plus an off-site lot located between Travelodge and Best Western Plus Grosvenor Hotel. No permit or validation required.

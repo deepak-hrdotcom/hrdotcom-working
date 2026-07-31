@@ -15,7 +15,7 @@ export const ConvinceBossPage: React.FC = () => {
 
 Hi ${bossName},
 
-I would like to request approval to attend HRWest 2027, taking place March 23–24, 2027 at the South San Francisco Conference Center.
+I would like to request approval to attend HRWest 2027, taking place March 23-24, 2027 at the South San Francisco Conference Center.
 
 Attending this 2-day conference will directly benefit ${companyName} by allowing me to gain actionable insights in ${selectedTrack}, legal compliance updates, and AI implementation strategies.
 
@@ -42,15 +42,15 @@ ${attendeeName}`;
   return (
     <div style={{ width: '100%', overflowX: 'hidden' }}>
 
-      {/* ══════════ CINEMATIC HERO ══════════ */}
+      {/* CINEMATIC HERO */}
       <section style={{
         position: 'relative',
-        height: '480px',
+        minHeight: '480px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
       }}>
-        {/* 1. Full-bleed background image */}
+        {/* Full-bleed background image */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `url(${convinceBossHero})`,
@@ -58,7 +58,7 @@ ${attendeeName}`;
           backgroundPosition: '55% center',
         }} />
 
-        {/* 2. Multi-layer gradient overlay */}
+        {/* Multi-layer gradient overlay */}
         <div style={{
           position: 'absolute', inset: 0,
           background: `
@@ -77,7 +77,7 @@ ${attendeeName}`;
           `,
         }} />
 
-        {/* 3. Ambient glow orbs */}
+        {/* Ambient glow orbs */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
@@ -93,19 +93,12 @@ ${attendeeName}`;
           }} />
         </div>
 
-        {/* 4. Content grid */}
-        <div className="container-wide" style={{
+        {/* Content Container */}
+        <div className="container-wide hero-3col-grid" style={{
           position: 'relative', zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: '5fr 3fr 4fr',
-          gap: '0',
-          alignItems: 'center',
-          justifyItems: 'start',
-          height: '100%',
           paddingTop: '3rem',
           paddingBottom: '3rem',
         }}>
-
           {/* LEFT: Text content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -117,17 +110,16 @@ ${attendeeName}`;
               flexDirection: 'column',
               alignItems: 'flex-start',
               maxWidth: '520px',
-              paddingRight: '2rem',
+              paddingRight: '1rem',
             }}
           >
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 900,
-              fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
+              fontSize: 'clamp(2.2rem, 3.8vw, 3.5rem)',
               letterSpacing: '-0.04em', lineHeight: 1.05,
               color: '#fff',
               marginBottom: '1.1rem',
               textAlign: 'left',
-              textWrap: 'initial' as const,
             }}>
               Get Your Boss to<br />
               <span style={{
@@ -184,7 +176,7 @@ ${attendeeName}`;
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             style={{
               position: 'relative', height: '360px', display: 'flex',
-              flexDirection: 'column', justifyContent: 'center'
+              flexDirection: 'column', justifyContent: 'center', width: '100%'
             }}
           >
             {[
@@ -202,6 +194,7 @@ ${attendeeName}`;
                   top: `${i * 105 + 10}px`,
                   left: offset,
                   width: '260px',
+                  maxWidth: 'calc(100% - 16px)',
                   background: 'rgba(255,255,255,0.09)',
                   backdropFilter: 'blur(24px)',
                   border: '1px solid rgba(255,255,255,0.18)',
@@ -250,198 +243,115 @@ ${attendeeName}`;
         }} />
       </section>
 
-      {/* ── 5 Key Reasons / Business Case Pillars ── */}
+      {/* 5 KEY REASONS BENTO GRID */}
       <section style={{ background: 'var(--color-surface)', padding: '4rem 0', borderBottom: '1px solid var(--color-subtle)' }}>
         <div className="container-wide">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
-              <CheckCircle size={14} /> Business Case Framework
-            </span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>
-              5 Reasons Your Organization Benefits
-            </h2>
-            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', maxWidth: '650px', margin: '0.5rem auto 0' }}>
-              Use these 5 core arguments when discussing your HRWest attendance with leadership:
-            </p>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}><CheckCircle size={14} /> Business Case Framework</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>5 Reasons Your Organization Benefits</h2>
+            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', maxWidth: '600px', margin: '0.5rem auto 0' }}>Use these core arguments when discussing your HRWest attendance with leadership.</p>
           </div>
 
-          {/* Row 1: First 3 Cards */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '1.5rem',
-          }}>
+          {/* Row 1: 3-column bento */}
+          <div className="responsive-grid-3" style={{ marginBottom: '1.5rem' }}>
             {[
-              { num: '1', title: 'Boosting Knowledge & Skills', desc: 'Perform your job with great confidence thanks to being up to date on rising HR challenges, innovative strategies, and HR tech best practices.' },
-              { num: '2', title: 'Compliance. Compliance. Compliance.', desc: "Renowned employment law and compliance sessions help prevent your organization from getting into costly legal hot water." },
-              { num: '3', title: 'Exchange Ideas with HR Leaders', desc: 'Small-group roundtables on major HR issues let you collaborate with peers and benchmark what strategies are working for top Bay Area employers.' },
+              { num: '01', title: 'Boosting Knowledge & Skills', desc: 'Perform your job with great confidence thanks to being up to date on rising HR challenges, innovative strategies, and HR tech best practices.', accent: 'var(--color-brand-purple)' },
+              { num: '02', title: 'Compliance. Compliance. Compliance.', desc: 'Renowned employment law and compliance sessions help prevent your organization from getting into costly legal hot water.', accent: '#d97706' },
+              { num: '03', title: 'Exchange Ideas with HR Leaders', desc: 'Small-group roundtables on major HR issues let you collaborate with peers and benchmark what strategies are working for top Bay Area employers.', accent: '#0284c7' },
             ].map((p, idx) => (
               <motion.div
                 key={p.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                style={{
-                  background: 'var(--color-elevated)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: '1.75rem',
-                  border: '1.5px solid rgba(145,39,140,0.15)',
-                  boxShadow: 'var(--shadow-sm)',
-                  display: 'flex',
-                  gap: '1.25rem',
-                  alignItems: 'flex-start',
-                  height: '100%',
-                }}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: idx * 0.08 }}
+                style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-sm)', borderTop: `4px solid ${p.accent}`, position: 'relative', overflow: 'hidden', transition: 'all 0.25s ease' }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
               >
-                <div style={{
-                  width: '42px', height: '42px', borderRadius: '50%',
-                  background: 'var(--gradient-brand)', color: '#fff',
-                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexShrink: 0, boxShadow: '0 4px 14px rgba(145,39,140,0.3)'
-                }}>
-                  {p.num}
-                </div>
-                <div>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.4rem', lineHeight: 1.3 }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
-                    {p.desc}
-                  </p>
-                </div>
+                <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100px', background: `radial-gradient(circle, ${p.accent}12 0%, transparent 70%)`, pointerEvents: 'none' }} />
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '3rem', color: `${p.accent}22`, letterSpacing: '-0.04em', lineHeight: 1, marginBottom: '0.75rem' }}>{p.num}</div>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', lineHeight: 1.3 }}>{p.title}</h3>
+                <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.65, margin: 0 }}>{p.desc}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Row 2: Remaining 2 Cards Centered */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
-            maxWidth: '840px',
-            margin: '0 auto',
-          }}>
+          {/* Row 2: 2-column centered bento */}
+          <div className="responsive-grid-2" style={{ maxWidth: '860px', margin: '0 auto 2.5rem' }}>
             {[
-              { num: '4', title: 'Incredible ROI & Event Value', desc: 'Registration fees are a fraction of similar national conferences, plus early bird and group savings lower costs significantly.' },
-              { num: '5', title: 'Actionable Knowledge Sharing', desc: 'Commit to briefing your team post-event with session slides, key insights, and actionable recommendations tied directly to company OKRs.' },
+              { num: '04', title: 'Incredible ROI & Event Value', desc: 'Registration fees are a fraction of similar national conferences, plus early bird and group savings lower costs significantly.', accent: '#059669' },
+              { num: '05', title: 'Actionable Knowledge Sharing', desc: 'Commit to briefing your team post-event with session slides, key insights, and actionable recommendations tied directly to company OKRs.', accent: '#7c3aed' },
             ].map((p, idx) => (
               <motion.div
                 key={p.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (idx + 3) * 0.08 }}
-                style={{
-                  background: 'var(--color-elevated)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: '1.75rem',
-                  border: '1.5px solid rgba(145,39,140,0.15)',
-                  boxShadow: 'var(--shadow-sm)',
-                  display: 'flex',
-                  gap: '1.25rem',
-                  alignItems: 'flex-start',
-                  height: '100%',
-                }}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: (idx + 3) * 0.08 }}
+                style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-sm)', borderTop: `4px solid ${p.accent}`, position: 'relative', overflow: 'hidden', transition: 'all 0.25s ease' }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
               >
-                <div style={{
-                  width: '42px', height: '42px', borderRadius: '50%',
-                  background: 'var(--gradient-brand)', color: '#fff',
-                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexShrink: 0, boxShadow: '0 4px 14px rgba(145,39,140,0.3)'
-                }}>
-                  {p.num}
-                </div>
-                <div>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.4rem', lineHeight: 1.3 }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
-                    {p.desc}
-                  </p>
-                </div>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '3rem', color: `${p.accent}22`, letterSpacing: '-0.04em', lineHeight: 1, marginBottom: '0.75rem' }}>{p.num}</div>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', lineHeight: 1.3 }}>{p.title}</h3>
+                <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.65, margin: 0 }}>{p.desc}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Official Google Docs Template Link Box */}
-          <div style={{
-            marginTop: '2.5rem',
-            background: 'var(--gradient-brand-soft)',
-            borderRadius: 'var(--radius-xl)',
-            padding: '1.5rem 2rem',
-            border: '1.5px solid rgba(145,39,140,0.25)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '1rem'
-          }}>
-            <div>
-              <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-brand-purple)', margin: '0 0 0.3rem 0' }}>
-                📄 Download Official Sample Request Letter
-              </h4>
-              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-primary)', margin: 0 }}>
-                Prefer a pre-formatted document? Download or copy the official HRWest Justification Letter template on Google Docs.
-              </p>
+          {/* Google Docs Template Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', padding: '2rem 2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem', border: '1.5px solid rgba(145,39,140,0.25)', position: 'relative', overflow: 'hidden' }}
+          >
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                <span style={{ fontSize: '1.3rem' }}>📄</span>
+                <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: 'var(--color-brand-purple)', margin: 0 }}>Download Official Sample Request Letter</h4>
+              </div>
+              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-secondary)', margin: 0, fontWeight: 500 }}>Prefer a pre-formatted document? Download or copy the official HRWest Justification Letter template on Google Docs.</p>
             </div>
-            <a
-              href="https://docs.google.com/document/d/1Lr9ehy0qBExMf0c5nIu6lGazQp9YxVFx7rRNtN8hGLY/edit"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
-            >
+            <a href="https://docs.google.com/document/d/1Lr9ehy0qBExMf0c5nIu6lGazQp9YxVFx7rRNtN8hGLY/edit" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
               Open Google Docs Template <FileText size={16} />
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── Generator ── */}
+      {/* EMAIL GENERATOR SECTION */}
       <section id="toolkit" style={{ background: 'var(--color-canvas)', padding: '4rem 0 5rem' }}>
         <div className="container-wide">
-          <div className="grid-2" style={{ alignItems: 'start' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}><FileText size={14} /> AI-Powered Tool</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.8vw, 2.25rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)', margin: 0 }}>Generate Your Boss Justification Email</h2>
+            <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>Personalize and copy your custom approval request in 30 seconds.</p>
+          </div>
+          <div className="responsive-grid-2" style={{ alignItems: 'start', gap: '2.5rem' }}>
 
             {/* Input Controls */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.5rem', border: '1px solid var(--color-subtle)', boxShadow: 'var(--shadow-md)' }}
+              style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2rem', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-lg)' }}
             >
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <FileText size={22} style={{ color: 'var(--color-brand-purple)' }} /> Customize Your Request
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--color-text-primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <FileText size={20} style={{ color: 'var(--color-brand-purple)' }} /> Customize Your Request
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
                 {[
-                  { label: 'Your Name', value: attendeeName, setter: setAttendeeName },
-                  { label: "Manager's Name", value: bossName, setter: setBossName },
-                  { label: 'Company Name', value: companyName, setter: setCompanyName },
+                  { label: 'Your Name', value: attendeeName, setter: setAttendeeName, placeholder: 'e.g. Jordan Smith' },
+                  { label: "Manager's Name", value: bossName, setter: setBossName, placeholder: 'e.g. Alex Chen' },
+                  { label: 'Company Name', value: companyName, setter: setCompanyName, placeholder: 'e.g. Acme Corp' },
                 ].map(f => (
                   <div key={f.label}>
-                    <label style={{ display: 'block', fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-secondary)', marginBottom: '0.35rem' }}>{f.label}</label>
+                    <label style={{ display: 'block', fontFamily: 'var(--font-display)', fontSize: '0.83rem', fontWeight: 700, color: 'var(--color-text-secondary)', marginBottom: '0.35rem' }}>{f.label}</label>
                     <input
-                      type="text"
-                      value={f.value}
+                      type="text" value={f.value} placeholder={f.placeholder}
                       onChange={e => f.setter(e.target.value)}
-                      style={{ width: '100%', padding: '0.75rem 1rem', border: '1px solid var(--color-subtle)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem', fontFamily: 'var(--font-body)', background: 'var(--color-canvas)', outline: 'none', transition: 'var(--transition-fast)' }}
+                      style={{ width: '100%', padding: '0.75rem 1rem', border: '1.5px solid var(--color-subtle)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem', fontFamily: 'var(--font-body)', background: 'var(--color-canvas)', outline: 'none', transition: 'var(--transition-fast)', boxSizing: 'border-box' }}
                       onFocus={e => e.currentTarget.style.borderColor = 'var(--color-brand-purple)'}
                       onBlur={e => e.currentTarget.style.borderColor = 'var(--color-subtle)'}
                     />
                   </div>
                 ))}
                 <div>
-                  <label style={{ display: 'block', fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-secondary)', marginBottom: '0.35rem' }}>Primary Focus Track</label>
-                  <select
-                    value={selectedTrack}
-                    onChange={e => setSelectedTrack(e.target.value)}
-                    style={{ width: '100%', padding: '0.75rem 1rem', border: '1px solid var(--color-subtle)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem', fontFamily: 'var(--font-body)', background: 'var(--color-canvas)', cursor: 'pointer' }}
-                  >
-                    {['HR Strategy & AI', 'Legal & Compliance', 'HR Tech & Analytics', 'Talent Acquisition', 'Leadership & Culture', 'Health & Wellness'].map(t => (
-                      <option key={t}>{t}</option>
-                    ))}
+                  <label style={{ display: 'block', fontFamily: 'var(--font-display)', fontSize: '0.83rem', fontWeight: 700, color: 'var(--color-text-secondary)', marginBottom: '0.35rem' }}>Primary Focus Track</label>
+                  <select value={selectedTrack} onChange={e => setSelectedTrack(e.target.value)} style={{ width: '100%', padding: '0.75rem 1rem', border: '1.5px solid var(--color-subtle)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem', fontFamily: 'var(--font-body)', background: 'var(--color-canvas)', cursor: 'pointer', outline: 'none' }}>
+                    {['HR Strategy & AI', 'Legal & Compliance', 'HR Tech & Analytics', 'Talent Acquisition', 'Leadership & Culture', 'Health & Wellness'].map(t => <option key={t}>{t}</option>)}
                   </select>
                 </div>
               </div>
@@ -450,36 +360,22 @@ ${attendeeName}`;
             {/* Email Preview */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
-              style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', overflow: 'hidden', border: '1px solid var(--color-subtle)', boxShadow: 'var(--shadow-md)' }}
+              style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', overflow: 'hidden', border: '1.5px solid var(--color-subtle)', boxShadow: 'var(--shadow-lg)' }}
             >
               {/* Fake browser chrome */}
-              <div style={{ background: 'var(--color-surface)', padding: '0.85rem 1.25rem', borderBottom: '1px solid var(--color-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div style={{ background: 'var(--color-surface)', padding: '0.85rem 1.25rem', borderBottom: '1.5px solid var(--color-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   {['#ef4444', '#f59e0b', '#22c55e'].map(c => <span key={c} style={{ width: '10px', height: '10px', borderRadius: '50%', background: c, display: 'inline-block' }} />)}
-                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginLeft: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                    <Mail size={14} /> Generated Email Preview
-                  </span>
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginLeft: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Mail size={14} /> Generated Email Preview</span>
                 </div>
-                <button
-                  onClick={copyToClipboard}
-                  className={copied ? 'btn btn-primary btn-sm' : 'btn btn-outline btn-sm'}
-                  style={{ padding: '0.35rem 0.85rem' }}
-                >
+                <button onClick={copyToClipboard} className={copied ? 'btn btn-primary btn-sm' : 'btn btn-outline btn-sm'} style={{ padding: '0.35rem 0.85rem' }}>
                   {copied ? <><Check size={14} /> Copied!</> : <><Copy size={14} /> Copy</>}
                 </button>
               </div>
-              <div style={{ padding: '1.75rem' }}>
+              <div style={{ padding: '1.5rem' }}>
                 <textarea
-                  readOnly
-                  value={generatedEmail}
-                  style={{
-                    width: '100%', height: '380px', padding: '0',
-                    border: 'none', background: 'transparent',
-                    fontFamily: 'var(--font-body)', fontSize: '0.88rem',
-                    lineHeight: 1.65, resize: 'none',
-                    color: 'var(--color-text-secondary)',
-                    outline: 'none',
-                  }}
+                  readOnly value={generatedEmail}
+                  style={{ width: '100%', height: '380px', padding: 0, border: 'none', background: 'transparent', fontFamily: 'var(--font-body)', fontSize: '0.88rem', lineHeight: 1.65, resize: 'none', color: 'var(--color-text-secondary)', outline: 'none' }}
                 />
               </div>
             </motion.div>
@@ -487,13 +383,11 @@ ${attendeeName}`;
         </div>
       </section>
 
-      {/* ── Bottom CTA ── */}
-      <section style={{ background: 'var(--color-surface)', padding: '4rem 0' }}>
+      {/* BOTTOM CTA */}
+      <section style={{ background: 'var(--color-surface)', padding: '4.5rem 0', borderTop: '1px solid var(--color-subtle)' }}>
         <div className="container-wide" style={{ textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', letterSpacing: '-0.03em', marginBottom: '1rem' }}>
-              Already Got Approval? Secure Your Spot.
-            </h2>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)', marginBottom: '1rem' }}>Already Got Approval? Secure Your Spot.</h2>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/register" className="btn btn-primary btn-lg">Pre-Register Now <ArrowRight size={20} /></Link>
               <Link to="/attend/team" className="btn btn-outline btn-lg">Team Discounts</Link>
@@ -504,3 +398,5 @@ ${attendeeName}`;
     </div>
   );
 };
+
+export default ConvinceBossPage;
