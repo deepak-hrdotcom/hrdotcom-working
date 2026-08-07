@@ -1,0 +1,1430 @@
+<div class="workday-splash-page">
+
+  <!-- ==========================================
+       CMS-SCOPED STYLESHEET (PAGE 3: ONDEMAND + POPUP SURVEY)
+       ========================================== -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    /* ------------------------------------------
+       RESET & SCOPING ROOT
+       ------------------------------------------ */
+    .workday-splash-page {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #001229 !important;
+      color: #022043 !important;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+      box-sizing: border-box !important;
+      line-height: 1.5 !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      overflow-x: hidden !important;
+      position: relative !important;
+    }
+
+    .workday-splash-page *,
+    .workday-splash-page *::before,
+    .workday-splash-page *::after {
+      box-sizing: border-box !important;
+    }
+
+    /* Aggressive Image Reset for CMS */
+    .workday-splash-page img {
+      display: block !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: auto !important;
+      border: 0 !important;
+      outline: none !important;
+    }
+
+    /* Scoped Typography Override */
+    .workday-splash-page h1,
+    .workday-splash-page h2,
+    .workday-splash-page h3,
+    .workday-splash-page h4,
+    .workday-splash-page p,
+    .workday-splash-page a,
+    .workday-splash-page li,
+    .workday-splash-page span,
+    .workday-splash-page button,
+    .workday-splash-page div {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    }
+
+    .workday-splash-page h1,
+    .workday-splash-page h2,
+    .workday-splash-page h3,
+    .workday-splash-page h4 {
+      text-transform: none !important;
+      letter-spacing: -0.02em !important;
+      margin: 0 !important;
+    }
+
+    .workday-splash-page a {
+      text-decoration: none !important;
+      transition: all 0.25s ease !important;
+    }
+
+    /* Standardized Pill Button Styles */
+    .workday-splash-page .wd-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      border-radius: 999px !important;
+      font-weight: 700 !important;
+      font-size: 16px !important;
+      cursor: pointer !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      border: none !important;
+      outline: none !important;
+      white-space: nowrap !important;
+      text-transform: none !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .workday-splash-page .wd-btn-orange {
+      background: linear-gradient(135deg, #F78B1E 0%, #E25217 100%) !important;
+      color: #FFFFFF !important;
+      padding: 0 32px !important;
+      height: 56px !important;
+    }
+
+    .workday-splash-page .wd-btn-orange:hover {
+      transform: translateY(-2px) scale(1.02) !important;
+      box-shadow: 0 8px 24px rgba(247, 139, 30, 0.4) !important;
+      background: linear-gradient(135deg, #FF9933 0%, #ED5A1F 100%) !important;
+    }
+
+    .workday-splash-page .wd-btn-blue {
+      background-color: #0057AE !important;
+      color: #FFFFFF !important;
+      padding: 0 28px !important;
+      height: 50px !important;
+    }
+
+    .workday-splash-page .wd-btn-blue:hover {
+      background-color: #0875E1 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(0, 87, 174, 0.35) !important;
+    }
+
+    .workday-splash-page .wd-btn-outline-white {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      padding: 0 24px !important;
+      height: 48px !important;
+      backdrop-filter: blur(8px) !important;
+    }
+
+    .workday-splash-page .wd-btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.25) !important;
+      border-color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Layout Containers */
+    .workday-splash-page .wd-container {
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+    }
+
+    /* Header */
+    .workday-splash-page .wd-header {
+      width: 100% !important;
+      padding: 16px 0 !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      background-color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-header-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    .workday-splash-page .wd-logo-container {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+    }
+
+    .workday-splash-page .wd-logo-img {
+      height: 38px !important;
+      width: auto !important;
+      display: block !important;
+    }
+
+    .workday-splash-page .wd-logo-separator {
+      width: 1px !important;
+      height: 24px !important;
+      background-color: #CBD5E1 !important;
+      display: block !important;
+    }
+
+    .workday-splash-page .wd-header-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 6px 16px !important;
+      border-radius: 999px !important;
+      background: rgba(0, 87, 174, 0.08) !important;
+      border: 1px solid rgba(0, 87, 174, 0.25) !important;
+      color: #0057AE !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+    }
+
+    /* Hero Section */
+    .workday-splash-page .wd-hero {
+      position: relative !important;
+      background: radial-gradient(circle at 80% 20%, #003B73 0%, #001A3A 50%, #000F24 100%) !important;
+      padding: 60px 0 80px 0 !important;
+      color: #FFFFFF !important;
+      overflow: hidden !important;
+    }
+
+    .workday-splash-page .wd-hero-grid {
+      display: grid !important;
+      grid-template-columns: 1.1fr 0.9fr !important;
+      gap: 40px !important;
+      align-items: center !important;
+    }
+
+    @media (max-width: 992px) {
+      .workday-splash-page .wd-hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .workday-splash-page .wd-hero-tag {
+      display: inline-block !important;
+      padding: 6px 14px !important;
+      background: rgba(247, 139, 30, 0.15) !important;
+      border: 1px solid #F78B1E !important;
+      color: #F78B1E !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      margin-bottom: 16px !important;
+    }
+
+    .workday-splash-page .wd-hero-title {
+      font-size: clamp(28px, 4vw, 42px) !important;
+      font-weight: 900 !important;
+      color: #FFFFFF !important;
+      line-height: 1.2 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .workday-splash-page .wd-hero-subtitle {
+      font-size: 17px !important;
+      color: #CBD5E1 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 32px !important;
+    }
+
+    .workday-splash-page .wd-hero-actions {
+      display: flex !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .workday-splash-page .wd-video-card {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border-radius: 20px !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      padding: 12px !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .workday-splash-page .wd-video-card:hover {
+      transform: translateY(-4px) !important;
+      border-color: #F78B1E !important;
+      box-shadow: 0 30px 60px rgba(247, 139, 30, 0.25) !important;
+    }
+
+    .workday-splash-page .wd-video-poster {
+      position: relative !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      border-radius: 12px !important;
+      background: #000F24 url('https://public-cdn.hr.com/system/app/media/rs/2026/7/7/mrau8ek8/120.jpg') center/cover no-repeat !important;
+      overflow: hidden !important;
+    }
+
+    .workday-splash-page .wd-video-play-overlay {
+      position: absolute !important;
+      inset: 0 !important;
+      background: linear-gradient(180deg, rgba(0, 18, 41, 0.2) 0%, rgba(0, 18, 41, 0.85) 100%) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px !important;
+      text-align: center !important;
+    }
+
+    .workday-splash-page .wd-play-btn-circle {
+      width: 68px !important;
+      height: 68px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #F78B1E 0%, #E25217 100%) !important;
+      color: #FFFFFF !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 0 30px rgba(247, 139, 30, 0.6) !important;
+      margin-bottom: 12px !important;
+      transition: transform 0.3s ease !important;
+    }
+
+    .workday-splash-page .wd-video-card:hover .wd-play-btn-circle {
+      transform: scale(1.1) !important;
+    }
+
+    .workday-splash-page .wd-play-icon {
+      width: 28px !important;
+      height: 28px !important;
+      fill: currentColor !important;
+      margin-left: 3px !important;
+    }
+
+    .workday-splash-page .wd-video-poster-caption {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-video-poster-subcaption {
+      font-size: 13px !important;
+      color: #CBD5E1 !important;
+      margin-top: 4px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+
+    /* Bento Grid Section */
+    .workday-splash-page .wd-section-light {
+      background-color: #F8FAFC !important;
+      padding: 80px 0 !important;
+    }
+
+    .workday-splash-page .wd-section-header {
+      text-align: center !important;
+      max-width: 700px !important;
+      margin: 0 auto 50px auto !important;
+    }
+
+    .workday-splash-page .wd-section-title {
+      font-size: clamp(24px, 3vw, 34px) !important;
+      font-weight: 800 !important;
+      color: #022043 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .workday-splash-page .wd-section-subtitle {
+      font-size: 16px !important;
+      color: #64748B !important;
+    }
+
+    .workday-splash-page .wd-bento-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+    }
+
+    @media (max-width: 850px) {
+      .workday-splash-page .wd-bento-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .workday-splash-page .wd-bento-card {
+      background: #FFFFFF !important;
+      border-radius: 16px !important;
+      padding: 32px 24px !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .workday-splash-page .wd-bento-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+      border-color: #CBD5E1 !important;
+    }
+
+    .workday-splash-page .wd-bento-icon {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 12px !important;
+      background: rgba(0, 87, 174, 0.08) !important;
+      color: #0057AE !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-bottom: 20px !important;
+    }
+
+    .workday-splash-page .wd-bento-card-title {
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      color: #022043 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .workday-splash-page .wd-bento-card-desc {
+      font-size: 14px !important;
+      color: #64748B !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+    }
+
+    /* Speakers Section */
+    .workday-splash-page .wd-section-speakers {
+      background: #FFFFFF !important;
+      padding: 80px 0 !important;
+      border-top: 1px solid #E2E8F0 !important;
+    }
+
+    .workday-splash-page .wd-speakers-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 30px !important;
+    }
+
+    @media (max-width: 850px) {
+      .workday-splash-page .wd-speakers-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .workday-splash-page .wd-speaker-card {
+      text-align: center !important;
+      padding: 30px 20px !important;
+      border-radius: 16px !important;
+      background: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+
+    .workday-splash-page .wd-speaker-avatar-frame {
+      width: 120px !important;
+      height: 120px !important;
+      border-radius: 50% !important;
+      margin: 0 auto 16px auto !important;
+      border: 3px solid #0057AE !important;
+      overflow: hidden !important;
+      box-shadow: 0 8px 20px rgba(0, 87, 174, 0.15) !important;
+    }
+
+    .workday-splash-page .wd-speaker-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+
+    .workday-splash-page .wd-speaker-name {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: #022043 !important;
+      margin-bottom: 4px !important;
+    }
+
+    .workday-splash-page .wd-speaker-role {
+      font-size: 13px !important;
+      color: #64748B !important;
+      margin-bottom: 8px !important;
+    }
+
+    .workday-splash-page .wd-speaker-company {
+      display: inline-block !important;
+      padding: 4px 12px !important;
+      border-radius: 999px !important;
+      background: rgba(0, 87, 174, 0.1) !important;
+      color: #0057AE !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+    }
+
+    /* Overview / Resources */
+    .workday-splash-page .wd-section-dark {
+      background: #001229 !important;
+      padding: 80px 0 !important;
+      color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-overview-box {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border-radius: 20px !important;
+      padding: 40px !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      margin-bottom: 40px !important;
+    }
+
+    .workday-splash-page .wd-overview-text p {
+      font-size: 15px !important;
+      color: #CBD5E1 !important;
+      line-height: 1.7 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .workday-splash-page .wd-overview-text p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .workday-splash-page .wd-pillars-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+    }
+
+    @media (max-width: 768px) {
+      .workday-splash-page .wd-pillars-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .workday-splash-page .wd-pillar-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      padding: 20px !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      border-radius: 14px !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+
+    .workday-splash-page .wd-pillar-icon {
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50% !important;
+      background: rgba(247, 139, 30, 0.15) !important;
+      color: #F78B1E !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    .workday-splash-page .wd-pillar-text {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      color: #E2E8F0 !important;
+      line-height: 1.4 !important;
+    }
+
+    .workday-splash-page .wd-resources-box {
+      background: #FFFFFF !important;
+      border-radius: 20px !important;
+      padding: 40px !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+      margin-top: 40px !important;
+    }
+
+    .workday-splash-page .wd-resources-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+    }
+
+    .workday-splash-page .wd-resource-item {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 16px 20px !important;
+      background: #F8FAFC !important;
+      border-radius: 12px !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+
+    .workday-splash-page .wd-resource-info {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+    }
+
+    .workday-splash-page .wd-resource-title {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #022043 !important;
+    }
+
+    /* CTA Banner */
+    .workday-splash-page .wd-cta-banner {
+      background: linear-gradient(135deg, #001E3D 0%, #003B73 100%) !important;
+      padding: 70px 0 !important;
+      text-align: center !important;
+      color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-cta-title {
+      font-size: clamp(26px, 3vw, 36px) !important;
+      font-weight: 800 !important;
+      margin-bottom: 12px !important;
+      color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-cta-desc {
+      font-size: 16px !important;
+      color: #94A3B8 !important;
+      margin-bottom: 32px !important;
+    }
+
+    /* Footer */
+    .workday-splash-page .wd-footer {
+      background-color: #000F24 !important;
+      padding: 36px 0 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      color: #64748B !important;
+      font-size: 13px !important;
+      text-align: center !important;
+    }
+
+    /* Video & Audio Player Modals */
+    .workday-splash-page .wd-modal-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(0, 18, 41, 0.92) !important;
+      backdrop-filter: blur(16px) !important;
+      z-index: 999999 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 24px !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .workday-splash-page .wd-modal-overlay.active {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .workday-splash-page .wd-modal-content {
+      width: 90vw !important;
+      max-width: 1100px !important;
+      background: #021226 !important;
+      border-radius: 24px !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(8, 117, 225, 0.25) !important;
+      overflow: hidden !important;
+      transform: scale(0.92) translateY(20px) !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      position: relative !important;
+    }
+
+    .workday-splash-page .wd-modal-overlay.active .wd-modal-content {
+      transform: scale(1) translateY(0) !important;
+    }
+
+    .workday-splash-page .wd-modal-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 18px 24px !important;
+      background: #001A3A !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .workday-splash-page .wd-modal-title {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      color: #FFFFFF !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-width: 80% !important;
+    }
+
+    .workday-splash-page .wd-modal-close {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: none !important;
+      color: #FFFFFF !important;
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      font-size: 18px !important;
+    }
+
+    .workday-splash-page .wd-modal-video-wrap {
+      position: relative !important;
+      width: 100% !important;
+      background: #000000 !important;
+    }
+
+    .workday-splash-page .wd-modal-video-wrap video {
+      width: 100% !important;
+      max-height: 75vh !important;
+      display: block !important;
+      outline: none !important;
+    }
+
+    /* ------------------------------------------
+       POP-UP SURVEY MODAL & FLOATING TRIGGER BUTTON
+       ------------------------------------------ */
+    .workday-splash-page .wd-survey-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(0, 18, 41, 0.85) !important;
+      backdrop-filter: blur(12px) !important;
+      z-index: 9999999 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .workday-splash-page .wd-survey-overlay.active {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .workday-splash-page .wd-survey-card {
+      background: #FFFFFF !important;
+      border-radius: 20px !important;
+      width: 100% !important;
+      max-width: 780px !important;
+      max-height: 90vh !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6) !important;
+      overflow: hidden !important;
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      transform: scale(0.9) translateY(20px) !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .workday-splash-page .wd-survey-overlay.active .wd-survey-card {
+      transform: scale(1) translateY(0) !important;
+    }
+
+    .workday-splash-page .wd-survey-card-header {
+      background: linear-gradient(135deg, #001A3A 0%, #003B73 100%) !important;
+      color: #FFFFFF !important;
+      padding: 16px 24px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+
+    .workday-splash-page .wd-survey-card-title-wrap {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    .workday-splash-page .wd-survey-card-title {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+    }
+
+    .workday-splash-page .wd-survey-card-close {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border: none !important;
+      color: #FFFFFF !important;
+      padding: 6px 14px !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .workday-splash-page .wd-survey-card-close:hover {
+      background: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .workday-splash-page .wd-survey-card-body {
+      flex: 1 !important;
+      overflow-y: auto !important;
+      padding: 0 !important;
+      background: #F8FAFC !important;
+    }
+
+    .workday-splash-page .wd-survey-card-body iframe {
+      width: 100% !important;
+      height: 700px !important;
+      border: none !important;
+      display: block !important;
+    }
+
+    /* Floating Survey Trigger Pill (Bottom-Right) */
+    .workday-splash-page .wd-survey-float-btn {
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      z-index: 99999 !important;
+      background: linear-gradient(135deg, #F78B1E 0%, #E25217 100%) !important;
+      color: #FFFFFF !important;
+      padding: 12px 20px !important;
+      border-radius: 999px !important;
+      font-weight: 800 !important;
+      font-size: 14px !important;
+      cursor: pointer !important;
+      box-shadow: 0 10px 25px rgba(247, 139, 30, 0.5) !important;
+      border: 2px solid #FFFFFF !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .workday-splash-page .wd-survey-float-btn:hover {
+      transform: translateY(-3px) scale(1.05) !important;
+      box-shadow: 0 15px 35px rgba(247, 139, 30, 0.7) !important;
+    }
+
+    .workday-splash-page .wd-survey-badge-pulse {
+      width: 10px !important;
+      height: 10px !important;
+      background-color: #FFFFFF !important;
+      border-radius: 50% !important;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7) !important;
+      animation: wdPulse 1.8s infinite !important;
+    }
+
+    @keyframes wdPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    .workday-splash-page .fade-in-up {
+      opacity: 0 !important;
+      transform: translateY(30px) !important;
+      transition: opacity 0.6s ease, transform 0.6s ease !important;
+    }
+
+    .workday-splash-page .fade-in-up.visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+
+
+  <!-- ==========================================
+       HEADER (WORKDAY + HR.COM BRANDING)
+       ========================================== -->
+  <header class="wd-header">
+    <div class="wd-container wd-header-inner">
+      <div class="wd-logo-container">
+        <a href="https://www.workday.com" target="_blank" rel="noopener" aria-label="Workday Homepage">
+          <img class="wd-logo-img" src="https://public-cdn.hr.com/system/app/media/rs/2026/7/7/mrau8ek8/120.jpg"
+            alt="Workday Logo" />
+        </a>
+        <div class="wd-logo-separator"></div>
+        <a href="https://www.hr.com" target="_blank" rel="noopener" aria-label="HR.com Homepage">
+          <img class="wd-logo-img" src="https://public-cdn.hr.com/logo_images/hrcom_25years_logo.png"
+            alt="HR.com Logo" />
+        </a>
+      </div>
+
+      <div class="wd-header-badge">
+        <span>●</span> On-Demand Webcast
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       PAGE 3: REVEALED WEBCAST PAGE CONTENT
+       ========================================== -->
+  <div id="workdayMainContent">
+
+    <!-- Hero Section -->
+    <section class="wd-hero">
+      <div class="wd-container">
+        <div class="wd-hero-grid">
+
+          <div class="fade-in-up">
+            <div class="wd-hero-tag">Workday + Paradox Exclusive</div>
+            <h1 class="wd-hero-title">A Faster Workday for the Frontline: Transform Your Hiring Process with Paradox
+            </h1>
+            <p class="wd-hero-subtitle">
+              Reduce hiring friction, automate time-consuming tasks, and build a faster, smarter candidate experience
+              with Workday and Paradox.
+            </p>
+
+            <div class="wd-hero-actions">
+              <button class="wd-btn wd-btn-orange" onclick="openWorkdayVideoModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Watch On-Demand Webcast
+              </button>
+
+              <button class="wd-btn wd-btn-outline-white" onclick="openWorkdayAudioModal()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+                Listen MP3 Audio
+              </button>
+            </div>
+          </div>
+
+          <div class="fade-in-up">
+            <div class="wd-video-card" onclick="openWorkdayVideoModal()" title="Click to watch full webcast video">
+              <div class="wd-video-poster">
+                <div class="wd-video-play-overlay">
+                  <div class="wd-play-btn-circle">
+                    <svg class="wd-play-icon" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <div class="wd-video-poster-caption">Watch Full Webcast</div>
+                  <div class="wd-video-poster-subcaption">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+                    </svg>
+                    60 Mins On-Demand Stream • Instant Access
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="wd-section-light">
+      <div class="wd-container">
+
+        <div class="wd-section-header fade-in-up">
+          <h2 class="wd-section-title">Here's What You'll Learn</h2>
+          <p class="wd-section-subtitle">Discover how leading organizations leverage Workday and Paradox to solve
+            frontline hiring challenges at scale.</p>
+        </div>
+
+        <div class="wd-bento-grid">
+
+          <div class="wd-bento-card fade-in-up">
+            <div class="wd-bento-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="wd-bento-card-title">Real-World Transformation</h3>
+            <p class="wd-bento-card-desc">Hear directly from Paradox customer OneDigital as they discuss how Paradox has
+              helped transform recruiting and hiring efforts across their organization.</p>
+          </div>
+
+          <div class="wd-bento-card fade-in-up">
+            <div class="wd-bento-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+              </svg>
+            </div>
+            <h3 class="wd-bento-card-title">Faster, More Efficient Hiring with AI</h3>
+            <p class="wd-bento-card-desc">See how the Workday platform delivers instant efficiency, from automated
+              Conversational Apply and intelligent scheduling to AI-powered candidate prioritization through HiredScore®
+              AI for Recruiting.</p>
+          </div>
+
+          <div class="wd-bento-card fade-in-up">
+            <div class="wd-bento-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+            </div>
+            <h3 class="wd-bento-card-title">Future-Ready Hiring at Scale</h3>
+            <p class="wd-bento-card-desc">Stop struggling with time-consuming administrative tasks and see how the
+              combined power of Workday and Paradox future-proofs your talent strategy and scales your competitive edge.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="wd-section-speakers">
+      <div class="wd-container">
+
+        <div class="wd-section-header fade-in-up">
+          <h2 class="wd-section-title">Featured Speakers</h2>
+          <p class="wd-section-subtitle">Learn from industry visionaries and solutions experts leading talent
+            transformation.</p>
+        </div>
+
+        <div class="wd-speakers-grid">
+
+          <div class="wd-speaker-card fade-in-up">
+            <div class="wd-speaker-avatar-frame">
+              <img class="wd-speaker-img" src="https://public-cdn.hr.com/profile_images/2026/2/1/1769976749575_120"
+                alt="John Bruce Headshot" loading="lazy" />
+            </div>
+            <h3 class="wd-speaker-name">John Bruce</h3>
+            <p class="wd-speaker-role">Vice President, People Innovation & Technology</p>
+            <span class="wd-speaker-company">OneDigital</span>
+          </div>
+
+          <div class="wd-speaker-card fade-in-up">
+            <div class="wd-speaker-avatar-frame">
+              <img class="wd-speaker-img" src="https://public-cdn.hr.com/profile_images/2026/6/30/1782836674390_120"
+                alt="Andrew McMannis Headshot" loading="lazy" />
+            </div>
+            <h3 class="wd-speaker-name">Andrew McMannis</h3>
+            <p class="wd-speaker-role">Sr. Principal, Paradox Solutions Strategy</p>
+            <span class="wd-speaker-company">Workday</span>
+          </div>
+
+          <div class="wd-speaker-card fade-in-up">
+            <div class="wd-speaker-avatar-frame">
+              <img class="wd-speaker-img" src="https://public-cdn.hr.com/profile_images/2026/7/2/1783009788451_120"
+                alt="Scott Morris Headshot" loading="lazy" />
+            </div>
+            <h3 class="wd-speaker-name">Scott Morris</h3>
+            <p class="wd-speaker-role">Area Vice President, Field Sales</p>
+            <span class="wd-speaker-company">Workday</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="wd-section-dark">
+      <div class="wd-container">
+
+        <div class="wd-section-header fade-in-up">
+          <h2 class="wd-section-title" style="color: #FFFFFF !important;">Modern Hiring Without the Friction</h2>
+          <p class="wd-section-subtitle" style="color: #94A3B8 !important;">Organizations are under immense pressure to
+            attract, engage, and hire talent faster than ever.</p>
+        </div>
+
+        <div class="wd-overview-box fade-in-up">
+          <div class="wd-overview-text">
+            <p>
+              The way organizations attract, engage, and hire talent is undergoing a fundamental shift — and the
+              pressure to modernize is greatest where it matters most: frontline worker industries. This session
+              explores how a unified, AI-native talent acquisition strategy can eliminate the friction of fragmented
+              systems and help your organization hire faster, smarter, and at scale.
+            </p>
+            <p>
+              Join us for a hands-on look at what a truly connected hiring experience looks like — from first touchpoint
+              to first day. Learn how Conversational Apply, intelligent scheduling automation, and AI-powered candidate
+              prioritization through HiredScore AI for Recruiting free your recruiters and hiring managers to focus on
+              high-value decisions — not manual screening.
+            </p>
+          </div>
+        </div>
+
+        <div class="wd-pillars-grid">
+          <div class="wd-pillar-item fade-in-up">
+            <div class="wd-pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="wd-pillar-text">Reduce administrative work and save valuable recruiter time</div>
+          </div>
+
+          <div class="wd-pillar-item fade-in-up">
+            <div class="wd-pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="wd-pillar-text">Improve candidate engagement and mobile-first experience</div>
+          </div>
+
+          <div class="wd-pillar-item fade-in-up">
+            <div class="wd-pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+            </div>
+            <div class="wd-pillar-text">Scale hiring more effectively to meet high business demand</div>
+          </div>
+        </div>
+
+        <div class="wd-resources-box fade-in-up">
+          <h3
+            style="font-size: 20px !important; font-weight: 800 !important; color: #022043 !important; margin-bottom: 20px !important;">
+            Recommended Workday & Paradox Resources
+          </h3>
+
+          <div class="wd-resources-list">
+            <div class="wd-resource-item">
+              <div class="wd-resource-info">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0057AE" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                <div class="wd-resource-title">Workday + Paradox Comprehensive Integration Guide (PDF)</div>
+              </div>
+              <a href="https://www.workday.com/content/dam/web/en-us/documents/other/workday-paradox-comprehensive-guide.pdf"
+                target="_blank" class="wd-btn wd-btn-blue"
+                style="height: 40px !important; font-size: 14px !important; padding: 0 18px !important;">Download
+                PDF</a>
+            </div>
+
+            <div class="wd-resource-item">
+              <div class="wd-resource-info">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0057AE" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                <div class="wd-resource-title">Conversational AI & Candidate Experience Webpage</div>
+              </div>
+              <a href="https://www.workday.com/en-us/products/conversational-ai/candidate-experience.html"
+                target="_blank" class="wd-btn wd-btn-blue"
+                style="height: 40px !important; font-size: 14px !important; padding: 0 18px !important;">Visit Page</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="wd-cta-banner">
+      <div class="wd-container fade-in-up">
+        <h2 class="wd-cta-title">Ready to Transform Your Frontline Hiring?</h2>
+        <p class="wd-cta-desc">Available anytime. Watch the on-demand recording at your convenience.</p>
+
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <button class="wd-btn wd-btn-orange" onclick="openWorkdayVideoModal()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Watch On-Demand Webcast
+          </button>
+
+          <button class="wd-btn wd-btn-outline-white" onclick="openWorkdayAudioModal()">
+            Listen MP3 Audio
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="wd-footer">
+      <div class="wd-container">
+        <p>© 2026 HR.com & Workday Inc. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ==========================================
+       MODALS FOR VIDEO & AUDIO PLAYERS
+       ========================================== -->
+  <div id="workdayVideoModal" class="wd-modal-overlay" onclick="closeWorkdayVideoModal(event)">
+    <div class="wd-modal-content" onclick="event.stopPropagation()">
+      <div class="wd-modal-header">
+        <div class="wd-modal-title">A Faster Workday for the Frontline: Transform Your Hiring Process with Paradox</div>
+        <button class="wd-modal-close" onclick="closeWorkdayVideoModal()">✕</button>
+      </div>
+      <div class="wd-modal-video-wrap">
+        <video id="workdayModalPlayer" controls preload="metadata" playsinline>
+          <source src="https://media-cdn.hr.com/webinarslibrary/MP4/WorkdayOndemand.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <div id="workdayAudioModal" class="wd-modal-overlay" onclick="closeWorkdayAudioModal(event)">
+    <div class="wd-modal-content" onclick="event.stopPropagation()" style="max-width: 600px !important;">
+      <div class="wd-modal-header">
+        <div class="wd-modal-title">Listen On-Demand Audio</div>
+        <button class="wd-modal-close" onclick="closeWorkdayAudioModal()">✕</button>
+      </div>
+      <div style="padding: 40px 30px !important; text-align: center !important; background: #001A3A !important;">
+        <h4 style="font-size: 18px !important; color: #FFFFFF !important; margin-bottom: 16px !important;">
+          A Faster Workday for the Frontline: Transform Your Hiring Process with Paradox
+        </h4>
+        <audio id="workdayModalAudioPlayer" controls style="width: 100% !important; margin-bottom: 20px !important;">
+          <source src="https://media-cdn.hr.com/webinarslibrary/MP3/WorkdayOndemand.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       POP-UP SURVEY OVERLAY MODAL (GOOGLE FORM EMBED)
+       ========================================== -->
+  <div id="workdaySurveyModal" class="wd-survey-overlay">
+    <div class="wd-survey-card">
+
+      <div class="wd-survey-card-header">
+        <div class="wd-survey-card-title-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F78B1E" stroke-width="2.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <path d="M16 13H8" />
+            <path d="M16 17H8" />
+            <path d="M10 9H8" />
+          </svg>
+          <span class="wd-survey-card-title">Quick 30-Second Webcast Survey</span>
+        </div>
+
+        <button id="workdaySurveyCloseBtn" class="wd-survey-card-close" onclick="closeWorkdaySurveyModal()">
+          Close Survey ✕
+        </button>
+      </div>
+
+      <div class="wd-survey-card-body">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe2hOs7Q6ZfciM-Fre1k3xmiHKXL4ZbVWin0mH9RWjsJhaYYw/viewform?embedded=true"
+          frameborder="0" marginheight="0" marginwidth="0">
+          Loading survey...
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       FLOATING TRIGGER PILL (BOTTOM-RIGHT)
+       ========================================== -->
+  <div class="wd-survey-float-btn" onclick="openWorkdaySurveyModal()" title="Take 30-Second Survey">
+    <div class="wd-survey-badge-pulse"></div>
+    <span>📋 Quick Survey</span>
+  </div>
+
+
+  <!-- ==========================================
+       INTERACTIVITY & TIMED POPUP CONTROLLER SCRIPT
+       ========================================== -->
+  <script>
+    function openWorkdayVideoModal() {
+      const modal = document.getElementById('workdayVideoModal');
+      const player = document.getElementById('workdayModalPlayer');
+      if (modal && player) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        player.play().catch(function (e) {
+          console.log("Autoplay blocked, user interaction required:", e);
+        });
+
+        // Trigger Survey Pop-up 10 seconds after video starts playing!
+        setTimeout(function () {
+          openWorkdaySurveyModal();
+        }, 10000);
+      }
+    }
+
+    function closeWorkdayVideoModal() {
+      const modal = document.getElementById('workdayVideoModal');
+      const player = document.getElementById('workdayModalPlayer');
+      if (modal && player) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        player.pause();
+      }
+    }
+
+    function openWorkdayAudioModal() {
+      const modal = document.getElementById('workdayAudioModal');
+      const player = document.getElementById('workdayModalAudioPlayer');
+      if (modal && player) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        player.play().catch(function (e) {
+          console.log("Autoplay blocked, user interaction required:", e);
+        });
+      }
+    }
+
+    function closeWorkdayAudioModal() {
+      const modal = document.getElementById('workdayAudioModal');
+      const player = document.getElementById('workdayModalAudioPlayer');
+      if (modal && player) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        player.pause();
+      }
+    }
+
+    let wasVideoPlaying = false;
+    let wasAudioPlaying = false;
+
+    // Survey Pop-up Controllers (Context-Aware Button Labels & Auto-Pause)
+    function openWorkdaySurveyModal() {
+      const modal = document.getElementById('workdaySurveyModal');
+      const videoPlayer = document.getElementById('workdayModalPlayer');
+      const audioPlayer = document.getElementById('workdayModalAudioPlayer');
+      const videoModal = document.getElementById('workdayVideoModal');
+      const closeBtn = document.getElementById('workdaySurveyCloseBtn');
+
+      // Pause Video if currently playing
+      if (videoPlayer && !videoPlayer.paused) {
+        wasVideoPlaying = true;
+        videoPlayer.pause();
+      }
+
+      // Pause Audio if currently playing
+      if (audioPlayer && !audioPlayer.paused) {
+        wasAudioPlaying = true;
+        audioPlayer.pause();
+      }
+
+      // Dynamic Context-Aware Button Label
+      if (closeBtn) {
+        if (wasVideoPlaying || (videoModal && videoModal.classList.contains('active'))) {
+          closeBtn.textContent = 'Continue Watching Video ✕';
+        } else {
+          closeBtn.textContent = 'Close Survey ✕';
+        }
+      }
+
+      if (modal) {
+        modal.classList.add('active');
+      }
+    }
+
+    function closeWorkdaySurveyModal() {
+      const modal = document.getElementById('workdaySurveyModal');
+      const videoPlayer = document.getElementById('workdayModalPlayer');
+      const audioPlayer = document.getElementById('workdayModalAudioPlayer');
+
+      if (modal) {
+        modal.classList.remove('active');
+      }
+
+      // Automatically Resume Video if it was playing before survey opened!
+      if (wasVideoPlaying && videoPlayer) {
+        videoPlayer.play().catch(function (e) {
+          console.log("Auto-resume playback notice:", e);
+        });
+        wasVideoPlaying = false;
+      }
+
+      // Automatically Resume Audio if it was playing before survey opened!
+      if (wasAudioPlaying && audioPlayer) {
+        audioPlayer.play().catch(function (e) {
+          console.log("Auto-resume audio notice:", e);
+        });
+        wasAudioPlaying = false;
+      }
+    }
+
+    // Auto-trigger Survey Pop-up 10 seconds after page load if user hasn't opened it yet
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        if (!sessionStorage.getItem('workday_survey_dismissed')) {
+          openWorkdaySurveyModal();
+          sessionStorage.setItem('workday_survey_dismissed', 'true');
+        }
+      }, 10000);
+
+      // Auto-Resume Video when Google Form is submitted!
+      const surveyIframe = document.querySelector('#workdaySurveyModal iframe');
+      let surveyLoads = 0;
+      if (surveyIframe) {
+        surveyIframe.addEventListener('load', function () {
+          surveyLoads++;
+          // surveyLoads > 1 means form was submitted!
+          if (surveyLoads > 1) {
+            setTimeout(function () {
+              closeWorkdaySurveyModal();
+            }, 1800);
+          }
+        });
+      }
+
+      // ESC Key to close modals
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeWorkdayVideoModal();
+          closeWorkdayAudioModal();
+          closeWorkdaySurveyModal();
+        }
+      });
+
+      // IntersectionObserver Animations
+      const animatedElements = document.querySelectorAll('.workday-splash-page .fade-in-up');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach((el) => observer.observe(el));
+      } else {
+        animatedElements.forEach((el) => el.classList.add('visible'));
+      }
+    });
+  </script>
+
+</div>
