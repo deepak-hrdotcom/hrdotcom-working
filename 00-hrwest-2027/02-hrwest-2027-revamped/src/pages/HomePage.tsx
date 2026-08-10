@@ -201,15 +201,15 @@ const StatCounter: React.FC<{ number: number; suffix: string; label: string; sub
       }}
       whileHover={{
         y: -6,
-        boxShadow: '0 20px 50px rgba(145,39,140,0.14)',
-        borderColor: 'rgba(145,39,140,0.3)',
+        boxShadow: '0 20px 50px var(--brand-glow-14)',
+        borderColor: 'var(--brand-glow-30)',
       }}
     >
       {/* Soft gradient orb behind number */}
       <div style={{
         position: 'absolute', top: '-30%', left: '50%', transform: 'translateX(-50%)',
         width: '120px', height: '120px',
-        background: 'radial-gradient(circle, rgba(145,39,140,0.12) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%)',
         borderRadius: '50%',
         pointerEvents: 'none',
       }} />
@@ -220,7 +220,7 @@ const StatCounter: React.FC<{ number: number; suffix: string; label: string; sub
         background: 'var(--gradient-brand)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         margin: '0 auto 1rem auto',
-        boxShadow: '0 4px 14px rgba(145,39,140,0.3)',
+        boxShadow: '0 4px 14px var(--brand-glow-30)',
       }}>
         <Icon size={22} color="#ffffff" />
       </div>
@@ -254,11 +254,11 @@ const SpeakerCard: React.FC<{ spk: typeof REAL_SPEAKERS[0]; idx: number }> = ({ 
     transition={{ duration: 0.5, delay: idx * 0.08, ease: 'easeOut' }}
     whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
     style={{
-      background: spk.isFeatured ? 'linear-gradient(180deg, rgba(145,39,140,0.05) 0%, var(--color-elevated) 100%)' : 'var(--color-elevated)',
+      background: spk.isFeatured ? 'linear-gradient(180deg, var(--brand-glow-05) 0%, var(--color-elevated) 100%)' : 'var(--color-elevated)',
       border: spk.isFeatured ? '2px solid rgba(145, 39, 140, 0.5)' : '1px solid var(--color-subtle)',
       borderRadius: 'var(--radius-lg)',
       overflow: 'hidden',
-      boxShadow: spk.isFeatured ? '0 16px 45px rgba(145, 39, 140, 0.2), 0 0 25px rgba(239, 20, 110, 0.15)' : 'var(--shadow-sm)',
+      boxShadow: spk.isFeatured ? '0 16px 45px rgba(145, 39, 140, 0.2), 0 0 25px var(--brand-pink-glow-15, var(--brand-glow-15))' : 'var(--shadow-sm)',
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
@@ -321,7 +321,7 @@ const SpeakerCard: React.FC<{ spk: typeof REAL_SPEAKERS[0]; idx: number }> = ({ 
           letterSpacing: '0.03em',
           marginBottom: '0.75rem',
           width: 'fit-content',
-          boxShadow: '0 4px 14px rgba(145,39,140,0.3)',
+          boxShadow: '0 4px 14px var(--brand-glow-30)',
         }}>
           <Sparkles size={12} /> {spk.badgeLabel || 'Featured Leader'}
         </div>
@@ -453,8 +453,8 @@ export const HomePage: React.FC = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.65rem',
-              background: 'linear-gradient(135deg, rgba(145,39,140,0.08), rgba(239,20,110,0.08))',
-              border: '1.5px solid rgba(145,39,140,0.22)',
+              background: 'linear-gradient(135deg, var(--brand-glow-08), var(--brand-pink-glow-08))',
+              border: '1.5px solid var(--brand-glow-22)',
               borderRadius: 'var(--radius-full)',
               padding: '0.45rem 1.1rem 0.45rem 0.65rem',
               marginBottom: '1.75rem',
@@ -467,7 +467,7 @@ export const HomePage: React.FC = () => {
               background: 'var(--gradient-brand)', color: '#fff',
               borderRadius: 'var(--radius-full)', padding: '0.22rem 0.75rem',
               fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.78rem',
-              boxShadow: '0 2px 8px rgba(145,39,140,0.3)',
+              boxShadow: '0 2px 8px var(--brand-glow-30)',
             }}>
               March 23–24, 2027
             </span>
@@ -489,30 +489,20 @@ export const HomePage: React.FC = () => {
               marginBottom: '1.75rem',
             }}
           >
-            {/* HR West PNG logo — white card, flush beside title */}
-            <div style={{
-              background: '#ffffff',
-              padding: '8px 12px',
-              borderRadius: '12px',
-              boxShadow: '0 8px 28px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(145, 39, 140, 0.1)',
-              border: '1.5px solid rgba(145, 39, 140, 0.15)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-            }}>
-              <img
-                src={hrWestLogo}
-                alt="HR West Logo"
-                className="hero-headline-logo"
-                style={{
-                  height: '88px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  display: 'block',
-                }}
-              />
-            </div>
+            {/* HR West transparent logo — clean, no white box card */}
+            <img
+              src={hrWestLogo}
+              alt="HR West Logo"
+              className="hero-headline-logo"
+              style={{
+                height: '120px',
+                width: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+                flexShrink: 0,
+                filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08))',
+              }}
+            />
 
             {/* Title text stack */}
             <div>
@@ -695,7 +685,7 @@ export const HomePage: React.FC = () => {
               backdropFilter: 'blur(20px)',
               borderRadius: 'var(--radius-lg)',
               padding: '1.25rem 1.5rem',
-              border: '1px solid rgba(145,39,140,0.2)',
+              border: '1px solid var(--brand-glow-20)',
               boxShadow: 'var(--shadow-xl)',
               zIndex: 2,
               display: 'flex',
@@ -898,7 +888,7 @@ export const HomePage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               style={{
                 background: 'var(--gradient-brand-soft)',
-                border: '2px solid rgba(145,39,140,0.25)',
+                border: '2px solid var(--brand-glow-25)',
                 borderRadius: 'var(--radius-lg)',
                 padding: '2.5rem 2rem',
                 display: 'flex',
@@ -911,7 +901,7 @@ export const HomePage: React.FC = () => {
               }}
             >
               {/* Subtle orb */}
-              <div style={{ position: 'absolute', top: '-30%', left: '50%', transform: 'translateX(-50%)', width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(145,39,140,0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: '-30%', left: '50%', transform: 'translateX(-50%)', width: '200px', height: '200px', background: 'radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <span className="badge badge-purple" style={{ marginBottom: '1.5rem', padding: '0.35rem 0.85rem', display: 'inline-flex' }}>
@@ -931,7 +921,7 @@ export const HomePage: React.FC = () => {
                       backdropFilter: 'blur(8px)',
                       borderRadius: 'var(--radius-md)',
                       padding: '0.9rem 0.75rem',
-                      border: '1px solid rgba(145,39,140,0.12)',
+                      border: '1px solid var(--brand-glow-12)',
                     }}>
                       <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.5rem', letterSpacing: '-0.03em', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', lineHeight: 1.1 }}>{s.value}</div>
                       <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.75rem', color: 'var(--color-text-primary)', marginTop: '0.2rem' }}>{s.label}</div>
@@ -959,7 +949,7 @@ export const HomePage: React.FC = () => {
               <Link to="/speakers" className="btn btn-primary btn-lg" style={{
                 width: '100%',
                 justifyContent: 'center',
-                boxShadow: '0 8px 25px rgba(145,39,140,0.4)',
+                boxShadow: '0 8px 25px var(--brand-glow-40)',
                 gap: '0.6rem',
                 padding: '0.9rem 1.5rem',
                 position: 'relative',
@@ -998,7 +988,7 @@ export const HomePage: React.FC = () => {
           <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
             <Link to="/speakers" className="btn btn-primary btn-lg" style={{
               padding: '1rem 2.5rem', fontSize: '1.05rem',
-              boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
+              boxShadow: '0 10px 30px var(--brand-glow-35)',
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
             }}>
               View Full 2027 Speaker Roster & Bios <ArrowRight size={18} />
@@ -1058,7 +1048,7 @@ export const HomePage: React.FC = () => {
                   background: 'var(--gradient-brand)', border: 'none',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   cursor: 'pointer', color: '#ffffff',
-                  boxShadow: '0 6px 20px rgba(145,39,140,0.35)', transition: 'all 0.2s ease',
+                  boxShadow: '0 6px 20px var(--brand-glow-35)', transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
                 onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
@@ -1107,8 +1097,8 @@ export const HomePage: React.FC = () => {
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(145,39,140,0.5)';
-                    e.currentTarget.style.boxShadow = '0 16px 40px rgba(145,39,140,0.18)';
+                    e.currentTarget.style.borderColor = 'var(--brand-glow-50)';
+                    e.currentTarget.style.boxShadow = '0 16px 40px var(--brand-glow-18)';
                     e.currentTarget.style.transform = 'translateY(-4px)';
                   }}
                   onMouseLeave={e => {
@@ -1136,7 +1126,7 @@ export const HomePage: React.FC = () => {
                           width: '40px', height: '40px', borderRadius: 'var(--radius-md)',
                           background: 'var(--gradient-brand)',
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          boxShadow: '0 4px 14px rgba(145,39,140,0.4)',
+                          boxShadow: '0 4px 14px var(--brand-glow-40)',
                         }}>
                           <Icon size={20} color="#fff" />
                         </div>
@@ -1204,7 +1194,7 @@ export const HomePage: React.FC = () => {
             </div>
             <Link to="/agenda" className="btn btn-primary btn-lg" style={{
               padding: '0.9rem 2.25rem', fontSize: '1rem',
-              boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
+              boxShadow: '0 10px 30px var(--brand-glow-35)',
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
             }}>
               View Full 2-Day Conference Agenda <ArrowRight size={18} />
@@ -1244,7 +1234,7 @@ export const HomePage: React.FC = () => {
             <div>
               <div style={{
                 background: 'var(--color-elevated)',
-                border: '1.5px solid rgba(145,39,140,0.18)',
+                border: '1.5px solid var(--brand-glow-18)',
                 borderRadius: 'var(--radius-lg)',
                 padding: '1.75rem',
                 marginBottom: '1.75rem',
@@ -1331,7 +1321,7 @@ export const HomePage: React.FC = () => {
 
               <div style={{
                 background: 'var(--gradient-brand-soft)',
-                border: '1.5px solid rgba(145,39,140,0.2)',
+                border: '1.5px solid var(--brand-glow-20)',
                 borderRadius: 'var(--radius-lg)',
                 padding: '1.25rem 1.5rem',
               }}>
@@ -1378,10 +1368,10 @@ export const HomePage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              whileHover={{ y: -6, boxShadow: '0 20px 45px rgba(145,39,140,0.15)' }}
+              whileHover={{ y: -6, boxShadow: '0 20px 45px var(--brand-glow-15)' }}
               style={{
                 background: 'var(--color-elevated)',
-                border: '2px solid rgba(145,39,140,0.2)',
+                border: '2px solid var(--brand-glow-20)',
                 borderRadius: 'var(--radius-xl)',
                 padding: '2.5rem 2rem',
                 display: 'flex',
@@ -1393,7 +1383,7 @@ export const HomePage: React.FC = () => {
                 transition: 'all 0.3s ease',
               }}
             >
-              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, rgba(145,39,140,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, var(--brand-glow-08) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
@@ -1426,7 +1416,7 @@ export const HomePage: React.FC = () => {
                   background: 'var(--gradient-brand)', color: '#fff',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem',
-                  boxShadow: '0 4px 12px rgba(145,39,140,0.25)',
+                  boxShadow: '0 4px 12px var(--brand-glow-25)',
                 }}>
                   H
                 </div>
@@ -1450,7 +1440,7 @@ export const HomePage: React.FC = () => {
               whileHover={{ y: -6, boxShadow: '0 20px 45px rgba(239,20,110,0.15)' }}
               style={{
                 background: 'var(--gradient-brand-soft)',
-                border: '2px solid rgba(239,20,110,0.25)',
+                border: '2px solid var(--brand-pink-glow-25)',
                 borderRadius: 'var(--radius-xl)',
                 padding: '2.5rem 2rem',
                 display: 'flex',
@@ -1462,7 +1452,7 @@ export const HomePage: React.FC = () => {
                 transition: 'all 0.3s ease',
               }}
             >
-              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, rgba(239,20,110,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: '180px', height: '180px', background: 'radial-gradient(circle, var(--brand-pink-glow-08) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
@@ -1489,7 +1479,7 @@ export const HomePage: React.FC = () => {
                 </p>
               </div>
 
-              <div style={{ borderTop: '1px solid rgba(145,39,140,0.15)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <div style={{ borderTop: '1px solid var(--brand-glow-15)', paddingTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
                 <div style={{
                   width: '44px', height: '44px', borderRadius: '50%',
                   background: 'linear-gradient(135deg, var(--color-brand-authority), var(--color-brand-purple))', color: '#fff',
@@ -1519,7 +1509,7 @@ export const HomePage: React.FC = () => {
               style={{
                 padding: '1rem 2.5rem',
                 fontSize: '1.05rem',
-                boxShadow: '0 10px 30px rgba(145,39,140,0.35)',
+                boxShadow: '0 10px 30px var(--brand-glow-35)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.65rem',
@@ -1605,7 +1595,7 @@ export const HomePage: React.FC = () => {
                 background: 'var(--gradient-brand-soft)',
                 borderRadius: 'var(--radius-xl)',
                 padding: '3rem 2rem',
-                border: '1.5px solid rgba(145,39,140,0.2)',
+                border: '1.5px solid var(--brand-glow-20)',
                 boxShadow: 'var(--shadow-xl)',
                 position: 'relative',
                 overflow: 'hidden',
@@ -1614,7 +1604,7 @@ export const HomePage: React.FC = () => {
               }}
           >
             {/* Glow blobs */}
-            <div style={{ position: 'absolute', top: '-30%', left: '10%', width: '40%', height: '80%', background: 'radial-gradient(circle, rgba(145,39,140,0.12) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', top: '-30%', left: '10%', width: '40%', height: '80%', background: 'radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: '-30%', right: '5%', width: '35%', height: '80%', background: 'radial-gradient(circle, rgba(239,20,110,0.1) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
 
             {/* Left Content */}
@@ -1639,7 +1629,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Cheering HR Leaders Photo Frame */}
-            <div style={{ position: 'relative', zIndex: 1, borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '320px', boxShadow: 'var(--shadow-lg)', border: '2px solid rgba(145,39,140,0.25)' }}>
+            <div style={{ position: 'relative', zIndex: 1, borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '320px', boxShadow: 'var(--shadow-lg)', border: '2px solid var(--brand-glow-25)' }}>
               <img
                 src={ctaCheeringHR}
                 alt="Cheering HR Professionals at HRWest"
@@ -1647,7 +1637,7 @@ export const HomePage: React.FC = () => {
               />
               <div style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(to top, rgba(145,39,140,0.25) 0%, transparent 60%)',
+                background: 'linear-gradient(to top, var(--brand-glow-25) 0%, transparent 60%)',
               }} />
               <div style={{
                 position: 'absolute', bottom: '1rem', left: '1rem', right: '1rem',

@@ -118,7 +118,7 @@ export const SpeakersPage: React.FC = () => {
             position: 'absolute',
             top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%',
             filter: 'blur(40px)',
           }} />
@@ -159,14 +159,14 @@ export const SpeakersPage: React.FC = () => {
               alignItems: 'center',
               gap: '0.5rem',
               padding: '0.35rem 0.95rem',
-              background: 'rgba(239, 20, 110, 0.15)',
-              border: '1px solid rgba(239, 20, 110, 0.35)',
+              background: 'var(--brand-pink-glow-15, var(--brand-glow-15))',
+              border: '1px solid var(--brand-pink-glow-35, var(--brand-glow-35))',
               backdropFilter: 'blur(12px)',
               borderRadius: 'var(--radius-full)',
               marginBottom: '1rem',
             }}>
               <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--color-brand-purple)', boxShadow: '0 0 10px var(--color-brand-purple)' }} />
-              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: '#ff6ba0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: 'var(--color-brand-pink)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Call for Speakers Open • Deadline Oct 30, 2026
               </span>
             </div>
@@ -183,7 +183,7 @@ export const SpeakersPage: React.FC = () => {
             }}>
               Meet the<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -209,11 +209,11 @@ export const SpeakersPage: React.FC = () => {
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                   padding: '0.75rem 1.75rem',
-                  background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                  background: 'var(--gradient-brand)',
                   color: '#fff', borderRadius: 'var(--radius-full)',
                   fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.88rem',
                   textDecoration: 'none',
-                  boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                  boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
                   transition: 'all 0.25s ease',
                 }}
               >
@@ -286,7 +286,7 @@ export const SpeakersPage: React.FC = () => {
                   width: '56px', height: '56px', borderRadius: '12px',
                   overflow: 'hidden', flexShrink: 0,
                   border: '2px solid rgba(239,20,110,0.5)',
-                  boxShadow: '0 4px 16px rgba(145,39,140,0.3)',
+                  boxShadow: '0 4px 16px var(--brand-glow-30)',
                 }}>
                   <img
                     src={spk.photo}
@@ -315,12 +315,12 @@ export const SpeakersPage: React.FC = () => {
                   <div style={{
                     marginTop: '0.35rem',
                     display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
-                    background: 'rgba(239,20,110,0.25)', border: '1px solid rgba(239,20,110,0.4)',
+                    background: 'var(--brand-pink-glow-25)', border: '1px solid rgba(239,20,110,0.4)',
                     borderRadius: '99px', padding: '0.12rem 0.5rem',
-                    fontSize: '0.6rem', color: '#ff6ba0', fontWeight: 700,
+                    fontSize: '0.6rem', color: 'var(--color-brand-pink)', fontWeight: 700,
                     textTransform: 'uppercase', letterSpacing: '0.06em',
                   }}>
-                    <Star size={8} fill="#ff6ba0" /> Keynote
+                    <Star size={8} fill="var(--color-brand-pink)" /> Keynote
                   </div>
                 </div>
               </motion.div>
@@ -329,7 +329,7 @@ export const SpeakersPage: React.FC = () => {
             {/* Decorative glow behind cards */}
             <div style={{
               position: 'absolute', inset: 0,
-              background: 'radial-gradient(circle at 50% 50%, rgba(145,39,140,0.15) 0%, transparent 70%)',
+              background: 'radial-gradient(circle at 50% 50%, var(--brand-glow-15) 0%, transparent 70%)',
               pointerEvents: 'none',
               filter: 'blur(20px)',
             }} />
@@ -370,7 +370,7 @@ export const SpeakersPage: React.FC = () => {
                 borderRadius: 'var(--radius-full)', color: 'var(--color-text-primary)',
                 outline: 'none', transition: 'border-color 0.2s',
               }}
-              onFocus={e => { e.currentTarget.style.borderColor = 'rgba(145,39,140,0.5)'; }}
+              onFocus={e => { e.currentTarget.style.borderColor = 'var(--brand-glow-50)'; }}
               onBlur={e => { e.currentTarget.style.borderColor = 'var(--color-subtle)'; }}
             />
           </div>
@@ -496,10 +496,10 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ spk, idx, featured }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: Math.min(idx * 0.04, 0.4) }}
-      whileHover={{ y: -5, boxShadow: featured ? '0 20px 45px rgba(145,39,140,0.18)' : '0 12px 30px rgba(0,0,0,0.1)' }}
+      whileHover={{ y: -5, boxShadow: featured ? '0 20px 45px var(--brand-glow-18)' : '0 12px 30px rgba(0,0,0,0.1)' }}
       style={{
         background: 'var(--color-elevated)',
-        border: featured ? '2px solid rgba(145,39,140,0.25)' : '1.5px solid var(--color-subtle)',
+        border: featured ? '2px solid var(--brand-glow-25)' : '1.5px solid var(--color-subtle)',
         borderRadius: 'var(--radius-lg)',
         overflow: 'hidden',
         cursor: 'default',
@@ -547,7 +547,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ spk, idx, featured }) => {
             fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.62rem',
             textTransform: 'uppercase', letterSpacing: '0.08em',
             padding: '0.2rem 0.55rem', borderRadius: 'var(--radius-full)',
-            boxShadow: '0 3px 10px rgba(145,39,140,0.4)',
+            boxShadow: '0 3px 10px var(--brand-glow-40)',
           }}>
             Keynote
           </div>

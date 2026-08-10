@@ -76,7 +76,7 @@ export const RegisterPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
         </div>
@@ -111,7 +111,7 @@ export const RegisterPage: React.FC = () => {
             }}>
               Register for<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -131,11 +131,11 @@ export const RegisterPage: React.FC = () => {
               <a href="#passes" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.75rem 1.6rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.86rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Select Your Pass <ChevronRight size={15} />
               </a>
@@ -185,10 +185,10 @@ export const RegisterPage: React.FC = () => {
               >
                 <div style={{
                   width: '24px', height: '24px', borderRadius: '50%',
-                  background: 'rgba(239,20,110,0.25)', border: '1px solid rgba(239,20,110,0.5)',
+                  background: 'var(--brand-pink-glow-25)', border: '1px solid rgba(239,20,110,0.5)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
                 }}>
-                  <Check size={13} color="#ff6ba0" />
+                  <Check size={13} color="var(--color-brand-pink)" />
                 </div>
                 <div>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.86rem', color: '#fff', marginBottom: '0.15rem' }}>
@@ -219,13 +219,13 @@ export const RegisterPage: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
               onClick={() => setSelectedPass('attendee')}
-              style={{ background: selectedPass === 'attendee' ? 'var(--gradient-brand-soft)' : 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.25rem 1.75rem', position: 'relative', boxShadow: selectedPass === 'attendee' ? '0 12px 40px rgba(145,39,140,0.2)' : 'var(--shadow-md)', border: selectedPass === 'attendee' ? '2.5px solid var(--color-brand-purple)' : '1.5px solid var(--color-subtle)', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)' }}
+              style={{ background: selectedPass === 'attendee' ? 'var(--gradient-brand-soft)' : 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.25rem 1.75rem', position: 'relative', boxShadow: selectedPass === 'attendee' ? '0 12px 40px var(--brand-glow-20)' : 'var(--shadow-md)', border: selectedPass === 'attendee' ? '2.5px solid var(--color-brand-purple)' : '1.5px solid var(--color-subtle)', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)' }}
             >
               {selectedPass === 'attendee' && <div style={{ position: 'absolute', top: '-1px', right: '1.5rem', background: 'var(--gradient-brand)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.1em', padding: '0.25rem 0.75rem', borderRadius: '0 0 var(--radius-sm) var(--radius-sm)' }}>Selected</div>}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <span className="badge badge-purple" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}><User size={12} /> HR Practitioner</span>
-                  <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--color-brand-purple)', background: 'rgba(145,39,140,0.12)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid rgba(145,39,140,0.2)' }}>Save $400</span>
+                  <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--color-brand-purple)', background: 'var(--brand-glow-12)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--brand-glow-20)' }}>Save $400</span>
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.75rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>HR Attendee Pass</h3>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '1.25rem' }}>
@@ -251,13 +251,13 @@ export const RegisterPage: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
               onClick={() => setSelectedPass('vendor')}
-              style={{ background: selectedPass === 'vendor' ? 'rgba(239,20,110,0.04)' : 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.25rem 1.75rem', position: 'relative', boxShadow: selectedPass === 'vendor' ? '0 12px 40px rgba(239,20,110,0.2)' : 'var(--shadow-md)', border: selectedPass === 'vendor' ? '2.5px solid var(--color-brand-pink)' : '1.5px solid var(--color-subtle)', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)' }}
+              style={{ background: selectedPass === 'vendor' ? 'rgba(239,20,110,0.04)' : 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', padding: '2.25rem 1.75rem', position: 'relative', boxShadow: selectedPass === 'vendor' ? '0 12px 40px var(--brand-glow-20)' : 'var(--shadow-md)', border: selectedPass === 'vendor' ? '2.5px solid var(--color-brand-pink)' : '1.5px solid var(--color-subtle)', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)' }}
             >
               {selectedPass === 'vendor' && <div style={{ position: 'absolute', top: '-1px', right: '1.5rem', background: 'var(--color-brand-pink)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.1em', padding: '0.25rem 0.75rem', borderRadius: '0 0 var(--radius-sm) var(--radius-sm)' }}>Selected</div>}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <span className="badge badge-pink" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}><Briefcase size={12} /> Solution Provider</span>
-                  <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--color-brand-pink)', background: 'rgba(239,20,110,0.1)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid rgba(239,20,110,0.2)' }}>Save $400</span>
+                  <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--color-brand-pink)', background: 'rgba(239,20,110,0.1)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--brand-glow-20)' }}>Save $400</span>
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.75rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>Vendor Pass</h3>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '1.25rem' }}>
@@ -342,7 +342,7 @@ export const RegisterPage: React.FC = () => {
                 <Ticket size={22} style={{ color: 'var(--color-brand-purple)' }} /> Complete Pass Registration
               </h3>
               {submitted ? (
-                <div style={{ padding: '2rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1.5px solid rgba(145,39,140,0.2)' }}>
+                <div style={{ padding: '2rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1.5px solid var(--brand-glow-20)' }}>
                   <CheckCircle size={42} style={{ color: 'var(--color-brand-purple)', marginBottom: '0.75rem' }} />
                   <strong style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', display: 'block', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>Registration Confirmed!</strong>
                   <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)' }}>Confirmation email and official tax invoice have been sent. See you at HRWest 2027 in South San Francisco!</p>
@@ -385,10 +385,10 @@ export const RegisterPage: React.FC = () => {
             {/* Order Summary */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
-              style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', padding: '2rem', color: 'var(--color-text-primary)', position: 'relative', overflow: 'hidden', border: '1.5px solid rgba(145,39,140,0.25)', boxShadow: 'var(--shadow-lg)' }}
+              style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', padding: '2rem', color: 'var(--color-text-primary)', position: 'relative', overflow: 'hidden', border: '1.5px solid var(--brand-glow-25)', boxShadow: 'var(--shadow-lg)' }}
             >
               <div style={{ position: 'relative', zIndex: 1 }}>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1.5px solid rgba(145,39,140,0.18)', color: 'var(--color-brand-purple)' }}>Order Summary</h3>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1.5px solid var(--brand-glow-18)', color: 'var(--color-brand-purple)' }}>Order Summary</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.75rem' }}>
                   {[
                     { label: 'Pass Type', value: currentPass.name },
@@ -401,12 +401,12 @@ export const RegisterPage: React.FC = () => {
                       <strong style={{ color: 'var(--color-text-primary)' }}>{row.value}</strong>
                     </div>
                   ))}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.5rem', fontFamily: 'var(--font-display)', fontWeight: 900, borderTop: '1.5px solid rgba(145,39,140,0.18)', paddingTop: '1rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.5rem', fontFamily: 'var(--font-display)', fontWeight: 900, borderTop: '1.5px solid var(--brand-glow-18)', paddingTop: '1rem' }}>
                     <span style={{ color: 'var(--color-text-primary)' }}>Total</span>
                     <span style={{ background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>${totalPrice.toLocaleString()}</span>
                   </div>
                 </div>
-                <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-md)', padding: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', border: '1.5px solid rgba(145,39,140,0.15)', boxShadow: 'var(--shadow-sm)' }}>
+                <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-md)', padding: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', border: '1.5px solid var(--brand-glow-15)', boxShadow: 'var(--shadow-sm)' }}>
                   <ShieldCheck size={22} style={{ flexShrink: 0, color: '#16a34a' }} />
                   <span style={{ fontSize: '0.84rem', color: 'var(--color-text-secondary)', fontWeight: 500 }}>100% refundable pre-registration guarantee until January 30, 2027.</span>
                 </div>

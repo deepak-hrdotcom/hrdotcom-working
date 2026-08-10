@@ -232,7 +232,7 @@ export const AgendaPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
         </div>
@@ -263,14 +263,14 @@ export const AgendaPage: React.FC = () => {
               alignItems: 'center',
               gap: '0.5rem',
               padding: '0.35rem 0.95rem',
-              background: 'rgba(239, 20, 110, 0.15)',
-              border: '1px solid rgba(239, 20, 110, 0.35)',
+              background: 'var(--brand-pink-glow-15, var(--brand-glow-15))',
+              border: '1px solid var(--brand-pink-glow-35, var(--brand-glow-35))',
               backdropFilter: 'blur(12px)',
               borderRadius: 'var(--radius-full)',
               marginBottom: '1rem',
             }}>
               <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--color-brand-purple)', boxShadow: '0 0 10px var(--color-brand-purple)' }} />
-              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: '#ff6ba0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', color: 'var(--color-brand-pink)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Stay Tuned for the 2027 Schedule
               </span>
             </div>
@@ -286,7 +286,7 @@ export const AgendaPage: React.FC = () => {
             }}>
               HRWest{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -307,11 +307,11 @@ export const AgendaPage: React.FC = () => {
               <Link to="/register" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.65rem 1.5rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Pre-Register for 2027 <ArrowRight size={15} />
               </Link>
@@ -353,7 +353,7 @@ export const AgendaPage: React.FC = () => {
                 title: 'Welcome to HRWest 2026!',
                 speaker: 'Debbie McGrath & Jason Averbook',
                 track: 'HR Strategy & AI',
-                color: '#e07ee0',
+                color: 'var(--color-brand-purple)',
                 offset: '0px',
                 rotate: '-2deg',
                 delay: 0.2,
@@ -373,7 +373,7 @@ export const AgendaPage: React.FC = () => {
                 title: '2026 Employment Law Shifts',
                 speaker: 'Holly Sutton — Farella Braun',
                 track: 'Legal & Compliance',
-                color: '#ff6ba0',
+                color: 'var(--color-brand-pink)',
                 offset: '8px',
                 rotate: '-1deg',
                 delay: 0.44,
@@ -422,8 +422,8 @@ export const AgendaPage: React.FC = () => {
       {/* FLOATING ACRYLIC FILTER CONTROL BAR */}
       <section id="agenda-grid" style={{ background: 'var(--color-canvas)', padding: '2.5rem 0 1rem', position: 'sticky', top: 0, zIndex: 10 }}>
         <div className="container-wide">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', padding: '0.75rem 1.25rem', borderRadius: 'var(--radius-lg)', border: '1.5px solid rgba(145,39,140,0.18)', boxShadow: '0 8px 32px rgba(145,39,140,0.1)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', background: 'var(--color-surface)', padding: '0.3rem', borderRadius: 'var(--radius-full)', border: '1.5px solid rgba(145,39,140,0.18)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', padding: '0.75rem 1.25rem', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--brand-glow-18)', boxShadow: '0 8px 32px rgba(145,39,140,0.1)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', background: 'var(--color-surface)', padding: '0.3rem', borderRadius: 'var(--radius-full)', border: '1.5px solid var(--brand-glow-18)' }}>
               {[{ day: 1, label: 'Day 1 - Jun 9' }, { day: 2, label: 'Day 2 - Jun 10' }].map(item => (
                 <button key={item.day} onClick={() => setActiveDay(item.day)} style={{ padding: '0.45rem 1.1rem', borderRadius: 'var(--radius-full)', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.84rem', background: activeDay === item.day ? 'var(--gradient-brand)' : 'transparent', color: activeDay === item.day ? '#fff' : 'var(--color-text-secondary)', boxShadow: activeDay === item.day ? 'var(--shadow-brand)' : 'none', transition: 'all 0.22s ease', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <Calendar size={13} /> {item.label}
@@ -432,7 +432,7 @@ export const AgendaPage: React.FC = () => {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap', flex: 1, justifyContent: 'flex-start' }}>
               {TRACKS.map(track => (
-                <button key={track} onClick={() => setSelectedTrack(track)} style={{ padding: '0.38rem 0.9rem', borderRadius: 'var(--radius-full)', cursor: 'pointer', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.78rem', border: selectedTrack === track ? '1.5px solid var(--color-brand-purple)' : '1.5px solid var(--color-subtle)', background: selectedTrack === track ? 'var(--gradient-brand)' : 'var(--color-surface)', color: selectedTrack === track ? '#fff' : 'var(--color-text-muted)', boxShadow: selectedTrack === track ? '0 4px 12px rgba(145,39,140,0.28)' : 'none', transition: 'all 0.2s ease' }}>
+                <button key={track} onClick={() => setSelectedTrack(track)} style={{ padding: '0.38rem 0.9rem', borderRadius: 'var(--radius-full)', cursor: 'pointer', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.78rem', border: selectedTrack === track ? '1.5px solid var(--color-brand-purple)' : '1.5px solid var(--color-subtle)', background: selectedTrack === track ? 'var(--gradient-brand)' : 'var(--color-surface)', color: selectedTrack === track ? '#fff' : 'var(--color-text-muted)', boxShadow: selectedTrack === track ? '0 4px 12px var(--brand-glow-28)' : 'none', transition: 'all 0.2s ease' }}>
                   {track}
                 </button>
               ))}
@@ -458,7 +458,7 @@ export const AgendaPage: React.FC = () => {
                     initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: idx * 0.05 }}
                     className="agenda-session-card-grid"
                     style={{ background: 'var(--color-elevated)', border: '1.5px solid var(--color-subtle)', borderRadius: 'var(--radius-xl)', padding: '1.75rem', boxShadow: 'var(--shadow-md)', borderLeft: `5px solid ${trackColor}`, transition: 'all 0.25s ease', position: 'relative', overflow: 'hidden' }}
-                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(145,39,140,0.12)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px var(--brand-glow-12)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                     onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                   >
                     <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '200px', background: `radial-gradient(circle, ${trackColor}18 0%, transparent 70%)`, pointerEvents: 'none' }} />
@@ -471,7 +471,7 @@ export const AgendaPage: React.FC = () => {
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.73rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: trackColor, background: `${trackColor}14`, padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-sm)', border: `1px solid ${trackColor}30`, width: 'fit-content' }}><Sparkles size={11} /> {session.track}</span>
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}><MapPin size={13} color="var(--color-brand-purple)" /> {session.room}</span>
                         {session.credits && session.credits !== '-' && (
-                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.73rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--color-brand-purple)', background: 'var(--gradient-brand-soft)', padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-sm)', width: 'fit-content', border: '1px solid rgba(145,39,140,0.2)' }}><Award size={12} /> {session.credits}</span>
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.73rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--color-brand-purple)', background: 'var(--gradient-brand-soft)', padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-sm)', width: 'fit-content', border: '1px solid var(--brand-glow-20)' }}><Award size={12} /> {session.credits}</span>
                         )}
                       </div>
                     </div>
@@ -511,7 +511,7 @@ export const AgendaPage: React.FC = () => {
       </section>
 
       {/* LIGHT BRAND BOTTOM CTA */}
-      <section style={{ background: 'var(--gradient-brand-soft)', padding: '5rem 0', borderTop: '1.5px solid rgba(145,39,140,0.15)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--gradient-brand-soft)', padding: '5rem 0', borderTop: '1.5px solid var(--brand-glow-15)', position: 'relative', overflow: 'hidden' }}>
         <div className="container-wide" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.76rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-brand-purple)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1rem' }}><Sparkles size={13} /> Your Schedule Awaits</span>

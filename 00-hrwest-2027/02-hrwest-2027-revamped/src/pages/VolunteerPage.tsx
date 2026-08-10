@@ -54,7 +54,7 @@ export const VolunteerPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
         </div>
@@ -90,7 +90,7 @@ export const VolunteerPage: React.FC = () => {
             }}>
               Volunteer &<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -110,11 +110,11 @@ export const VolunteerPage: React.FC = () => {
               <a href="#apply" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.75rem 1.6rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.86rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Apply to Volunteer <ChevronRight size={15} />
               </a>
@@ -175,12 +175,12 @@ export const VolunteerPage: React.FC = () => {
               >
                 <div style={{
                   width: '40px', height: '40px', borderRadius: '12px',
-                  background: 'linear-gradient(135deg, rgba(239,20,110,0.3), rgba(145,39,140,0.4))',
+                  background: 'linear-gradient(135deg, var(--brand-pink-glow-30), var(--brand-glow-40))',
                   border: '1px solid rgba(239,20,110,0.4)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   flexShrink: 0
                 }}>
-                  <Icon size={19} color="#ff6ba0" />
+                  <Icon size={19} color="var(--color-brand-pink)" />
                 </div>
                 <div>
                   <div style={{
@@ -276,12 +276,12 @@ export const VolunteerPage: React.FC = () => {
                   background: 'var(--gradient-brand-soft)',
                   borderRadius: 'var(--radius-xl)',
                   padding: '2.25rem 2rem',
-                  border: '1.5px solid rgba(145,39,140,0.25)',
+                  border: '1.5px solid var(--brand-glow-25)',
                   boxShadow: 'var(--shadow-md)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--gradient-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 4px 14px rgba(145,39,140,0.3)' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--gradient-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 4px 14px var(--brand-glow-30)' }}>
                     <Mail size={18} />
                   </div>
                   <div>
@@ -323,7 +323,7 @@ export const VolunteerPage: React.FC = () => {
                 </p>
 
                 {submitted ? (
-                  <div style={{ padding: '1.75rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px solid rgba(145,39,140,0.2)' }}>
+                  <div style={{ padding: '1.75rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px solid var(--brand-glow-20)' }}>
                     <CheckCircle size={36} style={{ color: 'var(--color-brand-purple)', marginBottom: '0.5rem' }} />
                     <strong style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', display: 'block', marginBottom: '0.35rem', color: 'var(--color-text-primary)' }}>Application Received!</strong>
                     <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', margin: 0 }}>

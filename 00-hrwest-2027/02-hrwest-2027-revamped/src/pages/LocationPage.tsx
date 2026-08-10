@@ -47,7 +47,7 @@ export const LocationPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
           <div style={{
@@ -90,7 +90,7 @@ export const LocationPage: React.FC = () => {
             }}>
               South San<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -110,11 +110,11 @@ export const LocationPage: React.FC = () => {
               <a href="#map" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.65rem 1.5rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Get Directions <Navigation size={15} />
               </a>
@@ -175,12 +175,12 @@ export const LocationPage: React.FC = () => {
               >
                 <div style={{
                   width: '40px', height: '40px', borderRadius: '12px',
-                  background: 'linear-gradient(135deg, rgba(239,20,110,0.25), rgba(145,39,140,0.35))',
+                  background: 'linear-gradient(135deg, var(--brand-pink-glow-25), var(--brand-glow-35))',
                   border: '1px solid rgba(239,20,110,0.4)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   flexShrink: 0
                 }}>
-                  <Icon size={19} color="#ff6ba0" />
+                  <Icon size={19} color="var(--color-brand-pink)" />
                 </div>
                 <div>
                   <div style={{
@@ -220,7 +220,7 @@ export const LocationPage: React.FC = () => {
             style={{
               background: 'var(--color-elevated)',
               borderRadius: 'var(--radius-xl)',
-              border: '1.5px solid rgba(145,39,140,0.2)',
+              border: '1.5px solid var(--brand-glow-20)',
               boxShadow: 'var(--shadow-lg)',
               overflow: 'hidden',
               display: 'grid',
@@ -245,7 +245,7 @@ export const LocationPage: React.FC = () => {
               {/* Gradient Overlay for Brand Colors & Crisp Contrast */}
               <div style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(180deg, rgba(239,20,110,0.82) 0%, rgba(145,39,140,0.92) 100%)',
+                background: 'linear-gradient(180deg, var(--brand-pink-glow-82) 0%, rgba(145,39,140,0.92) 100%)',
               }} />
 
               <div style={{ position: 'relative', zIndex: 2 }}>
@@ -340,7 +340,7 @@ export const LocationPage: React.FC = () => {
                     textAlign: 'center',
                   }}
                 >
-                  <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'var(--gradient-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem', boxShadow: '0 4px 14px rgba(145,39,140,0.3)' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'var(--gradient-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem', boxShadow: '0 4px 14px var(--brand-glow-30)' }}>
                     <Icon size={24} color="#fff" />
                   </div>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.75rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: '0.3rem' }}>
@@ -360,7 +360,7 @@ export const LocationPage: React.FC = () => {
         <div className="container-wide">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-md)', background: 'var(--gradient-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 14px rgba(145,39,140,0.3)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-md)', background: 'var(--gradient-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 14px var(--brand-glow-30)' }}>
                 <Hotel size={22} color="#fff" />
               </div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', letterSpacing: '-0.03em', color: 'var(--color-text-primary)' }}>
@@ -457,7 +457,7 @@ export const LocationPage: React.FC = () => {
           <div style={{
             borderRadius: 'var(--radius-xl)',
             overflow: 'hidden',
-            border: '2px solid rgba(145,39,140,0.2)',
+            border: '2px solid var(--brand-glow-20)',
             boxShadow: 'var(--shadow-md)',
             height: '420px',
           }}>

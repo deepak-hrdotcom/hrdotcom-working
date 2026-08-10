@@ -72,7 +72,7 @@ export const TeamAttendPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
           <div style={{
@@ -115,7 +115,7 @@ export const TeamAttendPage: React.FC = () => {
             }}>
               Bring Your<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -135,11 +135,11 @@ export const TeamAttendPage: React.FC = () => {
               <a href="#calculator" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.65rem 1.5rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Calculate Your Savings <ChevronRight size={15} />
               </a>
@@ -208,7 +208,7 @@ export const TeamAttendPage: React.FC = () => {
                 </div>
                 <span style={{
                   fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.82rem',
-                  color: '#ff6ba0', background: 'rgba(239,20,110,0.2)', padding: '0.2rem 0.55rem',
+                  color: 'var(--color-brand-pink)', background: 'var(--brand-glow-20)', padding: '0.2rem 0.55rem',
                   borderRadius: '8px', border: '1px solid rgba(239,20,110,0.35)'
                 }}>
                   {save}
@@ -274,7 +274,7 @@ export const TeamAttendPage: React.FC = () => {
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.6rem, 2.5vw, 2.25rem)', letterSpacing: '-0.02em', margin: 0, color: 'var(--color-text-primary)' }}>Group Pricing Schedule</h2>
             <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>All prices are per-person rates based on team size and registration timeframe.</p>
           </div>
-          <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.18)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
+          <div style={{ background: 'var(--color-elevated)', borderRadius: 'var(--radius-xl)', border: '1.5px solid var(--brand-glow-18)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
               <thead>
                 <tr style={{ background: 'var(--gradient-brand)', color: '#fff' }}>
@@ -313,7 +313,7 @@ export const TeamAttendPage: React.FC = () => {
           {/* VIP Perk Banner */}
           <motion.div
             initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
-            style={{ marginTop: '2rem', padding: '1.5rem 2rem', background: 'linear-gradient(135deg, rgba(145,39,140,0.08) 0%, rgba(239,20,110,0.08) 100%)', borderRadius: 'var(--radius-xl)', border: '1.5px solid rgba(145,39,140,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', backdropFilter: 'blur(8px)' }}
+            style={{ marginTop: '2rem', padding: '1.5rem 2rem', background: 'linear-gradient(135deg, var(--brand-glow-08) 0%, var(--brand-pink-glow-08) 100%)', borderRadius: 'var(--radius-xl)', border: '1.5px solid var(--brand-glow-22)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', backdropFilter: 'blur(8px)' }}
           >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
@@ -364,17 +364,17 @@ export const TeamAttendPage: React.FC = () => {
 
               {/* Results dual-pane */}
               <div className="responsive-grid-2" style={{ gap: '1rem', marginBottom: '1.75rem' }}>
-                <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.25rem', border: '1px solid rgba(145,39,140,0.15)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.25rem', border: '1px solid var(--brand-glow-15)', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.74rem', fontFamily: 'var(--font-display)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-brand-purple)', marginBottom: '0.4rem' }}>Group Discount</div>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{Math.round(discountRate * 100)}% Off</div>
                 </div>
-                <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.25rem', border: '1px solid rgba(145,39,140,0.15)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.25rem', border: '1px solid var(--brand-glow-15)', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.74rem', fontFamily: 'var(--font-display)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-brand-purple)', marginBottom: '0.4rem' }}>Per-Ticket Rate</div>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>${discountedPricePerTicket}</div>
                 </div>
               </div>
 
-              <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', border: '1.5px solid rgba(145,39,140,0.22)', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', border: '1.5px solid var(--brand-glow-22)', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                   <span style={{ fontSize: '0.92rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', fontWeight: 800 }}>Total Team Savings</span>
                   <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '2rem', background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>${totalSavings.toLocaleString()}</span>

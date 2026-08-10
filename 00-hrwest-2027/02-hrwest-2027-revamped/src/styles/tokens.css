@@ -92,4 +92,421 @@
   --color-accent-emerald:hsl(160, 60%, 45%);
   --color-accent-cyan:   hsl(196, 80%, 48%);
   --color-accent-rose:   hsl(349, 89%, 60%);
+
+  /* === Brand Alpha Tokens — theme-aware glow/border rgba helpers ===
+     These replace hardcoded rgba(145,39,140,...) in TSX inline styles.
+     Each theme overrides these to match its accent hue.
+  */
+  --brand-glow-05:   rgba(145, 39, 140, 0.05);
+  --brand-glow-08:   rgba(145, 39, 140, 0.08);
+  --brand-glow-10:   rgba(145, 39, 140, 0.10);
+  --brand-glow-12:   rgba(145, 39, 140, 0.12);
+  --brand-glow-14:   rgba(145, 39, 140, 0.14);
+  --brand-glow-15:   rgba(145, 39, 140, 0.15);
+  --brand-glow-18:   rgba(145, 39, 140, 0.18);
+  --brand-glow-20:   rgba(145, 39, 140, 0.20);
+  --brand-glow-22:   rgba(145, 39, 140, 0.22);
+  --brand-glow-25:   rgba(145, 39, 140, 0.25);
+  --brand-glow-28:   rgba(145, 39, 140, 0.28);
+  --brand-glow-30:   rgba(145, 39, 140, 0.30);
+  --brand-glow-35:   rgba(145, 39, 140, 0.35);
+  --brand-glow-40:   rgba(145, 39, 140, 0.40);
+  --brand-glow-50:   rgba(145, 39, 140, 0.50);
+  /* Pink-side alpha */
+  --brand-pink-glow-08:  rgba(239, 20, 110, 0.08);
+  --brand-pink-glow-10:  rgba(239, 20, 110, 0.10);
+  --brand-pink-glow-15:  rgba(239, 20, 110, 0.15);
+  --brand-pink-glow-18:  rgba(239, 20, 110, 0.18);
+  --brand-pink-glow-25:  rgba(239, 20, 110, 0.25);
+  --brand-pink-glow-35:  rgba(239, 20, 110, 0.35);
+  --brand-pink-glow-40:  rgba(239, 20, 110, 0.40);
+  --brand-pink-glow-45:  rgba(239, 20, 110, 0.45);
+  --brand-pink-glow-30:  rgba(239, 20, 110, 0.30);
+  --brand-pink-glow-82:  rgba(239, 20, 110, 0.82);
+  /* Radial hero glow — used in hero section backdrops */
+  --hero-radial-glow:    radial-gradient(circle, rgba(145, 39, 140, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(145, 39, 140, 0.15) 0%, transparent 70%);
+  /* Dual glow for card overlays */
+  --hero-dual-glow:      linear-gradient(135deg, rgba(239,20,110,0.3), rgba(145,39,140,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(239,20,110,0.82) 0%, rgba(145,39,140,0.92) 100%);
+  /* Default strip-bg (matches :root gradient-brand) */
+  --strip-bg: linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(335, 89%, 51%) 100%);
+}
+
+
+/* =============================================
+   THEME SYSTEM — Smooth CSS Variable Transitions
+   Applies when [data-theme] attribute is set on <html>
+   ============================================= */
+
+/* Ensure all color tokens animate smoothly on theme change */
+*, *::before, *::after {
+  transition:
+    background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Preserve individual transition overrides on interactive elements */
+a, button, [role="button"] {
+  transition:
+    background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.15s ease,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* =============================================
+   THEME 1 — Silicon Valley Electric (Default / HR.com Brand)
+   Explicit override for [data-theme="electric"]
+   Psychology: Innovation · Tech Forward · High-Energy Transformation
+   ============================================= */
+[data-theme="electric"] {
+  --color-brand-authority:    hsl(255, 60%, 28%);
+  --color-brand-purple:      hsl(302, 58%, 36%);
+  --color-brand-purple-dark: hsl(302, 58%, 24%);
+  --color-brand-pink:        hsl(335, 89%, 51%);
+  --color-brand-pink-dark:   hsl(335, 89%, 40%);
+  --color-brand-purple-light: hsl(302, 58%, 95%);
+  --color-brand-pink-light:  hsl(335, 89%, 95%);
+  --color-brand-authority-light: hsl(255, 60%, 96%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(335, 89%, 51%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(302, 58%, 42%), hsl(335, 89%, 51%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(302, 58%, 96%) 0%, hsl(335, 89%, 96%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(320, 75%, 44%) 50%, hsl(335, 89%, 51%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(145, 39, 140, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(239, 20, 110, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(145, 39, 140, 0.06) 0%, transparent 50%);
+
+  --glass-border:        rgba(145, 39, 140, 0.18);
+  --shadow-brand:        0 8px 32px rgba(145, 39, 140, 0.28), 0 2px 8px rgba(239, 20, 110, 0.18);
+  --shadow-glow:         0 0 50px rgba(145, 39, 140, 0.25), 0 0 100px rgba(239, 20, 110, 0.15);
+  --strip-bg: linear-gradient(135deg, hsl(302, 58%, 36%) 0%, hsl(335, 89%, 51%) 100%);
+
+  /* Brand Alpha Tokens */
+  --brand-glow-05:   rgba(145, 39, 140, 0.05);
+  --brand-glow-08:   rgba(145, 39, 140, 0.08);
+  --brand-glow-10:   rgba(145, 39, 140, 0.10);
+  --brand-glow-12:   rgba(145, 39, 140, 0.12);
+  --brand-glow-14:   rgba(145, 39, 140, 0.14);
+  --brand-glow-15:   rgba(145, 39, 140, 0.15);
+  --brand-glow-18:   rgba(145, 39, 140, 0.18);
+  --brand-glow-20:   rgba(145, 39, 140, 0.20);
+  --brand-glow-22:   rgba(145, 39, 140, 0.22);
+  --brand-glow-25:   rgba(145, 39, 140, 0.25);
+  --brand-glow-28:   rgba(145, 39, 140, 0.28);
+  --brand-glow-30:   rgba(145, 39, 140, 0.30);
+  --brand-glow-35:   rgba(145, 39, 140, 0.35);
+  --brand-glow-40:   rgba(145, 39, 140, 0.40);
+  --brand-glow-50:   rgba(145, 39, 140, 0.50);
+  --brand-pink-glow-08:  rgba(239, 20, 110, 0.08);
+  --brand-pink-glow-10:  rgba(239, 20, 110, 0.10);
+  --brand-pink-glow-15:  rgba(239, 20, 110, 0.15);
+  --brand-pink-glow-18:  rgba(239, 20, 110, 0.18);
+  --brand-pink-glow-25:  rgba(239, 20, 110, 0.25);
+  --brand-pink-glow-35:  rgba(239, 20, 110, 0.35);
+  --brand-pink-glow-40:  rgba(239, 20, 110, 0.40);
+  --brand-pink-glow-45:  rgba(239, 20, 110, 0.45);
+  --brand-pink-glow-30:  rgba(239, 20, 110, 0.30);
+  --brand-pink-glow-82:  rgba(239, 20, 110, 0.82);
+  --hero-radial-glow:    radial-gradient(circle, rgba(145, 39, 140, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(145, 39, 140, 0.15) 0%, transparent 70%);
+  --hero-dual-glow:      linear-gradient(135deg, rgba(239,20,110,0.3), rgba(145,39,140,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(239,20,110,0.82) 0%, rgba(145,39,140,0.92) 100%);
+}
+
+
+/* =============================================
+   THEME 2 — Pacific Emerald
+   Psychology: Executive Trust · Strategic Growth · Workplace Wellness
+   Inspired by the Bay Area's redwood forests & Pacific shoreline
+   ============================================= */
+[data-theme="emerald"] {
+  --color-brand-authority:    hsl(158, 72%, 16%);
+  --color-brand-purple:      hsl(158, 65%, 28%);
+  --color-brand-purple-dark: hsl(158, 65%, 18%);
+  --color-brand-pink:        hsl(160, 84%, 39%);
+  --color-brand-pink-dark:   hsl(160, 84%, 28%);
+  --color-brand-purple-light: hsl(158, 65%, 94%);
+  --color-brand-pink-light:  hsl(160, 84%, 94%);
+  --color-brand-authority-light: hsl(158, 72%, 95%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(158, 65%, 28%) 0%, hsl(160, 84%, 39%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(158, 65%, 28%), hsl(160, 84%, 39%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(158, 65%, 94%) 0%, hsl(160, 84%, 94%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(158, 65%, 28%) 0%, hsl(159, 76%, 34%) 50%, hsl(160, 84%, 39%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(15, 81, 50, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(15, 81, 50, 0.06) 0%, transparent 50%);
+
+  --glass-border:        rgba(15, 81, 50, 0.18);
+  --shadow-brand:        0 8px 32px rgba(15, 81, 50, 0.28), 0 2px 8px rgba(16, 185, 129, 0.18);
+  --shadow-glow:         0 0 50px rgba(15, 81, 50, 0.25), 0 0 100px rgba(16, 185, 129, 0.15);
+  --strip-bg: linear-gradient(135deg, hsl(158, 65%, 28%) 0%, hsl(160, 84%, 39%) 100%);
+
+  /* Brand Alpha Tokens — Emerald palette */
+  --brand-glow-05:   rgba(15, 81, 50, 0.05);
+  --brand-glow-08:   rgba(15, 81, 50, 0.08);
+  --brand-glow-10:   rgba(15, 81, 50, 0.10);
+  --brand-glow-12:   rgba(15, 81, 50, 0.12);
+  --brand-glow-14:   rgba(15, 81, 50, 0.14);
+  --brand-glow-15:   rgba(15, 81, 50, 0.15);
+  --brand-glow-18:   rgba(15, 81, 50, 0.18);
+  --brand-glow-20:   rgba(15, 81, 50, 0.20);
+  --brand-glow-22:   rgba(15, 81, 50, 0.22);
+  --brand-glow-25:   rgba(15, 81, 50, 0.25);
+  --brand-glow-28:   rgba(15, 81, 50, 0.28);
+  --brand-glow-30:   rgba(15, 81, 50, 0.30);
+  --brand-glow-35:   rgba(15, 81, 50, 0.35);
+  --brand-glow-40:   rgba(15, 81, 50, 0.40);
+  --brand-glow-50:   rgba(15, 81, 50, 0.50);
+  --brand-pink-glow-08:  rgba(16, 185, 129, 0.08);
+  --brand-pink-glow-10:  rgba(16, 185, 129, 0.10);
+  --brand-pink-glow-18:  rgba(16, 185, 129, 0.18);
+  --brand-pink-glow-25:  rgba(16, 185, 129, 0.25);
+  --brand-pink-glow-30:  rgba(16, 185, 129, 0.30);
+  --brand-pink-glow-82:  rgba(16, 185, 129, 0.82);
+  --hero-radial-glow:    radial-gradient(circle, rgba(15, 81, 50, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(15, 81, 50, 0.15) 0%, transparent 70%);
+  --hero-dual-glow:      linear-gradient(135deg, rgba(16,185,129,0.3), rgba(15,81,50,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(16,185,129,0.82) 0%, rgba(15,81,50,0.92) 100%);
+}
+
+
+/* =============================================
+   THEME 3 — Sunset Coral & Amber
+   Psychology: Warmth · Empathy · Vibrant Networking · People-First Culture
+   Inspired by Northern California golden hour tones
+   ============================================= */
+[data-theme="sunset"] {
+  --color-brand-authority:    hsl(15, 75%, 22%);
+  --color-brand-purple:      hsl(32, 95%, 44%);
+  --color-brand-purple-dark: hsl(32, 95%, 30%);
+  --color-brand-pink:        hsl(20, 92%, 52%);
+  --color-brand-pink-dark:   hsl(20, 92%, 38%);
+  --color-brand-purple-light: hsl(32, 95%, 94%);
+  --color-brand-pink-light:  hsl(20, 92%, 94%);
+  --color-brand-authority-light: hsl(15, 75%, 95%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(32, 95%, 44%) 0%, hsl(20, 92%, 52%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(32, 95%, 44%), hsl(20, 92%, 52%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(32, 95%, 94%) 0%, hsl(20, 92%, 94%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(32, 95%, 44%) 0%, hsl(26, 93%, 48%) 50%, hsl(20, 92%, 52%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.06) 0%, transparent 50%);
+
+  --glass-border:        rgba(217, 119, 6, 0.18);
+  --shadow-brand:        0 8px 32px rgba(217, 119, 6, 0.28), 0 2px 8px rgba(249, 115, 22, 0.18);
+  --shadow-glow:         0 0 50px rgba(217, 119, 6, 0.25), 0 0 100px rgba(249, 115, 22, 0.15);
+  --strip-bg: linear-gradient(135deg, hsl(32, 95%, 44%) 0%, hsl(20, 92%, 52%) 100%);
+
+  /* Brand Alpha Tokens — Sunset palette */
+  --brand-glow-05:   rgba(217, 119, 6, 0.05);
+  --brand-glow-08:   rgba(217, 119, 6, 0.08);
+  --brand-glow-10:   rgba(217, 119, 6, 0.10);
+  --brand-glow-12:   rgba(217, 119, 6, 0.12);
+  --brand-glow-14:   rgba(217, 119, 6, 0.14);
+  --brand-glow-15:   rgba(217, 119, 6, 0.15);
+  --brand-glow-18:   rgba(217, 119, 6, 0.18);
+  --brand-glow-20:   rgba(217, 119, 6, 0.20);
+  --brand-glow-22:   rgba(217, 119, 6, 0.22);
+  --brand-glow-25:   rgba(217, 119, 6, 0.25);
+  --brand-glow-28:   rgba(217, 119, 6, 0.28);
+  --brand-glow-30:   rgba(217, 119, 6, 0.30);
+  --brand-glow-35:   rgba(217, 119, 6, 0.35);
+  --brand-glow-40:   rgba(217, 119, 6, 0.40);
+  --brand-glow-50:   rgba(217, 119, 6, 0.50);
+  --brand-pink-glow-08:  rgba(249, 115, 22, 0.08);
+  --brand-pink-glow-10:  rgba(249, 115, 22, 0.10);
+  --brand-pink-glow-18:  rgba(249, 115, 22, 0.18);
+  --brand-pink-glow-25:  rgba(249, 115, 22, 0.25);
+  --brand-pink-glow-30:  rgba(249, 115, 22, 0.30);
+  --brand-pink-glow-82:  rgba(249, 115, 22, 0.82);
+  --hero-radial-glow:    radial-gradient(circle, rgba(217, 119, 6, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 70%);
+  --hero-dual-glow:      linear-gradient(135deg, rgba(249,115,22,0.3), rgba(217,119,6,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(249,115,22,0.82) 0%, rgba(217,119,6,0.92) 100%);
+}
+
+/* =============================================
+   THEME 4 — HR Professional Blue
+   Psychology: Authority · Credibility · SHRM/HRCI Compliance · Executive Trust
+   Inspired by SHRM/HRCI industry association colours & Fortune 500 HR leadership
+   ============================================= */
+[data-theme="hr-blue"] {
+  --color-brand-authority:    hsl(218, 75%, 14%);
+  --color-brand-purple:      hsl(218, 72%, 32%);
+  --color-brand-purple-dark: hsl(218, 72%, 20%);
+  --color-brand-pink:        hsl(200, 84%, 44%);
+  --color-brand-pink-dark:   hsl(200, 84%, 30%);
+  --color-brand-purple-light: hsl(218, 72%, 94%);
+  --color-brand-pink-light:  hsl(200, 84%, 94%);
+  --color-brand-authority-light: hsl(218, 75%, 96%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(218, 72%, 32%) 0%, hsl(200, 84%, 44%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(218, 72%, 32%), hsl(200, 84%, 44%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(218, 72%, 94%) 0%, hsl(200, 84%, 94%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(218, 72%, 32%) 0%, hsl(209, 78%, 38%) 50%, hsl(200, 84%, 44%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.06) 0%, transparent 50%);
+
+  --glass-border:        rgba(30, 64, 175, 0.18);
+  --shadow-brand:        0 8px 32px rgba(30, 64, 175, 0.28), 0 2px 8px rgba(14, 165, 233, 0.18);
+  --shadow-glow:         0 0 50px rgba(30, 64, 175, 0.25), 0 0 100px rgba(14, 165, 233, 0.15);
+  --strip-bg: linear-gradient(135deg, hsl(218, 72%, 32%) 0%, hsl(200, 84%, 44%) 100%);
+
+  /* Brand Alpha Tokens — HR Professional Blue palette */
+  --brand-glow-05:   rgba(30, 64, 175, 0.05);
+  --brand-glow-08:   rgba(30, 64, 175, 0.08);
+  --brand-glow-10:   rgba(30, 64, 175, 0.10);
+  --brand-glow-12:   rgba(30, 64, 175, 0.12);
+  --brand-glow-14:   rgba(30, 64, 175, 0.14);
+  --brand-glow-15:   rgba(30, 64, 175, 0.15);
+  --brand-glow-18:   rgba(30, 64, 175, 0.18);
+  --brand-glow-20:   rgba(30, 64, 175, 0.20);
+  --brand-glow-22:   rgba(30, 64, 175, 0.22);
+  --brand-glow-25:   rgba(30, 64, 175, 0.25);
+  --brand-glow-28:   rgba(30, 64, 175, 0.28);
+  --brand-glow-30:   rgba(30, 64, 175, 0.30);
+  --brand-glow-35:   rgba(30, 64, 175, 0.35);
+  --brand-glow-40:   rgba(30, 64, 175, 0.40);
+  --brand-glow-50:   rgba(30, 64, 175, 0.50);
+  --brand-pink-glow-08:  rgba(14, 165, 233, 0.08);
+  --brand-pink-glow-10:  rgba(14, 165, 233, 0.10);
+  --brand-pink-glow-18:  rgba(14, 165, 233, 0.18);
+  --brand-pink-glow-25:  rgba(14, 165, 233, 0.25);
+  --brand-pink-glow-30:  rgba(14, 165, 233, 0.30);
+  --brand-pink-glow-82:  rgba(14, 165, 233, 0.82);
+  --hero-radial-glow:    radial-gradient(circle, rgba(30, 64, 175, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.15) 0%, transparent 70%);
+  --hero-dual-glow:      linear-gradient(135deg, rgba(14,165,233,0.3), rgba(30,64,175,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(14,165,233,0.82) 0%, rgba(30,64,175,0.92) 100%);
+}
+
+/* =============================================
+   THEME 5 — Charcoal Slate (Dark Midnight)
+   Base anchor: #454F5B = hsl(213, 14%, 31%) — dark gunmetal charcoal
+   Paired with: steel slate-blue hsl(210, 28%, 52%) for the gradient highlight
+   Psychology: Refined Restraint · Executive Composure · Industrial Confidence · Quiet Authority
+   The gravitas of a CFO's boardroom — sophisticated without needing brightness.
+   ============================================= */
+[data-theme="midnight-navy"] {
+  --color-brand-authority:    hsl(213, 18%, 18%);   /* Deeper anchor for headings */
+  --color-brand-purple:      hsl(213, 14%, 31%);   /* #454F5B — exact user colour */
+  --color-brand-purple-dark: hsl(213, 14%, 20%);
+  --color-brand-pink:        hsl(210, 28%, 52%);   /* Steel slate-blue highlight */
+  --color-brand-pink-dark:   hsl(210, 28%, 38%);
+  --color-brand-purple-light: hsl(213, 14%, 94%);
+  --color-brand-pink-light:  hsl(210, 28%, 94%);
+  --color-brand-authority-light: hsl(213, 18%, 96%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(213, 14%, 31%) 0%, hsl(210, 28%, 52%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(213, 14%, 31%), hsl(210, 28%, 52%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(213, 14%, 94%) 0%, hsl(210, 28%, 94%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(213, 14%, 31%) 0%, hsl(211, 20%, 40%) 50%, hsl(210, 28%, 52%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(69, 79, 91, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(96, 125, 152, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(69, 79, 91, 0.06) 0%, transparent 50%);
+
+  --glass-border:        rgba(69, 79, 91, 0.20);
+  --shadow-brand:        0 8px 32px rgba(69, 79, 91, 0.32), 0 2px 8px rgba(96, 125, 152, 0.20);
+  --shadow-glow:         0 0 50px rgba(69, 79, 91, 0.28), 0 0 100px rgba(96, 125, 152, 0.15);
+  --strip-bg: linear-gradient(135deg, hsl(213, 14%, 31%) 0%, hsl(210, 28%, 52%) 100%);
+
+  /* Brand Alpha Tokens — Charcoal Slate (#454F5B) palette */
+  --brand-glow-05:   rgba(69, 79, 91, 0.05);
+  --brand-glow-08:   rgba(69, 79, 91, 0.08);
+  --brand-glow-10:   rgba(69, 79, 91, 0.10);
+  --brand-glow-12:   rgba(69, 79, 91, 0.12);
+  --brand-glow-14:   rgba(69, 79, 91, 0.14);
+  --brand-glow-15:   rgba(69, 79, 91, 0.15);
+  --brand-glow-18:   rgba(69, 79, 91, 0.18);
+  --brand-glow-20:   rgba(69, 79, 91, 0.20);
+  --brand-glow-22:   rgba(69, 79, 91, 0.22);
+  --brand-glow-25:   rgba(69, 79, 91, 0.25);
+  --brand-glow-28:   rgba(69, 79, 91, 0.28);
+  --brand-glow-30:   rgba(69, 79, 91, 0.30);
+  --brand-glow-35:   rgba(69, 79, 91, 0.35);
+  --brand-glow-40:   rgba(69, 79, 91, 0.40);
+  --brand-glow-50:   rgba(69, 79, 91, 0.50);
+  --brand-pink-glow-08:  rgba(96, 125, 152, 0.08);
+  --brand-pink-glow-10:  rgba(96, 125, 152, 0.10);
+  --brand-pink-glow-15:  rgba(96, 125, 152, 0.15);
+  --brand-pink-glow-18:  rgba(96, 125, 152, 0.18);
+  --brand-pink-glow-25:  rgba(96, 125, 152, 0.25);
+  --brand-pink-glow-30:  rgba(96, 125, 152, 0.30);
+  --brand-pink-glow-35:  rgba(96, 125, 152, 0.35);
+  --brand-pink-glow-40:  rgba(96, 125, 152, 0.40);
+  --brand-pink-glow-45:  rgba(96, 125, 152, 0.45);
+  --brand-pink-glow-82:  rgba(96, 125, 152, 0.82);
+  --hero-radial-glow:    radial-gradient(circle, rgba(69, 79, 91, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(69, 79, 91, 0.15) 0%, transparent 70%);
+  --hero-dual-glow:      linear-gradient(135deg, rgba(96,125,152,0.3), rgba(69,79,91,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(96,125,152,0.82) 0%, rgba(69,79,91,0.92) 100%);
+}
+
+/* =============================================
+   THEME 6 — Bluish Violet / Indigo
+   Psychology: Visionary · Creative Intelligence · Premium Innovation · Future-Forward Leadership
+   A vibrant indigo-to-violet arc that projects intellectual authority with creative energy —
+   ideal for HR Tech, AI, and the innovation-forward CHRO audience.
+   ============================================= */
+[data-theme="blue-violet"] {
+  --color-brand-authority:    hsl(255, 65%, 20%);
+  --color-brand-purple:      hsl(255, 62%, 42%);
+  --color-brand-purple-dark: hsl(255, 62%, 28%);
+  --color-brand-pink:        hsl(276, 72%, 56%);
+  --color-brand-pink-dark:   hsl(276, 72%, 40%);
+  --color-brand-purple-light: hsl(255, 62%, 95%);
+  --color-brand-pink-light:  hsl(276, 72%, 95%);
+  --color-brand-authority-light: hsl(255, 65%, 97%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(255, 62%, 42%) 0%, hsl(276, 72%, 56%) 100%);
+  --gradient-brand-radial:radial-gradient(circle at top left, hsl(255, 62%, 42%), hsl(276, 72%, 56%));
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(255, 62%, 95%) 0%, hsl(276, 72%, 95%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(255, 62%, 42%) 0%, hsl(265, 68%, 49%) 50%, hsl(276, 72%, 56%) 100%);
+  --gradient-mesh-1:      radial-gradient(circle at 10% 20%, rgba(88, 44, 181, 0.12) 0%, transparent 40%);
+  --gradient-mesh-2:      radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.10) 0%, transparent 40%);
+  --gradient-mesh-3:      radial-gradient(circle at 50% 50%, rgba(88, 44, 181, 0.06) 0%, transparent 50%);
+
+  --glass-border:        rgba(88, 44, 181, 0.18);
+  --shadow-brand:        0 8px 32px rgba(88, 44, 181, 0.28), 0 2px 8px rgba(147, 51, 234, 0.18);
+  --shadow-glow:         0 0 50px rgba(88, 44, 181, 0.25), 0 0 100px rgba(147, 51, 234, 0.15);
+  --strip-bg: linear-gradient(135deg, hsl(255, 62%, 42%) 0%, hsl(276, 72%, 56%) 100%);
+
+  /* Brand Alpha Tokens — Bluish Violet palette */
+  --brand-glow-05:   rgba(88, 44, 181, 0.05);
+  --brand-glow-08:   rgba(88, 44, 181, 0.08);
+  --brand-glow-10:   rgba(88, 44, 181, 0.10);
+  --brand-glow-12:   rgba(88, 44, 181, 0.12);
+  --brand-glow-14:   rgba(88, 44, 181, 0.14);
+  --brand-glow-15:   rgba(88, 44, 181, 0.15);
+  --brand-glow-18:   rgba(88, 44, 181, 0.18);
+  --brand-glow-20:   rgba(88, 44, 181, 0.20);
+  --brand-glow-22:   rgba(88, 44, 181, 0.22);
+  --brand-glow-25:   rgba(88, 44, 181, 0.25);
+  --brand-glow-28:   rgba(88, 44, 181, 0.28);
+  --brand-glow-30:   rgba(88, 44, 181, 0.30);
+  --brand-glow-35:   rgba(88, 44, 181, 0.35);
+  --brand-glow-40:   rgba(88, 44, 181, 0.40);
+  --brand-glow-50:   rgba(88, 44, 181, 0.50);
+  --brand-pink-glow-08:  rgba(147, 51, 234, 0.08);
+  --brand-pink-glow-10:  rgba(147, 51, 234, 0.10);
+  --brand-pink-glow-15:  rgba(147, 51, 234, 0.15);
+  --brand-pink-glow-18:  rgba(147, 51, 234, 0.18);
+  --brand-pink-glow-25:  rgba(147, 51, 234, 0.25);
+  --brand-pink-glow-30:  rgba(147, 51, 234, 0.30);
+  --brand-pink-glow-35:  rgba(147, 51, 234, 0.35);
+  --brand-pink-glow-40:  rgba(147, 51, 234, 0.40);
+  --brand-pink-glow-45:  rgba(147, 51, 234, 0.45);
+  --brand-pink-glow-82:  rgba(147, 51, 234, 0.82);
+  --hero-radial-glow:    radial-gradient(circle, rgba(88, 44, 181, 0.22) 0%, transparent 70%);
+  --hero-card-spot:      radial-gradient(circle at 50% 50%, rgba(88, 44, 181, 0.15) 0%, transparent 70%);
+  --hero-dual-glow:      linear-gradient(135deg, rgba(147,51,234,0.3), rgba(88,44,181,0.4));
+  --hero-map-overlay:    linear-gradient(180deg, rgba(147,51,234,0.82) 0%, rgba(88,44,181,0.92) 100%);
 }

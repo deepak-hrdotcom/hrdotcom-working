@@ -82,7 +82,7 @@ ${attendeeName}`;
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
           <div style={{
@@ -123,7 +123,7 @@ ${attendeeName}`;
             }}>
               Get Your Boss to<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -143,11 +143,11 @@ ${attendeeName}`;
               <a href="#toolkit" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.65rem 1.5rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Get the Toolkit <ChevronRight size={15} />
               </a>
@@ -209,12 +209,12 @@ ${attendeeName}`;
               >
                 <div style={{
                   width: '42px', height: '42px', borderRadius: '12px',
-                  background: 'linear-gradient(135deg, rgba(239,20,110,0.25), rgba(145,39,140,0.35))',
+                  background: 'linear-gradient(135deg, var(--brand-pink-glow-25), var(--brand-glow-35))',
                   border: '1px solid rgba(239,20,110,0.4)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   flexShrink: 0
                 }}>
-                  <Icon size={20} color="#ff6ba0" />
+                  <Icon size={20} color="var(--color-brand-pink)" />
                 </div>
                 <div>
                   <div style={{
@@ -297,7 +297,7 @@ ${attendeeName}`;
           {/* Google Docs Template Banner */}
           <motion.div
             initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', padding: '2rem 2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem', border: '1.5px solid rgba(145,39,140,0.25)', position: 'relative', overflow: 'hidden' }}
+            style={{ background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-xl)', padding: '2rem 2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem', border: '1.5px solid var(--brand-glow-25)', position: 'relative', overflow: 'hidden' }}
           >
             <div style={{ position: 'relative', zIndex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>

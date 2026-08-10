@@ -116,7 +116,7 @@ export const SponsorHallPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
         </div>
@@ -154,7 +154,7 @@ export const SponsorHallPage: React.FC = () => {
             }}>
               HRWest{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -174,11 +174,11 @@ export const SponsorHallPage: React.FC = () => {
               <Link to="/why-sponsor" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                 padding: '0.75rem 1.75rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.88rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
                 transition: 'all 0.25s ease',
               }}>
                 <Download size={16} /> Download Sponsorship Brochure
@@ -264,7 +264,7 @@ export const SponsorHallPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (idx % 8) * 0.03 }}
-                whileHover={{ y: -6, boxShadow: '0 12px 30px rgba(145,39,140,0.18)', borderColor: 'rgba(145,39,140,0.35)' }}
+                whileHover={{ y: -6, boxShadow: '0 12px 30px var(--brand-glow-18)', borderColor: 'var(--brand-glow-35)' }}
                 style={{
                   background: '#ffffff',
                   borderRadius: 'var(--radius-xl)',
@@ -308,7 +308,7 @@ export const SponsorHallPage: React.FC = () => {
               transition={{ duration: 0.5 }}
               style={{
                 background: 'var(--gradient-brand-soft)',
-                border: '1.5px solid rgba(145,39,140,0.2)',
+                border: '1.5px solid var(--brand-glow-20)',
                 borderRadius: 'var(--radius-xl)',
                 padding: '3rem 2.5rem',
                 maxWidth: '850px',

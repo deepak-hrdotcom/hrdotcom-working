@@ -176,7 +176,7 @@ export const TestimonialsPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
           <div style={{
@@ -219,7 +219,7 @@ export const TestimonialsPage: React.FC = () => {
             }}>
               Voices from<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -239,11 +239,11 @@ export const TestimonialsPage: React.FC = () => {
               <Link to="/register" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.65rem 1.5rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Pre-Register 2027 <ChevronRight size={15} />
               </Link>
@@ -304,7 +304,7 @@ export const TestimonialsPage: React.FC = () => {
                       <Star key={idx} size={11} fill="var(--color-accent-amber)" color="var(--color-accent-amber)" />
                     ))}
                   </div>
-                  <span style={{ fontSize: '0.58rem', fontWeight: 800, textTransform: 'uppercase', color: '#ff6ba0', background: 'rgba(239,20,110,0.2)', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>
+                  <span style={{ fontSize: '0.58rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--color-brand-pink)', background: 'var(--brand-glow-20)', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>
                     {tag}
                   </span>
                 </div>
@@ -350,7 +350,7 @@ export const TestimonialsPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                whileHover={{ y: -5, boxShadow: '0 18px 36px rgba(145,39,140,0.12)' }}
+                whileHover={{ y: -5, boxShadow: '0 18px 36px var(--brand-glow-12)' }}
                 style={{
                   background: 'var(--color-elevated)',
                   border: '1.5px solid rgba(145, 39, 140, 0.15)',
@@ -393,7 +393,7 @@ export const TestimonialsPage: React.FC = () => {
                   <div style={{
                     width: '40px', height: '40px', borderRadius: '50%',
                     background: 'var(--gradient-brand-soft)',
-                    border: '1.5px solid rgba(145,39,140,0.3)',
+                    border: '1.5px solid var(--brand-glow-30)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontFamily: 'var(--font-display)', fontWeight: 900, color: 'var(--color-brand-purple)',
                     fontSize: '0.95rem',
@@ -505,7 +505,7 @@ export const TestimonialsPage: React.FC = () => {
                     "{item.quote}"
                   </p>
                 </div>
-                <div style={{ borderTop: '1px solid rgba(145,39,140,0.15)', paddingTop: '1rem' }}>
+                <div style={{ borderTop: '1px solid var(--brand-glow-15)', paddingTop: '1rem' }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-brand-purple)' }}>
                     — {item.author}
                   </div>

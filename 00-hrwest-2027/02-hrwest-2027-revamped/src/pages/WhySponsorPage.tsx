@@ -56,7 +56,7 @@ export const WhySponsorPage: React.FC = () => {
           <div style={{
             position: 'absolute', top: '-80px', left: '-80px',
             width: '400px', height: '400px',
-            background: 'radial-gradient(circle, rgba(145,39,140,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--brand-glow-22) 0%, transparent 70%)',
             borderRadius: '50%', filter: 'blur(40px)',
           }} />
         </div>
@@ -92,7 +92,7 @@ export const WhySponsorPage: React.FC = () => {
             }}>
               Reach 1,000+<br />
               <span style={{
-                background: 'linear-gradient(135deg, #e07ee0 0%, #ef146e 60%, #ff6ba0 100%)',
+                background: 'var(--gradient-brand-glow)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -112,11 +112,11 @@ export const WhySponsorPage: React.FC = () => {
               <a href="#prospectus-form" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.75rem 1.6rem',
-                background: 'linear-gradient(135deg, #91278c, #ef146e)',
+                background: 'var(--gradient-brand)',
                 color: '#fff', borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.86rem',
                 textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(239,20,110,0.45)',
+                boxShadow: '0 8px 24px var(--brand-pink-glow-45, var(--brand-glow-40))',
               }}>
                 Download Prospectus <Download size={16} />
               </a>
@@ -165,8 +165,8 @@ export const WhySponsorPage: React.FC = () => {
               >
                 <div style={{
                   width: '10px', height: '10px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #ef146e, #ff6ba0)',
-                  boxShadow: '0 0 10px #ef146e', flexShrink: 0,
+                  background: 'var(--gradient-brand)',
+                  boxShadow: '0 0 10px var(--color-brand-pink)', flexShrink: 0,
                 }} />
                 <div>
                   <div style={{
@@ -201,7 +201,7 @@ export const WhySponsorPage: React.FC = () => {
               background: 'var(--gradient-brand)',
               borderRadius: 'var(--radius-full)',
               padding: '1.5rem 2.5rem',
-              boxShadow: '0 12px 35px rgba(145,39,140,0.35)',
+              boxShadow: '0 12px 35px var(--brand-glow-35)',
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
               gap: '1.5rem',
@@ -267,7 +267,7 @@ export const WhySponsorPage: React.FC = () => {
                   { title: 'Branding', desc: "Put your company in attendees' minds with prominent logo placements." },
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start' }}>
-                    <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'var(--gradient-brand-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(145,39,140,0.2)', marginTop: '0.15rem' }}>
+                    <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'var(--gradient-brand-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid var(--brand-glow-20)', marginTop: '0.15rem' }}>
                       <CheckCircle size={15} color="var(--color-brand-purple)" />
                     </div>
                     <div>
@@ -405,7 +405,7 @@ export const WhySponsorPage: React.FC = () => {
                 background: 'var(--color-elevated)',
                 borderRadius: 'var(--radius-xl)',
                 padding: '3rem 2.5rem',
-                border: '1.5px solid rgba(145,39,140,0.25)',
+                border: '1.5px solid var(--brand-glow-25)',
                 boxShadow: 'var(--shadow-md)',
               }}
             >
@@ -422,7 +422,7 @@ export const WhySponsorPage: React.FC = () => {
               </div>
 
               {submitted ? (
-                <div style={{ padding: '2rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px solid rgba(145,39,140,0.2)' }}>
+                <div style={{ padding: '2rem', background: 'var(--gradient-brand-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px solid var(--brand-glow-20)' }}>
                   <CheckCircle size={40} style={{ color: 'var(--color-brand-purple)', marginBottom: '0.75rem' }} />
                   <strong style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', display: 'block', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>Prospectus Request Sent!</strong>
                   <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)' }}>
