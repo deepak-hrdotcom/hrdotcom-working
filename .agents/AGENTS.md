@@ -19,4 +19,9 @@
    - All navigation links in header, mobile menu, and story CTA buttons must point to canonical live HR.com CMS paths (`/en/webcasts_events/live_events/...`). Never use placeholder `/register` or `/agenda` routes in production CMS templates.
 4. **ASCII Clean Comments Only**:
    - Never use special characters, box-drawing characters, emojis, dashes (`—`), or plus signs (`+`) inside HTML or CSS comments, as the CMS regex parser will fail or corrupt token substitution.
+5. **🚫 STRICT FORBIDDEN ZONE — `01-live-cms/` FOLDER**:
+   - **NEVER touch, modify, edit, delete, or create files inside `01-live-cms/` or any live CMS archive folder at any cost.**
+   - All development, newly created pages, and story iterations MUST ONLY be written to `02-pages/` (or designated development directories).
+   - Even if the user explicitly asks to modify `01-live-cms/`, you MUST ALWAYS ask for explicit confirmation before touching anything in `01-live-cms/`.
+
 

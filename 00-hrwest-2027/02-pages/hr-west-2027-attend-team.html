@@ -1,0 +1,958 @@
+<style>
+  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
+
+<script>
+(function() {
+  function applyEarlyReset() {
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  applyEarlyReset();
+  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+})();
+</script>
+
+<style>
+  /* ATTEND AS A TEAM PAGE STYLES AND DESIGN TOKENS */
+  .hrw27 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary, #0f172a);
+    background: var(--color-canvas, #fcfcff);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hrw27 *, .hrw27 *::before, .hrw27 *::after {
+    box-sizing: border-box;
+  }
+
+  /* Hero Section */
+  .team-hero-section {
+    position: relative;
+    min-height: 480px;
+    background-color: #0b0814;
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-size: cover;
+    background-position: 55% center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .team-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.15) 100%),
+      linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+    pointer-events: none;
+  }
+
+  .team-hero-orb-1 {
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(93,47,199,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .team-hero-orb-2 {
+    position: absolute;
+    bottom: -60px;
+    left: 30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .team-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3rem 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.3fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .team-hero-grid {
+      grid-template-columns: 1fr;
+      padding: 3rem 20px;
+      gap: 2.5rem;
+    }
+  }
+
+  .team-hero-content {
+    max-width: 540px;
+  }
+
+  .team-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.1rem 0;
+  }
+
+  .team-hero-glow-text {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .team-hero-p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 2.25rem 0;
+    max-width: 440px;
+  }
+
+  .team-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .team-hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
+    color: #ffffff !important;
+  }
+
+  .team-hero-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.86rem;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .team-hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Floating Group Savings Cards Stack */
+  .team-floating-mosaic {
+    position: relative;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .team-floating-mosaic {
+      display: none;
+    }
+  }
+
+  .team-float-card {
+    position: absolute;
+    width: 270px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 0.9rem 1.15rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .team-float-card:hover {
+    transform: scale(1.04) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10 !important;
+  }
+
+  .team-float-card-1 {
+    top: 15px;
+    left: 0px;
+    transform: rotate(-2deg);
+    z-index: 3;
+  }
+
+  .team-float-card-2 {
+    top: 125px;
+    left: 20px;
+    transform: rotate(1.5deg);
+    z-index: 2;
+  }
+
+  .team-float-card-3 {
+    top: 235px;
+    left: 10px;
+    transform: rotate(-1deg);
+    z-index: 1;
+  }
+
+  .team-float-tier {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: #ffffff;
+    margin-bottom: 0.15rem;
+  }
+
+  .team-float-lbl {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 500;
+  }
+
+  .team-float-badge {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: #ef146e;
+    background: rgba(239, 20, 110, 0.2);
+    padding: 0.25rem 0.65rem;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 20, 110, 0.4);
+  }
+
+  .team-hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(0deg, var(--color-canvas, #fcfcff) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* ── INTERACTIVE DISCOUNT TIER SELECTOR ── */
+  .team-tiers-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 3.5rem 0 2rem;
+  }
+
+  .team-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .team-header-wrap {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .team-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5d2fc7;
+    margin-bottom: 0.5rem;
+  }
+
+  .team-h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary, #0f172a);
+    margin: 0;
+  }
+
+  .team-sub {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-top: 0.45rem;
+  }
+
+  .team-tier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .team-tier-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.85rem 1.4rem;
+    text-align: center;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    color: var(--color-text-primary, #0f172a);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-tier-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(93, 47, 199, 0.12);
+  }
+
+  .team-tier-card.active {
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    border-color: transparent;
+    box-shadow: 0 12px 35px rgba(93, 47, 199, 0.35);
+    color: #ffffff !important;
+  }
+
+  .team-tier-pct {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 2.35rem;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .team-tier-range {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    opacity: 0.92;
+    margin-bottom: 0.25rem;
+  }
+
+  .team-tier-desc {
+    font-size: 0.78rem;
+    opacity: 0.75;
+    font-weight: 600;
+  }
+
+  .team-tier-badge {
+    margin-top: 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 9999px;
+    padding: 0.2rem 0.65rem;
+    display: inline-block;
+  }
+
+  /* ── PRICING TABLE SECTION ── */
+  .team-pricing-section {
+    background: #f8fafc;
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--color-subtle, #e2e8f0);
+    border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+  }
+
+  .team-table-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1.5px solid rgba(93, 47, 199, 0.2);
+    overflow: hidden;
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
+  }
+
+  .team-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .team-table th {
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.94rem;
+  }
+
+  .team-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+  }
+
+  .team-vip-banner {
+    margin-top: 2rem;
+    padding: 1.6rem 2.2rem;
+    background: linear-gradient(135deg, rgba(93,47,199,0.08) 0%, rgba(239,20,110,0.08) 100%);
+    border-radius: 20px;
+    border: 1.5px solid rgba(93, 47, 199, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .team-vip-tag {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+  }
+
+  /* ── CALCULATOR + WHY ATTEND TOGETHER ── */
+  .team-calc-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 5rem 0 6rem;
+  }
+
+  .team-calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .team-calc-box {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.75rem 2.5rem;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
+  }
+
+  .team-slider {
+    width: 100%;
+    accent-color: #5d2fc7;
+    cursor: pointer;
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .team-calc-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-calc-stat-box {
+    background: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.06) 100%);
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid rgba(93, 47, 199, 0.15);
+    text-align: center;
+  }
+
+  .team-calc-stat-lbl {
+    font-size: 0.75rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #5d2fc7;
+    margin-bottom: 0.35rem;
+  }
+
+  .team-calc-stat-val {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 2.1rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .team-savings-banner {
+    background: linear-gradient(135deg, rgba(93,47,199,0.08) 0%, rgba(239,20,110,0.08) 100%);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    border: 1.5px solid rgba(93, 47, 199, 0.22);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .team-why-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.6rem;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    display: flex;
+    gap: 1.15rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .team-why-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 10px 25px rgba(93, 47, 199, 0.08);
+  }
+
+  .team-why-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(93, 47, 199, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(93, 47, 199, 0.2);
+  }
+</style>
+
+<div class="hrw27">
+
+  <!-- 1. Cinematic Hero Section -->
+  <section class="team-hero-section">
+    <div class="team-hero-overlay"></div>
+    <div class="team-hero-orb-1"></div>
+    <div class="team-hero-orb-2"></div>
+
+    <div class="team-hero-grid">
+      
+      <!-- Left: Content Block -->
+      <div class="team-hero-content">
+        <h1 class="team-hero-h1">
+          Bring Your<br />
+          <span class="team-hero-glow-text">Team to HRWest</span>
+        </h1>
+
+        <p class="team-hero-p">
+          Groups of 3+ save big. The more teammates you register, the more you save: up to 35% off.
+        </p>
+
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="#calculator" class="team-hero-btn-primary">
+            Calculate Your Savings
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="team-hero-btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            Register Solo
+          </a>
+        </div>
+      </div>
+
+      <!-- Center: Spacer -->
+      <div></div>
+
+      <!-- Right: Floating Savings Stack -->
+      <div class="team-floating-mosaic">
+        
+        <!-- Card 1 -->
+        <div class="team-float-card team-float-card-1">
+          <div>
+            <div class="team-float-tier">3 to 5 People</div>
+            <div class="team-float-lbl">Group Pass Tier</div>
+          </div>
+          <span class="team-float-badge">15% OFF</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="team-float-card team-float-card-2">
+          <div>
+            <div class="team-float-tier">6 to 9 People</div>
+            <div class="team-float-lbl">Team Pass Tier</div>
+          </div>
+          <span class="team-float-badge" style="color: #5d2fc7; background: rgba(93,47,199,0.2); border-color: rgba(93,47,199,0.4);">25% OFF</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="team-float-card team-float-card-3">
+          <div>
+            <div class="team-float-tier">10+ People</div>
+            <div class="team-float-lbl">Enterprise Pass Tier</div>
+          </div>
+          <span class="team-float-badge">35% OFF</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom gradient blend -->
+    <div class="team-hero-bottom-fade"></div>
+  </section>
+
+  <!-- 2. Interactive Discount Tier Selector -->
+  <section class="team-tiers-section">
+    <div class="team-container">
+      
+      <div class="team-header-wrap">
+        <div class="team-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Group Discount Tiers
+        </div>
+        <h2 class="team-h2">Select Your Team Size to Unlock Savings</h2>
+        <p class="team-sub">Click a tier below to instantly calculate your group discount.</p>
+      </div>
+
+      <div class="team-tier-grid">
+        
+        <!-- Tier 1: 1-2 -->
+        <div class="team-tier-card" id="tier-card-1" onclick="selectTeamSize(1)">
+          <div class="team-tier-pct">0%</div>
+          <div class="team-tier-range">1 to 2 attendees</div>
+          <div class="team-tier-desc">Standard Rate</div>
+          <div class="team-tier-badge" style="display: none;" id="tier-active-1">ACTIVE</div>
+        </div>
+
+        <!-- Tier 2: 3-5 -->
+        <div class="team-tier-card active" id="tier-card-2" onclick="selectTeamSize(5)">
+          <div class="team-tier-pct">15%</div>
+          <div class="team-tier-range">3 to 5 attendees</div>
+          <div class="team-tier-desc">Group</div>
+          <div class="team-tier-badge" id="tier-active-2">ACTIVE</div>
+        </div>
+
+        <!-- Tier 3: 6-9 -->
+        <div class="team-tier-card" id="tier-card-3" onclick="selectTeamSize(8)">
+          <div class="team-tier-pct">25%</div>
+          <div class="team-tier-range">6 to 9 attendees</div>
+          <div class="team-tier-desc">Team</div>
+          <div class="team-tier-badge" style="display: none;" id="tier-active-3">ACTIVE</div>
+        </div>
+
+        <!-- Tier 4: 10+ -->
+        <div class="team-tier-card" id="tier-card-4" onclick="selectTeamSize(12)">
+          <div class="team-tier-pct">35%</div>
+          <div class="team-tier-range">10+ attendees</div>
+          <div class="team-tier-desc">Enterprise</div>
+          <div class="team-tier-badge" style="display: none;" id="tier-active-4">ACTIVE</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Glass Group Pricing Schedule Table -->
+  <section class="team-pricing-section">
+    <div class="team-container">
+      
+      <div class="team-header-wrap">
+        <div class="team-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Official Group Rates
+        </div>
+        <h2 class="team-h2">Group Pricing Schedule</h2>
+        <p class="team-sub">All prices are per-person rates based on team size and registration timeframe.</p>
+      </div>
+
+      <div class="team-table-card">
+        <div style="overflow-x: auto;">
+          <table class="team-table">
+            <thead>
+              <tr>
+                <th>Tier / Rate</th>
+                <th>Timeframe</th>
+                <th style="text-align: center;">Individual</th>
+                <th style="text-align: center;">Group (5 to 9)</th>
+                <th style="text-align: center;">Group (10+)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: linear-gradient(135deg, rgba(93,47,199,0.06), rgba(239,20,110,0.06));">
+                <td><strong style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; color: #5d2fc7; font-size: 1rem;">Early-Bird Rate</strong></td>
+                <td style="color: #ef146e; font-weight: 700; font-size: 0.9rem;">Ends Jan 15, 2027</td>
+                <td style="text-align: center; font-weight: 700; font-family: 'Outfit', system-ui, sans-serif;">$399 / person</td>
+                <td style="text-align: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif; color: #5d2fc7; font-size: 1.1rem;">$299 / person</td>
+                <td style="text-align: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif; color: #ef146e; font-size: 1.1rem;">$229 / person</td>
+              </tr>
+              <tr>
+                <td><strong style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; color: #0f172a; font-size: 0.95rem;">Regular Rate</strong></td>
+                <td style="color: #64748b; font-size: 0.88rem;">Jan 16 to Mar 22, 2027</td>
+                <td style="text-align: center; font-weight: 600; font-family: 'Outfit', system-ui, sans-serif;">$799 / person</td>
+                <td style="text-align: center; font-weight: 700; font-family: 'Outfit', system-ui, sans-serif;">$699 / person</td>
+                <td style="text-align: center; font-weight: 800; font-family: 'Outfit', system-ui, sans-serif; color: #5d2fc7;">$579 / person</td>
+              </tr>
+              <tr>
+                <td><strong style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; color: #64748b; font-size: 0.95rem;">On-Site Rate</strong></td>
+                <td style="color: #64748b; font-size: 0.88rem;">March 23-24, 2027</td>
+                <td style="text-align: center; font-weight: 600; font-family: 'Outfit', system-ui, sans-serif;">$999 / person</td>
+                <td style="text-align: center; color: #94a3b8;">N/A</td>
+                <td style="text-align: center; color: #94a3b8;">N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VIP Perk Banner -->
+      <div class="team-vip-banner">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+            <span class="team-vip-tag">VIP EXCLUSIVE</span>
+            <span>🌟</span>
+          </div>
+          <h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.1rem; color: #5d2fc7; margin: 0 0 0.3rem 0;">
+            Exclusive Perk for Teams of 10+
+          </h4>
+          <p style="font-size: 0.9rem; color: #334155; margin: 0; line-height: 1.55;">
+            Teams of 10+ receive <strong>accelerated VIP on-site check-in</strong> and a <strong>facilitated private team roundtable session</strong> on the topic of your choice.
+          </p>
+        </div>
+        <a href="mailto:hrwest@hr.com" class="team-hero-btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.86rem; flex-shrink: 0;">
+          Claim 10+ Team Offer
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Interactive Calculator + Why Attend Together -->
+  <section id="calculator" class="team-calc-section">
+    <div class="team-container">
+      <div class="team-calc-grid">
+
+        <!-- Left: Interactive Calculator -->
+        <div class="team-calc-box">
+          <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--color-text-primary, #0f172a); margin: 0 0 0.4rem 0; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+            Group Discount Calculator
+          </h3>
+          <p style="font-size: 0.9rem; color: #64748b; margin: 0 0 2rem 0;">
+            Drag the slider or click a tier above to see real-time savings.
+          </p>
+
+          <div style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+              <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0f172a;">Team Size</span>
+              <span id="calc-team-display" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 1.35rem; color: #5d2fc7;">5 Attendees</span>
+            </div>
+            <input
+              type="range"
+              id="team-slider-input"
+              min="1"
+              max="20"
+              value="5"
+              class="team-slider"
+              oninput="handleSliderChange(this.value)"
+            />
+            <div style="display: flex; justify-content: space-between; margin-top: 0.4rem;">
+              <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">1</span>
+              <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">20+</span>
+            </div>
+          </div>
+
+          <!-- Results Dual Pane -->
+          <div class="team-calc-row">
+            <div class="team-calc-stat-box">
+              <div class="team-calc-stat-lbl">Group Discount</div>
+              <div id="calc-discount-val" class="team-calc-stat-val">15% Off</div>
+            </div>
+            <div class="team-calc-stat-box">
+              <div class="team-calc-stat-lbl">Per-Ticket Rate</div>
+              <div id="calc-ticket-val" class="team-calc-stat-val">$846</div>
+            </div>
+          </div>
+
+          <!-- Total Savings Box -->
+          <div class="team-savings-banner">
+            <span style="font-size: 0.95rem; color: #0f172a; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800;">
+              Total Team Savings
+            </span>
+            <span id="calc-savings-val" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 2.1rem; color: #ef146e;">
+              $745
+            </span>
+          </div>
+
+          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" id="calc-cta-btn" class="team-hero-btn-primary" style="width: 100%; margin-top: 1.75rem; justify-content: center; padding: 0.95rem 1.8rem; font-size: 0.95rem;">
+            Register Team of 5 (15% Saved)
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Right: Why Leading HR Teams Attend Together -->
+        <div>
+          <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(1.6rem, 2.5vw, 2.1rem); letter-spacing: -0.03em; margin: 0 0 1.5rem 0; color: var(--color-text-primary, #0f172a);">
+            Why Leading HR Teams Attend Together
+          </h2>
+
+          <div>
+            
+            <!-- Reason 1 -->
+            <div class="team-why-card">
+              <div class="team-why-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1rem; color: #0f172a; margin-bottom: 0.3rem;">
+                  Divide & Conquer All 6 Tracks
+                </div>
+                <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin: 0;">
+                  Send team members to different concurrent breakouts (AI, Legal, Benefits, Analytics) and debrief together to cover 100% of session content.
+                </p>
+              </div>
+            </div>
+
+            <!-- Reason 2 -->
+            <div class="team-why-card">
+              <div class="team-why-icon" style="background: rgba(239,20,110,0.08); border-color: rgba(239,20,110,0.2);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef146e" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1rem; color: #0f172a; margin-bottom: 0.3rem;">
+                  Team SHRM & HRCI Recertification
+                </div>
+                <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin: 0;">
+                  Fulfill annual recertification credit requirements for your entire HR department in one convenient 2-day conference.
+                </p>
+              </div>
+            </div>
+
+            <!-- Reason 3 -->
+            <div class="team-why-card">
+              <div class="team-why-icon" style="background: rgba(145,39,140,0.08); border-color: rgba(145,39,140,0.2);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#91278c" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1rem; color: #0f172a; margin-bottom: 0.3rem;">
+                  Post-Conference Debrief Workshop
+                </div>
+                <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin: 0;">
+                  Groups of 5+ receive a complimentary post-event strategy debrief template to present key takeaways to your executive team.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  var basePrice = 995;
+
+  function calculateRate(size) {
+    if (size >= 10) return 0.35;
+    if (size >= 6) return 0.25;
+    if (size >= 3) return 0.15;
+    return 0;
+  }
+
+  function updateCalculator(size) {
+    var discountRate = calculateRate(size);
+    var discountedPrice = Math.round(basePrice * (1 - discountRate));
+    var totalStandard = basePrice * size;
+    var totalDiscounted = discountedPrice * size;
+    var totalSavings = totalStandard - totalDiscounted;
+    var pctOff = Math.round(discountRate * 100);
+
+    var teamDisplay = document.getElementById('calc-team-display');
+    var discountVal = document.getElementById('calc-discount-val');
+    var ticketVal = document.getElementById('calc-ticket-val');
+    var savingsVal = document.getElementById('calc-savings-val');
+    var ctaBtn = document.getElementById('calc-cta-btn');
+
+    if (teamDisplay) teamDisplay.textContent = size + (size === 1 ? ' Attendee' : ' Attendees');
+    if (discountVal) discountVal.textContent = pctOff + '% Off';
+    if (ticketVal) ticketVal.textContent = '$' + discountedPrice;
+    if (savingsVal) savingsVal.textContent = '$' + totalSavings.toLocaleString();
+    if (ctaBtn) {
+      ctaBtn.innerHTML = 'Register Team of ' + size + ' (' + pctOff + '% Saved) <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    }
+
+    // Sync active tier cards
+    for (var i = 1; i <= 4; i++) {
+      var card = document.getElementById('tier-card-' + i);
+      var badge = document.getElementById('tier-active-' + i);
+      if (card && badge) {
+        var isActive = false;
+        if (i === 1 && size <= 2) isActive = true;
+        if (i === 2 && size >= 3 && size <= 5) isActive = true;
+        if (i === 3 && size >= 6 && size <= 9) isActive = true;
+        if (i === 4 && size >= 10) isActive = true;
+
+        if (isActive) {
+          card.classList.add('active');
+          badge.style.display = 'inline-block';
+        } else {
+          card.classList.remove('active');
+          badge.style.display = 'none';
+        }
+      }
+    }
+  }
+
+  window.handleSliderChange = function(val) {
+    updateCalculator(parseInt(val, 10));
+  };
+
+  window.selectTeamSize = function(size) {
+    var slider = document.getElementById('team-slider-input');
+    if (slider) slider.value = size;
+    updateCalculator(size);
+  };
+
+  // Initial calculation run
+  updateCalculator(5);
+})();
+</script>

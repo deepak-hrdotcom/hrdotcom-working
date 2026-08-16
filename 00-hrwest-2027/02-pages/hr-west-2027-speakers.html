@@ -1,0 +1,1653 @@
+<style>
+  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
+
+<script>
+(function() {
+  function applyEarlyReset() {
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  applyEarlyReset();
+  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+})();
+</script>
+
+<style>
+  /* SPEAKER PAGE STYLES AND INTERACTION TOKENS */
+  .hrw27 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary, #0f172a);
+    background: var(--color-canvas, #fcfcff);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hrw27 *, .hrw27 *::before, .hrw27 *::after {
+    box-sizing: border-box;
+  }
+
+  /* Hero Section */
+  .spk-hero-section {
+    position: relative;
+    min-height: 520px;
+    background-color: #0b0814;
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-size: cover;
+    background-position: 55% center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .spk-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.15) 100%),
+      linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+    pointer-events: none;
+  }
+
+  .spk-hero-orb-1 {
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(93,47,199,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .spk-hero-orb-2 {
+    position: absolute;
+    bottom: -60px;
+    left: 30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(239,20,110,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .spk-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3rem 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.3fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .spk-hero-grid {
+      grid-template-columns: 1fr;
+      padding: 3rem 20px;
+      gap: 2.5rem;
+    }
+  }
+
+  .spk-hero-content {
+    max-width: 540px;
+  }
+
+  .spk-hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.38rem 1rem;
+    background: rgba(239, 20, 110, 0.15);
+    border: 1px solid rgba(239, 20, 110, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+
+  .spk-hero-pill-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ef146e;
+    box-shadow: 0 0 10px #ef146e;
+  }
+
+  .spk-hero-pill-text {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.76rem;
+    color: #ff3b8d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .spk-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.1rem 0;
+  }
+
+  .spk-hero-glow-text {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .spk-hero-p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+    max-width: 440px;
+  }
+
+  .spk-hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .spk-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .spk-hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
+    color: #ffffff !important;
+  }
+
+  .spk-hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1.45rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .spk-hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: #ffffff !important;
+  }
+
+  /* Floating Mosaic Cards */
+  .spk-floating-mosaic {
+    position: relative;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .spk-floating-mosaic {
+      display: none;
+    }
+  }
+
+  .spk-float-card {
+    position: absolute;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 0.75rem;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .spk-float-card:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10 !important;
+  }
+
+  .spk-float-card-1 {
+    top: 15px;
+    left: 0px;
+    transform: rotate(-2deg);
+    z-index: 3;
+  }
+
+  .spk-float-card-2 {
+    top: 125px;
+    left: 24px;
+    transform: rotate(1.5deg);
+    z-index: 2;
+  }
+
+  .spk-float-card-3 {
+    top: 235px;
+    left: 10px;
+    transform: rotate(-1deg);
+    z-index: 1;
+  }
+
+  .spk-float-img-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(239, 20, 110, 0.6);
+    box-shadow: 0 4px 16px rgba(239, 20, 110, 0.3);
+  }
+
+  .spk-float-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .spk-float-name {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.84rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.15rem;
+  }
+
+  .spk-float-role {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.35;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .spk-float-badge {
+    margin-top: 0.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(239, 20, 110, 0.25);
+    border: 1px solid rgba(239, 20, 110, 0.45);
+    border-radius: 9999px;
+    padding: 0.12rem 0.5rem;
+    font-size: 0.6rem;
+    color: #ff5ba0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .spk-hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(0deg, var(--color-canvas, #fcfcff) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* Sticky Search and Filter Bar */
+  .spk-filter-bar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+    position: sticky;
+    top: 0px;
+    z-index: 40;
+    padding: 0.75rem 0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  }
+
+  .spk-filter-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .spk-search-wrap {
+    position: relative;
+    width: 270px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .spk-search-wrap {
+      width: 100%;
+    }
+  }
+
+  .spk-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+  }
+
+  .spk-search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.48rem 0.85rem 0.48rem 2.35rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.84rem;
+    background: var(--color-elevated, #ffffff);
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    border-radius: 9999px;
+    color: var(--color-text-primary, #0f172a);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .spk-search-input:focus {
+    border-color: #5d2fc7;
+    box-shadow: 0 0 0 3px rgba(93, 47, 199, 0.12);
+  }
+
+  .spk-tracks-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+  }
+
+  .spk-pill-btn {
+    padding: 0.32rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-subtle, #e2e8f0);
+    background: transparent;
+    color: #475569;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    outline: none;
+  }
+
+  .spk-pill-btn:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  .spk-pill-btn.active {
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    border-color: #5d2fc7;
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(93, 47, 199, 0.25);
+  }
+
+  .spk-count-badge {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 700;
+    margin-left: 0.4rem;
+    white-space: nowrap;
+  }
+
+  /* Speakers Grid Section */
+  .spk-grid-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 3.5rem 0 5rem;
+  }
+
+  .spk-grid-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .spk-section-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .spk-section-title-bar {
+    height: 3px;
+    width: 36px;
+    background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    border-radius: 2px;
+  }
+
+  .spk-section-title-bar-subtle {
+    height: 3px;
+    width: 36px;
+    background: #cbd5e1;
+    border-radius: 2px;
+  }
+
+  .spk-section-title-text {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5d2fc7;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .spk-section-title-text-subtle {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #475569;
+  }
+
+  .spk-keynote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .spk-faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.35rem;
+  }
+
+  /* Card Component */
+  .spk-card {
+    background: #ffffff;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spk-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+    border-color: rgba(93, 47, 199, 0.3);
+  }
+
+  .spk-card.is-keynote {
+    border: 2px solid rgba(93, 47, 199, 0.25);
+    box-shadow: 0 8px 24px rgba(93, 47, 199, 0.08);
+  }
+
+  .spk-card.is-keynote:hover {
+    box-shadow: 0 20px 48px rgba(93, 47, 199, 0.18);
+    border-color: rgba(93, 47, 199, 0.45);
+  }
+
+  .spk-track-topline {
+    height: 4px;
+    width: 100%;
+  }
+
+  .spk-photo-box {
+    position: relative;
+    padding-top: 100%;
+    background: #f1f5f9;
+    overflow: hidden;
+  }
+
+  .spk-card.is-keynote .spk-photo-box {
+    padding-top: 85%;
+  }
+
+  .spk-photo-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+  }
+
+  .spk-card:hover .spk-photo-img {
+    transform: scale(1.04);
+  }
+
+  .spk-photo-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #5d2fc7;
+    background: linear-gradient(135deg, rgba(93,47,199,0.1), rgba(239,20,110,0.1));
+  }
+
+  .spk-keynote-tag {
+    position: absolute;
+    top: 0.65rem;
+    left: 0.65rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    color: #ffffff;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.22rem 0.65rem;
+    border-radius: 9999px;
+    box-shadow: 0 3px 10px rgba(93, 47, 199, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .spk-logo-tag {
+    position: absolute;
+    bottom: 0.65rem;
+    right: 0.65rem;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .spk-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .spk-info-box {
+    padding: 1.15rem 1.15rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .spk-card.is-keynote .spk-info-box {
+    padding: 1.35rem 1.35rem 1.45rem;
+  }
+
+  .spk-track-pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 9999px;
+    padding: 0.18rem 0.6rem;
+    font-size: 0.66rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.65rem;
+    width: fit-content;
+  }
+
+  .spk-name {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 0.96rem;
+    color: var(--color-text-primary, #0f172a);
+    line-height: 1.25;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .spk-card.is-keynote .spk-name {
+    font-size: 1.12rem;
+  }
+
+  .spk-role {
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .spk-company {
+    font-size: 0.76rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  /* Empty state */
+  .spk-empty-state {
+    display: none;
+    text-align: center;
+    padding: 4.5rem 0;
+    color: #64748b;
+  }
+
+  .spk-empty-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--color-text-primary, #0f172a);
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .spk-empty-btn {
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    color: #5d2fc7;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.92rem;
+    text-decoration: underline;
+  }
+
+  /* Call for Speakers and Final CTA Banner */
+  .spk-cta-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 0 0 5rem 0;
+  }
+
+  .spk-cta-box {
+    background: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.06) 100%);
+    border-radius: 24px;
+    padding: 48px 40px;
+    border: 1.5px solid rgba(93,47,199,0.2);
+    box-shadow: 0 20px 60px rgba(15,23,42,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spk-cta-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    .spk-cta-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .spk-cta-eyebrow {
+    display: inline-block;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ef146e;
+    margin-bottom: 0.85rem;
+  }
+
+  .spk-cta-h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary, #0f172a);
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+  }
+
+  .spk-cta-p {
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.65;
+    margin: 0 0 2rem 0;
+    max-width: 520px;
+  }
+
+  .spk-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .spk-cta-img-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: 0 10px 40px rgba(15,23,42,0.12);
+    border: 2px solid rgba(93, 47, 199, 0.25);
+  }
+
+  .spk-cta-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .spk-cta-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #5d2fc7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  /* Utility classes */
+  .spk-hidden {
+    display: none !important;
+  }
+</style>
+
+<div class="hrw27">
+
+  <!-- 1. Cinematic Full-Bleed Hero -->
+  <section class="spk-hero-section">
+    <!-- Overlay & Ambient Glow -->
+    <div class="spk-hero-overlay"></div>
+    <div class="spk-hero-orb-1"></div>
+    <div class="spk-hero-orb-2"></div>
+
+    <!-- Content Grid -->
+    <div class="spk-hero-grid">
+      
+      <!-- Left Column: Content -->
+      <div class="spk-hero-content">
+        
+        <!-- Call for Speakers Badge Pill -->
+        <div class="spk-hero-pill">
+          <span class="spk-hero-pill-dot"></span>
+          <span class="spk-hero-pill-text">Call for Speakers Open · Deadline Oct 30, 2026</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="spk-hero-h1">
+          Meet the<br />
+          <span class="spk-hero-glow-text">2027 Speakers</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="spk-hero-p">
+          Executive HR leaders, legal authorities, and tech founders sharing actionable strategies you can implement Monday morning.
+        </p>
+
+        <!-- CTAs -->
+        <div class="spk-hero-ctas">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxGKEwwyJEk9YtOt3CpKH5pIp6DS6Gnq4MTWaG7i074H1nUg/viewform" target="_blank" rel="noopener noreferrer" class="spk-hero-btn-primary">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            Apply to Speak
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+
+          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spk-hero-btn-secondary">
+            Pre-Register 2027
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Center Spacer -->
+      <div></div>
+
+      <!-- Right Column: Keynote Floating Mosaic -->
+      <div class="spk-floating-mosaic">
+        
+        <!-- Card 1: Jason Averbook -->
+        <div class="spk-float-card spk-float-card-1">
+          <div class="spk-float-img-box">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" alt="Jason Averbook" class="spk-float-img" />
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div class="spk-float-name">Jason Averbook</div>
+            <div class="spk-float-role">Global HR Transformation Leader & Author, Now to Next</div>
+            <div class="spk-float-badge">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="#ff5ba0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Keynote
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Allison West -->
+        <div class="spk-float-card spk-float-card-2">
+          <div class="spk-float-img-box">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" alt="Allison West" class="spk-float-img" />
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div class="spk-float-name">Allison West, Esq.</div>
+            <div class="spk-float-role">Principal, Employment Practices Specialists</div>
+            <div class="spk-float-badge">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="#ff5ba0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Keynote
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Debbie McGrath -->
+        <div class="spk-float-card spk-float-card-3">
+          <div class="spk-float-img-box">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg" alt="Debbie McGrath" class="spk-float-img" />
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div class="spk-float-name">Debbie McGrath</div>
+            <div class="spk-float-role">CEO / Founder & Chief Instigator, HR.com</div>
+            <div class="spk-float-badge">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="#ff5ba0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Keynote
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom gradient blend -->
+    <div class="spk-hero-bottom-fade"></div>
+  </section>
+
+  <!-- 2. Sticky Search & Track Filter Bar -->
+  <div class="spk-filter-bar">
+    <div class="spk-filter-container">
+      
+      <!-- Search Input -->
+      <div class="spk-search-wrap">
+        <svg class="spk-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input
+          id="hrw27-spk-search"
+          type="text"
+          class="spk-search-input"
+          placeholder="Search speakers by name, company, or role..."
+          aria-label="Search speakers"
+        />
+      </div>
+
+      <!-- Track Filter Buttons -->
+      <div class="spk-tracks-wrap" id="hrw27-track-buttons">
+        <button class="spk-pill-btn active" data-track="All">All</button>
+        <button class="spk-pill-btn" data-track="HR Strategy & AI" style="--track-active-color: #91278c;">HR Strategy & AI</button>
+        <button class="spk-pill-btn" data-track="Legal & Compliance" style="--track-active-color: #232283;">Legal & Compliance</button>
+        <button class="spk-pill-btn" data-track="HR Tech & Analytics" style="--track-active-color: #0092cb;">HR Tech & Analytics</button>
+        <button class="spk-pill-btn" data-track="Talent Acquisition" style="--track-active-color: #e51069;">Talent Acquisition</button>
+        <button class="spk-pill-btn" data-track="Leadership & Culture" style="--track-active-color: #ef5924;">Leadership & Culture</button>
+        <button class="spk-pill-btn" data-track="Health & Wellness" style="--track-active-color: #00924b;">Health & Wellness</button>
+
+        <span class="spk-count-badge" id="hrw27-spk-count">(23)</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Speakers Directory Section -->
+  <section class="spk-grid-section">
+    <div class="spk-grid-container">
+
+      <!-- Keynote & Featured Row -->
+      <div id="hrw27-keynotes-wrapper">
+        <div class="spk-section-title-wrap">
+          <div class="spk-section-title-bar"></div>
+          <span class="spk-section-title-text">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#5d2fc7"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Keynote & Featured Speakers
+          </span>
+        </div>
+
+        <div class="spk-keynote-grid" id="hrw27-keynotes-grid">
+          
+          <!-- Keynote 1: Jason Averbook -->
+          <div class="spk-card is-keynote spk-item" data-name="Jason Averbook" data-role="Global HR Transformation Leader & Author" data-company="Now to Next" data-track="HR Strategy & AI" data-keynote="true">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box" style="background: linear-gradient(135deg, rgba(145,39,140,0.15), rgba(145,39,140,0.3));">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" alt="Jason Averbook" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">JA</div>
+              <div class="spk-keynote-tag">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Keynote
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Jason Averbook</h3>
+              <div class="spk-role">Global HR Transformation Leader & Author</div>
+              <div class="spk-company">Now to Next</div>
+            </div>
+          </div>
+
+          <!-- Keynote 2: Allison West -->
+          <div class="spk-card is-keynote spk-item" data-name="Allison West" data-role="Principal" data-company="Employment Practices Specialists" data-track="Legal & Compliance" data-keynote="true">
+            <div class="spk-track-topline" style="background: #232283;"></div>
+            <div class="spk-photo-box" style="background: linear-gradient(135deg, rgba(35,34,131,0.15), rgba(35,34,131,0.3));">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" alt="Allison West" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #232283;">AW</div>
+              <div class="spk-keynote-tag">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Keynote
+              </div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2013/4/17/hfmujyr2/120.jpg" alt="Employment Practices Specialists" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(35,34,131,0.12); color: #232283; border: 1px solid rgba(35,34,131,0.25);">
+                Legal & Compliance
+              </div>
+              <h3 class="spk-name">Allison West, Esq., SHRM-SCP, AWI-CH</h3>
+              <div class="spk-role">Principal</div>
+              <div class="spk-company">Employment Practices Specialists</div>
+            </div>
+          </div>
+
+          <!-- Keynote 3: Debbie McGrath -->
+          <div class="spk-card is-keynote spk-item" data-name="Debbie McGrath" data-role="CEO / Founder and Chief Instigator" data-company="HR.com" data-track="HR Strategy & AI" data-keynote="true">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box" style="background: linear-gradient(135deg, rgba(145,39,140,0.15), rgba(145,39,140,0.3));">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg" alt="Debbie McGrath" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">DM</div>
+              <div class="spk-keynote-tag">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Keynote
+              </div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" alt="HR.com" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Debbie McGrath</h3>
+              <div class="spk-role">CEO / Founder & Chief Instigator</div>
+              <div class="spk-company">HR.com</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Session Faculty & Experts Grid -->
+      <div id="hrw27-faculty-wrapper">
+        <div class="spk-section-title-wrap">
+          <div class="spk-section-title-bar-subtle"></div>
+          <span class="spk-section-title-text-subtle">Session Faculty & Experts</span>
+        </div>
+
+        <div class="spk-faculty-grid" id="hrw27-faculty-grid">
+          
+          <!-- Faculty 1: Dr. Alireza Boloorchi -->
+          <div class="spk-card spk-item" data-name="Dr. Alireza Boloorchi" data-role="Professor and CEO" data-company="Oklahoma State University & Catch Up AI" data-track="HR Strategy & AI" data-keynote="false">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/alireza-boloorchi-350x350.jpg" alt="Dr. Alireza Boloorchi" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">AB</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2015/9/1/ie0z1c3k/120.jpg" alt="Oklahoma State University" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Dr. Alireza Boloorchi</h3>
+              <div class="spk-role">Professor and CEO</div>
+              <div class="spk-company">Oklahoma State University & Catch Up AI</div>
+            </div>
+          </div>
+
+          <!-- Faculty 2: Lee Cage Jr. -->
+          <div class="spk-card spk-item" data-name="Lee Cage Jr." data-role="Director, Enterprise Transformation, Strategy & Technology" data-company="BDO USA" data-track="Leadership & Culture" data-keynote="false">
+            <div class="spk-track-topline" style="background: #ef5924;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg" alt="Lee Cage Jr." class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #ef5924;">LC</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg" alt="BDO USA" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(239,89,36,0.12); color: #ef5924; border: 1px solid rgba(239,89,36,0.25);">
+                Leadership & Culture
+              </div>
+              <h3 class="spk-name">Lee Cage Jr.</h3>
+              <div class="spk-role">Director, Enterprise Transformation, Strategy & Tech</div>
+              <div class="spk-company">BDO USA</div>
+            </div>
+          </div>
+
+          <!-- Faculty 3: Rosalind "Roz" Cohen -->
+          <div class="spk-card spk-item" data-name="Rosalind Roz Cohen" data-role="CEO/Founder" data-company="Socius Strategies" data-track="Leadership & Culture" data-keynote="false">
+            <div class="spk-track-topline" style="background: #ef5924;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/roz-cohen-350x350.jpg" alt="Rosalind Roz Cohen" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #ef5924;">RC</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morqbiut/120.jpg" alt="Socius Strategies" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(239,89,36,0.12); color: #ef5924; border: 1px solid rgba(239,89,36,0.25);">
+                Leadership & Culture
+              </div>
+              <h3 class="spk-name">Rosalind "Roz" Cohen</h3>
+              <div class="spk-role">CEO / Founder</div>
+              <div class="spk-company">Socius Strategies</div>
+            </div>
+          </div>
+
+          <!-- Faculty 4: Treena Diebolt -->
+          <div class="spk-card spk-item" data-name="Treena Diebolt" data-role="Vice President, People" data-company="Otter.ai" data-track="HR Tech & Analytics" data-keynote="false">
+            <div class="spk-track-topline" style="background: #0092cb;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg" alt="Treena Diebolt" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #0092cb;">TD</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg" alt="Otter.ai" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(0,146,203,0.12); color: #0092cb; border: 1px solid rgba(0,146,203,0.25);">
+                HR Tech & Analytics
+              </div>
+              <h3 class="spk-name">Treena Diebolt</h3>
+              <div class="spk-role">Vice President, People</div>
+              <div class="spk-company">Otter.ai</div>
+            </div>
+          </div>
+
+          <!-- Faculty 5: Edie Goldberg -->
+          <div class="spk-card spk-item" data-name="Edie Goldberg" data-role="Founder & President" data-company="E. L. Goldberg & Associates" data-track="Talent Acquisition" data-keynote="false">
+            <div class="spk-track-topline" style="background: #e51069;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/edie-goldberg-350x350.jpg" alt="Edie Goldberg" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #e51069;">EG</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2013/2/1/hco5svrr/120.jpg" alt="E. L. Goldberg & Associates" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(229,16,105,0.12); color: #e51069; border: 1px solid rgba(229,16,105,0.25);">
+                Talent Acquisition
+              </div>
+              <h3 class="spk-name">Edie Goldberg</h3>
+              <div class="spk-role">Founder & President</div>
+              <div class="spk-company">E. L. Goldberg & Associates</div>
+            </div>
+          </div>
+
+          <!-- Faculty 6: Natalie Grabher -->
+          <div class="spk-card spk-item" data-name="Natalie Grabher" data-role="VP of HR" data-company="Hall of Frames" data-track="HR Strategy & AI" data-keynote="false">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/natalie-grabher-350x350.jpg" alt="Natalie Grabher" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">NG</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo356yk9/120.jpg" alt="Hall of Frames" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Natalie Grabher</h3>
+              <div class="spk-role">VP of HR</div>
+              <div class="spk-company">Hall of Frames</div>
+            </div>
+          </div>
+
+          <!-- Faculty 7: Stephanie Hancock -->
+          <div class="spk-card spk-item" data-name="Stephanie Hancock" data-role="Director of People and Culture" data-company="Dealer Image Pro" data-track="Leadership & Culture" data-keynote="false">
+            <div class="spk-track-topline" style="background: #ef5924;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/stephanie-hancock-350x350.jpg" alt="Stephanie Hancock" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #ef5924;">SH</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/29/mok35rar/120.jpg" alt="Dealer Image Pro" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(239,89,36,0.12); color: #ef5924; border: 1px solid rgba(239,89,36,0.25);">
+                Leadership & Culture
+              </div>
+              <h3 class="spk-name">Stephanie Hancock</h3>
+              <div class="spk-role">Director of People and Culture</div>
+              <div class="spk-company">Dealer Image Pro™</div>
+            </div>
+          </div>
+
+          <!-- Faculty 8: Nancy Hauge -->
+          <div class="spk-card spk-item" data-name="Nancy Hauge" data-role="Chief People Experience Officer" data-company="Automation Anywhere" data-track="HR Strategy & AI" data-keynote="false">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg" alt="Nancy Hauge" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">NH</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg" alt="Automation Anywhere" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Nancy Hauge</h3>
+              <div class="spk-role">Chief People Experience Officer</div>
+              <div class="spk-company">Automation Anywhere</div>
+            </div>
+          </div>
+
+          <!-- Faculty 9: Christina Herrmann -->
+          <div class="spk-card spk-item" data-name="Christina Herrmann" data-role="Global Chief People Officer" data-company="The Oliver Agency" data-track="HR Strategy & AI" data-keynote="false">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/christina-smith-herrmann-350x350.jpg" alt="Christina Herrmann" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">CH</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/christina-herrmann-logo.jpg" alt="The Oliver Agency" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Christina Herrmann</h3>
+              <div class="spk-role">Global Chief People Officer</div>
+              <div class="spk-company">The Oliver Agency</div>
+            </div>
+          </div>
+
+          <!-- Faculty 10: Howard Kornfeld, MD -->
+          <div class="spk-card spk-item" data-name="Howard Kornfeld MD" data-role="Director" data-company="Recovery Without Walls" data-track="Health & Wellness" data-keynote="false">
+            <div class="spk-track-topline" style="background: #00924b;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/howard-kornfeld-350x350.jpg" alt="Howard Kornfeld, MD" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #00924b;">HK</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/5/8/moxah14a/120.jpg" alt="Recovery Without Walls" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(0,146,75,0.12); color: #00924b; border: 1px solid rgba(0,146,75,0.25);">
+                Health & Wellness
+              </div>
+              <h3 class="spk-name">Howard Kornfeld, MD</h3>
+              <div class="spk-role">Director</div>
+              <div class="spk-company">Recovery Without Walls</div>
+            </div>
+          </div>
+
+          <!-- Faculty 11: Emma Lidgett -->
+          <div class="spk-card spk-item" data-name="Emma Lidgett" data-role="Global Head of Talent Development and Learning" data-company="Kainos" data-track="Talent Acquisition" data-keynote="false">
+            <div class="spk-track-topline" style="background: #e51069;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/emma-lidgett-350x350.jpg" alt="Emma Lidgett" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #e51069;">EL</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2021/10/16/kuttvljc/120.jpg" alt="Kainos" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(229,16,105,0.12); color: #e51069; border: 1px solid rgba(229,16,105,0.25);">
+                Talent Acquisition
+              </div>
+              <h3 class="spk-name">Emma Lidgett</h3>
+              <div class="spk-role">Global Head of Talent Development & Learning</div>
+              <div class="spk-company">Kainos</div>
+            </div>
+          </div>
+
+          <!-- Faculty 12: Laura Middleton -->
+          <div class="spk-card spk-item" data-name="Laura Middleton" data-role="CEO" data-company="HRCP - Human Resource Certification Preparation" data-track="HR Strategy & AI" data-keynote="false">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/laura-middleton-350x350.jpg" alt="Laura Middleton" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">LM</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2023/12/12/lq2rdkt6/120.jpg" alt="HRCP" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Laura Middleton</h3>
+              <div class="spk-role">CEO</div>
+              <div class="spk-company">HRCP - Human Resource Certification Preparation</div>
+            </div>
+          </div>
+
+          <!-- Faculty 13: Mark Monaghan -->
+          <div class="spk-card spk-item" data-name="Mark Monaghan" data-role="Vice President of Organizational Development" data-company="iQor" data-track="Leadership & Culture" data-keynote="false">
+            <div class="spk-track-topline" style="background: #ef5924;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/mark-monaghan-350x350.jpg" alt="Mark Monaghan" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #ef5924;">MM</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2014/4/8/htrbviw9/120.jpg" alt="iQor" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(239,89,36,0.12); color: #ef5924; border: 1px solid rgba(239,89,36,0.25);">
+                Leadership & Culture
+              </div>
+              <h3 class="spk-name">Mark Monaghan</h3>
+              <div class="spk-role">VP of Organizational Development</div>
+              <div class="spk-company">iQor</div>
+            </div>
+          </div>
+
+          <!-- Faculty 14: Dr. Lauren S. Park -->
+          <div class="spk-card spk-item" data-name="Dr. Lauren S. Park PhD" data-role="Quantitative Science Team Lead, Future of Work Research Lab" data-company="SAP SuccessFactors" data-track="HR Tech & Analytics" data-keynote="false">
+            <div class="spk-track-topline" style="background: #0092cb;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lauren-park-350x350.jpg" alt="Dr. Lauren S. Park" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #0092cb;">LP</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/2/11/mlicv0tp/120.jpg" alt="SAP SuccessFactors" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(0,146,203,0.12); color: #0092cb; border: 1px solid rgba(0,146,203,0.25);">
+                HR Tech & Analytics
+              </div>
+              <h3 class="spk-name">Dr. Lauren S. Park, PhD</h3>
+              <div class="spk-role">Quantitative Science Team Lead, Future of Work</div>
+              <div class="spk-company">SAP SuccessFactors</div>
+            </div>
+          </div>
+
+          <!-- Faculty 15: Theresa Parra -->
+          <div class="spk-card spk-item" data-name="Theresa Parra" data-role="Executive Director, People & Development" data-company="Netafim North America" data-track="Talent Acquisition" data-keynote="false">
+            <div class="spk-track-topline" style="background: #e51069;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/theresa-parra-350x350.jpg" alt="Theresa Parra" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #e51069;">TP</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo34z64p/120.jpg" alt="Netafim" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(229,16,105,0.12); color: #e51069; border: 1px solid rgba(229,16,105,0.25);">
+                Talent Acquisition
+              </div>
+              <h3 class="spk-name">Theresa Parra</h3>
+              <div class="spk-role">Executive Director, People & Development</div>
+              <div class="spk-company">Netafim - North America</div>
+            </div>
+          </div>
+
+          <!-- Faculty 16: Ramprasad Reddy -->
+          <div class="spk-card spk-item" data-name="Ramprasad Reddy" data-role="Senior Manager, HRIS" data-company="NSF International" data-track="HR Tech & Analytics" data-keynote="false">
+            <div class="spk-track-topline" style="background: #0092cb;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/ramprasad-reddy-350x350.jpg" alt="Ramprasad Reddy" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #0092cb;">RR</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morcuqco/120.jpg" alt="NSF International" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(0,146,203,0.12); color: #0092cb; border: 1px solid rgba(0,146,203,0.25);">
+                HR Tech & Analytics
+              </div>
+              <h3 class="spk-name">Ramprasad Reddy</h3>
+              <div class="spk-role">Senior Manager, HRIS</div>
+              <div class="spk-company">NSF International</div>
+            </div>
+          </div>
+
+          <!-- Faculty 17: Dr. Jonathan H. Westover -->
+          <div class="spk-card spk-item" data-name="Dr. Jonathan H. Westover" data-role="Associate Dean and Director of HR Academic Programs" data-company="Western Governors University" data-track="Leadership & Culture" data-keynote="false">
+            <div class="spk-track-topline" style="background: #ef5924;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/jonathan-westover-350x350.jpg" alt="Dr. Jonathan H. Westover" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #ef5924;">JW</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2021/11/18/kw554jn6/120.jpg" alt="Western Governors University" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(239,89,36,0.12); color: #ef5924; border: 1px solid rgba(239,89,36,0.25);">
+                Leadership & Culture
+              </div>
+              <h3 class="spk-name">Dr. Jonathan H. Westover</h3>
+              <div class="spk-role">Associate Dean & Director of HR Programs</div>
+              <div class="spk-company">Western Governors University</div>
+            </div>
+          </div>
+
+          <!-- Faculty 18: Adilen Valentina -->
+          <div class="spk-card spk-item" data-name="Adilen Valentina" data-role="Human Resource Director" data-company="NWCTHRA" data-track="HR Strategy & AI" data-keynote="false">
+            <div class="spk-track-topline" style="background: #91278c;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/adilen-valentina-350x350.jpg" alt="Adilen Valentina" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #91278c;">AV</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/28/moixc989/120.jpg" alt="NWCTHRA" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(145,39,140,0.12); color: #91278c; border: 1px solid rgba(145,39,140,0.25);">
+                HR Strategy & AI
+              </div>
+              <h3 class="spk-name">Adilen Valentina</h3>
+              <div class="spk-role">Human Resource Director</div>
+              <div class="spk-company">NWCTHRA</div>
+            </div>
+          </div>
+
+          <!-- Faculty 19: Mark Vickers -->
+          <div class="spk-card spk-item" data-name="Mark Vickers" data-role="Chief Research Analyst & Data Wrangler" data-company="HR.com" data-track="HR Tech & Analytics" data-keynote="false">
+            <div class="spk-track-topline" style="background: #0092cb;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/mark-vickers-350x350.jpg" alt="Mark Vickers" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #0092cb;">MV</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" alt="HR.com" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(0,146,203,0.12); color: #0092cb; border: 1px solid rgba(0,146,203,0.25);">
+                HR Tech & Analytics
+              </div>
+              <h3 class="spk-name">Mark Vickers</h3>
+              <div class="spk-role">Chief Research Analyst & Data Wrangler</div>
+              <div class="spk-company">HR.com</div>
+            </div>
+          </div>
+
+          <!-- Faculty 20: Mike Wood -->
+          <div class="spk-card spk-item" data-name="Mike Wood" data-role="Executive Community Leader, Talent Acquisition" data-company="HR.com" data-track="Talent Acquisition" data-keynote="false">
+            <div class="spk-track-topline" style="background: #e51069;"></div>
+            <div class="spk-photo-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/mike-wood-350x350.jpg" alt="Mike Wood" class="spk-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="spk-photo-fallback" style="color: #e51069;">MW</div>
+              <div class="spk-logo-tag">
+                <img src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" alt="HR.com" class="spk-logo-img" />
+              </div>
+            </div>
+            <div class="spk-info-box">
+              <div class="spk-track-pill-tag" style="background: rgba(229,16,105,0.12); color: #e51069; border: 1px solid rgba(229,16,105,0.25);">
+                Talent Acquisition
+              </div>
+              <h3 class="spk-name">Mike Wood</h3>
+              <div class="spk-role">Executive Community Leader, Talent Acquisition</div>
+              <div class="spk-company">HR.com</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Empty Search Results State -->
+      <div id="hrw27-spk-empty" class="spk-empty-state">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" style="margin: 0 auto; display: block;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <div class="spk-empty-title">No speakers match your search</div>
+        <p style="margin: 0; font-size: 0.92rem;">Try adjusting your keyword search or track category filter.</p>
+        <button id="hrw27-spk-clear-filters" class="spk-empty-btn">Clear all filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Call for Speakers Conversion Banner -->
+  <section class="spk-cta-section">
+    <div class="spk-grid-container">
+      
+      <div class="spk-cta-box">
+        <div class="spk-cta-grid">
+          
+          <div>
+            <span class="spk-cta-eyebrow">Share Your Expertise</span>
+            <h2 class="spk-cta-h2">
+              Apply to Speak at HRWest 2027
+            </h2>
+            <p class="spk-cta-p">
+              Are you pioneering breakthroughs in AI-driven HR, workforce legal strategy, talent acquisition, or executive culture? Present your case study on the HRWest mainstage before 1,000+ senior leaders.
+            </p>
+
+            <div class="spk-cta-buttons">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxGKEwwyJEk9YtOt3CpKH5pIp6DS6Gnq4MTWaG7i074H1nUg/viewform" target="_blank" rel="noopener noreferrer" class="spk-hero-btn-primary" style="background: linear-gradient(135deg, #ef146e 0%, #a855f7 100%);">
+                Submit Speaker Proposal
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spk-hero-btn-secondary" style="background: #ffffff; color: #5d2fc7 !important; border: 1.5px solid #cbd5e1;">
+                Pre-Register for Conference
+              </a>
+            </div>
+          </div>
+
+          <div class="spk-cta-img-card">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp" alt="Speaking at HRWest 2027" />
+            <div class="spk-cta-badge">
+              <span style="font-size: 16px;">🎤</span>
+              <span>Speaker Proposals Close Oct 30, 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- 5. Client-Side Interactive Filtering Script -->
+<script>
+(function() {
+  'use strict';
+
+  var searchInput = document.getElementById('hrw27-spk-search');
+  var trackBtns = document.querySelectorAll('#hrw27-track-buttons .spk-pill-btn');
+  var countBadge = document.getElementById('hrw27-spk-count');
+  var clearBtn = document.getElementById('hrw27-spk-clear-filters');
+  var emptyState = document.getElementById('hrw27-spk-empty');
+  var keynotesWrapper = document.getElementById('hrw27-keynotes-wrapper');
+  var facultyWrapper = document.getElementById('hrw27-faculty-wrapper');
+  var allCards = document.querySelectorAll('.spk-item');
+
+  var currentTrack = 'All';
+  var currentQuery = '';
+
+  var trackColorMap = {
+    'HR Strategy & AI': '#91278c',
+    'Legal & Compliance': '#232283',
+    'HR Tech & Analytics': '#0092cb',
+    'Talent Acquisition': '#e51069',
+    'Leadership & Culture': '#ef5924',
+    'Health & Wellness': '#00924b'
+  };
+
+  function filterSpeakers() {
+    var visibleTotal = 0;
+    var visibleKeynotes = 0;
+    var visibleFaculty = 0;
+    var q = currentQuery.trim().toLowerCase();
+
+    allCards.forEach(function(card) {
+      var name = (card.getAttribute('data-name') || '').toLowerCase();
+      var role = (card.getAttribute('data-role') || '').toLowerCase();
+      var company = (card.getAttribute('data-company') || '').toLowerCase();
+      var track = card.getAttribute('data-track') || '';
+      var isKeynote = card.getAttribute('data-keynote') === 'true';
+
+      var matchTrack = (currentTrack === 'All' || track === currentTrack);
+      var matchSearch = (!q || name.indexOf(q) !== -1 || role.indexOf(q) !== -1 || company.indexOf(q) !== -1);
+
+      if (matchTrack && matchSearch) {
+        card.classList.remove('spk-hidden');
+        visibleTotal++;
+        if (isKeynote) {
+          visibleKeynotes++;
+        } else {
+          visibleFaculty++;
+        }
+      } else {
+        card.classList.add('spk-hidden');
+      }
+    });
+
+    // Update Counter
+    if (countBadge) {
+      countBadge.textContent = '(' + visibleTotal + ')';
+    }
+
+    // Toggle Section Visibility
+    if (keynotesWrapper) {
+      keynotesWrapper.style.display = (visibleKeynotes > 0) ? 'block' : 'none';
+    }
+    if (facultyWrapper) {
+      facultyWrapper.style.display = (visibleFaculty > 0) ? 'block' : 'none';
+    }
+
+    // Empty state
+    if (emptyState) {
+      emptyState.style.display = (visibleTotal === 0) ? 'block' : 'none';
+    }
+  }
+
+  // Handle Search Typing
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      currentQuery = e.target.value;
+      filterSpeakers();
+    });
+  }
+
+  // Handle Track Pill Clicks
+  trackBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      trackBtns.forEach(function(b) {
+        b.classList.remove('active');
+        b.style.background = '';
+        b.style.borderColor = '';
+        b.style.color = '';
+      });
+
+      btn.classList.add('active');
+      currentTrack = btn.getAttribute('data-track');
+
+      if (currentTrack !== 'All' && trackColorMap[currentTrack]) {
+        btn.style.background = trackColorMap[currentTrack];
+        btn.style.borderColor = trackColorMap[currentTrack];
+        btn.style.color = '#ffffff';
+      }
+
+      filterSpeakers();
+    });
+  });
+
+  // Handle Clear Filters Button
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      currentTrack = 'All';
+      currentQuery = '';
+      if (searchInput) searchInput.value = '';
+
+      trackBtns.forEach(function(b) {
+        b.classList.remove('active');
+        b.style.background = '';
+        b.style.borderColor = '';
+        b.style.color = '';
+        if (b.getAttribute('data-track') === 'All') {
+          b.classList.add('active');
+        }
+      });
+
+      filterSpeakers();
+    });
+  }
+
+  // Initial calculation
+  filterSpeakers();
+})();
+</script>

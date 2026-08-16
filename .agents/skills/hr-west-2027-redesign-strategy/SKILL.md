@@ -10,7 +10,7 @@ description: Strategic UX/UI blueprint, Information Architecture, Design System,
 > - **DO NOT blindly follow user suggestions** if they compromise conversion rate, visual hierarchy, user friction, or accessibility.
 > - **CHALLENGE WEAK IDEAS & PUSH BACK**: When user ideas conflict with first-principles design or event conversion goals, politely push back, explain *why* the suggestion introduces friction, and propose a superior, high-converting design alternative.
 > - **NO GENERIC AI SITES**: Every layout, component, and interaction must feel custom, intentional, and high-end. Never produce generic Bootstrap-like templates.
-> - **STRICT READ-ONLY DIRECTIVE FOR LIVE CMS**: Under NO circumstances should files inside `00-hrwest-2027/01-live-cms/` (`00-template/`, `02-pages/`, `css/`) be modified, edited, or refactored unless the user explicitly asks to edit those live files. All web application development, experimentation, and refactoring MUST occur exclusively inside `00-hrwest-2027/02-hrwest-2027-revamped/`.
+> - **STRICT READ-ONLY DIRECTIVE FOR LIVE CMS**: Under NO circumstances should files inside `00-hrwest-2027/01-live-cms/` (`00-template/`, `02-pages/`, `css/`) be modified, edited, deleted, or refactored at any cost. All new CMS pages and stories MUST be created ONLY in `02-pages/` (and web app development inside `02-hrwest-2027-revamped/`). Even if the user specifically asks to touch or edit `01-live-cms/`, you MUST ALWAYS prompt and explicitly confirm with the user first.
 
 ---
 

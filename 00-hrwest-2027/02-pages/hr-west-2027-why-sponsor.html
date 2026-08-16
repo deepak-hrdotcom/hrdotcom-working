@@ -1,0 +1,939 @@
+<style>
+  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
+
+<script>
+(function() {
+  function applyEarlyReset() {
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  applyEarlyReset();
+  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+})();
+</script>
+
+<style>
+  /* WHY SPONSOR PAGE STYLES AND DESIGN TOKENS */
+  .hrw27 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary, #0f172a);
+    background: var(--color-canvas, #fcfcff);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hrw27 *, .hrw27 *::before, .hrw27 *::after {
+    box-sizing: border-box;
+  }
+
+  /* Hero Section */
+  .whyspn-hero-section {
+    position: relative;
+    min-height: 480px;
+    background-color: #0b0814;
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-size: cover;
+    background-position: 55% center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .whyspn-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.15) 100%),
+      linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+    pointer-events: none;
+  }
+
+  .whyspn-hero-orb-1 {
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(93,47,199,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .whyspn-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3rem 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.3fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .whyspn-hero-grid {
+      grid-template-columns: 1fr;
+      padding: 3rem 20px;
+      gap: 2.5rem;
+    }
+  }
+
+  .whyspn-hero-content {
+    max-width: 540px;
+  }
+
+  .whyspn-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.1rem 0;
+  }
+
+  .whyspn-hero-glow-text {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .whyspn-hero-p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 2.25rem 0;
+    max-width: 440px;
+  }
+
+  .whyspn-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .whyspn-hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
+    color: #ffffff !important;
+  }
+
+  /* Floating Stat Cards Mosaic */
+  .whyspn-floating-mosaic {
+    position: relative;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .whyspn-floating-mosaic {
+      display: none;
+    }
+  }
+
+  .whyspn-float-card {
+    position: absolute;
+    width: 260px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 0.9rem 1.15rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .whyspn-float-card:hover {
+    transform: scale(1.04) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10 !important;
+  }
+
+  .whyspn-float-card-1 {
+    top: 15px;
+    left: 0px;
+    transform: rotate(-2deg);
+    z-index: 3;
+  }
+
+  .whyspn-float-card-2 {
+    top: 125px;
+    left: 20px;
+    transform: rotate(1.5deg);
+    z-index: 2;
+  }
+
+  .whyspn-float-card-3 {
+    top: 235px;
+    left: 10px;
+    transform: rotate(-1deg);
+    z-index: 1;
+  }
+
+  .whyspn-float-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ef146e 0%, #a855f7 100%);
+    box-shadow: 0 0 10px #ef146e;
+    flex-shrink: 0;
+  }
+
+  .whyspn-float-num {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1.85rem;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.2rem;
+  }
+
+  .whyspn-float-label {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+  }
+
+  .whyspn-hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(0deg, var(--color-canvas, #fcfcff) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* ── STATS BANNER PILL ── */
+  .whyspn-stats-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 2.5rem 0;
+  }
+
+  .whyspn-stats-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .whyspn-stats-pill {
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    border-radius: 9999px;
+    padding: 1.6rem 2.5rem;
+    box-shadow: 0 12px 35px rgba(93, 47, 199, 0.35);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .whyspn-stats-pill {
+      border-radius: 24px;
+      padding: 1.5rem;
+    }
+  }
+
+  .whyspn-stat-item {
+    color: #ffffff;
+  }
+
+  .whyspn-stat-val {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .whyspn-stat-lbl {
+    font-size: 0.86rem;
+    font-weight: 600;
+    opacity: 0.92;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* ── ROI & EXHIBITING 2-COL SECTION ── */
+  .whyspn-twocol-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 3rem 0 5rem;
+  }
+
+  .whyspn-twocol-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .whyspn-twocol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+  }
+
+  .whyspn-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.75rem 2.5rem;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .whyspn-card-eyebrow {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ef146e;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .whyspn-card-h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary, #0f172a);
+    margin: 0 0 0.85rem 0;
+    line-height: 1.2;
+  }
+
+  .whyspn-card-p {
+    font-size: 0.96rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 1.75rem 0;
+  }
+
+  .whyspn-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .whyspn-benefit-row {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .whyspn-benefit-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(93, 47, 199, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(93, 47, 199, 0.2);
+    margin-top: 0.15rem;
+  }
+
+  .whyspn-benefit-title {
+    color: var(--color-text-primary, #0f172a);
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .whyspn-benefit-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.55;
+  }
+
+  .whyspn-photo-box {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+    height: 250px;
+    position: relative;
+    margin-top: auto;
+  }
+
+  .whyspn-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── 5 TYPES OF SOLUTIONS SECTION ── */
+  .whyspn-solutions-section {
+    background: #f8fafc;
+    padding: 5rem 0;
+    border-top: 1px solid var(--color-subtle, #e2e8f0);
+    border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+  }
+
+  .whyspn-solutions-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .whyspn-solutions-eyebrow {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5d2fc7;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .whyspn-solutions-h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: var(--color-text-primary, #0f172a);
+  }
+
+  .whyspn-solutions-p {
+    font-size: 0.96rem;
+    color: #64748b;
+    margin: 0.65rem auto 0;
+    max-width: 620px;
+  }
+
+  .whyspn-solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.35rem;
+  }
+
+  .whyspn-sol-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.85rem 1.6rem;
+    border: 1.5px solid rgba(145, 39, 140, 0.18);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .whyspn-sol-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(93, 47, 199, 0.09);
+  }
+
+  .whyspn-sol-num {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1.85rem;
+    color: rgba(145, 39, 140, 0.12);
+  }
+
+  .whyspn-sol-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--color-text-primary, #0f172a);
+    margin: 0 0 0.65rem 0;
+    line-height: 1.35;
+    padding-right: 1.5rem;
+  }
+
+  .whyspn-sol-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ── PROSPECTUS REQUEST FORM SECTION ── */
+  .whyspn-form-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 5.5rem 0;
+  }
+
+  .whyspn-form-box {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 3.25rem 2.75rem;
+    border: 1.5px solid rgba(93, 47, 199, 0.25);
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.08);
+  }
+
+  .whyspn-form-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+  }
+
+  .whyspn-form-eyebrow {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ef146e;
+    margin-bottom: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .whyspn-form-h3 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    color: var(--color-text-primary, #0f172a);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .whyspn-form-sub {
+    font-size: 0.92rem;
+    color: #64748b;
+    margin: 0;
+  }
+
+  .whyspn-form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .whyspn-form-label {
+    display: block;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.4rem;
+  }
+
+  .whyspn-form-input {
+    width: 100%;
+    padding: 0.8rem 1.1rem;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f8fafc;
+    color: var(--color-text-primary, #0f172a);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .whyspn-form-input:focus {
+    border-color: #5d2fc7;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(93, 47, 199, 0.12);
+  }
+
+  .whyspn-form-submit {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.95rem 1.8rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    transition: all 0.25s ease;
+  }
+
+  .whyspn-form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(239, 20, 110, 0.45);
+  }
+
+  .whyspn-success-msg {
+    display: none;
+    padding: 2.25rem 2rem;
+    background: linear-gradient(135deg, rgba(93,47,199,0.08), rgba(239,20,110,0.08));
+    border-radius: 16px;
+    text-align: center;
+    border: 1.5px solid rgba(93, 47, 199, 0.25);
+  }
+
+  .whyspn-success-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--color-text-primary, #0f172a);
+    margin: 0.75rem 0 0.5rem 0;
+  }
+
+  .whyspn-success-desc {
+    font-size: 0.9rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.6;
+  }
+</style>
+
+<div class="hrw27">
+
+  <!-- 1. Cinematic Hero Section -->
+  <section class="whyspn-hero-section">
+    <div class="whyspn-hero-overlay"></div>
+    <div class="whyspn-hero-orb-1"></div>
+
+    <div class="whyspn-hero-grid">
+      
+      <!-- Left: Content Block -->
+      <div class="whyspn-hero-content">
+        <h1 class="whyspn-hero-h1">
+          Reach 1,000+<br />
+          <span class="whyspn-hero-glow-text">HR Decision-Makers</span>
+        </h1>
+
+        <p class="whyspn-hero-p">
+          HRWest delivers direct access to VP and C-suite HR buyers actively evaluating solutions for 2027.
+        </p>
+
+        <div>
+          <a href="#prospectus-form" class="whyspn-hero-btn-primary">
+            Download Prospectus
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Center: Spacer -->
+      <div></div>
+
+      <!-- Right: Floating Stat Cards Mosaic -->
+      <div class="whyspn-floating-mosaic">
+        
+        <!-- Stat Card 1 -->
+        <div class="whyspn-float-card whyspn-float-card-1">
+          <div class="whyspn-float-dot"></div>
+          <div>
+            <div class="whyspn-float-num">700+</div>
+            <div class="whyspn-float-label">HR Leaders Attending</div>
+          </div>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="whyspn-float-card whyspn-float-card-2">
+          <div class="whyspn-float-dot"></div>
+          <div>
+            <div class="whyspn-float-num">68%</div>
+            <div class="whyspn-float-label">Manager & CHRO Level</div>
+          </div>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="whyspn-float-card whyspn-float-card-3">
+          <div class="whyspn-float-dot"></div>
+          <div>
+            <div class="whyspn-float-num">84%</div>
+            <div class="whyspn-float-label">Direct Buying Authority</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom gradient blend -->
+    <div class="whyspn-hero-bottom-fade"></div>
+  </section>
+
+  <!-- 2. Projected Stats Banner Pill -->
+  <section class="whyspn-stats-section">
+    <div class="whyspn-stats-container">
+      <div class="whyspn-stats-pill">
+        
+        <div class="whyspn-stat-item">
+          <div class="whyspn-stat-val">700+</div>
+          <div class="whyspn-stat-lbl">Attendees Projected</div>
+        </div>
+
+        <div class="whyspn-stat-item">
+          <div class="whyspn-stat-val">30+</div>
+          <div class="whyspn-stat-lbl">Projected Exhibitors</div>
+        </div>
+
+        <div class="whyspn-stat-item">
+          <div class="whyspn-stat-val">$6,000</div>
+          <div class="whyspn-stat-lbl">Sponsorship Starting</div>
+        </div>
+
+        <div class="whyspn-stat-item">
+          <div class="whyspn-stat-val">50+</div>
+          <div class="whyspn-stat-lbl">Speakers</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ROI & Exhibitor Experience (2-Column Grid) -->
+  <section class="whyspn-twocol-section">
+    <div class="whyspn-twocol-container">
+      <div class="whyspn-twocol-grid">
+
+        <!-- Column 1: ROI Opportunities -->
+        <div class="whyspn-card">
+          <div>
+            <span class="whyspn-card-eyebrow">Maximizing Impact</span>
+            <h2 class="whyspn-card-h2">ROI Opportunities</h2>
+            <p class="whyspn-card-p">
+              Reach your marketing goals with the valuable sponsorship options at HRWest 2027.
+            </p>
+
+            <div class="whyspn-benefits-list">
+              
+              <!-- Item 1 -->
+              <div class="whyspn-benefit-row">
+                <div class="whyspn-benefit-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong class="whyspn-benefit-title">Thought leadership: </strong>
+                  <span class="whyspn-benefit-desc">Grab HR professionals' attention with our popular sponsored session and roundtable packages.</span>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="whyspn-benefit-row">
+                <div class="whyspn-benefit-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong class="whyspn-benefit-title">Leads: </strong>
+                  <span class="whyspn-benefit-desc">Seize opportunities that make attendees flock to your tabletop booth.</span>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="whyspn-benefit-row">
+                <div class="whyspn-benefit-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong class="whyspn-benefit-title">Branding: </strong>
+                  <span class="whyspn-benefit-desc">Put your company in attendees' minds with prominent logo placements across digital & onsite stages.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div>
+            <a href="#prospectus-form" class="whyspn-hero-btn-primary">
+              Download Sponsorship Brochure
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Action-Packed Exhibiting -->
+        <div class="whyspn-card">
+          <div>
+            <span class="whyspn-card-eyebrow" style="color: #5d2fc7;">Exhibitor Experience</span>
+            <h2 class="whyspn-card-h2">Action-Packed Exhibiting</h2>
+            <p class="whyspn-card-p">
+              Our exhibit experience is just the right size: enough exhibitors to attract attendees, but not so many that you are lost in the crowd. Prepare for your representatives to be busy with high-intent business conversations!
+            </p>
+          </div>
+
+          <div class="whyspn-photo-box">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp" alt="HRWest Exhibitors in action" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 5 Types of Solutions Attendees Are Seeking -->
+  <section class="whyspn-solutions-section">
+    <div class="whyspn-twocol-container">
+      
+      <div class="whyspn-solutions-header">
+        <div class="whyspn-solutions-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          High-Demand Solutions
+        </div>
+        <h2 class="whyspn-solutions-h2">
+          5 Types of Solutions Our Attendees Are Seeking
+        </h2>
+        <p class="whyspn-solutions-p">
+          HR decision-makers attend HRWest with active budget allocations for key solution categories:
+        </p>
+      </div>
+
+      <div class="whyspn-solutions-grid">
+        
+        <!-- Solution 01 -->
+        <div class="whyspn-sol-card">
+          <div class="whyspn-sol-num">01</div>
+          <div>
+            <h3 class="whyspn-sol-title">AI-Powered People Analytics</h3>
+            <p class="whyspn-sol-desc">For smarter, faster, and more confident talent decisions and predictive workforce modeling.</p>
+          </div>
+        </div>
+
+        <!-- Solution 02 -->
+        <div class="whyspn-sol-card">
+          <div class="whyspn-sol-num">02</div>
+          <div>
+            <h3 class="whyspn-sol-title">Performance Management</h3>
+            <p class="whyspn-sol-desc">To maximize productivity, manage OKRs, and boost manager feedback effectiveness.</p>
+          </div>
+        </div>
+
+        <!-- Solution 03 -->
+        <div class="whyspn-sol-card">
+          <div class="whyspn-sol-num">03</div>
+          <div>
+            <h3 class="whyspn-sol-title">Retention & Engagement</h3>
+            <p class="whyspn-sol-desc">Employee experience, mental well-being, rewards, and recognition platforms.</p>
+          </div>
+        </div>
+
+        <!-- Solution 04 -->
+        <div class="whyspn-sol-card">
+          <div class="whyspn-sol-num">04</div>
+          <div>
+            <h3 class="whyspn-sol-title">Efficiency & Automation Tools</h3>
+            <p class="whyspn-sol-desc">LMS, time and attendance, workflow automation, and HCM integrations.</p>
+          </div>
+        </div>
+
+        <!-- Solution 05 -->
+        <div class="whyspn-sol-card">
+          <div class="whyspn-sol-num">05</div>
+          <div>
+            <h3 class="whyspn-sol-title">Coaching & Development</h3>
+            <p class="whyspn-sol-desc">To support reskilling, executive growth, internal mobility, and career pathways.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Prospectus Request Form Section -->
+  <section id="prospectus-form" class="whyspn-form-section">
+    <div class="whyspn-twocol-container">
+      <div class="whyspn-form-box">
+        
+        <div class="whyspn-form-header">
+          <span class="whyspn-form-eyebrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ef146e" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            2027 Sponsorship Kit
+          </span>
+          <h3 class="whyspn-form-h3">Download Sponsorship Brochure</h3>
+          <p class="whyspn-form-sub">
+            Fill out the form below to receive full booth options, pricing, and audience demographics.
+          </p>
+        </div>
+
+        <form id="whyspn-lead-form" onsubmit="event.preventDefault(); document.getElementById('whyspn-lead-form').style.display='none'; document.getElementById('whyspn-success-box').style.display='block';">
+          
+          <div class="whyspn-form-group">
+            <label class="whyspn-form-label" for="spn-name">Full Name</label>
+            <input type="text" id="spn-name" class="whyspn-form-input" required placeholder="e.g. David Miller" />
+          </div>
+
+          <div class="whyspn-form-group">
+            <label class="whyspn-form-label" for="spn-email">Work Email</label>
+            <input type="email" id="spn-email" class="whyspn-form-input" required placeholder="david@company.com" />
+          </div>
+
+          <div class="whyspn-form-group">
+            <label class="whyspn-form-label" for="spn-company">Company Name</label>
+            <input type="text" id="spn-company" class="whyspn-form-input" required placeholder="e.g. TechCorp Solutions" />
+          </div>
+
+          <button type="submit" class="whyspn-form-submit">
+            Download Sponsorship Brochure
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+
+        </form>
+
+        <div id="whyspn-success-box" class="whyspn-success-msg">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2" style="margin: 0 auto 0.5rem auto; display: block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <div class="whyspn-success-title">Prospectus Request Sent!</div>
+          <p class="whyspn-success-desc">
+            Our sponsorship team will email the 2027 prospectus kit to your work email within 1 business day.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

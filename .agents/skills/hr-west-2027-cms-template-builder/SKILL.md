@@ -184,3 +184,13 @@ When wiring navigation links, mobile menu items, and story CTA buttons in HR Wes
 - **NEVER use special symbols in comments**: Avoid `+`, `—`, `–`, `═`, `─`, `&`, emojis, or fancy box borders in comments.
 - **Always use simple standard ASCII words and spaces**: e.g., `<!-- Hero Section -->`, `<!-- Master Header -->`, `<!-- Footer Links -->`.
 
+---
+
+## 10. STRICT FORBIDDEN ZONE — `01-live-cms/` Folder
+
+**ABSOLUTE MANDATORY RULE**:
+- **NEVER touch, modify, edit, delete, overwrite, or create files inside `01-live-cms/` (or any live CMS archive directory) at any cost.**
+- All new CMS pages and stories MUST be created ONLY in `02-pages/` (e.g. `02-pages/hr-west-2027-speakers.html`).
+- Even if the user specifically requests modifying or touching `01-live-cms/`, you **MUST ALWAYS prompt and confirm with the user before touching anything in `01-live-cms/`**.
+
+

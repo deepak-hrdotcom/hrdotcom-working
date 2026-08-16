@@ -1,0 +1,755 @@
+<style>
+  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
+
+<script>
+(function() {
+  function applyEarlyReset() {
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  applyEarlyReset();
+  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+})();
+</script>
+
+<style>
+  /* VENUE AND TRAVEL PAGE STYLES AND DESIGN TOKENS */
+  .hrw27 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary, #0f172a);
+    background: var(--color-canvas, #fcfcff);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hrw27 *, .hrw27 *::before, .hrw27 *::after {
+    box-sizing: border-box;
+  }
+
+  /* Hero Section */
+  .loc-hero-section {
+    position: relative;
+    min-height: 480px;
+    background-color: #0b0814;
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-size: cover;
+    background-position: 55% center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .loc-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.15) 100%),
+      linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+    pointer-events: none;
+  }
+
+  .loc-hero-orb-1 {
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(93,47,199,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .loc-hero-orb-2 {
+    position: absolute;
+    bottom: -60px;
+    left: 30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .loc-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3rem 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.3fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .loc-hero-grid {
+      grid-template-columns: 1fr;
+      padding: 3rem 20px;
+      gap: 2.5rem;
+    }
+  }
+
+  .loc-hero-content {
+    max-width: 540px;
+  }
+
+  .loc-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.1rem 0;
+  }
+
+  .loc-hero-glow-text {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .loc-hero-p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 2.25rem 0;
+    max-width: 440px;
+  }
+
+  .loc-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .loc-hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
+    color: #ffffff !important;
+  }
+
+  .loc-hero-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.86rem;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .loc-hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Floating Info Cards Stack */
+  .loc-floating-mosaic {
+    position: relative;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .loc-floating-mosaic {
+      display: none;
+    }
+  }
+
+  .loc-float-card {
+    position: absolute;
+    width: 275px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 0.9rem 1.15rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .loc-float-card:hover {
+    transform: scale(1.04) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10 !important;
+  }
+
+  .loc-float-card-1 {
+    top: 15px;
+    left: 0px;
+    transform: rotate(-2deg);
+    z-index: 3;
+  }
+
+  .loc-float-card-2 {
+    top: 125px;
+    left: 20px;
+    transform: rotate(1.5deg);
+    z-index: 2;
+  }
+
+  .loc-float-card-3 {
+    top: 235px;
+    left: 10px;
+    transform: rotate(-1deg);
+    z-index: 1;
+  }
+
+  .loc-float-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(239,20,110,0.25), rgba(93,47,199,0.35));
+    border: 1px solid rgba(239, 20, 110, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .loc-float-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: #ffffff;
+    margin-bottom: 0.15rem;
+  }
+
+  .loc-float-sub {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 500;
+  }
+
+  .loc-hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(0deg, var(--color-canvas, #fcfcff) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* ── VENUE SPOTLIGHT CARD ── */
+  .loc-spotlight-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 3.5rem 0 2rem;
+  }
+
+  .loc-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .loc-spotlight-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1.5px solid rgba(93, 47, 199, 0.2);
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .loc-spotlight-photo-tile {
+    background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 3.5rem 2.5rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+  }
+
+  .loc-spotlight-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(239,20,110,0.85) 0%, rgba(145,39,140,0.92) 100%);
+  }
+
+  .loc-spotlight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+  }
+
+  .loc-spotlight-content {
+    padding: 3.25rem 2.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* ── QUICK TRAVEL STATS ── */
+  .loc-stats-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 2rem 0 3.5rem;
+  }
+
+  .loc-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .loc-stat-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .loc-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(93, 47, 199, 0.08);
+  }
+
+  .loc-stat-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem auto;
+    box-shadow: 0 4px 14px rgba(93, 47, 199, 0.3);
+  }
+
+  .loc-stat-val {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1.85rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.3rem;
+  }
+
+  .loc-stat-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.98rem;
+    color: var(--color-text-primary, #0f172a);
+    margin-bottom: 0.45rem;
+  }
+
+  .loc-stat-desc {
+    font-size: 0.86rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── ACCOMMODATIONS & DINING ── */
+  .loc-hotels-section {
+    background: #f8fafc;
+    padding: 4.5rem 0 5rem;
+    border-top: 1px solid var(--color-subtle, #e2e8f0);
+    border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+  }
+
+  .loc-hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .loc-hotel-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.25rem;
+    border: 1.5px solid rgba(145, 39, 140, 0.25);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  }
+
+  .loc-badge-purple {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #5d2fc7;
+    background: rgba(93, 47, 199, 0.1);
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+  }
+
+  .loc-parking-box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.25rem;
+    border: 1.5px solid var(--color-subtle, #e2e8f0);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  }
+
+  /* ── GOOGLE MAP EMBED ── */
+  .loc-map-section {
+    background: var(--color-canvas, #fcfcff);
+    padding: 4.5rem 0 5.5rem;
+  }
+
+  .loc-map-wrap {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid rgba(93, 47, 199, 0.2);
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.08);
+    height: 440px;
+  }
+</style>
+
+<div class="hrw27">
+
+  <!-- 1. Cinematic Hero Section -->
+  <section class="loc-hero-section">
+    <div class="loc-hero-overlay"></div>
+    <div class="loc-hero-orb-1"></div>
+    <div class="loc-hero-orb-2"></div>
+
+    <div class="loc-hero-grid">
+      
+      <!-- Left: Content Block -->
+      <div class="loc-hero-content">
+        <h1 class="loc-hero-h1">
+          South San<br />
+          <span class="loc-hero-glow-text">Francisco</span>
+        </h1>
+
+        <p class="loc-hero-p">
+          The South San Francisco Conference Center: minutes from SFO, with hotels, dining, and BART access on-site.
+        </p>
+
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="#map" class="loc-hero-btn-primary">
+            Get Directions
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          </a>
+          <a href="#hotels" class="loc-hero-btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path><path d="M10 9h4"></path><path d="M10 13h4"></path><path d="M10 17h4"></path></svg>
+            Book Hotel
+          </a>
+        </div>
+      </div>
+
+      <!-- Center: Spacer -->
+      <div></div>
+
+      <!-- Right: Floating Info Cards Stack -->
+      <div class="loc-floating-mosaic">
+        
+        <!-- Card 1: Airport -->
+        <div class="loc-float-card loc-float-card-1">
+          <div class="loc-float-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef146e" stroke-width="2.2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"></path></svg>
+          </div>
+          <div>
+            <div class="loc-float-title">SFO Airport</div>
+            <div class="loc-float-sub">12 min drive (3.5 miles)</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Transit -->
+        <div class="loc-float-card loc-float-card-2">
+          <div class="loc-float-icon-wrap" style="border-color: rgba(93,47,199,0.4); background: linear-gradient(135deg, rgba(93,47,199,0.3), rgba(239,20,110,0.25));">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><rect x="4" y="3" width="16" height="16" rx="2"></rect><line x1="4" y1="11" x2="20" y2="11"></line><line x1="12" y1="3" x2="12" y2="11"></line><path d="M8 19l-2 3"></path><path d="M16 19l2 3"></path></svg>
+          </div>
+          <div>
+            <div class="loc-float-title">BART Transit</div>
+            <div class="loc-float-sub">Free shuttle from SSF Station</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Parking -->
+        <div class="loc-float-card loc-float-card-3">
+          <div class="loc-float-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef146e" stroke-width="2.2"><rect x="3" y="11" width="18" height="9" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div>
+            <div class="loc-float-title">On-Site Parking</div>
+            <div class="loc-float-sub">Complimentary covered parking</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom gradient blend -->
+    <div class="loc-hero-bottom-fade"></div>
+  </section>
+
+  <!-- 2. Seamless Brand-Aligned Venue Spotlight Card -->
+  <section class="loc-spotlight-section">
+    <div class="loc-container">
+      <div class="loc-spotlight-card">
+        
+        <!-- Left: Photo Tile with Gradient Overlay -->
+        <div class="loc-spotlight-photo-tile">
+          <div class="loc-spotlight-overlay"></div>
+          
+          <div style="position: relative; z-index: 2;">
+            <span class="loc-spotlight-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Silicon Valley 2027
+            </span>
+
+            <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.4rem; opacity: 0.95; line-height: 1.1;">
+              San Francisco
+            </div>
+            <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(2.4rem, 4vw, 3.5rem); letter-spacing: -0.04em; line-height: 1; margin: 0.25rem 0 1rem 0; color: #ffffff;">
+              California
+            </h2>
+          </div>
+
+          <div style="position: relative; z-index: 2; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.25); font-size: 0.92rem; font-weight: 600; opacity: 0.95; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            South San Francisco Conference Center
+          </div>
+        </div>
+
+        <!-- Right: Overview Copy -->
+        <div class="loc-spotlight-content">
+          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5d2fc7; margin-bottom: 0.5rem; display: block;">
+            Venue & Accommodation Overview
+          </span>
+          
+          <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 2rem; font-weight: 400;">
+            We are thrilled to bring the <strong style="color: #0f172a; font-weight: 700;">HRWest Conference</strong> back to the San Francisco Bay Area! Hosted at the modern <strong style="color: #0f172a; font-weight: 700;">South San Francisco Conference Center</strong>, with our official partner hotel at the <strong style="color: #0f172a; font-weight: 700;">DoubleTree by Hilton San Francisco Airport North Bayfront</strong> just steps away, offering a seamless setting for learning, executive networking, and team growth.
+          </p>
+
+          <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <a href="#map" class="loc-hero-btn-primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">
+              View Map & Directions
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </a>
+            <a href="#hotels" class="loc-hero-btn-outline" style="color: #5d2fc7 !important; border-color: #cbd5e1; background: #ffffff; padding: 0.75rem 1.5rem; font-size: 0.88rem;">
+              Book Hotel Group Rate
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path><path d="M10 9h4"></path><path d="M10 13h4"></path><path d="M10 17h4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Quick Travel Stats -->
+  <section class="loc-stats-section">
+    <div class="loc-container">
+      <div class="loc-stats-grid">
+        
+        <!-- Stat 1 -->
+        <div class="loc-stat-card">
+          <div class="loc-stat-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"></path></svg>
+          </div>
+          <div class="loc-stat-val">5 min</div>
+          <div class="loc-stat-title">Airport Access</div>
+          <p class="loc-stat-desc">Only 3.5 miles north of SFO. Free airport shuttles available.</p>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="loc-stat-card">
+          <div class="loc-stat-icon-wrap" style="background: linear-gradient(135deg, #91278c 0%, #ef146e 100%);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="4" y="3" width="16" height="16" rx="2"></rect><line x1="4" y1="11" x2="20" y2="11"></line><line x1="12" y1="3" x2="12" y2="11"></line><path d="M8 19l-2 3"></path><path d="M16 19l2 3"></path></svg>
+          </div>
+          <div class="loc-stat-val">BART Direct</div>
+          <div class="loc-stat-title">Public Transit</div>
+          <p class="loc-stat-desc">South San Francisco Station with connecting shuttle loops.</p>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="loc-stat-card">
+          <div class="loc-stat-icon-wrap" style="background: linear-gradient(135deg, #5d2fc7 0%, #232283 100%);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="9" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div class="loc-stat-val">Free</div>
+          <div class="loc-stat-title">Parking</div>
+          <p class="loc-stat-desc">Complimentary multi-level covered parking for all attendees.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Official Accommodations & Dining Guide -->
+  <section id="hotels" class="loc-hotels-section">
+    <div class="loc-container">
+      
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+        <div style="width: 44px; height: 44px; borderRadius: 12px; background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(93,47,199,0.3);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path><path d="M10 9h4"></path><path d="M10 13h4"></path><path d="M10 17h4"></path></svg>
+        </div>
+        <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(1.6rem, 2.8vw, 2.2rem); letter-spacing: -0.03em; color: var(--color-text-primary, #0f172a); margin: 0;">
+          Official Accommodations & Dining Guide
+        </h2>
+      </div>
+      <p style="font-size: 0.95rem; color: #64748b; margin: 0 0 2.5rem 0; max-width: 600px;">
+        Special group room rates and nearby amenities for HRWest 2027 attendees.
+      </p>
+
+      <div class="loc-hotels-grid">
+        
+        <!-- Official Hotel -->
+        <div class="loc-hotel-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; gap: 0.5rem;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin: 0;">
+              DoubleTree by Hilton San Francisco South Airport Blvd
+            </h3>
+            <span class="loc-badge-purple">Official Hotel</span>
+          </div>
+          <div style="font-size: 0.86rem; color: #64748b; margin-bottom: 0.75rem;">
+            275 South Airport Blvd, South San Francisco, CA 94080 • Tel: +1 650-873-3550
+          </div>
+          <div style="font-size: 0.86rem; color: #334155; margin-bottom: 1.5rem; padding: 0.85rem; background: linear-gradient(135deg, rgba(93,47,199,0.06), rgba(239,20,110,0.06)); border-radius: 10px; border-left: 3px solid #5d2fc7;">
+            Steps away from the conference center • Bayfront walking paths • On-site dining & lounge • Fitness center
+          </div>
+          <a href="tel:+16508733550" class="loc-hero-btn-outline" style="color: #5d2fc7 !important; border-color: #cbd5e1; background: #ffffff; padding: 0.65rem 1.35rem; font-size: 0.85rem;">
+            Contact Hotel for Group Rate
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <!-- Dining & Cafes Guide -->
+        <div class="loc-hotel-card" style="border-color: rgba(239, 20, 110, 0.25);">
+          <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin: 0 0 0.75rem 0;">
+            Nearby Restaurants & Cafes Guide
+          </h3>
+          <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem; line-height: 1.6;">
+            Explore curated dining options, coffee shops, and lunch spots within walking distance or a short drive from the South San Francisco Conference Center.
+          </p>
+          <a href="https://drive.google.com/file/d/1z1sFpPJC-fvZcnRpm2xKzJ_svqWfCwt9/view" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem;">
+            View Restaurants & Cafes Guide
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Parking & Shuttles Information Box -->
+      <div class="loc-parking-box">
+        <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.25rem; color: #0f172a; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><rect x="3" y="11" width="18" height="9" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Parking & Shuttles Information
+        </h3>
+        <p style="font-size: 0.9rem; color: #475569; line-height: 1.65; margin-bottom: 1rem;">
+          <strong>Complimentary Parking:</strong> Free shared parking is available across the South San Francisco Conference Center, Park Pointe Hotel, and DoubleTree Hotel lots, plus an off-site lot located between Travelodge and Best Western Plus Grosvenor Hotel. No permit or validation required.
+        </p>
+        <p style="font-size: 0.9rem; color: #475569; line-height: 1.65; margin: 0;">
+          <strong>Public Transit Shuttles:</strong> Free commuter shuttles run Monday through Friday during commute hours connecting the Conference Center directly to the South San Francisco BART Station, CalTrain Station, and Ferry Terminal.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Interactive Google Map Embed -->
+  <section id="map" class="loc-map-section">
+    <div class="loc-container">
+      
+      <div style="text-align: center; margin-bottom: 2.25rem;">
+        <div style="display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5d2fc7; margin-bottom: 0.5rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Venue Location
+        </div>
+        <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(1.6rem, 2.8vw, 2.3rem); letter-spacing: -0.025em; margin: 0; color: #0f172a;">
+          South San Francisco Conference Center
+        </h2>
+        <p style="font-size: 0.95rem; color: #64748b; margin-top: 0.35rem;">
+          255 South Airport Blvd, South San Francisco, CA 94080
+        </p>
+      </div>
+
+      <div class="loc-map-wrap">
+        <iframe
+          title="South San Francisco Conference Center Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3159.0741560366914!2d-122.4043781!3d37.647460599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f79b47d5d81ad%3A0xfd9c1f0af6155a3d!2sSouth%20San%20Francisco%20Conference!5e0!3m2!1sen!2sin!4v1773852453849!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border: 0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+    </div>
+  </section>
+
+</div>
