@@ -2,15 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
-import { useTheme, THEMES } from '../context/ThemeContext';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [attendDropdownOpen, setAttendDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hoveredSwatch, setHoveredSwatch] = useState<string | null>(null);
   const location = useLocation();
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -65,97 +62,26 @@ export const Header: React.FC = () => {
             </span>
           </div>
 
-          {/* Right side: CTA + Theme Vibe Picker */}
+          {/* Right side: CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-            <Link to="/attend/convince-boss" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: 600 }}>
+            <Link
+              to="/attend/convince-boss"
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.8rem',
+                background: 'rgba(255, 255, 255, 0.15)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                padding: '0.22rem 0.75rem',
+                borderRadius: '999px',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.28)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)')}
+            >
               Convince Your Boss →
             </Link>
-
-            {/* ── Theme Vibe Picker ── */}
-            <div
-              role="group"
-              aria-label="Change color theme"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}
-            >
-              {/* subtle divider */}
-              <span style={{ width: '1px', height: '14px', background: 'rgba(255,255,255,0.3)', marginRight: '0.15rem' }} />
-              {THEMES.map((t) => {
-                const isActive = theme === t.id;
-                const isHovered = hoveredSwatch === t.id;
-                return (
-                  <div key={t.id} style={{ position: 'relative' }}>
-                    {/* Tooltip */}
-                    <AnimatePresence>
-                      {isHovered && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 4, scale: 0.9 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 4, scale: 0.9 }}
-                          transition={{ duration: 0.15, ease: 'easeOut' }}
-                          style={{
-                            position: 'absolute',
-                            bottom: 'calc(100% + 8px)',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            whiteSpace: 'nowrap',
-                            background: 'rgba(15,23,42,0.92)',
-                            backdropFilter: 'blur(12px)',
-                            color: '#fff',
-                            fontSize: '0.7rem',
-                            fontWeight: 600,
-                            padding: '0.3rem 0.65rem',
-                            borderRadius: '6px',
-                            pointerEvents: 'none',
-                            zIndex: 200,
-                            boxShadow: '0 4px 12px rgba(0,0,0,0.25)',
-                          }}
-                        >
-                          {t.tooltip}
-                          {/* Arrow */}
-                          <span style={{
-                            position: 'absolute',
-                            top: '100%',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: 0,
-                            height: 0,
-                            borderLeft: '5px solid transparent',
-                            borderRight: '5px solid transparent',
-                            borderTop: '5px solid rgba(15,23,42,0.92)',
-                          }} />
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Swatch Button */}
-                    <button
-                      aria-label={`Switch to ${t.label} theme`}
-                      title={t.tooltip}
-                      onClick={() => setTheme(t.id)}
-                      onMouseEnter={() => setHoveredSwatch(t.id)}
-                      onMouseLeave={() => setHoveredSwatch(null)}
-                      style={{
-                        width: isActive ? '20px' : '16px',
-                        height: isActive ? '20px' : '16px',
-                        borderRadius: '50%',
-                        background: t.swatchGradient,
-                        border: isActive
-                          ? '2.5px solid rgba(255,255,255,0.95)'
-                          : '2px solid rgba(255,255,255,0.4)',
-                        cursor: 'pointer',
-                        padding: 0,
-                        boxShadow: isActive
-                          ? '0 0 0 2px rgba(255,255,255,0.25), 0 2px 8px rgba(0,0,0,0.2)'
-                          : '0 1px 4px rgba(0,0,0,0.15)',
-                        transform: isActive ? 'scale(1.15)' : isHovered ? 'scale(1.1)' : 'scale(1)',
-                        transition: 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                        flexShrink: 0,
-                      }}
-                    />
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </div>

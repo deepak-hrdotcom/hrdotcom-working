@@ -533,9 +533,11 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: 'easeOut', delay: 0.25 }}
-            style={{ fontSize: '1.2rem', color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '560px' }}
+            style={{ fontSize: '1.18rem', color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px' }}
           >
-            The West Coast's most impactful HR transformation summit. Connect with <strong>1,000+ HR decision-makers</strong>, earn <strong style={{ color: 'var(--color-brand-purple)' }}>20+ SHRM & HRCI credits</strong>, and walk away with strategies you can implement Monday morning.
+            <strong>The most impactful HR transformation conference on the West Coast!</strong>
+            <br />
+            Connect with <strong>500+ HR decision-makers</strong>, earn <strong style={{ color: 'var(--color-brand-purple)' }}>SHRM & HRCI credits</strong>, and walk away with strategies you can implement Monday morning and for years to come.
           </motion.p>
 
           {/* CTA buttons */}
@@ -705,7 +707,7 @@ export const HomePage: React.FC = () => {
             </div>
             <div style={{ width: '1px', height: '56px', background: 'var(--color-subtle)' }} />
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.6rem', color: 'var(--color-text-primary)', lineHeight: 1, background: 'var(--gradient-brand)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>50+</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.6rem', color: 'var(--color-text-primary)', lineHeight: 1, background: 'var(--gradient-pink)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>50+</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>Expert Sessions</div>
               <div style={{ fontSize: '0.75rem', color: 'var(--color-text-soft)' }}>across 6 tracks</div>
             </div>
@@ -722,10 +724,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
-          1.5. EARLY BIRD URGENCY STRIP
+          1.5. EARLY BIRD URGENCY STRIP — Secondary Pink Gradient Accent
          ══════════════════════════════════════════ */}
       <div style={{
-        background: 'linear-gradient(90deg, var(--color-brand-purple) 0%, var(--color-brand-pink) 100%)',
+        background: 'var(--gradient-pink)',
         padding: '0.85rem 2rem',
         display: 'flex',
         alignItems: 'center',
@@ -734,39 +736,46 @@ export const HomePage: React.FC = () => {
         flexWrap: 'wrap',
         position: 'relative',
         overflow: 'hidden',
+        boxShadow: '0 4px 20px rgba(239, 20, 110, 0.25)',
       }}>
         {/* Animated shimmer */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%)',
           animation: 'shimmer 3s infinite',
           pointerEvents: 'none',
         }} />
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', position: 'relative', zIndex: 1 }}>
           <span style={{ fontSize: '1.1rem' }}>🔥</span>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.9rem', color: '#fff', letterSpacing: '-0.01em' }}>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.92rem', color: '#ffffff', letterSpacing: '-0.01em' }}>
             Early Bird Registration Open
           </span>
           <span style={{
-            background: 'rgba(255,255,255,0.2)', color: '#fff',
+            background: '#ffffff', color: 'var(--color-brand-pink)',
             fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.72rem',
-            padding: '0.2rem 0.55rem', borderRadius: 'var(--radius-full)',
-            border: '1px solid rgba(255,255,255,0.3)',
+            padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-full)',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+            textTransform: 'uppercase', letterSpacing: '0.03em',
           }}>Save up to 30%</span>
         </div>
-        <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.3)' }} />
-        <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>
+        <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.35)', position: 'relative', zIndex: 1 }} />
+        <span style={{ fontSize: '0.86rem', color: '#ffffff', fontWeight: 600, position: 'relative', zIndex: 1 }}>
           Rates increase after September 30 — lock in your spot now.
         </span>
         <Link to="/register" style={{
-          background: '#fff',
-          color: 'var(--color-brand-purple)',
+          background: '#ffffff',
+          color: 'var(--color-brand-pink)',
           fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.82rem',
-          padding: '0.4rem 1rem', borderRadius: 'var(--radius-full)',
+          padding: '0.45rem 1.15rem', borderRadius: 'var(--radius-full)',
           textDecoration: 'none', whiteSpace: 'nowrap',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-          display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
-        }}>
+          boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+          display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
+          position: 'relative', zIndex: 1,
+          transition: 'transform 0.2s ease',
+        }}
+        onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
+        onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+        >
           Register Now <ArrowRight size={14} />
         </Link>
       </div>
@@ -1619,7 +1628,7 @@ export const HomePage: React.FC = () => {
                 Join thousands of HR professionals on the leading edge of AI, culture, and workforce innovation. Pre-register today — early access rates won't last.
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <Link to="/register" className="btn btn-primary btn-lg" style={{ boxShadow: 'var(--shadow-brand)' }}>
+                <Link to="/register" className="btn btn-pink btn-lg">
                   Pre-Register for HRWest 2027 <ArrowRight size={20} />
                 </Link>
                 <Link to="/attend/team" className="btn btn-outline btn-lg">

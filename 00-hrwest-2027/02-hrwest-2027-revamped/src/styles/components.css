@@ -279,6 +279,17 @@
 }
 .btn-primary:active { transform: translateY(0) scale(0.98); }
 
+.btn-pink {
+  background: var(--gradient-pink);
+  color: #ffffff;
+  box-shadow: var(--shadow-pink);
+}
+.btn-pink:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(239, 20, 110, 0.45);
+}
+.btn-pink:active { transform: translateY(0) scale(0.98); }
+
 .btn-outline {
   background: transparent;
   color: var(--color-brand-purple);
