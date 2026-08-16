@@ -93,9 +93,10 @@ description: Strategic UX/UI blueprint, Information Architecture, Design System,
 
 ## 5. Visual Design Tokens & Component Library
 
-### HSL Color Tokens
-- **Brand Purple**: `#91278c` | `hsl(302, 58%, 36%)`
-- **Vibrant Pink**: `#ef146e` | `hsl(335, 89%, 51%)`
+### HSL Color Tokens (Visionary Violet + Pink Accent)
+- **Primary Brand Theme**: Visionary Violet (`hsl(255, 62%, 44%)` / `#5d2fc7`)
+- **Authority Deep Tone**: Deep Violet Authority (`hsl(255, 65%, 20%)` / `#1d0f4a`)
+- **Secondary Accent (Sparingly — 15% rule)**: Hot Pink (`hsl(335, 90%, 54%)` / `#ef146e`)
 - **Surface Dark**: `#0b0f17` | `hsl(220, 35%, 7%)`
 - **Surface Light**: `#fbfbfe` | `hsl(240, 33%, 99%)`
 - **Glass Border**: `rgba(255, 255, 255, 0.12)`
@@ -103,8 +104,10 @@ description: Strategic UX/UI blueprint, Information Architecture, Design System,
 ---
 
 ## 6. Workspace Directory Structure & File Paths
-- **Live CMS Assets** (`00-hrwest-2027/01-live-cms/`): Preserved, read-only live HTML templates (`00-template/`), subpages (`02-pages/`), and CSS style sheets (`css/`).
-- **Revamped Application Workspace** (`00-hrwest-2027/02-hrwest-2027-revamped/`): Target directory for the web application codebase.
+- **Master CMS Templates** (`00-hrwest-2027/00-templates/`): Master HTML template file (`hr-west-2027-template.html`) containing resets, font imports, scoped CSS design tokens, and shared JS.
+- **Production CMS Pages** (`00-hrwest-2027/02-pages/`): Page story HTML fragments (e.g. `hr-west-2027-homepage.html`) for injection into `$desc_long`.
+- **Live Reference CMS Assets** (`00-hrwest-2026/00-templates/` & `00-hrwest-2027/01-live-cms/`): Reference live files used for canonical URL extraction and legacy audits.
+- **Revamped Application Workspace** (`00-hrwest-2027/02-hrwest-2027-revamped/`): Target directory for the React/Next.js prototype codebase.
   - **IA & Content Spec**: `00-hrwest-2027/02-hrwest-2027-revamped/docs/information-architecture.md`
   - **Design Reference Assets**: `00-hrwest-2027/02-hrwest-2027-revamped/docs/reference-assets/`
 

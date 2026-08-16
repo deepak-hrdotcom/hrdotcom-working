@@ -69,30 +69,118 @@ All imagery must point directly to the production HR.com WebP CDN path:
 
 ---
 
-## 5. Critical CMS Duplicate Story Suppression Rule
+## 5. Critical CMS Duplicate Story & Widget Suppression Rule
 
-When HR.com CMS renders a story page with a custom template, the CMS core default engine attempts to render the raw story description at the top of the page inside `#intro-header` (or `section#intro-header`).
+When HR.com CMS renders a story page with a custom template, the CMS core default engine attempts to render the raw story description at the top of the page inside `#intro-header` (or `section#intro-header`), along with floating social widgets and unwanted navigation bars.
 
-To prevent the story from rendering twice (once above the header and once inside `$desc_long`):
-```css
-#intro-header,
-section#intro-header,
-div#intro-header {
-  display: none !important;
-}
-
-.sf-nav-main,
-.socialshare,
-#content {
-  display: none !important;
-}
+To prevent the story from rendering twice, eliminate FOUC, and suppress unwanted floating widgets, place this blocking style tag at the very top (Line 1) of both the template and the page story:
+```html
+<style>
+  /* Prevent Flash of Unwanted CMS Content (FOUC) & Unwanted Widgets */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
 ```
-This ensures the page story is **only** rendered once, right in the intended `$desc_long` slot between the Header and Footer.
+
+Additionally, immediately follow with the early JavaScript reset:
+```html
+<script>
+(function() {
+  function applyEarlyReset() {
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  applyEarlyReset();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyEarlyReset);
+  }
+})();
+</script>
+```
 
 ---
 
-## 6. Clean Comments Rule (No Special Characters)
+## 6. Full-Width Layout Overrides & Section Design
+
+HR.com CMS wrappers often have default `.ContentArea` or `.container` constraints with `max-width: 1200px` or side paddings that prevent modern full-bleed edge-to-edge layouts (e.g. angled hero splits, dual-row marquees, full-bleed color bands).
+
+- **Outer Overrides**:
+  ```css
+  .ContentArea {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .FooterBG .container,
+  .FooterMidBG .container {
+    gap: 0 !important;
+  }
+  ```
+- **Section Pattern**:
+  - Use `.section-wrap` on sections for full-width background and padding.
+  - Use `.container-inner` (max-width `1280px` or `1360px`, margin `0 auto`, padding `0 24px`) for contained content.
+  - For full-bleed split layouts (like Hero `.hero-split-grid`), let the parent section span 100vw edge-to-edge without a `.container-inner` constraint so angled image layers bleed seamlessly to the viewport edge.
+
+---
+
+## 7. Dual-Row Marquee System ("See Who Shows Up at HRWest")
+
+For high-converting social proof, use a dual-row marquee with opposite scroll directions and pause-on-hover:
+- **Row 1 (Attendee Action Photos)**: 9 real keynote & conference photos inside `.photo-marquee-card` with dark glass overlay captions, scrolling left with `@keyframes hrw27-marquee` (40s linear infinite).
+- **Row 2 (Sponsor Badges)**: Deduplicated sponsor logos scrolling in reverse with `@keyframes hrw27-marquee-reverse` (45s linear infinite).
+- **Hover Behavior**:
+  ```css
+  .marquee-track:hover .marquee-strip,
+  .marquee-track:hover .marquee-strip-reverse {
+    animation-play-state: paused;
+  }
+  ```
+
+---
+
+## 8. Canonical Live CMS Destination URLs
+
+When wiring navigation links, mobile menu items, and story CTA buttons in HR West 2027 templates and pages, use the exact canonical live CMS URLs:
+
+| Navigation Item | Live CMS URL |
+| :--- | :--- |
+| **Logo / Home** | `/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html` |
+| **Speakers Directory** | `/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html` |
+| **Agenda & Schedule** | `/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html` |
+| **Sponsors Directory** | `/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html` |
+| **Attend as a Team** | `/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html` |
+| **Convince Your Boss** | `/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html` |
+| **Venue & Travel** | `/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html` |
+| **Volunteer for Pass** | `/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html` |
+| **Why Sponsor / Exhibit** | `/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html` |
+| **Pre-Register / Buy Tickets** | `/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html` |
+
+---
+
+## 9. Clean Comments Rule (No Special Characters)
 
 **CRITICAL**: The HR.com CMS parser can fail, break regex token matching, or corrupt template rendering when special characters or symbols appear inside HTML comments (`<!-- ... -->`) or CSS comments (`/* ... */`).
 - **NEVER use special symbols in comments**: Avoid `+`, `—`, `–`, `═`, `─`, `&`, emojis, or fancy box borders in comments.
 - **Always use simple standard ASCII words and spaces**: e.g., `<!-- Hero Section -->`, `<!-- Master Header -->`, `<!-- Footer Links -->`.
+
