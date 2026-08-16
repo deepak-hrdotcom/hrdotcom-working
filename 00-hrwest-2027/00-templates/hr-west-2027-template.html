@@ -1,5 +1,42 @@
+<style>
+  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
 <div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
 <div>$vendorLeadForm</div>
+
+<script>
+(function() {
+  function applyEarlyReset() {
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  applyEarlyReset();
+  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+})();
+</script>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,17 +49,26 @@ body {
   background: #ffffff !important;
   margin: 0 !important;
   padding: 0 !important;
+  
 }
 body > .ContentArea,
-body > .container-fluid > .row > .ContentArea {
+body > .container-fluid > .row > .ContentArea,
+.ContentArea {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
   padding: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 body > .ContentArea > .container,
-body > .container-fluid > .row > .ContentArea > .container {
+body > .container-fluid > .row > .ContentArea > .container,
+.ContentArea > .container {
   padding-left: 0px !important;
   padding-right: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
 }
@@ -53,6 +99,15 @@ div#intro-header {
 }
 .header::before {
   display: none !important;
+}
+.TopLink_new, .TopBar {
+  display: none !important;
+}
+.sf-nav-main-mode {
+    padding-top: 0px !important;
+}
+body.sf-nav-main-mode {
+    padding-top: 0px !important;
 }
 
 /* 2. DESIGN TOKEN SYSTEM */
@@ -131,6 +186,7 @@ div#intro-header {
 
 .hrw27-header, .hrw27-footer, .hrw27 {
   width: 100% !important;
+  max-width: 100% !important;
   overflow-x: hidden !important;
 }
 
@@ -173,7 +229,7 @@ div#intro-header {
 /* 4. LAYOUT CONTAINERS */
 .hrw27-container {
   width: 100% !important;
-  max-width: 1200px !important;
+  max-width: 100% !important;
   margin: 0 auto !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
@@ -185,8 +241,20 @@ div#intro-header {
   .hrw27-container { padding-left: 48px !important; padding-right: 48px !important; }
 }
 
-.hrw27 .section-wrap { width: 100% !important; max-width: 1920px !important; margin: 0 auto !important; position: relative !important; overflow: hidden !important; }
-.hrw27 .container-inner { width: 100% !important; max-width: 1200px !important; margin: 0 auto !important; padding-left: 20px !important; padding-right: 20px !important; }
+.hrw27 .section-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.hrw27 .container-inner {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
 @media (min-width: 768px) { .hrw27 .container-inner { padding-left: 32px !important; padding-right: 32px !important; } }
 @media (min-width: 1280px) { .hrw27 .container-inner { padding-left: 48px !important; padding-right: 48px !important; } }
 
@@ -201,6 +269,59 @@ div#intro-header {
 @media (min-width: 768px) { .hrw27 .section-pad { padding-top: 100px !important; padding-bottom: 100px !important; } }
 .hrw27 .hero-grid { display: grid !important; grid-template-columns: 1fr !important; min-height: 92vh !important; position: relative !important; }
 @media (min-width: 1024px) { .hrw27 .hero-grid { grid-template-columns: 1fr 1fr !important; } }
+
+.hrw27 .hero-split-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  min-height: 92vh !important;
+  width: 100% !important;
+  position: relative !important;
+  background: var(--color-canvas) !important;
+  overflow: hidden !important;
+}
+.hrw27 .hero-content-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 5rem 3rem 5rem 5vw !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.hrw27 .hero-image-col {
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3rem 2rem !important;
+  min-height: 100% !important;
+}
+.hrw27 .hero-image-clip {
+  position: absolute !important;
+  inset: 0 !important;
+  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
+  -webkit-clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 1024px) {
+  .hrw27 .hero-split-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .hrw27 .hero-content-col {
+    padding: 3rem 1.5rem !important;
+  }
+  .hrw27 .hero-image-col {
+    min-height: 480px !important;
+    padding: 2rem 1rem !important;
+  }
+  .hrw27 .hero-image-clip {
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+}
 
 /* 5. TYPOGRAPHY AND BUTTONS */
 .hrw27 .eyebrow {
@@ -253,11 +374,19 @@ div#intro-header {
 /* Marquee */
 .hrw27 .marquee-track { overflow: hidden !important; position: relative !important; width: 100% !important; }
 .hrw27 .marquee-track::before, .hrw27 .marquee-track::after { content: '' !important; position: absolute !important; top: 0 !important; bottom: 0 !important; width: 120px !important; z-index: 2 !important; pointer-events: none !important; }
-.hrw27 .marquee-track::before { left: 0 !important; background: linear-gradient(to right, var(--color-canvas), transparent) !important; }
-.hrw27 .marquee-track::after { right: 0 !important; background: linear-gradient(to left, var(--color-canvas), transparent) !important; }
-.hrw27 .marquee-strip { display: flex !important; gap: 32px !important; animation: hrw27-marquee 30s linear infinite !important; width: max-content !important; align-items: center !important; padding: 12px 0 !important; }
-.hrw27 .marquee-logo-pill { display: flex !important; align-items: center !important; justify-content: center !important; background: var(--color-elevated) !important; border: 1.5px solid var(--color-subtle) !important; border-radius: var(--radius-md) !important; padding: 14px 28px !important; height: 64px !important; min-width: 120px !important; flex-shrink: 0 !important; box-shadow: var(--shadow-sm) !important; }
-.hrw27 .marquee-logo-pill img { max-height: 32px !important; width: auto !important; object-fit: contain !important; filter: grayscale(40%) !important; opacity: 0.85 !important; transition: all 0.3s ease !important; }
+.hrw27 .marquee-track::before { left: 0 !important; background: linear-gradient(to right, var(--color-surface), transparent) !important; }
+.hrw27 .marquee-track::after { right: 0 !important; background: linear-gradient(to left, var(--color-surface), transparent) !important; }
+.hrw27 .marquee-strip { display: flex !important; gap: 24px !important; animation: hrw27-marquee 40s linear infinite !important; width: max-content !important; align-items: center !important; padding: 8px 0 !important; }
+.hrw27 .marquee-strip-reverse { display: flex !important; gap: 24px !important; animation: hrw27-marquee-reverse 45s linear infinite !important; width: max-content !important; align-items: center !important; padding: 8px 0 !important; }
+.hrw27 .marquee-track:hover .marquee-strip,
+.hrw27 .marquee-track:hover .marquee-strip-reverse { animation-play-state: paused !important; }
+.hrw27 .photo-marquee-card { width: 260px !important; height: 160px !important; border-radius: var(--radius-lg) !important; overflow: hidden !important; box-shadow: var(--shadow-md) !important; border: 1.5px solid var(--color-subtle) !important; flex-shrink: 0 !important; position: relative !important; transition: transform 0.3s ease, box-shadow 0.3s ease !important; background: #000 !important; }
+.hrw27 .photo-marquee-card:hover { transform: scale(1.04) !important; box-shadow: var(--shadow-xl) !important; border-color: var(--color-brand-purple) !important; }
+.hrw27 .photo-marquee-card img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+.hrw27 .photo-marquee-caption { position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent) !important; padding: 20px 14px 10px !important; color: #ffffff !important; font-size: 13px !important; font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 700 !important; line-height: 1.2 !important; }
+.hrw27 .marquee-logo-pill { display: flex !important; align-items: center !important; justify-content: center !important; background: var(--color-elevated) !important; border: 1.5px solid var(--color-subtle) !important; border-radius: var(--radius-md) !important; padding: 14px 28px !important; height: 64px !important; min-width: 130px !important; flex-shrink: 0 !important; box-shadow: var(--shadow-sm) !important; transition: all 0.25s ease !important; }
+.hrw27 .marquee-logo-pill:hover { border-color: var(--color-brand-purple) !important; box-shadow: var(--shadow-md) !important; transform: translateY(-2px) !important; }
+.hrw27 .marquee-logo-pill img { max-height: 34px !important; width: auto !important; object-fit: contain !important; filter: grayscale(20%) !important; opacity: 0.9 !important; transition: all 0.3s ease !important; }
 .hrw27 .marquee-logo-pill:hover img { filter: grayscale(0%) !important; opacity: 1 !important; }
 
 /* Track Slider */
@@ -286,6 +415,7 @@ div#intro-header {
 .hrw27 .hero-animate-4 { animation: hrw27-hero-in 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
 
 @keyframes hrw27-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes hrw27-marquee-reverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 @keyframes hrw27-shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
 @keyframes hrw27-hero-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes hrw27-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
@@ -518,7 +648,7 @@ div#intro-header {
       </div>
 
       <div>
-        <a href="/attend/convince-boss" style="color: #ffffff; font-weight: 700; font-size: 12px; background: rgba(255, 255, 255, 0.18); border: 1px solid rgba(255, 255, 255, 0.35); padding: 3px 12px; border-radius: 999px;">
+        <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" style="color: #ffffff; font-weight: 700; font-size: 12px; background: rgba(255, 255, 255, 0.18); border: 1px solid rgba(255, 255, 255, 0.35); padding: 3px 12px; border-radius: 999px;">
           Convince Your Boss
         </a>
       </div>
@@ -530,17 +660,17 @@ div#intro-header {
     <div class="hrw27-nav-main">
       
       <!-- Brand Logo -->
-      <a href="/" class="hrw27-logo">
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-logo">
         <span>HR</span><span class="hrw27-logo-badge">West</span>
         <span style="color: var(--color-text-soft); font-weight: 500; font-size: 16px; margin-left: 4px;">2027</span>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hrw27-nav-links">
-        <a href="/" class="hrw27-nav-link">Home</a>
-        <a href="/speakers" class="hrw27-nav-link">Speakers</a>
-        <a href="/agenda" class="hrw27-nav-link">Agenda</a>
-        <a href="/sponsors" class="hrw27-nav-link">Sponsors</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-nav-link">Home</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-nav-link">Speakers</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-nav-link">Sponsors</a>
 
         <!-- Attend Dropdown -->
         <div class="hrw27-dropdown">
@@ -549,31 +679,31 @@ div#intro-header {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
           <div class="hrw27-dropdown-menu">
-            <a href="/attend/team" class="hrw27-dropdown-item">
+            <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="hrw27-dropdown-item">
               <div class="hrw27-dropdown-title">Attend as a Team</div>
               <div class="hrw27-dropdown-sub">Group discounts up to 35 percent</div>
             </a>
-            <a href="/attend/convince-boss" class="hrw27-dropdown-item">
+            <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-dropdown-item">
               <div class="hrw27-dropdown-title">Convince Your Boss</div>
               <div class="hrw27-dropdown-sub">Approval email ROI toolkit</div>
             </a>
-            <a href="/attend/location" class="hrw27-dropdown-item">
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" class="hrw27-dropdown-item">
               <div class="hrw27-dropdown-title">Venue and Travel</div>
               <div class="hrw27-dropdown-sub">South San Francisco deals</div>
             </a>
-            <a href="/attend/volunteer" class="hrw27-dropdown-item">
+            <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" class="hrw27-dropdown-item">
               <div class="hrw27-dropdown-title">Volunteer for Free Pass</div>
               <div class="hrw27-dropdown-sub">Apply for volunteer access</div>
             </a>
           </div>
         </div>
 
-        <a href="/sponsor" class="hrw27-nav-link">Why Sponsor</a>
+        <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-nav-link">Why Sponsor</a>
       </nav>
 
       <!-- CTA and Mobile Menu Button -->
       <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="/register" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">
+        <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">
           <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block;"></span>
           Pre-Register 2027
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -590,21 +720,21 @@ div#intro-header {
   <!-- Mobile Drawer -->
   <div id="hrw27-mob-menu" class="hrw27-mob-menu">
     <div style="display: flex; flex-direction: column; gap: 14px;">
-      <a href="/" class="hrw27-nav-link">Home</a>
-      <a href="/speakers" class="hrw27-nav-link">Speakers</a>
-      <a href="/agenda" class="hrw27-nav-link">Agenda</a>
-      <a href="/sponsors" class="hrw27-nav-link">Sponsors</a>
-      <a href="/sponsor" class="hrw27-nav-link">Why Sponsor</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-nav-link">Home</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-nav-link">Speakers</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-nav-link">Sponsors</a>
+      <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-nav-link">Why Sponsor</a>
       <div style="padding-top: 10px; border-top: 1px solid var(--color-subtle);">
         <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; color: var(--color-brand-purple); text-transform: uppercase; margin-bottom: 8px;">ATTEND</div>
         <div style="display: flex; flex-direction: column; gap: 10px; padding-left: 8px;">
-          <a href="/attend/team" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Attend as a Team</a>
-          <a href="/attend/convince-boss" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Convince Your Boss</a>
-          <a href="/attend/location" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Venue and Travel</a>
-          <a href="/attend/volunteer" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Volunteer for Free Pass</a>
+          <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Attend as a Team</a>
+          <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Convince Your Boss</a>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Venue and Travel</a>
+          <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Volunteer for Free Pass</a>
         </div>
       </div>
-      <a href="/register" class="btn btn-primary" style="justify-content: center; width: 100%; margin-top: 8px;">
+      <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="btn btn-primary" style="justify-content: center; width: 100%; margin-top: 8px;">
         Pre-Register 2027
       </a>
     </div>
@@ -636,11 +766,11 @@ $desc_long
       </div>
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="/register" class="btn btn-white" style="padding: 12px 24px; font-size: 14px;">
+        <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="btn btn-white" style="padding: 12px 24px; font-size: 14px;">
           Pre-Register Now
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="/sponsor" class="btn" style="background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.35); padding: 12px 24px; font-size: 14px;">
+        <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="btn" style="background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.35); padding: 12px 24px; font-size: 14px;">
           Sponsor HRWest 2027
         </a>
       </div>
@@ -654,7 +784,7 @@ $desc_long
         
         <!-- Col 1: Brand and Contact -->
         <div>
-          <a href="/" class="hrw27-logo" style="margin-bottom: 16px; display: inline-flex;">
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-logo" style="margin-bottom: 16px; display: inline-flex;">
             <span>HR</span><span class="hrw27-logo-badge">West</span>
             <span style="color: var(--color-text-soft); font-weight: 500; font-size: 16px; margin-left: 4px;">2027</span>
           </a>
@@ -682,12 +812,12 @@ $desc_long
         <div>
           <h4 class="hrw27-footer-h4">For Attendees</h4>
           <div class="hrw27-footer-links">
-            <a href="/speakers" class="hrw27-footer-link">Speaker Directory</a>
-            <a href="/agenda" class="hrw27-footer-link">Interactive Agenda</a>
-            <a href="/attend/team" class="hrw27-footer-link">Team Discount Calculator</a>
-            <a href="/attend/convince-boss" class="hrw27-footer-link">Convince Your Boss</a>
-            <a href="/attend/volunteer" class="hrw27-footer-link">Volunteer for Free Pass</a>
-            <a href="/attend/location" class="hrw27-footer-link">Venue and Travel Guide</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-footer-link">Speaker Directory</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-footer-link">Interactive Agenda</a>
+            <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="hrw27-footer-link">Team Discount Calculator</a>
+            <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-footer-link">Convince Your Boss</a>
+            <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" class="hrw27-footer-link">Volunteer for Free Pass</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" class="hrw27-footer-link">Venue and Travel Guide</a>
           </div>
         </div>
 
@@ -695,10 +825,10 @@ $desc_long
         <div>
           <h4 class="hrw27-footer-h4">Sponsors and Partners</h4>
           <div class="hrw27-footer-links">
-            <a href="/sponsor" class="hrw27-footer-link">Why Sponsor</a>
-            <a href="/sponsors" class="hrw27-footer-link">Past Sponsors Directory</a>
-            <a href="/sponsor" class="hrw27-footer-link">Sponsorship Prospectus</a>
-            <a href="/speakers" class="hrw27-footer-link">Call for Speakers</a>
+            <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-footer-link">Why Sponsor</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-footer-link">Past Sponsors Directory</a>
+            <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-footer-link">Sponsorship Prospectus</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-footer-link">Call for Speakers</a>
             <a href="mailto:events@hr.com" class="hrw27-footer-link">Contact the Events Team</a>
           </div>
         </div>
@@ -723,18 +853,6 @@ $desc_long
         </div>
 
       </div>
-
-      <!-- Bottom Bar -->
-      <div class="hrw27-footer-bottom">
-        <div>
-          Copyright 2027 HR.com, LLC. All rights reserved. Powered by HR.com.
-        </div>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-          <a href="#" style="color: var(--color-text-soft);">Terms and Conditions</a>
-          <a href="#" style="color: var(--color-text-soft);">Privacy Policy</a>
-          <a href="#" style="color: var(--color-text-soft);">Code of Conduct</a>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -745,7 +863,44 @@ $desc_long
 (function() {
   'use strict';
 
-  /* 1. SCROLL ANIMATIONS via IntersectionObserver */
+  /* 1. FORCE RESET BODY PADDING-TOP FOR CMS SF-NAV-MAIN-MODE */
+  function forceResetBodyPadding() {
+    var targets = [document.body, document.documentElement];
+    document.querySelectorAll('.sf-nav-main-mode, body.sf-nav-main-mode').forEach(function(el) {
+      targets.push(el);
+    });
+    targets.forEach(function(el) {
+      if (el && el.style) {
+        el.style.setProperty('padding-top', '0px', 'important');
+        el.style.setProperty('margin-top', '0px', 'important');
+      }
+    });
+  }
+
+  forceResetBodyPadding();
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceResetBodyPadding);
+  }
+  window.addEventListener('load', forceResetBodyPadding);
+
+  var resetCount = 0;
+  var resetInterval = setInterval(function() {
+    forceResetBodyPadding();
+    resetCount++;
+    if (resetCount > 50) clearInterval(resetInterval);
+  }, 50);
+
+  if (window.MutationObserver) {
+    var obs = new MutationObserver(function() {
+      forceResetBodyPadding();
+    });
+    if (document.body) {
+      obs.observe(document.body, { attributes: true, attributeFilter: ['style', 'class'] });
+    }
+  }
+
+  /* 2. SCROLL ANIMATIONS via IntersectionObserver */
   var io = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
@@ -758,7 +913,7 @@ $desc_long
     io.observe(el);
   });
 
-  /* 2. COUNTUP NUMBERS */
+  /* 3. COUNTUP NUMBERS */
   function animateCountUp(el) {
     var target = parseInt(el.getAttribute('data-target'), 10);
     var suffix = el.getAttribute('data-suffix') || '';
@@ -784,7 +939,7 @@ $desc_long
     countIO.observe(el);
   });
 
-  /* 3. LIVE COUNTDOWN */
+  /* 4. LIVE COUNTDOWN */
   var eventDate = new Date('2027-03-23T08:00:00');
   function tick() {
     var diff = Math.max(0, eventDate - new Date());
@@ -793,15 +948,18 @@ $desc_long
     var h = document.getElementById('hrw27-cd-hours');
     var m = document.getElementById('hrw27-cd-mins');
     var s = document.getElementById('hrw27-cd-secs');
-    if (d) d.textContent = pad(diff / 86400000);
+    var daysAwayEl = document.getElementById('hrw27-days-away');
+    var daysVal = Math.floor(diff / 86400000);
+    if (d) d.textContent = pad(daysVal);
     if (h) h.textContent = pad((diff % 86400000) / 3600000);
     if (m) m.textContent = pad((diff % 3600000) / 60000);
     if (s) s.textContent = pad((diff % 60000) / 1000);
+    if (daysAwayEl) daysAwayEl.textContent = daysVal;
   }
   tick();
   setInterval(tick, 1000);
 
-  /* 4. TRACK SLIDER ARROWS */
+  /* 5. TRACK SLIDER ARROWS */
   var slider = document.getElementById('hrw27-track-slider');
   var btnL = document.getElementById('hrw27-track-prev');
   var btnR = document.getElementById('hrw27-track-next');
@@ -810,7 +968,7 @@ $desc_long
     if (btnR) btnR.addEventListener('click', function() { slider.scrollBy({ left: 370, behavior: 'smooth' }); });
   }
 
-  /* 5. ROI BARS */
+  /* 6. ROI BARS */
   var barIO = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
@@ -824,7 +982,7 @@ $desc_long
     barIO.observe(el);
   });
 
-  /* 6. MOBILE MENU TOGGLE */
+  /* 7. MOBILE MENU TOGGLE */
   var mobToggle = document.getElementById('hrw27-mob-toggle');
   var mobMenu = document.getElementById('hrw27-mob-menu');
   if (mobToggle && mobMenu) {
@@ -833,7 +991,7 @@ $desc_long
     });
   }
 
-  /* 7. CMS CLEANUP */
+  /* 8. CMS CLEANUP */
   var adBtm = document.getElementById('hradbtmwrapper');
   if (adBtm) { adBtm.innerHTML = ''; }
 

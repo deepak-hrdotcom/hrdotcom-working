@@ -1,11 +1,14 @@
 ---
 name: hr-west-2027-cms-template-builder
-description: Builds and maintains CMS-compatible HTML pages and master templates for HR West 2027 using pure semantic HTML, vanilla CSS design tokens, and lightweight vanilla JS. Enforces the Visionary Violet + Pink accent design system and CMS injection rules ($desc_long).
+description: Trigger keywords - "build hr west 2027 page", "hr west 2027 cms", "hrwest 2027 cms page", "hrwest 2027 template", "new hr west 2027 page", "hrwest 2027 story". Builds and maintains CMS-compatible HTML pages and master templates for HR West 2027 using pure semantic HTML, vanilla CSS design tokens, and lightweight vanilla JS. Enforces the Visionary Violet + Pink accent design system and CMS injection rules ($desc_long).
 ---
 
 # HR West 2027 CMS Template & Page Builder Skill
 
+**Trigger Keywords**: `build hr west 2027 page`, `hr west 2027 cms`, `hrwest 2027 cms page`, `hrwest 2027 template`, `new hr west 2027 page`, `hrwest 2027 story`
+
 This skill defines the technical, architectural, and design standards for porting and building HR West 2027 pages into the HR.com CMS environment.
+
 
 ---
 

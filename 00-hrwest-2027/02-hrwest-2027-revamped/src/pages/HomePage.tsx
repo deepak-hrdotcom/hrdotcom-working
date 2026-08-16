@@ -747,8 +747,8 @@ export const HomePage: React.FC = () => {
           position: 'relative', zIndex: 1,
           transition: 'transform 0.2s ease',
         }}
-        onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
-        onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+          onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
+          onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
         >
           Register Now <ArrowRight size={14} />
         </Link>
@@ -1573,18 +1573,18 @@ export const HomePage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.65 }}
-              className="responsive-grid-2"
-              style={{
-                background: 'var(--gradient-brand-soft)',
-                borderRadius: 'var(--radius-xl)',
-                padding: '3rem 2rem',
-                border: '1.5px solid var(--brand-glow-20)',
-                boxShadow: 'var(--shadow-xl)',
-                position: 'relative',
-                overflow: 'hidden',
-                gap: '2.5rem',
-                alignItems: 'center',
-              }}
+            className="responsive-grid-2"
+            style={{
+              background: 'var(--gradient-brand-soft)',
+              borderRadius: 'var(--radius-xl)',
+              padding: '3rem 2rem',
+              border: '1.5px solid var(--brand-glow-20)',
+              boxShadow: 'var(--shadow-xl)',
+              position: 'relative',
+              overflow: 'hidden',
+              gap: '2.5rem',
+              alignItems: 'center',
+            }}
           >
             {/* Glow blobs */}
             <div style={{ position: 'absolute', top: '-30%', left: '10%', width: '40%', height: '80%', background: 'radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
