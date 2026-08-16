@@ -1,0 +1,1241 @@
+<style id="hrw27-cms-overrides">
+  /* 1. CMS Reset & Duplicate Story Suppression */
+  #intro-header,
+  .socialshare,
+  .st-sticky-share-buttons,
+  .share-buttons-component,
+  .social-share-container {
+    display: none !important;
+  }
+  body.sf-nav-main-mode,
+  body {
+    padding-top: 0 !important;
+    margin: 0 !important;
+  }
+  .ContentArea,
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* 2. Standalone Fallback Design Tokens */
+  .hrw27 {
+    --color-brand-purple: #5d2fc7;
+    --color-brand-purple-dark: #371885;
+    --color-brand-pink: #ef146e;
+    --color-brand-pink-hover: #d00c5c;
+    --color-brand-authority: #1e1248;
+    --color-canvas: #ffffff;
+    --color-surface: #f9f8ff;
+    --color-elevated: #ffffff;
+    --color-subtle: #eae5f7;
+    --color-border-subtle: rgba(93, 47, 199, 0.12);
+    --color-text-primary: #120826;
+    --color-text-secondary: #4a3e68;
+    --color-text-muted: #756a94;
+    --gradient-brand: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    --gradient-brand-soft: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.05) 100%);
+    --gradient-pink: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
+    --brand-glow-08: rgba(93, 47, 199, 0.08);
+    --brand-glow-12: rgba(93, 47, 199, 0.12);
+    --brand-glow-20: rgba(93, 47, 199, 0.20);
+    --brand-glow-25: rgba(93, 47, 199, 0.25);
+    --brand-glow-35: rgba(93, 47, 199, 0.35);
+    --brand-pink-glow-20: rgba(239, 20, 110, 0.20);
+    --shadow-sm: 0 2px 8px rgba(18, 8, 38, 0.04);
+    --shadow-md: 0 8px 24px rgba(93, 47, 199, 0.08);
+    --shadow-lg: 0 16px 36px rgba(93, 47, 199, 0.12);
+    --shadow-xl: 0 24px 50px rgba(93, 47, 199, 0.16);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 9999px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-canvas);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+
+  .hrw27 *, .hrw27 *::before, .hrw27 *::after {
+    box-sizing: border-box;
+  }
+
+  .hrw27 .container-inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hrw27 .section-pad {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .section-pad {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
+  .hrw27 .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .hrw27 .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .hrw27 .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .hrw27 .grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .hrw27 .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .grid-2,
+    .hrw27 .grid-3,
+    .hrw27 .grid-4 {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  .hrw27 .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-brand-purple);
+    background: var(--brand-glow-08);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--brand-glow-20);
+    width: fit-content;
+  }
+
+  .hrw27 .section-h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin: 0 0 12px 0 !important;
+  }
+
+  .hrw27 .body-lg {
+    font-size: clamp(16px, 1.8vw, 18px);
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  .hrw27 .body-md {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .hrw27 .body-sm {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .hrw27 .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .hrw27 .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .hrw27 .btn-primary {
+    background: var(--gradient-brand);
+    color: #ffffff;
+    box-shadow: 0 4px 18px var(--brand-glow-35);
+  }
+
+  .hrw27 .btn-primary:hover {
+    box-shadow: 0 8px 26px var(--brand-glow-35);
+  }
+
+  .hrw27 .btn-pink {
+    background: var(--gradient-pink);
+    color: #ffffff;
+    box-shadow: 0 4px 18px var(--brand-pink-glow-20);
+  }
+
+  .hrw27 .btn-pink:hover {
+    background: linear-gradient(135deg, var(--color-brand-pink-hover) 0%, #f43f5e 100%);
+    box-shadow: 0 8px 24px var(--brand-pink-glow-20);
+  }
+
+  .hrw27 .btn-outline {
+    background: transparent;
+    color: var(--color-brand-purple);
+    border: 2px solid var(--color-brand-purple);
+  }
+
+  .hrw27 .btn-outline:hover {
+    background: var(--brand-glow-08);
+  }
+
+  .hrw27 .btn-lg {
+    padding: 16px 34px;
+    font-size: 16px;
+  }
+
+  .hrw27 .card {
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+  }
+
+  .hrw27 .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--brand-glow-25);
+  }
+
+  .hrw27 .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+  }
+
+  .hrw27 .badge-purple {
+    background: var(--brand-glow-08);
+    color: var(--color-brand-purple);
+    border: 1px solid var(--brand-glow-20);
+  }
+
+  .hrw27 .badge-pink {
+    background: rgba(239, 20, 110, 0.08);
+    color: var(--color-brand-pink);
+    border: 1px solid rgba(239, 20, 110, 0.25);
+  }
+
+  .hrw27 .stars {
+    display: flex;
+    gap: 3px;
+    color: #f59e0b;
+  }
+
+  .hrw27 .star-icon {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+
+  /* Hero Section */
+  .testi-hero-section {
+    position: relative;
+    min-height: 500px;
+    background-color: #0b0814;
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/testimonials_hero_bg.webp');
+    background-size: cover;
+    background-position: 55% center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .testi-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.15) 100%),
+      linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+    pointer-events: none;
+  }
+
+  .testi-hero-orb-1 {
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(93,47,199,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .testi-hero-orb-2 {
+    position: absolute;
+    bottom: -60px;
+    left: 30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(239,20,110,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .testi-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3.5rem 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.2fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .testi-hero-grid {
+      grid-template-columns: 1fr;
+      padding: 3rem 20px;
+      gap: 2.5rem;
+    }
+  }
+
+  .testi-hero-content {
+    max-width: 560px;
+  }
+
+  .testi-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 9999px;
+    color: #f472b6;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .testi-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.1rem 0;
+  }
+
+  .testi-hero-glow-text {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .testi-hero-p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 2.25rem 0;
+    max-width: 480px;
+  }
+
+  .testi-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .testi-hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
+    color: #ffffff !important;
+  }
+
+  .testi-hero-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.86rem;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .testi-hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Floating Testimonials Proof Cards Stack */
+  .testi-floating-mosaic {
+    position: relative;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .testi-floating-mosaic {
+      display: none;
+    }
+  }
+
+  .testi-float-card {
+    position: absolute;
+    width: 290px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 0.95rem 1.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testi-float-card:hover {
+    transform: scale(1.04) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10 !important;
+  }
+
+  .testi-float-card-1 {
+    top: 20px;
+    left: 0px;
+    transform: rotate(-2deg);
+    z-index: 3;
+  }
+
+  .testi-float-card-2 {
+    top: 135px;
+    left: 45px;
+    transform: rotate(1deg);
+    z-index: 4;
+  }
+
+  .testi-float-card-3 {
+    top: 250px;
+    left: 15px;
+    transform: rotate(-1.5deg);
+    z-index: 5;
+  }
+
+  .testi-tier-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+  }
+
+  .testi-tier-sub {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .testi-discount-pill {
+    padding: 0.35rem 0.75rem;
+    background: rgba(239, 20, 110, 0.3);
+    border: 1px solid rgba(239, 20, 110, 0.6);
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: #ff60a0;
+    white-space: nowrap;
+  }
+
+  /* Video Cards */
+  .hrw27 .video-card {
+    background: var(--color-elevated);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1.5px solid var(--color-border-subtle);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hrw27 .video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--brand-glow-25);
+  }
+
+  .hrw27 .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 380px;
+    background: #000000;
+    overflow: hidden;
+  }
+
+  .hrw27 .video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Quote Card Accents */
+  .hrw27 .quote-box {
+    position: relative;
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .hrw27 .quote-mark {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 0.8;
+    color: var(--color-brand-purple);
+    opacity: 0.25;
+    margin-bottom: 8px;
+  }
+
+  /* Animation Classes */
+  .hrw27 .fade-up,
+  .hrw27 .fade-left,
+  .hrw27 .fade-right,
+  .hrw27 .fade-scale {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hrw27 .fade-left { transform: translateX(-30px); }
+  .hrw27 .fade-right { transform: translateX(30px); }
+  .hrw27 .fade-scale { transform: scale(0.96); }
+
+  .hrw27 .in-view {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+  }
+
+  .hrw27 .delay-1 { transition-delay: 0.1s; }
+  .hrw27 .delay-2 { transition-delay: 0.2s; }
+  .hrw27 .delay-3 { transition-delay: 0.3s; }
+  .hrw27 .delay-4 { transition-delay: 0.4s; }
+</style>
+
+<div class="hrw27">
+
+  <!-- 1. Unified Subpage Hero Section -->
+  <section class="testi-hero-section">
+    <div class="testi-hero-overlay"></div>
+    <div class="testi-hero-orb-1"></div>
+    <div class="testi-hero-orb-2"></div>
+
+    <div class="testi-hero-grid">
+      
+      <!-- Left Column: Copy & Actions -->
+      <div class="testi-hero-content fade-left">
+        <div class="testi-hero-eyebrow">
+          <span>★</span> 100% Authentic Feedback
+        </div>
+
+        <h1 class="testi-hero-h1">
+          Have You Heard What People Are Saying About <span class="testi-hero-glow-text">HRWest</span>?
+        </h1>
+
+        <p class="testi-hero-p">
+          Explore genuine stories, career takeaways, and live reactions from the HR leaders, practitioners, and innovative solution providers who make HRWest the West Coast's premier gathering.
+        </p>
+
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center;">
+          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="testi-hero-btn-primary">
+            Pre-Register for 2027
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="testi-hero-btn-outline">
+            Sponsor Information
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Spacer Column -->
+      <div></div>
+
+      <!-- Right Column: 3 Floating Proof Cards Stack -->
+      <div class="testi-floating-mosaic fade-right">
+        
+        <!-- Float Card 1 -->
+        <div class="testi-float-card testi-float-card-1">
+          <div>
+            <div class="testi-tier-title">4.9 / 5 Rating</div>
+            <div class="testi-tier-sub">Attendee Satisfaction</div>
+          </div>
+          <div class="testi-discount-pill">
+            98% APPROVAL
+          </div>
+        </div>
+
+        <!-- Float Card 2 -->
+        <div class="testi-float-card testi-float-card-2">
+          <div>
+            <div class="testi-tier-title">8+ Video Reactions</div>
+            <div class="testi-tier-sub">Live Floor Interviews</div>
+          </div>
+          <div class="testi-discount-pill" style="background: rgba(93, 47, 199, 0.35); border-color: rgba(93, 47, 199, 0.7); color: #c084fc;">
+            WATCH BELOW
+          </div>
+        </div>
+
+        <!-- Float Card 3 -->
+        <div class="testi-float-card testi-float-card-3">
+          <div>
+            <div class="testi-tier-title">1,000+ Voices</div>
+            <div class="testi-tier-sub">Practitioners & Sponsors</div>
+          </div>
+          <div class="testi-discount-pill">
+            VERIFIED
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. Video Testimonials Section -->
+  <section class="section-pad" style="background: var(--color-surface); border-top: 1px solid var(--color-subtle); border-bottom: 1px solid var(--color-subtle);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">Live Video Reactions</span>
+        <h2 class="section-h2" style="max-width: 760px; margin: 0 auto 8px auto !important;">
+          Watch What Happens When HR Leaders Connect
+        </h2>
+        <p class="body-md" style="max-width: 620px; margin: 0 auto; color: var(--color-text-muted);">
+          Unfiltered clips and immediate takeaways recorded directly on the HRWest conference floor.
+        </p>
+      </div>
+
+      <div class="grid-4" style="align-items: stretch;">
+        
+        <!-- Video 1 -->
+        <div class="video-card fade-up delay-1">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/1h.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Attendee Reaction</span>
+            <span class="badge badge-purple">Video 01</span>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card fade-up delay-2">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/2.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Keynote Takeaways</span>
+            <span class="badge badge-purple">Video 02</span>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card fade-up delay-3">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/3h.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Networking Insights</span>
+            <span class="badge badge-purple">Video 03</span>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card fade-up delay-4">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/4h.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Workshop Experience</span>
+            <span class="badge badge-purple">Video 04</span>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video-card fade-up delay-1">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/5.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Floor Conversations</span>
+            <span class="badge badge-purple">Video 05</span>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="video-card fade-up delay-2">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/6h.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Community Connection</span>
+            <span class="badge badge-purple">Video 06</span>
+          </div>
+        </div>
+
+        <!-- Video 7 -->
+        <div class="video-card fade-up delay-3">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/7.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Sponsor Value</span>
+            <span class="badge badge-purple">Video 07</span>
+          </div>
+        </div>
+
+        <!-- Video 8 -->
+        <div class="video-card fade-up delay-4">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/8.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
+            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Conference Wrap-Up</span>
+            <span class="badge badge-purple">Video 08</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Attendees Testimonials Showcase ("Attendees Say...") -->
+  <section class="section-pad" style="background: var(--color-canvas);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">Attendee Voices</span>
+        <h2 class="section-h2" style="max-width: 720px; margin: 0 auto 8px auto !important;">
+          Insights & Impact in Their Own Words
+        </h2>
+        <p class="body-md" style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">
+          Read candid reviews from HR directors, people managers, and practitioners across diverse industries.
+        </p>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="grid-3" style="align-items: stretch; margin-bottom: 32px;">
+        
+        <!-- Attendee Quote 1 -->
+        <div class="card fade-up delay-1">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">Practical Tools</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "I picked up some great practical tips that I can take back to my office and use right away."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif;">P</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 14px; color: var(--color-text-primary);">HR Practitioner</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">Enterprise HR Team</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendee Quote 2 -->
+        <div class="card fade-up delay-2">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">Community</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "Things are ever-evolving, so to be able to attend something like this with like-minded individuals is great."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif;">M</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 14px; color: var(--color-text-primary);">People & Culture Manager</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">Tech Startup Leader</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendee Quote 3 -->
+        <div class="card fade-up delay-3">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">Expert Faculty</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "I think it was very insightful, very informative. It's good to know that the people who are speaking are experts in this field. There's a lot to gain from that."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif;">G</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 14px; color: var(--color-text-primary);">Senior HR Generalist</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">Healthcare System</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Expanded Row 2 (Featured Wide Card + 2 Cards) -->
+      <div class="grid-3" style="align-items: stretch; margin-bottom: 32px;">
+        
+        <!-- Attendee Quote 4: Featured Long Sponsor Quote -->
+        <div class="card fade-up delay-1" style="grid-column: span 2; background: var(--gradient-brand-soft); border: 2px solid var(--brand-glow-20);">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-pink">Innovation & Solutions</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.55; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "I absolutely loved the sponsors at HRWest this year. You talk about the gamut of softwares or products that really impact how to do our jobs easier. Sometimes in HR we're a small team of people and we have to put together all these resources, and I'll tell you the sponsors are full of fantastic ideas that will take our HR work to the next level."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--brand-glow-20); padding-top: 14px; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--color-brand-pink), var(--color-brand-purple)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif; font-size: 16px;">D</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: var(--color-brand-purple);">Director of People Operations</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">Mid-Market Technology Firm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendee Quote 5 -->
+        <div class="card fade-up delay-2">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">HR Community</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "I couldn't be happier to be part of this community and contribute to it, because it is so incredibly important, now more than ever."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif;">C</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 14px; color: var(--color-text-primary);">Culture & Inclusion Leader</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">Non-Profit Organization</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 3 (2 Equal Cards) -->
+      <div class="grid-2" style="align-items: stretch;">
+        
+        <!-- Attendee Quote 6 -->
+        <div class="card fade-up delay-1">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">Peer Collaboration</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "The roundtables provided good discussion and collaboration."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif;">R</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 14px; color: var(--color-text-primary);">Roundtable Participant</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">VP of Human Resources</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendee Quote 7 -->
+        <div class="card fade-up delay-2">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">In-Person Energy</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "Loved the face-to-face interaction with the HR crowd."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Outfit', system-ui, sans-serif;">F</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 14px; color: var(--color-text-primary);">In-Person Attendee</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">HR Consultant & Advisor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Sponsors & Partners Testimonials ("Sponsors Say...") -->
+  <section class="section-pad" style="background: var(--color-surface); border-top: 1px solid var(--color-subtle);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">Sponsor & Exhibitor Success</span>
+        <h2 class="section-h2" style="max-width: 720px; margin: 0 auto 8px auto !important;">
+          Proven ROI for Solution Providers
+        </h2>
+        <p class="body-md" style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">
+          See why tech providers, consultants, and sponsors choose HRWest to meet engaged decision-makers.
+        </p>
+      </div>
+
+      <div class="grid-3" style="align-items: stretch;">
+        
+        <!-- Sponsor 1: Gregg Ward -->
+        <div class="card fade-up delay-1" style="background: var(--color-elevated); border: 2px solid var(--brand-pink-glow-20); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-pink">Booth Engagement</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.55; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "My team and I were really well taken care of by the HR.com staff ... We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--brand-pink-glow-20); padding-top: 16px; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--color-brand-authority), var(--color-brand-purple)); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">G</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: var(--color-brand-purple);">Gregg Ward</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">The Center for Respectful Leadership</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sponsor 2: Chezuba -->
+        <div class="card fade-up delay-2" style="background: var(--color-elevated); border: 2px solid var(--brand-glow-20); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">Conversations</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.55; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "It was a really good experience — met some wonderful people and had amazing conversations."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 16px; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">C</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: var(--color-brand-purple);">Chezuba</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">Corporate Volunteering Platform</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sponsor 3: Solution Partner -->
+        <div class="card fade-up delay-3" style="background: var(--color-elevated); border: 2px solid var(--brand-glow-20); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="quote-box">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span class="badge badge-purple">High-Intent Leads</span>
+                <div class="stars">
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+              <div class="quote-mark">"</div>
+              <blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.55; color: var(--color-text-primary); margin: 0 0 20px 0;">
+                "I had a great time at the event. I was able to connect and meet new people, share the value of our software, and join in a couple of sessions myself."
+              </blockquote>
+            </div>
+            <div style="border-top: 1px solid var(--color-subtle); padding-top: 16px; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">S</div>
+              <div>
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: var(--color-brand-purple);">Solution Provider</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">HR Tech & SaaS Vendor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sponsor CTA Strip -->
+      <div class="fade-up" style="margin-top: 40px; text-align: center;">
+        <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="btn btn-primary btn-lg">
+          Download Sponsor Prospectus & Floor Plan
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Final CTA Banner -->
+  <section class="section-pad" style="background: var(--color-canvas);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="background: var(--gradient-brand-soft); border-radius: var(--radius-xl); padding: 48px 36px; border: 1.5px solid var(--brand-glow-20); box-shadow: var(--shadow-xl); position: relative; overflow: hidden;">
+        
+        <div style="position: absolute; top: -30%; left: 10%; width: 40%; height: 80%; background: radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -30%; right: 5%; width: 35%; height: 80%; background: radial-gradient(circle, rgba(239,20,110,0.1) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+
+        <div class="grid-2" style="align-items: center; position: relative; z-index: 1;">
+          
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; background: rgba(239, 20, 110, 0.08); border: 1.5px solid rgba(239, 20, 110, 0.25); border-radius: var(--radius-full); padding: 4px 14px; width: fit-content;">
+              <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 14px; color: var(--color-brand-pink);">$399 Early Bird</span>
+              <span style="font-size: 13px; text-decoration: line-through; color: var(--color-text-muted); font-weight: 600;">$799 Regular</span>
+              <span class="badge badge-pink" style="padding: 2px 8px; font-size: 10px;">Save 50%</span>
+            </div>
+
+            <h2 class="section-h2" style="margin-bottom: 16px !important;">
+              Experience the Energy of HRWest 2027
+            </h2>
+            <p class="body-lg" style="margin: 0 0 32px 0;">
+              Lock in your spot today to earn 20+ SHRM & HRCI credits, learn from pioneering HR leaders, and join a high-impact community of peers.
+            </p>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="btn btn-pink btn-lg">
+                Pre-Register for HRWest 2027
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="btn btn-outline btn-lg">
+                Bring Your Team
+              </a>
+            </div>
+          </div>
+
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 320px; box-shadow: var(--shadow-lg); border: 2px solid var(--brand-glow-25);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp" alt="Cheering HR Professionals at HRWest" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--brand-glow-25) 0%, transparent 60%);"></div>
+            <div style="position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: 10px 16px; font-size: 13px; font-weight: 700; color: var(--color-brand-purple); display: flex; align-items: center; gap: 8px;">
+              <span>✨</span> Join 1,000+ HR Leaders in March 2027
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  /* IntersectionObserver Scroll Animations */
+  if (window.IntersectionObserver) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.hrw27 .fade-up, .hrw27 .fade-left, .hrw27 .fade-right, .hrw27 .fade-scale').forEach(function(el) {
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.hrw27 .fade-up, .hrw27 .fade-left, .hrw27 .fade-right, .hrw27 .fade-scale').forEach(function(el) {
+      el.classList.add('in-view');
+    });
+  }
+})();
+</script>
