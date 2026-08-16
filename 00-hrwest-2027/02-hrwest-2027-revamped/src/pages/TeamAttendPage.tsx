@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calculator, ArrowRight, CheckCircle, Users, Sparkles, TrendingUp, ChevronRight } from 'lucide-react';
-import teamAttendHero from '../assets/team_attend_hero.png';
+import teamAttendHero from '../assets/team_attend_hero.webp';
 
 export const TeamAttendPage: React.FC = () => {
   const [teamSize, setTeamSize] = useState<number>(5);

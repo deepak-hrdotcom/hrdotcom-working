@@ -7,16 +7,15 @@ import {
   Calendar, TrendingUp, Mic2, Clock, BadgeCheck
 } from 'lucide-react';
 
-import heroConference from '../assets/generated/hero_conference.png';
-import hrWestLogo from '../assets/hr-west-logo.png';
-import trackAI from '../assets/generated/track_ai_real.png';
-import trackLegal from '../assets/generated/track_legal_real.png';
-import trackTalent from '../assets/generated/track_talent_real.png';
-import trackWellness from '../assets/generated/track_wellness_real.png';
-import trackLeadership from '../assets/generated/track_leadership_real.png';
-import trackHRTech from '../assets/generated/track_hrtech_real.png';
-import ssfVenue from '../assets/generated/ssf_venue.png';
-import ctaCheeringHR from '../assets/generated/cta_cheering_hr.png';
+const heroConference = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp';
+const trackAI = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_ai_real.webp';
+const trackLegal = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_legal_real.webp';
+const trackTalent = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_talent_real.webp';
+const trackWellness = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_wellness_real.webp';
+const trackLeadership = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_leadership_real.webp';
+const trackHRTech = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_hrtech_real.webp';
+const ssfVenue = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/ssf_venue.webp';
+const ctaCheeringHR = 'https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp';
 
 /* ─── Data ─── */
 const SPONSORS = [
@@ -476,57 +475,32 @@ export const HomePage: React.FC = () => {
             </span>
           </motion.div>
 
-          {/* Hero headline lockup — logo inline beside title */}
+          {/* Main Headline */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: 'easeOut', delay: 0.1 }}
-            className="hero-headline-lockup"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1.5rem',
-              marginBottom: '1.75rem',
-            }}
+            style={{ marginBottom: '1.75rem' }}
           >
-            {/* HR West transparent logo — clean, no white box card */}
-            <img
-              src={hrWestLogo}
-              alt="HR West Logo"
-              className="hero-headline-logo"
-              style={{
-                height: '120px',
-                width: 'auto',
-                objectFit: 'contain',
-                display: 'block',
-                flexShrink: 0,
-                filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08))',
-              }}
-            />
-
-            {/* Title text stack */}
-            <div>
-              <h1 style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 900,
-                fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.03em',
-                color: 'var(--color-text-primary)',
-                margin: 0,
+            <h1 style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 900,
+              fontSize: 'clamp(2.2rem, 3.8vw, 3.6rem)',
+              lineHeight: 1.12,
+              letterSpacing: '-0.035em',
+              color: 'var(--color-text-primary)',
+              margin: 0,
+            }}>
+              Where HR Leaders Shape the{' '}
+              <span style={{
+                background: 'var(--gradient-brand-glow)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
               }}>
-                HRWest 2027:
-                <br />
-                <span style={{
-                  background: 'var(--gradient-brand-glow)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-                  Imagine What's Possible
-                </span>
-              </h1>
-            </div>
+                Future of Work
+              </span>
+            </h1>
           </motion.div>
 
           <motion.p

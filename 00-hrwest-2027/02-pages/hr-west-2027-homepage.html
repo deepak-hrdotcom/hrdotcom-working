@@ -1,0 +1,881 @@
+<div class="hrw27">
+
+  <!-- 1. Hero Section -->
+  <section class="section-wrap" style="background: var(--color-canvas); min-height: 92vh; display: flex; align-items: center; border-bottom: 1px solid var(--color-subtle);">
+    
+    <!-- Ambient Glow -->
+    <div style="position: absolute; top: 10%; left: -5%; width: 45vw; height: 55vh; background: radial-gradient(circle, rgba(93, 47, 199, 0.09) 0%, transparent 70%); filter: blur(50px); pointer-events: none; z-index: 0;"></div>
+    <div style="position: absolute; bottom: 0; right: 0; width: 35vw; height: 40vh; background: radial-gradient(circle, rgba(239, 20, 110, 0.05) 0%, transparent 70%); filter: blur(50px); pointer-events: none; z-index: 0;"></div>
+
+    <div class="container-inner" style="position: relative; z-index: 2; padding-top: 48px; padding-bottom: 48px;">
+      <div class="hero-grid" style="align-items: center; gap: 48px;">
+        
+        <!-- Left Column -->
+        <div class="hero-animate-1" style="display: flex; flex-direction: column; justify-content: center;">
+          
+          <!-- Live Countdown Badge -->
+          <div style="display: inline-flex; align-items: center; gap: 12px; background: var(--color-elevated); border: 1.5px solid var(--brand-glow-20); padding: 8px 16px; border-radius: var(--radius-full); box-shadow: var(--shadow-sm); width: fit-content; margin-bottom: 24px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-pink); display: inline-block; animation: hrw27-pulse 2s infinite;"></span>
+              <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary); text-transform: uppercase; letter-spacing: 0.05em;">March 23-24, 2027</span>
+            </div>
+            <div style="width: 1px; height: 16px; background: var(--color-subtle);"></div>
+            <div style="display: flex; align-items: center; gap: 8px; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; color: var(--color-brand-purple);">
+              <span>Starts in:</span>
+              <div style="display: flex; gap: 4px; font-variant-numeric: tabular-nums;">
+                <span id="hrw27-cd-days" style="background: var(--brand-glow-08); padding: 2px 6px; border-radius: 4px; font-weight: 900;">00</span>d
+                <span id="hrw27-cd-hours" style="background: var(--brand-glow-08); padding: 2px 6px; border-radius: 4px; font-weight: 900;">00</span>h
+                <span id="hrw27-cd-mins" style="background: var(--brand-glow-08); padding: 2px 6px; border-radius: 4px; font-weight: 900;">00</span>m
+                <span id="hrw27-cd-secs" style="background: var(--brand-pink-glow-08); color: var(--color-brand-pink); padding: 2px 6px; border-radius: 4px; font-weight: 900;">00</span>s
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-animate-2" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(34px, 4.2vw, 56px); letter-spacing: -0.035em; line-height: 1.12; color: var(--color-text-primary); margin: 0 0 20px 0;">
+            Where HR Leaders Shape the <span style="background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Future of Work</span>
+          </h1>
+
+          <p class="hero-animate-3 body-lg" style="color: var(--color-text-secondary); margin: 0 0 32px 0; max-width: 580px; font-size: 18px; line-height: 1.65;">
+            The most impactful HR transformation conference on the West Coast! Connect with 500+ HR decision-makers, earn SHRM & HRCI credits, and walk away with strategies you can implement Monday morning and for years to come.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-animate-4" style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 36px;">
+            <a href="/register" class="btn btn-primary btn-lg">
+              Register Now
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/agenda" class="btn btn-outline btn-lg">
+              Explore Agenda
+            </a>
+          </div>
+
+          <!-- Quick Info Bar -->
+          <div style="display: flex; gap: 24px; padding-top: 24px; border-top: 1px solid var(--color-subtle); flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--color-text-secondary);">March 23-24, 2027</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--color-text-secondary);">South San Francisco, CA</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--color-text-secondary);">20+ Recert Credits</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 480px;">
+          
+          <!-- Background Auditorium Image -->
+          <div style="position: absolute; inset: 0; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); border: 2px solid var(--brand-glow-20);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp" alt="HRWest 2027 Conference" class="img-cover" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11, 15, 23, 0.45) 0%, rgba(93, 47, 199, 0.3) 100%), linear-gradient(to top, rgba(11, 15, 23, 0.75) 0%, transparent 60%);"></div>
+          </div>
+
+          <!-- Video Card -->
+          <div class="fade-scale" style="position: relative; z-index: 3; width: 90%; max-width: 480px; background: rgba(11, 15, 23, 0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-radius: var(--radius-xl); padding: 18px; border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(93, 47, 199, 0.35); color: #ffffff;">
+            
+            <div style="position: relative; padding-top: 56.25%; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.65); margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.15);">
+              <iframe
+                src="https://www.youtube.com/embed/noHEBlrp1EU?autoplay=1&mute=1&rel=0&loop=1&playlist=noHEBlrp1EU"
+                title="HRWest 2027 Conference Experience"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div>
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; color: #ffffff; letter-spacing: -0.01em;">
+                Experience the Energy of HRWest 2027
+              </div>
+              <div style="font-size: 13px; color: rgba(255, 255, 255, 0.85); margin-top: 4px; line-height: 1.5;">
+                Join 1,000+ HR leaders and solution providers in South San Francisco to drive your career forward.
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Stats Badge -->
+          <div class="fade-up delay-2" style="position: absolute; bottom: -20px; right: -10px; background: rgba(255,255,255,0.94); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: var(--radius-lg); padding: 16px 20px; border: 1.5px solid var(--brand-glow-20); box-shadow: var(--shadow-xl); z-index: 4; display: flex; align-items: center; gap: 18px;">
+            <div>
+              <div class="stars" style="margin-bottom: 4px;">
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 24px; color: var(--color-text-primary); line-height: 1;">1,000+</div>
+              <div style="font-size: 12px; color: var(--color-text-muted); font-weight: 600;">HR Leaders</div>
+            </div>
+            <div style="width: 1px; height: 48px; background: var(--color-subtle);"></div>
+            <div>
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 24px; line-height: 1; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">50+</div>
+              <div style="font-size: 12px; color: var(--color-text-muted); font-weight: 600;">Expert Sessions</div>
+              <div style="font-size: 11px; color: var(--color-text-soft);">across 6 tracks</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Early Bird Urgency Strip -->
+  <div style="background: var(--gradient-pink); padding: 14px 24px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(239, 20, 110, 0.25);">
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%); animation: hrw27-shimmer 3s infinite; pointer-events: none;"></div>
+    
+    <div class="container-inner" style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; position: relative; z-index: 1;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 18px;">🔥</span>
+        <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: #ffffff; letter-spacing: -0.01em;">
+          Early Bird Registration Open
+        </span>
+        <span style="background: #ffffff; color: var(--color-brand-pink); font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 11px; padding: 3px 10px; border-radius: var(--radius-full); box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-transform: uppercase; letter-spacing: 0.04em;">
+          Save up to 30%
+        </span>
+      </div>
+
+      <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.35);" class="hide-mobile"></div>
+
+      <span style="font-size: 14px; color: #ffffff; font-weight: 600;">
+        Rates increase after September 30 - lock in your spot now.
+      </span>
+
+      <a id="hrw27-eb-btn" href="/register" style="background: #ffffff; color: var(--color-brand-pink); font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 13px; padding: 8px 18px; border-radius: var(--radius-full); text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,0.15); display: inline-flex; align-items: center; gap: 6px; transition: transform 0.2s ease;">
+        Register Now
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- 3. Sponsor Marquee Showcase -->
+  <section class="section-wrap" style="background: var(--color-surface); padding: 48px 0; border-bottom: 1px solid var(--color-subtle);">
+    <div class="container-inner" style="text-align: center; margin-bottom: 24px;">
+      <span class="eyebrow">Trusted by Leading HR Innovators and Sponsors</span>
+    </div>
+
+    <div class="marquee-track">
+      <div class="marquee-strip">
+        <!-- Loop 1 -->
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png" alt="SAP SuccessFactors" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg" alt="UKG" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg" alt="Robert Half" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg" alt="Insperity" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg" alt="Alliant Insurance" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg" alt="AwardCo" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg" alt="Zapier" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg" alt="LHH" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg" alt="HUB International" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg" alt="PerformYard" /></div>
+        <!-- Loop 2 -->
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png" alt="SAP SuccessFactors" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg" alt="UKG" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg" alt="Robert Half" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg" alt="Insperity" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg" alt="Alliant Insurance" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg" alt="AwardCo" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg" alt="Zapier" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg" alt="LHH" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg" alt="HUB International" /></div>
+        <div class="marquee-logo-pill"><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg" alt="PerformYard" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Animated Stat Counters -->
+  <section class="section-wrap section-pad" style="background: var(--color-canvas);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">By the Numbers</span>
+        <h2 class="section-h2" style="max-width: 750px; margin: 0 auto !important;">
+          Why 1,000 HR Leaders Choose HRWest
+        </h2>
+      </div>
+
+      <div class="grid-4">
+        <!-- Stat 1 -->
+        <div class="card fade-up delay-1" style="text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div data-target="1000" data-suffix="+" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; color: var(--color-text-primary); margin-bottom: 8px;">0+</div>
+          <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">HR Leaders and Executives</div>
+          <div class="body-sm">West Coast focused decision makers</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="card fade-up delay-2" style="text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+          </div>
+          <div data-target="50" data-suffix="+" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">0+</div>
+          <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">Expert-Led Sessions</div>
+          <div class="body-sm">Actionable keynotes and workshops</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="card fade-up delay-3" style="text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <div data-target="20" data-suffix="+" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; color: var(--color-text-primary); margin-bottom: 8px;">0+</div>
+          <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">SHRM and HRCI Credits</div>
+          <div class="body-sm">Accelerate your recertification</div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="card fade-up delay-4" style="text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22.01"></line><line x1="15" y1="22" x2="15" y2="22.01"></line><line x1="9" y1="18" x2="9" y2="18.01"></line><line x1="15" y1="18" x2="15" y2="18.01"></line><line x1="9" y1="14" x2="9" y2="14.01"></line><line x1="15" y1="14" x2="15" y2="14.01"></line><line x1="9" y1="10" x2="9" y2="10.01"></line><line x1="15" y1="10" x2="15" y2="10.01"></line><line x1="9" y1="6" x2="9" y2="6.01"></line><line x1="15" y1="6" x2="15" y2="6.01"></line></svg>
+          </div>
+          <div data-target="60" data-suffix="+" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">0+</div>
+          <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">Solution Providers</div>
+          <div class="body-sm">Cutting-edge HR tech demos</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Featured Speakers and Faculty -->
+  <section class="section-wrap section-pad" style="background: var(--color-surface);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">Learn From World-Class Thought Leaders</span>
+        <h2 class="section-h2" style="max-width: 720px; margin: 0 auto !important;">
+          Real Experts Who Help HR Move Forward
+        </h2>
+      </div>
+
+      <!-- Spotlight Grid -->
+      <div class="grid-3" style="margin-bottom: 40px; align-items: stretch;">
+        
+        <!-- Speaker 1 -->
+        <div class="card fade-up delay-1" style="display: flex; flex-direction: column; padding: 24px;">
+          <div style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" alt="Jason Averbook" class="img-cover" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
+            <div style="position: absolute; top: 12px; left: 12px;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Global Thought Leader</span>
+            </div>
+            <div style="position: absolute; bottom: 12px; left: 12px;">
+              <span class="badge badge-pink">Opening Keynote</span>
+            </div>
+          </div>
+          <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">Jason Averbook</h3>
+          <div style="font-size: 14px; font-weight: 700; color: var(--color-brand-purple); margin-bottom: 2px;">Global HR Transformation Leader and Author</div>
+          <div style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px;">Now to Next</div>
+          <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: space-between;">
+            <span class="badge badge-purple">HR Strategy and AI</span>
+            <a href="/agenda" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-brand-purple); display: inline-flex; align-items: center; gap: 4px;">
+              Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Conversion Card -->
+        <div class="fade-up delay-2" style="background: var(--gradient-brand-soft); border: 2px solid var(--brand-glow-25); border-radius: var(--radius-lg); padding: 36px 28px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; box-shadow: 0 12px 35px rgba(93,47,199,0.1); position: relative; overflow: hidden;">
+          <div style="position: relative; z-index: 1;">
+            <span class="badge badge-purple" style="margin-bottom: 20px; padding: 6px 14px;">Why Attendees Come Back</span>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+              <div style="background: rgba(255,255,255,0.75); border-radius: var(--radius-md); padding: 12px 8px; border: 1px solid var(--brand-glow-12);">
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 24px; line-height: 1.1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">92%</div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--color-text-primary); margin-top: 4px;">Satisfaction</div>
+                <div style="font-size: 10px; color: var(--color-text-muted);">post-event survey</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.75); border-radius: var(--radius-md); padding: 12px 8px; border: 1px solid var(--brand-glow-12);">
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 24px; line-height: 1.1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">8 in 10</div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--color-text-primary); margin-top: 4px;">Return</div>
+                <div style="font-size: 10px; color: var(--color-text-muted);">year after year</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.75); border-radius: var(--radius-md); padding: 12px 8px; border: 1px solid var(--brand-glow-12);">
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 24px; line-height: 1.1; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">20+</div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--color-text-primary); margin-top: 4px;">Credits</div>
+                <div style="font-size: 10px; color: var(--color-text-muted);">SHRM and HRCI</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.75); border-radius: var(--radius-md); padding: 12px 8px; border: 1px solid var(--brand-glow-12);">
+                <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 24px; line-height: 1.1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">#1</div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--color-text-primary); margin-top: 4px;">West Coast</div>
+                <div style="font-size: 10px; color: var(--color-text-muted);">HR conference</div>
+              </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.7); border-radius: var(--radius-md); padding: 12px 14px; margin-bottom: 24px; border-left: 3px solid var(--color-brand-purple); text-align: left;">
+              <p style="font-size: 13px; color: var(--color-text-secondary); font-style: italic; line-height: 1.5; margin: 0;">
+                "The sessions were immediately applicable. I used three frameworks at work the very next week."
+              </p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--color-brand-purple); margin-top: 6px;">- VP People Ops, SaaS Company</div>
+            </div>
+          </div>
+
+          <a href="/speakers" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+            Explore All 2027 Speakers
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="card fade-up delay-3" style="display: flex; flex-direction: column; padding: 24px;">
+          <div style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" alt="Allison West" class="img-cover" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
+            <div style="position: absolute; top: 12px; left: 12px;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Attendee Favorite</span>
+            </div>
+            <div style="position: absolute; bottom: 12px; left: 12px;">
+              <span class="badge badge-pink">Day 2 Keynote</span>
+            </div>
+          </div>
+          <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">Allison West, Esq., SHRM-SCP</h3>
+          <div style="font-size: 14px; font-weight: 700; color: var(--color-brand-purple); margin-bottom: 2px;">Principal and Employment Law Specialist</div>
+          <div style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px;">Employment Practices Specialists</div>
+          <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: space-between;">
+            <span class="badge badge-purple">Legal and Compliance</span>
+            <a href="/agenda" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-brand-purple); display: inline-flex; align-items: center; gap: 4px;">
+              Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Faculty Grid -->
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-brand-purple);">
+          Featured Keynote and Session Faculty
+        </span>
+      </div>
+
+      <div class="grid-4" style="margin-bottom: 48px;">
+        <!-- Faculty 1 -->
+        <div class="card fade-up delay-1" style="padding: 18px;">
+          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg" alt="Nancy Hauge" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Nancy Hauge</h4>
+          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Chief People Experience Officer</div>
+          <div style="font-size: 12px; color: var(--color-text-muted);">Automation Anywhere</div>
+        </div>
+
+        <!-- Faculty 2 -->
+        <div class="card fade-up delay-2" style="padding: 18px;">
+          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg" alt="Treena Diebolt" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Treena Diebolt</h4>
+          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Vice President, People</div>
+          <div style="font-size: 12px; color: var(--color-text-muted);">Otter.ai</div>
+        </div>
+
+        <!-- Faculty 3 -->
+        <div class="card fade-up delay-3" style="padding: 18px;">
+          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg" alt="Debbie McGrath" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Debbie McGrath</h4>
+          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">CEO, Founder and Chief Instigator</div>
+          <div style="font-size: 12px; color: var(--color-text-muted);">HR.com</div>
+        </div>
+
+        <!-- Faculty 4 -->
+        <div class="card fade-up delay-4" style="padding: 18px;">
+          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg" alt="Lee Cage Jr." class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Lee Cage Jr.</h4>
+          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Director, Enterprise Transformation</div>
+          <div style="font-size: 12px; color: var(--color-text-muted);">BDO USA</div>
+        </div>
+      </div>
+
+      <!-- Speaker CTA -->
+      <div style="text-align: center;">
+        <a href="/speakers" class="btn btn-primary btn-lg">
+          View Full 2027 Speaker Roster and Bios
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Conference Tracks -->
+  <section class="section-wrap section-pad" style="background: var(--color-canvas); position: relative;">
+    <div class="container-inner">
+      
+      <!-- Header and Controls -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <span class="eyebrow" style="margin-bottom: 12px;">Curate Your Experience</span>
+          <h2 class="section-h2" style="margin: 0 0 8px 0 !important;">6 Deep-Dive Conference Tracks</h2>
+          <p class="body-md" style="margin: 0; max-width: 560px;">
+            Tailor your HRWest 2027 agenda across 6 specialized learning tracks.
+          </p>
+        </div>
+
+        <!-- Slider Arrows -->
+        <div style="display: flex; gap: 12px;">
+          <button id="hrw27-track-prev" class="slider-btn" style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm);" aria-label="Previous Track">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button id="hrw27-track-next" class="slider-btn" style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35);" aria-label="Next Track">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Track Slider Carousel -->
+      <div id="hrw27-track-slider" class="track-slider">
+        
+        <!-- Track 1: AI -->
+        <div class="track-card">
+          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_ai_real.webp" alt="HR Strategy and AI" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);"></div>
+            <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Future of Work</span>
+              <span class="badge badge-pink">5 Credits</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 8px 0;">HR Strategy and AI</h3>
+            <p class="body-sm" style="margin: 0 0 16px 0;">Generative AI adoption, strategic workforce planning, prompt engineering for HR, and CHRO-level change management.</p>
+            <div style="margin-top: auto; padding: 12px 14px; background: var(--gradient-brand-soft); border-radius: var(--radius-md); border-left: 3.5px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Key Takeaway</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); line-height: 1.45;">How Silicon Valley CHROs embed AI into daily talent workflows without losing the human touch.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 2: Legal -->
+        <div class="track-card">
+          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_legal_real.webp" alt="Legal and Compliance" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);"></div>
+            <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">California Law</span>
+              <span class="badge badge-pink">4 Legal Credits</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 8px 0;">Legal and Compliance</h3>
+            <p class="body-sm" style="margin: 0 0 16px 0;">California and federal employment law updates, wage and hour compliance, AI bias regulations, and workplace investigations.</p>
+            <div style="margin-top: auto; padding: 12px 14px; background: var(--gradient-brand-soft); border-radius: var(--radius-md); border-left: 3.5px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Key Takeaway</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); line-height: 1.45;">Stay ahead of 2027 CA labor mandates with nationally recognized employment law authorities.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 3: Tech -->
+        <div class="track-card">
+          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_hrtech_real.webp" alt="HR Tech and Analytics" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);"></div>
+            <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Tech Stack</span>
+              <span class="badge badge-pink">4 Tech Credits</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 8px 0;">HR Tech and Analytics</h3>
+            <p class="body-sm" style="margin: 0 0 16px 0;">HRIS stack optimization, people analytics dashboarding, automated onboarding, and employee data privacy.</p>
+            <div style="margin-top: auto; padding: 12px 14px; background: var(--gradient-brand-soft); border-radius: var(--radius-md); border-left: 3.5px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Key Takeaway</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); line-height: 1.45;">Hands-on benchmarks for evaluating the modern HR tech vendor landscape.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 4: Talent -->
+        <div class="track-card">
+          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_talent_real.webp" alt="Talent Acquisition" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);"></div>
+            <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Recruiting</span>
+              <span class="badge badge-pink">3.5 Credits</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 8px 0;">Talent Acquisition</h3>
+            <p class="body-sm" style="margin: 0 0 16px 0;">Employer branding, skills-based hiring frameworks, AI sourcing tools, and executive retention strategies.</p>
+            <div style="margin-top: auto; padding: 12px 14px; background: var(--gradient-brand-soft); border-radius: var(--radius-md); border-left: 3.5px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Key Takeaway</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); line-height: 1.45;">Solve tech talent shortages using skills-first hiring systems.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 5: Leadership -->
+        <div class="track-card">
+          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_leadership_real.webp" alt="Leadership and Culture" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);"></div>
+            <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Executive</span>
+              <span class="badge badge-pink">4 Credits</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 8px 0;">Leadership and Culture</h3>
+            <p class="body-sm" style="margin: 0 0 16px 0;">Executive coaching, hybrid team engagement, psychological safety, and continuous performance management.</p>
+            <div style="margin-top: auto; padding: 12px 14px; background: var(--gradient-brand-soft); border-radius: var(--radius-md); border-left: 3.5px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Key Takeaway</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); line-height: 1.45;">Build high-trust team cultures across remote and hybrid enterprise structures.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 6: Wellness -->
+        <div class="track-card">
+          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_wellness_real.webp" alt="Health and Wellness" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);"></div>
+            <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-purple" style="background: rgba(255,255,255,0.92);">Benefits</span>
+              <span class="badge badge-pink">3.5 Credits</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 8px 0;">Health and Wellness</h3>
+            <p class="body-sm" style="margin: 0 0 16px 0;">Mental health benefit design, burnout prevention, self-funded healthcare, and financial wellness programs.</p>
+            <div style="margin-top: auto; padding: 12px 14px; background: var(--gradient-brand-soft); border-radius: var(--radius-md); border-left: 3.5px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Key Takeaway</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); line-height: 1.45;">Benefit strategies that boost retention and cut healthcare spend.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Footer -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 32px; flex-wrap: wrap; gap: 16px;">
+        <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--color-text-muted);">
+          6 Learning Tracks, 50+ Sessions, 20+ Credits
+        </span>
+        <a href="/agenda" class="btn btn-primary btn-lg">
+          View Full 2-Day Conference Agenda
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. Boss Convincer Toolkit -->
+  <section class="section-wrap section-pad" style="background: var(--color-surface);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">Instant Approval Toolkit</span>
+        <h2 class="section-h2" style="max-width: 700px; margin: 0 auto 12px auto !important;">
+          Need Your Boss Sign-Off on HRWest?
+        </h2>
+        <p class="body-md" style="margin: 0 auto; max-width: 580px;">
+          Generate a polished ROI business case email in under 60 seconds.
+        </p>
+      </div>
+
+      <div class="grid-2 fade-up" style="align-items: start;">
+        
+        <!-- Left Column -->
+        <div>
+          <div class="roi-bars card" style="margin-bottom: 24px; padding: 24px;">
+            <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 12px; color: var(--color-brand-purple); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px;">Why It Gets Approved</div>
+            
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--color-text-secondary);">SHRM and HRCI Credit Value</span>
+                <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: var(--color-brand-purple);">$400+</span>
+              </div>
+              <div style="height: 6px; background: var(--color-subtle); border-radius: 3px; overflow: hidden;">
+                <div class="roi-bar-fill" data-width="80" style="height: 100%; width: 0%; background: var(--gradient-brand); transition: width 1.2s ease;"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--color-text-secondary);">Networking ROI</span>
+                <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: var(--color-brand-purple);">2.8x</span>
+              </div>
+              <div style="height: 6px; background: var(--color-subtle); border-radius: 3px; overflow: hidden;">
+                <div class="roi-bar-fill" data-width="70" style="height: 100%; width: 0%; background: var(--gradient-brand); transition: width 1.2s ease 0.2s;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--color-text-secondary);">Total Estimated Return</span>
+                <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3.4x</span>
+              </div>
+              <div style="height: 6px; background: var(--color-subtle); border-radius: 3px; overflow: hidden;">
+                <div class="roi-bar-fill" data-width="92" style="height: 100%; width: 0%; background: var(--gradient-pink); transition: width 1.2s ease 0.4s;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span style="font-size: 15px; font-weight: 600; color: var(--color-text-primary);">Calculates full ROI - credits, networking and sessions</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span style="font-size: 15px; font-weight: 600; color: var(--color-text-primary);">Pre-written email template, customizable to your goals</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span style="font-size: 15px; font-weight: 600; color: var(--color-text-primary);">Team savings calculator - up to 35% off for 3+ attendees</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="/attend/convince-boss" class="btn btn-primary btn-lg">
+              Generate Approval Email
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </a>
+            <a href="/attend/team" class="btn btn-outline btn-lg">
+              Team Savings Calculator
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div class="card" style="padding: 0; overflow: hidden;">
+            <div style="background: var(--color-surface); padding: 12px 16px; border-bottom: 1px solid var(--color-subtle); display: flex; align-items: center; gap: 8px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></span>
+              <span style="flex: 1; background: var(--color-canvas); border-radius: var(--radius-sm); padding: 4px 12px; font-size: 12px; color: var(--color-text-muted); border: 1px solid var(--color-subtle); margin-left: 8px;">
+                New Email Draft
+              </span>
+            </div>
+            <div style="padding: 24px; font-size: 14px; line-height: 1.7; color: var(--color-text-secondary);">
+              <div style="margin-bottom: 12px;">
+                <strong>To:</strong> manager@company.com<br />
+                <strong>Subject:</strong> Attending HRWest 2027 - ROI Business Case
+                <hr style="margin: 12px 0; border: 0; border-top: 1px solid var(--color-subtle);" />
+              </div>
+              <p style="margin: 0 0 10px 0;">Hi [Manager Name],</p>
+              <p style="margin: 0 0 10px 0;">I would like to attend <strong>HRWest 2027</strong> in South San Francisco (March 23-24):</p>
+              <ul style="padding-left: 18px; margin: 0 0 12px 0;">
+                <li style="margin-bottom: 4px;">50+ actionable HR strategy sessions</li>
+                <li style="margin-bottom: 4px;">20+ SHRM/HRCI credits (saves ~$400 in external training)</li>
+                <li>Direct access to top Silicon Valley HR tech vendors</li>
+              </ul>
+              <p style="color: var(--color-brand-purple); font-weight: 700; font-size: 15px; margin: 0;">
+                Net ROI estimate: 3.4x total cost
+              </p>
+            </div>
+          </div>
+
+          <div style="background: var(--gradient-brand-soft); border: 1.5px solid var(--brand-glow-20); border-radius: var(--radius-lg); padding: 18px 22px;">
+            <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; font-style: italic; margin: 0 0 12px 0;">
+              "Sent the email on a Thursday, got approval by Monday. The ROI breakdown made it a no-brainer for my CHRO."
+            </p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 13px; color: #fff;">S</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--color-text-primary);">Sarah M.</div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">HR Director, Bay Area Tech Firm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Testimonials Section -->
+  <section class="section-wrap section-pad" style="background: var(--color-canvas);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow" style="margin-bottom: 12px;">Verified Attendee and Partner Feedback</span>
+        <h2 class="section-h2" style="max-width: 720px; margin: 0 auto !important;">
+          Why 1,000+ HR Leaders Return to HRWest
+        </h2>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 40px;">
+        
+        <!-- Attendee Spotlight -->
+        <div class="card fade-up delay-1" style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid var(--brand-glow-20);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <span class="badge badge-purple">Attendee Spotlight</span>
+              <div class="stars">
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+            </div>
+            <p style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 24px 0;">
+              "I picked up some great practical tips that I can take back to my office and use right away. The caliber of speakers was phenomenal!"
+            </p>
+          </div>
+          <div style="border-top: 1px solid var(--color-subtle); padding-top: 18px; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">H</div>
+            <div>
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 15px; color: var(--color-text-primary);">HR Director and Practitioner</div>
+              <div style="font-size: 13px; color: var(--color-text-muted);">Fortune 500 Enterprise</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sponsor Spotlight -->
+        <div class="card fade-up delay-2" style="display: flex; flex-direction: column; justify-content: space-between; background: var(--gradient-brand-soft); border: 2px solid var(--brand-pink-glow-20);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <span class="badge badge-pink">Sponsor Success Story</span>
+              <div class="stars">
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+            </div>
+            <p style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 24px 0;">
+              "We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back!"
+            </p>
+          </div>
+          <div style="border-top: 1px solid var(--brand-glow-15); padding-top: 18px; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--color-brand-authority), var(--color-brand-purple)); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">G</div>
+            <div>
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 15px; color: var(--color-brand-purple);">Gregg Ward</div>
+              <div style="font-size: 13px; color: var(--color-text-muted);">The Center for Respectful Leadership</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center;">
+        <a href="/testimonials" class="btn btn-primary btn-lg">
+          View All Attendee and Sponsor Testimonials
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. Venue Section -->
+  <section class="section-wrap" style="background: var(--gradient-brand); padding: 80px 0;">
+    <div class="container-inner">
+      
+      <div class="grid-2" style="align-items: center;">
+        
+        <div class="fade-left">
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(255,255,255,0.2); padding: 6px 14px; border-radius: var(--radius-full); color: #ffffff; margin-bottom: 20px; width: fit-content;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Silicon Valley Venue
+          </span>
+
+          <h2 class="section-h2-white" style="margin-bottom: 16px !important;">
+            South San Francisco Conference Center
+          </h2>
+
+          <p style="font-size: 17px; color: rgba(255,255,255,0.9); line-height: 1.7; margin: 0 0 32px 0;">
+            A premier venue built for world-class events - 5 minutes from SFO, 30 minutes from downtown San Francisco, with immersive keynote halls and an expansive sponsor exhibit floor.
+          </p>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px;">
+            <div style="padding: 12px 20px; background: rgba(255,255,255,0.18); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: #fff;">5 min</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.85);">From SFO Airport</div>
+            </div>
+            <div style="padding: 12px 20px; background: rgba(255,255,255,0.18); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: #fff;">Free</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.85);">On-Site Parking</div>
+            </div>
+            <div style="padding: 12px 20px; background: rgba(255,255,255,0.18); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: #fff;">BART</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.85);">Direct Rail Access</div>
+            </div>
+          </div>
+
+          <a href="/attend/location" class="btn btn-white btn-lg">
+            Hotel Deals and Travel Guide
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="fade-right" style="height: 380px; border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.25);">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/ssf_venue.webp" alt="South San Francisco Conference Center" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. Final CTA Banner -->
+  <section class="section-wrap section-pad" style="background: var(--color-canvas);">
+    <div class="container-inner">
+      
+      <div class="fade-up" style="background: var(--gradient-brand-soft); border-radius: var(--radius-xl); padding: 48px 36px; border: 1.5px solid var(--brand-glow-20); box-shadow: var(--shadow-xl); position: relative; overflow: hidden;">
+        
+        <div style="position: absolute; top: -30%; left: 10%; width: 40%; height: 80%; background: radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -30%; right: 5%; width: 35%; height: 80%; background: radial-gradient(circle, rgba(239,20,110,0.1) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+
+        <div class="grid-2" style="align-items: center; position: relative; z-index: 1;">
+          
+          <div>
+            <span class="eyebrow" style="margin-bottom: 16px;">Lock In Your 2027 Spot</span>
+            <h2 class="section-h2" style="margin-bottom: 16px !important;">
+              Your Most Impactful HR Year Starts Here
+            </h2>
+            <p class="body-lg" style="margin: 0 0 32px 0;">
+              Join thousands of HR professionals on the leading edge of AI, culture, and workforce innovation. Pre-register today - early access rates will not last.
+            </p>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="/register" class="btn btn-pink btn-lg">
+                Pre-Register for HRWest 2027
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/attend/team" class="btn btn-outline btn-lg">
+                Bring Your Team
+              </a>
+            </div>
+          </div>
+
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 320px; box-shadow: var(--shadow-lg); border: 2px solid var(--brand-glow-25);">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp" alt="Cheering HR Professionals at HRWest" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--brand-glow-25) 0%, transparent 60%);"></div>
+            <div style="position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: 10px 16px; font-size: 13px; font-weight: 700; color: var(--color-brand-purple); display: flex; align-items: center; gap: 8px;">
+              <span>✨</span> 1,000+ HR Leaders Joining in 2027
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>

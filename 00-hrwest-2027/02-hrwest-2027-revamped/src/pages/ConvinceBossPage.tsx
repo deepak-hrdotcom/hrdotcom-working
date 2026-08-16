@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Copy, Check, FileText, ArrowRight, ChevronRight, Calculator, DollarSign, CheckCircle } from 'lucide-react';
-import convinceBossHero from '../assets/convince_boss_hero.png';
+import convinceBossHero from '../assets/convince_boss_hero.webp';
 
 export const ConvinceBossPage: React.FC = () => {
   const [attendeeName, setAttendeeName] = useState('Alex Morgan');

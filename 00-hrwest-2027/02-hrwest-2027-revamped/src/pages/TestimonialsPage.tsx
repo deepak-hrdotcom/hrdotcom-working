@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import speakersHero from '../assets/speakers_hero.png';
+import speakersHero from '../assets/speakers_hero.webp';
 import { Star, ArrowRight, Video, Building2, UserCheck, ChevronRight, Users } from 'lucide-react';
 
 interface TestimonialItem {

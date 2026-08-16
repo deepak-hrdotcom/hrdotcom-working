@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Mail, Globe, Share2, Link2, Rss, Sparkles, ExternalLink } from 'lucide-react';
-import hrWestLogo from '../assets/hr-west-logo.png';
 
 const NAV_LINKS = {
   attend: [
@@ -107,42 +106,23 @@ export const Footer: React.FC = () => {
             {/* Col 1: Brand identity */}
             <div>
               {/* Logo wordmark */}
-              <Link to="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.5rem' }}>
+              <Link to="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <div style={{
-                  background: '#ffffff',
-                  padding: '6px 12px',
-                  borderRadius: 'var(--radius-md)',
-                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(145, 39, 140, 0.18)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <img
-                    src={hrWestLogo}
-                    alt="HR West Logo"
-                    style={{
-                      height: '72px',
-                      width: 'auto',
-                      objectFit: 'contain',
-                      display: 'block',
-                    }}
-                  />
-                </div>
-                <span style={{
                   fontFamily: 'var(--font-display)',
                   fontWeight: 900,
-                  fontSize: '1.2rem',
-                  padding: '0.35rem 0.8rem',
-                  borderRadius: 'var(--radius-full)',
-                  background: 'var(--gradient-brand)',
-                  color: '#ffffff',
-                  boxShadow: '0 2px 10px rgba(239, 20, 110, 0.25)',
-                  letterSpacing: '0.02em',
-                  whiteSpace: 'nowrap',
+                  fontSize: '1.45rem',
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1,
                 }}>
-                  2027
-                </span>
+                  <span style={{ color: 'var(--color-text-primary)' }}>HR</span>
+                  <span style={{
+                    background: 'var(--gradient-brand)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}>West</span>
+                  <span style={{ color: 'var(--color-text-soft)', fontWeight: 500, fontSize: '1rem', marginLeft: '0.25rem' }}>2027</span>
+                </div>
               </Link>
 
               <p style={{

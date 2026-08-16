@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import sponsorsHero from '../assets/sponsors_hero.png';
+import sponsorsHero from '../assets/sponsors_hero.webp';
 import { ArrowRight, Sparkles, Download } from 'lucide-react';
 
 interface SponsorLogo {

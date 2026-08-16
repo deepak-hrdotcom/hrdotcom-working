@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, Award, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import agendaHero from '../assets/agenda_hero.png';
+import agendaHero from '../assets/agenda_hero.webp';
 
 interface Presenter {
   name: string;

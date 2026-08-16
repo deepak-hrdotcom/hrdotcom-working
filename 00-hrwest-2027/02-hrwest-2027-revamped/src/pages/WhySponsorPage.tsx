@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Target, CheckCircle, Send, Download } from 'lucide-react';
-import whySponsorHero from '../assets/why_sponsor_hero.png';
-import sponsorsHero from '../assets/sponsors_hero.png';
+import whySponsorHero from '../assets/why_sponsor_hero.webp';
+import sponsorsHero from '../assets/sponsors_hero.webp';
 
 export const WhySponsorPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);

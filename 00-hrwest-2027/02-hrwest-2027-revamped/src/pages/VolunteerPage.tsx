@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import volunteerHero from '../assets/volunteer_hero.png';
+import volunteerHero from '../assets/volunteer_hero.webp';
 import { HeartHandshake, CheckCircle, Send, Sparkles, ChevronRight, Gift, Users, ShieldCheck, Mail, Clock } from 'lucide-react';
 
 export const VolunteerPage: React.FC = () => {

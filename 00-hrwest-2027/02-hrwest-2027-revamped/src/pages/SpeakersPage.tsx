@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Mic2, Sparkles, Star, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import speakersHero from '../assets/speakers_hero.png';
+import speakersHero from '../assets/speakers_hero.webp';
 
 interface Speaker {
   id: number;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Ticket, ShieldCheck, ArrowRight, CheckCircle, Award, Calendar, Users, Sparkles, ChevronRight, Check, User, Briefcase } from 'lucide-react';
-import registerHero from '../assets/register_hero.png';
+import registerHero from '../assets/register_hero.webp';
 
 export const RegisterPage: React.FC = () => {
   const [selectedPass, setSelectedPass] = useState<'attendee' | 'vendor'>('attendee');

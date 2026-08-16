@@ -224,6 +224,7 @@ Do not generate:
 - styled-components
 - framework-specific markup
 - global unscoped CSS
+- Special characters in HTML or CSS comments (`+`, `—`, `–`, `═`, `─`, `&`, emojis) — use only simple alphanumeric ASCII in comments to prevent CMS parsing errors.
 
 ### Validation Rules
 
