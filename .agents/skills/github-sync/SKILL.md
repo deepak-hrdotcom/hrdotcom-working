@@ -11,10 +11,15 @@ You are an expert at project version control and synchronization. This skill is 
 - "shoot GitHub"
 - "Push to GitHub"
 - "Sync project"
+- "Push to repo"
+
+## Strict Execution Boundary
+- **NEVER AUTO-PUSH**: You must NEVER execute a commit or push to GitHub autonomously or as part of completing other coding/documentation tasks.
+- Only run this workflow when the user explicitly commands it in their message.
 
 ## Workflow
 
-When triggered, you must perform the following steps autonomously:
+When triggered by the user, perform the following steps:
 
 1. **Verify Status**: Check for changed files using `git status` and briefly review the diffs using `git diff`.
 2. **Stage Changes**: Add all relevant files using `git add .`.
@@ -24,7 +29,7 @@ When triggered, you must perform the following steps autonomously:
 4. **Push**: Execute `git push origin main` (or the active branch).
 
 ## Guidelines
-- **Efficiency**: Do not open the browser to verify the push unless it fails. 
+- **Explicit Request Only**: Never push automatically without a direct prompt from the user.
 - **Feedback**: Provide a brief summary of what was pushed (e.g., "Updated 3 files and pushed to GitHub").
 - **Errors**: If a push fails due to conflicts, inform the user and ask for guidance before performing a pull or merge.
 

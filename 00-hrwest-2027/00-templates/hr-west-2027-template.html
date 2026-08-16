@@ -9,7 +9,7 @@
     width: 100%;
     max-width: 100%;
   }
-  body > .container-fluid > .row > .ContentArea > {
+  body > .container-fluid > .row > .ContentArea {
     margin-top: 0px;
     margin-bottom: 0px;
   }
@@ -250,7 +250,14 @@ body.sf-nav-main-mode {
   height: auto !important;
   border: 0 !important;
 }
-.hrw27 img.img-cover {
+.hrw27 img.img-cover,
+.hrw27 .img-cover,
+.hrw27 .spk-card-img,
+.hrw27 .testi-card-img,
+.hrw27 .team-card-img,
+.hrw27 .float-img,
+.hrw27 .spk-float-img,
+.hrw27 [class*="-card-img"] {
   height: 100% !important;
   max-height: none !important;
   object-fit: cover !important;
@@ -269,16 +276,13 @@ body.sf-nav-main-mode {
 /* 4. LAYOUT CONTAINERS */
 .hrw27-container {
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: 1360px !important;
   margin: 0 auto !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
-@media (min-width: 768px) {
-  .hrw27-container { padding-left: 32px !important; padding-right: 32px !important; }
-}
-@media (min-width: 1280px) {
-  .hrw27-container { padding-left: 48px !important; padding-right: 48px !important; }
+@media (max-width: 768px) {
+  .hrw27-container { padding-left: 16px !important; padding-right: 16px !important; }
 }
 
 .hrw27 .section-wrap {
@@ -288,15 +292,25 @@ body.sf-nav-main-mode {
   position: relative !important;
   overflow: hidden !important;
 }
+
 .hrw27 .container-inner {
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: 1360px !important;
   margin: 0 auto !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
-@media (min-width: 768px) { .hrw27 .container-inner { padding-left: 32px !important; padding-right: 32px !important; } }
-@media (min-width: 1280px) { .hrw27 .container-inner { padding-left: 48px !important; padding-right: 48px !important; } }
+@media (max-width: 768px) {
+  .hrw27 .container-inner { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+.hrw27 .hero-glow-text {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block !important;
+}
 
 .hrw27 .grid-2 { display: grid !important; grid-template-columns: 1fr !important; gap: 40px !important; }
 @media (min-width: 768px) { .hrw27 .grid-2 { grid-template-columns: 1fr 1fr !important; } }

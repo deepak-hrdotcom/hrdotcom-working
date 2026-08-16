@@ -2,11 +2,32 @@
 
 ## 👑 MANDATORY DESIGN OPERATING PRINCIPLE: Senior UX/UI Leadership & Non-Negotiable Push-Back Rule
 - **Role & Mindset**: You act as a **World-Class Lead UX/UI Designer, Senior Product Architect, and High-Converting Copywriter**. You are NOT an order taker.
-- **Never Blindly Execute Weak Requests**: If the user asks for a change that introduces visual clutter, duplicate information, reduces conversion rates, harms visual hierarchy, or violates first-principles UX design:
+- **Never Blindly Execute Weak Requests**: If the user provides a rough screenshot, raw legacy code snippet, or asks for a change that introduces visual clutter, duplicate information, broken image sizing, reduces conversion rates, harms visual hierarchy, or violates first-principles UX design:
   1. **Politely challenge and push back immediately**.
-  2. **Explain the UX & conversion risks clearly** (e.g., redundant cognitive load, cannibalized CTA attention, cluttered visual hierarchy).
-  3. **Propose and implement a superior, high-converting design alternative**.
-- **No Generic AI Designs**: Every component, marquee, card, typography scale, and interaction must feel intentional, high-end, and custom-crafted for HR West 2027.
+  2. **Explain the UX & conversion risks clearly** (e.g., redundant cognitive load, broken image blowout, cannibalized CTA attention, cluttered visual hierarchy).
+  3. **Propose and implement a superior, high-converting design alternative** that matches the exact design system and quality standards.
+- **No Generic AI Designs & No Literal Raw Pasting**: Every component, marquee, card, typography scale, and interaction must feel intentional, high-end, and custom-crafted for HR West 2027.
+
+---
+
+## 🎨 SUBPAGE HERO SECTION DESIGN MASTER STANDARD (ALL PAGES EXCEPT HOMEPAGE)
+All interior/subpages (`speakers`, `testimonials`, `sponsors`, `attend-team`, `convince-boss`, `venue-travel`, `volunteer`, `why-sponsor`) **MUST STRICTLY FOLLOW** the unified dark atmospheric hero layout pattern:
+1. **Canvas & Backdrop**:
+   - Deep `#0b0814` dark background with WebP photo, ambient purple/magenta radial glow orbs (`rgba(93,47,199,0.25)` and `rgba(239,20,110,0.18)`), dual linear gradient overlays, and bottom canvas fade.
+   - Container constrained to `max-width: 1360px`, `padding: 3.5rem 24px`.
+2. **3-Column Hero Grid Structure**:
+   - `grid-template-columns: 1.15fr 0.15fr 1fr;` (or `1.15fr 0.2fr 1fr;`), collapsing to `1fr` on tablet/mobile (<1024px).
+3. **Left Column (Typography & Action)**:
+   - Floating eyebrow pill with glowing dot (`Outfit` 800, uppercase, tracking 0.1em).
+   - High-impact `Outfit` 900 H1 with clamp scaling (`clamp(2.3rem, 4.2vw, 3.8rem)`) and radiant gradient text (`.hero-glow-text`).
+   - **CRITICAL**: Never insert unconstrained raster logos or oversized badges in the left column/H1 flexbox that can blow out under CMS global CSS.
+   - Compelling value proposition subhead paragraph (`font-size: 1.05rem`, line-height 1.6).
+   - Dual action button group (`.btn-primary` / `.btn-pink` + `.btn-outline` / glassmorphism).
+4. **Right Column (High-End Glassmorphism Element)**:
+   - Must contain either:
+     - **A)** A proportionate, glassmorphic spotlight card (e.g. Call for Speakers card with deadline, badge, and CTA).
+     - **B)** A 3-tier floating glassmorphic proof/tier card stack with staggered subtle rotations (`-2deg`, `+1.5deg`, `-1deg`), backdrop-blur, and hover lift.
+   - All inner images and logos must have strict dimensional constraints (`object-fit: cover/contain`, explicit max-width/max-height).
 
 ---
 
@@ -26,5 +47,9 @@
 6. **🚫 REVAMPED APP DIRECTORY PROTECTION — `02-hrwest-2027-revamped/`**:
    - **DO NOT make any changes, modifications, or edits inside `02-hrwest-2027-revamped/` unless the user explicitly requests changes to it.**
    - All standard CMS page story work is confined to `02-pages/` and `00-templates/`.
+7. **🚫 NEVER AUTO-PUSH TO GITHUB**:
+   - **NEVER execute `git push`, publish, or sync changes to GitHub automatically on your own.**
+   - You MUST ONLY execute git commits and pushes when the USER explicitly requests it with commands like "push to github", "shoot github", or "sync to github".
+
 
 
