@@ -171,6 +171,11 @@ HR.com CMS wrappers often have default `.ContentArea` or `.container` constraint
   - Use `.section-wrap` on sections for full-width background and padding.
   - Use `.container-inner` (max-width `1280px` or `1360px`, margin `0 auto`, padding `0 24px`) for contained content.
 
+- **Strict Wrapper Scoping & Padding-Based Spacing Rules**:
+  - **Always prefix every CSS selector with `.hrw27 `**: Never write bare class selectors like `.spn-header-wrap` or `.spn-grid-section`. All rules must be `.hrw27 .spn-header-wrap` to out-specify CMS global stylesheets.
+  - **Use `padding-bottom` on Section Headers**: Section header wrappers (`.header-wrap`) above grids or cards must use `padding: 0 0 48px 0 !important;` (or `padding-bottom: 56px !important;`) rather than `margin-bottom`, eliminating CMS margin collapsing and ensuring generous breathing room.
+  - **Explicit `margin: 0 !important;` on H2/Eyebrow**: Reset headings with `margin: 0 !important;` to stop Bootstrap 3's global `h1-h6` margins (`margin-bottom: 10px`) from collapsing layout hierarchy.
+
 ---
 
 ## 8. Dual-Row Marquee System ("See Who Shows Up at HRWest")

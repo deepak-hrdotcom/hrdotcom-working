@@ -50,6 +50,10 @@ All interior/subpages (`speakers`, `testimonials`, `sponsors`, `attend-team`, `c
 7. **🚫 NEVER AUTO-PUSH TO GITHUB**:
    - **NEVER execute `git push`, publish, or sync changes to GitHub automatically on your own.**
    - You MUST ONLY execute git commits and pushes when the USER explicitly requests it with commands like "push to github", "shoot github", or "sync to github".
+8. **Strict Wrapper Scoping & Padding-Based Section Spacing**:
+   - Every single CSS selector in subpages and page stories MUST be strictly prefixed with the page wrapper (e.g. `.hrw27 .class-name`). Never leave unscoped class selectors (e.g. `.spn-header-wrap` without `.hrw27`).
+   - To prevent CMS global stylesheets (like Bootstrap 3) from overriding heading margins or collapsing container spacing, section header blocks (`.header-wrap`) above grids/cards must use `padding-bottom` (e.g. `padding: 0 0 48px 0 !important;`) rather than relying solely on `margin-bottom`.
+   - All typography tags (`h1`, `h2`, `h3`, `p`) and critical layout properties in page stories must include `!important` to prevent aggressive CMS global styles from overriding fonts, margins, or line heights.
 
 
 

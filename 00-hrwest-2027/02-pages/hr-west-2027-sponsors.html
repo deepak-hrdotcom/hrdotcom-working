@@ -51,7 +51,7 @@
   }
 
   /* Hero Section */
-  .spn-hero-section {
+  .hrw27 .spn-hero-section {
     position: relative;
     min-height: 480px;
     background-color: #0b0814;
@@ -63,7 +63,7 @@
     align-items: center;
   }
 
-  .spn-hero-overlay {
+  .hrw27 .spn-hero-overlay {
     position: absolute;
     inset: 0;
     background:
@@ -72,7 +72,7 @@
     pointer-events: none;
   }
 
-  .spn-hero-orb-1 {
+  .hrw27 .spn-hero-orb-1 {
     position: absolute;
     top: -80px;
     left: -80px;
@@ -84,7 +84,7 @@
     pointer-events: none;
   }
 
-  .spn-hero-grid {
+  .hrw27 .spn-hero-grid {
     position: relative;
     z-index: 2;
     width: 100%;
@@ -98,29 +98,29 @@
   }
 
   @media (max-width: 1024px) {
-    .spn-hero-grid {
+    .hrw27 .spn-hero-grid {
       grid-template-columns: 1fr;
       padding: 3rem 20px;
       gap: 2.5rem;
     }
   }
 
-  .spn-hero-content {
+  .hrw27 .spn-hero-content {
     max-width: 540px;
   }
 
-  .spn-hero-h1 {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
-    letter-spacing: -0.04em;
-    line-height: 1.1;
-    color: #ffffff;
-    margin: 0 0 1.1rem 0;
+  .hrw27 .spn-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem) !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.1 !important;
+    color: #ffffff !important;
+    margin: 0 0 1.1rem 0 !important;
     white-space: nowrap;
   }
 
-  .spn-hero-glow-text {
+  .hrw27 .spn-hero-glow-text {
     background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -128,39 +128,43 @@
     display: inline-block;
   }
 
-  .spn-hero-p {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.55;
-    margin: 0 0 2rem 0;
+  .hrw27 .spn-hero-p {
+    font-size: 1.05rem !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.55 !important;
+    margin: 0 0 2rem 0 !important;
     max-width: 440px;
-    font-weight: 500;
+    font-weight: 500 !important;
   }
 
-  .spn-hero-btn-primary {
+  .hrw27 .spn-hero-btn-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.55rem;
     padding: 0.8rem 1.8rem;
     background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
     color: #ffffff !important;
+    border: none;
+    outline: none;
     border-radius: 9999px;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.9rem;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.9rem !important;
     text-decoration: none !important;
     box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
   }
 
-  .spn-hero-btn-primary:hover {
+  .hrw27 .spn-hero-btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
     color: #ffffff !important;
   }
 
   /* Floating Logo Mosaic */
-  .spn-floating-mosaic {
+  .hrw27 .spn-floating-mosaic {
     position: relative;
     height: 360px;
     display: flex;
@@ -169,12 +173,12 @@
   }
 
   @media (max-width: 1024px) {
-    .spn-floating-mosaic {
+    .hrw27 .spn-floating-mosaic {
       display: none;
     }
   }
 
-  .spn-float-card {
+  .hrw27 .spn-float-card {
     position: absolute;
     width: 270px;
     height: 76px;
@@ -191,48 +195,48 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .spn-float-card:hover {
+  .hrw27 .spn-float-card:hover {
     transform: scale(1.04) !important;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
     z-index: 10 !important;
   }
 
-  .spn-float-card-1 {
+  .hrw27 .spn-float-card-1 {
     top: 10px;
     left: 0px;
     transform: rotate(-2deg);
     z-index: 4;
   }
 
-  .spn-float-card-2 {
+  .hrw27 .spn-float-card-2 {
     top: 95px;
     left: 20px;
     transform: rotate(1.5deg);
     z-index: 3;
   }
 
-  .spn-float-card-3 {
+  .hrw27 .spn-float-card-3 {
     top: 180px;
     left: 10px;
     transform: rotate(-1deg);
     z-index: 2;
   }
 
-  .spn-float-card-4 {
+  .hrw27 .spn-float-card-4 {
     top: 265px;
     left: 24px;
     transform: rotate(2deg);
     z-index: 1;
   }
 
-  .spn-float-img {
+  .hrw27 .spn-float-img {
     max-height: 46px;
     max-width: 190px;
     object-fit: contain;
     display: block;
   }
 
-  .spn-hero-bottom-fade {
+  .hrw27 .spn-hero-bottom-fade {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -243,151 +247,153 @@
   }
 
   /* ── SPONSOR LOGO WALL GRID SECTION ── */
-  .spn-grid-section {
+  .hrw27 .spn-grid-section {
     background: var(--color-canvas, #fcfcff);
-    padding: 4rem 0 6rem;
+    padding: 5rem 0 6rem !important;
   }
 
-  .spn-grid-container {
+  .hrw27 .spn-grid-container {
     max-width: 1360px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
-  .spn-header-wrap {
-    text-align: center;
-    margin-bottom: 3.5rem;
+  .hrw27 .spn-header-wrap {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 0 48px 0 !important;
   }
 
-  .spn-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #5d2fc7;
-    margin-bottom: 0.65rem;
+  .hrw27 .spn-eyebrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #5d2fc7 !important;
+    margin-bottom: 0.75rem !important;
   }
 
-  .spn-h2 {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-    letter-spacing: -0.03em;
-    color: var(--color-text-primary, #0f172a);
-    margin: 0;
-    line-height: 1.2;
+  .hrw27 .spn-h2 {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem) !important;
+    letter-spacing: -0.03em !important;
+    color: var(--color-text-primary, #0f172a) !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
   }
 
-  .spn-logos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-    align-items: stretch;
+  .hrw27 .spn-logos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 1.5rem !important;
+    align-items: stretch !important;
+    margin-top: 0 !important;
   }
 
-  .spn-logo-card {
-    background: #ffffff;
-    border-radius: 20px;
-    border: 1.5px solid var(--color-subtle, #e2e8f0);
-    padding: 2.25rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 125px;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+  .hrw27 .spn-logo-card {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    border: 1.5px solid var(--color-subtle, #e2e8f0) !important;
+    padding: 2.25rem 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 125px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease !important;
   }
 
-  .spn-logo-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(93, 47, 199, 0.12);
-    border-color: rgba(93, 47, 199, 0.35);
+  .hrw27 .spn-logo-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 16px 36px rgba(93, 47, 199, 0.12) !important;
+    border-color: rgba(93, 47, 199, 0.35) !important;
   }
 
-  .spn-logo-img {
-    max-height: 65px;
-    max-width: 170px;
-    object-fit: contain;
-    filter: grayscale(10%) contrast(105%);
-    transition: all 0.25s ease;
-    display: block;
+  .hrw27 .spn-logo-img {
+    max-height: 65px !important;
+    max-width: 170px !important;
+    object-fit: contain !important;
+    filter: grayscale(10%) contrast(105%) !important;
+    transition: all 0.25s ease !important;
+    display: block !important;
   }
 
-  .spn-logo-card:hover .spn-logo-img {
-    filter: grayscale(0%) contrast(100%);
-    transform: scale(1.04);
+  .hrw27 .spn-logo-card:hover .spn-logo-img {
+    filter: grayscale(0%) contrast(100%) !important;
+    transform: scale(1.04) !important;
   }
 
   /* ── PARTNER CTA BANNER ── */
-  .spn-cta-wrapper {
-    margin-top: 5rem;
-    text-align: center;
+  .hrw27 .spn-cta-wrapper {
+    margin-top: 5rem !important;
+    text-align: center !important;
   }
 
-  .spn-cta-box {
-    background: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.06) 100%);
-    border: 1.5px solid rgba(93, 47, 199, 0.2);
-    border-radius: 24px;
-    padding: 3.5rem 2.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
-    position: relative;
-    overflow: hidden;
+  .hrw27 .spn-cta-box {
+    background: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.06) 100%) !important;
+    border: 1.5px solid rgba(93, 47, 199, 0.2) !important;
+    border-radius: 24px !important;
+    padding: 3.5rem 2.5rem !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06) !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
-  .spn-cta-h3 {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-    color: var(--color-text-primary, #0f172a);
-    margin: 0 0 0.85rem 0;
-    letter-spacing: -0.025em;
+  .hrw27 .spn-cta-h3 {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem) !important;
+    color: var(--color-text-primary, #0f172a) !important;
+    margin: 0 0 0.85rem 0 !important;
+    letter-spacing: -0.025em !important;
   }
 
-  .spn-cta-p {
-    font-size: 1.05rem;
-    color: #475569;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    line-height: 1.6;
+  .hrw27 .spn-cta-p {
+    font-size: 1.05rem !important;
+    color: #475569 !important;
+    max-width: 600px !important;
+    margin: 0 auto 2rem auto !important;
+    line-height: 1.6 !important;
   }
 
-  .spn-cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  .hrw27 .spn-cta-buttons {
+    display: flex !important;
+    gap: 1rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
   }
 
-  .spn-btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.8rem 1.6rem;
-    background: #ffffff;
-    border: 1.5px solid #cbd5e1;
+  .hrw27 .spn-btn-outline {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.8rem 1.6rem !important;
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
     color: #5d2fc7 !important;
-    border-radius: 9999px;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 0.88rem;
+    border-radius: 9999px !important;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.88rem !important;
     text-decoration: none !important;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease !important;
   }
 
-  .spn-btn-outline:hover {
-    background: #f8fafc;
-    border-color: #5d2fc7;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(93, 47, 199, 0.15);
+  .hrw27 .spn-btn-outline:hover {
+    background: #f8fafc !important;
+    border-color: #5d2fc7 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(93, 47, 199, 0.15) !important;
   }
 </style>
 
@@ -407,15 +413,15 @@
         </h1>
 
         <p class="spn-hero-p">
-          Companies that have used HRWest to connect with the West Coast HR community.
+          Companies that have used HRWest to connect with the HR community
         </p>
 
         <div>
-          <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="spn-hero-btn-primary">
+          <button type="button" class="spn-hero-btn-primary" id="fc_1709154293621" name="fc_1709154293621" onclick="loadPopup('fc_1709154293621')">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Download Sponsorship Brochure
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -777,10 +783,10 @@
             Connect directly with over 1,000+ HR directors, CHROs, and talent executives in Silicon Valley.
           </p>
           <div class="spn-cta-buttons">
-            <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="spn-hero-btn-primary">
+            <button type="button" class="spn-hero-btn-primary" id="fc_1709154293621_bottom" name="fc_1709154293621" onclick="loadPopup('fc_1709154293621')">
               Download Sponsorship Brochure
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            </a>
+            </button>
             <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spn-btn-outline">
               Pre-Register for 2027
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
