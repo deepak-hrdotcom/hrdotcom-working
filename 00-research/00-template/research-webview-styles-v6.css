@@ -1,5 +1,6 @@
 /**
- * General Styles
+ * General Styles - Webview Styles v6
+ * Standardized typography scale for HR.com Research WebView
  *
  * @format
  */
@@ -183,11 +184,11 @@ html{
 }
 
 .small-btn {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 
 .large-btn {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
 }
 .dark-line-btn {
   background: transparent;
@@ -204,7 +205,7 @@ html{
 
 /* end global classes */
 
-/* hero sectino */
+/* hero section */
 
 .hero-section {
   background: var(--clr-lavendar);
@@ -245,12 +246,12 @@ html{
   margin: 0;
 }
 .hero-title {
-  font-size: clamp(2.5rem, 2.5vw, 8rem);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
   font-weight: bold;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
   font-weight: bold;
 }
 .hero-label {
@@ -258,11 +259,12 @@ html{
   background: #3b9caa;
   color: #ffffff;
   padding: 0.5rem 1rem;
+  font-size: 0.875rem;
 }
 
 .hero-desc {
-  font-size: clamp(1.5rem, 1.5vw, 1.5rem);
-  line-height: 1.3;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.5;
 }
 
 .hero-info .research-btn-container {
@@ -308,7 +310,7 @@ html{
 
   .hero-desc {
     margin-top: 1rem;
-    line-height: 1.3;
+    line-height: 1.5;
     max-width: 800px;
   }
   .hero-info .research-btn-container {
@@ -327,21 +329,13 @@ html{
 }
 
 .research-sidebar {
-  /* width: 20%; */
   background-color: var(--clr-lavendar);
   overflow: hidden;
-  /* padding: 20px; */
-  /* overflow-y: auto; */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  background: linear-gradient(120deg, #91278f, #6f43d6);
   background: var(--clr-lavendar);
   border-radius: 1rem;
 }
-
-/* .research-sidebar a {
-  color: #ffffff !important;
-} */
 
 .research-sidebar h2 {
   margin-top: 0;
@@ -383,9 +377,6 @@ html{
 
 /* Navigation container */
 .nav-container {
-  /* max-height: 50%; 
-  overflow-y: auto; 
-  margin-bottom: 20px; */
   height: 0;
   padding: 0rem;
   overflow: hidden;
@@ -394,21 +385,21 @@ html{
 
 @media screen and (max-width: 991px){
   .nav-container a{
-    margin-bottom: 1rem !important
+    margin-bottom: 1rem !important;
   }
 }
 
 @media screen and (min-width: 992px) {
   .nav-container {
     height: auto;
-    padding: 2rem;
+    padding: 1.5rem 1.25rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     align-content: space-between;
   }
   .toc-title {
-    padding: 2rem 2rem 0rem 2rem !important;
+    padding: 1.5rem 1.5rem 0rem 1.5rem !important;
     text-align: center;
     grid-template-columns: 1fr !important;
     justify-items: center;
@@ -497,7 +488,7 @@ html{
 .heading-2 {
   padding: 0;
   margin: 0;
-  font-size: clamp(1.8rem, 2vw, 2.5rem) !important;
+  font-size: clamp(1.5rem, 2vw, 2rem) !important;
   font-weight: bold !important;
 }
 
@@ -511,7 +502,6 @@ html{
 .research-content-container {
   height: 100vh;
   overflow-y: auto;
-  /* padding: 20px; */
   display: grid;
   grid-template-columns: 1fr;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -519,10 +509,10 @@ html{
 }
 
 #chapter-1 .hero-title {
-  font-size: clamp(2.5rem, 3vw, 6rem);
-  line-height: 1.2 !important;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.25 !important;
   font-weight: bold;
-  margin-bottom: 4rem !important;
+  margin-bottom: 2.5rem !important;
   text-align: center;
   font-weight: 800;
 }
@@ -577,7 +567,7 @@ html{
 /* Larger Screen View */
 @media screen and (min-width: 992px) {
   .section {
-    padding-block: 5rem;
+    padding-block: 4rem;
   }
 
   .menu-toggle {
@@ -589,7 +579,7 @@ html{
     align-self: stretch;
   }
 }
-/* ab memebers */
+/* ab members */
 .members {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -600,14 +590,12 @@ html{
   background: var(--clr-lavendar);
   border-radius: 10px;
   padding: 2rem;
-  /* border: 1px solid red; */
 }
 .member {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
   align-items: start;
-  /* justify-self: center; */
 }
 .member-img {
   width: 60px;
@@ -617,19 +605,16 @@ html{
 
 .member-info p {
   max-width: 800px;
-
   margin: 0 auto;
-  /* margin-top: 1.5rem; */
-  /* line-height: 1.5; */
-  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  font-size: 1.05rem;
   background-color: transparent;
   font-weight: bold;
 }
 .member small {
   display: block;
   margin-top: 0.5rem;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  line-height: 1.2;
+  font-size: 0.875rem;
+  line-height: 1.3;
 }
 .pink-line-img {
   max-width: 40px;
@@ -638,12 +623,11 @@ html{
 .four-circles {
   max-width: 60px;
   margin: 0 auto;
-  /* display: none; */
 }
 
 @media screen and (min-width: 992px) {
   .members {
-    padding: 4rem;
+    padding: 3rem;
   }
 }
 /* sponsors-section */
@@ -688,23 +672,18 @@ html{
 
 /* cta section */
 .cta-section {
-  /* margin-bottom: 5rem;; */
   padding-block: 3rem !important;
-  /* padding-bottom: 0 !important; */
 }
 .cta-center {
   background: var(--clr-lavendar);
   background: linear-gradient(120deg, #91278f, #6f43d6);
   padding: 1.5rem 1rem;
   color: var(--clr-white);
-  /* max-width: 1140px; */
   border-radius: 15px;
   display: grid;
   place-items: center;
   justify-items: center;
   padding-block: 3rem;
-  /* max-width: 900px; */
-  /* padding: 2rem !important; */
 }
 
 .research-btn-container {
@@ -713,13 +692,13 @@ html{
   gap: 0.5rem;
   justify-content: center;
   justify-items: stretch;
-  padding-block: 3rem;
+  padding-block: 2rem;
   text-align: center;
   align-items: center;
 }
 
 .button {
-  font-size: clamp(1.5rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
 }
 
 .green-btn {
@@ -742,7 +721,7 @@ html{
 @media screen and (min-width: 768px) {
   .research-btn-container {
     grid-template-columns: 0 auto auto auto;
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 
@@ -757,11 +736,11 @@ html{
 }
 @media screen and (min-width: 992px) {
   #research-content {
-    padding: 5rem;
+    padding: 3.5rem 4rem;
   }
 }
 .chapter-container {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 .chapter-container::after {
   content: "";
@@ -787,22 +766,22 @@ html{
 }
 
 .chapter-title {
-  font-size: clamp(2.5rem, 2.5vw, 3.5rem);
+  font-size: clamp(1.75rem, 2.2vw, 2.5rem);
   margin-bottom: 1.5rem;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .highlight h3 {
-  font-size: clamp(1.6rem, 1vw, 1.7rem) !important;
+  font-size: clamp(1.15rem, 1.2vw, 1.3rem) !important;
   font-weight: bold;
 }
 
 .chapter-subtitle,
 .research-finding {
-  font-size: clamp(1.8rem, 1.5vw, 2.2rem);
+  font-size: clamp(1.25rem, 1.5vw, 1.6rem);
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   color: var(--clr-blue);
 }
 
@@ -816,9 +795,9 @@ html{
 .highlight p,
 .major-finding p,
 .research-list li,
-.research-sublist li,
-.card p {
-  font-size: clamp(1.5rem, 1vw, 1.8rem) !important;
+.research-sublist li {
+  font-size: clamp(1rem, 1.05vw, 1.1rem) !important;
+  line-height: 1.6 !important;
 }
 
 .research-list,
@@ -838,46 +817,44 @@ html{
   content: '';
   position: absolute;
   left: 0;
-  top: 5px;
-  width: 8px;
-  height: 8px;
+  top: 7px;
+  width: 7px;
+  height: 7px;
   background-color: var(--clr-green);
   border-radius: 50%;
 }
 
 @media screen and (max-width: 500px) {
   .research-list li::before,
-.research-sublist li::before {
-  top: 8px;
-  width: 6px;
-  height: 6px;
+  .research-sublist li::before {
+    top: 8px;
+    width: 6px;
+    height: 6px;
+  }
+  .research-list li,
+  .research-sublist li {
+    position: relative;
+    padding-left: 15px !important;
+    margin-bottom: 0.5rem;
+  }
 
-}
-.research-list li,
-.research-sublist li {
-  position: relative;
-  padding-left: 15px !important;
-  margin-bottom: 0.5rem;
-}
-
-.btn-container{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  justify-content: stretch;
-  justify-items: center;
+  .btn-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-content: stretch;
+    justify-items: center;
+  }
 }
 
-}
 .chart-img {
   display: block;
   object-fit: cover;
-  /* max-width: 550px; */
   width: 100%;
-  margin: 4rem auto;
+  margin: 3rem auto;
   margin-block: 0;
   border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 8px;
+  border-radius: 8px;
 }
 .research-sublist li {
   margin-bottom: 0;
@@ -890,7 +867,7 @@ html{
 }
 
 .major-finding {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .major-finding p:nth-child(1) {
@@ -908,36 +885,32 @@ html{
 }
 
 /* scrollbar */
-/* Target the entire scrollbar */
 #research-content::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 12px;
 }
 
-/* Style the track (background) */
 #research-content::-webkit-scrollbar-track {
-  background: #4ac4d6; /* Light gray background */
-  border-radius: 10px; /* Rounded corners */
+  background: #4ac4d6;
+  border-radius: 10px;
 }
 
-/* Style the thumb (scroll handle) */
 #research-content::-webkit-scrollbar-thumb {
   background: linear-gradient(270deg, #4ac3d5, #ef4a3c);
   background: #ffffff;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
   height: 20px;
 }
 
-/* Optional: Style the thumb when hovered */
 #research-content::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(270deg, #4ac3d5, #fab416);
   background: #2a343e;
 }
 
 #research-content {
-  overflow-y: auto; /* Enables vertical scrolling */
-  scroll-behavior: smooth; /* Enables smooth scrolling */
+  overflow-y: auto;
+  scroll-behavior: smooth;
   overflow-x: hidden;
-  height: 100%; /* Ensure it takes up the available height */
+  height: 100%;
 }
 
 .research-content-container {
@@ -954,8 +927,8 @@ DID YOU KNOW
 ================ */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 350px));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 350px));
+  gap: 2.5rem;
   justify-content: space-between;
 }
 
@@ -983,20 +956,20 @@ DID YOU KNOW
 }
 
 .card .info {
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.25rem;
   padding-bottom: 1rem;
 }
 
 .card .title {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 3vw, 3.25rem);
   color: var(--clr-primary-500);
   margin-bottom: 0.5rem;
 }
 
 .card p {
-  line-height: 1.5;
-  color: var(--clr-primary-500);
-
+  line-height: 1.5 !important;
+  color: var(--clr-primary-500) !important;
+  font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
   text-align: center;
 }
 .card h4 {
@@ -1010,14 +983,14 @@ DID YOU KNOW
   justify-content: flex-start;
   gap: 12px;
   max-width: 100%;
-  margin: 4rem auto;
+  margin: 3rem auto;
   flex-wrap: nowrap;
   flex-direction: row;
 }
 
 .custom-chart-content {
   flex: 1 1 auto;
-  max-width: calc(100% - 60px); /* Leaves space for 2 icons */
+  max-width: calc(100% - 60px);
 }
 
 .custom-chart-img {
@@ -1082,7 +1055,7 @@ DID YOU KNOW
 }
 
 .small-text {
-  font-size: clamp(0.85rem, 1.5vw, 1.2rem) !important;
+  font-size: 0.875rem !important;
 }
 
 /* nav header */
@@ -1161,7 +1134,7 @@ a:hover {
   opacity: 0;
 }
 .nave__menu {
-  width: 100%; /*position:relative;*/
+  width: 100%;
 }
 @media screen and (max-width: 1118px) {
   .nave__menu {
@@ -1351,14 +1324,13 @@ a:hover {
 
 /* css fixes for new landing page 2025*/
 .title h3 {
-  font-size: clamp(1.5rem, 5vw, 1.8rem);
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
   font-weight: 500;
   margin-bottom: 1rem;
-  line-height: 1.5;
-  font-weight: 500;
+  line-height: 1.4;
 }
 .section-head {
-  font-size: clamp(1.9rem, 2vw, 2rem) !important;
+  font-size: clamp(1.2rem, 1.5vw, 1.35rem) !important;
   font-weight: normal !important;
   color: #2a343e !important;
   line-height: 1.3 !important;
@@ -1366,18 +1338,18 @@ a:hover {
   font-weight: bold !important;
 }
 .section-head-v2 {
-  margin-block: 2rem !important;
+  margin-block: 1.5rem !important;
 }
 
 .card p {
   line-height: 1.5 !important;
   color: var(--clr-primary-500);
-  font-size: 1.05rem !important;
+  font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
   text-align: center;
 }
 
 .info p {
-  font-size: 14px !important;
+  font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
   font-weight: 400;
   color: #2a343e;
   line-height: 1.5;
@@ -1385,23 +1357,20 @@ a:hover {
   background: none !important;
   opacity: 0.85;
   max-width: 45rem;
-  /* text-align: left; */
 }
 
 .advisory-board p {
   max-width: 800px;
   margin: 0 auto;
-  /* margin-top: 1.5rem; */
-  /* line-height: 1.5; */
-  font-size: clamp(1.5rem, 1vw, 1.5rem);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
   background-color: transparent;
 }
 
 .member small {
   display: block;
   margin-top: 0.5rem;
-  font-size: clamp(1.2rem, 1vw, 1.2rem);
-  line-height: 1.5;
+  font-size: 0.875rem;
+  line-height: 1.3;
 }
 
 .cta .section-content {
@@ -1409,9 +1378,7 @@ a:hover {
   background: linear-gradient(120deg, #91278f, #6f43d6);
   padding: 1.5rem 1rem;
   color: var(--clr-white);
-  /* max-width: 1140px; */
   border-radius: 15px;
-  /* padding: 2rem!important; */
 }
 
 .cta h2 {
@@ -1425,7 +1392,7 @@ a:hover {
 
 @media screen and (min-width: 800px) {
   .cta .section-content {
-    padding: 4rem 4rem;
+    padding: 3rem 4rem;
   }
   .cta .section-content .btn-container {
     grid-template-columns: 0 auto auto auto;
@@ -1436,20 +1403,18 @@ a:hover {
 .wrr-sec-img {
   width: 100%;
   display: block;
-  width: 100%;
   border-radius: 15px;
 }
 
 .info p,
 .card p {
-  font-size: clamp(1.5rem, 1vw, 1.8rem) !important;
+  font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
   color: var(--clr-primary-500) !important;
 }
 
 .cta-title{
-      font-size: clamp(1.8rem, 2vw, 2.5rem) !important;
-    color: var(--clr-white);
-
+  font-size: clamp(1.5rem, 2vw, 2rem) !important;
+  color: var(--clr-white);
 }
 
 .chapter-container a{
@@ -1459,6 +1424,6 @@ a:hover {
 }
 
 .chapter-container a:hover{
-font-weight: bold !important;
+  font-weight: bold !important;
 }
 /* end css fixes for new landing page 2025 */

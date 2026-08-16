@@ -260,15 +260,24 @@
     text-align: left;
   }
   
-  .new-hero-instruction {
-    font-size: 26px;
+  .speaker-section-header {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 25px;
+  }
+
+  .speaker-section-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2a343e;
+    margin: 0 0 8px 0;
+  }
+
+  .speaker-instruction {
+    font-size: 15px;
     font-weight: 600;
-    color: #ef5924; /* Orange color from theme */
-    margin: 30px 0 0 0;
-    padding: 15px 40px;
-    background-color: rgba(239, 89, 36, 0.08);
-    border-radius: 50px;
-    display: inline-block;
+    color: #ef5924;
+    margin: 0;
   }
 
   /* Call for Speakers Banner */
@@ -342,10 +351,7 @@
       text-align: center;
       font-size: 32px;
     }
-    .new-hero-instruction {
-      font-size: 20px;
-      padding: 12px 25px;
-    }
+
   }
 </style>
 <div class="hr-west_container-fluid" style="display: none;">
@@ -402,15 +408,16 @@
     <div class="call-for-speakers-box">
       <h3>🎤 Call for Speakers</h3>
       <p>Deadline to Apply: <span>October 30, 2026</span></p>
-      <a class="call-for-speakers-btn" href="#">Apply to Speak</a>
+      <a class="call-for-speakers-btn" id="fc_1718298636298" name="fc_1718298636298" onclick="loadPopup('fc_1718298636298')" style="cursor: pointer;">Apply to Speak</a>
     </div>
-
-    <p class="new-hero-instruction">Click on speakers' photos to see details on their sessions!</p>
   </div>
 </div>
 
 <div class="hr-west_container">
-<h3 class="centitle mrtp50 mrtb40" style="display: none;">HRWest 2026 Speakers</h3>
+<div class="speaker-section-header">
+  <h2>Past HRWest Speakers</h2>
+  <p class="speaker-instruction">Click on speakers' photos to see details on their sessions!</p>
+</div>
 
 <div class="evnt_spk_wrapper speakersection"><!--speaker start-->
 <div class="mot_js_card"><a class="js_card_img" data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://www.hr.com/en/about_us/splash_pages/dr-alireza-boloorchi_mox7msxe.html" target="_blank"><img alt="HRWest HR Conference Speaker Dr. Alireza Boloorchi" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/alireza-boloorchi-350x350.jpg" /> </a>

@@ -1,0 +1,296 @@
+ AI and PM
+ Finding: Half of organizations have no plans
+to use AI in performance management
+ Half of organizations report they will not use AI in performance
+management at all over the next two years, while another 26% are only
+exploring or piloting the technology. Just 17% are using AI in a limited
+capacity, and a mere 8% are using it broadly across the organization,
+meaning only one in four organizations have moved past the
+experimentation stage.
+ This is a notable contrast to the previous finding, where many expect
+ performance management to become more AI-enabled in the next two
+ years. Together, these results suggest that while thereʼs directional
+ interest in AI, actual adoption is still in the early stages. Organizations
+ may be waiting for clearer use cases, proven ROI, or greater confidence
+ in the technology before committing further.
+ The Talent Strategy Groupʼs 2026   Performance Management Report
+ found that AI adoption in performance management remains nascent
+and largely experimental across every process area measured, from goal
+setting to compensation decisions.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+47 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ To what extent is your organization currently using
+AI for performance management and/or leadership?
+(select the one that best applies)
+ 50%
+Not at all
+Exploring or piloting 26%
+Using in a limited
+17%
+capacity
+Using broadly across
+8%
+the organization
+ 0   10   20   30   40   50
+ Editorʼs Note: In the original data, 8% of respondents stated that they “donʼt know.” We
+ removed those responses and recalculated, so this only shows percentages for those
+who answered the question substantively.
+Just 8% use AI in PM broadly
+across the organization
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+48 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ Finding: For most organizations, AI has yet
+to reshape performance expectations, but
+early signals point to rising demands
+ For a third of organizations (32%), performance expectations havenʼt
+changed due to AI, and another third (33%) simply donʼt know if or how
+they have, suggesting many organizations havenʼt yet connected AI
+adoption to how they evaluate performance. Where change is being felt,
+it centers on expecting employees to actually use AI in their work (20%),
+ followed by expectations for higher quality (15%), rising concerns about
+data privacy or monitoring (14%), higher volume of output expected
+(12%), and faster turnaround (11%).
+ How has AI changed performance expectations in
+your organization? (select all that apply)
+Expectation that
+ 20%
+employees use AI in
+their work
+Higher quality of work
+15%
+expected
+Rising concerns about
+14%
+data privacy or
+monitoring
+Higher volume of
+ A fifth say
+12%
+output expected
+thereʼs an
+Faster turnaround
+ expectation that
+11%
+expected
+employees use
+Greater expectation to
+AI in their work
+handle complex or 11%
+strategic tasks
+Increased stress due to
+7%
+higher performance
+expectations
+Expectations have not
+32%
+changed
+33%
+Don't know
+ 0   5   10   15   20   25   30   35
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+49 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ Finding: Trust and integration issues are the
+biggest barriers to using AI in performance
+management
+ Concerns about accuracy or reliability (34%) and data privacy or ethical
+concerns (32%) top the list of challenges organizations face with AI in
+performance management, suggesting that trust in the technology is
+ the primary hurdle. Lack of integration with HR systems and insufficient
+training, both at 25% follow closely, pointing to practical, fixable gaps
+in infrastructure and preparedness. Notably, 24% report no significant
+ challenges, showing a meaningful subset of organizations have
+navigated adoption smoothly.
+Employee distrust or resistance (23%) outpaces manager distrust or
+ resistance (18%), suggesting skepticism runs deeper among those being
+ evaluated than those doing the evaluating. Leadership buy-in, cost, and
+ measuring impact rank as comparatively smaller barriers, well behind
+ concerns about trust and reliability.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+50 HR.com’s Future of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ What challenges has your organization encountered in
+using AI for performance management and/or performance
+leadership? (select all that apply)
+Concerns about
+ 34%
+accuracy or reliability
+Data privacy or ethical
+32%
+concerns
+Lack of integration
+25%
+with HR systems
+Insu   cient training 25%
+Employee distrust or
+23%
+resistance
+Manager distrust or
+18%
+resistance
+Lack of leadership
+17%
+buy-in
+Di   culty measuring
+15%
+impact
+Cost 13%
+No signi   cant
+24%
+challenges
+ 0   5   10   15   20   25   30
+About one-quarter of
+employees distrust/are
+resistant to using AI for PM
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+51 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ Finding: Most say their organization will use
+AI to help write performance reviews
+ Uncertainty around AI use has dropped sharply, with just 10% now saying
+they donʼt know how AI will be used, down from about a third last year.
+Adoption has also broadened considerably across specific purposes:
+ 59% plan to use AI to help write performance reviews in the next two
+years—up by 21 percentage points since last year.
+ While personalized feedback is lower down on the list, it saw the largest
+ relative jump, rising to 35% from just 16% last year. This suggests that
+we may see an even greater increase in adoption over the next two years.
+Gartner research found managers using AI in performance management
+saved an average of four hours across process steps, provided the
+organization paired it with clear guardrails and manager accountability.
+ Efficiency gains seem to follow organizations that treat AI as a support
+ to managerial judgment rather than a replacement for it.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+52 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ For what purposes will your organization use artificial
+ intelligence (AI) in performance management over the
+next two years? (select all that apply)
+Help write
+ 59%
+performance reviews
+Automate
+57%
+administrative tasks
+Enhance goal-setting
+52%
+and tracking
+Improve performance
+48%
+analysis and
+assessment
+Provide training
+47%
+recommendations
+Provide reminders or nudges for
+performance-related activities
+41%
+(e.g., feedback, check-ins, goal updates)
+Allow continuous
+40%
+performance management
+Offer personalized
+35%
+performance feedback
+Enable real-time
+24%
+tracking of
+performance metrics
+Don't know 10%
+ 0   10   20   30   40   50
+Nearly half plan to use
+AI to provide training
+recommendations
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+53 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ Finding: PM leaders are twice as likely to
+use AI to enable real-time tracking in the
+near future
+ PM leader organizations are twice as likely as laggards to plan on using
+ Results of
+AI to enable real-time tracking (41% vs. 20%) and are a little over two
+Chi-square Test
+times as likely to offer personalized performance feedback (47% vs.
+20%) over the next two years. Theyʼre also nearly twice as likely to use AI
+ A chi-square test of
+ to improve performance analysis and assessment (65% vs. 33%).
+independence shows
+that PM leaders are
+ We can infer that leader organizations are approaching AI as a tool
+ significantly more likely
+ for deeper, more individualized support, further reinforcing the more
+ than PM laggards to use
+development-focused, employee-centered approach that distinguishes
+AI for PM in all listed
+them from laggards.
+ways over the next two
+years.
+ For what purposes will your organization use artificial
+ intelligence (AI) in performance management over
+the next two years? (select all that apply)
+ 41%
+Enable real-time
+tracking of performance
+metrics
+20%
+47%
+Offer personalized
+Just 20% of
+performance feedback
+20% PM laggards
+plan to use
+AI to offer
+65%
+personalized
+Improve performance
+analysis and
+performance
+assessment
+33%
+feedback
+ 0   10   20   30   40   50   60
+ PM leaders   PM laggards
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+54 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
+ HRRI Strategic Recommendations
+ Based on our research, please consider the following suggestions:
+ 1. Build organizational understanding and strategy around AI use in PM.
+ Half of organizations still donʼt plan to use AI in performance management at all, and another 26% are
+ only exploring or piloting it. Develop a clear, deliberate plan for how AI supports, rather than replaces,
+human judgment before adoption pressure outpaces strategy.
+ 2. Pair AI adoption with clear guardrails and accountability to address distrust.
+ Accuracy and reliability concerns (34%) and data privacy or ethical concerns (32%) remain the top
+barriers to AI adoption in PM, ahead of integration and training gaps. This is compounded by a trust
+ gap: Nearly a quarter of respondents believe employees distrust AI, and 18% believe managers feel the
+ same way. Left unaddressed, this distrust will slow adoption and undermine the accuracy and fairness
+people expect from AI-assisted reviews.
+ 3. Stay current as AI use in PM accelerates.
+ Uncertainty about how AI will be used has dropped sharply, from about a third of organizations last year
+ to just 10% now, while use across writing reviews (59%), goal tracking (52%), and personalized feedback
+(35%, nearly doubled) has risen quickly. Given how fast this is moving, keep monitoring developments
+both inside and outside the PM function so your strategy doesnʼt fall behind actual practice.
+www.hr.com   |   877-472-6648   |   copyright © HR.com 2026
+55 HR.com’s F uture of Managing and Leading Performance 2026
+
+--- PAGE BREAK ---
+
