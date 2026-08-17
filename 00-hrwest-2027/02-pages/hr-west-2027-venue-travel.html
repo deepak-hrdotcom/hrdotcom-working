@@ -32,14 +32,16 @@
     }
   }
   applyEarlyReset();
-  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyEarlyReset);
+  }
 })();
 </script>
 
 <style>
   /* VENUE AND TRAVEL PAGE STYLES AND DESIGN TOKENS */
   .hrw27 {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
     color: var(--color-text-primary, #0f172a);
     background: var(--color-canvas, #fcfcff);
     line-height: 1.5;
@@ -51,7 +53,7 @@
   }
 
   /* Hero Section */
-  .loc-hero-section {
+  .hrw27 .loc-hero-section {
     position: relative;
     min-height: 480px;
     background-color: #0b0814;
@@ -63,7 +65,7 @@
     align-items: center;
   }
 
-  .loc-hero-overlay {
+  .hrw27 .loc-hero-overlay {
     position: absolute;
     inset: 0;
     background:
@@ -72,7 +74,7 @@
     pointer-events: none;
   }
 
-  .loc-hero-orb-1 {
+  .hrw27 .loc-hero-orb-1 {
     position: absolute;
     top: -80px;
     left: -80px;
@@ -84,7 +86,7 @@
     pointer-events: none;
   }
 
-  .loc-hero-orb-2 {
+  .hrw27 .loc-hero-orb-2 {
     position: absolute;
     bottom: -60px;
     left: 30%;
@@ -96,42 +98,67 @@
     pointer-events: none;
   }
 
-  .loc-hero-grid {
+  .hrw27 .loc-hero-grid {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1360px;
     margin: 0 auto;
-    padding: 3rem 24px;
+    padding: 3.5rem 24px;
     display: grid;
-    grid-template-columns: 1.15fr 0.3fr 1fr;
+    grid-template-columns: 1.15fr 0.2fr 1fr;
     align-items: center;
     gap: 1.5rem;
   }
 
   @media (max-width: 1024px) {
-    .loc-hero-grid {
+    .hrw27 .loc-hero-grid {
       grid-template-columns: 1fr;
       padding: 3rem 20px;
       gap: 2.5rem;
     }
   }
 
-  .loc-hero-content {
+  .hrw27 .loc-hero-content {
     max-width: 540px;
   }
 
-  .loc-hero-h1 {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    color: #ffffff;
-    margin: 0 0 1.1rem 0;
+  .hrw27 .loc-eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.95rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.76rem !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+    margin-bottom: 1.25rem;
   }
 
-  .loc-hero-glow-text {
+  .hrw27 .loc-eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    background: #ef146e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ef146e;
+  }
+
+  .hrw27 .loc-hero-h1 {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem) !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.05 !important;
+    color: #ffffff !important;
+    margin: 0 0 1.1rem 0 !important;
+  }
+
+  .hrw27 .loc-hero-glow-text {
     background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -139,15 +166,15 @@
     display: inline-block;
   }
 
-  .loc-hero-p {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.6;
-    margin: 0 0 2.25rem 0;
+  .hrw27 .loc-hero-p {
+    font-size: 1.05rem !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.6 !important;
+    margin: 0 0 2rem 0 !important;
     max-width: 440px;
   }
 
-  .loc-hero-btn-primary {
+  .hrw27 .loc-hero-btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
@@ -155,21 +182,21 @@
     background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
     color: #ffffff !important;
     border-radius: 9999px;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.9rem;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.9rem !important;
     text-decoration: none !important;
     box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .loc-hero-btn-primary:hover {
+  .hrw27 .loc-hero-btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
     color: #ffffff !important;
   }
 
-  .loc-hero-btn-outline {
+  .hrw27 .loc-hero-btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
@@ -180,21 +207,21 @@
     border: 1.5px solid rgba(255, 255, 255, 0.35);
     color: #ffffff !important;
     border-radius: 9999px;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 0.86rem;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.86rem !important;
     text-decoration: none !important;
     transition: all 0.2s ease;
   }
 
-  .loc-hero-btn-outline:hover {
+  .hrw27 .loc-hero-btn-outline:hover {
     background: rgba(255, 255, 255, 0.22);
     border-color: #ffffff;
     transform: translateY(-2px);
   }
 
   /* Floating Info Cards Stack */
-  .loc-floating-mosaic {
+  .hrw27 .loc-floating-mosaic {
     position: relative;
     height: 360px;
     display: flex;
@@ -203,12 +230,12 @@
   }
 
   @media (max-width: 1024px) {
-    .loc-floating-mosaic {
+    .hrw27 .loc-floating-mosaic {
       display: none;
     }
   }
 
-  .loc-float-card {
+  .hrw27 .loc-float-card {
     position: absolute;
     width: 275px;
     background: rgba(255, 255, 255, 0.11);
@@ -224,34 +251,34 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .loc-float-card:hover {
+  .hrw27 .loc-float-card:hover {
     transform: scale(1.04) !important;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
     z-index: 10 !important;
   }
 
-  .loc-float-card-1 {
+  .hrw27 .loc-float-card-1 {
     top: 15px;
     left: 0px;
     transform: rotate(-2deg);
     z-index: 3;
   }
 
-  .loc-float-card-2 {
+  .hrw27 .loc-float-card-2 {
     top: 125px;
     left: 20px;
     transform: rotate(1.5deg);
     z-index: 2;
   }
 
-  .loc-float-card-3 {
+  .hrw27 .loc-float-card-3 {
     top: 235px;
     left: 10px;
     transform: rotate(-1deg);
     z-index: 1;
   }
 
-  .loc-float-icon-wrap {
+  .hrw27 .loc-float-icon-wrap {
     width: 42px;
     height: 42px;
     border-radius: 12px;
@@ -263,21 +290,21 @@
     flex-shrink: 0;
   }
 
-  .loc-float-title {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.92rem;
-    color: #ffffff;
+  .hrw27 .loc-float-title {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    color: #ffffff !important;
     margin-bottom: 0.15rem;
   }
 
-  .loc-float-sub {
-    font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.65);
-    font-weight: 500;
+  .hrw27 .loc-float-sub {
+    font-size: 0.72rem !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    font-weight: 500 !important;
   }
 
-  .loc-hero-bottom-fade {
+  .hrw27 .loc-hero-bottom-fade {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -287,19 +314,19 @@
     pointer-events: none;
   }
 
-  /* ── VENUE SPOTLIGHT CARD ── */
-  .loc-spotlight-section {
+  /* Venue Spotlight Card */
+  .hrw27 .loc-spotlight-section {
     background: var(--color-canvas, #fcfcff);
     padding: 3.5rem 0 2rem;
   }
 
-  .loc-container {
+  .hrw27 .loc-container {
     max-width: 1360px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
-  .loc-spotlight-card {
+  .hrw27 .loc-spotlight-card {
     background: #ffffff;
     border-radius: 24px;
     border: 1.5px solid rgba(93, 47, 199, 0.2);
@@ -309,8 +336,8 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
-  .loc-spotlight-photo-tile {
-    background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1200&auto=format&fit=crop');
+  .hrw27 .loc-spotlight-photo-tile {
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/south-fransisco-conference-center.webp');
     background-size: cover;
     background-position: center;
     padding: 3.5rem 2.5rem;
@@ -323,21 +350,21 @@
     min-height: 340px;
   }
 
-  .loc-spotlight-overlay {
+  .hrw27 .loc-spotlight-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(239,20,110,0.85) 0%, rgba(145,39,140,0.92) 100%);
   }
 
-  .loc-spotlight-badge {
+  .hrw27 .loc-spotlight-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     padding: 0.35rem 0.85rem;
@@ -345,26 +372,26 @@
     margin-bottom: 1.5rem;
   }
 
-  .loc-spotlight-content {
+  .hrw27 .loc-spotlight-content {
     padding: 3.25rem 2.75rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  /* ── QUICK TRAVEL STATS ── */
-  .loc-stats-section {
+  /* Quick Travel Stats */
+  .hrw27 .loc-stats-section {
     background: var(--color-canvas, #fcfcff);
     padding: 2rem 0 3.5rem;
   }
 
-  .loc-stats-grid {
+  .hrw27 .loc-stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
   }
 
-  .loc-stat-card {
+  .hrw27 .loc-stat-card {
     background: #ffffff;
     border-radius: 20px;
     padding: 2.25rem 1.75rem;
@@ -374,12 +401,12 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .loc-stat-card:hover {
+  .hrw27 .loc-stat-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(93, 47, 199, 0.08);
   }
 
-  .loc-stat-icon-wrap {
+  .hrw27 .loc-stat-icon-wrap {
     width: 48px;
     height: 48px;
     border-radius: 14px;
@@ -391,10 +418,10 @@
     box-shadow: 0 4px 14px rgba(93, 47, 199, 0.3);
   }
 
-  .loc-stat-val {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: 1.85rem;
+  .hrw27 .loc-stat-val {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 1.85rem !important;
     background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -402,37 +429,37 @@
     margin-bottom: 0.3rem;
   }
 
-  .loc-stat-title {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.98rem;
-    color: var(--color-text-primary, #0f172a);
-    margin-bottom: 0.45rem;
+  .hrw27 .loc-stat-title {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.98rem !important;
+    color: var(--color-text-primary, #0f172a) !important;
+    margin-bottom: 0.45rem !important;
   }
 
-  .loc-stat-desc {
-    font-size: 0.86rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
+  .hrw27 .loc-stat-desc {
+    font-size: 0.86rem !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
   }
 
-  /* ── ACCOMMODATIONS & DINING ── */
-  .loc-hotels-section {
+  /* Accommodations and Dining */
+  .hrw27 .loc-hotels-section {
     background: #f8fafc;
     padding: 4.5rem 0 5rem;
     border-top: 1px solid var(--color-subtle, #e2e8f0);
     border-bottom: 1px solid var(--color-subtle, #e2e8f0);
   }
 
-  .loc-hotels-grid {
+  .hrw27 .loc-hotels-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-bottom: 2.5rem;
   }
 
-  .loc-hotel-card {
+  .hrw27 .loc-hotel-card {
     background: #ffffff;
     border-radius: 20px;
     padding: 2.25rem;
@@ -440,19 +467,19 @@
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
   }
 
-  .loc-badge-purple {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #5d2fc7;
+  .hrw27 .loc-badge-purple {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.72rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #5d2fc7 !important;
     background: rgba(93, 47, 199, 0.1);
     padding: 0.25rem 0.65rem;
     border-radius: 9999px;
   }
 
-  .loc-parking-box {
+  .hrw27 .loc-parking-box {
     background: #ffffff;
     border-radius: 20px;
     padding: 2.25rem;
@@ -460,13 +487,25 @@
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
   }
 
-  /* ── GOOGLE MAP EMBED ── */
-  .loc-map-section {
+  /* Google Map Embed */
+  .hrw27 .loc-map-section {
     background: var(--color-canvas, #fcfcff);
     padding: 4.5rem 0 5.5rem;
   }
 
-  .loc-map-wrap {
+  .hrw27 .loc-map-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 820px !important;
+    margin: 0 auto 2.25rem auto !important;
+    padding: 0 0 12px 0 !important;
+  }
+
+  .hrw27 .loc-map-wrap {
     border-radius: 24px;
     overflow: hidden;
     border: 2px solid rgba(93, 47, 199, 0.2);
@@ -487,9 +526,14 @@
       
       <!-- Left: Content Block -->
       <div class="loc-hero-content">
+        <div class="loc-eyebrow-pill">
+          <span class="loc-eyebrow-dot"></span>
+          <span>VENUE AND LOCATION</span>
+        </div>
+
         <h1 class="loc-hero-h1">
-          South San<br />
-          <span class="loc-hero-glow-text">Francisco</span>
+          South<br />
+          <span class="loc-hero-glow-text">San Francisco</span>
         </h1>
 
         <p class="loc-hero-p">
@@ -497,13 +541,9 @@
         </p>
 
         <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-          <a href="#map" class="loc-hero-btn-primary">
-            Get Directions
+          <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary">
+            View on Google Maps
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-          </a>
-          <a href="#hotels" class="loc-hero-btn-outline">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path><path d="M10 9h4"></path><path d="M10 13h4"></path><path d="M10 17h4"></path></svg>
-            Book Hotel
           </a>
         </div>
       </div>
@@ -570,10 +610,10 @@
               Silicon Valley 2027
             </span>
 
-            <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.4rem; opacity: 0.95; line-height: 1.1;">
+            <div style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800; font-size: 1.4rem; opacity: 0.95; line-height: 1.1;">
               San Francisco
             </div>
-            <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(2.4rem, 4vw, 3.5rem); letter-spacing: -0.04em; line-height: 1; margin: 0.25rem 0 1rem 0; color: #ffffff;">
+            <h2 style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 900 !important; font-size: clamp(2.4rem, 4vw, 3.5rem) !important; letter-spacing: -0.04em !important; line-height: 1 !important; margin: 0.25rem 0 1rem 0 !important; color: #ffffff !important;">
               California
             </h2>
           </div>
@@ -586,22 +626,18 @@
 
         <!-- Right: Overview Copy -->
         <div class="loc-spotlight-content">
-          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5d2fc7; margin-bottom: 0.5rem; display: block;">
-            Venue & Accommodation Overview
+          <span style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5d2fc7; margin-bottom: 0.5rem; display: block;">
+            Venue and Location Overview
           </span>
           
-          <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 2rem; font-weight: 400;">
-            We are thrilled to bring the <strong style="color: #0f172a; font-weight: 700;">HRWest Conference</strong> back to the San Francisco Bay Area! Hosted at the modern <strong style="color: #0f172a; font-weight: 700;">South San Francisco Conference Center</strong>, with our official partner hotel at the <strong style="color: #0f172a; font-weight: 700;">DoubleTree by Hilton San Francisco Airport North Bayfront</strong> just steps away, offering a seamless setting for learning, executive networking, and team growth.
+          <p style="font-size: 1.05rem !important; line-height: 1.7 !important; color: #334155 !important; margin-bottom: 2rem !important; font-weight: 400;">
+            We are thrilled to bring the <strong style="color: #0f172a; font-weight: 700;">HRWest Conference</strong> back to the San Francisco Bay Area! Hosted at the modern <strong style="color: #0f172a; font-weight: 700;">South San Francisco Conference Center</strong>, with official accommodations at the <strong style="color: #0f172a; font-weight: 700;">DoubleTree by Hilton San Francisco Airport North Bayfront</strong> just steps away, offering a seamless setting for learning, executive networking, and team growth.
           </p>
 
           <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-            <a href="#map" class="loc-hero-btn-primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">
-              View Map & Directions
+            <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">
+              View Map &amp; Directions
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </a>
-            <a href="#hotels" class="loc-hero-btn-outline" style="color: #5d2fc7 !important; border-color: #cbd5e1; background: #ffffff; padding: 0.75rem 1.5rem; font-size: 0.88rem;">
-              Book Hotel Group Rate
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path><path d="M10 9h4"></path><path d="M10 13h4"></path><path d="M10 17h4"></path></svg>
             </a>
           </div>
         </div>
@@ -649,20 +685,20 @@
     </div>
   </section>
 
-  <!-- 4. Official Accommodations & Dining Guide -->
+  <!-- 4. Official Accommodations and Dining Guide -->
   <section id="hotels" class="loc-hotels-section">
     <div class="loc-container">
       
       <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-        <div style="width: 44px; height: 44px; borderRadius: 12px; background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(93,47,199,0.3);">
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(93,47,199,0.3);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path><path d="M10 9h4"></path><path d="M10 13h4"></path><path d="M10 17h4"></path></svg>
         </div>
-        <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(1.6rem, 2.8vw, 2.2rem); letter-spacing: -0.03em; color: var(--color-text-primary, #0f172a); margin: 0;">
-          Official Accommodations & Dining Guide
+        <h2 style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 900 !important; font-size: clamp(1.6rem, 2.8vw, 2.2rem) !important; letter-spacing: -0.03em !important; color: var(--color-text-primary, #0f172a) !important; margin: 0 !important;">
+          Official Accommodations &amp; Dining Guide
         </h2>
       </div>
-      <p style="font-size: 0.95rem; color: #64748b; margin: 0 0 2.5rem 0; max-width: 600px;">
-        Special group room rates and nearby amenities for HRWest 2027 attendees.
+      <p style="font-size: 0.95rem !important; color: #64748b !important; margin: 0 0 2.5rem 0 !important; max-width: 600px;">
+        Special hotel details and nearby amenities for HRWest 2027 attendees.
       </p>
 
       <div class="loc-hotels-grid">
@@ -670,7 +706,7 @@
         <!-- Official Hotel -->
         <div class="loc-hotel-card">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; gap: 0.5rem;">
-            <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin: 0;">
+            <h3 style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800 !important; font-size: 1.15rem !important; color: #0f172a !important; margin: 0 !important;">
               DoubleTree by Hilton San Francisco South Airport Blvd
             </h3>
             <span class="loc-badge-purple">Official Hotel</span>
@@ -679,40 +715,40 @@
             275 South Airport Blvd, South San Francisco, CA 94080 • Tel: +1 650-873-3550
           </div>
           <div style="font-size: 0.86rem; color: #334155; margin-bottom: 1.5rem; padding: 0.85rem; background: linear-gradient(135deg, rgba(93,47,199,0.06), rgba(239,20,110,0.06)); border-radius: 10px; border-left: 3px solid #5d2fc7;">
-            Steps away from the conference center • Bayfront walking paths • On-site dining & lounge • Fitness center
+            Steps away from the conference center • Bayfront walking paths • On-site dining &amp; lounge • Fitness center
           </div>
           <a href="tel:+16508733550" class="loc-hero-btn-outline" style="color: #5d2fc7 !important; border-color: #cbd5e1; background: #ffffff; padding: 0.65rem 1.35rem; font-size: 0.85rem;">
-            Contact Hotel for Group Rate
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            Call Hotel: +1 650-873-3550
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </a>
         </div>
 
         <!-- Dining & Cafes Guide -->
         <div class="loc-hotel-card" style="border-color: rgba(239, 20, 110, 0.25);">
-          <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin: 0 0 0.75rem 0;">
-            Nearby Restaurants & Cafes Guide
+          <h3 style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800 !important; font-size: 1.15rem !important; color: #0f172a !important; margin: 0 0 0.75rem 0 !important;">
+            Nearby Restaurants &amp; Cafes Guide
           </h3>
-          <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem; line-height: 1.6;">
+          <p style="font-size: 0.9rem !important; color: #64748b !important; margin-bottom: 1.5rem !important; line-height: 1.6 !important;">
             Explore curated dining options, coffee shops, and lunch spots within walking distance or a short drive from the South San Francisco Conference Center.
           </p>
           <a href="https://drive.google.com/file/d/1z1sFpPJC-fvZcnRpm2xKzJ_svqWfCwt9/view" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem;">
-            View Restaurants & Cafes Guide
+            View Restaurants &amp; Cafes Guide
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
 
       </div>
 
-      <!-- Parking & Shuttles Information Box -->
+      <!-- Parking and Shuttles Information Box -->
       <div class="loc-parking-box">
-        <h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 1.25rem; color: #0f172a; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+        <h3 style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800 !important; font-size: 1.25rem !important; color: #0f172a !important; margin: 0 0 1rem 0 !important; display: flex; align-items: center; gap: 0.5rem;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><rect x="3" y="11" width="18" height="9" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          Parking & Shuttles Information
+          Parking &amp; Shuttles Information
         </h3>
-        <p style="font-size: 0.9rem; color: #475569; line-height: 1.65; margin-bottom: 1rem;">
+        <p style="font-size: 0.9rem !important; color: #475569 !important; line-height: 1.65 !important; margin-bottom: 1rem !important;">
           <strong>Complimentary Parking:</strong> Free shared parking is available across the South San Francisco Conference Center, Park Pointe Hotel, and DoubleTree Hotel lots, plus an off-site lot located between Travelodge and Best Western Plus Grosvenor Hotel. No permit or validation required.
         </p>
-        <p style="font-size: 0.9rem; color: #475569; line-height: 1.65; margin: 0;">
+        <p style="font-size: 0.9rem !important; color: #475569 !important; line-height: 1.65 !important; margin: 0 !important;">
           <strong>Public Transit Shuttles:</strong> Free commuter shuttles run Monday through Friday during commute hours connecting the Conference Center directly to the South San Francisco BART Station, CalTrain Station, and Ferry Terminal.
         </p>
       </div>
@@ -724,17 +760,21 @@
   <section id="map" class="loc-map-section">
     <div class="loc-container">
       
-      <div style="text-align: center; margin-bottom: 2.25rem;">
-        <div style="display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5d2fc7; margin-bottom: 0.5rem;">
+      <div class="loc-map-header">
+        <div style="display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800 !important; font-size: 0.78rem !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; color: #5d2fc7; margin-bottom: 0.5rem;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           Venue Location
         </div>
-        <h2 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(1.6rem, 2.8vw, 2.3rem); letter-spacing: -0.025em; margin: 0; color: #0f172a;">
+        <h2 style="font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 900 !important; font-size: clamp(1.6rem, 2.8vw, 2.3rem) !important; letter-spacing: -0.025em !important; margin: 0 0 0.35rem 0 !important; color: #0f172a !important; text-align: center !important;">
           South San Francisco Conference Center
         </h2>
-        <p style="font-size: 0.95rem; color: #64748b; margin-top: 0.35rem;">
+        <p style="font-size: 0.95rem !important; color: #64748b !important; margin: 0 0 1.25rem 0 !important; text-align: center !important;">
           255 South Airport Blvd, South San Francisco, CA 94080
         </p>
+        <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem;">
+          Open in Google Maps
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
       </div>
 
       <div class="loc-map-wrap">
@@ -753,3 +793,4 @@
   </section>
 
 </div>
+
