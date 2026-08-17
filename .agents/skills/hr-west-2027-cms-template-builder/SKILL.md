@@ -34,6 +34,12 @@ This skill defines the technical, architectural, and design standards for portin
   - Does **not** include `<!DOCTYPE>`, `<html>`, `<head>`, or `<body>` tags.
   - Fully self-contained visual hierarchy matching the React prototype with 100% pure HTML, scoped CSS, and inline SVGs.
 
+### ⚠️ MANDATORY MULTI-FILE TEMPLATE SYNCHRONIZATION RULE:
+Because the HR.com CMS runs `hr-west-2027-register.html` and `hr-west-2027-agenda.html` as standalone template pages (which embed their own copy of the Master Header, Master Footer, CSS Tokens, and JS Controller), **ANY CHANGE made to `00-templates/hr-west-2027-template.html` (such as navigation links, URLs, topbar dates, menu items, footer links, scripts, or global styles) MUST ALWAYS BE SIMULTANEOUSLY SYNCHRONIZED TO:**
+1. `02-pages/hr-west-2027-register.html`
+2. `02-pages/hr-west-2027-agenda.html`
+**Failure to keep these 3 files synchronized creates broken navigation and inconsistent branding across the platform.**
+
 ---
 
 ## 2. Design System & Tokens (Visionary Violet + Pink Accent)

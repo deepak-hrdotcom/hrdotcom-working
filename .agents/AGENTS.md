@@ -59,6 +59,11 @@ All interior/subpages (`speakers`, `testimonials`, `sponsors`, `attend-team`, `c
    - **Only the subpage hero section** uses the dark atmospheric backdrop (`#0b0814`).
    - **All body sections, content grids, feature cards, callout strips, and banner blocks** below the hero MUST strictly use clean, premium light canvas backgrounds (`#fcfcff`, `#ffffff`, `#f8fafc`) with subtle borders (`#e2e8f0` / `rgba(93,47,199,0.18)`), purple/magenta accents, and dark typography (`#0f172a`, `#334155`, `#475569`).
    - **NEVER use dark or black backgrounds** (`#0b0814`, `#1e1035`, `#2c093a`, etc.) for body sections, reservation strips, feature containers, or cards.
+10. **🔄 MANDATORY MULTI-FILE TEMPLATE SYNCHRONIZATION**:
+   - Because `hr-west-2027-register.html` and `hr-west-2027-agenda.html` in `02-pages/` are standalone CMS pages that embed their own copies of the master header, navigation, footer, CSS tokens, and JavaScript controller, **ANY CHANGE made to `00-templates/hr-west-2027-template.html` MUST ALWAYS BE SIMULTANEOUSLY SYNCHRONIZED TO BOTH:**
+     1. `02-pages/hr-west-2027-register.html`
+     2. `02-pages/hr-west-2027-agenda.html`
+
 
 
 
