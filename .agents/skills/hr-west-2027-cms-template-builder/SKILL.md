@@ -49,6 +49,10 @@ This skill defines the technical, architectural, and design standards for portin
   - Surface: `hsl(210, 40%, 98%)`
   - Elevated / Cards: `hsl(0, 0%, 100%)`
   - Borders: `hsl(214, 32%, 91%)`
+- **Light Canvas Standard for Body Sections (NO Dark Body Backgrounds)**:
+  - **Only the subpage hero** uses the dark atmospheric backdrop (`#0b0814`).
+  - **All interior sections, content grids, feature cards, and callout strips below the hero** MUST strictly use clean, light canvas backgrounds (`#fcfcff`, `#ffffff`, `#f8fafc`) with subtle borders and dark typography (`#0f172a`, `#475569`).
+  - **NEVER use dark or black backgrounds** (`#0b0814`, `#1e1035`, `#2c093a`, etc.) for body sections, reservation strips, or feature cards.
 
 ---
 

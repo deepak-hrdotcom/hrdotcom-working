@@ -55,6 +55,10 @@ All interior/subpages (`speakers`, `testimonials`, `sponsors`, `attend-team`, `c
    - To prevent CMS global stylesheets (like Bootstrap 3) from overriding heading margins or collapsing container spacing, section header blocks (`.header-wrap`) above grids/cards must use `padding-bottom` (e.g. `padding: 0 0 48px 0 !important;`) rather than relying solely on `margin-bottom`.
    - All typography tags (`h1`, `h2`, `h3`, `p`) and critical layout properties in page stories must include `!important` to prevent aggressive CMS global styles from overriding fonts, margins, or line heights.
    - **Mandatory Section Header Centering Architecture**: All center-aligned section headers (`.header-wrap`, `.section-header`) must enforce `display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important;` with `margin: 0 auto !important; text-align: center !important; width: 100% !important;` on all child headings, eyebrows, and subheads.
+9. **🚫 NO DARK BACKGROUNDS FOR BODY SECTIONS (LIGHT CANVAS STANDARD)**:
+   - **Only the subpage hero section** uses the dark atmospheric backdrop (`#0b0814`).
+   - **All body sections, content grids, feature cards, callout strips, and banner blocks** below the hero MUST strictly use clean, premium light canvas backgrounds (`#fcfcff`, `#ffffff`, `#f8fafc`) with subtle borders (`#e2e8f0` / `rgba(93,47,199,0.18)`), purple/magenta accents, and dark typography (`#0f172a`, `#334155`, `#475569`).
+   - **NEVER use dark or black backgrounds** (`#0b0814`, `#1e1035`, `#2c093a`, etc.) for body sections, reservation strips, feature containers, or cards.
 
 
 
