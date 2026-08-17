@@ -1,34 +1,5 @@
-<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
-<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
-<!--<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/Custom-Style.css">-->
-
-<style type="text/css">
-  body > .container-fluid > .row > .ContentArea > .container {
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 100%;
-    max-width: 100%;
-  }
-  body > .container-fluid > .row > .ContentArea {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  #intro-header {
-    display: none;
-  }
-  a,
-  a:hover,
-  a:link {
-    text-decoration: none;
-  }
-  .sf-nav-main,
-  .socialshare {
-    display: none !important;
-  }
-</style>
-
-<style>
-  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+<style id="hrw27-fouc-blocker">
+  /* 0ms Synchronous FOUC and CMS Widget Suppression */
   #intro-header,
   section#intro-header,
   div#intro-header,
@@ -46,26 +17,100 @@
   #hradbtmwrapper {
     display: none !important;
   }
-  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+  html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
   }
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body > .ContentArea,
+  body > .container-fluid > .row > .ContentArea,
+  .ContentArea {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body > .ContentArea > .container,
+  body > .container-fluid > .row > .ContentArea > .container,
+  .ContentArea > .container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .FooterBG .container,
+  .FooterMidBG .container {
+    gap: 0 !important;
+  }
+  .header,
+  header.header,
+  div.header,
+  #header,
+  .HeaderWrap,
+  .HeaderBG,
+  .headertopbg,
+  .TopHeader,
+  div[class*="header"] {
+    border: 0 !important;
+    padding-block: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 99999 !important;
+  }
+  .header::before {
+    display: none !important;
+  }
+  a, a:hover, a:link {
+    text-decoration: none;
+  }
 </style>
-<div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
-<div>$vendorLeadForm</div>
 
 <script>
+/* Instant 0ms Synchronous Padding and FOUC Eliminator */
 (function() {
-  function applyEarlyReset() {
+  function eliminateFOUC() {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty('padding-top', '0px', 'important');
+      document.documentElement.style.setProperty('margin-top', '0px', 'important');
+    }
     if (document.body) {
       document.body.style.setProperty('padding-top', '0px', 'important');
       document.body.style.setProperty('margin-top', '0px', 'important');
     }
   }
-  applyEarlyReset();
-  document.addEventListener('DOMContentLoaded', applyEarlyReset);
+  eliminateFOUC();
+  if (window.MutationObserver) {
+    var observer = new MutationObserver(function() {
+      eliminateFOUC();
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class', 'style'],
+      childList: true,
+      subtree: true
+    });
+    window.addEventListener('DOMContentLoaded', eliminateFOUC);
+    window.addEventListener('load', function() {
+      eliminateFOUC();
+      setTimeout(function() { observer.disconnect(); }, 3500);
+    });
+  }
 })();
 </script>
+
+<div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
+<div>$vendorLeadForm</div>
+
+<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,83 +118,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* 1. CMS ENVIRONMENT RESETS */
-body {
-  background: #ffffff !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  
-}
-body > .ContentArea,
-body > .container-fluid > .row > .ContentArea,
-.ContentArea {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  padding: 0px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
-body > .ContentArea > .container,
-body > .container-fluid > .row > .ContentArea > .container,
-.ContentArea > .container {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
-#hradbtmwrapper {
-  display: none !important;
-}
-/* Hide CMS default story container */
-#intro-header,
-section#intro-header,
-div#intro-header {
-  display: none !important;
-}
-.sf-nav-main,
-.socialshare,
-#content {
-  display: none !important;
-}
-.FooterBG .container,
-.FooterMidBG .container {
-  gap: 0 !important;
-}
-.header,
-header.header,
-div.header,
-#header,
-.HeaderWrap,
-.HeaderBG,
-.headertopbg,
-.TopHeader,
-div[class*="header"] {
-  border: 0 !important;
-  padding-block: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 99999 !important;
-}
-.header::before {
-  display: none !important;
-}
-.TopLink_new, .TopBar {
-  display: none !important;
-}
-.sf-nav-main-mode {
-    padding-top: 0px !important;
-}
-body.sf-nav-main-mode {
-    padding-top: 0px !important;
-}
-
 /* 2. DESIGN TOKEN SYSTEM */
 :root, .hrw27 {
   --color-brand-authority:       hsl(255, 65%, 20%);
