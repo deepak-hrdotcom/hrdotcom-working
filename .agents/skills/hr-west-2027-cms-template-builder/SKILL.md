@@ -174,6 +174,11 @@ HR.com CMS wrappers often have default `.ContentArea` or `.container` constraint
 - **Strict Wrapper Scoping & Padding-Based Spacing Rules**:
   - **Always prefix every CSS selector with `.hrw27 `**: Never write bare class selectors like `.spn-header-wrap` or `.spn-grid-section`. All rules must be `.hrw27 .spn-header-wrap` to out-specify CMS global stylesheets.
   - **Use `padding-bottom` on Section Headers**: Section header wrappers (`.header-wrap`) above grids or cards must use `padding: 0 0 48px 0 !important;` (or `padding-bottom: 56px !important;`) rather than `margin-bottom`, eliminating CMS margin collapsing and ensuring generous breathing room.
+  - **Mandatory Section Header Center Alignment Architecture**: To prevent aggressive CMS stylesheets (like Bootstrap 3 or parent left-align containers) from misaligning title blocks, all centered section headers must enforce:
+    - Wrapper: `display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; max-width: 820px !important; margin-left: auto !important; margin-right: auto !important;`
+    - Child Eyebrow: `display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 auto 12px auto !important; text-align: center !important;`
+    - Child H2: `text-align: center !important; width: 100% !important; margin: 0 auto 14px auto !important;`
+    - Child Subhead: `text-align: center !important; width: 100% !important; max-width: 740px !important; margin: 0 auto !important; text-wrap: balance !important;`
   - **Explicit `margin: 0 !important;` on H2/Eyebrow**: Reset headings with `margin: 0 !important;` to stop Bootstrap 3's global `h1-h6` margins (`margin-bottom: 10px`) from collapsing layout hierarchy.
 
 ---

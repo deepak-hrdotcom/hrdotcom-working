@@ -50,10 +50,12 @@ All interior/subpages (`speakers`, `testimonials`, `sponsors`, `attend-team`, `c
 7. **🚫 NEVER AUTO-PUSH TO GITHUB**:
    - **NEVER execute `git push`, publish, or sync changes to GitHub automatically on your own.**
    - You MUST ONLY execute git commits and pushes when the USER explicitly requests it with commands like "push to github", "shoot github", or "sync to github".
-8. **Strict Wrapper Scoping & Padding-Based Section Spacing**:
+8. **Strict Wrapper Scoping, Padding Spacing & Header Centering**:
    - Every single CSS selector in subpages and page stories MUST be strictly prefixed with the page wrapper (e.g. `.hrw27 .class-name`). Never leave unscoped class selectors (e.g. `.spn-header-wrap` without `.hrw27`).
    - To prevent CMS global stylesheets (like Bootstrap 3) from overriding heading margins or collapsing container spacing, section header blocks (`.header-wrap`) above grids/cards must use `padding-bottom` (e.g. `padding: 0 0 48px 0 !important;`) rather than relying solely on `margin-bottom`.
    - All typography tags (`h1`, `h2`, `h3`, `p`) and critical layout properties in page stories must include `!important` to prevent aggressive CMS global styles from overriding fonts, margins, or line heights.
+   - **Mandatory Section Header Centering Architecture**: All center-aligned section headers (`.header-wrap`, `.section-header`) must enforce `display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important;` with `margin: 0 auto !important; text-align: center !important; width: 100% !important;` on all child headings, eyebrows, and subheads.
+
 
 
 
