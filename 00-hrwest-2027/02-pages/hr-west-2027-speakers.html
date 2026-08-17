@@ -64,6 +64,7 @@
     --gradient-brand: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
     --gradient-brand-soft: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.05) 100%);
     --gradient-pink: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
+    --gradient-pink-secondary: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
     --brand-glow-08: rgba(93, 47, 199, 0.08);
     --brand-glow-15: rgba(93, 47, 199, 0.15);
     --brand-glow-25: rgba(93, 47, 199, 0.25);
@@ -779,21 +780,25 @@
       <!-- Left Column: Content -->
       <div class="spk-hero-content">
         
-        <!-- Live Call for Speakers Pill -->
-        <div class="spk-hero-eyebrow">
-          <span class="spk-hero-eyebrow-dot"></span>
-          <span>HRWest 2027 · Call for Speakers</span>
+        <!-- Sleek Date and Call for Speakers Eyebrow Badge -->
+        <div style="display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.12); border: 1.5px solid rgba(239, 20, 110, 0.35); border-radius: 9999px; padding: 0.35rem 1rem 0.35rem 0.45rem; margin-bottom: 1.25rem; width: fit-content; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
+          <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: 9999px; padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.76rem; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">
+            March 23-24, 2027
+          </span>
+          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; display: flex; align-items: center; gap: 0.4rem; letter-spacing: 0.02em;">
+            South San Francisco, CA · <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #f472b6;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Call for Speakers
+          </span>
         </div>
 
         <!-- Headline -->
         <h1 class="spk-hero-h1">
-          HRWest Conference<br />
-          <span class="spk-hero-glow-text">Speakers</span>
+          HRWest 2027:<br />
+          <span class="spk-hero-glow-text">Conference Speakers</span>
         </h1>
 
         <!-- Subtitle Paragraph -->
         <p class="spk-hero-p">
-          We invite HR executives, legal innovators, and practitioners to present keynotes, panels, and practical roundtables.
+          We invite HR executives, legal innovators, and workforce practitioners to present before <strong style="color: #ffffff;">500+ HR decision-makers</strong> in South San Francisco.
         </p>
 
         <!-- CTAs -->
@@ -803,7 +808,7 @@
             name="fc_1718298636298"
             onclick="loadPopup('fc_1718298636298')"
             class="spk-hero-btn-primary"
-            style="cursor: pointer;"
+            style="cursor: pointer; background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);"
           >
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
             Apply to Speak
@@ -1664,13 +1669,13 @@
     <div class="container-inner">
       <div class="spk-bottom-cta-card">
         <div>
-          <div class="spk-eyebrow" style="margin-bottom: 12px;">
+          <div class="spk-eyebrow" style="margin-bottom: 12px; background: rgba(239,20,110,0.08); border-color: rgba(239,20,110,0.25); color: var(--color-brand-pink);">
             <span>🎤</span>
             <span>Join the 2027 Lineup</span>
           </div>
           <h3 class="spk-bottom-h3">Apply to Speak at HRWest 2027</h3>
           <p class="spk-bottom-p">
-            Are you pioneering breakthroughs in AI-driven HR, workforce legal strategy, talent acquisition, or executive leadership? Present your insights before 1,000+ senior leaders in South San Francisco.
+            Are you pioneering breakthroughs in AI-driven HR, workforce legal strategy, talent acquisition, or executive leadership? Present your insights before <strong style="color: var(--color-brand-pink);">1,000+ senior leaders</strong> in South San Francisco.
           </p>
 
           <div class="spk-bottom-btns">
@@ -1679,7 +1684,7 @@
               name="fc_1718298636298"
               onclick="loadPopup('fc_1718298636298')"
               class="spk-hero-btn-primary"
-              style="cursor: pointer;"
+              style="cursor: pointer; background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239,20,110,0.35);"
             >
               Submit Speaker Proposal
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

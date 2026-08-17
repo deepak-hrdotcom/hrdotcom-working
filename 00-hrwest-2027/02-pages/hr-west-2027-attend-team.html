@@ -1,8 +1,55 @@
 
 
+<style id="hrw27-fouc-blocker">
+  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+</style>
+
 <style>
   /* ATTEND AS A TEAM PAGE STYLES AND DESIGN TOKENS */
   .hrw27 {
+    --color-brand-purple: #5d2fc7;
+    --color-brand-purple-dark: #371885;
+    --color-brand-pink: #ef146e;
+    --color-brand-pink-hover: #d00c5c;
+    --color-brand-authority: #120826;
+    --color-canvas: #fcfcff;
+    --color-surface: #ffffff;
+    --color-surface-subtle: #f8f7fd;
+    --color-subtle: #eae5f7;
+    --color-border-subtle: rgba(93, 47, 199, 0.12);
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748b;
+    --gradient-brand: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    --gradient-brand-soft: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.05) 100%);
+    --gradient-pink: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
+    --gradient-pink-secondary: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
+    --brand-glow-08: rgba(93, 47, 199, 0.08);
+    --brand-glow-15: rgba(93, 47, 199, 0.15);
+    --brand-glow-25: rgba(93, 47, 199, 0.25);
+    --brand-pink-glow-25: rgba(239, 20, 110, 0.25);
+    --brand-pink-glow-40: rgba(239, 20, 110, 0.40);
     font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
     color: var(--color-text-primary, #0f172a) !important;
     background: var(--color-canvas, #fcfcff) !important;
@@ -773,10 +820,8 @@
       
       <!-- Left: Content Block -->
       <div class="team-hero-content">
-        <div class="team-eyebrow-pill">
-          <span class="team-eyebrow-dot"></span>
-          Team Registration &amp; Group Passes
-        </div>
+        
+   
 
         <h1 class="team-hero-h1">
           Bring Your<br />
@@ -784,11 +829,11 @@
         </h1>
 
         <p class="team-hero-p">
-          Save money on HRWest &amp; help your team thrive. Unlock exclusive group rates starting at just $229 per person, earn 24+ recertification credits, and equip your entire department with actionable strategies.
+          Save money on HRWest &amp; help your team thrive. Unlock exclusive group rates starting at just <strong style="color: #ffffff;">$229 per person</strong>, earn <strong style="color: #f472b6;">24+ SHRM &amp; HRCI credits</strong>, and equip your entire department with actionable strategies.
         </p>
 
         <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-          <a href="#rates" class="team-hero-btn-primary">
+          <a href="#rates" class="team-hero-btn-primary" style="background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);">
             View Group Rates
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
           </a>
@@ -811,7 +856,7 @@
             <div class="team-float-tier">Early-Bird Rate</div>
             <div class="team-float-lbl">Ends Jan 15, 2027</div>
           </div>
-          <span class="team-float-badge">From $229 / pp</span>
+          <span class="team-float-badge" style="background: var(--gradient-pink); color: #ffffff !important; border: none; font-weight: 900; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">From $229 / pp</span>
         </div>
 
         <!-- Card 2: Regular -->
@@ -929,7 +974,7 @@
               Maximum per-person savings for departmental offsites, multi-location leaders, and enterprise HR organizations.
             </p>
           </div>
-          <a href="mailto:hrwest@hr.com?subject=HR%20West%202027%2010%2B%20Team%20Pass%20Inquiry" class="team-hero-btn-primary" style="justify-content: center; width: 100%; padding: 0.75rem 1.4rem; font-size: 0.88rem;">
+          <a href="mailto:hrwest@hr.com?subject=HR%20West%202027%2010%2B%20Team%20Pass%20Inquiry" class="team-hero-btn-primary" style="justify-content: center; width: 100%; padding: 0.75rem 1.4rem; font-size: 0.88rem; background: var(--gradient-pink); box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35);">
             Claim 10+ Team Pass
           </a>
         </div>
@@ -938,7 +983,7 @@
         <div class="team-offer-card">
           <div>
             <h3 class="team-offer-h5 vip-offer">Exclusive offer for teams of 10+</h3>
-            <div style="display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: #ffffff; background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%); padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.85rem;">
+            <div style="display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: #ffffff; background: var(--gradient-pink); padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.85rem; box-shadow: 0 2px 8px rgba(239,20,110,0.25);">
               VIP Exclusive Perks
             </div>
             <p class="team-offer-body" style="font-size: 0.94rem; color: #334155;">
@@ -963,7 +1008,7 @@
             Contact <a href="mailto:hrwest@hr.com" style="color: #5d2fc7; font-weight: 700; text-decoration: underline;">hrwest@hr.com</a> to arrange invoice billing, reserve team seating, or customize your organization's special conference experience.
           </p>
         </div>
-        <a href="mailto:hrwest@hr.com?subject=HR%20West%202027%20Custom%20Team%20Billing%20Inquiry" class="team-contact-btn">
+        <a href="mailto:hrwest@hr.com?subject=HR%20West%202027%20Custom%20Team%20Billing%20Inquiry" class="team-contact-btn" style="background: var(--gradient-pink); box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35);">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           Email hrwest@hr.com
         </a>
@@ -1072,12 +1117,16 @@
 
       <!-- High-Impact Closing CTA Banner -->
       <div class="team-cta-banner">
+        <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; background: rgba(239, 20, 110, 0.08); border: 1.5px solid rgba(239, 20, 110, 0.25); border-radius: 9999px; padding: 4px 14px; width: fit-content; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 13px; color: #ef146e; margin-left: auto; margin-right: auto;">
+          <span style="background: var(--gradient-pink); color: #fff; padding: 2px 8px; border-radius: 9999px; font-size: 10px; text-transform: uppercase;">Early Bird</span>
+          Save Up to 35% on Team Passes
+        </div>
         <h3 class="team-cta-h3">Ready to Empower Your Entire HR Team?</h3>
         <p class="team-cta-p">
           Secure early-bird group pricing before January 15, 2027. We make corporate registration, PO generation, and attendee substitution simple and hassle-free.
         </p>
         <div class="team-cta-btns">
-          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="team-hero-btn-primary" style="padding: 0.95rem 2.2rem; font-size: 0.96rem;">
+          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="team-hero-btn-primary" style="padding: 0.95rem 2.2rem; font-size: 0.96rem; background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);">
             Register Your Team Today
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

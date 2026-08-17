@@ -41,6 +41,28 @@
 <style>
   /* VENUE AND TRAVEL PAGE STYLES AND DESIGN TOKENS */
   .hrw27 {
+    --color-brand-purple: #5d2fc7;
+    --color-brand-purple-dark: #371885;
+    --color-brand-pink: #ef146e;
+    --color-brand-pink-hover: #d00c5c;
+    --color-brand-authority: #120826;
+    --color-canvas: #fcfcff;
+    --color-surface: #ffffff;
+    --color-surface-subtle: #f8f7fd;
+    --color-subtle: #eae5f7;
+    --color-border-subtle: rgba(93, 47, 199, 0.12);
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748b;
+    --gradient-brand: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%);
+    --gradient-brand-soft: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.05) 100%);
+    --gradient-pink: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
+    --gradient-pink-secondary: linear-gradient(135deg, #ef146e 0%, #ff4d8d 100%);
+    --brand-glow-08: rgba(93, 47, 199, 0.08);
+    --brand-glow-15: rgba(93, 47, 199, 0.15);
+    --brand-glow-25: rgba(93, 47, 199, 0.25);
+    --brand-pink-glow-25: rgba(239, 20, 110, 0.25);
+    --brand-pink-glow-40: rgba(239, 20, 110, 0.40);
     font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
     color: var(--color-text-primary, #0f172a);
     background: var(--color-canvas, #fcfcff);
@@ -526,9 +548,9 @@
       
       <!-- Left: Content Block -->
       <div class="loc-hero-content">
-        <div class="loc-eyebrow-pill">
+        <div class="loc-eyebrow-pill" style="background: rgba(255, 255, 255, 0.12); border-color: rgba(239, 20, 110, 0.35); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
           <span class="loc-eyebrow-dot"></span>
-          <span>VENUE AND LOCATION</span>
+          <span>Venue &amp; Travel Guide</span>
         </div>
 
         <h1 class="loc-hero-h1">
@@ -537,11 +559,11 @@
         </h1>
 
         <p class="loc-hero-p">
-          The South San Francisco Conference Center: minutes from SFO, with hotels, dining, and BART access on-site.
+          The South San Francisco Conference Center: minutes from SFO, with <strong style="color: #f472b6;">partner hotels</strong>, dining, and free BART shuttles on-site.
         </p>
 
         <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-          <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary">
+          <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);">
             View on Google Maps
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
           </a>
@@ -635,7 +657,7 @@
           </p>
 
           <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-            <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">
+            <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem; background: var(--gradient-pink); box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35);">
               View Map &amp; Directions
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </a>
@@ -731,7 +753,7 @@
           <p style="font-size: 0.9rem !important; color: #64748b !important; margin-bottom: 1.5rem !important; line-height: 1.6 !important;">
             Explore curated dining options, coffee shops, and lunch spots within walking distance or a short drive from the South San Francisco Conference Center.
           </p>
-          <a href="https://drive.google.com/file/d/1z1sFpPJC-fvZcnRpm2xKzJ_svqWfCwt9/view" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem;">
+          <a href="https://drive.google.com/file/d/1z1sFpPJC-fvZcnRpm2xKzJ_svqWfCwt9/view" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem; background: var(--gradient-pink); box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35);">
             View Restaurants &amp; Cafes Guide
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
@@ -771,7 +793,7 @@
         <p style="font-size: 0.95rem !important; color: #64748b !important; margin: 0 0 1.25rem 0 !important; text-align: center !important;">
           255 South Airport Blvd, South San Francisco, CA 94080
         </p>
-        <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem;">
+        <a href="https://maps.google.com/?cid=18274515519901358653&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAFKgSoqNcy" target="_blank" rel="noopener noreferrer" class="loc-hero-btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.85rem; background: var(--gradient-pink); box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35);">
           Open in Google Maps
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
         </a>
