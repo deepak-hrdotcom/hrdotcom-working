@@ -1,0 +1,2215 @@
+<style id="hrw27-fouc-blocker">
+  /* 0ms Synchronous FOUC and CMS Widget Suppression */
+  #intro-header,
+  section#intro-header,
+  div#intro-header,
+  .sf-nav-main,
+  .socialshare,
+  #socialshare,
+  .social-share,
+  .floating-social,
+  .st-sticky-share-buttons,
+  div[class*="socialshare"],
+  div[id*="socialshare"],
+  #content,
+  .TopLink_new,
+  .TopBar,
+  #hradbtmwrapper {
+    display: none !important;
+  }
+  html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body > .ContentArea,
+  body > .container-fluid,
+  body > .container-fluid > .row,
+  body > .container-fluid > .row > .ContentArea,
+  .ContentArea,
+  .ContentArea > .container,
+  .ContentArea > .container > .row,
+  .ContentArea > .container > .row > .container,
+  body > .ContentArea > .container,
+  body > .container-fluid > .row > .ContentArea > .container,
+  body > .container,
+  div.container,
+  .container {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  @media (min-width: 768px) {
+    body > .ContentArea > .container,
+    body > .container-fluid > .row > .ContentArea > .container,
+    .ContentArea > .container,
+    .ContentArea .container,
+    body .container,
+    .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    body > .ContentArea > .container,
+    body > .container-fluid > .row > .ContentArea > .container,
+    .ContentArea > .container,
+    .ContentArea .container,
+    body .container,
+    .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    body > .ContentArea > .container,
+    body > .container-fluid > .row > .ContentArea > .container,
+    .ContentArea > .container,
+    .ContentArea .container,
+    body .container,
+    .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+
+  .FooterBG .container,
+  .FooterMidBG .container {
+    gap: 0 !important;
+  }
+  .header,
+  header.header,
+  div.header,
+  #header,
+  .HeaderWrap,
+  .HeaderBG,
+  .headertopbg,
+  .TopHeader,
+  div[class*="header"] {
+    border: 0 !important;
+    padding-block: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 99999 !important;
+  }
+  .header::before {
+    display: none !important;
+  }
+  a, a:hover, a:link {
+    text-decoration: none;
+  }
+</style>
+
+<script>
+/* Instant 0ms Synchronous Padding and FOUC Eliminator */
+(function() {
+  function eliminateFOUC() {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty('padding-top', '0px', 'important');
+      document.documentElement.style.setProperty('margin-top', '0px', 'important');
+    }
+    if (document.body) {
+      document.body.style.setProperty('padding-top', '0px', 'important');
+      document.body.style.setProperty('margin-top', '0px', 'important');
+    }
+  }
+  eliminateFOUC();
+  if (window.MutationObserver) {
+    var observer = new MutationObserver(function() {
+      eliminateFOUC();
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class', 'style'],
+      childList: true,
+      subtree: true
+    });
+    window.addEventListener('DOMContentLoaded', eliminateFOUC);
+    window.addEventListener('load', function() {
+      eliminateFOUC();
+      setTimeout(function() { observer.disconnect(); }, 3500);
+    });
+  }
+})();
+</script>
+
+<!-- <div class="editlink">$designAttribute:story_edit_link $storyToolBar</div> -->
+<div>$vendorLeadForm</div>
+
+<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* 1. DESIGN TOKEN SYSTEM */
+:root, .hrw27 {
+  --color-brand-authority:       hsl(255, 65%, 20%);
+  --color-brand-purple:          hsl(255, 62%, 44%);
+  --color-brand-purple-dark:     hsl(255, 62%, 30%);
+  --color-brand-purple-light:    hsl(255, 62%, 96%);
+  --color-brand-authority-light: hsl(255, 65%, 97%);
+
+  --color-brand-pink:            hsl(335, 90%, 54%);
+  --color-brand-pink-dark:       hsl(335, 90%, 40%);
+  --color-brand-pink-light:      hsl(335, 85%, 96%);
+
+  --gradient-brand:       linear-gradient(135deg, hsl(255, 62%, 44%) 0%, hsl(276, 72%, 56%) 100%);
+  --gradient-brand-soft:  linear-gradient(135deg, hsl(255, 62%, 96%) 0%, hsl(276, 72%, 96%) 100%);
+  --gradient-brand-glow:  linear-gradient(135deg, hsl(255, 62%, 44%) 0%, hsl(268, 68%, 50%) 50%, hsl(276, 72%, 56%) 100%);
+  --gradient-pink:        linear-gradient(135deg, hsl(335, 90%, 54%) 0%, hsl(348, 92%, 58%) 100%);
+  --gradient-pink-soft:   linear-gradient(135deg, hsl(335, 85%, 96%) 0%, hsl(348, 90%, 98%) 100%);
+
+  --color-canvas:   hsl(240, 33%, 99%);
+  --color-surface:  hsl(210, 40%, 98%);
+  --color-elevated: hsl(0, 0%, 100%);
+  --color-subtle:   hsl(214, 32%, 91%);
+
+  --color-text-primary:   hsl(220, 35%, 7%);
+  --color-text-secondary: hsl(215, 25%, 27%);
+  --color-text-muted:     hsl(215, 16%, 47%);
+  --color-text-soft:      hsl(214, 20%, 69%);
+
+  --glass-bg:             rgba(255, 255, 255, 0.88);
+  --glass-bg-strong:      rgba(255, 255, 255, 0.96);
+  --glass-border:         rgba(93, 47, 199, 0.18);
+  --glass-border-subtle:  rgba(226, 232, 240, 0.8);
+  --glass-blur:           blur(20px);
+
+  --shadow-sm:    0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md:    0 4px 16px rgba(15,23,42,0.08), 0 2px 6px rgba(15,23,42,0.04);
+  --shadow-lg:    0 10px 40px rgba(15,23,42,0.10), 0 4px 12px rgba(15,23,42,0.06);
+  --shadow-xl:    0 20px 60px rgba(15,23,42,0.14), 0 8px 20px rgba(15,23,42,0.08);
+  --shadow-brand: 0 8px 32px rgba(93,47,199,0.28), 0 2px 8px rgba(147,51,234,0.18);
+  --shadow-pink:  0 8px 25px rgba(239,20,110,0.35);
+
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --brand-glow-08:  rgba(93, 47, 199, 0.08);
+  --brand-glow-12:  rgba(93, 47, 199, 0.12);
+  --brand-glow-15:  rgba(93, 47, 199, 0.15);
+  --brand-glow-18:  rgba(93, 47, 199, 0.18);
+  --brand-glow-20:  rgba(93, 47, 199, 0.20);
+  --brand-glow-25:  rgba(93, 47, 199, 0.25);
+  --brand-glow-28:  rgba(93, 47, 199, 0.28);
+  --brand-glow-35:  rgba(93, 47, 199, 0.35);
+  --brand-glow-40:  rgba(93, 47, 199, 0.40);
+  --brand-glow-50:  rgba(93, 47, 199, 0.50);
+
+  --brand-pink-glow-08: rgba(239, 20, 110, 0.08);
+  --brand-pink-glow-15: rgba(239, 20, 110, 0.15);
+  --brand-pink-glow-20: rgba(239, 20, 110, 0.20);
+  --brand-pink-glow-25: rgba(239, 20, 110, 0.25);
+  --color-accent-amber: hsl(38, 96%, 54%);
+}
+
+/* 2. SCOPED BASE RESETS & FULL-WIDTH CANVAS OVERRIDES */
+body, html {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body > .ContentArea,
+body > .container-fluid,
+body > .container-fluid > .row,
+body > .container-fluid > .row > .ContentArea,
+.ContentArea,
+.ContentArea > .container,
+.ContentArea > .container > .row,
+.ContentArea > .container > .row > .container,
+body > .ContentArea > .container,
+body > .container-fluid > .row > .ContentArea > .container,
+body > .container,
+div.container,
+.container {
+  margin: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  body > .ContentArea > .container,
+  body > .container-fluid > .row > .ContentArea > .container,
+  .ContentArea > .container,
+  .ContentArea .container,
+  body .container,
+  div.container,
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body > .ContentArea > .container,
+  body > .container-fluid > .row > .ContentArea > .container,
+  .ContentArea > .container,
+  .ContentArea .container,
+  body .container,
+  div.container,
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body > .ContentArea > .container,
+  body > .container-fluid > .row > .ContentArea > .container,
+  .ContentArea > .container,
+  .ContentArea .container,
+  body .container,
+  div.container,
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}
+
+.hrw27-header, .hrw27-footer, .hrw27,
+.hrw27-header *, .hrw27-footer *, .hrw27 * {
+  box-sizing: border-box;
+}
+
+.hrw27-header, .hrw27-footer, .hrw27 {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.hrw27-header h1, .hrw27-header h2, .hrw27-header h3, .hrw27-header h4,
+.hrw27-footer h1, .hrw27-footer h2, .hrw27-footer h3, .hrw27-footer h4,
+.hrw27 h1, .hrw27 h2, .hrw27 h3, .hrw27 h4, .hrw27 h5 {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hrw27-header p, .hrw27-header span, .hrw27-header a, .hrw27-header li, .hrw27-header div, .hrw27-header button,
+.hrw27-footer p, .hrw27-footer span, .hrw27-footer a, .hrw27-footer li, .hrw27-footer div, .hrw27-footer button,
+.hrw27 p, .hrw27 span, .hrw27 a, .hrw27 li, .hrw27 div, .hrw27 button, .hrw27 label {
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.hrw27 img, .hrw27-header img, .hrw27-footer img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+}
+
+.hrw27 ul, .hrw27 ol, .hrw27-header ul, .hrw27-footer ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hrw27 a, .hrw27-header a, .hrw27-footer a {
+  text-decoration: none !important;
+}
+
+/* 3. LAYOUT CONTAINERS */
+.hrw27-container {
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin: 0 auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+@media (max-width: 768px) {
+  .hrw27-container { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* Buttons */
+.hrw27 .btn, .hrw27-header .btn, .hrw27-footer .btn {
+  display: inline-flex !important; align-items: center !important; gap: 8px !important;
+  font-family: 'Outfit', system-ui, sans-serif !important; font-weight: 800 !important;
+  font-size: 15px !important; line-height: 1 !important; padding: 14px 28px !important;
+  border-radius: var(--radius-full) !important; border: none !important; cursor: pointer !important;
+  text-decoration: none !important; transition: all 0.25s ease !important; white-space: nowrap !important;
+}
+.hrw27 .btn-primary, .hrw27-header .btn-primary, .hrw27-footer .btn-primary { background: var(--gradient-brand) !important; color: #fff !important; box-shadow: 0 8px 32px var(--brand-glow-28) !important; }
+.hrw27 .btn-primary:hover, .hrw27-header .btn-primary:hover, .hrw27-footer .btn-primary:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px var(--brand-glow-40) !important; color: #fff !important; }
+.hrw27 .btn-pink, .hrw27-footer .btn-pink { background: var(--gradient-pink) !important; color: #fff !important; box-shadow: var(--shadow-pink) !important; }
+.hrw27 .btn-pink:hover, .hrw27-footer .btn-pink:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 35px rgba(239,20,110,0.45) !important; color: #fff !important; }
+.hrw27 .btn-outline { background: transparent !important; color: var(--color-brand-purple) !important; border: 2px solid var(--brand-glow-35) !important; }
+.hrw27 .btn-outline:hover { background: var(--brand-glow-08) !important; border-color: var(--brand-glow-50) !important; }
+.hrw27 .btn-white, .hrw27-footer .btn-white { background: #fff !important; color: var(--color-brand-purple) !important; box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important; font-weight: 800 !important; }
+.hrw27 .btn-white:hover, .hrw27-footer .btn-white:hover { transform: translateY(-2px) !important; }
+
+/* 4. HEADER STYLES */
+.hrw27-header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  overflow: visible !important;
+  background: rgba(251, 251, 254, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--color-subtle) !important;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.hrw27-header .hrw27-container,
+.hrw27-header .hrw27-nav-main,
+.hrw27-header .hrw27-nav-links,
+.hrw27-header .hrw27-dropdown {
+  overflow: visible !important;
+}
+
+.hrw27-topbar {
+  background: var(--gradient-brand) !important;
+  color: #ffffff !important;
+  padding: 6px 0 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.hrw27-nav-main {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 74px !important;
+}
+
+.hrw27-logo {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 24px !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+  color: var(--color-text-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hrw27-logo-badge {
+  background: var(--gradient-brand) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.hrw27-nav-links {
+  display: none !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+@media (min-width: 1024px) {
+  .hrw27-nav-links { display: flex !important; }
+}
+
+.hrw27-nav-link {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: var(--color-text-secondary) !important;
+  transition: color 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+.hrw27-nav-link:hover {
+  color: var(--color-brand-purple) !important;
+}
+
+/* Header Dropdown */
+.hrw27-dropdown {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+.hrw27-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 250px !important;
+  background: #ffffff !important;
+  border-radius: var(--radius-md) !important;
+  border: 1.5px solid var(--color-subtle) !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18), 0 2px 8px rgba(15, 23, 42, 0.08) !important;
+  padding: 8px !important;
+  display: none !important;
+  z-index: 999999 !important;
+}
+.hrw27-dropdown-menu::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -12px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 14px !important;
+}
+.hrw27-dropdown:hover .hrw27-dropdown-menu,
+.hrw27-dropdown:focus-within .hrw27-dropdown-menu {
+  display: block !important;
+}
+.hrw27-dropdown-item {
+  display: block !important;
+  padding: 10px 14px !important;
+  border-radius: var(--radius-sm) !important;
+  transition: background 0.15s ease !important;
+}
+.hrw27-dropdown-item:hover {
+  background: var(--gradient-brand-soft) !important;
+}
+.hrw27-dropdown-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  color: var(--color-text-primary) !important;
+}
+.hrw27-dropdown-sub {
+  font-size: 12px !important;
+  color: var(--color-text-muted) !important;
+  margin-top: 2px !important;
+}
+
+/* Mobile Toggle */
+.hrw27-mob-btn {
+  display: flex !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  color: var(--color-text-primary) !important;
+}
+@media (min-width: 1024px) {
+  .hrw27-mob-btn { display: none !important; }
+}
+
+.hrw27-mob-menu {
+  display: none;
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--color-subtle) !important;
+  padding: 16px 24px 24px !important;
+}
+.hrw27-mob-menu.open {
+  display: block !important;
+}
+
+/* 5. REGISTRATION HERO & BODY SECTION STYLES */
+.hrw27 .reg-hero-section {
+  position: relative;
+  min-height: 520px;
+  background-color: #0b0814;
+  background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+  background-size: cover;
+  background-position: 55% center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hrw27 .reg-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.2) 100%),
+    linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+  pointer-events: none;
+}
+
+.hrw27 .reg-hero-orb-1 {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(93,47,199,0.28) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+.hrw27 .reg-hero-orb-2 {
+  position: absolute;
+  bottom: -60px;
+  left: 35%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(239,20,110,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.hrw27 .reg-hero-grid {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 3.5rem 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.15fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .hrw27 .reg-hero-grid {
+    grid-template-columns: 1fr;
+    padding: 3rem 20px;
+    gap: 2.5rem;
+  }
+}
+
+.hrw27 .reg-hero-content {
+  max-width: 580px;
+}
+
+.hrw27 .reg-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin-bottom: 1.25rem;
+}
+
+.hrw27 .reg-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  background: #ef146e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ef146e;
+  animation: hrw27Pulse 2s infinite;
+}
+
+@keyframes hrw27Pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hrw27 .reg-hero-h1 {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem) !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.05 !important;
+  color: #ffffff !important;
+  margin: 0 0 1.1rem 0 !important;
+}
+
+.hrw27 .reg-hero-glow-text {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.hrw27 .reg-hero-p {
+  font-size: 1.05rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.6 !important;
+  margin: 0 0 2.25rem 0 !important;
+  max-width: 520px;
+}
+
+.hrw27 .reg-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hrw27 .reg-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.85rem;
+  background: linear-gradient(135deg, #ef146e 0%, #d81159 100%);
+  color: #ffffff !important;
+  border-radius: 9999px;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hrw27 .reg-hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(239, 20, 110, 0.55);
+  color: #ffffff !important;
+}
+
+.hrw27 .reg-hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.8rem 1.55rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
+  border-radius: 9999px;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.hrw27 .reg-hero-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Spotlight Card */
+.hrw27 .reg-hero-spotlight-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 24px;
+  padding: 2rem 1.85rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  position: relative;
+}
+
+.hrw27 .reg-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  background: linear-gradient(135deg, rgba(239,20,110,0.3) 0%, rgba(145,39,140,0.3) 100%);
+  border: 1px solid rgba(239, 20, 110, 0.5);
+  border-radius: 9999px;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.76rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #ffffff !important;
+  margin-bottom: 1.25rem;
+}
+
+.hrw27 .reg-spotlight-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.45rem !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hrw27 .reg-spotlight-sub {
+  font-size: 0.88rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin: 0 0 1.5rem 0 !important;
+  line-height: 1.5 !important;
+}
+
+.hrw27 .reg-countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.hrw27 .reg-cd-box {
+  background: rgba(11, 8, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.75rem 0.4rem;
+  text-align: center;
+}
+
+.hrw27 .reg-cd-num {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.55rem !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  margin-bottom: 0.25rem;
+}
+
+.hrw27 .reg-cd-lbl {
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  color: #ec4899 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.hrw27 .reg-spotlight-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 0.75rem;
+}
+
+.hrw27 .reg-spotlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Section Header Typography */
+.hrw27 .reg-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hrw27 .reg-header-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 0 44px 0 !important;
+}
+
+.hrw27 .reg-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: #5d2fc7 !important;
+  margin-bottom: 0.5rem !important;
+  text-align: center !important;
+}
+
+.hrw27 .reg-h2 {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem) !important;
+  letter-spacing: -0.03em !important;
+  color: var(--color-text-primary, #0f172a) !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-align: center !important;
+}
+
+.hrw27 .reg-sub {
+  font-size: 0.98rem !important;
+  color: #64748b !important;
+  max-width: 650px;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+/* Passes Section */
+.hrw27 .reg-passes-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.hrw27 .reg-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1050px;
+  margin: 0 auto 3rem auto;
+  align-items: stretch;
+}
+
+@media (max-width: 860px) {
+  .hrw27 .reg-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+}
+
+.hrw27 .reg-pass-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1.5px solid var(--color-subtle, #e2e8f0);
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hrw27 .reg-pass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(93, 47, 199, 0.12);
+  border-color: rgba(93, 47, 199, 0.35);
+}
+
+.hrw27 .reg-pass-card.featured {
+  background: linear-gradient(180deg, #ffffff 0%, #faf7fe 100%);
+  border: 2px solid #5d2fc7;
+  box-shadow: 0 12px 36px rgba(93, 47, 199, 0.14);
+}
+
+.hrw27 .reg-card-top-tag {
+  position: absolute;
+  top: -14px;
+  left: 28px;
+  background: linear-gradient(135deg, #ef146e 0%, #91278c 100%);
+  color: #ffffff !important;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.74rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 0.28rem 0.85rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(239, 20, 110, 0.35);
+}
+
+.hrw27 .reg-card-top-tag.vendor-tag {
+  background: linear-gradient(135deg, #5d2fc7 0%, #1d0f4a 100%);
+  box-shadow: 0 4px 12px rgba(93, 47, 199, 0.35);
+}
+
+.hrw27 .reg-card-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hrw27 .reg-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(93,47,199,0.12) 0%, rgba(239,20,110,0.12) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hrw27 .reg-card-audience {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  color: #ef146e !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 0.15rem;
+}
+
+.hrw27 .reg-card-audience.vendor-aud {
+  color: #5d2fc7 !important;
+}
+
+.hrw27 .reg-card-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.55rem !important;
+  color: var(--color-text-primary, #0f172a) !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hrw27 .reg-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.hrw27 .reg-price-strike {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #94a3b8 !important;
+  text-decoration: line-through;
+}
+
+.hrw27 .reg-price-main {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 2.75rem !important;
+  color: #0f172a !important;
+  line-height: 1 !important;
+}
+
+.hrw27 .reg-savings-pill {
+  display: inline-block;
+  background: rgba(239, 20, 110, 0.1);
+  color: #ef146e !important;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.76rem !important;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(239, 20, 110, 0.25);
+}
+
+.hrw27 .reg-audience-desc {
+  font-size: 0.82rem !important;
+  font-style: italic !important;
+  color: #64748b !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.4 !important;
+  min-height: 38px;
+}
+
+.hrw27 .reg-btn-slot {
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+
+/* CMS EventPass Button Overrides to Match Modern Token Design */
+.hrw27 .reg-btn-slot a,
+.hrw27 .reg-btn-slot button,
+.hrw27 .reg-btn-slot .btn,
+.hrw27 .reg-btn-slot .hr_custom_btn_new {
+  display: block !important;
+  width: 100% !important;
+  padding: 0.95rem 1.5rem !important;
+  background: linear-gradient(135deg, #ef146e 0%, #91278c 100%) !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35) !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.hrw27 .reg-btn-slot a:hover,
+.hrw27 .reg-btn-slot button:hover,
+.hrw27 .reg-btn-slot .btn:hover,
+.hrw27 .reg-btn-slot .hr_custom_btn_new:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(239, 20, 110, 0.5) !important;
+  color: #ffffff !important;
+}
+
+.hrw27 .reg-btn-slot.vendor-slot a,
+.hrw27 .reg-btn-slot.vendor-slot button,
+.hrw27 .reg-btn-slot.vendor-slot .btn,
+.hrw27 .reg-btn-slot.vendor-slot .hr_custom_btn_new {
+  background: linear-gradient(135deg, #5d2fc7 0%, #232283 100%) !important;
+  box-shadow: 0 6px 20px rgba(93, 47, 199, 0.35) !important;
+}
+
+.hrw27 .reg-btn-slot.vendor-slot a:hover,
+.hrw27 .reg-btn-slot.vendor-slot button:hover,
+.hrw27 .reg-btn-slot.vendor-slot .btn:hover,
+.hrw27 .reg-btn-slot.vendor-slot .hr_custom_btn_new:hover {
+  box-shadow: 0 10px 28px rgba(93, 47, 199, 0.5) !important;
+}
+
+.hrw27 .reg-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid var(--color-subtle, #f1f5f9);
+  padding-top: 1.5rem !important;
+}
+
+.hrw27 .reg-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem !important;
+  color: #334155 !important;
+  margin-bottom: 0.85rem !important;
+  line-height: 1.45 !important;
+}
+
+.hrw27 .reg-feature-item:last-child {
+  margin-bottom: 0 !important;
+}
+
+.hrw27 .reg-feature-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Schedule Table */
+.hrw27 .reg-schedule-section {
+  background: #f8fafc;
+  padding: 5rem 0 5.5rem;
+  border-top: 1px solid var(--color-subtle, #e2e8f0);
+  border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+}
+
+.hrw27 .reg-table-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1.5px solid rgba(93, 47, 199, 0.18);
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
+  max-width: 950px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.hrw27 .reg-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.hrw27 .reg-table th {
+  background: linear-gradient(135deg, #1e1035 0%, #2c093a 100%) !important;
+  color: #ffffff !important;
+  padding: 1.25rem 1.6rem !important;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  border-bottom: 2px solid rgba(239, 20, 110, 0.6) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hrw27 .reg-table th:last-child {
+  border-right: none;
+}
+
+.hrw27 .reg-table td {
+  padding: 1.3rem 1.6rem !important;
+  border-bottom: 1px solid var(--color-subtle, #e2e8f0) !important;
+  border-right: 1px solid var(--color-subtle, #f1f5f9);
+  vertical-align: middle;
+  font-size: 0.95rem !important;
+  color: #334155 !important;
+}
+
+.hrw27 .reg-table td:last-child {
+  border-right: none;
+}
+
+.hrw27 .reg-table tr:last-child td {
+  border-bottom: none !important;
+}
+
+.hrw27 .reg-table tr.early-row {
+  background: linear-gradient(135deg, rgba(93,47,199,0.05) 0%, rgba(239,20,110,0.05) 100%) !important;
+}
+
+.hrw27 .reg-table tr.early-row:hover {
+  background: linear-gradient(135deg, rgba(93,47,199,0.08) 0%, rgba(239,20,110,0.08) 100%) !important;
+}
+
+.hrw27 .reg-table tr:hover {
+  background: rgba(93, 47, 199, 0.02);
+}
+
+.hrw27 .reg-tier-name {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  color: #5d2fc7 !important;
+  display: block;
+}
+
+.hrw27 .reg-tier-badge {
+  display: inline-block;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background: #ef146e !important;
+  padding: 0.15rem 0.55rem !important;
+  border-radius: 9999px !important;
+  margin-top: 0.25rem !important;
+}
+
+.hrw27 .reg-price-cell {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.18rem !important;
+  color: #0f172a !important;
+}
+
+.hrw27 .reg-price-cell.highlight-pink {
+  color: #ef146e !important;
+}
+
+.hrw27 .reg-price-cell.highlight-violet {
+  color: #5d2fc7 !important;
+}
+
+/* Team Callout Banner */
+.hrw27 .reg-team-callout {
+  max-width: 950px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.06) 100%);
+  border: 1.5px solid rgba(93, 47, 199, 0.2);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hrw27 .reg-team-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.hrw27 .reg-team-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.hrw27 .reg-team-h4 {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+  color: #0f172a !important;
+  margin: 0 0 0.25rem 0 !important;
+}
+
+.hrw27 .reg-team-p {
+  font-size: 0.88rem !important;
+  color: #475569 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.hrw27 .reg-team-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.45rem;
+  background: #ffffff;
+  border: 1.5px solid #5d2fc7;
+  color: #5d2fc7 !important;
+  border-radius: 9999px;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.88rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.hrw27 .reg-team-btn:hover {
+  background: #5d2fc7;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(93, 47, 199, 0.25);
+}
+
+/* Inclusions Grid */
+.hrw27 .reg-included-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.hrw27 .reg-inclusions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .hrw27 .reg-inclusions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hrw27 .reg-inclusions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hrw27 .reg-inc-card {
+  background: #f8fafc;
+  border: 1px solid var(--color-subtle, #e2e8f0);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.hrw27 .reg-inc-card:hover {
+  transform: translateY(-4px);
+  background: #ffffff;
+  border-color: rgba(93, 47, 199, 0.3);
+  box-shadow: 0 10px 25px rgba(93, 47, 199, 0.08);
+}
+
+.hrw27 .reg-inc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(93,47,199,0.1) 0%, rgba(239,20,110,0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.85rem auto;
+  color: #5d2fc7;
+}
+
+.hrw27 .reg-inc-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  color: #0f172a !important;
+  margin: 0 0 0.35rem 0 !important;
+}
+
+.hrw27 .reg-inc-desc {
+  font-size: 0.82rem !important;
+  color: #64748b !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* Policy Card */
+.hrw27 .reg-policy-section {
+  padding: 0 0 5rem 0;
+  background: #ffffff;
+}
+
+.hrw27 .reg-policy-card {
+  max-width: 950px;
+  margin: 0 auto;
+  background: #f8fafc;
+  border: 1.5px solid var(--color-subtle, #e2e8f0);
+  border-radius: 20px;
+  padding: 2rem 2.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .hrw27 .reg-policy-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+}
+
+.hrw27 .reg-policy-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(93, 47, 199, 0.1);
+  color: #5d2fc7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hrw27 .reg-policy-h4 {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+  color: #0f172a !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.hrw27 .reg-policy-text {
+  font-size: 0.9rem !important;
+  color: #475569 !important;
+  line-height: 1.6 !important;
+  margin: 0 0 0.85rem 0 !important;
+}
+
+.hrw27 .reg-policy-link {
+  color: #5d2fc7 !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.hrw27 .reg-policy-link:hover {
+  color: #ef146e !important;
+}
+
+/* 6. FOOTER STYLES */
+.hrw27-footer {
+  background: var(--color-canvas) !important;
+  border-top: 1px solid var(--color-subtle) !important;
+}
+
+.hrw27-footer-strip {
+  background: var(--gradient-brand) !important;
+  padding: 32px 0 !important;
+  color: #ffffff !important;
+}
+
+.hrw27-footer-main {
+  background: #ffffff !important;
+  padding: 64px 0 40px !important;
+}
+
+.hrw27-footer-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 40px !important;
+  margin-bottom: 48px !important;
+}
+@media (min-width: 768px) {
+  .hrw27-footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (min-width: 1024px) {
+  .hrw27-footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr !important; }
+}
+
+.hrw27-footer-h4 {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--color-text-primary) !important;
+  margin: 0 0 18px 0 !important;
+}
+
+.hrw27-footer-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.hrw27-footer-link {
+  font-size: 14px !important;
+  color: var(--color-text-muted) !important;
+  transition: color 0.2s ease, padding 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+.hrw27-footer-link:hover {
+  color: var(--color-brand-purple) !important;
+  padding-left: 4px !important;
+}
+
+.hrw27-footer-bottom {
+  border-top: 1px solid var(--color-subtle) !important;
+  padding-top: 28px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  font-size: 13px !important;
+  color: var(--color-text-soft) !important;
+}
+</style>
+
+<!-- Complete Master Header -->
+<header class="hrw27-header" id="hrw27-main-header">
+  
+  <!-- Top Announcement Strip -->
+  <div class="hrw27-topbar">
+    <div class="hrw27-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <span style="display: inline-flex; align-items: center; gap: 5px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          March 23-24, 2027
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          South San Francisco Conference Center
+        </span>
+      </div>
+
+      <div>
+        <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" style="color: #ffffff; font-weight: 700; font-size: 12px; background: rgba(255, 255, 255, 0.18); border: 1px solid rgba(255, 255, 255, 0.35); padding: 3px 12px; border-radius: 999px;">
+          Convince Your Boss
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="hrw27-container">
+    <div class="hrw27-nav-main">
+      
+      <!-- Brand Logo -->
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-logo">
+        <span>HR</span><span class="hrw27-logo-badge">West</span>
+        <span style="color: var(--color-text-soft); font-weight: 500; font-size: 16px; margin-left: 4px;">2027</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hrw27-nav-links">
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-nav-link">Home</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-nav-link">Speakers</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-nav-link">Sponsors</a>
+
+        <!-- Attend Dropdown -->
+        <div class="hrw27-dropdown">
+          <a href="#" class="hrw27-nav-link">
+            Attend
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="hrw27-dropdown-menu">
+            <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="hrw27-dropdown-item">
+              <div class="hrw27-dropdown-title">Attend as a Team</div>
+              <div class="hrw27-dropdown-sub">Group discounts up to 35 percent</div>
+            </a>
+            <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-dropdown-item">
+              <div class="hrw27-dropdown-title">Convince Your Boss</div>
+              <div class="hrw27-dropdown-sub">Approval email ROI toolkit</div>
+            </a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" class="hrw27-dropdown-item">
+              <div class="hrw27-dropdown-title">Venue and Travel</div>
+              <div class="hrw27-dropdown-sub">South San Francisco deals</div>
+            </a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" class="hrw27-dropdown-item">
+              <div class="hrw27-dropdown-title">Testimonials & Reviews</div>
+              <div class="hrw27-dropdown-sub">Attendee and sponsor feedback</div>
+            </a>
+            <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" class="hrw27-dropdown-item">
+              <div class="hrw27-dropdown-title">Volunteer for Free Pass</div>
+              <div class="hrw27-dropdown-sub">Apply for volunteer access</div>
+            </a>
+          </div>
+        </div>
+
+        <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-nav-link">Why Sponsor</a>
+      </nav>
+
+      <!-- CTA and Mobile Menu Button -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#passes" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block;"></span>
+          Pre-Register 2027
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button id="hrw27-mob-toggle" class="hrw27-mob-btn" aria-label="Toggle Menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="hrw27-mob-menu" class="hrw27-mob-menu">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-nav-link">Home</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-nav-link">Speakers</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-nav-link">Sponsors</a>
+      <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-nav-link">Why Sponsor</a>
+      <div style="padding-top: 10px; border-top: 1px solid var(--color-subtle);">
+        <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; color: var(--color-brand-purple); text-transform: uppercase; margin-bottom: 8px;">ATTEND</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding-left: 8px;">
+          <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Attend as a Team</a>
+          <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Convince Your Boss</a>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Venue and Travel</a>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Testimonials & Reviews</a>
+          <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Volunteer for Free Pass</a>
+        </div>
+      </div>
+      <a href="#passes" class="btn btn-primary" style="justify-content: center; width: 100%; margin-top: 8px;">
+        Pre-Register 2027
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<!-- Main Page Story Content Wrapped in .hrw27 -->
+<div class="hrw27">
+  
+  <!-- 1. Cinematic Subpage Hero Section (Atmospheric Dark Standard) -->
+  <section class="reg-hero-section">
+    <div class="reg-hero-overlay"></div>
+    <div class="reg-hero-orb-1"></div>
+    <div class="reg-hero-orb-2"></div>
+
+    <div class="reg-hero-grid">
+      
+      <!-- Left Column: Typography & Action -->
+      <div class="reg-hero-content">
+        <div class="reg-eyebrow-pill">
+          <span class="reg-eyebrow-dot"></span>
+          <span>Official Registration • Early Bird Open</span>
+        </div>
+
+        <h1 class="reg-hero-h1">
+          HRWest 2027 <span class="reg-hero-glow-text">Registration</span>
+        </h1>
+
+        <p class="reg-hero-p">
+          Join the premier gathering of HR innovators and people leaders in San Francisco! Practical insights you can use immediately, peers you can learn from, and pricing that respects your budget. Built for real HR professionals like you—celebrating 40+ years of amazing HR education and networking.
+        </p>
+
+        <div class="reg-hero-actions">
+          <a href="#passes" class="reg-hero-btn-primary">
+            <span>Select Your Pass</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path></svg>
+          </a>
+
+          <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="reg-hero-btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Bring Your Team</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Spacer Column -->
+      <div></div>
+
+      <!-- Right Column: High-End Glassmorphic Spotlight Card with Countdown -->
+      <div class="reg-hero-spotlight-card">
+        <div class="reg-spotlight-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          <span>Early Bird Offer Active</span>
+        </div>
+
+        <h3 class="reg-spotlight-title">Lock In Your Savings</h3>
+        <p class="reg-spotlight-sub">Save up to $400 on your all-access pass before standard rates apply.</p>
+
+        <!-- Live Countdown Timer -->
+        <div class="reg-countdown-grid">
+          <div class="reg-cd-box">
+            <div class="reg-cd-num" id="hrw27-reg-days">00</div>
+            <div class="reg-cd-lbl">Days</div>
+          </div>
+          <div class="reg-cd-box">
+            <div class="reg-cd-num" id="hrw27-reg-hours">00</div>
+            <div class="reg-cd-lbl">Hours</div>
+          </div>
+          <div class="reg-cd-box">
+            <div class="reg-cd-num" id="hrw27-reg-mins">00</div>
+            <div class="reg-cd-lbl">Mins</div>
+          </div>
+          <div class="reg-cd-box">
+            <div class="reg-cd-num" id="hrw27-reg-secs">00</div>
+            <div class="reg-cd-lbl">Secs</div>
+          </div>
+        </div>
+
+        <div class="reg-spotlight-footer">
+          <div class="reg-spotlight-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef146e" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>March 23–24, 2027</span>
+          </div>
+          <div class="reg-spotlight-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>San Francisco, CA</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. Dynamic Passes Section (LIGHT CANVAS STANDARD) -->
+  <section id="passes" class="reg-passes-section">
+    <div class="reg-container">
+      
+      <div class="reg-header-wrap">
+        <div class="reg-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Choose Your Pass</span>
+        </div>
+        <h2 class="reg-h2">Experience HRWest 2027</h2>
+        <p class="reg-sub">
+          Select the pass designed for your professional focus. All passes include complete access to keynotes, sessions, roundtables, expo, and networking.
+        </p>
+      </div>
+
+      <!-- Dynamic CMS Flash & Status Message Injection -->
+      $include:/CustomCode/HybridEvents/EventPass.RegMessage
+
+      <!-- Pass Cards Responsive Grid -->
+      <div class="reg-cards-grid">
+        
+        <!-- CARD 1: HR Attendee Pass (Featured / Most Popular) -->
+        <div class="reg-pass-card featured">
+          <div class="reg-card-top-tag">Most Popular • HR Practitioners</div>
+
+          <div>
+            <div class="reg-card-head">
+              <div class="reg-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef146e" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <div>
+                <div class="reg-card-audience">HR Professional</div>
+                <h3 class="reg-card-title">HR Attendee Pass</h3>
+              </div>
+            </div>
+
+            <div class="reg-price-row">
+              <span class="reg-price-strike">$799</span>
+              <span class="reg-price-main">$399</span>
+              <span class="reg-savings-pill">Save $400 • Early Bird</span>
+            </div>
+
+            <p class="reg-audience-desc">
+              *Intended for practicing, aspiring, and in-transition HR professionals.
+            </p>
+
+            <div class="reg-btn-slot">
+              $include:/CustomCode/HybridEvents/EventPass.AttendeeButton
+            </div>
+          </div>
+
+          <ul class="reg-features-list">
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Full 2-Day Event Access:</strong> Keynotes, Breakouts &amp; Expo</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Recertification:</strong> Up to 40+ SHRM &amp; HRCI credits</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Interactive Learning:</strong> Peer roundtables &amp; workshop sessions</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Community &amp; Dining:</strong> Catered networking lunches &amp; evening reception</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Digital Access:</strong> Post-conference session decks &amp; toolkit</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CARD 2: Vendor Pass (Solution Providers) -->
+        <div class="reg-pass-card">
+          <div class="reg-card-top-tag vendor-tag">Solution Providers &amp; Consultants</div>
+
+          <div>
+            <div class="reg-card-head">
+              <div class="reg-card-icon" style="background: rgba(93,47,199,0.12);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <div>
+                <div class="reg-card-audience vendor-aud">HR Solution Providers</div>
+                <h3 class="reg-card-title">Vendor Pass</h3>
+              </div>
+            </div>
+
+            <div class="reg-price-row">
+              <span class="reg-price-strike">$1,299</span>
+              <span class="reg-price-main">$899</span>
+              <span class="reg-savings-pill" style="background: rgba(93,47,199,0.1); color: #5d2fc7; border-color: rgba(93,47,199,0.25);">Save $400 • Early Bird</span>
+            </div>
+
+            <p class="reg-audience-desc">
+              *Intended for Consultants and Solution providers of HR products and services.
+            </p>
+
+            <div class="reg-btn-slot vendor-slot">
+              $include:/CustomCode/HybridEvents/EventPass.VendorButton
+            </div>
+          </div>
+
+          <ul class="reg-features-list">
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Full Event Access:</strong> General keynotes &amp; full expo floor</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Direct B2B Networking:</strong> Engage with senior HR decision-makers</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Social Connection:</strong> Join networking breaks, lunches &amp; reception</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Conference App:</strong> Connect with attendees via official app</span>
+            </li>
+            <li class="reg-feature-item">
+              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span><strong>Industry Intelligence:</strong> Discover 2027 enterprise HR trends</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Pricing Schedule Matrix Table & Team Callout -->
+  <section id="schedule" class="reg-schedule-section">
+    <div class="reg-container">
+      
+      <div class="reg-header-wrap">
+        <div class="reg-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Pricing Timeline</span>
+        </div>
+        <h2 class="reg-h2">Registration Tiers &amp; Deadlines</h2>
+        <p class="reg-sub">
+          Register early to secure the lowest rates of the year. All tiers provide full access to the 2-day conference.
+        </p>
+      </div>
+
+      <!-- Schedule Table Card -->
+      <div class="reg-table-card">
+        <table class="reg-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Tier</th>
+              <th style="width: 35%;">Timeframe</th>
+              <th style="width: 20%;">Attendee Pass</th>
+              <th style="width: 20%;">Vendor Pass</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="early-row">
+              <td>
+                <span class="reg-tier-name">Early Bird</span>
+                <span class="reg-tier-badge">Best Rate • Active</span>
+              </td>
+              <td><strong>Ends Jan 15, 2027</strong></td>
+              <td><span class="reg-price-cell highlight-pink">$399</span></td>
+              <td><span class="reg-price-cell highlight-violet">$899</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="reg-tier-name" style="color: #334155;">Regular</span>
+              </td>
+              <td>Jan 16 &ndash; Mar 22, 2027</td>
+              <td><span class="reg-price-cell">$799</span></td>
+              <td><span class="reg-price-cell">$1,299</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="reg-tier-name" style="color: #334155;">Onsite</span>
+              </td>
+              <td>March 23&ndash;24, 2027</td>
+              <td><span class="reg-price-cell">$999</span></td>
+              <td><span class="reg-price-cell">$1,499</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Group & Team Registration Callout Banner -->
+      <div class="reg-team-callout">
+        <div class="reg-team-info">
+          <div class="reg-team-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div>
+            <h4 class="reg-team-h4">Bringing Your HR Team?</h4>
+            <p class="reg-team-p">
+              Teams of 3+ qualify for exclusive group discounts. Contact us at <a href="mailto:hrwest@hr.com" class="reg-policy-link">hrwest@hr.com</a> or visit our dedicated team registration page for group package details.
+            </p>
+          </div>
+        </div>
+
+        <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="reg-team-btn">
+          <span>Explore Team Pricing</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Full Event Inclusions Grid -->
+  <section id="included" class="reg-included-section">
+    <div class="reg-container">
+      
+      <div class="reg-header-wrap">
+        <div class="reg-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5d2fc7" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>All-Inclusive Value</span>
+        </div>
+        <h2 class="reg-h2">Full Event Access Includes</h2>
+        <p class="reg-sub">
+          Every pass gives you full access to all areas of the conference experience without hidden add-on costs.
+        </p>
+      </div>
+
+      <div class="reg-inclusions-grid">
+        
+        <div class="reg-inc-card">
+          <div class="reg-inc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <h4 class="reg-inc-title">Keynotes</h4>
+          <p class="reg-inc-desc">Inspiring keynote presentations from premier workplace visionaries.</p>
+        </div>
+
+        <div class="reg-inc-card">
+          <div class="reg-inc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          </div>
+          <h4 class="reg-inc-title">Expo Floor</h4>
+          <p class="reg-inc-desc">Explore 50+ innovative HR solutions, demos, and exclusive raffles.</p>
+        </div>
+
+        <div class="reg-inc-card">
+          <div class="reg-inc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+          </div>
+          <h4 class="reg-inc-title">Roundtables</h4>
+          <p class="reg-inc-desc">Interactive, moderated peer discussions tackling current HR realities.</p>
+        </div>
+
+        <div class="reg-inc-card">
+          <div class="reg-inc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <h4 class="reg-inc-title">Breakout Sessions</h4>
+          <p class="reg-inc-desc">6 specialized learning tracks delivering actionable strategies.</p>
+        </div>
+
+        <div class="reg-inc-card">
+          <div class="reg-inc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+          </div>
+          <h4 class="reg-inc-title">Social Reception</h4>
+          <p class="reg-inc-desc">Evening celebration with drinks, hors d'oeuvres, and peer networking.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Registration Policy & Transferability -->
+  <section class="reg-policy-section">
+    <div class="reg-container">
+      <div class="reg-policy-card">
+        <div class="reg-policy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <h4 class="reg-policy-h4">Registration Policy &amp; Transfer Guarantee</h4>
+          <p class="reg-policy-text">
+            Attendee registration is <strong>non-refundable</strong>. However, if you are unable to attend, you can transfer your registration to a colleague or apply credit to HRWest 2027. Registration transfers are available anytime up to <strong>7 business days before the event</strong>.
+          </p>
+          <p class="reg-policy-text" style="margin-bottom: 0;">
+            For transfer assistance or questions regarding your order, please contact our event team at <a href="mailto:hrwest@hr.com" class="reg-policy-link">hrwest@hr.com</a>. Full conference terms and conditions can be reviewed <a href="https://www.hr.com/en/about_us/privacy_information/" target="_blank" rel="noopener noreferrer" class="reg-policy-link">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Complete Master Footer -->
+<footer class="hrw27-footer">
+
+  <!-- Pre-Footer Strip -->
+  <div class="hrw27-footer-strip">
+    <div class="hrw27-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div>
+          <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: #ffffff;">
+            Ready to Transform Your HR Strategy in 2027?
+          </div>
+          <div style="font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 2px;">
+            Join 1,000+ HR professionals, Earn 20+ SHRM and HRCI credits, March 23-24, South SF
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#passes" class="btn btn-white" style="padding: 12px 24px; font-size: 14px;">
+          Pre-Register Now
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="btn" style="background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.35); padding: 12px 24px; font-size: 14px;">
+          Sponsor HRWest 2027
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main 4-Column Footer -->
+  <div class="hrw27-footer-main">
+    <div class="hrw27-container">
+      <div class="hrw27-footer-grid">
+        
+        <!-- Col 1: Brand and Contact -->
+        <div>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-logo" style="margin-bottom: 16px; display: inline-flex;">
+            <span>HR</span><span class="hrw27-logo-badge">West</span>
+            <span style="color: var(--color-text-soft); font-weight: 500; font-size: 16px; margin-left: 4px;">2027</span>
+          </a>
+          <p style="font-size: 14px; color: var(--color-text-muted); line-height: 1.65; margin: 0 0 20px 0; max-width: 300px;">
+            The West Coast premier HR transformation conference. Connecting practitioners, innovators, and HR leaders with practical expertise since 2001.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px;">
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2" style="margin-top: 2px; flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>South San Francisco Conference Center<br />South San Francisco, CA 94080</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:HRWest@hr.com" style="color: var(--color-text-secondary);">HRWest@hr.com</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:18774726648" style="color: var(--color-text-secondary);">1-877-472-6648</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: For Attendees -->
+        <div>
+          <h4 class="hrw27-footer-h4">For Attendees</h4>
+          <div class="hrw27-footer-links">
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-footer-link">Speaker Directory</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-footer-link">Interactive Agenda</a>
+            <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="hrw27-footer-link">Team Discount Calculator</a>
+            <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-footer-link">Convince Your Boss</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" class="hrw27-footer-link">Testimonials & Reviews</a>
+            <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" class="hrw27-footer-link">Volunteer for Free Pass</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" class="hrw27-footer-link">Venue and Travel Guide</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Sponsors and Partners -->
+        <div>
+          <h4 class="hrw27-footer-h4">Sponsors and Partners</h4>
+          <div class="hrw27-footer-links">
+            <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-footer-link">Why Sponsor</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-footer-link">Past Sponsors Directory</a>
+            <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-footer-link">Sponsorship Prospectus</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-footer-link">Call for Speakers</a>
+            <a href="mailto:events@hr.com" class="hrw27-footer-link">Contact the Events Team</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Key Dates -->
+        <div>
+          <h4 class="hrw27-footer-h4">Key Dates</h4>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="padding: 10px; background: var(--color-canvas); border-radius: var(--radius-md); border: 1px solid var(--color-subtle); border-left: 3px solid var(--color-brand-pink);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Oct 30, 2026</div>
+              <div style="font-size: 12px; color: var(--color-text-muted);">Call for Speakers Deadline</div>
+            </div>
+            <div style="padding: 10px; background: var(--color-canvas); border-radius: var(--radius-md); border: 1px solid var(--color-subtle); border-left: 3px solid var(--color-brand-purple);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Dec 2026</div>
+              <div style="font-size: 12px; color: var(--color-text-muted);">Early Bird Registration Opens</div>
+            </div>
+            <div style="padding: 10px; background: var(--color-canvas); border-radius: var(--radius-md); border: 1px solid var(--color-subtle); border-left: 3px solid var(--color-brand-pink);">
+              <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">March 23-24, 2027</div>
+              <div style="font-size: 12px; color: var(--color-text-muted);">HRWest 2027 Main Conference</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Shared JavaScript Controller -->
+<script>
+(function() {
+  'use strict';
+
+  /* 1. FORCE RESET BODY PADDING-TOP FOR CMS SF-NAV-MAIN-MODE */
+  function forceResetBodyPadding() {
+    var targets = [document.body, document.documentElement];
+    document.querySelectorAll('.sf-nav-main-mode, body.sf-nav-main-mode').forEach(function(el) {
+      targets.push(el);
+    });
+    targets.forEach(function(el) {
+      if (el && el.style) {
+        el.style.setProperty('padding-top', '0px', 'important');
+        el.style.setProperty('margin-top', '0px', 'important');
+      }
+    });
+  }
+
+  forceResetBodyPadding();
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceResetBodyPadding);
+  }
+  window.addEventListener('load', forceResetBodyPadding);
+
+  var resetCount = 0;
+  var resetInterval = setInterval(function() {
+    forceResetBodyPadding();
+    resetCount++;
+    if (resetCount > 50) clearInterval(resetInterval);
+  }, 50);
+
+  if (window.MutationObserver) {
+    var obs = new MutationObserver(function() {
+      forceResetBodyPadding();
+    });
+    if (document.body) {
+      obs.observe(document.body, { attributes: true, attributeFilter: ['style', 'class'] });
+    }
+  }
+
+  /* 2. MOBILE MENU TOGGLE */
+  var mobToggle = document.getElementById('hrw27-mob-toggle');
+  var mobMenu = document.getElementById('hrw27-mob-menu');
+  if (mobToggle && mobMenu) {
+    mobToggle.addEventListener('click', function() {
+      mobMenu.classList.toggle('open');
+    });
+  }
+
+  /* 3. EVENT COUNTDOWN (March 23, 2027 08:00:00) */
+  var eventDate = new Date('2027-03-23T08:00:00').getTime();
+  var daysEl = document.getElementById('hrw27-reg-days');
+  var hoursEl = document.getElementById('hrw27-reg-hours');
+  var minsEl = document.getElementById('hrw27-reg-mins');
+  var secsEl = document.getElementById('hrw27-reg-secs');
+
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var diff = eventDate - now;
+
+    if (diff <= 0) {
+      if (daysEl) daysEl.textContent = '00';
+      if (hoursEl) hoursEl.textContent = '00';
+      if (minsEl) minsEl.textContent = '00';
+      if (secsEl) secsEl.textContent = '00';
+      return;
+    }
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    var pad = function(n) { return n < 10 ? '0' + n : String(n); };
+    if (daysEl) daysEl.textContent = pad(days);
+    if (hoursEl) hoursEl.textContent = pad(hours);
+    if (minsEl) minsEl.textContent = pad(mins);
+    if (secsEl) secsEl.textContent = pad(secs);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* 4. SMOOTH SCROLL FOR INTERNAL ANCHORS */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#' && document.querySelector(targetId)) {
+        e.preventDefault();
+        var targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          var headerOffset = 90;
+          var elementPosition = targetEl.getBoundingClientRect().top;
+          var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  /* 5. CMS AD CLEANUP */
+  var adBtm = document.getElementById('hradbtmwrapper');
+  if (adBtm) { adBtm.innerHTML = ''; }
+
+})();
+</script>
+<script src="$public/Certifications/scripts/menu/index.js"></script>
+$designAttribute:masterD_no_sidebar
