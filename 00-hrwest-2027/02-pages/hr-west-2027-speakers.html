@@ -297,13 +297,14 @@
 
   .spk-float-card {
     position: absolute;
-    width: 320px;
+    width: 370px;
+    max-width: 100%;
     background: rgba(255, 255, 255, 0.11);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 16px;
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1.1rem;
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
@@ -312,10 +313,22 @@
   }
 
   .spk-float-card:hover {
-    transform: scale(1.04) !important;
+    transform: scale(1.03) !important;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
     z-index: 10 !important;
     border-color: rgba(239, 20, 110, 0.5);
+  }
+
+  .spk-float-card-spotlight {
+    background: linear-gradient(135deg, rgba(239, 20, 110, 0.28) 0%, rgba(93, 47, 199, 0.38) 100%) !important;
+    border: 1.5px solid rgba(239, 20, 110, 0.75) !important;
+    box-shadow: 0 12px 36px rgba(239, 20, 110, 0.35), 0 0 24px rgba(93, 47, 199, 0.25) !important;
+  }
+
+  .spk-float-card-spotlight:hover {
+    background: linear-gradient(135deg, rgba(239, 20, 110, 0.4) 0%, rgba(93, 47, 199, 0.5) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 16px 44px rgba(239, 20, 110, 0.5), 0 0 30px rgba(93, 47, 199, 0.35) !important;
   }
 
   .spk-float-card-1 {
@@ -780,13 +793,13 @@
       <!-- Left Column: Content -->
       <div class="spk-hero-content">
         
-        <!-- Sleek Date and Call for Speakers Eyebrow Badge -->
+        <!-- Sleek Location & Date Eyebrow Badge -->
         <div style="display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.12); border: 1.5px solid rgba(239, 20, 110, 0.35); border-radius: 9999px; padding: 0.35rem 1rem 0.35rem 0.45rem; margin-bottom: 1.25rem; width: fit-content; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
           <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: 9999px; padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.76rem; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">
             March 23-24, 2027
           </span>
-          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; display: flex; align-items: center; gap: 0.4rem; letter-spacing: 0.02em;">
-            South San Francisco, CA · <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #f472b6;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Call for Speakers
+          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; letter-spacing: 0.02em;">
+            South San Francisco, CA
           </span>
         </div>
 
@@ -816,7 +829,7 @@
           </a>
 
           <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spk-hero-btn-outline">
-            Pre-Register for 2027
+            Register
           </a>
         </div>
 
@@ -864,20 +877,25 @@
           </div>
         </div>
 
-        <!-- Float Card 3: Call for Speakers / Deadline -->
+        <!-- Float Card 3: Call for Speakers / Deadline Spotlight -->
         <div
-          class="spk-float-card spk-float-card-3"
+          class="spk-float-card spk-float-card-3 spk-float-card-spotlight"
           style="cursor: pointer;"
           onclick="loadPopup('fc_1718298636298')"
         >
-          <div class="spk-float-icon-box">
-            <span style="font-size: 20px;">🎤</span>
+          <div class="spk-float-icon-box" style="background: var(--gradient-pink); border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 4px 18px rgba(239,20,110,0.55);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
           </div>
           <div style="flex: 1; min-width: 0;">
-            <div class="spk-float-name">Call for Speakers</div>
-            <div class="spk-float-role">Deadline: Oct 30, 2026</div>
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+              <span class="spk-float-name" style="margin: 0; font-size: 0.95rem; font-weight: 900; color: #ffffff;">Call for Speakers</span>
+            </div>
+            <div style="font-family: 'Outfit', system-ui, sans-serif; font-size: 0.78rem; font-weight: 800; color: #ff94c2; display: flex; align-items: center; gap: 5px;">
+              <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #ff2d88; box-shadow: 0 0 8px #ff2d88;"></span>
+              Deadline: October 30, 2026
+            </div>
           </div>
-          <div class="spk-float-pill" style="background: var(--gradient-pink); color: #ffffff; border: none; font-weight: 800;">
+          <div class="spk-float-pill" style="background: var(--gradient-pink); color: #ffffff; border: 1.5px solid rgba(255,255,255,0.6); font-weight: 900; padding: 6px 12px; font-size: 0.72rem; box-shadow: 0 4px 16px rgba(239,20,110,0.5); letter-spacing: 0.04em; white-space: nowrap;">
             APPLY NOW ↗
           </div>
         </div>
@@ -916,14 +934,7 @@
       <div class="spk-grid-container">
 
         <!-- Speaker 1: Jason Averbook -->
-        <a
-          href="https://www.linkedin.com/in/jasonaverbook/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="spk-card-link"
-          data-feathr-click-track="true"
-          data-feathr-link-aids="6127cfab0dc20e810ab012ed"
-        >
+        <div class="spk-card-link" style="cursor: default;">
           <div class="spk-card-topline"></div>
           <div class="spk-card-photo-box">
             <img
@@ -939,12 +950,8 @@
             <h3 class="spk-card-name">Jason Averbook</h3>
             <div class="spk-card-role">Global HR Transformation Leader & Author</div>
             <div class="spk-card-company">Now to Next</div>
-            <div class="spk-card-footer-cta">
-              <span>View Profile</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
           </div>
-        </a>
+        </div>
 
         <!-- Speaker 2: Allison West -->
         <a
@@ -1675,7 +1682,7 @@
           </div>
           <h3 class="spk-bottom-h3">Apply to Speak at HRWest 2027</h3>
           <p class="spk-bottom-p">
-            Are you pioneering breakthroughs in AI-driven HR, workforce legal strategy, talent acquisition, or executive leadership? Present your insights before <strong style="color: var(--color-brand-pink);">1,000+ senior leaders</strong> in South San Francisco.
+            Are you pioneering breakthroughs in AI-driven HR, workforce legal strategy, talent acquisition, or executive leadership? Present your insights before <strong style="color: var(--color-brand-pink);">500+ senior leaders</strong> in South San Francisco.
           </p>
 
           <div class="spk-bottom-btns">
@@ -1690,7 +1697,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spk-hero-btn-outline" style="color: var(--color-brand-purple) !important; border-color: rgba(93,47,199,0.3); background: #ffffff;">
-              Pre-Register for 2027
+              Register
             </a>
           </div>
         </div>
