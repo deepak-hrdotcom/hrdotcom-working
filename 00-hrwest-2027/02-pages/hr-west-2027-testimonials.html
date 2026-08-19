@@ -545,16 +545,22 @@
     position: relative;
     width: 100%;
     aspect-ratio: 9 / 16;
-    max-height: 380px;
+    max-height: 420px;
     background: #000000;
     overflow: hidden;
+    border-radius: var(--radius-lg);
   }
 
-  .hrw27 .video-wrapper video {
+  .hrw27 .video-wrapper video,
+  .hrw27 .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border: none;
   }
 
   /* Quote Card Accents */
@@ -704,73 +710,63 @@
 
       <div class="grid-4" style="align-items: stretch;">
         
-        <!-- Video 1 -->
+        <!-- Video 1 (Google Drive Testimonial 1) -->
         <div class="video-card fade-up delay-1">
           <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/1h.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Attendee Reaction</span>
-            <span class="badge badge-purple">Video 01</span>
+            <iframe
+              src="https://drive.google.com/file/d/170wEZtGzUOb9k77vB0bXrio50HX9vVTF/preview"
+              title="HRWest Attendee Testimonial 1"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
-        <!-- Video 2 -->
+        <!-- Video 2 (Google Drive Testimonial 2) -->
         <div class="video-card fade-up delay-2">
           <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/2.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Keynote Takeaways</span>
-            <span class="badge badge-purple">Video 02</span>
+            <iframe
+              src="https://drive.google.com/file/d/15fa1JgruhhTJHzuAFR9y8UewzczOeCVB/preview"
+              title="HRWest Attendee Testimonial 2"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
-        <!-- Video 3 -->
+        <!-- Video 3 (Google Drive Testimonial 3) -->
         <div class="video-card fade-up delay-3">
           <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/3h.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Networking Insights</span>
-            <span class="badge badge-purple">Video 03</span>
+            <iframe
+              src="https://drive.google.com/file/d/1IPwdmmfT-ntrJuPGMYGPD8lSc_m6_wP1/preview"
+              title="HRWest Attendee Testimonial 3"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
-        <!-- Video 4 -->
+        <!-- Video 4 (Google Drive Testimonial 4) -->
         <div class="video-card fade-up delay-4">
           <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/4h.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Workshop Experience</span>
-            <span class="badge badge-purple">Video 04</span>
+            <iframe
+              src="https://drive.google.com/file/d/1gv5owA9U5m3zBM3d5K22mOVP-yWRLeWu/preview"
+              title="HRWest Attendee Testimonial 4"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
-        <!-- Video 5 -->
+        <!-- Video 5 (Google Drive Testimonial 5) -->
         <div class="video-card fade-up delay-1">
           <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/5.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Floor Conversations</span>
-            <span class="badge badge-purple">Video 05</span>
+            <iframe
+              src="https://drive.google.com/file/d/1DewkHiN6PlC84wZr0NLoTwmo0YLVAiNT/preview"
+              title="HRWest Attendee Testimonial 5"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
@@ -782,10 +778,6 @@
               Your browser does not support HTML5 video.
             </video>
           </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Community Connection</span>
-            <span class="badge badge-purple">Video 06</span>
-          </div>
         </div>
 
         <!-- Video 7 -->
@@ -796,10 +788,6 @@
               Your browser does not support HTML5 video.
             </video>
           </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Sponsor Value</span>
-            <span class="badge badge-purple">Video 07</span>
-          </div>
         </div>
 
         <!-- Video 8 -->
@@ -809,10 +797,6 @@
               <source src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/videos/8.mp4" type="video/mp4" />
               Your browser does not support HTML5 video.
             </video>
-          </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--color-elevated);">
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-text-primary);">Conference Wrap-Up</span>
-            <span class="badge badge-purple">Video 08</span>
           </div>
         </div>
 
