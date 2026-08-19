@@ -53,31 +53,65 @@
     scroll-margin-top: 120px;
   }
 
-  .earlybird-offer {
-    background: #c6d0ff;
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    color: #ffffff;
-    text-align: center;
-    display: inline-block;
-    width: auto;
-    max-width: max-content;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    color: #000 !important;
+  .earlybird-offer,
+  #earlybird-offer {
+    background: #fdf2f8 !important;
+    border: 1px solid #fbcfe8 !important;
+    box-shadow: 0 2px 6px rgba(217, 27, 92, 0.05) !important;
+    padding: 8px 24px !important;
+    margin: 10px auto 28px auto !important;
+    color: #1e293b !important;
+    font-size: 14.5px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    display: table !important;
+    max-width: max-content !important;
+    border-radius: 999px !important;
   }
 
-  .earlybird-offer span span {
-    margin: 0 !important;
+  .earlybird-offer span,
+  #earlybird-offer span {
+    background: transparent !important;
     padding: 0 !important;
-    /* color: yellow !important; */
-    font-weight: 900;
+    margin: 0 !important;
+    color: #1e293b !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    display: inline !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .earlybird-offer span span,
+  #earlybird-offer span span {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #d91b5c !important;
+    font-weight: 800 !important;
+    display: inline !important;
   }
 
   @media screen and (max-width: 768px) {
-    .earlybird-offer span span {
-      display: inline-block !important;
+    .eb_divider {
+      margin: 8px 0 20px 0;
+    }
+    .earlybird-offer,
+    #earlybird-offer {
+      display: block !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      border-radius: 8px !important;
+      padding: 10px 14px !important;
+      margin-bottom: 20px !important;
+    }
+    .earlybird-offer span,
+    #earlybird-offer span {
+      font-size: 13px !important;
+    }
+    .earlybird-offer span span,
+    #earlybird-offer span span {
+      display: inline !important;
     }
   }
 </style>
@@ -674,10 +708,11 @@
                 <!-- ===================== END Group 17 ===================== -->
 
                 <!-- ===================== SEPTEMBER 2026 EARLYBIRD ===================== -->
-                <div class="earlybird-offer"><span> Offer ends soon! Enroll by <span>Sept 18</span>&nbsp;and save
-                    <span>$50</span> with promo code <span>EARLYBIRD50</span> at checkout. </span></div>
+                <div class="earlybird-offer" id="earlybird-offer"><span>👇 Offer ends soon! Enroll by <span>Sept 18</span>&nbsp;and save
+                    <span>$50</span> with promo code <span>EARLYBIRD50</span> at checkout. 👇</span></div>
                 <!-- ===================== END EARLYBIRD ===================== -->
-                <!-- ===================== Group 19 – 16 Week ===================== -->
+
+                <!-- ===================== Group 19 - 16 Week ===================== -->
                 <div class="en_list_card">
                   <div class="en_gp">Group 19</div>
 

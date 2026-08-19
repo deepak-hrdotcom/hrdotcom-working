@@ -9,242 +9,94 @@
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
-    <title>Smarter Compensation for Healthcare: Elevate Your HRIS with HRSoft | HR.com Webcast</title>
+     <title>What Your Payroll Says About Your Business | HR.com Webcast</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
         /* === EMAIL RESETS === */
-        body,
-        table,
-        td,
-        a {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-        }
-
-        table,
-        td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
-
-        img {
-            -ms-interpolation-mode: bicubic;
-            border: 0;
-            outline: none;
-            text-decoration: none;
-            display: block;
-        }
-
-        .ReadMsgBody {
-            width: 100%;
-        }
-
-        .ExternalClass {
-            width: 100%;
-        }
-
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
-            line-height: 100%;
-        }
-
-        a[x-apple-data-detectors] {
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
-
-        body {
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-            background-color: #ECEEF0;
-        }
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+        .ReadMsgBody { width: 100%; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+        body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #ECEEF0; }
 
         /* === DARK MODE === */
         @media (prefers-color-scheme: dark) {
-
-            body,
-            .email-body-bg {
-                background-color: #0D1117 !important;
-            }
-
-            .main-container {
-                background-color: #161B22 !important;
-            }
-
-            .hero-bg {
-                background-color: #161B22 !important;
-            }
-
-            .takeaways-bg {
-                background-color: #1C2128 !important;
-            }
-
-            .speakers-bg {
-                background-color: #1C2128 !important;
-            }
-
-            .speaker-card-inner {
-                background-color: #0D1117 !important;
-                border-color: #2D3748 !important;
-            }
-
-            .speaker-name {
-                color: #E8EEF4 !important;
-            }
-
-            .speaker-role {
-                color: #4AC4D6 !important;
-            }
-
-            .section-heading {
-                color: #E8EEF4 !important;
-            }
-
-            .takeaway-title {
-                color: #E8EEF4 !important;
-            }
-
-            .takeaway-desc {
-                color: #718096 !important;
-            }
-
-            .sponsor-section-bg {
-                background-color: #161B22 !important;
-            }
-
-            .hero-sponsor-chip {
-                background-color: #FFFFFF !important;
-            }
-
-            /* White header bar stays white even in dark mode — needed for logo legibility */
-            .header-bar-bg {
-                background-color: #FFFFFF !important;
-            }
-
-            .header-bar-label {
-                color: #A0AEC0 !important;
-            }
-
-            .sponsor-logo-cell {
-                background-color: #FFFFFF !important;
-                border-radius: 6px;
-            }
-
-            .credit-bg {
-                background-color: #1C2128 !important;
-            }
-
-            .body-copy-p {
-                color: #94A3B8 !important;
-            }
+            body, .email-body-bg { background-color: #0D1117 !important; }
+            .main-container { background-color: #161B22 !important; }
+            .hero-bg { background-color: #0F3D34 !important; }
+            .split-hero-left { background-color: #161B22 !important; }
+            .split-hero-left .hero-title { color: #E8EEF4 !important; }
+            .intro-section-td { background-color: #161B22 !important; }
+            .takeaways-bg { background-color: #161B22 !important; }
+            .takeaway-card-table, .takeaway-card-cell { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+            .takeaway-title { color: #E8EEF4 !important; }
+            .takeaway-desc { color: #94A3B8 !important; }
+            .sec-cta-section-td { background-color: #161B22 !important; }
+            .speakers-bg { background-color: #1C2128 !important; }
+            .speaker-card-inner { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+            .speaker-name { color: #E8EEF4 !important; }
+            .speaker-role { color: #4AC4D6 !important; }
+            .section-heading { color: #E8EEF4 !important; }
+            .sponsor-section-bg { background-color: #161B22 !important; }
+            .hero-sponsor-chip { background-color: #FFFFFF !important; }
+            .header-bar-bg { background-color: #FFFFFF !important; }
+            .header-bar-label { color: #A0AEC0 !important; }
+            .sponsor-logo-cell { background-color: #FFFFFF !important; border-radius: 6px; }
+            .credit-bg { background-color: #1C2128 !important; }
+            .body-copy-p { color: #CBD5E1 !important; }
+            .ve-callout-td { background-color: #1C2128 !important; border-color: #2D3748 !important; }
+            .ve-callout-td p { color: #CBD5E1 !important; }
+            .ve-callout-td strong { color: #E8EEF4 !important; }
         }
-
-        [data-ogsc] body,
-        [data-ogsc] .email-body-bg {
-            background-color: #0D1117 !important;
-        }
-
-        [data-ogsc] .main-container {
-            background-color: #161B22 !important;
-        }
-
-        [data-ogsc] h1,
-        [data-ogsc] h2,
-        [data-ogsc] h3 {
-            color: #E8EEF4 !important;
-        }
-
-        [data-ogsc] p {
-            color: #94A3B8 !important;
-        }
+        [data-ogsc] body, [data-ogsc] .email-body-bg { background-color: #0D1117 !important; }
+        [data-ogsc] .main-container { background-color: #161B22 !important; }
+        [data-ogsc] .hero-bg { background-color: #0F3D34 !important; }
+        [data-ogsc] .split-hero-left { background-color: #161B22 !important; }
+        [data-ogsc] .split-hero-left .hero-title { color: #E8EEF4 !important; }
+        [data-ogsc] .intro-section-td { background-color: #161B22 !important; }
+        [data-ogsc] .takeaways-bg { background-color: #161B22 !important; }
+        [data-ogsc] .takeaway-card-table, [data-ogsc] .takeaway-card-cell { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+        [data-ogsc] .takeaway-title { color: #E8EEF4 !important; }
+        [data-ogsc] .takeaway-desc { color: #94A3B8 !important; }
+        [data-ogsc] .sec-cta-section-td { background-color: #161B22 !important; }
+        [data-ogsc] .speakers-bg { background-color: #1C2128 !important; }
+        [data-ogsc] .speaker-card-inner { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+        [data-ogsc] .speaker-name { color: #E8EEF4 !important; }
+        [data-ogsc] .speaker-role { color: #4AC4D6 !important; }
+        [data-ogsc] .section-heading { color: #E8EEF4 !important; }
+        [data-ogsc] .credit-bg { background-color: #1C2128 !important; }
+        [data-ogsc] .body-copy-p { color: #CBD5E1 !important; }
+        [data-ogsc] .ve-callout-td { background-color: #1C2128 !important; border-color: #2D3748 !important; }
+        [data-ogsc] .ve-callout-td p { color: #CBD5E1 !important; }
+        [data-ogsc] .ve-callout-td strong { color: #E8EEF4 !important; }
+        [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3 { color: #E8EEF4 !important; }
+        [data-ogsc] p { color: #94A3B8 !important; }
 
         @media screen and (max-width: 600px) {
-            .email-outer-td {
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
-            }
-
-            .main-container {
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-
-            .hero-section-td {
-                padding: 24px 20px 28px 20px !important;
-            }
-
-            .hero-title {
-                font-size: 25px !important;
-                line-height: 33px !important;
-            }
-
-            .hero-meta {
-                font-size: 13px !important;
-            }
-
-            .utility-bar-td {
-                font-size: 11px !important;
-                padding: 8px 16px !important;
-            }
-
-            .takeaways-td {
-                padding: 24px 16px !important;
-            }
-
-            .speakers-section-td {
-                padding: 28px 16px 24px 16px !important;
-            }
-
-            .speaker-card-div {
-                width: 100% !important;
-                display: block !important;
-                padding: 8px 0 !important;
-            }
-
-            .sponsor-section-td {
-                padding: 24px 12px 20px 12px !important;
-            }
-
-            .credit-stack-table,
-            .credit-stack-table tbody,
-            .credit-stack-table tr,
-            .credit-badge-cell,
-            .credit-text-cell {
-                display: block !important;
-                width: 100% !important;
-            }
-
-            .credit-badge-cell {
-                text-align: center !important;
-                padding-bottom: 12px !important;
-            }
-
-            .credit-text-cell {
-                text-align: center !important;
-                padding-left: 0 !important;
-                padding-top: 0 !important;
-            }
-
-            .footer-inner-td {
-                padding: 28px 16px 0 16px !important;
-            }
+            .email-outer-td { padding-top: 0 !important; padding-bottom: 0 !important; }
+            .main-container { width: 100% !important; max-width: 100% !important; }
+            .hero-section-td { padding: 24px 20px 28px 20px !important; }
+            .hero-title { font-size: 25px !important; line-height: 33px !important; }
+            .hero-meta { font-size: 13px !important; }
+            .utility-bar-td { font-size: 11px !important; padding: 8px 16px !important; }
+            .takeaways-td { padding: 24px 16px !important; }
+            .speakers-section-td { padding: 28px 16px 24px 16px !important; }
+            .speaker-card-div { width: 100% !important; display: block !important; padding: 8px 0 !important; }
+            .sponsor-section-td { padding: 24px 12px 20px 12px !important; }
+            .credit-stack-table, .credit-stack-table tbody, .credit-stack-table tr, .credit-badge-cell, .credit-text-cell { display: block !important; width: 100% !important; }
+            .credit-badge-cell { text-align: center !important; padding-bottom: 12px !important; }
+            .credit-text-cell { text-align: center !important; padding-left: 0 !important; padding-top: 0 !important; }
+            .footer-inner-td { padding: 28px 16px 0 16px !important; }
+            .grid-2col-cell { display: block !important; width: 100% !important; box-sizing: border-box !important; padding: 6px 0 !important; }
+            .split-hero-cell { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; padding: 28px 20px !important; }
+            .split-hero-parent { padding: 0 !important; }
         }
-
         @media screen and (max-width: 400px) {
-            .hero-title {
-                font-size: 21px !important;
-                line-height: 29px !important;
-            }
+            .hero-title { font-size: 21px !important; line-height: 29px !important; }
         }
     </style>
     <!--[if mso]>
@@ -256,21 +108,19 @@
 
 
 
-    <!-- ============================================================ -->
-    <!-- SUBJECT LINE (do not render in email — reference only)      -->
-    <!-- ============================================================ -->
-    <!-- SUBJECT: 1. Is your healthcare talent eyeing the exit
-2. Your HRIS cannot handle complex payroll rules
-3. Stop losing critical clinical staff over pay
-4. The hidden compliance traps in clinical pay
-5. Shift differentials are breaking your budget -->
+    <!-- SUBJECT: 1. Is fragmented payroll exposing hidden business risks?
+2. Stop viewing payroll as just an admin task
+3. Hidden friction behind your payroll is costing you
+4. How to turn payroll into a strategic growth engine?
+5. Connect HR, Finance, and IT through smart payroll
+6. How mature is your organization's payroll process?
+7. What does your payroll say about your business?
+8. Unlock business agility with connected payroll
+9. Transform your payroll into an operational engine
+10. Simple steps to evaluate your payroll maturity -->
 
-    <!-- ============================================================ -->
-    <!-- PREHEADER TEXT                                               -->
-    <!-- ============================================================ -->
-     <!-- ============================================================ -->
    <div style="display:none;font-size:1px;color:#ECEEF0;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;font-family:Arial,sans-serif;">
-    Overcome rising turnover and complex healthcare payroll rules. Secure your spot now.
+    Discover what payroll reveals about your operational health and register today.
 </div>
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%" class="email-body-bg" style="background-color:#ECEEF0;width:100%;">
@@ -280,112 +130,62 @@
                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                 <![endif]-->
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:0 auto;" class="main-container">
-
-
-
-
-                    <!-- ============================================================ -->
-                    <!-- BRAND RAINBOW STRIP (official brand colors, correct order)   -->
-                    <!-- ============================================================ -->
-                    <tbody><tr>
+<tbody><tr>
                         <td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody><tr>
-                                    <td width="25%" style="background-color:#EF4A3D;height:5px;font-size:0;line-height:0;">&nbsp;
-                                    </td>
-                                    <td width="25%" style="background-color:#FDB414;height:5px;font-size:0;line-height:0;">&nbsp;
-                                    </td>
-                                    <td width="25%" style="background-color:#94C83D;height:5px;font-size:0;line-height:0;">&nbsp;
-                                    </td>
-                                    <td width="25%" style="background-color:#4AC4D6;height:5px;font-size:0;line-height:0;">&nbsp;
-                                    </td>
+                                    <td width="25%" style="background-color:#EF4A3D;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="25%" style="background-color:#FDB414;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="25%" style="background-color:#94C83D;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="25%" style="background-color:#4AC4D6;height:5px;font-size:0;line-height:0;">&nbsp;</td>
                                 </tr>
                             </tbody></table>
                         </td>
                     </tr>
-
-                    <!-- ============================================================ -->
-                    <!-- WHITE HEADER BAR: Logo LEFT | Event Label RIGHT             -->
-                    <!-- WHY TABLES not divs: Outlook 2007-2019 uses the Word        -->
-                    <!-- rendering engine and ignores display:inline-block on divs.  -->
-                    <!-- A nested 2-col table is the only cross-client safe approach. -->
-                    <!-- ============================================================ -->
-                    <tr>
+<tr>
                         <td class="header-bar-bg" style="background-color:#FFFFFF;padding:12px 20px;border-bottom:1px solid #ECEEF0;">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody><tr>
-                                    <!-- LEFT: Sponsor logo — no link for webcasts -->
                                     <td align="left" valign="middle" style="padding:0;">
-                                        <img src="https://public-cdn.hr.com/system/app/media/rs/2024/3/13/ltqap7ea/120.jpg" alt="HR Soft" style="display:block;width:auto;height:auto;max-width:90px;max-height:40px;border:0;">
+                                        <img src="https://media-cdn.hr.com/Emails/SAP_Veritas.jpg" alt="SAP Veritas" style="display:block;width:auto;height:auto;max-width:170px;max-height:100px;border:0;">
                                     </td>
-                                    <!-- RIGHT: Event type label -->
                                     <td align="right" valign="middle" style="padding:0;">
-                                        <span class="header-bar-label" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">Upcoming
-                                            Webcast</span>
+                                        <span class="header-bar-label" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">Upcoming Webcast</span>
                                     </td>
                                 </tr>
                             </tbody></table>
                         </td>
                     </tr>
-
-                    <!-- ============================================================ -->
-                    <!-- HERO — Clean gradient. Editorial, focused, high-impact.      -->
-                    <!-- ============================================================ -->
-                    <tr>
+<tr>
                         <td align="center" valign="top" class="hero-section-td hero-bg" style="background: linear-gradient(160deg, #1E7E8C 0%, #0A262A 100%); background-color: #1E7E8C; padding: 24px 36px 28px 36px;">
-
-                            <!-- Main Headline -->
                             <h1 class="hero-title" style="margin:0 0 8px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:32px;font-weight:900;color:#FFFFFF;line-height:41px;text-align:center;letter-spacing:-0.3px;">
-                                Smarter Compensation for Healthcare: Elevate Your HRIS with HRSoft
+                               What Your Payroll Says About Your Business
                             </h1>
-
-                            <!-- Date meta -->
                             <p class="hero-meta" style="margin:0 0 24px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.9);text-align:center;line-height:22px;letter-spacing:0.3px;">
-                              August 11, 2026 at 1:00 PM - 2:00 PM ET &nbsp;·&nbsp; Free to Attend
+                              September 24, 2026 at 1:00 PM - 2:00 PM ET &nbsp;·&nbsp; Free to Attend
                             </p>
-
-                            <!-- Hero CTA Button -->
                             <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:4px;">
                                 <tbody><tr>
                                     <td align="center" style="border-radius:999px;background:#FFFFFF;" bgcolor="#FFFFFF">
-                                        <a href="https://www.hr.com/en?t=/CustomCode/webcasts/registration&amp;storyID=1783699125932&amp;email=__EMAIL__" target="_blank" data-cta="1" data-captcha="1" style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#1E7E8C;text-decoration:none;border-radius:999px;padding:13px 42px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
-                                            Save My Spot — Register Free →
+                                        <a href="https://www.hr.com/en?t=/CustomCode/webcasts/registration&amp;storyID=1786639329042&amp;email=__EMAIL__" target="_blank" style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#1E7E8C;text-decoration:none;border-radius:999px;padding:13px 42px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
+                                            Save My Free Spot →
                                         </a>
                                     </td>
                                 </tr>
                             </tbody></table>
-
                         </td>
                     </tr>
-
-                    <!-- ============================================================ -->
-                    <!-- INTRO COPY + CTA SECTION — White background, max scanability -->
-                    <!-- {{COPY}} must render TWO paragraphs:                         -->
-                    <!--   Para 1: Pain Point  |  Para 2: Solution                   -->
-                    <!-- ============================================================ -->
-                    <tr>
-                        <td align="center" valign="top" style="background-color: #FFFFFF; padding: 40px 36px 6px 36px;">
-
-                            <!-- Single punchy intro para (200-250 chars) -->
-                            <p class="body-copy-p" style="margin:0 0 0 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#4A5568;text-align:left;line-height:28px;">
-                                Healthcare organizations face unprecedented talent turnover and intense competition for clinical staff. While basic HRIS platforms store data, they fail to manage complex union agreements, shift differentials, and evolving pay regulations. This interactive session explores how modern compensation technology and workforce intelligence eliminate manual payroll errors and help you retain in-demand healthcare professionals.
-                            </p>
+<tr>
+                        <td align="center" valign="top" class="intro-section-td" style="background-color: #FFFFFF; padding: 40px 36px 6px 36px;">
+                            <p class="body-copy-p" style="margin:0 0 16px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#4A5568;text-align:left;line-height:28px;">Most organizations evaluate payroll solely on accurate, timely execution. However, smooth pay runs often mask significant operational friction, fragmented processes, and compliance risks across HR, Finance, and IT.</p>
+                            <p class="body-copy-p" style="margin:0 0 0 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#4A5568;text-align:left;line-height:28px;">Join this interactive webcast to evaluate your payroll maturity and uncover hidden inefficiencies. Learn how to transform payroll into a strategic driver for business agility and cross-functional trust.</p>
                         </td>
                     </tr>
-
-                    <!-- ============================================================ -->
-                    <!-- INTRO COPY SECTION (white bg, follows hero CTA)              -->
-                    <!-- ============================================================ -->
-
-                    <!-- ============================================================ -->
-                    <!-- WHAT YOU'LL LEARN — Light bg. Scannable. 4 bullets max.     -->
-                    <!-- ============================================================ -->
-                    <tr>
+<tr>
                         <td align="left" valign="top" class="takeaways-bg takeaways-td" style="background-color:#FFFFFF;padding:14px 36px 32px 36px;">
                             <p style="margin:0 0 18px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">
                                 What You'll Learn</p>
 
-                             <!-- Takeaway 01 -->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px;">
                                 <tbody><tr>
                                     <td width="36" valign="middle" align="center" style="vertical-align:middle;padding:0;width:36px;">
@@ -398,12 +198,10 @@
                                         </tbody></table>
                                     </td>
                                     <td valign="middle" style="padding-left:12px;vertical-align:middle;">
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Simplify compensation management across diverse healthcare populations.</span>
+                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Uncover hidden operational work behind pay runs.</span>
                                     </td>
                                 </tr>
                             </tbody></table>
-
-                            <!-- Takeaway 02 -->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px;">
                                 <tbody><tr>
                                     <td width="36" valign="middle" align="center" style="vertical-align:middle;padding:0;width:36px;">
@@ -416,12 +214,10 @@
                                         </tbody></table>
                                     </td>
                                     <td valign="middle" style="padding-left:12px;vertical-align:middle;">
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Leverage technology to support healthcare employee retention.</span>
+                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Evaluate payroll as a strategic business process.</span>
                                     </td>
                                 </tr>
                             </tbody></table>
-
-                            <!-- Takeaway 03 -->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px;">
                                 <tbody><tr>
                                     <td width="36" valign="middle" align="center" style="vertical-align:middle;padding:0;width:36px;">
@@ -434,13 +230,11 @@
                                         </tbody></table>
                                     </td>
                                     <td valign="middle" style="padding-left:12px;vertical-align:middle;">
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Connect compensation analytics to combat staff burnout.</span>
+                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Connect HR, Finance, and IT payroll operations.</span>
                                     </td>
                                 </tr>
                             </tbody></table>
-
-                            <!-- Takeaway 04 -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:0;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:0px;">
                                 <tbody><tr>
                                     <td width="36" valign="middle" align="center" style="vertical-align:middle;padding:0;width:36px;">
                                         <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;">
@@ -452,16 +246,19 @@
                                         </tbody></table>
                                     </td>
                                     <td valign="middle" style="padding-left:12px;vertical-align:middle;">
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Build compensation programs that attract top clinical talent.</span>
+                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Assess payroll maturity using practical evaluation tools.</span>
                                     </td>
                                 </tr>
                             </tbody></table>
 
-                            <!-- Mid-content ghost pill CTA — secondary weight, upgraded from plain text link -->
-                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin:24px auto 0 auto;">
+                        </td>
+                    </tr>
+<tr>
+                        <td align="center" valign="top" class="sec-cta-section-td" style="background-color:#FFFFFF;padding:0 36px 32px 36px;">
+                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin:0 auto;">
                                 <tbody><tr>
                                     <td align="center" style="border-radius:999px;border:2px solid #02588E;" bgcolor="#FFFFFF">
-                                        <a href="https://web.hr.com/3x52o" data-cta="1" data-captcha="1" target="_blank" style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#02588E;text-decoration:none;border-radius:999px;padding:10px 28px;display:inline-block;font-weight:700;letter-spacing:0.3px;mso-padding-alt:0;">
+                                        <a href="https://web.hr.com/m6mpa" data-cta="1" data-captcha="1" target="_blank" style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#02588E;text-decoration:none;border-radius:999px;padding:10px 28px;display:inline-block;font-weight:700;letter-spacing:0.3px;mso-padding-alt:0;">
                                             Curious? Find out more here →
                                         </a>
                                     </td>
@@ -469,14 +266,7 @@
                             </tbody></table>
                         </td>
                     </tr>
-              
-       
-
-                    <!-- ============================================================ -->
-                    <!-- FEATURED SPEAKERS — The trust builders. Faces = registrations -->
-                    <!-- Light bg differentiates from virtual event dark agenda block  -->
-                    <!-- ============================================================ -->
-                    <tr>
+<tr>
                         <td align="center" valign="top" class="speakers-bg speakers-section-td" style="background-color:#F8F9FA;padding:36px 24px 32px 24px;">
                             <p style="margin:0 0 6px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;text-align:center;">
                                 Your expert hosts</p>
@@ -485,16 +275,16 @@
                             </h2>
                             <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="552" align="center"><tr><![endif]-->
 
-                             <!--[if mso]><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->
+                         <!--[if mso]><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->
 <table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width: 260px;margin:8px 6px;">
     <tbody><tr>
         <td style="padding:0;">
             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px; background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);" class="speaker-card-inner">
                 <tbody><tr>
                     <td align="center" style="padding:24px 16px;">
-                        <img alt="Erika Sandoval" src="https://public-cdn.hr.com/profile_images/2021/5/4/1620135780343_120" width="90" height="90" style="display:block;width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #ECEEF0;">
-                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">Erika Sandoval</span>
-                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">Global Sr. Partner, Human Insights UKG</span>
+                        <img alt="Wesley Bryan" src="https://public-cdn.hr.com/profile_images/2005/8/25/1124989081088_120" width="90" height="90" style="display:block;width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #ECEEF0;">
+                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">Wesley Bryan</span>
+                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">Senior Executive, <br>Veritas Prime<br></span><br>
                     </td>
                 </tr>
             </tbody></table>
@@ -505,60 +295,31 @@
 <table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width: 260px;margin:8px 6px;">
     <tbody><tr>
         <td style="padding:0;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px; background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);" class="speaker-card-inner">
+             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px; background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);" class="speaker-card-inner">
                 <tbody><tr>
                     <td align="center" style="padding:24px 16px;">
-                        <img alt="Glizcel Ditto" src="https://public-cdn.hr.com/profile_images/2024/1/23/1706036100413_120" width="90" height="90" style="display:block;width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #ECEEF0;">
-                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">Glizcel Ditto</span>
-                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">Executive Director of Client Solutions HRSoft</span>
+                        <img alt="Todd Asevedo" src="https://public-cdn.hr.com/profile_images/2016/7/15/1468594058288_120" width="90" height="90" style="display:block;width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #ECEEF0;">
+                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">Todd Asevedo</span>
+                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">Vice President Cloud HCM Strategy and Sales, North America SAP SuccessFactors</span>
                     </td>
                 </tr>
             </tbody></table>
-        </td>
-    </tr>
-</tbody></table>
-<!--[if mso]></td><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->
-<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width: 260px;margin:8px 6px;">
-    <tbody><tr>
-        <td style="padding:0;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px; background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);" class="speaker-card-inner">
-                <tbody><tr>
-                    <td align="center" style="padding:24px 16px;">
-                        <img alt="Matt Stensland" src="https://media-cdn.hr.com/Emails/Webcast/matt-stensland.jpeg" width="90" height="90" style="display:block;width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #ECEEF0;">
-                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">Matt Stensland</span>
-                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">Director of Compensation, Acadia Healthcare</span>
-                    </td>
-                </tr>
-            </tbody></table>
-        </td>
-    </tr>
+    </td></tr>
 </tbody></table>
 <!--[if mso]></td><![endif]-->
-
                             <!--[if mso]></tr></table><![endif]-->
 
                         </td>
                     </tr>
-                          <!-- ============================================================ -->
-                   
-                    <!-- ============================================================ -->
-                    <!-- REGISTRATION REMINDER ROW                                    -->
-                    <!-- ============================================================ -->
-                    <tr>
+<tr>
                         <td align="center" valign="middle" class="takeaways-bg" style="background-color:#E8ECEF;padding:22px 28px;">
                             <p class="body-copy-p" style="margin:0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#4A5568;line-height:20px;text-align:center;">
-                                Can't attend the live webcast? <a href="https://web.hr.com/3x52o" target="_blank" data-cta="1" data-captcha="1" style="color:#02588E;text-decoration:underline;font-weight:600;">Register anyway</a>
+                                Can't attend the live webcast? <a href="https://web.hr.com/m6mpa" target="_blank" data-cta="1" data-captcha="1" style="color:#02588E;text-decoration:underline;font-weight:600;">Register anyway</a>
                                 to access the recording. Ensure you are logged in to your HR.com account to access
                                 registration for this webcast.
                             </p>
                         </td>
                     </tr>
-
-                    <!-- Removed separate sponsor section as it is now in the hero -->
-
-                    <!-- ============================================================ -->
-                    <!-- CREDIT INFORMATION — KEEP EXACTLY INTACT                     -->
-                    <!-- ============================================================ -->
                    
 <tr>
     <td align="center" valign="top" style="background-color:#F8F9FA;padding:32px 30px;" class="credit-bg credit-section-td">
@@ -572,7 +333,7 @@
                                     <img alt="HRCI" src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg" style="display:inline-block;max-width:90px;width:80px;height:80px;border:0;" width="80">
                                 </td>
                                 <td align="left" valign="top" class="credit-text-cell" style="color:#718096;padding-left:14px;padding-top:10px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
-                                    This Program has been pre-approved for 1 HR Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)
+                                    This Program has been pre-approved for 1 BUSINESS Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)
                                 </td>
                             </tr>
                         </tbody></table>
@@ -598,98 +359,25 @@
     </td>
 </tr>
 
-
-                    <!-- ============================================================ -->
-                    <!-- FOOTER — KEEP EXACTLY INTACT                                 -->
-                    <!-- ============================================================ -->
-                    <tr>
+<tr>
                         <td align="center" valign="top">
                             <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="background-color:#1C2631;max-width:600px;">
                                 <tbody>
-                                    <tr>
-                                        <td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                <tbody><tr>
-                                                    <td width="25%" style="background-color:#EF4A3D;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                    <td width="25%" style="background-color:#FDB414;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                    <td width="25%" style="background-color:#94C83D;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                    <td width="25%" style="background-color:#4AC4D6;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                </tr>
-                                            </tbody></table>
-                                        </td>
-                                    </tr>
+                                    <tr><td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td width="25%" style="background-color:#EF4A3D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#FDB414;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#94C83D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#4AC4D6;height:3px;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
                                     <tr>
                                         <td align="center" valign="top" class="footer-inner-td" style="padding:36px 20px 0 20px;">
                                             <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="max-width:560px;">
                                                 <tbody>
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom:20px;">
-                                                            <a href="#" target="_blank" style="text-decoration:none;">
-                                                                <img alt="HR.com" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/hrdotcom-white.png" width="120" style="display:block;border:0;width:120px;">
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="padding:0 0 20px 0;">
-                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                <tbody><tr>
-                                                                    <td style="border-top:1px solid #2D3F50;font-size:0;line-height:0;">
-                                                                        &nbsp;</td>
-                                                                </tr>
-                                                            </tbody></table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom:12px;font-size:11px;line-height:18px;color:#A0AEC0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;">
-                                                            HR.com Limited - 56 Malone Road, Jackson's Point, ON,
-                                                            Canada, L0E 1L0
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom:16px;font-size:11px;line-height:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;">
-                                                            <a data-cta="0" href="https://www.hr.com/en/about_us/privacy_information/" target="_blank" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Privacy
-                                                                Policy</a>
-                                                            <span style="color:#2D3F50;padding:0 8px;">|</span>
-                                                            <a data-cta="0" data-captcha="0" href="mailto:events@hr.com?subject=Contact Us: HR.com Virtual Events and Webcasts" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Contact
-                                                                Us</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="center" style="padding:0 10px 32px 10px;font-size:11px;line-height:19px;color:#A0AEC0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;text-align:center;">
-                                                            If you would like to change your subscription settings
-                                                            please access the
-                                                            <a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/accsetting/lib/navigation&amp;mode=show&amp;tabid=3&amp;action=notifications" style="color:#4AC4D6;text-decoration:none;font-weight:600;" target="_blank">subscription page</a> or if you no
-                                                            longer wish to
-                                                            receive these email campaigns you may&nbsp;<a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/hr/subscribe/sub.campaign.7&amp;cid1=__CUSTOMER_ID__&amp;cid2=1170172078066" style="color:#4AC4D6;text-decoration:none;font-weight:600;" target="_blank" data-captcha="1">unsubscribe
-                                                                here</a>.<br><br>
-                                                            <span style="color:#8490a5;">This email account is not
-                                                                monitored. Please do not reply to this email.</span>
-                                                        </td>
-                                                    </tr>
+                                                    <tr><td align="center" style="padding-bottom:20px;"><img alt="HR.com" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/hrdotcom-white.png" width="120" style="display:block;border:0;width:120px;"></td></tr>
+                                                    <tr><td style="padding:0 0 20px 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="border-top:1px solid #2D3F50;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
+                                                    <tr><td align="center" style="padding-bottom:12px;font-size:11px;line-height:18px;color:#A0AEC0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;">HR.com Limited - 56 Malone Road, Jackson's Point, ON, Canada, L0E 1L0</td></tr>
+                                                    <tr><td align="center" style="padding-bottom:16px;font-size:11px;line-height:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;"><a data-cta="0" href="https://www.hr.com/en/about_us/privacy_information/" target="_blank" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Privacy Policy</a><span style="color:#2D3F50;padding:0 8px;">|</span><a data-cta="0" data-captcha="0" href="mailto:events@hr.com?subject=Contact Us: HR.com Virtual Events and Webcasts" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Contact Us</a></td></tr>
+                                                    <tr><td align="center" style="padding:0 10px 32px 10px;font-size:11px;line-height:19px;color:#A0AEC0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;text-align:center;">If you would like to change your subscription settings please access the <a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/accsetting/lib/navigation&amp;mode=show&amp;tabid=3&amp;action=notifications" style="color:#4AC4D6;text-decoration:none;font-weight:600;" target="_blank">subscription page</a> or if you no longer wish to receive these email campaigns you may&nbsp;<a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/hr/subscribe/sub.campaign.7&amp;cid1=__CUSTOMER_ID__&amp;cid2=1170172078066" style="color:#4AC4D6;text-decoration:none;font-weight:600;" target="_blank" data-captcha="1">unsubscribe here</a>.<br><br><span style="color:#8490a5;">This email account is not monitored. Please do not reply to this email.</span></td></tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                <tbody><tr>
-                                                    <td width="25%" style="background-color:#EF4A3D;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                    <td width="25%" style="background-color:#FDB414;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                    <td width="25%" style="background-color:#94C83D;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                    <td width="25%" style="background-color:#4AC4D6;height:3px;font-size:0;line-height:0;">
-                                                        &nbsp;</td>
-                                                </tr>
-                                            </tbody></table>
-                                        </td>
-                                    </tr>
+                                    <tr><td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td width="25%" style="background-color:#EF4A3D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#FDB414;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#94C83D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#4AC4D6;height:3px;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
                                 </tbody>
                             </table>
                         </td>

@@ -67,9 +67,71 @@ This skill is designed to automate and standardize the process of updating enrol
 
 ### Early Bird Banner Template
 ```html
-<div class="earlybird-offer">
-  <span> Offer ends soon! Enroll by <span>[Date]</span>&nbsp;and save <span>$50</span> with promo code <span>EARLYBIRD50</span> at checkout. </span>
+<div class="earlybird-offer" id="earlybird-offer">
+  <span>👇 Offer ends soon! Enroll by <span>[Date]</span>&nbsp;and save <span>$50</span> with promo code <span>EARLYBIRD50</span> at checkout. 👇</span>
 </div>
+```
+
+### Early Bird Banner CSS Standard
+```css
+.earlybird-offer,
+#earlybird-offer {
+  background: #fdf2f8 !important;
+  border: 1px solid #fbcfe8 !important;
+  box-shadow: 0 2px 6px rgba(217, 27, 92, 0.05) !important;
+  padding: 8px 24px !important;
+  margin: 10px auto 28px auto !important;
+  color: #1e293b !important;
+  font-size: 14.5px !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  display: table !important;
+  max-width: max-content !important;
+  border-radius: 999px !important;
+}
+
+.earlybird-offer span,
+#earlybird-offer span {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #1e293b !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  display: inline !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.earlybird-offer span span,
+#earlybird-offer span span {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #d91b5c !important;
+  font-weight: 800 !important;
+  display: inline !important;
+}
+
+@media screen and (max-width: 768px) {
+  .earlybird-offer,
+  #earlybird-offer {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    margin-bottom: 20px !important;
+  }
+  .earlybird-offer span,
+  #earlybird-offer span {
+    font-size: 13px !important;
+  }
+  .earlybird-offer span span,
+  #earlybird-offer span span {
+    display: inline !important;
+  }
+}
 ```
 
 ## Resources
