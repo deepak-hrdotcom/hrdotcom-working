@@ -258,4 +258,23 @@ When wiring navigation links, mobile menu items, and story CTA buttons in HR Wes
 - **DO NOT modify, edit, touch, or create files in `02-hrwest-2027-revamped/` unless the user explicitly requests changes to it.**
 - All standard CMS page story work is confined to `02-pages/` and `00-templates/`.
 
+---
+
+## 14. UNIFIED SECTION GAP & SPACING MASTER STANDARD (ALL PAGES)
+
+All HR West 2027 CMS pages and templates must strictly follow the unified spacing rhythm:
+- **Section Vertical Padding (`.section-pad`)**:
+  - Desktop (`min-width: 768px`): `padding-top: 56px !important; padding-bottom: 56px !important;` (Total adjacent gap = 112px).
+  - Mobile (`max-width: 768px`): `padding-top: 40px !important; padding-bottom: 40px !important;` (Total adjacent gap = 80px).
+- **Section Header Spacing**:
+  - Center/left section headers (`.header-wrap`, `.section-header`): `padding-bottom: 32px !important;` (or `margin-bottom: 32px !important;`).
+  - Subhead to title clearance: `margin: 0 0 8px 0 !important;` or `margin: 0 0 12px 0 !important;`.
+- **Subpage Hero Spacing**:
+  - Container padding: `3.5rem 24px` on desktop, `2.5rem 20px` on mobile.
+  - Split hero min-height: `80vh` on desktop.
+- **Grids & Component Gaps**:
+  - Grids (`.grid-2`, `.grid-3`, `.grid-4`): `gap: 24px !important;` to `32px !important;`.
+  - Social Proof Marquee: `padding: 42px 0 !important; gap: 20px !important;`.
+
+
 

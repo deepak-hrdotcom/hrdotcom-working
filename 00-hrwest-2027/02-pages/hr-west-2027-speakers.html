@@ -427,8 +427,14 @@
   /* 2. Speakers Directory Section */
   .hrw27 .spk-directory-section {
     background: var(--color-canvas);
-    padding: 5rem 0 6rem;
+    padding: 56px 0 !important;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .spk-directory-section {
+      padding: 40px 0 !important;
+    }
   }
 
   .hrw27 .spk-directory-section .container-inner {
@@ -697,7 +703,13 @@
   /* 4. Bottom Conversion Banner */
   .spk-bottom-cta-section {
     background: var(--color-canvas);
-    padding: 0 0 80px 0;
+    padding: 0 0 56px 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    .spk-bottom-cta-section {
+      padding: 0 0 40px 0 !important;
+    }
   }
 
   .spk-bottom-cta-card {
@@ -793,16 +805,6 @@
       <!-- Left Column: Content -->
       <div class="spk-hero-content">
         
-        <!-- Sleek Location & Date Eyebrow Badge -->
-        <div style="display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.12); border: 1.5px solid rgba(239, 20, 110, 0.35); border-radius: 9999px; padding: 0.35rem 1rem 0.35rem 0.45rem; margin-bottom: 1.25rem; width: fit-content; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
-          <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: 9999px; padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.76rem; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">
-            March 23-24, 2027
-          </span>
-          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; letter-spacing: 0.02em;">
-            South San Francisco, CA
-          </span>
-        </div>
-
         <!-- Headline -->
         <h1 class="spk-hero-h1">
           HRWest 2027:<br />
@@ -827,10 +829,6 @@
             Apply to Speak
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
           </a>
-
-          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spk-hero-btn-outline">
-            Register
-          </a>
         </div>
 
       </div>
@@ -841,39 +839,39 @@
       <!-- Right Column: 3 Vertically Stacked Glassmorphic Proof Cards -->
       <div class="spk-floating-mosaic">
         
-        <!-- Float Card 1: Jason Averbook Keynote -->
+        <!-- Float Card 1: AI Track -->
         <div class="spk-float-card spk-float-card-1">
-          <div class="spk-float-img-box">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/jason-averbook-350x350-3.jpg"
-              alt="Jason Averbook"
-              class="spk-float-img"
-            />
+          <div class="spk-float-icon-box" style="background: linear-gradient(135deg, rgba(93, 47, 199, 0.5), rgba(168, 85, 247, 0.4)); border-color: rgba(168, 85, 247, 0.6); box-shadow: 0 4px 14px rgba(93,47,199,0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e9d5ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
           </div>
           <div style="flex: 1; min-width: 0;">
-            <div class="spk-float-name">Jason Averbook</div>
-            <div class="spk-float-role">Now to Next · Transformation Leader</div>
+            <div class="spk-float-name">AI & Future of Work</div>
+            <div class="spk-float-role">Generative AI, Agents & Tech Strategy</div>
           </div>
-          <div class="spk-float-pill" style="background: rgba(239, 20, 110, 0.25); border-color: rgba(239, 20, 110, 0.5); color: #ff5ba0;">
-            KEYNOTE
+          <div class="spk-float-pill" style="background: rgba(168, 85, 247, 0.25); border-color: rgba(168, 85, 247, 0.5); color: #e9d5ff;">
+            AI TRACK
           </div>
         </div>
 
-        <!-- Float Card 2: Allison West -->
+        <!-- Float Card 2: Audience Proof -->
         <div class="spk-float-card spk-float-card-2">
-          <div class="spk-float-img-box">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/allison-west-350x350.jpg"
-              alt="Allison West"
-              class="spk-float-img"
-            />
+          <div class="spk-float-icon-box" style="background: linear-gradient(135deg, rgba(239, 20, 110, 0.35), rgba(93, 47, 199, 0.45)); border-color: rgba(239, 20, 110, 0.6); box-shadow: 0 4px 14px rgba(239,20,110,0.25);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbcfe8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
           </div>
           <div style="flex: 1; min-width: 0;">
-            <div class="spk-float-name">Allison West, Esq.</div>
-            <div class="spk-float-role">Employment Practices Specialists</div>
+            <div class="spk-float-name">500+ HR Decision-Makers</div>
+            <div class="spk-float-role">CHROs, VPs & People Executives</div>
           </div>
-          <div class="spk-float-pill" style="background: rgba(93, 47, 199, 0.35); border-color: rgba(93, 47, 199, 0.6); color: #c084fc;">
-            LEGAL & AI
+          <div class="spk-float-pill" style="background: rgba(239, 20, 110, 0.25); border-color: rgba(239, 20, 110, 0.5); color: #ff5ba0;">
+            AUDIENCE
           </div>
         </div>
 
@@ -972,9 +970,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">AW</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2013/4/17/hfmujyr2/120.jpg" alt="Employment Practices Specialists Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Allison West, Esq., SHRM-SCP, AWI-CH</h3>
@@ -1006,9 +1001,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">DM</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" alt="HR.com Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Debbie McGrath</h3>
@@ -1040,9 +1032,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">LC</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2013/8/19/hkk3u63c/120.jpg" alt="BDO USA Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Lee Cage Jr.</h3>
@@ -1074,9 +1063,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">RC</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morqbiut/120.jpg" alt="Socius Strategies Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Rosalind "Roz" Cohen</h3>
@@ -1108,9 +1094,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">TD</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/16/mo1hwqvi/120.jpg" alt="Otter.ai Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Treena Diebolt</h3>
@@ -1142,9 +1125,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">EG</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2013/2/1/hco5svrr/120.jpg" alt="E. L. Goldberg & Associates Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Edie Goldberg</h3>
@@ -1176,9 +1156,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">NG</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo356yk9/120.jpg" alt="Hall of Frames Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Natalie Grabher</h3>
@@ -1210,9 +1187,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">SH</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/29/mok35rar/120.jpg" alt="Dealer Image Pro Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Stephanie Hancock</h3>
@@ -1244,9 +1218,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">NH</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo359gqh/120.jpg" alt="Automation Anywhere Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Nancy Hauge</h3>
@@ -1278,9 +1249,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">CH</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/christina-herrmann-logo.jpg" alt="The Oliver Agency Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Christina Herrmann</h3>
@@ -1312,9 +1280,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">HK</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/5/8/moxah14a/120.jpg" alt="Recovery Without Walls Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Howard Kornfeld, MD</h3>
@@ -1346,9 +1311,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">EL</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2021/10/16/kuttvljc/120.jpg" alt="Kainos Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Emma Lidgett</h3>
@@ -1380,9 +1342,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">LM</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2023/12/12/lq2rdkt6/120.jpg" alt="HRCP Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Laura Middleton</h3>
@@ -1414,9 +1373,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">MM</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2014/4/8/htrbviw9/120.jpg" alt="iQor Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Mark Monaghan</h3>
@@ -1448,9 +1404,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">LP</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/2/11/mlicv0tp/120.jpg" alt="SAP SuccessFactors Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Dr. Lauren S. Park, PhD</h3>
@@ -1482,9 +1435,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">TP</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/17/mo34z64p/120.jpg" alt="Netafim - North America Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Theresa Parra</h3>
@@ -1516,9 +1466,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">RR</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/5/4/morcuqco/120.jpg" alt="NSF International Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Ramprasad Reddy</h3>
@@ -1550,9 +1497,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">JW</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2021/11/18/kw554jn6/120.jpg" alt="Western Governors University Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Dr. Jonathan H. Westover</h3>
@@ -1584,9 +1528,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">AV</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2026/4/28/moixc989/120.jpg" alt="NWCTHRA Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Adilen Valentina</h3>
@@ -1618,9 +1559,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">MV</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" alt="HR.com Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Mark Vickers</h3>
@@ -1652,9 +1590,6 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
             <div class="spk-card-fallback">MW</div>
-            <div class="spk-card-logo-badge">
-              <img src="https://public-cdn.hr.com/system/app/media/rs/2021/1/4/kjivq2pn/120.jpg" alt="HR.com Logo" />
-            </div>
           </div>
           <div class="spk-card-body">
             <h3 class="spk-card-name">Mike Wood</h3>

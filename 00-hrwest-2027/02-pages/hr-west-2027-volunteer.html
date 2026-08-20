@@ -328,7 +328,7 @@
     margin-right: auto !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    padding: 0 0 48px 0 !important;
+    padding: 0 0 32px 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -380,7 +380,13 @@
   /* 3. Highlight Perks Grid (3 Columns) */
   .hrw27 .vol-perks-section {
     background: var(--color-canvas, #fcfcff);
-    padding: 4.5rem 0 3rem;
+    padding: 56px 0 24px !important;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .vol-perks-section {
+      padding: 40px 0 20px !important;
+    }
   }
 
   .hrw27 .vol-perks-grid {
@@ -460,7 +466,13 @@
   /* 4. Roles & Logistics Section (2-Column Grid) */
   .hrw27 .vol-details-section {
     background: var(--color-canvas, #fcfcff);
-    padding: 2.5rem 0 5rem;
+    padding: 24px 0 56px !important;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .vol-details-section {
+      padding: 20px 0 40px !important;
+    }
   }
 
   .hrw27 .vol-details-grid {
@@ -619,8 +631,14 @@
 
   /* 5. Closing CTA Banner (Light Branded Gradient Card) */
   .hrw27 .vol-cta-section {
-    padding: 0 0 5.5rem;
+    padding: 0 0 56px 0 !important;
     background: var(--color-canvas, #fcfcff);
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .vol-cta-section {
+      padding: 0 0 40px 0 !important;
+    }
   }
 
   .hrw27 .vol-cta-banner {

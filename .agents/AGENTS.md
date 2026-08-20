@@ -63,6 +63,19 @@ All interior/subpages (`speakers`, `testimonials`, `sponsors`, `attend-team`, `c
    - Because `hr-west-2027-register.html` and `hr-west-2027-agenda.html` in `02-pages/` are standalone CMS pages that embed their own copies of the master header, navigation, footer, CSS tokens, and JavaScript controller, **ANY CHANGE made to `00-templates/hr-west-2027-template.html` MUST ALWAYS BE SIMULTANEOUSLY SYNCHRONIZED TO BOTH:**
      1. `02-pages/hr-west-2027-register.html`
      2. `02-pages/hr-west-2027-agenda.html`
+11. **📏 UNIFIED SECTION GAP & SPACING MASTER STANDARD (ALL PAGES)**:
+   - **Section Vertical Padding (`.section-pad`)**:
+     - Desktop (`min-width: 768px`): `padding-top: 56px !important; padding-bottom: 56px !important;`
+     - Mobile (`max-width: 768px`): `padding-top: 40px !important; padding-bottom: 40px !important;`
+   - **Section Header Spacing**:
+     - Header block bottom clearance (`.header-wrap`, `.section-header`): `padding-bottom: 32px !important;` (or `margin-bottom: 32px !important;`).
+     - Subhead to title gap: `margin: 0 0 8px 0 !important;` or `margin: 0 0 12px 0 !important;`.
+   - **Hero Vertical Rhythm**:
+     - Container padding: `3.5rem 24px` on desktop, `2.5rem 20px` on mobile.
+     - Split hero min-height: `80vh` on desktop.
+   - **Grid & Card Gaps**:
+     - Grids (`.grid-2`, `.grid-3`, `.grid-4`): `gap: 24px !important;` to `32px !important;`.
+     - Marquee strips: `padding: 42px 0 !important; gap: 20px !important;`.
 
 
 

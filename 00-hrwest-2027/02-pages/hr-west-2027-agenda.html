@@ -769,8 +769,14 @@
 /* 6. DYNAMIC AGENDA LISTING MODULE STYLING (.agd-cms-listing-wrap) */
 .hrw27 .agd-listing-section {
   background: var(--color-canvas) !important;
-  padding: 48px 0 88px 0 !important;
+  padding: 56px 0 !important;
   border-top: 1px solid var(--color-subtle) !important;
+}
+
+@media (max-width: 768px) {
+  .hrw27 .agd-listing-section {
+    padding: 40px 0 !important;
+  }
 }
 
 .hrw27 .agd-listing-header {
@@ -781,8 +787,8 @@
   text-align: center !important;
   width: 100% !important;
   max-width: 820px !important;
-  margin: 0 auto 36px auto !important;
-  padding-bottom: 12px !important;
+  margin: 0 auto 32px auto !important;
+  padding-bottom: 0 !important;
 }
 
 .hrw27 .agd-listing-eyebrow {
@@ -1221,9 +1227,74 @@
   font-size: 15px !important;
   color: var(--color-text-secondary) !important;
   line-height: 1.7 !important;
-  margin: 0 0 20px 0 !important;
+  margin: 0 0 16px 0 !important;
   width: 100% !important;
   max-width: 100% !important;
+}
+
+/* Agenda Two-Sentence Description Clamp and Show More Toggle */
+.hrw27 .ev_tc_desc_clamp {
+  position: relative !important;
+  max-height: 4.8em !important;
+  overflow: hidden !important;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin-bottom: 4px !important;
+}
+
+.hrw27 .ev_tc_desc_clamp.is-expanded {
+  max-height: 3000px !important;
+}
+
+.hrw27 .ev_tc_desc_clamp:not(.is-expanded)::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 28px !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.96) 100%) !important;
+  pointer-events: none !important;
+}
+
+.hrw27 .ev_tc_desc_clamp p {
+  margin: 0 0 10px 0 !important;
+}
+
+.hrw27 .ev_tc_desc_clamp p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.hrw27 .agd-toggle-desc-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: transparent !important;
+  border: none !important;
+  color: var(--color-brand-purple, #5d2fc7) !important;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  padding: 4px 6px 6px 0 !important;
+  margin: 0 0 16px 0 !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  outline: none !important;
+  width: fit-content !important;
+  line-height: 1 !important;
+}
+
+.hrw27 .agd-toggle-desc-btn:hover {
+  color: var(--color-brand-pink, #ef146e) !important;
+  transform: translateX(2px) !important;
+}
+
+.hrw27 .agd-toggle-desc-btn svg {
+  transition: transform 0.25s ease !important;
+}
+
+.hrw27 .agd-toggle-desc-btn.is-expanded svg {
+  transform: rotate(180deg) !important;
 }
 
 .hrw27 .ev_tc_right iframe {
@@ -1715,15 +1786,7 @@
         <!-- Left Column: Typography & Action -->
         <div class="agd-hero-content">
 
-          <!-- Sleek Date and Program Eyebrow Badge -->
-          <div style="display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.12); border: 1.5px solid rgba(239, 20, 110, 0.35); border-radius: 9999px; padding: 0.35rem 1rem 0.35rem 0.45rem; margin-bottom: 1.25rem; width: fit-content; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
-            <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: 9999px; padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.76rem; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">
-              March 23-24, 2027
-            </span>
-            <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; display: flex; align-items: center; gap: 0.4rem; letter-spacing: 0.02em;">
-              South San Francisco, CA · <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #f472b6;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Program &amp; Schedule
-            </span>
-          </div>
+      
 
           <h1 class="agd-hero-h1">
             HRWest 2027 <span class="agd-hero-glow-text">Agenda</span>
@@ -1993,6 +2056,106 @@
   /* 3. CMS AD CLEANUP */
   var adBtm = document.getElementById('hradbtmwrapper');
   if (adBtm) { adBtm.innerHTML = ''; }
+
+  /* 4. DYNAMIC AGENDA TWO-SENTENCE SHOW MORE / SHOW LESS TOGGLE */
+  function initAgendaShowMore() {
+    var sessionRights = document.querySelectorAll('.ev_tc_right');
+    if (!sessionRights || sessionRights.length === 0) return;
+
+    sessionRights.forEach(function(rightBox) {
+      if (rightBox.dataset.descInit === 'true') return;
+
+      var descElements = [];
+      var children = Array.from(rightBox.children);
+      var collecting = false;
+
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (child.tagName === 'H3' || child.tagName === 'IFRAME' || child.classList.contains('ev_tc_video')) {
+          collecting = true;
+          continue;
+        }
+        if (child.classList.contains('ev_tc_pline') || child.classList.contains('ev_tc_prst')) {
+          break;
+        }
+        if (collecting && (child.tagName === 'P' || child.tagName === 'DIV' || child.tagName === 'UL' || child.tagName === 'OL')) {
+          if (!child.classList.contains('agd-toggle-desc-btn') && !child.classList.contains('ev_tc_pline') && !child.classList.contains('ev_tc_prst')) {
+            descElements.push(child);
+          }
+        }
+      }
+
+      if (descElements.length === 0) {
+        var allP = rightBox.querySelectorAll('p');
+        allP.forEach(function(p) {
+          if (!p.closest('.tc_prst_list') && !p.closest('.ev_tc_pline')) {
+            descElements.push(p);
+          }
+        });
+      }
+
+      if (descElements.length === 0) {
+        rightBox.dataset.descInit = 'true';
+        return;
+      }
+
+      var totalText = descElements.map(function(el) { return el.innerText || ''; }).join(' ').trim();
+      if (totalText.length <= 140) {
+        rightBox.dataset.descInit = 'true';
+        return;
+      }
+
+      var wrapper = document.createElement('div');
+      wrapper.className = 'ev_tc_desc_clamp';
+      
+      descElements[0].parentNode.insertBefore(wrapper, descElements[0]);
+      descElements.forEach(function(el) {
+        wrapper.appendChild(el);
+      });
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'agd-toggle-desc-btn';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<span>Show more</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isExpanded = wrapper.classList.toggle('is-expanded');
+        btn.classList.toggle('is-expanded', isExpanded);
+        btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        var span = btn.querySelector('span');
+        if (span) {
+          span.textContent = isExpanded ? 'Show less' : 'Show more';
+        }
+      });
+
+      wrapper.parentNode.insertBefore(btn, wrapper.nextSibling);
+      rightBox.dataset.descInit = 'true';
+    });
+  }
+
+  initAgendaShowMore();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAgendaShowMore);
+  }
+  window.addEventListener('load', initAgendaShowMore);
+
+  document.addEventListener('click', function(e) {
+    var tabTarget = e.target.closest('.ev_ma_tab a, #evFilterDate a, .ev_ma_filter button, .nav-tabs a, [data-toggle="tab"]');
+    if (tabTarget) {
+      setTimeout(initAgendaShowMore, 60);
+      setTimeout(initAgendaShowMore, 250);
+    }
+  });
+
+  if (window.MutationObserver) {
+    var agdContainer = document.querySelector('.agd-cms-listing-wrap') || document.body;
+    var agendaObs = new MutationObserver(function() {
+      initAgendaShowMore();
+    });
+    agendaObs.observe(agdContainer, { childList: true, subtree: true });
+  }
 
 })();
 </script>

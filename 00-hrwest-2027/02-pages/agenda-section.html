@@ -90,6 +90,71 @@
 				.show-read-more .more-text {
 					display: none;
 				}
+
+				/* Agenda Description Clamping & Show More Button */
+				.ev_tc_desc_clamp {
+					position: relative !important;
+					max-height: 4.8em !important;
+					overflow: hidden !important;
+					transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+					margin-bottom: 4px !important;
+				}
+
+				.ev_tc_desc_clamp.is-expanded {
+					max-height: 3000px !important;
+				}
+
+				.ev_tc_desc_clamp:not(.is-expanded)::after {
+					content: "" !important;
+					position: absolute !important;
+					bottom: 0 !important;
+					left: 0 !important;
+					right: 0 !important;
+					height: 28px !important;
+					background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.96) 100%) !important;
+					pointer-events: none !important;
+				}
+
+				.ev_tc_desc_clamp p {
+					margin: 0 0 10px 0 !important;
+				}
+
+				.ev_tc_desc_clamp p:last-child {
+					margin-bottom: 0 !important;
+				}
+
+				.agd-toggle-desc-btn {
+					display: inline-flex !important;
+					align-items: center !important;
+					gap: 5px !important;
+					background: transparent !important;
+					border: none !important;
+					color: #5d2fc7 !important;
+					font-family: 'Outfit', system-ui, sans-serif !important;
+					font-size: 13.5px !important;
+					font-weight: 800 !important;
+					cursor: pointer !important;
+					padding: 4px 6px 6px 0 !important;
+					margin: 0 0 16px 0 !important;
+					transition: all 0.2s ease !important;
+					text-decoration: none !important;
+					outline: none !important;
+					width: fit-content !important;
+					line-height: 1 !important;
+				}
+
+				.agd-toggle-desc-btn:hover {
+					color: #ef146e !important;
+					transform: translateX(2px) !important;
+				}
+
+				.agd-toggle-desc-btn svg {
+					transition: transform 0.25s ease !important;
+				}
+
+				.agd-toggle-desc-btn.is-expanded svg {
+					transform: rotate(180deg) !important;
+				}
 			</style>
 
 
@@ -28930,3 +28995,109 @@
 	</div>
 
 </div>
+
+<script>
+(function() {
+  'use strict';
+
+  function initAgendaShowMore() {
+    var sessionRights = document.querySelectorAll('.ev_tc_right');
+    if (!sessionRights || sessionRights.length === 0) return;
+
+    sessionRights.forEach(function(rightBox) {
+      if (rightBox.dataset.descInit === 'true') return;
+
+      var descElements = [];
+      var children = Array.from(rightBox.children);
+      var collecting = false;
+
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (child.tagName === 'H3' || child.tagName === 'IFRAME' || child.classList.contains('ev_tc_video')) {
+          collecting = true;
+          continue;
+        }
+        if (child.classList.contains('ev_tc_pline') || child.classList.contains('ev_tc_prst')) {
+          break;
+        }
+        if (collecting && (child.tagName === 'P' || child.tagName === 'DIV' || child.tagName === 'UL' || child.tagName === 'OL')) {
+          if (!child.classList.contains('agd-toggle-desc-btn') && !child.classList.contains('ev_tc_pline') && !child.classList.contains('ev_tc_prst')) {
+            descElements.push(child);
+          }
+        }
+      }
+
+      if (descElements.length === 0) {
+        var allP = rightBox.querySelectorAll('p');
+        allP.forEach(function(p) {
+          if (!p.closest('.tc_prst_list') && !p.closest('.ev_tc_pline')) {
+            descElements.push(p);
+          }
+        });
+      }
+
+      if (descElements.length === 0) {
+        rightBox.dataset.descInit = 'true';
+        return;
+      }
+
+      var totalText = descElements.map(function(el) { return el.innerText || ''; }).join(' ').trim();
+      if (totalText.length <= 140) {
+        rightBox.dataset.descInit = 'true';
+        return;
+      }
+
+      var wrapper = document.createElement('div');
+      wrapper.className = 'ev_tc_desc_clamp';
+      
+      descElements[0].parentNode.insertBefore(wrapper, descElements[0]);
+      descElements.forEach(function(el) {
+        wrapper.appendChild(el);
+      });
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'agd-toggle-desc-btn';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<span>Show more</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isExpanded = wrapper.classList.toggle('is-expanded');
+        btn.classList.toggle('is-expanded', isExpanded);
+        btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        var span = btn.querySelector('span');
+        if (span) {
+          span.textContent = isExpanded ? 'Show less' : 'Show more';
+        }
+      });
+
+      wrapper.parentNode.insertBefore(btn, wrapper.nextSibling);
+      rightBox.dataset.descInit = 'true';
+    });
+  }
+
+  initAgendaShowMore();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAgendaShowMore);
+  }
+  window.addEventListener('load', initAgendaShowMore);
+
+  document.addEventListener('click', function(e) {
+    var tabTarget = e.target.closest('.ev_ma_tab a, #evFilterDate a, .ev_ma_filter button, .nav-tabs a, [data-toggle="tab"]');
+    if (tabTarget) {
+      setTimeout(initAgendaShowMore, 60);
+      setTimeout(initAgendaShowMore, 250);
+    }
+  });
+
+  if (window.MutationObserver) {
+    var agdContainer = document.querySelector('.agd-cms-listing-wrap') || document.body;
+    var agendaObs = new MutationObserver(function() {
+      initAgendaShowMore();
+    });
+    agendaObs.observe(agdContainer, { childList: true, subtree: true });
+  }
+
+})();
+</script>

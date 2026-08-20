@@ -317,7 +317,7 @@
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding: 0 0 44px 0 !important;
+    padding: 0 0 32px 0 !important;
   }
 
   .hrw27 .whyspn-sec-eyebrow {
@@ -358,8 +358,14 @@
   /* 2. New "Why Sponsor?" 3-Pillar Section */
   .hrw27 .whyspn-pillars-section {
     background: #ffffff;
-    padding: 4.5rem 0 3rem 0;
+    padding: 56px 0 !important;
     border-bottom: 1px solid #f1f5f9;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .whyspn-pillars-section {
+      padding: 40px 0 !important;
+    }
   }
 
   .hrw27 .whyspn-pillars-grid {
@@ -445,7 +451,13 @@
   /* 3. Show HR Buyers What's Possible & Huge Value Section */
   .hrw27 .whyspn-impact-section {
     background: #fcfcff;
-    padding: 4.5rem 0 3.5rem 0;
+    padding: 56px 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .whyspn-impact-section {
+      padding: 40px 0 !important;
+    }
   }
 
   .hrw27 .whyspn-impact-grid {
@@ -643,8 +655,14 @@
   /* 4. Visual Gallery & ROI / Exhibiting Showcase */
   .hrw27 .whyspn-showcase-section {
     background: #ffffff;
-    padding: 4.5rem 0;
+    padding: 56px 0 !important;
     border-top: 1px solid #f1f5f9;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .whyspn-showcase-section {
+      padding: 40px 0 !important;
+    }
   }
 
   .hrw27 .whyspn-banner-box {
@@ -770,8 +788,14 @@
   /* 5. 5 Types of Solutions Attendees Seek (BALANCED 3+2 GRID) */
   .hrw27 .whyspn-solutions-section {
     background: #f8fafc;
-    padding: 5rem 0 5.5rem 0;
+    padding: 56px 0 !important;
     border-top: 1px solid #e2e8f0;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .whyspn-solutions-section {
+      padding: 40px 0 !important;
+    }
   }
 
   .hrw27 .whyspn-solutions-grid {
@@ -869,6 +893,105 @@
     line-height: 1.6 !important;
     margin: 0 !important;
   }
+
+  /* 6. High-Converting Bottom Sponsor CTA Section (Streamlined Banner) */
+  .hrw27 .whyspn-bottom-cta-section {
+    background: #ffffff;
+    padding: 56px 0 72px 0 !important;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .whyspn-bottom-cta-section {
+      padding: 40px 0 56px 0 !important;
+    }
+  }
+
+  .hrw27 .whyspn-bottom-cta-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fbf9ff 60%, #f5effe 100%);
+    border: 1.5px solid rgba(93, 47, 199, 0.22);
+    border-radius: 24px;
+    padding: 3.5rem 3rem;
+    box-shadow: 0 12px 40px rgba(93, 47, 199, 0.08);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .whyspn-bottom-cta-card {
+      padding: 2.25rem 1.5rem;
+    }
+  }
+
+  .hrw27 .whyspn-bottom-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.95rem;
+    background: rgba(239, 20, 110, 0.08);
+    border: 1px solid rgba(239, 20, 110, 0.25);
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.76rem !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: #ef146e !important;
+    margin-bottom: 1.2rem;
+  }
+
+  .hrw27 .whyspn-bottom-h2 {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(1.85rem, 3.2vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.035em !important;
+    color: #0f172a !important;
+    margin: 0 0 1rem 0 !important;
+    max-width: 720px;
+  }
+
+  .hrw27 .whyspn-bottom-p {
+    font-size: 1.05rem !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 2rem 0 !important;
+    max-width: 640px;
+  }
+
+  .hrw27 .whyspn-bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hrw27 .whyspn-bottom-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.82rem 1.6rem;
+    background: #ffffff;
+    border: 1.5px solid rgba(93, 47, 199, 0.35);
+    color: #5d2fc7 !important;
+    border-radius: 9999px;
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .hrw27 .whyspn-bottom-btn-outline:hover {
+    background: rgba(93, 47, 199, 0.06);
+    border-color: #5d2fc7;
+    transform: translateY(-2px);
+  }
 </style>
 
 <div class="hrw27">
@@ -883,15 +1006,7 @@
       <!-- Left: Content Block -->
       <div class="whyspn-hero-content">
         
-        <!-- Sleek Date and Sponsorship Eyebrow Badge -->
-        <div style="display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.12); border: 1.5px solid rgba(239, 20, 110, 0.35); border-radius: 9999px; padding: 0.35rem 1rem 0.35rem 0.45rem; margin-bottom: 1.25rem; width: fit-content; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
-          <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: 9999px; padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.76rem; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">
-            March 23-24, 2027
-          </span>
-          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; display: flex; align-items: center; gap: 0.4rem; letter-spacing: 0.02em;">
-            South San Francisco, CA · <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #f472b6;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Sponsorship &amp; Exhibits
-          </span>
-        </div>
+
 
         <h1 class="whyspn-hero-h1">
           Sponsor &amp; Exhibit at<br />
@@ -1276,6 +1391,46 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- 6. Bottom Conversion Banner & Final Call to Action -->
+  <section class="whyspn-bottom-cta-section">
+    <div class="whyspn-section-container">
+      <div class="whyspn-bottom-cta-card">
+        
+        <div class="whyspn-bottom-eyebrow">
+          <span>🚀</span>
+          <span>Partner with HRWest 2027</span>
+        </div>
+
+        <h2 class="whyspn-bottom-h2">
+          Put Your Solutions in Front of <span style="background: linear-gradient(135deg, #5d2fc7 0%, #ef146e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">500+ HR Leaders</span>
+        </h2>
+
+        <p class="whyspn-bottom-p">
+          Connect directly with qualified HR decision-makers, generate high-intent pipeline, and showcase your solutions at Northern California's premier HR conference.
+        </p>
+
+        <div class="whyspn-bottom-actions">
+          <button
+            type="button"
+            class="whyspn-hero-btn-primary"
+            id="fc_1786988265247_bottom_cta"
+            name="fc_1786988265247"
+            onclick="loadPopup('fc_1786988265247')"
+            style="background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4); cursor: pointer; border: none;"
+          >
+            Download Sponsorship Brochure
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </button>
+          <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="whyspn-bottom-btn-outline">
+            View Past Sponsors
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
     </div>
   </section>
 

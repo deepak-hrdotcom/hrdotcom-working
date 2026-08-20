@@ -590,6 +590,17 @@ div.container,
   pointer-events: none;
 }
 
+.hrw27 .reg-hero-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(0deg, var(--color-canvas, #ffffff) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
 .hrw27 .reg-hero-grid {
   position: relative;
   z-index: 2;
@@ -835,7 +846,7 @@ div.container,
   text-align: center !important;
   width: 100% !important;
   margin: 0 auto !important;
-  padding: 0 0 44px 0 !important;
+  padding: 0 0 32px 0 !important;
 }
 
 .hrw27 .reg-eyebrow {
@@ -872,8 +883,14 @@ div.container,
 
 /* Passes Section */
 .hrw27 .reg-passes-section {
-  padding: 5rem 0;
+  padding: 56px 0 !important;
   background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hrw27 .reg-passes-section {
+    padding: 40px 0 !important;
+  }
 }
 
 .hrw27 .reg-cards-grid {
@@ -1112,9 +1129,15 @@ div.container,
 /* Schedule Table */
 .hrw27 .reg-schedule-section {
   background: #f8fafc;
-  padding: 5rem 0 5.5rem;
+  padding: 56px 0 !important;
   border-top: 1px solid var(--color-subtle, #e2e8f0);
   border-bottom: 1px solid var(--color-subtle, #e2e8f0);
+}
+
+@media (max-width: 768px) {
+  .hrw27 .reg-schedule-section {
+    padding: 40px 0 !important;
+  }
 }
 
 .hrw27 .reg-table-card {
@@ -1287,8 +1310,14 @@ div.container,
 
 /* Inclusions Grid */
 .hrw27 .reg-included-section {
-  padding: 5rem 0;
+  padding: 56px 0 !important;
   background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hrw27 .reg-included-section {
+    padding: 40px 0 !important;
+  }
 }
 
 .hrw27 .reg-inclusions-grid {
@@ -1354,10 +1383,16 @@ div.container,
   margin: 0 !important;
 }
 
-/* Policy Card */
+/* Cancellation & Refund Policy Section */
 .hrw27 .reg-policy-section {
-  padding: 0 0 5rem 0;
+  padding: 56px 0 !important;
   background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hrw27 .reg-policy-section {
+    padding: 40px 0 !important;
+  }
 }
 
 .hrw27 .reg-policy-card {
@@ -1620,15 +1655,6 @@ div.container,
       
       <!-- Left Column: Typography & Action -->
       <div class="reg-hero-content">
-        <!-- Sleek Date and Registration Eyebrow Badge -->
-        <div style="display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.12); border: 1.5px solid rgba(239, 20, 110, 0.35); border-radius: 9999px; padding: 0.35rem 1rem 0.35rem 0.45rem; margin-bottom: 1.25rem; width: fit-content; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 16px rgba(239,20,110,0.15);">
-          <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: 9999px; padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.76rem; box-shadow: 0 2px 8px rgba(239,20,110,0.35);">
-            March 23-24, 2027
-          </span>
-          <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.82rem; color: #ffffff; display: flex; align-items: center; gap: 0.4rem; letter-spacing: 0.02em;">
-            South San Francisco, CA · <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #f472b6;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Official Registration • Early Bird Ends Jan 15, 2027
-          </span>
-        </div>
 
         <h1 class="reg-hero-h1">
           HRWest 2027 <span class="reg-hero-glow-text">Registration</span>
@@ -1697,6 +1723,9 @@ div.container,
       </div>
 
     </div>
+
+    <!-- Bottom Canvas Fade -->
+    <div class="reg-hero-bottom-fade"></div>
   </section>
 
   <!-- 2. Dynamic Passes Section (LIGHT CANVAS STANDARD) -->

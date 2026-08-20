@@ -286,40 +286,53 @@
 @media (min-width: 1024px) { .hrw27 .grid-3 { grid-template-columns: repeat(3, 1fr) !important; } }
 .hrw27 .grid-4 { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
 @media (min-width: 1024px) { .hrw27 .grid-4 { grid-template-columns: repeat(4, 1fr) !important; } }
-.hrw27 .section-pad { padding-top: 80px !important; padding-bottom: 80px !important; }
-@media (min-width: 768px) { .hrw27 .section-pad { padding-top: 100px !important; padding-bottom: 100px !important; } }
+.hrw27 .section-pad { padding-top: 40px !important; padding-bottom: 40px !important; }
+@media (min-width: 768px) { .hrw27 .section-pad { padding-top: 56px !important; padding-bottom: 56px !important; } }
 .hrw27 .hero-grid { display: grid !important; grid-template-columns: 1fr !important; min-height: 92vh !important; position: relative !important; }
 @media (min-width: 1024px) { .hrw27 .hero-grid { grid-template-columns: 1fr 1fr !important; } }
 
-.hrw27 .hero-split-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  min-height: 92vh !important;
-  width: 100% !important;
+.hrw27 .hero-split-section {
   position: relative !important;
+  width: 100% !important;
   background: var(--color-canvas) !important;
   overflow: hidden !important;
+  border-bottom: 1px solid var(--color-subtle) !important;
 }
+
+.hrw27 .hero-split-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.95fr !important;
+  gap: 48px !important;
+  min-height: 88vh !important;
+  align-items: center !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
 .hrw27 .hero-content-col {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  padding: 5rem 3rem 5rem 5vw !important;
+  padding: 4.5rem 0 !important;
   position: relative !important;
   z-index: 2 !important;
 }
+
 .hrw27 .hero-image-col {
   position: relative !important;
-  overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
-  padding: 3rem 2rem !important;
-  min-height: 100% !important;
+  justify-content: flex-end !important;
+  padding: 3rem 0 !important;
+  z-index: 2 !important;
 }
+
 .hrw27 .hero-image-clip {
   position: absolute !important;
-  inset: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 52% !important;
   clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
   -webkit-clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
   overflow: hidden !important;
@@ -330,15 +343,24 @@
   .hrw27 .hero-split-grid {
     grid-template-columns: 1fr !important;
     min-height: auto !important;
+    gap: 0 !important;
   }
   .hrw27 .hero-content-col {
-    padding: 3rem 1.5rem !important;
+    padding: 3rem 0 2rem 0 !important;
   }
   .hrw27 .hero-image-col {
     min-height: 480px !important;
-    padding: 2rem 1rem !important;
+    padding: 3rem 1rem !important;
+    justify-content: center !important;
+    margin-bottom: 2.5rem !important;
   }
   .hrw27 .hero-image-clip {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 520px !important;
     clip-path: none !important;
     -webkit-clip-path: none !important;
   }
@@ -814,7 +836,7 @@ $desc_long
             Ready to Transform Your HR Strategy in 2027?
           </div>
           <div style="font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 2px;">
-            Join 500+ HR professionals, Earn 8 SHRM and HRCI credits, March 23-24, South SF
+            Join 500+ HR professionals, Earn 8 SHRM and HRCI credits, March 23-24, South San Francisco
           </div>
         </div>
       </div>
