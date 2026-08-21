@@ -1,0 +1,285 @@
+<!-- @format -->
+
+<div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
+<link
+  rel="stylesheet"
+  type="text/css"
+  media="screen"
+  href="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/css/hr_education.css"
+/>
+<style type="text/css">
+  .ml_btnset {
+    justify-content: center !important;
+  }
+  /* Modal */m
+  #sample.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  #sample.modal .modal-box {
+    margin: 10% auto;
+    width: 1100px;
+    height: 650px;
+    background: #fff;
+    color: #333;
+    position: relative;
+    animation: modalopen 1s;
+  }
+
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  #sample.modal .modal-body {
+    /*padding: 50px;*/
+    padding: 50px 10px 50px 10px !important;
+  }
+  #sample.modal .closeBtn {
+    cursor: pointer;
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .ml_info_wrapper.recert
+    .ml_info_dls
+    .ml_spt_dls
+    .ml_trans_btn
+    .ml_social
+    > a {
+    cursor: pointer;
+  }
+  body > .ContentArea {
+    margin: 0px 0px 0px 0px;
+  }
+  body > .ContentArea {
+    margin: 0px 0px;
+  }
+  body > .ContentArea > .container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body > .ContentArea > .container > div[style*='float:right'] {
+    float: none !important;
+    text-align: right;
+  }
+
+  #copy {
+    color: #ccff00;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .bg_white {
+    display: none;
+    background: #fff;
+    position: absolute !important;
+    z-index: 999;
+    margin-top: 70px;
+    min-height: 350px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  @media screen and (max-width: 991px) {
+    .bg_white {
+      min-height: auto;
+    }
+    .bg_white .ml_img_box {
+      display: block;
+      width: 30%;
+    }
+    .bg_white .ml_desc_list > h2 {
+      text-align: center;
+    }
+    .bg_white .ml_desc_list > p {
+      text-align: center;
+    }
+  }
+</style>
+<!---mega--menu--->
+<div class="edu_container-fluid bg_white" id="mega_menu">
+  <div class="edu_container">
+    <div
+      class="ml_info_wrapper"
+      style="align-items: center; margin-bottom: 50px"
+    >
+      <div class="ml_img_box" style="width: 15%">
+        <img
+          alt="Money Back Gurantee"
+          src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/money_back_badge.png"
+        />
+      </div>
+      <div class="ml_desc_list" style="width: 85%; max-width: 800px">
+        <h2>Money back guarantee</h2>
+        <p style="margin-bottom: 30px; font-size: 14px !important">
+          If you meet the following eligibility requirements, and still aren't
+          successful in passing your HRCI® or SHRM® certification exam - we will
+          refund your complete tuition cost back to you!
+        </p>
+        <ul>
+          <li>Must attend 80% or more of the live, scheduled sessions.</li>
+          <li>
+            Must score 80% or higher on all practise exams included in the
+            program.
+          </li>
+          <li>
+            Must attempt your HRCI or SHRM exam within 90 days of completing the
+            program.
+          </li>
+        </ul>
+        <h3 style="font-size: 15px; font-weight: 500; color: #e51069">
+          Applicable courses that come with a money back guarantee
+        </h3>
+        <div class="ml_btnset">
+          <a
+            class="hr_custom_btn dark_line_button btn_large round"
+            href="/en/certifications/hrci_shrm_prep_courses/phrsphr-shrm-cpshrm-scp-16-week-online-prep-course_jtafq075.html"
+            >16-wk HRCI & SHRM live instructor-led classes</a
+          >
+          <a
+            class="hr_custom_btn dark_line_button btn_large round"
+            href="/en/certifications/hrci_shrm_prep_courses/phr-sphr-shrm-hr-certification-exam-preparations_l6m916pu.html"
+            >8-wk HRCI & SHRM live instructor-led classes
+          </a>
+          <a
+            class="hr_custom_btn dark_line_button btn_large round"
+            href="/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html"
+            >10-wk aPHR live instructor-led classes
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---mega menu end---->
+
+<div class="edu_container">
+  <div class="hr_custom_submenu mrtp20 mrbt20">
+    <ul class="submenu_list">
+      <li>
+        <a href="/en/certifications/understanding_certification/"
+          >Understanding HR Certification</a
+        >
+      </li>
+      <li>
+        <a href="/en/certifications/hrci_shrm_prep_courses/"
+          >Preparation Options</a
+        >
+      </li>
+
+      <li>
+        <a href="javascript:void(0);" id="money_back">Money Back Guarantee</a>
+      </li>
+      <!-- <li><a href="">Meet Our Team</a></li>-->
+      <li>
+        <a href="/en/certifications/cert-group-sales_kszn0hfn.html"
+          >HR Group Certification</a
+        >
+      </li>
+      <li>
+        <a href="/en/certifications/recertification/">HR Recertification</a>
+      </li>
+      <li>
+        <a href="/en/certifications/hr-certification-testimonials_lm7w9lb1.html"
+          >Testimonials</a
+        >
+      </li>
+      <li>
+        <a href="/en/certifications/ask-my-employer_lwatg3j5.html">Ask My Employer</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+$desc_long
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  rel="stylesheet"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  var $temp = $('<input>')
+  var $url = $(location).attr('href')
+
+  $('#copy_url').on('click', function () {
+    $('body').append($temp)
+    $temp.val($url).select()
+    document.execCommand('copy')
+    $temp.remove()
+    $('#copy').text('Link Copied!')
+
+    $('#copy').delay(3000).fadeOut('slow')
+  })
+
+  $('#money_back').click(function (e) {
+    e.stopPropagation()
+    $('#mega_menu').fadeToggle(function () {
+      if ($('#mega_menu').is(':visible')) {
+        $('.submenu_list>li>a').removeClass('active')
+        $('#money_back').addClass('active')
+      } else {
+        $('#money_back').removeClass('active')
+      }
+      $(document).click(function () {
+        $('#mega_menu').hide()
+        $('#money_back').removeClass('active')
+      })
+    })
+  })
+
+  $(function () {
+    $('.closeBtn').click(function () {
+      $('.modal').modal('hide')
+    })
+  })
+</script>
+
+<!-- Modal -->
+<div class="modal" id="sample">
+  <div class="modal-box">
+    <div class="modal-body">
+      <iframe
+        src="$var3"
+        width="1050"
+        height="550"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </div>
+    <img
+      class="closeBtn"
+      src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/close.svg"
+      alt="close"
+    />
+  </div>
+</div>
+<!---Modal end-->
+
+$designAttribute:masterD_no_sidebar $designAttribute:helpdesk
+<!--$designAttribute:ShoppingCart_populate
+$designAttribute:quick_login_m1
+$designAttribute:splashCheckout-->
+
+<!--$designAttribute:story_edit_Meta-->
