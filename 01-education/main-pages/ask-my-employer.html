@@ -1,0 +1,428 @@
+<!-- @format -->
+<style type="text/css">/**
+ * hero section
+ *
+ * @format
+ */
+
+  .hero {
+    background: #ebf2f8;
+  }
+
+  .hero-container {
+    padding-block: 3.5rem;
+  }
+
+  .img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero-img {
+    display: none;
+    width: 100%;
+  }
+
+  .hero-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'logo' 'info';
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .hero-info div:nth-child(1) {
+    grid-area: info;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .btn-container {
+    /* background: green; */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .cert-prep-logo {
+    grid-area: logo;
+    max-width: 150px;
+  }
+
+  .title {
+    color: #2a343e;
+    font-size: clamp(2.5rem, 3vw, 5rem);
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .title span {
+    color: #e51069;
+  }
+
+  .sub-title {
+    font-size: clamp(1.5rem, 1.9vw, 2.2rem);
+    text-align: center;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero-info {
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 'info logo';
+      align-items: center;
+      justify-items: start;
+    }
+    .btn-container {
+      justify-content: start;
+    }
+    .title {
+      text-align: left;
+    }
+    .sub-title {
+      text-align: left;
+    }
+    .hero-img {
+      display: block;
+    }
+    .hero-container {
+      /* background: red; */
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+  }
+
+  /* features */
+  .features-container {
+    /* background: green; */
+    padding-top: 3.5rem;
+  }
+
+  .features-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .feature {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 1.5rem;
+    max-width: 300px;
+  }
+
+  .feature-text {
+    font-weight: 700;
+    color: #555d65;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  .vertical-divider {
+    height: 100%;
+    width: 3px;
+    background: #e8ecf7;
+    display: none;
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .features-container {
+      grid-template-columns: repeat(5, auto);
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+    .vertical-divider {
+      display: block;
+    }
+    .feature-text {
+      font-size: 17px;
+    }
+  }
+
+  /* horiontal divider */
+  .horizontal-divider {
+    display: block;
+    width: 90%;
+    max-width: 630px;
+    height: 6px;
+    background: #e8ecf7;
+    margin: 5rem auto;
+    border-radius: 5px;
+  }
+
+  /* reasons */
+  .reasons-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .reasons-title {
+    text-align: center;
+    color: #2a343e;
+    font-weight: 500;
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1.5rem;
+  }
+  .reasons-subtitle {
+    color: #2a343e;
+    display: block;
+    font-size: clamp(1.3rem, 2.5vw, 2.5rem);
+  }
+
+  .reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .wiget_cont {
+    background: #e8ecf7
+      url('$public/remoteimages/website-images/2024_Siteupdate/ask-my-employer/hig.svg')
+      left top 0px / 30px 90px no-repeat;
+    background-position: 0 15px;
+    padding: 30px 36px 16px 36px;
+    border-radius: 15px;
+    border: 3px solid #ee5464;
+    display: block;
+    position: relative;
+  }
+
+  .reason-label {
+    color: #222a32;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    padding-left: 10px;
+  }
+
+  .reason-title {
+    color: #e51069;
+    font-size: clamp(2.5rem, 3vw, 3.2rem);
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 1.5rem;
+  }
+
+  .reason-text {
+    font-size: 16px;
+    color: #2a343e;
+    line-height: 170%;
+    /* font-weight: 500; */
+  }
+
+  /* cta block */
+  .cta-section {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+
+  .cta-block {
+    background: rgb(39, 58, 143);
+    background: -moz-linear-gradient(
+      310deg,
+      rgba(39, 58, 143, 1) 0%,
+      rgba(87, 0, 138, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      310deg,
+      rgba(39, 58, 143, 1) 0%,
+      rgba(87, 0, 138, 1) 100%
+    );
+    background: linear-gradient(
+      310deg,
+      rgba(39, 58, 143, 1) 0%,
+      rgba(87, 0, 138, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#273a8f",endColorstr="#57008a",GradientType=1);
+    max-width: 700px;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    margin-bottom: 2rem;
+    color: #ffffff;
+  }
+
+  .phone {
+    font-size: clamp(1.9rem, 3vw, 2.3rem);
+    padding-top: 0.5rem;
+    /* display: block; */
+    color: #ffffff;
+  }
+
+  .cta-text {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 150%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    font-size: 15px;
+  }
+
+  .cta-link {
+    color: #ffffff !important;
+  }
+</style>
+<!-- disclaimer-css starts -->
+<style type="text/css">.trademark-disclaimer {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 5rem auto 0;
+    max-width: 1120px;
+    width: 90vw;
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin-bottom: 5rem;
+  }
+
+  .trademark-disclaimer h2,
+  .trademark-disclaimer h4 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem
+  }
+ 
+  .trademark-disclaimer h2 {
+    text-align: center;
+  }
+
+  .trademark-disclaimer p {
+    margin: 1rem 0;
+  }
+
+  .trademark-disclaimer a {
+    text-decoration: underline;
+  }
+</style>
+<!-- disclaimer-css ends --><!-- hero -->
+<section class="edu_container-fluid hero">
+<div class="edu_container">
+<div class="hero-container">
+<div>
+<h1 class="title"><span>Convince Your Employer</span> to Pay for Your HR Certification Prep Course</h1>
+
+<div class="hero-info">
+<div>
+<h2 class="sub-title">This Course Guarantees a Pass on Your Exam!</h2>
+
+<div class="btn-container">
+<div>$vendorLeadForm</div>
+<a class="hr_custom_btn gradient_btn btn_medium round" id="fc_1712194093602" name="fc_1712194093602" onclick="loadPopup('fc_1712194093602')">Download Template Now</a> <a class="hr_custom_btn dark_line_button btn_medium round" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">Enroll Today</a></div>
+</div>
+<img alt="Certification Exam Preparation Round Logo" class="img cert-prep-logo" src="$public/remoteimages/website-images/HRDotCom_Product_Logos/cert-exam-prem-round-badge.png" /></div>
+</div>
+<img alt="Happy Indian Man Browsing Laptop" class="img hero-img" src="$public/remoteimages/website-images/2024_Siteupdate/ask-my-employer/happy-indian-man-browsing-laptop.gif
+" /></div>
+</div>
+</section>
+<!-- end hero --><!-- features -->
+
+<section class="edu_container-fluid features">
+<div class="edu_container">
+<div class="features-container">
+<article class="feature"><img alt="93 Percent Pass Rate Icon" class="img feature-img" src="$public/remoteimages/website-images/2024_Siteupdate/ask-my-employer/93percent.svg" />
+<p class="feature-text">Trusted by 10,000+ HR professionals worldwide</p>
+</article>
+
+<div class="vertical-divider">&nbsp;</div>
+
+<article class="feature"><img alt="Trust Icon" class="img feature-img" src="$public/remoteimages/website-images/2024_Siteupdate/ask-my-employer/trust.svg" />
+<p class="feature-text">93% exam pass rate (far exceeding average of 60%)</p>
+</article>
+
+<div class="vertical-divider">&nbsp;</div>
+
+<article class="feature"><img alt="Money Back Guarantee Icon" class="img feature-img" src="$public/remoteimages/website-images/2024_Siteupdate/ask-my-employer/money-back.svg" />
+<p class="feature-text">Money-back guarantee if you don&rsquo;t pass</p>
+</article>
+</div>
+</div>
+</section>
+<!-- end features --><!-- horiztonal divider -->
+
+<div class="horizontal-divider">&nbsp;</div>
+<!-- end horizontal divider --><!-- reasons --><!-- features -->
+
+<section class="edu_container-fluid reasons-section">
+<div class="edu_container">
+<h2 class="reasons-title">Why Your Employer Should <span style="font-weight: bold; color: #e51069"> Pay</span> For Your Cert Prep Course <span class="reasons-subtitle">(Share these reasons with your manager!)</span></h2>
+
+<div class="reasons">
+<article class="wiget_cont reason">
+<h3 class="reason-label">Reason 1</h3>
+
+<p class="reason-title">You&rsquo;ll be a better HR professional!</p>
+
+<p class="reason-text">You&rsquo;ll advance your HR knowledge and skills, and your improved efficiency and productivity will benefit your organization.</p>
+</article>
+
+<article class="wiget_cont reason">
+<h3 class="reason-label">Reason 2</h3>
+
+<p class="reason-title">You&rsquo;ll mitigate legal risks for your organization.</p>
+
+<p class="reason-text">The HR certification preparation program emphasizes compliance, empowering you to better navigate the complexities of workplace laws and regulations.</p>
+</article>
+
+<article class="wiget_cont reason">
+<h3 class="reason-label">Reason 3</h3>
+
+<p class="reason-title">It&rsquo;s cost-effective HR talent development.</p>
+
+<p class="reason-text">The online format means you don&rsquo;t have to travel or miss work (unlike confaerences), and you&rsquo;ll gain valuable insights and knowledge that will not only benefit you, but others on your team.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- end reasons --><!-- cta block -->
+
+<section class="edu_container-fluid cta-section">
+<div class="edu_container">
+<div class="cta-block">
+<h2 class="cta-title">We would love to help you</h2>
+
+<p class="cta-text">For questions regarding course enrollment, please contact our team of success ambassadors at<br />
+<br />
+<span class="phone">Call: 1-877-472-6648 (Ext. 102)</span><br />
+Email: <a class="cta-link" href="mailto:certification@hr.com"> certification@hr.com</a></p>
+<a class="hr_custom_btn gradient_btn btn_medium round" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">Enroll Today</a></div>
+</div>
+</section>
+
+<div class="trademark-disclaimer">
+<h4>Trademark Disclaimer</h4>
+
+<p><em> aPHR&reg;, PHR&reg;, SPHR&reg;, SHRM-CP&reg;, SHRM-SCP&reg;, and all other HRCI&reg; and SHRM&reg; certification marks are the property of HR Certification Institute&reg; and the Society for Human Resource Management&reg;, respectively. HR.com is not affiliated with, endorsed by, or sponsored by HRCI&reg; or SHRM&reg;. All HR.com preparation courses, practice exams, and study materials are independently developed and are neither approved nor endorsed by HRCI&reg; or SHRM&reg;. Reference to these certifications does not imply ownership or official partnership. </em></p>
+</div>
+<!-- end cta block --><script src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/js/script.js"></script><script>
+  $(document).ready(function () {
+    $('.submenu_list>li:nth-child(7)>a').addClass('active')
+  })
+</script>
