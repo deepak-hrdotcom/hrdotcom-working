@@ -1,0 +1,253 @@
+<!-- Background + Layout -->
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .confirmation-page {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background: url("https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/golden-gate-bridge-dark.webp")
+      center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .confirmation-card {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+
+  .card-inner {
+    padding: 35px 45px;
+    text-align: center;
+  }
+
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .confirmation-main h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    color: #1f2a37;
+  }
+
+  .confirmation-main h2 {
+    font-size: 24px;
+    margin: 8px 0;
+    color: #1f2a37;
+  }
+
+  .confirmation-main h3 {
+    font-size: 18px;
+    margin: 6px 0;
+    font-weight: normal;
+  }
+
+  .green-text {
+    color: #4f7f0c;
+    font-weight: bold;
+  }
+
+  .gray-text {
+    color: #555;
+  }
+
+  .red-text {
+    color: #c0392b;
+    font-weight: bold;
+  }
+
+  .button-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    border-radius: 24px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .btn-disabled {
+    background: #d0d0d0;
+    color: #555;
+    cursor: not-allowed;
+  }
+
+  .btn-green {
+    background: #5a8f1f;
+    color: white;
+  }
+
+  .btn-hidden {
+    display: none;
+  }
+
+  .calendar-block {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .divider {
+    margin: 25px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .reminder-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .reminder-text {
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .reminder-text a {
+    color: #c0392b;
+    text-decoration: none;
+  }
+
+  /* Mobile Fix */
+  @media (max-width: 768px) {
+    .confirmation-page {
+      align-items: flex-start;
+      padding: 20px 12px;
+    }
+
+    .card-inner {
+      padding: 20px;
+    }
+
+    .confirmation-main h1 {
+      font-size: 24px;
+    }
+
+    .confirmation-main h2 {
+      font-size: 20px;
+    }
+
+    .confirmation-main h3 {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<!-- Existing Script (unchanged) -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    var adroll_segments
+    if (
+      window.location.href.indexOf(
+        'passType=Empower+HR+Tech+Europe+Full+Pass+-+Hybrid+Event',
+      ) > -1
+    ) {
+      adroll_segments = '49ddfe5b'
+    }
+    if (
+      window.location.href.indexOf(
+        'passType=Empower+HR+Tech+Europe+Virtual+Pass+-+Hybrid+Event',
+      ) > -1
+    ) {
+      adroll_segments = 'c0bacb8f'
+    }
+    if (
+      window.location.href.indexOf(
+        'https://www.mypeople001.com/en?t=/CustomCode/HybridEvents/Event.RegAction&StoryID=1652364115713&eventID=1648137012358&passType=Inspire+Virtual+Pass+-+Hybrid+Event',
+      ) > -1
+    ) {
+      adroll_segments = '3cc633e0'
+    }
+    if (
+      window.location.href.indexOf(
+        'https://www.mypeople001.com/en?t=/CustomCode/HybridEvents/Event.RegAction&StoryID=1652364115713&eventID=1648137012358',
+      ) > -1
+    ) {
+      adroll_segments = '9e45e2fd'
+    }
+    console.log(adroll_segments)
+  })
+</script>
+
+<!-- Page -->
+<div class="confirmation-page">
+  <div class="confirmation-card">
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hr-west-confirmation-page-banner-2027-v2.jpg" alt="HRWest Banner">
+    </div>
+
+    <div class="card-inner">
+
+      <div class="confirmation-main">
+        <h1>Thank you, $firstName!</h1>
+
+        <h3 class="green-text">
+          Your registration is now confirmed for
+        </h3>
+
+        <h2>$eventName</h2>
+
+        <h3 class="gray-text">
+          On <span class="red-text">$dateTime</span>
+        </h3>
+
+        <div class="button-row">
+          <button type="button" class="btn btn-disabled">
+            Registered!
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-green btn-hidden"
+            onclick="window.location.href = '$eventHomeURL'"
+          >
+            View Agenda
+          </button>
+        </div>
+      </div>
+
+      <div class="calendar-block">
+        <p style="margin-bottom:10px;">
+          Add this Event to your calendar:
+        </p>
+
+        $addToCalendar $loginButton
+      </div>
+
+      <div class="divider"></div>
+
+      <div>
+        <div class="reminder-title">Hey, don’t forget!</div>
+
+        <div class="reminder-text">
+          Put HR.com on your safe sender list to ensure you get our emails.
+          For any issues or questions, contact us at
+          <a href="mailto:hrwest@hr.com">hrwest@hr.com</a>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

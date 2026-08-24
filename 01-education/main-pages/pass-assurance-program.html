@@ -1,0 +1,332 @@
+<!-- @format -->
+<style type="text/css">
+  .edu_pass_assurance_page {
+    width: 100%;
+    background-color: #f8fafc;
+    padding: 35px 0 60px 0;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  .edu_pass_assurance_page * {
+    box-sizing: border-box !important;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  .edu_pass_assurance_page .edu_container {
+    width: 100%;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .edu_pass_assurance_page .pap_card {
+    background: #ffffff;
+    border: 2px solid #e8ecf7;
+    border-radius: 20px;
+    box-shadow: 0 12px 36px rgba(39, 58, 143, 0.05);
+    padding: 45px 45px 50px 45px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .edu_pass_assurance_page .pap_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    width: 100%;
+  }
+
+  .edu_pass_assurance_page .pap_badge_box {
+    width: 220px;
+    min-width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px;
+    background: radial-gradient(circle, rgba(74, 196, 214, 0.12) 0%, rgba(248, 250, 252, 0.5) 70%, transparent 100%);
+    border-radius: 18px;
+    border: 1px solid rgba(232, 236, 247, 0.8);
+  }
+
+  .edu_pass_assurance_page .pap_badge_box img {
+    display: block;
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .edu_pass_assurance_page .pap_badge_box:hover img {
+    transform: scale(1.04);
+  }
+
+  .edu_pass_assurance_page .pap_badge_caption {
+    display: block;
+    margin-top: 14px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #007173 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    text-align: center !important;
+  }
+
+  .edu_pass_assurance_page .pap_content_box {
+    flex: 1;
+    max-width: 770px;
+  }
+
+  .edu_pass_assurance_page .pap_title {
+    font-size: 34px !important;
+    font-weight: 700 !important;
+    color: #2a343e !important;
+    line-height: 1.25 !important;
+    margin: 0 0 16px 0 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .edu_pass_assurance_page .pap_desc {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #454f5b !important;
+    line-height: 1.65 !important;
+    margin: 0 0 22px 0 !important;
+  }
+
+  .edu_pass_assurance_page .pap_checklist_box {
+    background: #f8fafc;
+    border: 1px solid #e8ecf7;
+    border-left: 4px solid #4ac4d6;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 0 0 26px 0;
+  }
+
+  .edu_pass_assurance_page .pap_list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .edu_pass_assurance_page .pap_list li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #2a343e !important;
+    line-height: 1.55 !important;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+  }
+
+  .edu_pass_assurance_page .pap_list li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .edu_pass_assurance_page .pap_list li svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    margin-top: 1px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .edu_pass_assurance_page .pap_subtitle {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #e51069 !important;
+    line-height: 1.4 !important;
+    margin: 0 0 18px 0 !important;
+    text-align: left !important;
+  }
+
+  .edu_pass_assurance_page .pap_btnset {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .edu_pass_assurance_page .pap_btnset .pap_btn {
+    display: inline-block !important;
+    background: #ffffff !important;
+    border: 2px solid #2a343e !important;
+    border-radius: 30px !important;
+    padding: 11px 22px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #2a343e !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 2px 6px rgba(42, 52, 62, 0.04) !important;
+    outline: none !important;
+  }
+
+  .edu_pass_assurance_page .pap_btnset .pap_btn:hover {
+    background: #2a343e !important;
+    color: #ffffff !important;
+    border-color: #2a343e !important;
+    box-shadow: 0 6px 14px rgba(42, 52, 62, 0.15) !important;
+    transform: translateY(-1px) !important;
+    text-decoration: none !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    .edu_pass_assurance_page {
+      padding: 25px 0 45px 0;
+    }
+
+    .edu_pass_assurance_page .pap_card {
+      padding: 30px 25px;
+    }
+
+    .edu_pass_assurance_page .pap_wrapper {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .edu_pass_assurance_page .pap_badge_box {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
+
+    .edu_pass_assurance_page .pap_title {
+      font-size: 26px !important;
+      text-align: center !important;
+    }
+
+    .edu_pass_assurance_page .pap_desc {
+      text-align: center !important;
+    }
+
+    .edu_pass_assurance_page .pap_list li {
+      text-align: left !important;
+      justify-content: flex-start !important;
+    }
+
+    .edu_pass_assurance_page .pap_subtitle {
+      text-align: center !important;
+    }
+
+    .edu_pass_assurance_page .pap_btnset {
+      justify-content: center !important;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .edu_pass_assurance_page .pap_title {
+      font-size: 22px !important;
+    }
+
+    .edu_pass_assurance_page .pap_card {
+      padding: 24px 18px;
+      border-radius: 16px;
+    }
+
+    .edu_pass_assurance_page .pap_btnset .pap_btn {
+      width: 100% !important;
+      padding: 11px 16px !important;
+      font-size: 13px !important;
+    }
+  }
+</style>
+
+<div class="edu_pass_assurance_page">
+  <div class="edu_container">
+    <div class="pap_card">
+      <div class="pap_wrapper">
+        <div class="pap_badge_box">
+          <img
+            alt="Pass Assurance Program - 100% Money Back Guarantee"
+            src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/money_back_badge.png"
+          />
+          <span class="pap_badge_caption">100% Refund Guarantee</span>
+        </div>
+
+        <div class="pap_content_box">
+          <h1 class="pap_title">Pass Assurance Program</h1>
+
+          <p class="pap_desc">
+            If you meet the following eligibility requirements, and still aren't
+            successful in passing your <b>HRCI&reg;</b> or <b>SHRM&reg;</b> certification exam - we will
+            refund your complete tuition cost back to you!
+          </p>
+
+          <div class="pap_checklist_box">
+            <ul class="pap_list">
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="10" fill="#4ac4d6" />
+                  <path d="M6 10.2L8.7 13L14.2 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Must attend 80% or more of the live, scheduled sessions.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="10" fill="#4ac4d6" />
+                  <path d="M6 10.2L8.7 13L14.2 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Must score 80% or higher on all practice exams included in the program.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="10" fill="#4ac4d6" />
+                  <path d="M6 10.2L8.7 13L14.2 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Must attempt your HRCI or SHRM exam within 90 days of completing the program.</span>
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="pap_subtitle">
+            Applicable courses that come with the Pass Assurance Program
+          </h3>
+
+          <div class="pap_btnset">
+            <a
+              class="pap_btn"
+              href="/en/certifications/hrci_shrm_prep_courses/phrsphr-shrm-cpshrm-scp-16-week-online-prep-course_jtafq075.html"
+            >
+              16-wk HRCI &amp; SHRM live instructor-led classes
+            </a>
+            <a
+              class="pap_btn"
+              href="/en/certifications/hrci_shrm_prep_courses/phr-sphr-shrm-hr-certification-exam-preparations_l6m916pu.html"
+            >
+              8-wk HRCI &amp; SHRM live instructor-led classes
+            </a>
+            <a
+              class="pap_btn"
+              href="/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html"
+            >
+              10-wk aPHR live instructor-led classes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.submenu_list>li:nth-child(3)>a').addClass('active')
+  })
+</script>

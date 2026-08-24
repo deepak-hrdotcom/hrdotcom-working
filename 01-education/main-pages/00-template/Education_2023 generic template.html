@@ -11,7 +11,7 @@
   .ml_btnset {
     justify-content: center !important;
   }
-  /* Modal */m
+  /* Modal */
   #sample.modal {
     display: none;
     position: fixed;
@@ -85,7 +85,10 @@
     font-size: 14px;
     font-weight: 500;
   }
-
+ul.submenu_list > li > a{
+    font-size:13.5px !important
+}
+  /*
   .bg_white {
     display: none;
     background: #fff;
@@ -111,8 +114,10 @@
       text-align: center;
     }
   }
+  */
 </style>
-<!---mega--menu--->
+
+<!-- Mega Menu Start
 <div class="edu_container-fluid bg_white" id="mega_menu">
   <div class="edu_container">
     <div
@@ -121,15 +126,15 @@
     >
       <div class="ml_img_box" style="width: 15%">
         <img
-          alt="Money Back Gurantee"
+          alt="Money Back Guarantee"
           src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/money_back_badge.png"
         />
       </div>
       <div class="ml_desc_list" style="width: 85%; max-width: 800px">
         <h2>Money back guarantee</h2>
         <p style="margin-bottom: 30px; font-size: 14px !important">
-          If you meet the following eligibility requirements, and still aren't
-          successful in passing your HRCI® or SHRM® certification exam - we will
+          If you meet the following eligibility requirements, and still are not
+          successful in passing your HRCI or SHRM certification exam - we will
           refund your complete tuition cost back to you!
         </p>
         <ul>
@@ -167,8 +172,7 @@
     </div>
   </div>
 </div>
-
-<!---mega menu end---->
+Mega Menu End -->
 
 <div class="edu_container">
   <div class="hr_custom_submenu mrtp20 mrbt20">
@@ -185,7 +189,7 @@
       </li>
 
       <li>
-        <a href="javascript:void(0);" id="money_back">Money Back Guarantee</a>
+        <a href="/en/certifications/pass-assurance-program/">Pass Assurance Program</a>
       </li>
       <!-- <li><a href="">Meet Our Team</a></li>-->
       <li>
@@ -233,6 +237,7 @@ $desc_long
     $('#copy').delay(3000).fadeOut('slow')
   })
 
+  /*
   $('#money_back').click(function (e) {
     e.stopPropagation()
     $('#mega_menu').fadeToggle(function () {
@@ -248,6 +253,7 @@ $desc_long
       })
     })
   })
+  */
 
   $(function () {
     $('.closeBtn').click(function () {
