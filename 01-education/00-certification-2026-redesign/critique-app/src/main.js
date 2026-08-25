@@ -21,23 +21,26 @@ const worldLowFiBtn = document.getElementById('worldLowFiBtn');
 // Initialize Application
 function initApp() {
   setupWorldSwitcher();
+  setupKeyboardNavigation();
   renderApp();
 }
 
 // --------------------------------------------------------------------------
-// 1. World Mode Switcher Controller
+// 1. World Mode Switcher Controller ("The 3 Worlds")
 // --------------------------------------------------------------------------
 function setupWorldSwitcher() {
   worldCritiqueBtn.addEventListener('click', () => {
     currentMode = 'critique';
     updateWorldBtnStates();
     renderApp();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   worldLowFiBtn.addEventListener('click', () => {
     currentMode = 'lowfi';
     updateWorldBtnStates();
     renderApp();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
@@ -56,16 +59,30 @@ function renderApp() {
 }
 
 // --------------------------------------------------------------------------
-// 2. Sub-Navigation Bar
+// 2. Presenter-Friendly Sub-Navigation Bar (Steppers & High-Affordance Pills)
 // --------------------------------------------------------------------------
 function renderSubNavBar() {
+  pageNavBar.style.display = 'flex';
+
   if (currentMode === 'critique') {
-    pageNavBar.style.display = 'flex';
+    const tabs = ['crisis', 'page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7', 'solution'];
+    const currentIdx = tabs.indexOf(currentCritiqueTab);
+    const hasPrev = currentIdx > 0;
+    const hasNext = currentIdx < tabs.length - 1;
+
     let navHtml = `
-      <button class="nav-btn crisis-btn ${currentCritiqueTab === 'crisis' ? 'active' : ''}" data-tab="crisis">
-        <span>🚨</span>
-        <span>The 7-Page Problem</span>
-      </button>
+      <!-- Stepper Controls & Group 1: Problem Overview -->
+      <div class="nav-tabs-group">
+        <button class="nav-stepper-btn" id="critiquePrevBtn" ${!hasPrev ? 'disabled' : ''} title="Previous Page (Left Arrow)">
+          ← Prev
+        </button>
+
+        <button class="nav-btn crisis-btn ${currentCritiqueTab === 'crisis' ? 'active' : ''}" data-tab="crisis">
+          <span>🚨</span>
+          <span>The 7-Page Problem</span>
+        </button>
+
+        <div class="nav-divider"></div>
     `;
 
     pagesCritique.forEach(page => {
@@ -78,27 +95,181 @@ function renderSubNavBar() {
     });
 
     navHtml += `
-      <button class="nav-btn solution-btn ${currentCritiqueTab === 'solution' ? 'active' : ''}" data-tab="solution">
-        <span>✨</span>
-        <span>The 3-Page Solution</span>
-      </button>
+        <div class="nav-divider"></div>
+
+        <button class="nav-btn solution-btn ${currentCritiqueTab === 'solution' ? 'active' : ''}" data-tab="solution">
+          <span>✨</span>
+          <span>The 3-Page Solution</span>
+        </button>
+      </div>
+
+      <!-- Stepper Controls (Right) -->
+      <div class="nav-tabs-group">
+        <button class="nav-stepper-btn" id="critiqueNextBtn" ${!hasNext ? 'disabled' : ''} title="Next Page (Right Arrow)">
+          Next →
+        </button>
+      </div>
     `;
 
     pageNavBar.innerHTML = navHtml;
 
+    // Attach click events to critique tabs
     pageNavBar.querySelectorAll('.nav-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         currentCritiqueTab = btn.dataset.tab;
         selectedHotspotId = null;
         renderSubNavBar();
         renderCritiqueWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
+
+    // Attach stepper click events
+    const prevBtn = document.getElementById('critiquePrevBtn');
+    const nextBtn = document.getElementById('critiqueNextBtn');
+    if (prevBtn && hasPrev) {
+      prevBtn.addEventListener('click', () => {
+        currentCritiqueTab = tabs[currentIdx - 1];
+        selectedHotspotId = null;
+        renderSubNavBar();
+        renderCritiqueWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    if (nextBtn && hasNext) {
+      nextBtn.addEventListener('click', () => {
+        currentCritiqueTab = tabs[currentIdx + 1];
+        selectedHotspotId = null;
+        renderSubNavBar();
+        renderCritiqueWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
   } else if (currentMode === 'lowfi') {
-    // In Low-Fi Prototype mode, navigation is directly inside the wireframe prototype canvas!
-    pageNavBar.style.display = 'none';
+    const hubs = ['hub-1', 'hub-2', 'hub-3'];
+    const currentIdx = hubs.indexOf(currentLowFiHubId);
+    const hasPrev = currentIdx > 0;
+    const hasNext = currentIdx < hubs.length - 1;
+
+    let navHtml = `
+      <div class="nav-tabs-group">
+        <button class="nav-stepper-btn" id="lowfiPrevBtn" ${!hasPrev ? 'disabled' : ''} title="Previous Hub (Left Arrow)">
+          ← Prev Page
+        </button>
+
+        <button class="nav-btn hub-btn ${currentLowFiHubId === 'hub-1' ? 'active' : ''}" data-hub="hub-1">
+          <span class="nav-num">Page 01</span>
+          <span>Master Prep &amp; Exam Matcher</span>
+        </button>
+
+        <button class="nav-btn hub-btn ${currentLowFiHubId === 'hub-2' ? 'active' : ''}" data-hub="hub-2">
+          <span class="nav-num">Page 02</span>
+          <span>Employer Funding &amp; Teams</span>
+        </button>
+
+        <button class="nav-btn hub-btn ${currentLowFiHubId === 'hub-3' ? 'active' : ''}" data-hub="hub-3">
+          <span class="nav-num">Page 03</span>
+          <span>Recertification Credits Engine</span>
+        </button>
+      </div>
+
+      <div class="nav-tabs-group">
+        <button class="nav-stepper-btn" id="lowfiNextBtn" ${!hasNext ? 'disabled' : ''} title="Next Hub (Right Arrow)">
+          Next Page →
+        </button>
+      </div>
+    `;
+
+    pageNavBar.innerHTML = navHtml;
+
+    // Attach click events to hub buttons
+    pageNavBar.querySelectorAll('.nav-btn.hub-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentLowFiHubId = btn.dataset.hub;
+        renderSubNavBar();
+        renderLowFiWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Attach stepper events
+    const prevBtn = document.getElementById('lowfiPrevBtn');
+    const nextBtn = document.getElementById('lowfiNextBtn');
+    if (prevBtn && hasPrev) {
+      prevBtn.addEventListener('click', () => {
+        currentLowFiHubId = hubs[currentIdx - 1];
+        renderSubNavBar();
+        renderLowFiWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    if (nextBtn && hasNext) {
+      nextBtn.addEventListener('click', () => {
+        currentLowFiHubId = hubs[currentIdx + 1];
+        renderSubNavBar();
+        renderLowFiWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   }
 }
+
+// --------------------------------------------------------------------------
+// Keyboard Arrow Navigation for Meetings & Presentations
+// --------------------------------------------------------------------------
+function setupKeyboardNavigation() {
+  window.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    // Number keys '1' and '2' switch Worlds
+    if (e.key === '1') {
+      currentMode = 'critique';
+      updateWorldBtnStates();
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (e.key === '2') {
+      currentMode = 'lowfi';
+      updateWorldBtnStates();
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Left and Right arrows step through pages
+    if (currentMode === 'critique') {
+      const tabs = ['crisis', 'page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7', 'solution'];
+      const idx = tabs.indexOf(currentCritiqueTab);
+      if (e.key === 'ArrowLeft' && idx > 0) {
+        currentCritiqueTab = tabs[idx - 1];
+        selectedHotspotId = null;
+        renderSubNavBar();
+        renderCritiqueWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (e.key === 'ArrowRight' && idx < tabs.length - 1) {
+        currentCritiqueTab = tabs[idx + 1];
+        selectedHotspotId = null;
+        renderSubNavBar();
+        renderCritiqueWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else if (currentMode === 'lowfi') {
+      const hubs = ['hub-1', 'hub-2', 'hub-3'];
+      const idx = hubs.indexOf(currentLowFiHubId);
+      if (e.key === 'ArrowLeft' && idx > 0) {
+        currentLowFiHubId = hubs[idx - 1];
+        renderSubNavBar();
+        renderLowFiWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (e.key === 'ArrowRight' && idx < hubs.length - 1) {
+        currentLowFiHubId = hubs[idx + 1];
+        renderSubNavBar();
+        renderLowFiWorld();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  });
+}
+
 
 
 // --------------------------------------------------------------------------

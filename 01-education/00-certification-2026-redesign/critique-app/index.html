@@ -10,34 +10,47 @@
   <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-  <!-- Slim, Lightweight Header Bar -->
-  <header class="app-header-slim">
-    <div class="header-left">
-      <div class="brand-badge-mini">
+  <!-- Master Header Bar with Prominent Centered World Switcher -->
+  <header class="app-header-master">
+    <!-- Left: Brand & Project Info -->
+    <div class="header-left-brand">
+      <div class="brand-dots-pill">
         <span class="dot red"></span>
         <span class="dot yellow"></span>
         <span class="dot green"></span>
         <span class="dot cyan"></span>
-        <span class="brand-text">HR.com</span>
+        <span class="brand-title">HR.com</span>
       </div>
-      <span class="header-divider">/</span>
-      <span class="header-title-text">Certification Redesign 2026</span>
+      <div class="header-text-block">
+        <span class="header-main-title">Education &amp; Certification Redesign</span>
+        <span class="header-sub-tag">2026 Executive Review</span>
+      </div>
     </div>
     
-    <!-- Minimalist World Mode Links -->
-    <div class="world-links">
-      <button class="world-link-btn" id="worldCritiqueBtn" data-mode="critique">
-        <span>🚨 Critique Audit</span>
+    <!-- Center: Prominent Segmented World Switcher ("The 3 Worlds") -->
+    <div class="world-switcher-capsule" role="tablist" aria-label="Review Mode Switcher">
+      <button class="world-capsule-btn" id="worldCritiqueBtn" data-mode="critique" role="tab" title="Press '1' on keyboard to switch">
+        <span class="capsule-icon">🔍</span>
+        <span class="capsule-label">1. Critique &amp; Audit</span>
+        <span class="capsule-badge">7 Pages</span>
       </button>
 
-      <button class="world-link-btn active" id="worldLowFiBtn" data-mode="lowfi">
-        <span>📐 Low-Fi Prototype</span>
+      <button class="world-capsule-btn active" id="worldLowFiBtn" data-mode="lowfi" role="tab" title="Press '2' on keyboard to switch">
+        <span class="capsule-icon">📐</span>
+        <span class="capsule-label">2. Low-Fi Prototype</span>
+        <span class="capsule-badge live">3 New Hubs</span>
       </button>
 
-      <button class="world-link-btn disabled" id="worldHiFiBtn" disabled title="Hi-Fi Prototype in development">
-        <span>💎 Hi-Fi Prototype</span>
-        <span class="soon-tag">Coming Soon</span>
+      <button class="world-capsule-btn disabled" id="worldHiFiBtn" disabled title="Hi-Fi Prototype in development" role="tab">
+        <span class="capsule-icon">💎</span>
+        <span class="capsule-label">3. Hi-Fi Prototype</span>
+        <span class="capsule-badge soon">Coming Soon</span>
       </button>
+    </div>
+
+    <!-- Right: Presentation Helper Badges -->
+    <div class="header-right-tools">
+      <span class="key-hint-pill" title="Use Left and Right arrow keys to flip pages">⌨️ Arrow Keys to Navigate</span>
     </div>
   </header>
 
