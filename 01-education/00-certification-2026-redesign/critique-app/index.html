@@ -3,44 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR.com Education Redesign — Executive UX & Conversion Critique</title>
+  <title>HR.com Certification Redesign 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-  <!-- Master Application Header -->
-  <header class="app-header">
+  <!-- Slim, Lightweight Header Bar -->
+  <header class="app-header-slim">
     <div class="header-left">
-      <div class="brand-badge">
+      <div class="brand-badge-mini">
         <span class="dot red"></span>
         <span class="dot yellow"></span>
         <span class="dot green"></span>
         <span class="dot cyan"></span>
-        <span class="brand-name">HR.COM EDUCATION 2026</span>
+        <span class="brand-text">HR.com</span>
       </div>
-      <div class="divider-v"></div>
-      <div class="project-title">
-        <span class="tag-pill">EXECUTIVE AUDIT</span>
-        <h1>UX &amp; Conversion Critique</h1>
-      </div>
+      <span class="header-divider">/</span>
+      <span class="header-title-text">Certification Redesign 2026</span>
     </div>
     
-    <div class="header-right">
-      <div class="presenter-chip">
-        <span class="avatar">📊</span>
-        <div class="presenter-info">
-          <span class="name">UX &amp; Conversion Strategy</span>
-          <span class="role">Marketing Services Review</span>
-        </div>
-      </div>
+    <!-- Minimalist World Mode Links -->
+    <div class="world-links">
+      <button class="world-link-btn" id="worldCritiqueBtn" data-mode="critique">
+        <span>🚨 Critique Audit</span>
+      </button>
+
+      <button class="world-link-btn active" id="worldLowFiBtn" data-mode="lowfi">
+        <span>📐 Low-Fi Prototype</span>
+      </button>
+
+      <button class="world-link-btn disabled" id="worldHiFiBtn" disabled title="Hi-Fi Prototype in development">
+        <span>💎 Hi-Fi Prototype</span>
+        <span class="soon-tag">Coming Soon</span>
+      </button>
     </div>
   </header>
 
-  <!-- Navigation Bar: The 7 Pages + Master Problem + Consolidation -->
+
+  <!-- Secondary Dynamic Sub-Navigation Bar -->
   <nav class="page-nav-bar" id="pageNavBar">
-    <!-- Injected dynamically via main.js -->
+    <!-- Injected dynamically via main.js based on active world mode -->
   </nav>
 
   <!-- Main Workspace Container -->
@@ -51,3 +55,4 @@
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+

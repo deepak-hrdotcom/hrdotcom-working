@@ -1,66 +1,66 @@
 // HR.com 2026 Education Redesign — Executive Critique Data
-// Deep, comprehensive, section-by-section behavioral & conversion analysis.
-// Strictly using plain-English explanations (no academic law names).
+// Deep, comprehensive, section-by-section analysis in simple, everyday English.
+// Zero academic terms, zero jargon — clear and easy to understand for everyone.
 
 export const globalCritique = {
-  title: "The 7-Page Fragmentation Problem",
-  subtitle: "Why forcing users across 7 separate pages destroys buying momentum and kills conversion rates",
+  title: "The 7-Page Confusion Problem",
+  subtitle: "Why forcing visitors across 7 separate pages kills their excitement and stops them from enrolling",
   overviewMetrics: [
-    { label: "Current Pages", value: "7 Siloed URLs", note: "Users lose context with each click" },
-    { label: "Decision Friction", value: "Severe", note: "Too many separate steps to find basic answers" },
-    { label: "Trust Placement", value: "Misplaced", note: "Reviews & guarantees are separated from pricing" },
-    { label: "Mobile Experience", value: "Cluttered", note: "Dense desktop layouts shrink poorly on phones" }
+    { label: "Current Website", value: "7 Disconnected Pages", note: "Visitors lose track of where they are with each click" },
+    { label: "User Confusion", value: "Very High", note: "Too many separate steps to find basic answers like price or dates" },
+    { label: "Reviews & Guarantees", value: "Hidden Away", note: "Student reviews and refund guarantees are separated from prices" },
+    { label: "Mobile Experience", value: "Crowded & Hard to Read", note: "Dense desktop layouts shrink poorly on phones" }
   ],
   coreProblems: [
     {
       id: "friction",
       icon: "🚪",
-      headline: "Forcing users to jump between 7 separate pages creates drop-off at every click",
-      explanation: "When someone wants to get certified, they shouldn't have to visit Page 1 to understand the exam, Page 2 to see the price, Page 3 to check the guarantee, Page 6 to read reviews, and Page 7 to ask their boss. Every time a user has to load a new page, 20% to 40% of them drop off and leave forever.",
-      businessImpact: "Massive drop-off before reaching the enrollment button."
+      headline: "Forcing visitors to jump between 7 separate pages causes people to leave at every click",
+      explanation: "When someone wants to get certified, they shouldn't have to open Page 1 to learn about exams, Page 2 to see the price, Page 3 to check the refund policy, Page 6 to read reviews, and Page 7 to ask their boss. Every time a visitor is forced to click to a new page, 20% to 40% of them give up, close the tab, and leave.",
+      businessImpact: "Most visitors leave before ever reaching the sign-up button."
     },
     {
       id: "choice-paralysis",
       icon: "🤯",
-      headline: "Too many unguided choices cause decision paralysis and delay purchases",
-      explanation: "When users are confronted with dozens of dates, textbooks, and ambiguous course formats without a simple guided recommendation, their brain gets overwhelmed. When people feel overwhelmed, they don't buy — they tell themselves 'I'll look at this later tonight' and never come back.",
-      businessImpact: "Prospects delay enrollment or abandon the purchase entirely."
+      headline: "Dumping too many choices at once overwhelms visitors so they delay buying",
+      explanation: "When visitors are faced with dozens of dates, textbooks, and different course formats without a simple recommendation, their brain gets tired. When people feel overwhelmed, they don't buy — they tell themselves 'I'll figure this out later tonight' and never come back.",
+      businessImpact: "Visitors postpone enrolling and end up buying from competitors or doing nothing."
     },
     {
       id: "separated-trust",
       icon: "🛡️",
-      headline: "Trust elements are hidden away from where users actually hesitate",
-      explanation: "We have an incredible 93% pass rate, a 100% money-back guarantee, and 49+ authentic student reviews with photos. But they are locked away on subpages! When a candidate looks at the $1,065 course price, they are nervous about failing. That is the exact moment they need to see the guarantee and reviews right in front of their eyes.",
-      businessImpact: "High price hesitation without instant reassurance."
+      headline: "Trust builders (reviews and money-back guarantees) are hidden where people can't see them",
+      explanation: "We have an incredible 93% pass rate, a 100% money-back guarantee, and 49+ real graduate reviews with photos. But they are buried on hidden pages! When a candidate sees the $1,065 price tag, they get nervous about failing. That exact moment is when they need to see the guarantee and real graduate reviews right in front of them.",
+      businessImpact: "Visitors hesitate on price because reassurance isn't shown where they need it."
     },
     {
       id: "weak-value",
       icon: "💰",
-      headline: "We sell the course as an expensive cost rather than a high-paying career investment",
-      explanation: "Our current copy presents $1,065 as tuition fee. In reality, certified HR professionals earn $10,000 to $20,000 more per year, get promoted faster, and protect their companies from multi-million-dollar labor lawsuits. We fail to highlight the career return on investment and fail to show how easy it is to get their employer to pay for it.",
-      businessImpact: "Tuition feels like an out-of-pocket expense rather than an essential career milestone."
+      headline: "We present the course as a huge out-of-pocket expense instead of a high-return career upgrade",
+      explanation: "Our current pages present $1,065 as tuition fee. In reality, certified HR professionals earn $10,000 to $20,000 more per year, get promoted faster, and help their companies avoid multi-million-dollar lawsuits. We fail to show this career payoff, and we don't show how easy it is to get their boss to pay for it.",
+      businessImpact: "Tuition feels like a costly expense instead of a smart career investment."
     }
   ],
   consolidationBlueprint: {
-    headline: "The Solution: Consolidate 7 Confusing Pages into 3 High-Converting Hubs",
+    headline: "The Simple Solution: Combine 7 Confusing Pages into 3 Clear, High-Converting Pages",
     hubs: [
       {
-        tag: "Hub 1 (Primary Consumer Funnel)",
+        tag: "Main Page (For Individual Students)",
         name: "The Master Certification & Prep Hub",
-        replaces: "Merges Page 1 (Understanding), Page 2 (Prep Options), Page 3 (Guarantee), and Page 6 (Reviews)",
-        howItWorks: "A single, seamless page where candidates match their experience in 1 click, see tailored course options, view the 100% guarantee right next to pricing, and read real graduate reviews at the exact point of hesitation."
+        replaces: "Combines Page 1 (Understanding), Page 2 (Prep Options), Page 3 (Guarantee), and Page 6 (Reviews)",
+        howItWorks: "A single, seamless page where students match their experience in 1 click, see simple course recommendations, view the 100% money-back guarantee right next to pricing, and read real graduate reviews at the exact moment they are deciding."
       },
       {
-        tag: "Hub 2 (B2B & Employer Funding)",
+        tag: "Employer Page (For Teams & Company Funding)",
         name: "Employer Reimbursement & Team Training Hub",
-        replaces: "Merges Page 4 (Group Certification) & Page 7 (Ask My Employer)",
-        howItWorks: "Empowers solo candidates to download 1-click boss pitch decks while offering team leaders an instant volume discount calculator for cohorts of 5+ HR professionals."
+        replaces: "Combines Page 4 (Group Certification) & Page 7 (Ask My Employer)",
+        howItWorks: "Gives individual candidates a 1-click email template to send their boss for approval, while giving team managers an instant discount calculator for groups of 5+ HR staff."
       },
       {
-        tag: "Hub 3 (Member Retention)",
+        tag: "Renewal Page (For Already-Certified Pros)",
         name: "HR Recertification & Credits Engine",
         replaces: "Page 5 (HR Recertification)",
-        howItWorks: "Dedicated to already-certified professionals who need 60 credits every 3 years. Focuses on effortless automated credit tracking, ethics courses, and annual webcast passes."
+        howItWorks: "Dedicated to already-certified professionals who need to renew their 60 credits every 3 years. Focuses on effortless automated credit tracking, ethics credits, and all-access webcast passes."
       }
     ]
   }
@@ -72,71 +72,71 @@ export const pagesCritique = [
     num: "01",
     name: "Understanding HR Certification",
     url: "/en/certifications/understanding_certification/",
-    screenshot: "screenshots/01-understanding-hr-certification.jpeg",
-    executiveSummary: "This page serves as the entry door for beginners, but suffers from an outdated confetti hero graphic, an ambiguous experience quiz, a dense cartoon 6-box flowchart, and buried resources.",
+    screenshot: "screenshots/01-understanding-hr-certification.png",
+    executiveSummary: "This page is the front door for beginners, but it confuses visitors with an outdated confetti graphic, a slow quiz that doesn't give instant answers, a cluttered cartoon 6-box chart, and buried information.",
     hotspots: [
       {
         id: "p1-h1",
-        top: 3.5,
-        left: 30,
+        top: 6.5,
+        left: 32,
         title: "Outdated Confetti Hero Graphic",
-        whatIsWrong: "The hero uses an old-fashioned confetti explosion with a leaning woman cutout and a generic slogan ('Your Ticket to Success!').",
-        whyUsersBounce: "For an expensive $1,000+ professional credential, outdated graphics make the institution look untrustworthy and behind the times. Users immediately question if the course materials are modern.",
-        theFix: "Replace with Eric's high-curiosity headline: 'HR Certification: What You NEED to Know' with a sharp, professional photography style and clear salary boost subhead."
+        whatIsWrong: "The hero uses an old-fashioned confetti explosion with a cut-out photo of a woman and a generic slogan ('Your Ticket to Success!').",
+        whyUsersBounce: "When people are looking to spend $1,000+ on a serious professional credential, outdated graphics make the website look old and untrustworthy. Visitors wonder if the study materials are outdated too.",
+        theFix: "Replace with a sharp headline: 'HR Certification: What You NEED to Know' with modern professional photography and clear salary boost highlights."
       },
       {
         id: "p1-h2",
-        top: 13,
-        left: 28,
-        title: "Ambiguous Quiz Without Instant Guidance",
-        whatIsWrong: "The experience selector chips ('0-1 yr', '1-2 yr', '2-4 yr') require a submit button and don't provide instant visual feedback on what exam fits the user.",
-        whyUsersBounce: "Requiring slow form submissions creates unnecessary friction. Users want immediate clarity on whether they qualify for aPHR, PHR, or SPHR without waiting.",
-        theFix: "Turn this into a frictionless 1-click interactive matcher that instantly reveals recommended exam paths and salary outcomes without page reloads."
+        top: 18.5,
+        left: 35,
+        title: "Slow Quiz That Requires Extra Clicks",
+        whatIsWrong: "The experience chips ('0-1 yr', '1-2 yr', '2-4 yr') make users click a submit button and don't give instant answers on which exam fits them.",
+        whyUsersBounce: "Having to fill out forms and wait for answers is annoying. Visitors want to know immediately whether they qualify for aPHR, PHR, or SPHR.",
+        theFix: "Turn this into an instant 1-click matcher that immediately reveals the best exam and salary boost without reloading the page."
       },
       {
         id: "p1-h3",
-        top: 26,
-        left: 30,
-        title: "Value Proposition Cards Lack Visual Punch",
-        whatIsWrong: "The 4 benefit cards ('Earn More & Advance', 'Boost Your Expertise', 'Stand Out', 'Gain Confidence') use generic icons and washed-out pastels.",
-        whyUsersBounce: "Skimming users miss the life-changing career impact (+ $10k–$20k salary increase) because the numbers aren't visually prominent.",
-        theFix: "Elevate typography with bold highlight pills, strong contrast, and explicit salary figures upfront."
+        top: 31,
+        left: 35,
+        title: "Benefit Cards Look Washed Out",
+        whatIsWrong: "The 4 benefit cards ('Earn More & Advance', 'Boost Your Expertise', 'Stand Out', 'Gain Confidence') use generic icons and dull pastel colors.",
+        whyUsersBounce: "Skimming visitors miss the huge salary boost (+$10,000 to $20,000/year) because the numbers aren't highlighted.",
+        theFix: "Use bold highlight badges, high contrast, and show real salary boost numbers front and center."
       },
       {
         id: "p1-h4",
-        top: 36,
-        left: 28,
-        title: "Testimonial Teaser Separated from Main Catalog",
-        whatIsWrong: "Showing only 2 static quotes (Rochelle Harris & Gabriella Talentino) without the ability to filter or explore other credentials.",
-        whyUsersBounce: "A candidate studying for SPHR wants to see senior leader reviews, while an entry-level candidate wants to see aPHR reviews.",
-        theFix: "Implement a dynamic student review carousel with credential filter pills."
+        top: 45,
+        left: 35,
+        title: "Only 2 Student Quotes Shown",
+        whatIsWrong: "Shows only 2 static quotes without letting visitors filter reviews by exam type.",
+        whyUsersBounce: "Someone studying for the senior SPHR exam wants to see reviews from experienced managers, while a beginner wants to see aPHR reviews.",
+        theFix: "Add an interactive review slider with easy filter buttons for each certification."
       },
       {
         id: "p1-h5",
-        top: 48,
-        left: 32,
-        title: "Confusing 6-Box Process Flowchart",
-        whatIsWrong: "The 6-step pathway graphic uses cartoon illustrations and dense text blocks that are hard to scan on desktop and impossible to read on mobile.",
-        whyUsersBounce: "Visual clutter forces the user's brain to work too hard to understand basic steps, causing them to skim past it without taking action.",
-        theFix: "Replace the 6 cartoon boxes with Eric's structured '7 Certification Best Practices' roadmap, including direct guidance on when to schedule the exam."
+        top: 63,
+        left: 35,
+        title: "Confusing 6-Step Cartoon Chart",
+        whatIsWrong: "The 6-step roadmap uses cartoon drawings and dense paragraphs that are hard to scan on computers and almost unreadable on phones.",
+        whyUsersBounce: "Cluttered graphics make simple steps look complicated and overwhelming, so people skip past them without reading.",
+        theFix: "Replace the cartoon boxes with a clean 7-step roadmap that clearly shows when to start studying and when to book the exam."
       },
       {
         id: "p1-h6",
-        top: 62,
-        left: 30,
-        title: "Resource Center Lacks High-Value Article Cards",
-        whatIsWrong: "The bottom of the page has generic links without high-value articles to answer common candidate fears (e.g. HRCI vs SHRM differences).",
-        whyUsersBounce: "Uncertain users leave the site to search Google for answers, and end up buying prep materials from competitors.",
-        theFix: "Add Shelley's 5 Certification Authority Article Cards directly into the resource section to answer exam secrets and boost authority."
+        top: 76.5,
+        left: 35,
+        title: "Helpful Articles Are Hidden at the Bottom",
+        whatIsWrong: "The bottom of the page has plain text links instead of attractive article cards answering common questions (like the difference between HRCI and SHRM).",
+        whyUsersBounce: "Unsure visitors leave our site to search Google for answers and end up buying study materials from competitors.",
+        theFix: "Add 5 prominent guide cards that directly answer top exam questions and prove our authority."
       },
       {
         id: "p1-h7",
-        top: 82,
-        left: 30,
-        title: "Dual FAQ Accordions Cause Cognitive Fatigue",
-        whatIsWrong: "Having two separate FAQ accordions ('FAQs about prep courses' and 'FAQs on HR certification') creates endless scrolling.",
-        whyUsersBounce: "Users get lost in text walls and miss essential answers regarding the Pass Assurance guarantee and LMS access.",
-        theFix: "Consolidate into a clean, searchable, tabbed FAQ accordion with clear categories."
+        top: 88,
+        left: 35,
+        title: "Two Separate FAQ Sections Create Endless Scrolling",
+        whatIsWrong: "Having two separate FAQ sections ('FAQs about prep courses' and 'FAQs on HR certification') creates long, repetitive text walls.",
+        whyUsersBounce: "Visitors get tired of scrolling and miss important answers about our 100% money-back guarantee and online access.",
+        theFix: "Combine everything into one clean, searchable FAQ list with simple topic tabs."
       }
     ]
   },
@@ -145,53 +145,53 @@ export const pagesCritique = [
     num: "02",
     name: "Preparation Options",
     url: "/en/certifications/preparation_options/",
-    screenshot: "screenshots/02-preparation-options.jpeg",
-    executiveSummary: "The master catalog page overwhelms visitors with a wall of course dates, tabs, and textbook options. There is no clear recommendation, causing severe choice paralysis.",
+    screenshot: "screenshots/02-preparation-options.png",
+    executiveSummary: "The course catalog overwhelms visitors with a wall of class dates, confusing tabs, and book options. There is no clear recommendation on which course to pick.",
     hotspots: [
       {
         id: "p2-h1",
-        top: 4,
+        top: 7,
         left: 30,
-        title: "Weak Hero Offer Framing",
-        whatIsWrong: "Hero banner says 'Unlock My Savings!' without clearly stating what the discount is or which courses are eligible.",
-        whyUsersBounce: "Vague discounts feel like generic marketing hype rather than legitimate, time-sensitive educational savings.",
-        theFix: "Replace with clear seasonal savings badges (e.g. 'Early Bird: Save $150 on Spring 2026 Cohorts') with visible expiration countdowns."
+        title: "Vague Hero Banner and Competing Buttons",
+        whatIsWrong: "The banner says 'Unlock My Savings!' without saying how much money visitors save or which courses qualify, plus 3 competing buttons.",
+        whyUsersBounce: "Vague discounts feel like marketing tricks. Too many buttons at the top confuse visitors before they even see the courses.",
+        theFix: "Replace with clear seasonal savings badges (e.g. 'Early Bird: Save $150 on Spring Classes') with a single, clear browsing path."
       },
       {
         id: "p2-h2",
-        top: 15,
-        left: 28,
-        title: "Catalog Overload & Choice Paralysis",
-        whatIsWrong: "Dumping 16-week, 8-week, self-paced, and materials-only formats all at once without a clear recommended option.",
-        whyUsersBounce: "When presented with too many complex choices, users feel overwhelmed. They delay their decision, close the tab, and plan to 'decide later'.",
-        theFix: "Group formats into 3 clear cards: 1) Live Instructor-Led (Highlighted as 'Recommended - 93% Pass Rate'), 2) Self-Paced eLearning, and 3) Study Materials Only."
+        top: 28,
+        left: 25,
+        title: "Too Many Choices with No Clear Recommendation",
+        whatIsWrong: "Dumps 16-week classes, 8-week classes, self-paced courses, and books all in one crowded grid with identical '100% Money Back' badges on every card.",
+        whyUsersBounce: "When presented with dozens of identical-looking cards, visitors don't know what to choose. They give up and tell themselves they will decide later.",
+        theFix: "Organize into 3 clear choices: 1) Live Online Classes (Marked as 'Most Popular - 93% Pass Rate'), 2) Self-Paced Online, and 3) Study Books Only."
       },
       {
         id: "p2-h3",
-        top: 32,
-        left: 30,
-        title: "Dense Text Walls of Class Schedules",
-        whatIsWrong: "Dates and times are presented in long, un-scannable text blocks rather than clean calendar cards with remaining seat badges.",
-        whyUsersBounce: "Busy HR professionals cannot quickly tell which class fits their evening or weekend schedule.",
-        theFix: "Implement a clean schedule selector with filters for 'Evenings', 'Saturdays', and 'Accelerated' with clear start date pills."
+        top: 46,
+        left: 50,
+        title: "Quiz Box Placed Awkwardly in the Middle of Courses",
+        whatIsWrong: "A tall quiz box ('Which exam is right for you?') is stuck right between course cards in the second row.",
+        whyUsersBounce: "Interrupting the course list with a random quiz card breaks the flow and distracts visitors who are comparing prices.",
+        theFix: "Keep the quiz at the very top of the page as a helpful guide, not as an awkward interruption in the price list."
       },
       {
         id: "p2-h4",
-        top: 55,
-        left: 32,
-        title: "Study Manuals Confused with Full Prep Courses",
-        whatIsWrong: "Physical book packages ($480 HRCP manuals) look visually identical to $1,065 full instructor-led courses.",
-        whyUsersBounce: "Budget-conscious buyers accidentally buy the book package thinking it includes live classes, then get upset when they have no instructor.",
-        theFix: "Clearly delineate 'Complete Coaching Cohort' vs 'Self-Study Books Only' with explicit feature comparison checkboxes."
+        top: 74,
+        left: 78,
+        title: "Study Books Look Like Full Classes",
+        whatIsWrong: "Physical book packages ($480 HRCP books) look visually almost identical to $1,065 full instructor-led classes, and the comparison chart is buried at the bottom.",
+        whyUsersBounce: "Budget-conscious buyers accidentally buy just the books thinking it includes live classes, then get upset when they have no instructor.",
+        theFix: "Clearly separate 'Complete Live Class with Instructor' from 'Self-Study Books Only' with clear checkmark lists."
       },
       {
         id: "p2-h5",
-        top: 80,
-        left: 30,
-        title: "Missing Direct Link to Employer Budget",
-        whatIsWrong: "The page asks for $1,065 out-of-pocket without reminding candidates that 70%+ of HR professionals get their company to pay for tuition.",
-        whyUsersBounce: "Price-sensitive candidates bounce because they assume they must pay out of their own personal savings.",
-        theFix: "Add a prominent callout right under the price: 'Get Your Employer to Cover 100% Tuition' with a 1-click pitch deck trigger."
+        top: 88,
+        left: 35,
+        title: "Disconnected 1-on-1 Coaching & Missing Employer Budget Prompt",
+        whatIsWrong: "The 1-on-1 coaching banner is pushed to the bottom, and there is no reminder that employers often pay for courses.",
+        whyUsersBounce: "Price-conscious visitors leave because they think they must pay all $1,065 out of their own personal pocket.",
+        theFix: "Add a clear note right under the price: 'Get Your Employer to Pay 100% of Tuition' with a 1-click email template."
       }
     ]
   },
@@ -200,35 +200,44 @@ export const pagesCritique = [
     num: "03",
     name: "Pass Assurance Program",
     url: "/en/certifications/pass_assurance_program/",
-    screenshot: "screenshots/03-pass-assurance-program.jpeg",
-    executiveSummary: "Our most powerful conversion weapon — the 100% Money-Back Guarantee — is stranded on a lonely island page where most buyers will never even see it.",
+    screenshot: "screenshots/03-pass-assurance-program.png",
+    executiveSummary: "Our most powerful selling point — the 100% Money-Back Guarantee — is hidden on a separate page where most buyers will never even find it.",
     hotspots: [
       {
         id: "p3-h1",
-        top: 15,
-        left: 30,
-        title: "Stranded on an Isolated Subpage",
-        whatIsWrong: "Having a dedicated standalone page for the guarantee forces users to leave the checkout flow just to verify our refund policy.",
-        whyUsersBounce: "Users don't explore subpages. If they are on the pricing page and don't see the guarantee immediately, they assume there is no safety net.",
-        theFix: "Embed the 100% Money-Back Pass Assurance badge and terms directly on the main catalog and checkout cards as an interactive popover."
+        top: 28,
+        left: 45,
+        title: "Hidden on a Separate Page",
+        whatIsWrong: "Putting the guarantee on its own separate page forces buyers to leave the catalog just to check if there is a refund policy.",
+        whyUsersBounce: "Most visitors never click to subpages. If they don't see the guarantee on the pricing page, they assume there is no safety net.",
+        theFix: "Show the 100% Money-Back Guarantee badge and details directly on every course card and price tag."
       },
       {
         id: "p3-h2",
-        top: 45,
-        left: 32,
-        title: "Eligibility Rules Look Like Legal Fine Print",
-        whatIsWrong: "The 3 simple requirements (attend 80% classes, take practice tests, take official exam within 90 days) look like dense legal disclaimers.",
-        whyUsersBounce: "Legal-looking text creates skepticism. Users worry about hidden catches or tricks in the refund policy.",
-        theFix: "Reformat into 3 clean, reassuring checkmark steps: 1. Attend your live classes, 2. Complete practice exams, 3. Pass or get 100% refunded."
+        top: 55,
+        left: 20,
+        title: "Missing Our 93% Pass Rate Proof",
+        whatIsWrong: "The badge says '100% Refund Guarantee' but forgets to mention our 93% first-time student pass rate compared to the 60% national average.",
+        whyUsersBounce: "Without real numbers, a money-back claim sounds like generic sales talk rather than proven results.",
+        theFix: "Show our real success rate right next to the guarantee: '93% of HR.com Students Pass on Their First Try (National Avg: 60%)'."
       },
       {
         id: "p3-h3",
-        top: 75,
-        left: 30,
-        title: "No Direct CTA to Enroll in Guaranteed Courses",
-        whatIsWrong: "The page lists eligible courses (16-wk, 8-wk, 10-wk) but provides weak, passive links rather than direct enrollment action buttons.",
-        whyUsersBounce: "Once a user is reassured by the guarantee, there is no direct path to pick a class date and purchase.",
-        theFix: "Add direct 'Enroll with Pass Assurance' buttons under each eligible course tier."
+        top: 55,
+        left: 55,
+        title: "Rules Look Like Strict Legal Fine Print",
+        whatIsWrong: "The 3 simple requirements (attend 80% of classes, take practice tests, take official exam within 90 days) look like scary legal disclaimers.",
+        whyUsersBounce: "Legal-looking text makes people suspicious that there is a hidden catch or loophole.",
+        theFix: "Reformat into 3 friendly, reassuring checkmarks: 1. Attend your live classes, 2. Take your practice tests, 3. Pass or get 100% of your money back."
+      },
+      {
+        id: "p3-h4",
+        top: 80,
+        left: 45,
+        title: "Weak Links with No Direct Sign-Up Button",
+        whatIsWrong: "The bottom lists eligible courses as plain rounded buttons instead of letting users pick a start date and sign up directly.",
+        whyUsersBounce: "When a visitor feels reassured and is ready to buy, there is no easy button to start checkout.",
+        theFix: "Add direct 'Enroll with Pass Assurance' buttons under each course option."
       }
     ]
   },
@@ -237,35 +246,44 @@ export const pagesCritique = [
     num: "04",
     name: "HR Group Certification",
     url: "/en/certifications/hr_group_certification/",
-    screenshot: "screenshots/04-hr-group-certification.jpeg",
-    executiveSummary: "The B2B group training page looks like a generic contact form with no instant volume pricing, no team ROI calculator, and weak enterprise credibility.",
+    screenshot: "screenshots/04-hr-group-certification.png",
+    executiveSummary: "The team training page looks like a plain contact form with no upfront group pricing, no team savings calculator, and little proof of business results.",
     hotspots: [
       {
         id: "p4-h1",
-        top: 12,
-        left: 30,
-        title: "Vague Value Proposition for Enterprise Leaders",
-        whatIsWrong: "Headline 'An investment in your HR people is an investment in your business' is generic corporate speak.",
-        whyUsersBounce: "Executives want tangible outcomes: reducing turnover, avoiding compliance lawsuits, and standardizing HR policies across business units.",
-        theFix: "Lead with business impact: 'Certify Your HR Team to Eliminate Costly Compliance Risks and Boost Retention'."
+        top: 10,
+        left: 28,
+        title: "Generic Headline Doesn't Speak to Business Leaders",
+        whatIsWrong: "Headline 'An investment in your HR people is an investment in your business' sounds like generic corporate talk.",
+        whyUsersBounce: "Executives care about real business results: stopping costly legal mistakes, keeping good employees, and standardizing HR practices.",
+        theFix: "Lead with clear business benefits: 'Certify Your HR Team to Eliminate Costly Compliance Risks and Retain Top Talent'."
       },
       {
         id: "p4-h2",
-        top: 35,
-        left: 28,
-        title: "No Instant Team Pricing or Discount Tiers",
-        whatIsWrong: "HR Directors with 5 to 15 team members see no transparent pricing tiers or savings estimates — only a vague lead form.",
-        whyUsersBounce: "Busy executive buyers hate submitting forms just to see basic pricing. If they can't get an instant estimate, they abandon.",
-        theFix: "Add an interactive Team Savings Calculator where managers can slide their team size (e.g. 5, 10, 20 people) and instantly see volume savings."
+        top: 28,
+        left: 50,
+        title: "Missing Group Savings Calculator",
+        whatIsWrong: "The page says 'Groups of 5 or more save the most!' but shows no prices, discount percentages, or estimates.",
+        whyUsersBounce: "Busy managers hate filling out blind forms just to see basic prices. If they can't get a quick estimate, they leave.",
+        theFix: "Add a simple interactive slider where managers select team size (e.g. 5, 10, 20 people) and instantly see their volume discount."
       },
       {
         id: "p4-h3",
-        top: 65,
+        top: 50,
         left: 30,
-        title: "Cold Contact Form Kills Inbound Momentum",
-        whatIsWrong: "The page ends with a generic $vendorLeadForm with no option for custom cohort scheduling or immediate calendar booking.",
-        whyUsersBounce: "High-intent team leaders don't want to wait 48 hours for a sales rep to reply to a blind form.",
-        theFix: "Offer 1-click meeting scheduling with an HR Enterprise Advisor alongside the quote request form."
+        title: "Dense Text Paragraphs Instead of Quick Business Benefits",
+        whatIsWrong: "Uses long paragraphs of text instead of quick bullet points, company case studies, or client logos.",
+        whyUsersBounce: "Executives skim quickly. Long walls of text get skipped, making the program look less professional.",
+        theFix: "Highlight key business numbers: 'Lower Turnover (-24%)', 'Avoid $100k+ in Lawsuit Risks', and 'Consistent Team Skills'."
+      },
+      {
+        id: "p4-h4",
+        top: 80,
+        left: 65,
+        title: "Only a Plain Contact Form with No Instant Call Booking",
+        whatIsWrong: "The page ends with a basic form without any option to pick custom dates or book a quick phone call.",
+        whyUsersBounce: "Team managers don't want to wait days for an email reply to a generic form.",
+        theFix: "Let managers book a 15-minute consultation directly on our calendar alongside the quote request form."
       }
     ]
   },
@@ -274,44 +292,53 @@ export const pagesCritique = [
     num: "05",
     name: "HR Recertification",
     url: "/en/certifications/hr_recertification/",
-    screenshot: "screenshots/05-hr-recertification.jpeg",
-    executiveSummary: "Recertification is a completely different audience (already certified pros), but the page is text-heavy and fails to showcase how effortless our automated credit tracker is.",
+    screenshot: "screenshots/05-hr-recertification.png",
+    executiveSummary: "Recertification is for people who are already certified, but the page is text-heavy and fails to show how simple our automatic credit tracking is.",
     hotspots: [
       {
         id: "p5-h1",
-        top: 8,
-        left: 30,
-        title: "Duplicate Header Text Blocks",
-        whatIsWrong: "The hero displays the exact same headline and phone number twice in a row due to CMS header injection bugs.",
-        whyUsersBounce: "Visual errors immediately damage credibility for a professional accreditation platform.",
-        theFix: "Clean up hero wrapper styles and suppress default duplicate CMS headers."
+        top: 9,
+        left: 50,
+        title: "Passive Headline Misses the 3-Year Renewal Deadline Stress",
+        whatIsWrong: "Headline 'HR Recertification Program - Congratulations, you've found the easiest way to get recertified!' lacks urgency and clarity.",
+        whyUsersBounce: "Certified professionals are stressed about renewing their 60 credits before their 3-year deadline runs out. They want a fast, simple solution.",
+        theFix: "Focus on zero-stress renewal: 'Earn All 60 HRCI & SHRM Recertification Credits in One Place — 100% Automatic Logging'."
       },
       {
         id: "p5-h2",
-        top: 22,
-        left: 28,
-        title: "Pricing Comparison Bar is Hard to Scan",
-        whatIsWrong: "The $250 1-year pass vs $500 3-year pass options are presented in a flat banner without strong value contrast.",
-        whyUsersBounce: "Users don't immediately realize that the 3-Year Pass ($500) covers their entire recertification cycle for 33% less money.",
-        theFix: "Feature the 3-Year All-Inclusive Pass as the 'Most Popular / Best Value' card with an explicit '$250 Savings' ribbon."
+        top: 19,
+        left: 45,
+        title: "Pricing Comparison Is Hard to Read",
+        whatIsWrong: "The 1-year pass ($250) and 3-year pass ($500) options are shown in a flat bar without showing how much money users save.",
+        whyUsersBounce: "Visitors don't immediately see that the 3-Year Pass ($500) covers their whole 3-year cycle and saves them $250 (1 full year free).",
+        theFix: "Highlight the 3-Year All-Inclusive Pass as 'Best Value — Covers Your Entire 3-Year Cycle & Saves $250'."
       },
       {
         id: "p5-h3",
-        top: 45,
-        left: 32,
-        title: "High Mental Effort to Understand Credit Rules",
-        whatIsWrong: "Explaining the 60-credit requirement across HRCI and SHRM using long, dense paragraphs.",
-        whyUsersBounce: "Already-certified HR pros are stressed about upcoming renewal deadlines. Reading text walls increases their frustration.",
-        theFix: "Use clean visual progress meters showing how watching HR.com webcasts automatically fills up their 60 HRCI & SHRM credits."
+        top: 38,
+        left: 30,
+        title: "Hard to Understand How Credits Work",
+        whatIsWrong: "Explaining the 60-credit rules across HRCI and SHRM using long, dense paragraphs and tiny static icons.",
+        whyUsersBounce: "Busy HR pros are worried about missing credits. Reading long text walls is frustrating.",
+        theFix: "Use simple visual progress bars showing how watching HR.com webcasts automatically fills up all 60 credits for HRCI and SHRM."
       },
       {
         id: "p5-h4",
-        top: 68,
-        left: 30,
-        title: "Ethics Requirement is Buried Below the Fold",
-        whatIsWrong: "Mandatory ethics credit requirements are hidden deep down the page in unstyled bullet points.",
-        whyUsersBounce: "Candidates who need mandatory ethics credits cannot easily verify if HR.com webcasts include ethics credits.",
-        theFix: "Spotlight 'Ethics Credits Included' as a primary feature pill in the top pricing card."
+        top: 60,
+        left: 60,
+        title: "Mandatory Ethics Requirement Is Buried",
+        whatIsWrong: "The required ethics credits are hidden near the bottom in a plain text box.",
+        whyUsersBounce: "Professionals who specifically need ethics credits cannot easily tell if our webcasts include ethics credits.",
+        theFix: "Add an 'Ethics Credits Included' badge right at the top on the main pricing card."
+      },
+      {
+        id: "p5-h5",
+        top: 86,
+        left: 50,
+        title: "Showing Beginner Courses to People Who Are Already Certified",
+        whatIsWrong: "The bottom section tries to sell beginner exam prep courses (like aPHR prep) to professionals who already passed their exams!",
+        whyUsersBounce: "Showing beginner courses to senior certified pros looks unprofessional and clutters the page.",
+        theFix: "Replace with advanced leadership masterclasses, executive summits, and specialized HR certificates."
       }
     ]
   },
@@ -320,35 +347,53 @@ export const pagesCritique = [
     num: "06",
     name: "Testimonials & Reviews",
     url: "/en/certifications/testimonials/",
-    screenshot: "screenshots/06-testimonials.jpeg",
-    executiveSummary: "We have 49+ authentic 5-star reviews with real photos of students holding certificates, but locking them on an isolated page renders them almost useless for conversion.",
+    screenshot: "screenshots/06-testimonials.png",
+    executiveSummary: "We have 49+ authentic 5-star reviews with real photos of graduates holding their certificates, but hiding them on a separate page wastes their power.",
     hotspots: [
       {
         id: "p6-h1",
-        top: 15,
+        top: 12,
         left: 30,
-        title: "The Goldmine is Hidden Away",
-        whatIsWrong: "90% of prospective students never click into the 'Testimonials' tab on the navigation menu, so they never see this incredible proof.",
-        whyUsersBounce: "Candidates browsing the course catalog don't know that thousands of real people have passed before them.",
-        theFix: "Pull these 49 reviews and graduate photos into high-impact testimonial marquees and review carousels directly on the main catalog and quiz pages."
+        title: "Incredible Reviews Are Hidden Away",
+        whatIsWrong: "90% of prospective students never click the 'Testimonials' tab in the menu, so they never see this proof.",
+        whyUsersBounce: "Candidates looking at prices on the catalog page don't know that thousands of real people have passed with our help.",
+        theFix: "Put these 49 reviews and graduate photos directly on the course catalog and quiz pages right next to prices."
       },
       {
         id: "p6-h2",
-        top: 45,
-        left: 28,
-        title: "Static Listing Lacks Interactive Credential Filters",
-        whatIsWrong: "Reviews are displayed in a long single column without quick filters for specific exams (e.g. 'Show me only SPHR reviews').",
-        whyUsersBounce: "A candidate studying for the difficult SPHR exam wants to hear specifically from other senior leaders who passed SPHR.",
-        theFix: "Add instant filter pills: All Reviews, aPHR, PHR, SPHR, SHRM-CP, and SHRM-SCP."
+        top: 14,
+        left: 75,
+        title: "Certificate Photos Lack Career & Salary Details",
+        whatIsWrong: "Photos of students holding their certificates are shown without mentioning their promotions or salary increases.",
+        whyUsersBounce: "Photos build trust, but mentioning real salary gains and promotions gives buyers the final push to enroll.",
+        theFix: "Add clear career outcomes to review cards: 'Promoted to HR Manager (+ $18,000)' and 'Passed SPHR on First Try'."
       },
       {
         id: "p6-h3",
-        top: 75,
-        left: 30,
-        title: "No Direct Path to Course Enrollment",
-        whatIsWrong: "When a user finishes reading inspiring reviews, there is no direct CTA button to enroll in the course mentioned.",
-        whyUsersBounce: "Users are inspired and ready to buy, but have to hunt through the menu to find where to sign up.",
-        theFix: "Add 'Enroll in This Course' action pills directly inside each graduate review card."
+        top: 25,
+        left: 50,
+        title: "Review Filter Is Too Limited",
+        whatIsWrong: "Reviews only have 3 broad buttons (All, PHR/SPHR/SHRM, aPHR) without letting users filter by specific exams or study styles.",
+        whyUsersBounce: "Someone studying for SPHR wants to read reviews from other senior professionals who took the 16-week live class.",
+        theFix: "Add simple filter tags: All Reviews, aPHR, PHR, SPHR, SHRM-CP, and SHRM-SCP."
+      },
+      {
+        id: "p6-h4",
+        top: 55,
+        left: 50,
+        title: "Long Blocks of Text Without Highlighted Quotes",
+        whatIsWrong: "Long paragraphs of student quotes without highlighted lines make it hard for visitors to skim quickly.",
+        whyUsersBounce: "People scan before reading. Long solid blocks of text are tiring to read.",
+        theFix: "Put a punchy 1-sentence takeaway in bold at the top of every student review."
+      },
+      {
+        id: "p6-h5",
+        top: 90,
+        left: 50,
+        title: "No Sign-Up Button After Inspiring Reviews",
+        whatIsWrong: "The page ends with a plain 'View more comments' link and no button to enroll in the course mentioned in the review.",
+        whyUsersBounce: "Visitors get inspired by student success stories but have to search through menus to find where to sign up.",
+        theFix: "Add an 'Enroll in This Course' button inside every graduate review card."
       }
     ]
   },
@@ -357,36 +402,47 @@ export const pagesCritique = [
     num: "07",
     name: "Ask My Employer",
     url: "/en/certifications/ask_my_employer/",
-    screenshot: "screenshots/07-ask-my-employer.jpeg",
-    executiveSummary: "This page contains high-value justification scripts and ROI arguments, but it is treated as an afterthought instead of a primary conversion catalyst.",
+    screenshot: "screenshots/07-ask-my-employer.png",
+    executiveSummary: "This page has great arguments to convince employers to pay for tuition, but hiding it on page 7 means most buyers never even know their company could pay for them.",
     hotspots: [
       {
         id: "p7-h1",
         top: 12,
         left: 30,
-        title: "Treated as a Hidden Subpage Instead of an Action Tool",
-        whatIsWrong: "Hiding the manager pitch kit on page 7 means 85%+ of hesitant buyers never discover that their boss could pay for their course.",
-        whyUsersBounce: "Candidates who want to enroll but can't afford $1,065 leave the site without realizing their company has dedicated L&D budget.",
-        theFix: "Turn this into a 1-click 'Get Boss Approval' modal trigger accessible right next to every 'Enroll Now' button across the entire site."
+        title: "Hidden on Page 7 Instead of Shown at Checkout",
+        whatIsWrong: "Hiding the boss approval kit on page 7 means 85%+ of hesitant buyers never realize their company has money to pay for their course.",
+        whyUsersBounce: "Candidates who want to enroll but can't afford $1,065 leave the site without realizing their boss has an education budget.",
+        theFix: "Add a 'Get Your Boss to Pay' button right next to every 'Enroll Now' button across the entire website."
       },
       {
         id: "p7-h2",
-        top: 42,
-        left: 28,
-        title: "Lack of 1-Click Copy-Paste Email Templates",
-        whatIsWrong: "The ROI points are written in long prose rather than providing a pre-formatted, copy-paste email ready to send to a manager in 30 seconds.",
-        whyUsersBounce: "Writing an email to a boss is intimidating. If we make candidates write it themselves, they procrastinate.",
-        theFix: "Provide a 1-click 'Copy Manager Approval Email' tool with pre-written fields and customizable company names."
+        top: 25,
+        left: 50,
+        title: "Static Badges Don't Provide Downloadable Documents",
+        whatIsWrong: "The 3 trust badges are just pictures and don't give employees a simple document to show their boss.",
+        whyUsersBounce: "When employees ask their manager for $1,000+, the manager asks for written details. If the employee has nothing to show, the request stalls.",
+        theFix: "Provide a 1-page downloadable summary: 'Boss Approval Kit: Why Sponsoring HR Certification Pays Off'."
       },
       {
         id: "p7-h3",
-        top: 72,
-        left: 30,
-        title: "Missing Corporate ROI One-Pager PDF Download",
-        whatIsWrong: "Managers need hard facts on paper (compliance risk, turnover reduction, ROI metrics) to approve expense requests.",
-        whyUsersBounce: "Employees struggle to explain the business case verbally to their CFO or VP of HR.",
-        theFix: "Include an instant 1-page PDF download: 'Executive Justification Kit: The Business Value of Certified HR Staff'."
+        top: 50,
+        left: 50,
+        title: "No Ready-to-Send Email Template",
+        whatIsWrong: "The reasons are written in long paragraphs rather than giving the employee a ready-made email they can copy, paste, and send in 30 seconds.",
+        whyUsersBounce: "Writing a formal email to a boss is stressful. If we don't give them a pre-written template, they put it off and forget.",
+        theFix: "Provide a 1-click 'Copy Pre-Written Email to Boss' button with blank spaces for their manager's name."
+      },
+      {
+        id: "p7-h4",
+        top: 76,
+        left: 50,
+        title: "Plain Contact Box Instead of Instant Company Invoice",
+        whatIsWrong: "The bottom is a giant purple box asking users to call or email rather than letting them generate a company invoice.",
+        whyUsersBounce: "Many companies prefer paying with a company invoice or purchase order instead of a personal credit card.",
+        theFix: "Add an 'Instant Company Invoice Generator' where candidates enter their manager's email to send an official invoice directly."
       }
     ]
   }
 ];
+
+
