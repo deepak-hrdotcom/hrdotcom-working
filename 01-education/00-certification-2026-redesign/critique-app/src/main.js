@@ -147,71 +147,9 @@ function renderSubNavBar() {
     }
 
   } else if (currentMode === 'lowfi') {
-    const hubs = ['hub-1', 'hub-2', 'hub-3'];
-    const currentIdx = hubs.indexOf(currentLowFiHubId);
-    const hasPrev = currentIdx > 0;
-    const hasNext = currentIdx < hubs.length - 1;
-
-    let navHtml = `
-      <div class="nav-tabs-group">
-        <button class="nav-stepper-btn" id="lowfiPrevBtn" ${!hasPrev ? 'disabled' : ''} title="Previous Hub (Left Arrow)">
-          ← Prev Page
-        </button>
-
-        <button class="nav-btn hub-btn ${currentLowFiHubId === 'hub-1' ? 'active' : ''}" data-hub="hub-1">
-          <span class="nav-num">Page 01</span>
-          <span>Master Prep &amp; Exam Matcher</span>
-        </button>
-
-        <button class="nav-btn hub-btn ${currentLowFiHubId === 'hub-2' ? 'active' : ''}" data-hub="hub-2">
-          <span class="nav-num">Page 02</span>
-          <span>Employer Funding &amp; Teams</span>
-        </button>
-
-        <button class="nav-btn hub-btn ${currentLowFiHubId === 'hub-3' ? 'active' : ''}" data-hub="hub-3">
-          <span class="nav-num">Page 03</span>
-          <span>Recertification Credits Engine</span>
-        </button>
-      </div>
-
-      <div class="nav-tabs-group">
-        <button class="nav-stepper-btn" id="lowfiNextBtn" ${!hasNext ? 'disabled' : ''} title="Next Hub (Right Arrow)">
-          Next Page →
-        </button>
-      </div>
-    `;
-
-    pageNavBar.innerHTML = navHtml;
-
-    // Attach click events to hub buttons
-    pageNavBar.querySelectorAll('.nav-btn.hub-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentLowFiHubId = btn.dataset.hub;
-        renderSubNavBar();
-        renderLowFiWorld();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    // Attach stepper events
-    const prevBtn = document.getElementById('lowfiPrevBtn');
-    const nextBtn = document.getElementById('lowfiNextBtn');
-    if (prevBtn && hasPrev) {
-      prevBtn.addEventListener('click', () => {
-        currentLowFiHubId = hubs[currentIdx - 1];
-        renderSubNavBar();
-        renderLowFiWorld();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-    if (nextBtn && hasNext) {
-      nextBtn.addEventListener('click', () => {
-        currentLowFiHubId = hubs[currentIdx + 1];
-        renderSubNavBar();
-        renderLowFiWorld();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
+    // In Low-Fi Prototype mode, navigation is handled directly inside the wireframe canvas navbar
+    pageNavBar.style.display = 'none';
+    pageNavBar.innerHTML = '';
   }
 }
 
