@@ -1,39 +1,114 @@
-<style>
-  /* Prevent Flash of Unwanted CMS Content (FOUC) */
-  #intro-header,
-  section#intro-header,
-  div#intro-header,
-  .sf-nav-main,
-  .socialshare,
-  #socialshare,
-  .social-share,
-  .floating-social,
-  .st-sticky-share-buttons,
-  div[class*="socialshare"],
-  div[id*="socialshare"],
-  #content,
-  .TopLink_new,
-  .TopBar,
-  #hradbtmwrapper {
+<style id="hrw27-fouc-blocker">
+  /* 0ms Synchronous FOUC and CMS Parent Widget Suppression */
+  .TopLink_new, #loggedIn_TopLink, div#loggedIn_TopLink, div.TopLink_new,
+  .TopBar, div.TopBar, #TopBar,
+  .HeaderWrap, div.HeaderWrap, .HeaderBG, div.HeaderBG,
+  .headertopbg, div.headertopbg, .TopHeader, div.TopHeader,
+  .HeaderMain, div.HeaderMain, .header-top, .header-bottom,
+  .site-header, #site-header,
+  body > header:not(.hrw27-header), body > div.header:not(.hrw27-header),
+  body > div.HeaderWrap, body > div.HeaderBG, body > div.TopHeader,
+  body > div.TopBar, body > div.TopLink_new,
+  body > nav:not(.hrw27-nav), body > .navbar:not(.hrw27-nav),
+  #header:not(.hrw27-header), header.header:not(.hrw27-header), div.header:not(.hrw27-header),
+  #intro-header, section#intro-header, div#intro-header, header#intro-header,
+  .sf-nav-main, div.sf-nav-main, nav.sf-nav-main, header.sf-nav-main,
+  .socialshare, #socialshare, .social-share, .floating-social,
+  .st-sticky-share-buttons, div[class*="socialshare"], div[id*="socialshare"],
+  #content, #hradbtmwrapper {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -99999px !important;
+    z-index: -99999 !important;
+    pointer-events: none !important;
   }
-  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+  html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
   }
+  body { background: #ffffff !important; margin: 0 !important; padding: 0 !important; }
+  .hrw27-header {
+    border: 0 !important; padding-block: 0 !important; margin-bottom: 0 !important;
+    padding: 0 !important; margin: 0 !important; overflow: visible !important; z-index: 99999 !important;
+  }
+  .ContentArea, .container {
+    max-width: 100% !important; width: 100% !important;
+    padding-left: 0 !important; padding-right: 0 !important;
+    margin-left: 0 !important; margin-right: 0 !important;
+  }
+  *, *::before, *::after { -webkit-tap-highlight-color: transparent !important; }
+  a, a:hover, a:focus, a:focus-visible, a:active, a:visited, a:link,
+  button, button:hover, button:focus, button:focus-visible, button:active,
+  :focus, :focus-visible, :active {
+    text-decoration: none !important;
+    outline: none !important; outline-width: 0 !important;
+    outline-style: none !important; outline-color: transparent !important;
+  }
 </style>
-
 <script>
 (function() {
-  function applyEarlyReset() {
-    if (document.body) {
-      document.body.style.setProperty('padding-top', '0px', 'important');
-      document.body.style.setProperty('margin-top', '0px', 'important');
+  'use strict';
+  var sels = [
+    '.TopLink_new','#loggedIn_TopLink','div#loggedIn_TopLink','div.TopLink_new',
+    '.TopBar','div.TopBar','#TopBar',
+    '.HeaderWrap','div.HeaderWrap','.HeaderBG','div.HeaderBG',
+    '.headertopbg','div.headertopbg','.TopHeader','div.TopHeader',
+    '.HeaderMain','div.HeaderMain','.header-top','.header-bottom',
+    '.site-header','#site-header',
+    '#intro-header','section#intro-header','div#intro-header','header#intro-header',
+    '.sf-nav-main','div.sf-nav-main','nav.sf-nav-main',
+    '.socialshare','#socialshare','.social-share','.floating-social',
+    '.st-sticky-share-buttons','#hradbtmwrapper',
+    'body > header:not(.hrw27-header)','body > div.header:not(.hrw27-header)',
+    'body > div.HeaderWrap','body > div.HeaderBG','body > div.TopHeader',
+    'body > div.TopBar','body > div.TopLink_new','body > nav:not(.hrw27-nav)',
+    '#header:not(.hrw27-header)','header.header:not(.hrw27-header)','div.header:not(.hrw27-header)'
+  ];
+  var ks = document.createElement('style');
+  ks.id = 'hrw27-root-fouc-killer';
+  ks.textContent = sels.join(',') + '{display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;max-height:0!important;overflow:hidden!important;position:absolute!important;top:-99999px!important;left:-99999px!important;z-index:-99999!important;pointer-events:none!important;}';
+  (document.head || document.documentElement).appendChild(ks);
+  function kill() {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty('padding-top','0px','important');
+      document.documentElement.style.setProperty('margin-top','0px','important');
     }
+    if (document.body) {
+      document.body.style.setProperty('padding-top','0px','important');
+      document.body.style.setProperty('margin-top','0px','important');
+    }
+    sels.forEach(function(s) {
+      try {
+        var els = document.querySelectorAll(s);
+        for (var i = 0; i < els.length; i++) {
+          if (els[i].classList && els[i].classList.contains('hrw27-header')) continue;
+          els[i].style.setProperty('display','none','important');
+          els[i].style.setProperty('visibility','hidden','important');
+          els[i].style.setProperty('opacity','0','important');
+          els[i].style.setProperty('height','0px','important');
+          els[i].style.setProperty('position','absolute','important');
+          els[i].style.setProperty('top','-99999px','important');
+          if (els[i].parentNode) els[i].parentNode.removeChild(els[i]);
+        }
+      } catch(e) {}
+    });
   }
-  applyEarlyReset();
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyEarlyReset);
+  kill();
+  if (window.MutationObserver) {
+    var obs = new MutationObserver(kill);
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class','style'], childList: true, subtree: true });
+    window.addEventListener('DOMContentLoaded', kill);
+    window.addEventListener('load', function() { kill(); setTimeout(function(){ obs.disconnect(); }, 4000); });
   }
 })();
 </script>
@@ -79,7 +154,7 @@
     position: relative;
     min-height: 480px;
     background-color: #0b0814;
-    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/venue_travel_hero_bg_v2.webp');
     background-size: cover;
     background-position: 55% center;
     overflow: hidden;

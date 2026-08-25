@@ -1,4 +1,12 @@
-<!-- Background + Layout -->
+<!-- Google Fonts Preconnect & Load -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Background + Layout Styles -->
 <style>
   * {
     box-sizing: border-box;
@@ -6,154 +14,437 @@
 
   body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0b0814;
+    color: #1f2a37;
+    -webkit-font-smoothing: antialiased;
   }
 
   .confirmation-page {
     width: 100%;
-    max-width: 1920px;
+    min-height: 100vh;
     margin: 0 auto;
-    background: url("https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/golden-gate-bridge-dark.webp")
-      center center / cover no-repeat;
+    background: #0b0814;
+    background-image: 
+      radial-gradient(circle at 15% 20%, rgba(93, 47, 199, 0.32) 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(239, 20, 110, 0.22) 0%, transparent 45%),
+      linear-gradient(180deg, rgba(11, 8, 20, 0.85) 0%, #0b0814 100%),
+      url("https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 48px 20px 40px 20px;
+    position: relative;
   }
 
   .confirmation-card {
     width: 100%;
-    max-width: 1000px;
-    background: rgba(255, 255, 255, 0.94);
-    border-radius: 14px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    max-width: 780px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), 0 0 50px rgba(93, 47, 199, 0.18);
     overflow: hidden;
+    animation: hrw27-card-in 0.55s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .card-inner {
-    padding: 35px 45px;
+  @keyframes hrw27-card-in {
+    0% {
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* 1. Header Area */
+  .hrw27-header-area {
+    background: linear-gradient(135deg, #f4edff 0%, #fdf0f7 50%, #edf4fe 100%);
+    padding: 24px 32px 20px 32px;
     text-align: center;
+    border-bottom: 1px solid #eae5f7;
   }
 
-  .banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .confirmation-main h1 {
-    font-size: 34px;
-    margin-bottom: 12px;
-    color: #1f2a37;
-  }
-
-  .confirmation-main h2 {
-    font-size: 24px;
-    margin: 8px 0;
-    color: #1f2a37;
-  }
-
-  .confirmation-main h3 {
-    font-size: 18px;
-    margin: 6px 0;
-    font-weight: normal;
-  }
-
-  .green-text {
-    color: #4f7f0c;
-    font-weight: bold;
-  }
-
-  .gray-text {
-    color: #555;
-  }
-
-  .red-text {
-    color: #c0392b;
-    font-weight: bold;
-  }
-
-  .button-row {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .btn {
-    padding: 10px 18px;
-    border-radius: 24px;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
-  .btn-disabled {
-    background: #d0d0d0;
-    color: #555;
-    cursor: not-allowed;
-  }
-
-  .btn-green {
-    background: #5a8f1f;
-    color: white;
-  }
-
-  .btn-hidden {
-    display: none;
-  }
-
-  .calendar-block {
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .divider {
-    margin: 25px 0;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  .reminder-title {
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
-
-  .reminder-text {
-    color: #555;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  .reminder-text a {
-    color: #c0392b;
+  .hrw27-header-lockup {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
     text-decoration: none;
   }
 
-  /* Mobile Fix */
+  .hrw27-logo-img {
+    width: 78px;
+    max-width: 78px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.06));
+  }
+
+  .hrw27-header-text {
+    text-align: left;
+  }
+
+  .hrw27-header-title {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+  }
+
+  .hrw27-header-sub {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: #5d2fc7;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  /* 2. Top Pink Strip */
+  .hrw27-top-strip {
+    background: linear-gradient(135deg, #ef146e 0%, #e00b63 100%);
+    padding: 10px 16px;
+    text-align: center;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  /* 3. Card Inner */
+  .card-inner {
+    padding: 36px 48px 40px 48px;
+    text-align: center;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  }
+
+  .confirmation-main h1 {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+  }
+
+  .confirmation-main .sub-lead {
+    font-size: 15px;
+    font-weight: 600;
+    color: #64748b;
+    margin: 0 0 20px 0;
+  }
+
+  /* Event Details Ticket Box */
+  .event-details-card {
+    background: #f8f6fc;
+    border: 1.5px solid #eae5f7;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 0 0 24px 0;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(93, 47, 199, 0.04);
+    position: relative;
+  }
+
+  .event-eyebrow {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: #5d2fc7;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+
+  .event-details-card h2 {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(20px, 3.2vw, 25px);
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px 0;
+  }
+
+  .event-date-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e2d9f3;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: #5d2fc7;
+    box-shadow: 0 2px 8px rgba(93, 47, 199, 0.06);
+  }
+
+  .event-date-pill .date-highlight {
+    color: #ef146e;
+  }
+
+  /* Buttons */
+  .button-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 22px 0 24px 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    line-height: 1;
+  }
+
+  .btn-disabled {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1.5px solid #a7f3d0;
+    cursor: default;
+  }
+
+  .btn-green {
+    background: linear-gradient(135deg, #5d2fc7 0%, #7c3aed 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(93, 47, 199, 0.3);
+  }
+
+  .btn-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(93, 47, 199, 0.4);
+  }
+
+  .btn-hidden {
+    display: none !important;
+  }
+
+  /* Calendar Section */
+  .calendar-block {
+    margin: 24px 0;
+    padding: 18px 20px;
+    background: #faf9fd;
+    border-radius: 14px;
+    border: 1px solid #f1edf9;
+    text-align: center;
+  }
+
+  .calendar-block p {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: #334155;
+    margin: 0 0 10px 0;
+  }
+
+  /* Targeted styling for CMS injected calendar/login buttons */
+  .calendar-block a,
+  .calendar-block button,
+  .calendar-block input[type="button"],
+  .calendar-block input[type="submit"] {
+    display: inline-block;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #5d2fc7;
+    border: 1.5px solid #e4daf4;
+    text-decoration: none;
+    margin: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .calendar-block a:hover,
+  .calendar-block button:hover {
+    background: #5d2fc7;
+    color: #ffffff;
+    border-color: #5d2fc7;
+    transform: translateY(-1px);
+  }
+
+  .divider {
+    height: 1px;
+    background: #eae5f7;
+    margin: 26px 0;
+    border: 0;
+  }
+
+  /* Reminder / Safe Sender Card */
+  .reminder-box {
+    background: #fdf2f7;
+    border: 1.5px solid #fce7f3;
+    border-radius: 14px;
+    padding: 18px 22px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .reminder-icon {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .reminder-title {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #9f1239;
+    margin-bottom: 4px;
+  }
+
+  .reminder-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #4c0519;
+  }
+
+  .reminder-text a {
+    color: #5d2fc7;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .reminder-text a:hover {
+    color: #ef146e;
+  }
+
+  /* Page Footer Note */
+  .confirmation-footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #94a3b8;
+    max-width: 600px;
+  }
+
+  /* Responsive Rules */
   @media (max-width: 768px) {
     .confirmation-page {
-      align-items: flex-start;
-      padding: 20px 12px;
+      padding: 24px 14px;
+      justify-content: flex-start;
+    }
+
+    .confirmation-card {
+      border-radius: 16px;
+    }
+
+    .hrw27-header-area {
+      padding: 18px 18px 16px 18px;
+    }
+
+    .hrw27-header-lockup {
+      gap: 12px;
+    }
+
+    .hrw27-logo-img {
+      width: 62px;
+      max-width: 62px;
+    }
+
+    .hrw27-header-title {
+      font-size: 22px;
+    }
+
+    .hrw27-header-sub {
+      font-size: 14px;
     }
 
     .card-inner {
-      padding: 20px;
+      padding: 26px 20px 30px 20px;
     }
 
-    .confirmation-main h1 {
-      font-size: 24px;
+    .event-details-card {
+      padding: 20px 16px;
     }
 
-    .confirmation-main h2 {
-      font-size: 20px;
+    .event-date-pill {
+      font-size: 13px;
+      padding: 6px 14px;
     }
 
-    .confirmation-main h3 {
-      font-size: 16px;
+    .reminder-box {
+      padding: 16px 18px;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .button-row {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
     }
   }
 </style>
 
-<!-- Existing Script (unchanged) -->
+<!-- Existing Tracking Script (Unchanged) -->
 <script type="text/javascript">
   $(document).ready(function () {
     var adroll_segments
@@ -189,33 +480,59 @@
   })
 </script>
 
-<!-- Page -->
+<!-- Confirmation Page Container -->
 <div class="confirmation-page">
   <div class="confirmation-card">
 
-    <!-- Banner -->
-    <div class="banner">
-      <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hr-west-confirmation-page-banner-2027-v2.jpg" alt="HRWest Banner">
+    <!-- 1. Header Brand Showcase -->
+    <div class="hrw27-header-area">
+      <div class="hrw27-header-lockup">
+        <img
+          src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png"
+          alt="HR West Conference Logo"
+          class="hrw27-logo-img"
+        />
+        <div class="hrw27-header-text">
+          <div class="hrw27-header-title">HRWest 2027</div>
+          <div class="hrw27-header-sub">Imagine What&rsquo;s Possible</div>
+        </div>
+      </div>
     </div>
 
+    <!-- 2. Top Announcement Strip -->
+    <div class="hrw27-top-strip">
+      MARCH 23-24, 2027 &bull; SOUTH SAN FRANCISCO CONFERENCE CENTER
+    </div>
+
+    <!-- 3. Confirmation Main Card -->
     <div class="card-inner">
 
       <div class="confirmation-main">
+        <!-- Status Pill -->
+        <div class="status-badge">
+          <span class="status-dot"></span> Registration Confirmed
+        </div>
+
         <h1>Thank you, $firstName!</h1>
 
-        <h3 class="green-text">
+        <div class="sub-lead">
           Your registration is now confirmed for
-        </h3>
+        </div>
 
-        <h2>$eventName</h2>
+        <!-- Event Details Ticket Card -->
+        <div class="event-details-card">
+          <div class="event-eyebrow">Event Registration Details</div>
+          <h2>$eventName</h2>
+          <div class="event-date-pill">
+            <span>📅</span>
+            <span>On <span class="date-highlight">$dateTime</span></span>
+          </div>
+        </div>
 
-        <h3 class="gray-text">
-          On <span class="red-text">$dateTime</span>
-        </h3>
-
+        <!-- Action Buttons -->
         <div class="button-row">
           <button type="button" class="btn btn-disabled">
-            Registered!
+            <span>✓</span> Registered!
           </button>
 
           <button
@@ -223,31 +540,40 @@
             class="btn btn-green btn-hidden"
             onclick="window.location.href = '$eventHomeURL'"
           >
-            View Agenda
+            View Agenda &rarr;
           </button>
         </div>
       </div>
 
+      <!-- Add to Calendar Block -->
       <div class="calendar-block">
-        <p style="margin-bottom:10px;">
-          Add this Event to your calendar:
-        </p>
-
-        $addToCalendar $loginButton
+        <p>Add this Event to your calendar:</p>
+        <div>
+          $addToCalendar $loginButton
+        </div>
       </div>
 
       <div class="divider"></div>
 
-      <div>
-        <div class="reminder-title">Hey, don’t forget!</div>
-
-        <div class="reminder-text">
-          Put HR.com on your safe sender list to ensure you get our emails.
-          For any issues or questions, contact us at
-          <a href="mailto:hrwest@hr.com">hrwest@hr.com</a>.
+      <!-- Safe Sender / Support Callout Box -->
+      <div class="reminder-box">
+        <div class="reminder-icon">📬</div>
+        <div>
+          <div class="reminder-title">Hey, don’t forget!</div>
+          <div class="reminder-text">
+            Put HR.com on your safe sender list to ensure you get our emails.
+            For any issues or questions, contact us at
+            <a href="mailto:hrwest@hr.com">hrwest@hr.com</a>.
+          </div>
         </div>
       </div>
 
     </div>
+  </div>
+
+  <!-- Footer Copyright -->
+  <div class="confirmation-footer">
+    &copy; 2026 HR.com Limited. All Rights Reserved.<br />
+    56 Malone Road, Jackson's Point, ON, Canada, L0E 1L0
   </div>
 </div>

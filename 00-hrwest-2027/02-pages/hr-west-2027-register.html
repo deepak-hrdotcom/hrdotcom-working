@@ -1,9 +1,46 @@
 <style id="hrw27-fouc-blocker">
-  /* 0ms Synchronous FOUC and CMS Widget Suppression */
+  /* 0ms Synchronous FOUC and CMS Parent Widget Suppression */
+  .TopLink_new,
+  #loggedIn_TopLink,
+  div#loggedIn_TopLink,
+  div.TopLink_new,
+  .TopBar,
+  div.TopBar,
+  #TopBar,
+  .HeaderWrap,
+  div.HeaderWrap,
+  .HeaderBG,
+  div.HeaderBG,
+  .headertopbg,
+  div.headertopbg,
+  .TopHeader,
+  div.TopHeader,
+  .HeaderMain,
+  div.HeaderMain,
+  .header-top,
+  .header-bottom,
+  .site-header,
+  #site-header,
+  body > header:not(.hrw27-header),
+  body > div.header:not(.hrw27-header),
+  body > div.HeaderWrap,
+  body > div.HeaderBG,
+  body > div.TopHeader,
+  body > div.TopBar,
+  body > div.TopLink_new,
+  body > nav:not(.hrw27-nav),
+  body > .navbar:not(.hrw27-nav),
+  #header:not(.hrw27-header),
+  header.header:not(.hrw27-header),
+  div.header:not(.hrw27-header),
   #intro-header,
   section#intro-header,
   div#intro-header,
+  header#intro-header,
   .sf-nav-main,
+  div.sf-nav-main,
+  nav.sf-nav-main,
+  header.sf-nav-main,
   .socialshare,
   #socialshare,
   .social-share,
@@ -12,11 +49,24 @@
   div[class*="socialshare"],
   div[id*="socialshare"],
   #content,
-  .TopLink_new,
-  .TopBar,
   #hradbtmwrapper {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -99999px !important;
+    z-index: -99999 !important;
+    pointer-events: none !important;
   }
+
   html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
@@ -97,14 +147,7 @@
   .FooterMidBG .container {
     gap: 0 !important;
   }
-  .header,
-  header.header,
-  div.header,
-  #header,
-  .HeaderWrap,
-  .HeaderBG,
-  .headertopbg,
-  .TopHeader {
+  .hrw27-header {
     border: 0 !important;
     padding-block: 0 !important;
     margin-bottom: 0 !important;
@@ -113,18 +156,99 @@
     overflow: visible !important;
     z-index: 99999 !important;
   }
-  .header::before {
-    display: none !important;
+  *,
+  *::before,
+  *::after {
+    -webkit-tap-highlight-color: transparent !important;
   }
-  a, a:hover, a:link {
-    text-decoration: none;
+
+  a,
+  a:hover,
+  a:focus,
+  a:focus-visible,
+  a:active,
+  a:visited,
+  a:link,
+  button,
+  button:hover,
+  button:focus,
+  button:focus-visible,
+  button:active,
+  :focus,
+  :focus-visible,
+  :active {
+    text-decoration: none !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
   }
 </style>
 
 <script>
-/* Instant 0ms Synchronous Padding and FOUC Eliminator */
+/* Instant 0ms Synchronous FOUC & Parent CMS Widget Eliminator */
 (function() {
-  function eliminateFOUC() {
+  'use strict';
+
+  var widgetSelectors = [
+    '.TopLink_new',
+    '#loggedIn_TopLink',
+    'div#loggedIn_TopLink',
+    'div.TopLink_new',
+    '.TopBar',
+    'div.TopBar',
+    '#TopBar',
+    '.HeaderWrap',
+    'div.HeaderWrap',
+    '.HeaderBG',
+    'div.HeaderBG',
+    '.headertopbg',
+    'div.headertopbg',
+    '.TopHeader',
+    'div.TopHeader',
+    '.HeaderMain',
+    'div.HeaderMain',
+    '.header-top',
+    '.header-bottom',
+    '.site-header',
+    '#site-header',
+    '#intro-header',
+    'section#intro-header',
+    'div#intro-header',
+    'header#intro-header',
+    '.sf-nav-main',
+    'div.sf-nav-main',
+    'nav.sf-nav-main',
+    '.socialshare',
+    '#socialshare',
+    '.social-share',
+    '.floating-social',
+    '.st-sticky-share-buttons',
+    '#hradbtmwrapper',
+    'body > header:not(.hrw27-header)',
+    'body > div.header:not(.hrw27-header)',
+    'body > div.HeaderWrap',
+    'body > div.HeaderBG',
+    'body > div.TopHeader',
+    'body > div.TopBar',
+    'body > div.TopLink_new',
+    'body > nav:not(.hrw27-nav)',
+    '#header:not(.hrw27-header)',
+    'header.header:not(.hrw27-header)',
+    'div.header:not(.hrw27-header)'
+  ];
+
+  var killCss = widgetSelectors.join(', ') + ' { display: none !important; visibility: hidden !important; opacity: 0 !important; height: 0px !important; max-height: 0px !important; overflow: hidden !important; position: absolute !important; top: -99999px !important; left: -99999px !important; z-index: -99999 !important; pointer-events: none !important; }';
+
+  // 1. Immediately inject the blocking style rule into document.head / documentElement
+  var killStyle = document.createElement('style');
+  killStyle.id = 'hrw27-root-fouc-killer';
+  killStyle.textContent = killCss;
+  var rootTarget = document.head || document.documentElement;
+  if (rootTarget) { rootTarget.appendChild(killStyle); }
+
+  // 2. Immediate synchronous element removal and style enforcement
+  function eliminateWidgets() {
     if (document.documentElement) {
       document.documentElement.style.setProperty('padding-top', '0px', 'important');
       document.documentElement.style.setProperty('margin-top', '0px', 'important');
@@ -133,11 +257,32 @@
       document.body.style.setProperty('padding-top', '0px', 'important');
       document.body.style.setProperty('margin-top', '0px', 'important');
     }
+
+    widgetSelectors.forEach(function (sel) {
+      try {
+        var elements = document.querySelectorAll(sel);
+        for (var i = 0; i < elements.length; i++) {
+          var el = elements[i];
+          if (el.classList && el.classList.contains('hrw27-header')) continue;
+          el.style.setProperty('display', 'none', 'important');
+          el.style.setProperty('visibility', 'hidden', 'important');
+          el.style.setProperty('opacity', '0', 'important');
+          el.style.setProperty('height', '0px', 'important');
+          el.style.setProperty('position', 'absolute', 'important');
+          el.style.setProperty('top', '-99999px', 'important');
+          if (el.parentNode) {
+            el.parentNode.removeChild(el);
+          }
+        }
+      } catch (err) {}
+    });
   }
-  eliminateFOUC();
+
+  eliminateWidgets();
+
   if (window.MutationObserver) {
     var observer = new MutationObserver(function() {
-      eliminateFOUC();
+      eliminateWidgets();
     });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -145,10 +290,10 @@
       childList: true,
       subtree: true
     });
-    window.addEventListener('DOMContentLoaded', eliminateFOUC);
+    window.addEventListener('DOMContentLoaded', eliminateWidgets);
     window.addEventListener('load', function() {
-      eliminateFOUC();
-      setTimeout(function() { observer.disconnect(); }, 3500);
+      eliminateWidgets();
+      setTimeout(function() { observer.disconnect(); }, 4000);
     });
   }
 })();
@@ -351,8 +496,36 @@ div.container,
   padding: 0 !important;
 }
 
-.hrw27 a, .hrw27-header a, .hrw27-footer a {
+.hrw27 a,
+.hrw27 a:hover,
+.hrw27 a:focus,
+.hrw27 a:focus-visible,
+.hrw27 a:active,
+.hrw27 a:visited,
+.hrw27-header a,
+.hrw27-header a:hover,
+.hrw27-header a:focus,
+.hrw27-header a:focus-visible,
+.hrw27-header a:active,
+.hrw27-footer a,
+.hrw27-footer a:hover,
+.hrw27-footer a:focus,
+.hrw27-footer a:focus-visible,
+.hrw27-footer a:active,
+.hrw27-nav-link,
+.hrw27-nav-link:focus,
+.hrw27-nav-link:active,
+.hrw27-nav-link:focus-visible,
+.hrw27 button,
+.hrw27 button:focus,
+.hrw27 button:active,
+.hrw27 button:focus-visible {
   text-decoration: none !important;
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  outline-color: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 /* 3. LAYOUT CONTAINERS */
@@ -374,6 +547,13 @@ div.container,
   font-size: 15px !important; line-height: 1 !important; padding: 14px 28px !important;
   border-radius: var(--radius-full) !important; border: none !important; cursor: pointer !important;
   text-decoration: none !important; transition: all 0.25s ease !important; white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .hrw27 .btn, .hrw27-header .btn, .hrw27-footer .btn {
+    white-space: normal !important; text-align: center !important; justify-content: center !important;
+    line-height: 1.35 !important; max-width: 100% !important; box-sizing: border-box !important;
+  }
+  .hrw27 .btn-lg { font-size: 15px !important; padding: 14px 22px !important; }
 }
 .hrw27 .btn-primary, .hrw27-header .btn-primary, .hrw27-footer .btn-primary { background: var(--gradient-brand) !important; color: #fff !important; box-shadow: 0 8px 32px var(--brand-glow-28) !important; }
 .hrw27 .btn-primary:hover, .hrw27-header .btn-primary:hover, .hrw27-footer .btn-primary:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px var(--brand-glow-40) !important; color: #fff !important; }
@@ -414,6 +594,70 @@ div.container,
   font-weight: 600 !important;
   position: relative !important;
   z-index: 2 !important;
+}
+
+.hrw27-topbar-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.hrw27-topbar-info {
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+}
+
+.hrw27-topbar-date,
+.hrw27-topbar-venue {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.hrw27-topbar-btn {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  padding: 3px 12px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  transition: background 0.2s ease !important;
+}
+
+.hrw27-topbar-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .hrw27-topbar {
+    padding: 5px 0 !important;
+    font-size: 12px !important;
+  }
+
+  .hrw27-topbar-venue {
+    display: none !important;
+  }
+
+  .hrw27-topbar-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .hrw27-topbar-date {
+    font-size: 11.5px !important;
+  }
+
+  .hrw27-topbar-btn {
+    font-size: 11px !important;
+    padding: 2.5px 10px !important;
+  }
 }
 
 .hrw27-nav-main {
@@ -524,12 +768,27 @@ div.container,
 /* Mobile Toggle */
 .hrw27-mob-btn {
   display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background: none !important;
   border: none !important;
   cursor: pointer !important;
   padding: 8px !important;
   color: var(--color-text-primary) !important;
 }
+
+.hrw27-mob-btn .icon-close {
+  display: none !important;
+}
+
+.hrw27-mob-btn.is-active .icon-hamburger {
+  display: none !important;
+}
+
+.hrw27-mob-btn.is-active .icon-close {
+  display: block !important;
+}
+
 @media (min-width: 1024px) {
   .hrw27-mob-btn { display: none !important; }
 }
@@ -544,12 +803,147 @@ div.container,
   display: block !important;
 }
 
+/* Mobile Drawer Attend Submenu Styling */
+.hrw27-mob-attend-box {
+  background: #f8fafc !important;
+  border: 1.5px solid #edf2f7 !important;
+  border-radius: var(--radius-md) !important;
+  padding: 12px 14px !important;
+  margin-top: 4px !important;
+}
+
+.hrw27-mob-attend-eyebrow {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  color: var(--color-brand-purple) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.hrw27-mob-attend-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.hrw27-mob-attend-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 7px 8px !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  text-decoration: none !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+.hrw27-mob-attend-link:hover,
+.hrw27-mob-attend-link:active {
+  background: rgba(93, 47, 199, 0.08) !important;
+  color: var(--color-brand-purple) !important;
+}
+
+.hrw27-mob-attend-link-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+}
+
+.hrw27-mob-attend-icon {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 12px !important;
+  flex-shrink: 0 !important;
+}
+
+.hrw27-mob-close-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+  padding: 10px !important;
+  margin-top: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  color: var(--color-text-muted) !important;
+  cursor: pointer !important;
+  transition: color 0.15s ease !important;
+}
+
+.hrw27-mob-close-btn:hover {
+  color: var(--color-brand-pink) !important;
+}
+
+@media (max-width: 768px) {
+  .hrw27-logo {
+    font-size: 19px !important;
+  }
+
+  .hrw27-logo-year {
+    font-size: 13px !important;
+    margin-left: 3px !important;
+  }
+
+  .hrw27-nav-main {
+    padding: 10px 0 !important;
+    gap: 8px !important;
+  }
+
+  .hrw27-nav-main .btn-primary {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    border-radius: 50px !important;
+    gap: 5px !important;
+    box-shadow: 0 3px 10px rgba(93, 47, 199, 0.25) !important;
+  }
+
+  .hrw27-nav-main .btn-primary svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .hrw27-nav-main .btn-primary .live-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  .hrw27-mob-btn {
+    padding: 6px !important;
+  }
+
+  .hrw27-mob-menu {
+    padding: 16px 20px 22px !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
 /* 5. REGISTRATION HERO & BODY SECTION STYLES */
 .hrw27 .reg-hero-section {
   position: relative;
   min-height: 520px;
   background-color: #0b0814;
-  background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+  background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/register_hero_bg_v2.webp');
   background-size: cover;
   background-position: 55% center;
   overflow: hidden;
@@ -1236,6 +1630,162 @@ div.container,
   color: #5d2fc7 !important;
 }
 
+/* Mobile 3-Block Pricing Stack (Visible on Mobile <= 768px, Hidden on Desktop) */
+.hrw27 .reg-mobile-pricing-stack {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hrw27 .reg-table-card {
+    display: none !important;
+  }
+
+  .hrw27 .reg-mobile-pricing-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    max-width: 480px !important;
+    margin: 0 auto 2rem auto !important;
+  }
+
+  .hrw27 .reg-mob-tier-card {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(93, 47, 199, 0.16) !important;
+    border-radius: 18px !important;
+    padding: 18px 16px 16px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .hrw27 .reg-mob-tier-card.featured {
+    background: linear-gradient(180deg, #ffffff 0%, #faf6ff 100%) !important;
+    border: 2px solid #ef146e !important;
+    box-shadow: 0 8px 24px rgba(239, 20, 110, 0.12) !important;
+  }
+
+  .hrw27 .reg-mob-tier-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid rgba(93, 47, 199, 0.1) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hrw27 .reg-mob-tier-title {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+  }
+
+  .hrw27 .reg-mob-tier-card.featured .reg-mob-tier-title {
+    color: #5d2fc7 !important;
+  }
+
+  .hrw27 .reg-mob-tier-pill {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+    background: var(--gradient-pink) !important;
+    padding: 3px 9px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 6px rgba(239, 20, 110, 0.3) !important;
+    white-space: nowrap !important;
+  }
+
+  .hrw27 .reg-mob-tier-timeframe {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    margin-top: 3px !important;
+  }
+
+  .hrw27 .reg-mob-tier-card.featured .reg-mob-tier-timeframe {
+    color: #ef146e !important;
+  }
+
+  .hrw27 .reg-mob-rates-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9px !important;
+  }
+
+  .hrw27 .reg-mob-rate-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 12px !important;
+    background: #f8fafc !important;
+    border-radius: 12px !important;
+    border: 1px solid #edf2f7 !important;
+  }
+
+  .hrw27 .reg-mob-rate-row.highlight-attendee {
+    background: rgba(239, 20, 110, 0.07) !important;
+    border-color: rgba(239, 20, 110, 0.25) !important;
+  }
+
+  .hrw27 .reg-mob-rate-row.highlight-vendor {
+    background: rgba(93, 47, 199, 0.06) !important;
+    border-color: rgba(93, 47, 199, 0.2) !important;
+  }
+
+  .hrw27 .reg-mob-rate-left {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+  }
+
+  .hrw27 .reg-mob-rate-name {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+  }
+
+  .hrw27 .reg-mob-rate-sub {
+    font-size: 0.73rem !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+  }
+
+  .hrw27 .reg-mob-rate-sub.tag-pink {
+    color: #ef146e !important;
+    font-weight: 800 !important;
+  }
+
+  .hrw27 .reg-mob-rate-sub.tag-purple {
+    color: #5d2fc7 !important;
+    font-weight: 800 !important;
+  }
+
+  .hrw27 .reg-mob-rate-price {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+    color: #0f172a !important;
+    white-space: nowrap !important;
+    text-align: right !important;
+    line-height: 1.15 !important;
+  }
+
+  .hrw27 .reg-mob-rate-price.price-purple {
+    color: #5d2fc7 !important;
+  }
+
+  .hrw27 .reg-mob-rate-price.price-pink {
+    color: #ef146e !important;
+  }
+}
+
 /* Team Callout Banner */
 .hrw27 .reg-team-callout {
   max-width: 950px;
@@ -1463,6 +2013,79 @@ div.container,
   color: #ffffff !important;
 }
 
+.hrw27-footer-strip-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+}
+
+.hrw27-footer-strip-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.hrw27-footer-strip-icon {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: var(--radius-md) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.hrw27-footer-strip-actions {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+@media (max-width: 768px) {
+  .hrw27-footer-strip {
+    padding: 28px 0 !important;
+  }
+
+  .hrw27-footer-strip-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 18px !important;
+  }
+
+  .hrw27-footer-strip-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0 !important;
+  }
+
+  .hrw27-footer-strip-icon {
+    display: none !important;
+  }
+
+  .hrw27-footer-strip-text {
+    text-align: center !important;
+  }
+
+  .hrw27-footer-strip-actions {
+    justify-content: center !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .hrw27-footer-strip-actions .btn {
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
+  }
+}
+
 .hrw27-footer-main {
   background: #ffffff !important;
   padding: 64px 0 40px !important;
@@ -1528,20 +2151,20 @@ div.container,
   
   <!-- Top Announcement Strip -->
   <div class="hrw27-topbar">
-    <div class="hrw27-container" style="display: flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; gap: 20px; align-items: center;">
-        <span style="display: inline-flex; align-items: center; gap: 5px;">
+    <div class="hrw27-container hrw27-topbar-row">
+      <div class="hrw27-topbar-info">
+        <span class="hrw27-topbar-date">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           March 23-24, 2027
         </span>
-        <span style="display: inline-flex; align-items: center; gap: 5px;">
+        <span class="hrw27-topbar-venue">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           South San Francisco Conference Center
         </span>
       </div>
 
-      <div>
-        <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" style="color: #ffffff; font-weight: 700; font-size: 12px; background: rgba(255, 255, 255, 0.18); border: 1px solid rgba(255, 255, 255, 0.35); padding: 3px 12px; border-radius: 999px;">
+      <div class="hrw27-topbar-action">
+        <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-topbar-btn">
           Convince Your Boss
         </a>
       </div>
@@ -1555,15 +2178,14 @@ div.container,
       <!-- Brand Logo -->
       <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-logo">
         <span>HR</span><span class="hrw27-logo-badge">West</span>
-        <span style="color: var(--color-text-soft); font-weight: 500; font-size: 16px; margin-left: 4px;">2027</span>
+        <span class="hrw27-logo-year" style="color: var(--color-text-soft); font-weight: 500; font-size: 16px; margin-left: 4px;">2027</span>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hrw27-nav-links">
         <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-nav-link">Home</a>
         <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-nav-link">Speakers</a>
-        <!-- <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a> -->
-        <a href="/en/webcasts_events/live_events/hrwest/hrwest-2025-agenda-listing_m4h79bdy.html" class="hrw27-nav-link">Agenda</a>
+        <a href="/en/webcasts_events/live_events/hrwest/hrwest-2027-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a>
         <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-nav-link">Sponsors</a>
 
         <!-- Attend Dropdown -->
@@ -1600,15 +2222,16 @@ div.container,
       </nav>
 
       <!-- CTA and Mobile Menu Button -->
-      <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
         <a href="#passes" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block;"></span>
+          <span class="live-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block;"></span>
           Register
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
         <button id="hrw27-mob-toggle" class="hrw27-mob-btn" aria-label="Toggle Menu">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
 
@@ -1620,23 +2243,69 @@ div.container,
     <div style="display: flex; flex-direction: column; gap: 14px;">
       <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference_laapwgci.html" class="hrw27-nav-link">Home</a>
       <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-nav-link">Speakers</a>
-      <!-- <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a> -->
-      <a href="/en/webcasts_events/live_events/hrwest/hrwest-2025-agenda-listing_m4h79bdy.html" class="hrw27-nav-link">Agenda</a>
+      <a href="/en/webcasts_events/live_events/hrwest/hrwest-2027-agenda-listing_mnq4uvmw.html" class="hrw27-nav-link">Agenda</a>
       <a href="/en/webcasts_events/live_events/hrwest/hrwest-sponsors_lyfn7g9y.html" class="hrw27-nav-link">Sponsors</a>
       <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html" class="hrw27-nav-link">Why Sponsor</a>
-      <div style="padding-top: 10px; border-top: 1px solid var(--color-subtle);">
-        <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; color: var(--color-brand-purple); text-transform: uppercase; margin-bottom: 8px;">ATTEND</div>
-        <div style="display: flex; flex-direction: column; gap: 10px; padding-left: 8px;">
-          <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Attend as a Team</a>
-          <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Convince Your Boss</a>
-          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Venue and Travel</a>
-          <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Testimonials & Reviews</a>
-          <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" style="font-size: 14px; color: var(--color-text-secondary); font-weight: 600;">Volunteer for Free Pass</a>
+
+      <!-- Styled ATTEND Submenu Box -->
+      <div class="hrw27-mob-attend-box">
+        <div class="hrw27-mob-attend-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          Attend Experience
+        </div>
+        <div class="hrw27-mob-attend-list">
+          <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="hrw27-mob-attend-link">
+            <div class="hrw27-mob-attend-link-left">
+              <span class="hrw27-mob-attend-icon">👥</span>
+              <span>Attend as a Team</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-mob-attend-link">
+            <div class="hrw27-mob-attend-link-left">
+              <span class="hrw27-mob-attend-icon">💼</span>
+              <span>Convince Your Boss</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html" class="hrw27-mob-attend-link">
+            <div class="hrw27-mob-attend-link-left">
+              <span class="hrw27-mob-attend-icon">📍</span>
+              <span>Venue and Travel</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" class="hrw27-mob-attend-link">
+            <div class="hrw27-mob-attend-link-left">
+              <span class="hrw27-mob-attend-icon">⭐</span>
+              <span>Testimonials & Reviews</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/en/webcasts_events/live_events/hrwest/volunteer-at-hrwest-for-free-pass_laaqw0y9.html" class="hrw27-mob-attend-link">
+            <div class="hrw27-mob-attend-link-left">
+              <span class="hrw27-mob-attend-icon">🤝</span>
+              <span>Volunteer for Free Pass</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
         </div>
       </div>
-      <a href="#passes" class="btn btn-primary" style="justify-content: center; width: 100%; margin-top: 8px;">
+
+      <a href="#passes" class="btn btn-primary" style="justify-content: center; width: 100%; margin-top: 4px;">
         Register
       </a>
+
+      <!-- Explicit Close Action -->
+      <button type="button" id="hrw27-mob-close-btn" class="hrw27-mob-close-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        Close Menu
+      </button>
     </div>
   </div>
 
@@ -1794,10 +2463,6 @@ div.container,
             </li>
             <li class="reg-feature-item">
               <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span><strong>Community &amp; Dining:</strong> Catered networking lunches &amp; evening reception</span>
-            </li>
-            <li class="reg-feature-item">
-              <span class="reg-feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               <span><strong>Digital Access:</strong> Post-conference session decks &amp; toolkit</span>
             </li>
           </ul>
@@ -1877,7 +2542,7 @@ div.container,
         </p>
       </div>
 
-      <!-- Schedule Table Card -->
+      <!-- Schedule Table Card (Desktop / Tablet >= 769px) -->
       <div class="reg-table-card">
         <table class="reg-table">
           <thead>
@@ -1916,6 +2581,125 @@ div.container,
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- Mobile 3-Block Pricing Stack (Visible on Mobile <= 768px) -->
+      <div class="reg-mobile-pricing-stack">
+
+        <!-- Block 1: Early Bird (Featured Spotlight) -->
+        <div class="reg-mob-tier-card featured">
+          <div class="reg-mob-tier-header">
+            <div>
+              <h3 class="reg-mob-tier-title">
+                Early Bird Rate
+              </h3>
+              <div class="reg-mob-tier-timeframe">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Ends Jan 15, 2027
+              </div>
+            </div>
+            <span class="reg-mob-tier-pill">Best Rate</span>
+          </div>
+
+          <div class="reg-mob-rates-list">
+            <!-- Attendee Pass -->
+            <div class="reg-mob-rate-row highlight-attendee">
+              <div class="reg-mob-rate-left">
+                <span class="reg-mob-rate-name">HR Attendee Pass</span>
+                <span class="reg-mob-rate-sub tag-pink">Save $400 &bull; Full 2-Day Access</span>
+              </div>
+              <div class="reg-mob-rate-price price-pink">
+                $399
+              </div>
+            </div>
+
+            <!-- Vendor Pass -->
+            <div class="reg-mob-rate-row highlight-vendor">
+              <div class="reg-mob-rate-left">
+                <span class="reg-mob-rate-name">Vendor Pass</span>
+                <span class="reg-mob-rate-sub tag-purple">Save $400 &bull; Solution Providers</span>
+              </div>
+              <div class="reg-mob-rate-price price-purple">
+                $899
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2: Regular Rate -->
+        <div class="reg-mob-tier-card">
+          <div class="reg-mob-tier-header">
+            <div>
+              <h3 class="reg-mob-tier-title">Regular Rate</h3>
+              <div class="reg-mob-tier-timeframe">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Jan 16 &ndash; Mar 22, 2027
+              </div>
+            </div>
+          </div>
+
+          <div class="reg-mob-rates-list">
+            <!-- Attendee Pass -->
+            <div class="reg-mob-rate-row">
+              <div class="reg-mob-rate-left">
+                <span class="reg-mob-rate-name">HR Attendee Pass</span>
+                <span class="reg-mob-rate-sub">Standard practitioner ticket</span>
+              </div>
+              <div class="reg-mob-rate-price">
+                $799
+              </div>
+            </div>
+
+            <!-- Vendor Pass -->
+            <div class="reg-mob-rate-row">
+              <div class="reg-mob-rate-left">
+                <span class="reg-mob-rate-name">Vendor Pass</span>
+                <span class="reg-mob-rate-sub">Standard vendor ticket</span>
+              </div>
+              <div class="reg-mob-rate-price">
+                $1,299
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 3: Onsite Rate -->
+        <div class="reg-mob-tier-card">
+          <div class="reg-mob-tier-header">
+            <div>
+              <h3 class="reg-mob-tier-title" style="color: #64748b;">Onsite Rate</h3>
+              <div class="reg-mob-tier-timeframe">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                March 23&ndash;24, 2027
+              </div>
+            </div>
+          </div>
+
+          <div class="reg-mob-rates-list">
+            <!-- Attendee Pass -->
+            <div class="reg-mob-rate-row">
+              <div class="reg-mob-rate-left">
+                <span class="reg-mob-rate-name">HR Attendee Pass</span>
+                <span class="reg-mob-rate-sub">At-the-door registration</span>
+              </div>
+              <div class="reg-mob-rate-price">
+                $999
+              </div>
+            </div>
+
+            <!-- Vendor Pass -->
+            <div class="reg-mob-rate-row">
+              <div class="reg-mob-rate-left">
+                <span class="reg-mob-rate-name">Vendor Pass</span>
+                <span class="reg-mob-rate-sub">At-the-door registration</span>
+              </div>
+              <div class="reg-mob-rate-price">
+                $1,499
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Group & Team Registration Callout Banner -->
@@ -2030,22 +2814,22 @@ div.container,
 
   <!-- Pre-Footer Strip -->
   <div class="hrw27-footer-strip">
-    <div class="hrw27-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;">
+    <div class="hrw27-container hrw27-footer-strip-row">
+      <div class="hrw27-footer-strip-content">
+        <div class="hrw27-footer-strip-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         </div>
-        <div>
+        <div class="hrw27-footer-strip-text">
           <div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: #ffffff;">
             Ready to Transform Your HR Strategy in 2027?
           </div>
           <div style="font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 2px;">
-            Join 500+ HR professionals, Earn 8 SHRM and HRCI credits, March 23-24, South SF
+            Join 500+ HR professionals, Earn 8 SHRM and HRCI credits, March 23-24, South San Francisco
           </div>
         </div>
       </div>
 
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <div class="hrw27-footer-strip-actions">
         <a href="#passes" class="btn btn-white" style="padding: 12px 24px; font-size: 14px;">
           Register Now
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -2093,8 +2877,7 @@ div.container,
           <h4 class="hrw27-footer-h4">For Attendees</h4>
           <div class="hrw27-footer-links">
             <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" class="hrw27-footer-link">Speaker Directory</a>
-            <!-- <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html" class="hrw27-footer-link">Interactive Agenda</a> -->
-            <a href="/en/webcasts_events/live_events/hrwest/hrwest-2025-agenda-listing_m4h79bdy.html" class="hrw27-footer-link">Interactive Agenda</a>
+            <a href="/en/webcasts_events/live_events/hrwest/hrwest-2027-agenda-listing_mnq4uvmw.html" class="hrw27-footer-link">Interactive Agenda</a>
             <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html" class="hrw27-footer-link">Team Discounts</a>
             <a href="/en/webcasts_events/live_events/hrwest/get-your-employer-to-send-you-to-hrwest_lk2vgc3h.html" class="hrw27-footer-link">Convince Your Boss</a>
             <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html" class="hrw27-footer-link">Testimonials & Reviews</a>
@@ -2182,12 +2965,31 @@ div.container,
     }
   }
 
-  /* 2. MOBILE MENU TOGGLE */
+  /* 2. MOBILE MENU TOGGLE & CLOSE */
   var mobToggle = document.getElementById('hrw27-mob-toggle');
   var mobMenu = document.getElementById('hrw27-mob-menu');
+  var mobCloseBtn = document.getElementById('hrw27-mob-close-btn');
+
+  function closeMobMenu() {
+    if (mobMenu) mobMenu.classList.remove('open');
+    if (mobToggle) mobToggle.classList.remove('is-active');
+  }
+
   if (mobToggle && mobMenu) {
     mobToggle.addEventListener('click', function() {
-      mobMenu.classList.toggle('open');
+      var isOpen = mobMenu.classList.toggle('open');
+      mobToggle.classList.toggle('is-active', isOpen);
+    });
+  }
+
+  if (mobCloseBtn) {
+    mobCloseBtn.addEventListener('click', closeMobMenu);
+  }
+
+  // Auto-close menu when clicking any nav link
+  if (mobMenu) {
+    mobMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMobMenu);
     });
   }
 
@@ -2248,6 +3050,21 @@ div.container,
   /* 5. CMS AD CLEANUP */
   var adBtm = document.getElementById('hradbtmwrapper');
   if (adBtm) { adBtm.innerHTML = ''; }
+
+  /* 6. GLOBAL CLICK OUTLINE SUPPRESSOR */
+  document.addEventListener('pointerdown', function (e) {
+    var el = e.target.closest('a, button, [tabindex]');
+    if (el) {
+      el.style.setProperty('outline', 'none', 'important');
+      el.style.setProperty('outline-width', '0px', 'important');
+    }
+  }, true);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('a, button');
+    if (el && typeof el.blur === 'function') {
+      setTimeout(function () { el.blur(); }, 0);
+    }
+  }, true);
 
 })();
 </script>

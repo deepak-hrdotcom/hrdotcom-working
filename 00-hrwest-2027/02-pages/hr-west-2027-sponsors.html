@@ -1,9 +1,46 @@
-<style>
-  /* Prevent Flash of Unwanted CMS Content (FOUC) */
+<style id="hrw27-fouc-blocker">
+  /* 0ms Synchronous FOUC and CMS Parent Widget Suppression */
+  .TopLink_new,
+  #loggedIn_TopLink,
+  div#loggedIn_TopLink,
+  div.TopLink_new,
+  .TopBar,
+  div.TopBar,
+  #TopBar,
+  .HeaderWrap,
+  div.HeaderWrap,
+  .HeaderBG,
+  div.HeaderBG,
+  .headertopbg,
+  div.headertopbg,
+  .TopHeader,
+  div.TopHeader,
+  .HeaderMain,
+  div.HeaderMain,
+  .header-top,
+  .header-bottom,
+  .site-header,
+  #site-header,
+  body>header:not(.hrw27-header),
+  body>div.header:not(.hrw27-header),
+  body>div.HeaderWrap,
+  body>div.HeaderBG,
+  body>div.TopHeader,
+  body>div.TopBar,
+  body>div.TopLink_new,
+  body>nav:not(.hrw27-nav),
+  body>.navbar:not(.hrw27-nav),
+  #header:not(.hrw27-header),
+  header.header:not(.hrw27-header),
+  div.header:not(.hrw27-header),
   #intro-header,
   section#intro-header,
   div#intro-header,
+  header#intro-header,
   .sf-nav-main,
+  div.sf-nav-main,
+  nav.sf-nav-main,
+  header.sf-nav-main,
   .socialshare,
   #socialshare,
   .social-share,
@@ -12,28 +49,142 @@
   div[class*="socialshare"],
   div[id*="socialshare"],
   #content,
-  .TopLink_new,
-  .TopBar,
   #hradbtmwrapper {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -99999px !important;
+    z-index: -99999 !important;
+    pointer-events: none !important;
   }
-  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+
+  html,
+  body,
+  body.sf-nav-main-mode,
+  .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
   }
-</style>
 
-<script>
-(function() {
-  function applyEarlyReset() {
-    if (document.body) {
-      document.body.style.setProperty('padding-top', '0px', 'important');
-      document.body.style.setProperty('margin-top', '0px', 'important');
-    }
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  applyEarlyReset();
-  document.addEventListener('DOMContentLoaded', applyEarlyReset);
-})();
+
+  .hrw27-header {
+    border: 0 !important;
+    padding-block: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    z-index: 99999 !important;
+  }
+
+  .ContentArea,
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:focus-visible,
+  a:active,
+  a:visited,
+  a:link,
+  button,
+  button:hover,
+  button:focus,
+  button:focus-visible,
+  button:active,
+  :focus,
+  :focus-visible,
+  :active {
+    text-decoration: none !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+  }
+</style>
+<script>
+  (function () {
+    'use strict';
+    var sels = [
+      '.TopLink_new', '#loggedIn_TopLink', 'div#loggedIn_TopLink', 'div.TopLink_new',
+      '.TopBar', 'div.TopBar', '#TopBar',
+      '.HeaderWrap', 'div.HeaderWrap', '.HeaderBG', 'div.HeaderBG',
+      '.headertopbg', 'div.headertopbg', '.TopHeader', 'div.TopHeader',
+      '.HeaderMain', 'div.HeaderMain', '.header-top', '.header-bottom',
+      '.site-header', '#site-header',
+      '#intro-header', 'section#intro-header', 'div#intro-header', 'header#intro-header',
+      '.sf-nav-main', 'div.sf-nav-main', 'nav.sf-nav-main',
+      '.socialshare', '#socialshare', '.social-share', '.floating-social',
+      '.st-sticky-share-buttons', '#hradbtmwrapper',
+      'body > header:not(.hrw27-header)', 'body > div.header:not(.hrw27-header)',
+      'body > div.HeaderWrap', 'body > div.HeaderBG', 'body > div.TopHeader',
+      'body > div.TopBar', 'body > div.TopLink_new', 'body > nav:not(.hrw27-nav)',
+      '#header:not(.hrw27-header)', 'header.header:not(.hrw27-header)', 'div.header:not(.hrw27-header)'
+    ];
+    var ks = document.createElement('style');
+    ks.id = 'hrw27-root-fouc-killer';
+    ks.textContent = sels.join(',') + '{display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;max-height:0!important;overflow:hidden!important;position:absolute!important;top:-99999px!important;left:-99999px!important;z-index:-99999!important;pointer-events:none!important;}';
+    (document.head || document.documentElement).appendChild(ks);
+    function kill() {
+      if (document.documentElement) {
+        document.documentElement.style.setProperty('padding-top', '0px', 'important');
+        document.documentElement.style.setProperty('margin-top', '0px', 'important');
+      }
+      if (document.body) {
+        document.body.style.setProperty('padding-top', '0px', 'important');
+        document.body.style.setProperty('margin-top', '0px', 'important');
+      }
+      sels.forEach(function (s) {
+        try {
+          var els = document.querySelectorAll(s);
+          for (var i = 0; i < els.length; i++) {
+            if (els[i].classList && els[i].classList.contains('hrw27-header')) continue;
+            els[i].style.setProperty('display', 'none', 'important');
+            els[i].style.setProperty('visibility', 'hidden', 'important');
+            els[i].style.setProperty('opacity', '0', 'important');
+            els[i].style.setProperty('height', '0px', 'important');
+            els[i].style.setProperty('position', 'absolute', 'important');
+            els[i].style.setProperty('top', '-99999px', 'important');
+            if (els[i].parentNode) els[i].parentNode.removeChild(els[i]);
+          }
+        } catch (e) { }
+      });
+    }
+    kill();
+    if (window.MutationObserver) {
+      var obs = new MutationObserver(kill);
+      obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'style'], childList: true, subtree: true });
+      window.addEventListener('DOMContentLoaded', kill);
+      window.addEventListener('load', function () { kill(); setTimeout(function () { obs.disconnect(); }, 4000); });
+    }
+  })();
 </script>
 
 <style>
@@ -46,7 +197,9 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .hrw27 *, .hrw27 *::before, .hrw27 *::after {
+  .hrw27 *,
+  .hrw27 *::before,
+  .hrw27 *::after {
     box-sizing: border-box;
   }
 
@@ -55,9 +208,9 @@
     position: relative;
     min-height: 480px;
     background-color: #0b0814;
-    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/why_sponsor_hero_bg_v3.webp');
     background-size: cover;
-    background-position: 55% center;
+    background-position: 75% center;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -67,8 +220,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(11,8,20,0.96) 0%, rgba(60,15,80,0.88) 38%, rgba(100,10,80,0.55) 62%, rgba(0,0,0,0.15) 100%),
-      linear-gradient(180deg, rgba(11,8,20,0.6) 0%, transparent 30%, transparent 65%, rgba(11,8,20,0.75) 100%);
+      linear-gradient(90deg, rgba(11, 8, 20, 0.96) 0%, rgba(60, 15, 80, 0.88) 38%, rgba(100, 10, 80, 0.55) 62%, rgba(0, 0, 0, 0.15) 100%),
+      linear-gradient(180deg, rgba(11, 8, 20, 0.6) 0%, transparent 30%, transparent 65%, rgba(11, 8, 20, 0.75) 100%);
     pointer-events: none;
   }
 
@@ -78,7 +231,7 @@
     left: -80px;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(93,47,199,0.25) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(93, 47, 199, 0.25) 0%, transparent 70%);
     border-radius: 50%;
     filter: blur(40px);
     pointer-events: none;
@@ -161,6 +314,14 @@
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(239, 20, 110, 0.5);
     color: #ffffff !important;
+  }
+
+  .hrw27 .spn-hero-btn-primary:disabled {
+    opacity: 0.65 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
   /* Floating Logo Mosaic */
@@ -344,7 +505,7 @@
   }
 
   .hrw27 .spn-cta-box {
-    background: linear-gradient(135deg, rgba(93,47,199,0.06) 0%, rgba(239,20,110,0.06) 100%) !important;
+    background: linear-gradient(135deg, rgba(93, 47, 199, 0.06) 0%, rgba(239, 20, 110, 0.06) 100%) !important;
     border: 1.5px solid rgba(93, 47, 199, 0.2) !important;
     border-radius: 24px !important;
     padding: 3.5rem 2.5rem !important;
@@ -411,7 +572,7 @@
     <div class="spn-hero-orb-1"></div>
 
     <div class="spn-hero-grid">
-      
+
       <!-- Left: Text Content -->
       <div class="spn-hero-content">
         <h1 class="spn-hero-h1">
@@ -423,10 +584,17 @@
         </p>
 
         <div>
-          <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247" name="fc_1786988265247" onclick="loadPopup('fc_1786988265247')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247" name="fc_1786988265247" disabled
+            style="opacity: 0.65; cursor: not-allowed !important; pointer-events: none; box-shadow: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
             Download Sponsorship Brochure
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </button>
         </div>
       </div>
@@ -436,25 +604,32 @@
 
       <!-- Right: Floating Sponsor Cards Mosaic -->
       <div class="spn-floating-mosaic">
-        
+
         <!-- Card 1: SAP -->
         <div class="spn-float-card spn-float-card-1">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png" alt="SAP SuccessFactors" class="spn-float-img" />
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png"
+            alt="SAP SuccessFactors" class="spn-float-img" />
         </div>
 
         <!-- Card 2: UKG -->
         <div class="spn-float-card spn-float-card-2">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg" alt="UKG" class="spn-float-img" />
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg"
+            alt="UKG" class="spn-float-img" />
         </div>
 
         <!-- Card 3: Robert Half -->
         <div class="spn-float-card spn-float-card-3">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg" alt="Robert Half" class="spn-float-img" />
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg"
+            alt="Robert Half" class="spn-float-img" />
         </div>
 
         <!-- Card 4: Insperity -->
         <div class="spn-float-card spn-float-card-4">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg" alt="Insperity" class="spn-float-img" />
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg"
+            alt="Insperity" class="spn-float-img" />
         </div>
 
       </div>
@@ -471,7 +646,9 @@
 
       <div class="spn-header-wrap">
         <div class="spn-eyebrow">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="#5d2fc7"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#5d2fc7">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
           Trusted Enterprise Partners
         </div>
         <h2 class="spn-h2">
@@ -481,300 +658,465 @@
 
       <!-- Logo Wall Grid (All 59 Sponsors) -->
       <div class="spn-logos-grid">
-        
+
         <!-- 1. SAP SuccessFactors -->
-        <a href="https://www.hr.com/directory/company/sap_successfactors_4" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png" alt="SAP SuccessFactors" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/sap_successfactors_4" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png"
+            alt="SAP SuccessFactors" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 2. UKG -->
-        <a href="https://www.hr.com/directory/company/ukg_ultimate_kronos_group__2" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg" alt="UKG" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/ukg_ultimate_kronos_group__2" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg"
+            alt="UKG" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 3. Robert Half -->
-        <a href="https://www.hr.com/directory/company/robert_half_intl_inc_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg" alt="Robert Half" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/robert_half_intl_inc_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg"
+            alt="Robert Half" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 4. Insperity -->
-        <a href="https://www.hr.com/directory/company/insperity_28" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg" alt="Insperity" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/insperity_28" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg"
+            alt="Insperity" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 5. Alliant Insurance -->
-        <a href="https://www.hr.com/directory/company/alliant_insurance_services" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg" alt="Alliant Insurance" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/alliant_insurance_services" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg"
+            alt="Alliant Insurance" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 6. Built -->
-        <a href="https://www.hr.com/directory/company/built__1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/built-logo.jpg" alt="Built" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/built__1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/built-logo.jpg"
+            alt="Built" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 7. GuidedChoice -->
-        <a href="https://www.hr.com/directory/company/guidedchoice" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/guidedchoice-logo.jpg" alt="GuidedChoice" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/guidedchoice" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/guidedchoice-logo.jpg"
+            alt="GuidedChoice" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 8. HRCP -->
-        <a href="https://www.hr.com/directory/company/hrcp_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hrcp-logo.jpg" alt="HRCP" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/hrcp_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hrcp-logo.jpg"
+            alt="HRCP" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 9. HUB International -->
-        <a href="https://www.hr.com/directory/company/hub_international_ltd_2" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg" alt="HUB International" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/hub_international_ltd_2" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg"
+            alt="HUB International" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 10. Pacific Service Credit Union -->
-        <a href="https://www.hr.com/directory/company/pacific_service_credit_union_2" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/pacific-service-logo.jpg" alt="Pacific Service Credit Union" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/pacific_service_credit_union_2" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/pacific-service-logo.jpg"
+            alt="Pacific Service Credit Union" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 11. PerformYard -->
-        <a href="https://www.hr.com/directory/company/performyard_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg" alt="PerformYard" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/performyard_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg"
+            alt="PerformYard" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 12. ScholarShare 529 -->
-        <a href="https://www.hr.com/directory/company/scholarshare_529" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/scholarshare-logo.jpg" alt="ScholarShare 529" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/scholarshare_529" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/scholarshare-logo.jpg"
+            alt="ScholarShare 529" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 13. The FruitGuys -->
-        <a href="https://www.hr.com/directory/company/the_fruitguys" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/the-fruitguys-logo.jpg" alt="The FruitGuys" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/the_fruitguys" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/the-fruitguys-logo.jpg"
+            alt="The FruitGuys" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 14. United Concordia Dental -->
-        <a href="https://www.hr.com/directory/company/united_concordia_dental" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/united-concordia-dental-logo.jpg" alt="United Concordia Dental" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/united_concordia_dental" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/united-concordia-dental-logo.jpg"
+            alt="United Concordia Dental" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 15. Xobin -->
-        <a href="https://www.hr.com/directory/company/xobin" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/xobin-logo.jpg" alt="Xobin" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/xobin" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/xobin-logo.jpg"
+            alt="Xobin" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 16. V.A. Brown Consulting -->
-        <a href="https://www.hr.com/directory/company/v_a_brown_consulting_3" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/va-brown-logo.jpg" alt="V.A. Brown Consulting" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/v_a_brown_consulting_3" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/va-brown-logo.jpg"
+            alt="V.A. Brown Consulting" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 17. AwardCo -->
-        <a href="https://www.hr.com/directory/company/awardco_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg" alt="AwardCo" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/awardco_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg"
+            alt="AwardCo" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 18. Zapier -->
-        <a href="https://www.hr.com/directory/company/zapier_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg" alt="Zapier" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/zapier_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg"
+            alt="Zapier" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 19. LHH -->
-        <a href="https://www.hr.com/directory/company/lee_hecht_harrison_knightsbridge_2" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg" alt="LHH" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/lee_hecht_harrison_knightsbridge_2" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg"
+            alt="LHH" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 20. ChangeEngine -->
-        <a href="https://www.hr.com/directory/company/changeengine" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/change-engine-logo.jpg" alt="ChangeEngine" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/changeengine" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/change-engine-logo.jpg"
+            alt="ChangeEngine" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 21. Stadium -->
-        <a href="https://www.hr.com/directory/company/stadium" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/stadium-logo.jpg" alt="Stadium" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/stadium" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/stadium-logo.jpg"
+            alt="Stadium" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 22. Wellify -->
-        <a href="https://www.hr.com/directory/company/wellify_app" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/wellify-logo.jpg" alt="Wellify" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/wellify_app" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/wellify-logo.jpg"
+            alt="Wellify" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 23. ComplyEQ -->
-        <a href="https://www.hr.com/directory/company/complyeq" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/complyeq-logo.jpg" alt="ComplyEQ" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/complyeq" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/complyeq-logo.jpg"
+            alt="ComplyEQ" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 24. Bay Area Commuter Benefits -->
-        <a href="https://www.hr.com/directory/company/bay_area_commuter_benefits_program_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-bay-area-commuter-benefits-program-logo.jpg" alt="Bay Area Commuter Benefits" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/bay_area_commuter_benefits_program_1" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-bay-area-commuter-benefits-program-logo.jpg"
+            alt="Bay Area Commuter Benefits" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 25. Corporate Traditions -->
-        <a href="https://www.hr.com/directory/company/corporate_traditions" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-corporate-traditions-logo.jpg" alt="Corporate Traditions" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/corporate_traditions" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-corporate-traditions-logo.jpg"
+            alt="Corporate Traditions" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 26. Express Evaluations -->
-        <a href="https://www.hr.com/directory/company/express_evaluations_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-express-evaluations-logo.jpg" alt="Express Evaluations" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/express_evaluations_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-express-evaluations-logo.jpg"
+            alt="Express Evaluations" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 27. Performance Pro -->
-        <a href="https://www.hr.com/directory/company/hr_performance_solutions" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-performance-pro-logo.jpg" alt="Performance Pro" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/hr_performance_solutions" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-performance-pro-logo.jpg"
+            alt="Performance Pro" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 28. RXBenefits -->
-        <a href="https://www.hr.com/directory/company/rxbenefits" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-rxbenefits-logo.jpg" alt="RXBenefits" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/rxbenefits" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-rxbenefits-logo.jpg"
+            alt="RXBenefits" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 29. VM Mastered -->
-        <a href="https://www.hr.com/directory/company/vm_mastered_llc" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-vm-mastered-logo.jpg" alt="VM Mastered" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/vm_mastered_llc" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-vm-mastered-logo.jpg"
+            alt="VM Mastered" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 30. Wave Life -->
-        <a href="https://www.hr.com/directory/company/wave_life_inc_" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-wave-logo.jpg" alt="Wave Life" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/wave_life_inc_" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-wave-logo.jpg"
+            alt="Wave Life" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 31. Teamtailor -->
-        <a href="https://www.hr.com/directory/company/teamtailor" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-teamtailor-logo.jpg" alt="Teamtailor" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/teamtailor" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-teamtailor-logo.jpg"
+            alt="Teamtailor" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 32. CandorIQ -->
-        <a href="https://www.hr.com/directory/company/candoriq_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-candor-logo.png" alt="CandorIQ" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/candoriq_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-candor-logo.png"
+            alt="CandorIQ" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 33. Akwentis -->
-        <a href="https://www.hr.com/directory/company/akwentis_llc" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-akwentis-logo.png" alt="Akwentis" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/akwentis_llc" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-akwentis-logo.png"
+            alt="Akwentis" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 34. Tremendous -->
-        <a href="https://www.hr.com/directory/company/tremendous" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-tremendous-logo.jpg" alt="Tremendous" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/tremendous" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-tremendous-logo.jpg"
+            alt="Tremendous" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 35. Printfection -->
-        <a href="https://www.hr.com/directory/company/printfection_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-printfection-logo.jpg" alt="Printfection" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/printfection_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-printfection-logo.jpg"
+            alt="Printfection" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 36. OneSpan -->
-        <a href="https://www.hr.com/directory/company/onespan_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-onespan2-logo.jpg" alt="OneSpan" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/onespan_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-onespan2-logo.jpg"
+            alt="OneSpan" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 37. Center for Respectful Leadership -->
-        <a href="https://www.hr.com/directory/company/the_center_for_respectful_leadership" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-CRL-logo.jpg" alt="Center for Respectful Leadership" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/the_center_for_respectful_leadership" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-CRL-logo.jpg"
+            alt="Center for Respectful Leadership" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 38. Nava Benefits -->
-        <a href="https://www.hr.com/directory/company/nava_benefits" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-nava-logo.jpg" alt="Nava Benefits" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/nava_benefits" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-nava-logo.jpg"
+            alt="Nava Benefits" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 39. Tango -->
-        <a href="https://www.hr.com/directory/company/tango_card" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-tango-logo.jpg" alt="Tango" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/tango_card" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-tango-logo.jpg"
+            alt="Tango" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 40. Cypress Resilience -->
-        <a href="https://www.hr.com/directory/company/cypress_resilience_project" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-cypress-resilience-project-logo.jpg" alt="Cypress Resilience" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/cypress_resilience_project" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-cypress-resilience-project-logo.jpg"
+            alt="Cypress Resilience" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 41. Ramsey SmartDollar -->
-        <a href="https://www.hr.com/directory/company/smartdollar__ramsey_solutions" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-ramsey-smartdollar-logo.jpg" alt="Ramsey SmartDollar" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/smartdollar__ramsey_solutions" target="_blank"
+          rel="noopener noreferrer" class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-ramsey-smartdollar-logo.jpg"
+            alt="Ramsey SmartDollar" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 42. OrgChart -->
-        <a href="https://www.hr.com/directory/company/orgchart" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-orgchart-logo.jpg" alt="OrgChart" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/orgchart" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-orgchart-logo.jpg"
+            alt="OrgChart" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 43. Rocket Station -->
-        <a href="https://www.hr.com/directory/company/rocket_station_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-rocket-station-logo.jpg" alt="Rocket Station" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/rocket_station_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-rocket-station-logo.jpg"
+            alt="Rocket Station" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 44. Sparrow -->
-        <a href="https://www.hr.com/directory/company/sparrow" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-sparrow-logo.jpg" alt="Sparrow" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/sparrow" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-sparrow-logo.jpg"
+            alt="Sparrow" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 45. Inspira Financial -->
-        <a href="https://www.hr.com/directory/company/inspira_financial__1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-inspira-financial-logo.jpg" alt="Inspira Financial" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/inspira_financial__1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-inspira-financial-logo.jpg"
+            alt="Inspira Financial" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 46. Scalis -->
-        <a href="https://www.hr.com/directory/company/scalis" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-scalis-logo.jpg" alt="Scalis" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/scalis" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-scalis-logo.jpg"
+            alt="Scalis" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 47. Spot Pet Insurance -->
-        <a href="https://www.hr.com/directory/company/spot_pet_insurance" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-spot-pet-insurance-logo.jpg" alt="Spot Pet Insurance" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/spot_pet_insurance" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-spot-pet-insurance-logo.jpg"
+            alt="Spot Pet Insurance" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 48. SimpliVerified -->
-        <a href="https://www.hr.com/directory/company/simpliverified_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-simpli-verified-logo.jpg" alt="SimpliVerified" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/simpliverified_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-simpli-verified-logo.jpg"
+            alt="SimpliVerified" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 49. Brown & Brown -->
-        <a href="https://www.hr.com/directory/company/brown__brown_2" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-brown-and-brown-logo.jpg" alt="Brown & Brown" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/brown__brown_2" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-brown-and-brown-logo.jpg"
+            alt="Brown & Brown" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 50. Genomic Life -->
-        <a href="https://www.hr.com/directory/company/genomic_life" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-genomic-life-logo.jpg" alt="Genomic Life" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/genomic_life" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-genomic-life-logo.jpg"
+            alt="Genomic Life" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 51. OneDigital -->
-        <a href="https://www.hr.com/directory/company/onedigital_4" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-onedigital-logo.jpg" alt="OneDigital" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/onedigital_4" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-onedigital-logo.jpg"
+            alt="OneDigital" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 52. WorkBright -->
-        <a href="https://www.hr.com/directory/company/workbright_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-workbright-logo.jpg" alt="WorkBright" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/workbright_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-workbright-logo.jpg"
+            alt="WorkBright" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 53. RemoFirst -->
-        <a href="https://www.hr.com/directory/company/remofirst" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-remofirst-logo.jpg" alt="RemoFirst" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/remofirst" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-remofirst-logo.jpg"
+            alt="RemoFirst" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 54. Benepass -->
-        <a href="https://www.hr.com/directory/company/benepass" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-benepass-logo.jpg" alt="Benepass" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/benepass" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-benepass-logo.jpg"
+            alt="Benepass" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 55. Bevi -->
-        <a href="https://www.hr.com/directory/company/bevi_1" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-bevi-logo.jpg" alt="Bevi" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/directory/company/bevi_1" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/hr-west-hr-conference-sponsor-bevi-logo.jpg"
+            alt="Bevi" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 56. AlignHQ -->
-        <a href="https://www.hr.com/buyersguide/company/alignhq" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-AlignHQ-Logo.webp" alt="AlignHQ" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/buyersguide/company/alignhq" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-AlignHQ-Logo.webp"
+            alt="AlignHQ" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 57. McAfee -->
-        <a href="https://www.hr.com/buyersguide/company/mcafee" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-McAfee-Digital-Wellness-Logo.webp" alt="McAfee" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/buyersguide/company/mcafee" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-McAfee-Digital-Wellness-Logo.webp"
+            alt="McAfee" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 58. Take Command -->
-        <a href="https://www.hr.com/buyersguide/company/take_command_health" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-Take-Command-Logo.webp" alt="Take Command" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/buyersguide/company/take_command_health" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-HR-Conference-Sponsor-Take-Command-Logo.webp"
+            alt="Take Command" class="spn-logo-img" loading="lazy" />
         </a>
 
         <!-- 59. Motus -->
-        <a href="https://www.hr.com/buyersguide/company/motus" target="_blank" rel="noopener noreferrer" class="spn-logo-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-Conference-Sponsor-Motus-Logo.jpg" alt="Motus" class="spn-logo-img" loading="lazy" />
+        <a href="https://www.hr.com/buyersguide/company/motus" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img
+            src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/sponsor-logos/HR-West-Conference-Sponsor-Motus-Logo.jpg"
+            alt="Motus" class="spn-logo-img" loading="lazy" />
         </a>
 
       </div>
@@ -789,13 +1131,20 @@
             Connect directly with over 500+ HR directors, CHROs, and talent executives in the San Francisco Bay Area.
           </p>
           <div class="spn-cta-buttons">
-            <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247_bottom" name="fc_1786988265247" onclick="loadPopup('fc_1786988265247')">
+            <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247_bottom" name="fc_1786988265247"
+              disabled style="opacity: 0.65; cursor: not-allowed !important; pointer-events: none; box-shadow: none;">
               Download Sponsorship Brochure
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
             </button>
-            <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="spn-btn-outline">
+            <a href="/en/webcasts_events/live_events/hrwest-2027-registration_msy2qo61.html" class="spn-btn-outline">
               Register
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
         </div>

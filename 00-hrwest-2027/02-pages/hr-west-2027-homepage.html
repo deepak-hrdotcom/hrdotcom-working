@@ -1,45 +1,117 @@
-<style>
-  /* Prevent Flash of Unwanted CMS Content (FOUC) */
-  #intro-header,
-  section#intro-header,
-  div#intro-header,
-  .sf-nav-main,
-  .socialshare,
-  #socialshare,
-  .social-share,
-  .floating-social,
-  .st-sticky-share-buttons,
-  div[class*="socialshare"],
-  div[id*="socialshare"],
-  #content,
-  .TopLink_new,
-  .TopBar,
-  #hradbtmwrapper {
+<style id="hrw27-fouc-blocker" type="text/css">/* 0ms Synchronous FOUC and CMS Parent Widget Suppression */
+  .TopLink_new, #loggedIn_TopLink, div#loggedIn_TopLink, div.TopLink_new,
+  .TopBar, div.TopBar, #TopBar,
+  .HeaderWrap, div.HeaderWrap, .HeaderBG, div.HeaderBG,
+  .headertopbg, div.headertopbg, .TopHeader, div.TopHeader,
+  .HeaderMain, div.HeaderMain, .header-top, .header-bottom,
+  .site-header, #site-header,
+  body > header:not(.hrw27-header), body > div.header:not(.hrw27-header),
+  body > div.HeaderWrap, body > div.HeaderBG, body > div.TopHeader,
+  body > div.TopBar, body > div.TopLink_new,
+  body > nav:not(.hrw27-nav), body > .navbar:not(.hrw27-nav),
+  #header:not(.hrw27-header), header.header:not(.hrw27-header), div.header:not(.hrw27-header),
+  #intro-header, section#intro-header, div#intro-header, header#intro-header,
+  .sf-nav-main, div.sf-nav-main, nav.sf-nav-main, header.sf-nav-main,
+  .socialshare, #socialshare, .social-share, .floating-social,
+  .st-sticky-share-buttons, div[class*="socialshare"], div[id*="socialshare"],
+  #content, #hradbtmwrapper {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -99999px !important;
+    z-index: -99999 !important;
+    pointer-events: none !important;
   }
-
-  body,
-  body.sf-nav-main-mode,
-  .sf-nav-main-mode {
+  html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
   }
+  body { background: #ffffff !important; margin: 0 !important; padding: 0 !important; }
+  .hrw27-header {
+    border: 0 !important; padding-block: 0 !important; margin-bottom: 0 !important;
+    padding: 0 !important; margin: 0 !important; overflow: visible !important; z-index: 99999 !important;
+  }
+  .ContentArea, .container {
+    max-width: 100% !important; width: 100% !important;
+    padding-left: 0 !important; padding-right: 0 !important;
+    margin-left: 0 !important; margin-right: 0 !important;
+  }
+  *, *::before, *::after { -webkit-tap-highlight-color: transparent !important; }
+  a, a:hover, a:focus, a:focus-visible, a:active, a:visited, a:link,
+  button, button:hover, button:focus, button:focus-visible, button:active,
+  :focus, :focus-visible, :active {
+    text-decoration: none !important;
+    outline: none !important; outline-width: 0 !important;
+    outline-style: none !important; outline-color: transparent !important;
+  }
 </style>
-
 <script>
-  (function () {
-    function applyEarlyReset() {
-      if (document.body) {
-        document.body.style.setProperty('padding-top', '0px', 'important');
-        document.body.style.setProperty('margin-top', '0px', 'important');
-      }
+(function() {
+  'use strict';
+  var sels = [
+    '.TopLink_new','#loggedIn_TopLink','div#loggedIn_TopLink','div.TopLink_new',
+    '.TopBar','div.TopBar','#TopBar',
+    '.HeaderWrap','div.HeaderWrap','.HeaderBG','div.HeaderBG',
+    '.headertopbg','div.headertopbg','.TopHeader','div.TopHeader',
+    '.HeaderMain','div.HeaderMain','.header-top','.header-bottom',
+    '.site-header','#site-header',
+    '#intro-header','section#intro-header','div#intro-header','header#intro-header',
+    '.sf-nav-main','div.sf-nav-main','nav.sf-nav-main',
+    '.socialshare','#socialshare','.social-share','.floating-social',
+    '.st-sticky-share-buttons','#hradbtmwrapper',
+    'body > header:not(.hrw27-header)','body > div.header:not(.hrw27-header)',
+    'body > div.HeaderWrap','body > div.HeaderBG','body > div.TopHeader',
+    'body > div.TopBar','body > div.TopLink_new','body > nav:not(.hrw27-nav)',
+    '#header:not(.hrw27-header)','header.header:not(.hrw27-header)','div.header:not(.hrw27-header)'
+  ];
+  var ks = document.createElement('style');
+  ks.id = 'hrw27-root-fouc-killer';
+  ks.textContent = sels.join(',') + '{display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;max-height:0!important;overflow:hidden!important;position:absolute!important;top:-99999px!important;left:-99999px!important;z-index:-99999!important;pointer-events:none!important;}';
+  (document.head || document.documentElement).appendChild(ks);
+  function kill() {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty('padding-top','0px','important');
+      document.documentElement.style.setProperty('margin-top','0px','important');
     }
-    applyEarlyReset();
-    document.addEventListener('DOMContentLoaded', applyEarlyReset);
-  })();
+    if (document.body) {
+      document.body.style.setProperty('padding-top','0px','important');
+      document.body.style.setProperty('margin-top','0px','important');
+    }
+    sels.forEach(function(s) {
+      try {
+        var els = document.querySelectorAll(s);
+        for (var i = 0; i < els.length; i++) {
+          if (els[i].classList && els[i].classList.contains('hrw27-header')) continue;
+          els[i].style.setProperty('display','none','important');
+          els[i].style.setProperty('visibility','hidden','important');
+          els[i].style.setProperty('opacity','0','important');
+          els[i].style.setProperty('height','0px','important');
+          els[i].style.setProperty('position','absolute','important');
+          els[i].style.setProperty('top','-99999px','important');
+          if (els[i].parentNode) els[i].parentNode.removeChild(els[i]);
+        }
+      } catch(e) {}
+    });
+  }
+  kill();
+  if (window.MutationObserver) {
+    var obs = new MutationObserver(kill);
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class','style'], childList: true, subtree: true });
+    window.addEventListener('DOMContentLoaded', kill);
+    window.addEventListener('load', function() { kill(); setTimeout(function(){ obs.disconnect(); }, 4000); });
+  }
+})();
 </script>
-<style>
-  /* Hero Split Section Scoped Layout Styles */
+<style type="text/css">/* Hero Split Section Scoped Layout Styles */
   .hrw27 .hero-split-section {
     position: relative !important;
     width: 100% !important;
@@ -123,10 +195,246 @@
     }
   }
 
+  /* Scoped Mobile Responsive Enhancements */
+  .hrw27 .show-mobile {
+    display: none !important;
+  }
+
   @media (max-width: 768px) {
     .hrw27 .section-pad {
       padding-top: 40px !important;
       padding-bottom: 40px !important;
+    }
+
+    .hrw27 .hide-mobile {
+      display: none !important;
+    }
+
+    .hrw27 .show-mobile {
+      display: flex !important;
+    }
+
+    /* Hero Section Mobile Alignment */
+    .hrw27 .hero-date-badge {
+      display: none !important;
+    }
+
+    .hrw27 .hero-brand-lockup {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 1rem !important;
+      margin-bottom: 1.25rem !important;
+    }
+
+    .hrw27 .hero-brand-logo {
+      margin: 0 auto !important;
+      height: 76px !important;
+    }
+
+    .hrw27 .hero-h1 {
+      text-align: center !important;
+      margin: 0 auto !important;
+    }
+
+    .hrw27 .hero-sub-wrap {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-bottom: 1.75rem !important;
+    }
+
+    .hrw27 .hero-cta-group {
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-bottom: 2rem !important;
+      gap: 12px !important;
+    }
+
+    .hrw27 .hero-cta-group .btn {
+      width: 100% !important;
+      max-width: 320px !important;
+      justify-content: center !important;
+    }
+
+    /* Early Bird Strip Mobile Polish */
+    .hrw27 .eb-strip-wrap {
+      padding: 16px 16px !important;
+    }
+
+    .hrw27 .eb-strip-inner {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 10px !important;
+    }
+
+    .hrw27 .eb-badge-group {
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    .hrw27 .eb-price-group {
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 6px 10px !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    .hrw27 .eb-cta-btn {
+      width: 100% !important;
+      max-width: 280px !important;
+      justify-content: center !important;
+      padding: 9px 20px !important;
+      margin-top: 4px !important;
+    }
+
+    /* Track Carousel Slider Navigation (Pure Touch Swipe on Mobile) */
+    .hrw27 .track-arrows-desktop {
+      display: none !important;
+    }
+
+    .hrw27 .track-arrows-mobile {
+      display: none !important;
+    }
+
+    .hrw27 .track-footer-wrap {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      gap: 12px !important;
+      margin-top: 18px !important;
+      width: 100% !important;
+    }
+
+    .hrw27 .track-footer-wrap .btn {
+      width: 100% !important;
+      max-width: 320px !important;
+      justify-content: center !important;
+    }
+
+    /* Multi-line Wrapping for Long Buttons */
+    .hrw27 .spk-roster-btn,
+    .hrw27 .testi-all-btn {
+      white-space: normal !important;
+      max-width: 360px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      justify-content: center !important;
+      line-height: 1.35 !important;
+      padding: 14px 24px !important;
+    }
+
+    /* Venue Section Mobile Fixes (Screenshot 1) */
+    .hrw27 .venue-grid {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .hrw27 .venue-text-col {
+      text-align: center !important;
+    }
+
+    .hrw27 .venue-text-col h2,
+    .hrw27 .venue-text-col p {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .hrw27 .venue-stat-group {
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    .hrw27 .venue-btn {
+      width: 100% !important;
+      max-width: 320px !important;
+      justify-content: center !important;
+      margin: 0 auto !important;
+    }
+
+    .hrw27 .venue-img-card {
+      height: 220px !important;
+      max-height: 240px !important;
+      width: 100% !important;
+      margin-top: 10px !important;
+    }
+
+    .hrw27 .venue-img-card img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center 25% !important;
+    }
+
+    /* Final CTA Banner Mobile Fixes (Screenshot 2) */
+    .hrw27 .final-cta-card {
+      padding: 28px 20px !important;
+    }
+
+    .hrw27 .final-cta-grid {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .hrw27 .final-cta-text-col {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+
+    .hrw27 .final-cta-text-col h2,
+    .hrw27 .final-cta-text-col p {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .hrw27 .final-cta-eb-pill {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      padding: 8px 16px !important;
+      border-radius: var(--radius-md) !important;
+      width: 100% !important;
+      max-width: 300px !important;
+      margin: 0 auto 16px auto !important;
+    }
+
+    .hrw27 .final-cta-eb-prices {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      justify-content: center !important;
+    }
+
+    .hrw27 .final-cta-btn-group {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      width: 100% !important;
+    }
+
+    .hrw27 .final-cta-btn-group .btn {
+      width: 100% !important;
+      max-width: 320px !important;
+      justify-content: center !important;
+    }
+
+    .hrw27 .final-cta-img-card {
+      height: 200px !important;
+      max-height: 220px !important;
+      width: 100% !important;
+      margin-top: 14px !important;
     }
   }
 
@@ -144,1294 +452,639 @@
     }
   }
 </style>
-
-<div class="hrw27">
-
-  <!-- 1. Hero Split Layout -->
-  <section class="hero-split-section">
-
-    <!-- Ambient Glow -->
-    <div
-      style="position: absolute; top: 10%; left: -5%; width: 40vw; height: 50vh; background: radial-gradient(circle, rgba(93, 47, 199, 0.09) 0%, transparent 70%); filter: blur(40px); pointer-events: none; z-index: 0;">
-    </div>
-
-    <!-- Angled Full-Bleed Right-Side Background Image Layer -->
-    <div class="hero-image-clip">
-      <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp"
-        alt="HRWest 2027 Conference" class="img-cover"
-        style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;" />
-      <div
-        style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(11,15,23,0.35) 0%, var(--color-canvas, #fcfcff) 100%), linear-gradient(to top, rgba(11,15,23,0.75) 0%, transparent 60%);">
-      </div>
-    </div>
-
-    <!-- Centered Max-Width Container (Aligns with Header Navigation & Rest of Page) -->
-    <div class="container-inner" style="position: relative; z-index: 2;">
-      <div class="hero-split-grid">
-
-        <!-- Left Column: Content -->
-        <div class="hero-content-col">
-
-          <!-- Sleek Date and Countdown Badge -->
-          <div
-            style="display: inline-flex; align-items: center; gap: 0.65rem; background: linear-gradient(135deg, var(--brand-glow-08), var(--brand-pink-glow-08)); border: 1.5px solid var(--brand-pink-glow-20); border-radius: var(--radius-full); padding: 0.45rem 1.1rem 0.45rem 0.65rem; margin-bottom: 1.5rem; width: fit-content; box-shadow: 0 4px 15px rgba(239,20,110,0.06);">
-            <span
-              style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: var(--radius-full); padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.78rem; box-shadow: 0 2px 8px var(--brand-pink-glow-25);">
-              March 23-24, 2027
-            </span>
-            <span
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--color-brand-purple); display: flex; align-items: center; gap: 0.35rem;">
-              South San Francisco, CA · <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" style="color: var(--color-brand-purple);">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg> <span id="hrw27-days-away">218</span> Days Away
-            </span>
-          </div>
-
-          <!-- Main Headline with Brand Logo Lockup -->
-          <div class="hero-animate-2" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png"
-              alt="HR West Conference Logo"
-              style="height: 88px; width: auto; max-height: 96px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06)); display: block; flex-shrink: 0;" />
-            <div>
-              <h1
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.15; letter-spacing: -0.035em; color: var(--color-text-primary); margin: 0;">
-                HRWest 2027:<br />
-                <span class="hero-glow-text">Imagine What's Possible</span>
-              </h1>
-            </div>
-          </div>
-
-          <!-- Subtitle Paragraph -->
-          <div class="hero-animate-3" style="margin-bottom: 2.25rem; max-width: 580px;">
-            <p
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: clamp(1.15rem, 1.6vw, 1.35rem); color: var(--color-text-primary); line-height: 1.4; margin: 0 0 0.75rem 0; letter-spacing: -0.015em;">
-              The most impactful HR transformation conference on the West Coast!
-            </p>
-            <p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.65; margin: 0;">
-              Connect with <strong>500+ HR decision-makers</strong>, earn <strong
-                style="color: var(--color-brand-pink);">SHRM and HRCI credits</strong>, and walk away with strategies
-              you can implement Monday morning and for years to come.
-            </p>
-          </div>
-
-          <!-- CTA Buttons -->
-          <div class="hero-animate-4" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
-            <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html"
-              class="btn btn-primary btn-lg">
-              Register
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html"
-              class="btn btn-outline btn-lg">
-              Sponsor & Exhibit
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Right Column: Glass Video Card -->
-        <div class="hero-image-col">
-          <div class="fade-scale"
-            style="position: relative; z-index: 3; width: 100%; max-width: 520px; margin: 0 0 0 auto;">
-            <div
-              style="background: rgba(11, 15, 23, 0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-radius: var(--radius-xl); padding: 1.25rem; border: 1.5px solid rgba(255, 255, 255, 0.22); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(93, 47, 199, 0.25); color: #ffffff;">
-
-              <div
-                style="position: relative; padding-top: 56.25%; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.65); margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.15);">
-                <iframe
-                  src="https://www.youtube.com/embed/REG_71cn0wY?si=wYaJT6Cys4mFhucj&autoplay=1&mute=1&rel=0&loop=1&playlist=REG_71cn0wY"
-                  title="HRWest 2027 Conference Experience"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
-              </div>
-
-              <div>
-                <div
-                  style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 1.1rem; color: #ffffff; letter-spacing: -0.01em;">
-                  Experience the Energy of HRWest 2027
-                </div>
-                <div
-                  style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.85); margin-top: 0.3rem; line-height: 1.55;">
-                  Join 500+ HR leaders and solution providers in South San Francisco to drive your career and company
-                  forward.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-  <!-- 2. Early Bird Urgency Strip -->
-  <section class="section-wrap"
-    style="background: var(--gradient-pink); padding: 14px 24px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(239, 20, 110, 0.25);">
-    <div
-      style="position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%); animation: hrw27-shimmer 3s infinite; pointer-events: none;">
-    </div>
-
-    <div class="container-inner"
-      style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; position: relative; z-index: 1;">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 18px;">🔥</span>
-        <span
-          style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: #ffffff; letter-spacing: -0.01em;">
-          Early Bird Registration Open
-        </span>
-        <span
-          style="background: #ffffff; color: var(--color-brand-pink); font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; padding: 3px 10px; border-radius: var(--radius-full); box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-transform: uppercase; letter-spacing: 0.04em;">
-          Save 50%
-        </span>
-      </div>
-
-      <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.35);" class="hide-mobile"></div>
-
-      <!-- Explicit Price Comparison Lockup -->
-      <div
-        style="display: flex; align-items: center; gap: 8px; font-family: 'Outfit', system-ui, sans-serif; font-size: 14px; color: #ffffff;">
-        <span style="opacity: 0.95;">Limited Rate (Ends Jan 15):</span>
-        <span
-          style="background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.45); padding: 3px 10px; border-radius: var(--radius-sm); font-weight: 900; font-size: 15px; color: #ffffff; letter-spacing: -0.02em;">
-          $399 Early Bird
-        </span>
-        <span style="text-decoration: line-through; opacity: 0.85; font-size: 13px; font-weight: 600;">
-          $799 Regular
-        </span>
-      </div>
-
-      <a id="hrw27-eb-btn" href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html"
-        style="background: #ffffff; color: var(--color-brand-pink); font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 13px; padding: 8px 18px; border-radius: var(--radius-full); text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,0.15); display: inline-flex; align-items: center; gap: 6px; transition: transform 0.2s ease;">
-        Register
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- 3. Social Proof Dual-Row Marquee Showcase -->
-  <section class="section-wrap"
-    style="background: var(--color-surface); padding: 42px 0; border-bottom: 1px solid var(--color-subtle); display: flex; flex-direction: column; gap: 20px;">
-
-    <div class="container-inner" style="text-align: center;">
-      <span class="eyebrow" style="margin-bottom: 10px;">Trusted by HR Leaders. Backed by Industry</span>
-      <h2 class="section-h2" style="margin: 0 auto !important;">
-        See Who Shows Up at HRWest
-      </h2>
-    </div>
-
-    <!-- Row 1: Photos from HRWest 2026 (Scrolls Left) -->
-    <div class="marquee-track">
-      <div class="marquee-strip">
-        <!-- Loop 1 -->
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp"
-            alt="Yael Schy Emcee" loading="lazy" />
-          <div class="photo-marquee-caption">Yael Schy Emcee</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp"
-            alt="Jane Kow Legal Session" loading="lazy" />
-          <div class="photo-marquee-caption">Jane Kow Legal Session</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp"
-            alt="Jason Averbook Opening" loading="lazy" />
-          <div class="photo-marquee-caption">Jason Averbook Opening</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp"
-            alt="Let's Build Workshop" loading="lazy" />
-          <div class="photo-marquee-caption">Let's Build Workshop</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp"
-            alt="Let's Build Part 1" loading="lazy" />
-          <div class="photo-marquee-caption">Let's Build Part 1</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp"
-            alt="Allison West Keynote" loading="lazy" />
-          <div class="photo-marquee-caption">Allison West Keynote</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp"
-            alt="Attendees Networking" loading="lazy" />
-          <div class="photo-marquee-caption">Attendees Networking</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp"
-            alt="Exhibitor Expo" loading="lazy" />
-          <div class="photo-marquee-caption">Exhibitor Expo</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp"
-            alt="Closing Keynote" loading="lazy" />
-          <div class="photo-marquee-caption">Closing Keynote</div>
-        </div>
-
-        <!-- Loop 2 -->
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp"
-            alt="Yael Schy Emcee" loading="lazy" />
-          <div class="photo-marquee-caption">Yael Schy Emcee</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp"
-            alt="Jane Kow Legal Session" loading="lazy" />
-          <div class="photo-marquee-caption">Jane Kow Legal Session</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp"
-            alt="Jason Averbook Opening" loading="lazy" />
-          <div class="photo-marquee-caption">Jason Averbook Opening</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp"
-            alt="Let's Build Workshop" loading="lazy" />
-          <div class="photo-marquee-caption">Let's Build Workshop</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp"
-            alt="Let's Build Part 1" loading="lazy" />
-          <div class="photo-marquee-caption">Let's Build Part 1</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp"
-            alt="Allison West Keynote" loading="lazy" />
-          <div class="photo-marquee-caption">Allison West Keynote</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp"
-            alt="Attendees Networking" loading="lazy" />
-          <div class="photo-marquee-caption">Attendees Networking</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp"
-            alt="Exhibitor Expo" loading="lazy" />
-          <div class="photo-marquee-caption">Exhibitor Expo</div>
-        </div>
-        <div class="photo-marquee-card">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp"
-            alt="Closing Keynote" loading="lazy" />
-          <div class="photo-marquee-caption">Closing Keynote</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2: Enterprise Sponsor Logos (Scrolls Right in Reverse) -->
-    <div class="marquee-track">
-      <div class="marquee-strip-reverse">
-        <!-- Loop 1 -->
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg"
-            alt="PerformYard" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png"
-            alt="SAP SuccessFactors" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg"
-            alt="UKG" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg"
-            alt="Robert Half" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg"
-            alt="Insperity" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg"
-            alt="Alliant Insurance" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg"
-            alt="AwardCo" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg"
-            alt="Zapier" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg"
-            alt="LHH" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg"
-            alt="HUB International" /></div>
-
-        <!-- Loop 2 -->
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg"
-            alt="PerformYard" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png"
-            alt="SAP SuccessFactors" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg"
-            alt="UKG" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg"
-            alt="Robert Half" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg"
-            alt="Insperity" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg"
-            alt="Alliant Insurance" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg"
-            alt="AwardCo" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg"
-            alt="Zapier" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg"
-            alt="LHH" /></div>
-        <div class="marquee-logo-pill"><img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg"
-            alt="HUB International" /></div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- 4. Animated Stat Counters -->
-  <section class="section-wrap section-pad" style="background: var(--color-canvas);">
-    <div class="container-inner">
-
-      <div class="fade-up" style="text-align: center; margin-bottom: 32px;">
-        <span class="eyebrow" style="margin-bottom: 10px;">By the Numbers</span>
-        <h2 class="section-h2" style="max-width: 750px; margin: 0 auto !important;">
-          Why 500+ HR Leaders<br />Choose HRWest
-        </h2>
-      </div>
-
-      <div class="grid-3">
-        <!-- Stat 1 -->
-        <div class="card fade-up delay-1" style="text-align: center;">
-          <div
-            style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-              <line x1="8" y1="23" x2="16" y2="23"></line>
-            </svg>
-          </div>
-          <div data-target="50" data-suffix="+"
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">
-            50+</div>
-          <div
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">
-            Expert-Led Sessions</div>
-          <div class="body-sm">Actionable keynotes & roundtables</div>
-        </div>
-
-        <!-- Stat 2 -->
-        <div class="card fade-up delay-2" style="text-align: center;">
-          <div
-            style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-pink-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-pink);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="7"></circle>
-              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-            </svg>
-          </div>
-          <div data-target="8" data-suffix="+"
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">
-            8+</div>
-          <div
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">
-            SHRM & HRCI Credits</div>
-          <div class="body-sm">Accelerate your recertification</div>
-        </div>
-
-        <!-- Stat 3 -->
-        <div class="card fade-up delay-3" style="text-align: center;">
-          <div
-            style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-              <line x1="9" y1="22" x2="9" y2="22.01"></line>
-              <line x1="15" y1="22" x2="15" y2="22.01"></line>
-              <line x1="9" y1="18" x2="9" y2="18.01"></line>
-              <line x1="15" y1="18" x2="15" y2="18.01"></line>
-              <line x1="9" y1="14" x2="9" y2="14.01"></line>
-              <line x1="15" y1="14" x2="15" y2="14.01"></line>
-              <line x1="9" y1="10" x2="9" y2="10.01"></line>
-              <line x1="15" y1="10" x2="15" y2="10.01"></line>
-              <line x1="9" y1="6" x2="9" y2="6.01"></line>
-              <line x1="15" y1="6" x2="15" y2="6.01"></line>
-            </svg>
-          </div>
-          <div data-target="30" data-suffix="+"
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">
-            30+</div>
-          <div
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">
-            Solution Providers</div>
-          <div class="body-sm">See cutting-edge HR solutions</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 5. Featured Speakers and Faculty -->
-  <section class="section-wrap section-pad" style="background: var(--color-surface);">
-    <div class="container-inner">
-
-      <div class="fade-up" style="text-align: center; margin-bottom: 32px;">
-        <span class="eyebrow" style="margin-bottom: 10px;">2026 Speaker Highlights</span>
-        <h2 class="section-h2" style="max-width: 720px; margin: 0 auto 8px auto !important;">
-          Real Experts Who<br />Help HR Move Forward
-        </h2>
-        <p class="body-md" style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">
-          A look at the transformative keynotes and industry leaders from our previous edition while the 2027 faculty is
-          being finalized.
-        </p>
-      </div>
-
-      <!-- Spotlight Grid -->
-      <div class="grid-3" style="margin-bottom: 28px; align-items: stretch;">
-
-        <!-- Speaker 1: Jason Averbook -->
-        <div class="card fade-up delay-1" style="display: flex; flex-direction: column; padding: 24px;">
-          <div
-            style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp"
-              alt="Jason Averbook" class="img-cover"
-              style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
-          </div>
-          <h3
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">
-            Jason Averbook</h3>
-          <div style="font-size: 14px; font-weight: 700; color: var(--color-brand-purple); margin-bottom: 2px;">Global
-            HR Transformation Leader and Author</div>
-          <div style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 14px;">Now to Next</div>
-
-          <div
-            style="background: rgba(93, 47, 199, 0.05); border-radius: var(--radius-sm); padding: 10px 12px; margin-bottom: 16px; border-left: 3px solid var(--color-brand-purple);">
-            <div
-              style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--color-brand-purple); letter-spacing: 0.05em; margin-bottom: 2px;">
-              Headline Keynote</div>
-            <div style="font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.4;">"The
-              AI-First HR Function: Strategy, Structure, and Systems"</div>
-          </div>
-
-          <div
-            style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: space-between;">
-            <span class="badge badge-purple">HR Strategy and AI</span>
-            <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html"
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-brand-purple); display: inline-flex; align-items: center; gap: 4px;">
-              Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2.5">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Center Testimonial Card with Auto-Play Video Transition -->
-        <div id="hrw27-quote-video-card" class="fade-up delay-2"
-          style="background: var(--gradient-brand-soft); border: 2px solid var(--brand-glow-25); border-radius: var(--radius-lg); position: relative; overflow: hidden; min-height: 480px; display: flex; flex-direction: column; box-shadow: 0 12px 35px rgba(93,47,199,0.1); transition: all 0.3s ease;">
-
-          <!-- Background Video Layer (HTML5 Video with Automatic Playback & Mute/Unmute Controls) -->
-          <div id="hrw27-video-wrapper"
-            style="position: absolute; inset: 0; width: 100%; height: 100%; background: #0b0814; z-index: 1; overflow: hidden;">
-            <video id="hrw27-testimonial-video" playsinline muted preload="none"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
-              <source
-                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/fetterly_4.mp4"
-                type="video/mp4" />
-            </video>
-
-            <!-- Vignette Gradients for Badge & Control Legibility -->
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,8,20,0.65) 0%, transparent 28%, transparent 55%, rgba(11,8,20,0.92) 100%); pointer-events: none; z-index: 2;">
-            </div>
-
-            <!-- Top Floating Bar: Badge (Left) & Mute/Unmute (Right) -->
-            <div
-              style="position: absolute; top: 14px; left: 14px; right: 14px; z-index: 10; display: flex; align-items: center; justify-content: space-between;">
-              <span class="badge badge-pink"
-                style="background: rgba(239, 20, 110, 0.9); color: #ffffff; border: none; font-size: 11px; padding: 5px 12px; backdrop-filter: blur(8px); box-shadow: 0 2px 10px rgba(239,20,110,0.4);">
-                Attendee Reaction
-              </span>
-
-              <!-- Mute / Unmute Toggle Button -->
-              <button id="hrw27-video-mute-btn" type="button" aria-label="Unmute Video"
-                style="background: rgba(11, 15, 23, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1.5px solid rgba(255, 255, 255, 0.4); border-radius: var(--radius-full); padding: 7px 14px; color: #ffffff; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.5);">
-                <svg id="hrw27-mute-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                  <line x1="23" y1="9" x2="17" y2="15"></line>
-                  <line x1="17" y1="9" x2="23" y2="15"></line>
-                </svg>
-                <span id="hrw27-mute-text">Unmute</span>
-              </button>
-            </div>
-
-            <!-- Bottom Floating Controls & Attendee Info -->
-            <div
-              style="position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
-
-              <!-- Video Scrub / Progress Bar -->
-              <div
-                style="width: 100%; height: 4px; background: rgba(255,255,255,0.25); border-radius: 2px; overflow: hidden; cursor: pointer;">
-                <div id="hrw27-video-time-progress"
-                  style="width: 0%; height: 100%; background: var(--gradient-pink); transition: width 0.1s linear;">
-                </div>
-              </div>
-
-              <!-- Controls Row: Play/Pause, Replay & Caption -->
-              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <!-- Play / Pause Button -->
-                  <button id="hrw27-video-play-btn" type="button" aria-label="Pause Video"
-                    style="width: 34px; height: 34px; border-radius: 50%; background: var(--gradient-brand); color: #ffffff; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px var(--brand-glow-35); transition: transform 0.2s ease;">
-                    <svg id="hrw27-play-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <rect x="6" y="4" width="4" height="16"></rect>
-                      <rect x="14" y="4" width="4" height="16"></rect>
-                    </svg>
-                  </button>
-
-                  <!-- Replay Button -->
-                  <button id="hrw27-video-replay-btn" type="button" aria-label="Replay Video" title="Replay Video"
-                    style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                      <path d="M3 3v5h5" />
-                    </svg>
-                  </button>
-                </div>
-
-                <!-- Attendee Caption -->
-                <div style="text-align: right; color: #ffffff;">
-                  <div
-                    style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13.5px; line-height: 1.1; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
-                    Katelynn Fetterly
-                  </div>
-                  <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); margin-top: 2px;">
-                    HRWest Attendee
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Animated Quote Layer (Shows quote for 7s, then smoothly crossfades into video) -->
-          <div id="hrw27-quote-layer"
-            style="position: absolute; inset: 0; z-index: 3; background: linear-gradient(135deg, #f8f6ff 0%, #fff0f6 100%); padding: 36px 26px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; cursor: pointer; transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);">
-            <div
-              style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-              <span class="badge badge-pink"
-                style="margin-bottom: 18px; padding: 6px 16px; font-size: 12px; box-shadow: 0 2px 8px rgba(239,20,110,0.12);">
-                Attendee Experience
-              </span>
-
-              <div
-                style="font-size: 44px; color: var(--color-brand-purple); line-height: 0.8; margin-bottom: 10px; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; opacity: 0.85;">
-                "</div>
-              <blockquote
-                style="font-family: 'Outfit', system-ui, sans-serif; font-size: 1.32rem; font-weight: 800; color: var(--color-text-primary); line-height: 1.42; margin: 0 0 16px 0; letter-spacing: -0.015em;">
-                "The sessions are so attuned to what is happening in the HR environment!"
-              </blockquote>
-
-              <div
-                style="width: 40px; height: 3px; background: var(--gradient-pink); border-radius: 2px; margin-bottom: 12px;">
-              </div>
-
-              <div
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 16px; color: var(--color-brand-purple);">
-                Katelynn Fetterly
-              </div>
-              <div
-                style="font-size: 13px; font-weight: 600; color: var(--color-text-muted); margin-top: 2px; margin-bottom: 20px;">
-                HRWest 2026 Attendee
-              </div>
-
-              <!-- Animated Video Preview Countdown Pill -->
-              <div
-                style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', system-ui, sans-serif; font-size: 12px; font-weight: 800; color: var(--color-brand-purple); background: rgba(93, 47, 199, 0.08); border: 1px solid rgba(93, 47, 199, 0.2); padding: 5px 14px; border-radius: var(--radius-full);">
-                <span
-                  style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-pink); animation: hrw27-pulse 1.5s infinite;"></span>
-                <span>Playing Video in <strong id="hrw27-quote-countdown">7</strong>s...</span>
-              </div>
-            </div>
-
-            <!-- Bottom Progress Indicator -->
-            <div
-              style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(93, 47, 199, 0.1);">
-              <div id="hrw27-quote-progress"
-                style="width: 0%; height: 100%; background: var(--gradient-pink); transition: width 7s linear;"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Speaker 2: Allison West -->
-        <div class="card fade-up delay-3" style="display: flex; flex-direction: column; padding: 24px;">
-          <div
-            style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp"
-              alt="Allison West" class="img-cover"
-              style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
-          </div>
-          <h3
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">
-            Allison West, Esq., SHRM-SCP</h3>
-          <div style="font-size: 14px; font-weight: 700; color: var(--color-brand-purple); margin-bottom: 2px;">
-            Principal and Employment Law Specialist</div>
-          <div style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 14px;">Employment Practices
-            Specialists</div>
-
-          <div
-            style="background: rgba(93, 47, 199, 0.05); border-radius: var(--radius-sm); padding: 10px 12px; margin-bottom: 16px; border-left: 3px solid var(--color-brand-purple);">
-            <div
-              style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--color-brand-purple); letter-spacing: 0.05em; margin-bottom: 2px;">
-              Feature Session</div>
-            <div style="font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.4;">
-              "Documentation Mistakes Plaintiff Attorneys Hope You'll Keep Making"</div>
-          </div>
-
-          <div
-            style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: space-between;">
-            <span class="badge badge-purple">Legal and Compliance</span>
-            <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html"
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-brand-purple); display: inline-flex; align-items: center; gap: 4px;">
-              Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2.5">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Faculty Grid -->
-      <div style="text-align: center; margin-bottom: 18px;">
-        <span
-          style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-brand-purple);">
-          Featured 2026 Faculty Highlights
-        </span>
-      </div>
-
-      <div class="grid-4" style="margin-bottom: 32px;">
-        <!-- Faculty 1 -->
-        <div class="card fade-up delay-1" style="padding: 18px;">
-          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg"
-              alt="Nancy Hauge" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <h4
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">
-            Nancy Hauge</h4>
-          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Chief People Experience
-            Officer</div>
-          <div style="font-size: 12px; color: var(--color-text-muted);">Automation Anywhere</div>
-        </div>
-
-        <!-- Faculty 2 -->
-        <div class="card fade-up delay-2" style="padding: 18px;">
-          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg"
-              alt="Treena Diebolt" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <h4
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">
-            Treena Diebolt</h4>
-          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Vice President, People</div>
-          <div style="font-size: 12px; color: var(--color-text-muted);">Otter.ai</div>
-        </div>
-
-        <!-- Faculty 3 -->
-        <div class="card fade-up delay-3" style="padding: 18px;">
-          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg"
-              alt="Debbie McGrath" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <h4
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">
-            Debbie McGrath</h4>
-          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">CEO, Founder and Chief
-            Instigator</div>
-          <div style="font-size: 12px; color: var(--color-text-muted);">HR.com</div>
-        </div>
-
-        <!-- Faculty 4 -->
-        <div class="card fade-up delay-4" style="padding: 18px;">
-          <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg"
-              alt="Lee Cage Jr." class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <h4
-            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">
-            Lee Cage Jr.</h4>
-          <div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Director, Enterprise
-            Transformation</div>
-          <div style="font-size: 12px; color: var(--color-text-muted);">BDO USA</div>
-        </div>
-      </div>
-
-      <!-- Speaker CTA -->
-      <div style="text-align: center;">
-        <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html"
-          class="btn btn-primary btn-lg">
-          View Full 2026 Speaker Roster and Bios
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 6. Conference Tracks -->
-  <section class="section-wrap section-pad" style="background: var(--color-canvas); position: relative;">
-    <div class="container-inner">
-
-      <!-- Header and Controls -->
-      <div
-        style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 20px;">
-        <div>
-          <span class="eyebrow" style="margin-bottom: 10px;">Curate Your Experience</span>
-          <h2 class="section-h2" style="margin: 0 0 8px 0 !important;">6 Deep-Dive Conference Tracks</h2>
-          <p class="body-md" style="margin: 0; max-width: 560px;">
-            Tailor your HRWest 2027 agenda across 6 specialized learning tracks designed for maximum workforce impact.
-          </p>
-        </div>
-
-        <!-- Slider Arrows -->
-        <div style="display: flex; gap: 12px;">
-          <button id="hrw27-track-prev" class="slider-btn"
-            style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm);"
-            aria-label="Previous Track">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          <button id="hrw27-track-next" class="slider-btn"
-            style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35);"
-            aria-label="Next Track">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Track Slider Carousel -->
-      <div id="hrw27-track-slider" class="track-slider">
-
-        <!-- Track 1: HR Strategy and AI -->
-        <div class="track-card">
-          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_ai_real.webp"
-              alt="HR Strategy and AI" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">
-            </div>
-          </div>
-          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
-            <h3
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">
-              HR Strategy and AI</h3>
-            <p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Explore forward-thinking strategies and
-              practical AI applications that help you drive better workforce and HR outcomes.</p>
-            <div
-              style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Strategy &amp; AI
-              </span>
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Track 2: Legal and Compliance -->
-        <div class="track-card">
-          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_legal_real.webp"
-              alt="Legal and Compliance" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">
-            </div>
-          </div>
-          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
-            <h3
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">
-              Legal and Compliance</h3>
-            <p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Get guidance from recognized authorities on
-              critical employment law updates, compliance issues, and managing workplace risk.</p>
-            <div
-              style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
-              <span class="badge badge-pink"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Legal &amp; Risk
-              </span>
-              <span class="badge badge-pink"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Track 3: HR Tech -->
-        <div class="track-card">
-          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_hrtech_real.webp"
-              alt="HR Tech" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">
-            </div>
-          </div>
-          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
-            <h3
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">
-              HR Tech</h3>
-            <p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Discover how to use innovative tools to
-              streamline your work, make better decisions, and create better employee experiences.</p>
-            <div
-              style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Tools &amp; Systems
-              </span>
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Track 4: Talent -->
-        <div class="track-card">
-          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_talent_real.webp"
-              alt="Talent" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">
-            </div>
-          </div>
-          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
-            <h3
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">
-              Talent</h3>
-            <p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Better approaches not only for attracting,
-              hiring, developing and retaining employees, but also for nurturing your own talent to advance your HR
-              career.</p>
-            <div
-              style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Talent &amp; Growth
-              </span>
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Track 5: Leadership -->
-        <div class="track-card">
-          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_leadership_real.webp"
-              alt="Leadership" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">
-            </div>
-          </div>
-          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
-            <h3
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">
-              Leadership</h3>
-            <p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Lead with greater impact. Discover how
-              today's HR leaders are developing people, influencing strategy, and driving organizational success.</p>
-            <div
-              style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Leadership Impact
-              </span>
-              <span class="badge badge-purple"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Track 6: Health, Wellness and Benefits -->
-        <div class="track-card">
-          <div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_wellness_real.webp"
-              alt="Health, Wellness and Benefits" class="img-cover"
-              style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">
-            </div>
-          </div>
-          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
-            <h3
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">
-              Health, Wellness &amp; Benefits</h3>
-            <p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Build a healthier, more engaged workforce
-              with modern approaches to well-being and benefits.</p>
-            <div
-              style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
-              <span class="badge badge-pink"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Culture &amp; Wellness
-              </span>
-              <span class="badge badge-pink"
-                style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks
-              </span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Slider Footer -->
-      <div
-        style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; gap: 16px;">
-        <span
-          style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--color-text-muted);">
-          6 Learning Tracks across 2 Immersive Days
-        </span>
-        <a href="/en/webcasts_events/live_events/hrwest/hrwest-2026-agenda-listing_mnq4uvmw.html"
-          class="btn btn-primary btn-lg">
-          View Full Conference Agenda
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 7. Testimonials Section -->
-  <section class="section-wrap section-pad" style="background: var(--color-surface);">
-    <div class="container-inner">
-
-      <div class="fade-up" style="text-align: center; margin-bottom: 32px;">
-        <span class="eyebrow" style="margin-bottom: 10px;">Verified Attendee and Partner Feedback</span>
-        <h2 class="section-h2" style="max-width: 720px; margin: 0 auto !important;">
-          Have You Heard<br />What People Are Saying?
-        </h2>
-      </div>
-
-      <div class="grid-2" style="margin-bottom: 28px;">
-
-        <!-- Attendee Spotlight -->
-        <div class="card fade-up delay-1"
-          style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid var(--brand-glow-20);">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-              <span class="badge badge-purple">Attendee Spotlight</span>
-              <div class="stars">
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-              </div>
-            </div>
-            <p
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 24px 0;">
-              "I picked up some great practical tips that I can take back to my office and use right away."
-            </p>
-          </div>
-          <div
-            style="border-top: 1px solid var(--color-subtle); padding-top: 18px; display: flex; align-items: center; gap: 12px;">
-            <div
-              style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">
-              H</div>
-            <div>
-              <div
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 15px; color: var(--color-text-primary);">
-                HR Practitioner</div>
-              <div style="font-size: 13px; color: var(--color-text-muted);">Enterprise Attendee</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sponsor Spotlight -->
-        <div class="card fade-up delay-2"
-          style="display: flex; flex-direction: column; justify-content: space-between; background: var(--gradient-brand-soft); border: 2px solid var(--brand-pink-glow-20);">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-              <span class="badge badge-pink">Sponsor Success Story</span>
-              <div class="stars">
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-                <svg class="star-icon" viewBox="0 0 24 24">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-              </div>
-            </div>
-            <p
-              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 24px 0;">
-              "My team and I were really well taken care of by the HR.com staff ... We had people coming up to our booth
-              throughout the whole conference. It was an excellent experience for us, and we will be back."
-            </p>
-          </div>
-          <div
-            style="border-top: 1px solid var(--brand-glow-15); padding-top: 18px; display: flex; align-items: center; gap: 12px;">
-            <div
-              style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-pink); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">
-              G</div>
-            <div>
-              <div
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 15px; color: var(--color-brand-purple);">
-                Gregg Ward</div>
-              <div style="font-size: 13px; color: var(--color-text-muted);">The Center for Respectful Leadership</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="text-align: center;">
-        <a href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html"
-          class="btn btn-primary btn-lg">
-          View All Attendee and Sponsor Testimonials
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 9. Venue Section -->
-  <section class="section-wrap section-pad"
-    style="background: var(--color-surface); border-top: 1px solid var(--color-subtle); border-bottom: 1px solid var(--color-subtle);">
-    <div class="container-inner">
-
-      <div class="grid-2" style="align-items: center;">
-
-        <div class="fade-left">
-          <span class="eyebrow" style="margin-bottom: 12px;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            South San Francisco Venue
-          </span>
-
-          <h2 class="section-h2" style="margin-bottom: 12px !important;">
-            South San Francisco Conference Center
-          </h2>
-
-          <p class="body-lg" style="margin: 0 0 22px 0;">
-            A premier venue built for world-class events — 5 minutes from SFO, 15 minutes from downtown San Francisco,
-            with immersive keynote halls and an expansive sponsor exhibit floor.
-          </p>
-
-          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
-            <div
-              style="padding: 12px 20px; background: var(--color-elevated); border-radius: var(--radius-md); border: 1.5px solid var(--color-subtle); box-shadow: var(--shadow-sm);">
-              <div
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: var(--color-brand-purple);">
-                5 min</div>
-              <div style="font-size: 12px; color: var(--color-text-muted);">From SFO Airport</div>
-            </div>
-            <div
-              style="padding: 12px 20px; background: var(--color-elevated); border-radius: var(--radius-md); border: 1.5px solid var(--color-subtle); box-shadow: var(--shadow-sm);">
-              <div
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: var(--color-brand-pink);">
-                Free</div>
-              <div style="font-size: 12px; color: var(--color-text-muted);">On-Site Parking</div>
-            </div>
-          </div>
-
-          <a href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html"
-            class="btn btn-primary btn-lg">
-            Hotel Deals and Travel Guide
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-
-        <div class="fade-right"
-          style="height: 360px; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); border: 2px solid var(--color-subtle);">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/south-fransisco-conference-center.webp"
-            alt="South San Francisco Conference Center" class="img-cover"
-            style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 10. Final CTA Banner -->
-  <section class="section-wrap section-pad" style="background: var(--color-canvas);">
-    <div class="container-inner">
-
-      <div class="fade-up"
-        style="background: var(--gradient-brand-soft); border-radius: var(--radius-xl); padding: 40px 32px; border: 1.5px solid var(--brand-glow-20); box-shadow: var(--shadow-xl); position: relative; overflow: hidden;">
-
-        <div
-          style="position: absolute; top: -30%; left: 10%; width: 40%; height: 80%; background: radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%); filter: blur(50px); pointer-events: none;">
-        </div>
-        <div
-          style="position: absolute; bottom: -30%; right: 5%; width: 35%; height: 80%; background: radial-gradient(circle, rgba(239,20,110,0.1) 0%, transparent 70%); filter: blur(50px); pointer-events: none;">
-        </div>
-
-        <div class="grid-2" style="align-items: center; position: relative; z-index: 1;">
-
-          <div>
-            <div
-              style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; background: rgba(239, 20, 110, 0.08); border: 1.5px solid rgba(239, 20, 110, 0.25); border-radius: var(--radius-full); padding: 4px 14px; width: fit-content;">
-              <span
-                style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 14px; color: var(--color-brand-pink);">$399
-                Early Bird</span>
-              <span
-                style="font-size: 13px; text-decoration: line-through; color: var(--color-text-muted); font-weight: 600;">$799
-                Regular</span>
-              <span class="badge badge-pink" style="padding: 2px 8px; font-size: 10px;">Save 50% • Ends Jan 15,
-                2027</span>
-            </div>
-            <h2 class="section-h2" style="margin-bottom: 14px !important;">
-              Your Most Impactful<br />HR Year Starts Here
-            </h2>
-            <p class="body-lg" style="margin: 0 0 24px 0;">
-              Join 500+ HR professionals on the leading edge of AI, culture, and workforce innovation. Register today
-              and save $400 with limited $399 early bird pricing before the <strong>January 15, 2027 deadline</strong>.
-            </p>
-
-            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-              <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html"
-                class="btn btn-pink btn-lg">
-                Register
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <a href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html"
-                class="btn btn-outline btn-lg">
-                Bring Your Team
-              </a>
-            </div>
-          </div>
-
-          <div
-            style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 300px; box-shadow: var(--shadow-lg); border: 2px solid var(--brand-glow-25);">
-            <img
-              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp"
-              alt="Cheering HR Professionals at HRWest" class="img-cover"
-              style="width: 100%; height: 100%; object-fit: cover;" />
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, var(--brand-glow-25) 0%, transparent 60%);">
-            </div>
-            <div
-              style="position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: 10px 16px; font-size: 13px; font-weight: 700; color: var(--color-brand-purple); display: flex; align-items: center; gap: 8px;">
-              <span>✨</span> 500+ HR Leaders Joining in 2027
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
+<div class="hrw27"><!-- 1. Hero Split Layout -->
+<section class="hero-split-section"><!-- Ambient Glow -->
+<div style="position: absolute; top: 10%; left: -5%; width: 40vw; height: 50vh; background: radial-gradient(circle, rgba(93, 47, 199, 0.09) 0%, transparent 70%); filter: blur(40px); pointer-events: none; z-index: 0;">&nbsp;</div>
+<!-- Angled Full-Bleed Right-Side Background Image Layer -->
+
+<div class="hero-image-clip"><img alt="HRWest 2027 Conference" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(11,15,23,0.35) 0%, var(--color-canvas, #fcfcff) 100%), linear-gradient(to top, rgba(11,15,23,0.75) 0%, transparent 60%);">&nbsp;</div>
+</div>
+<!-- Centered Max-Width Container (Aligns with Header Navigation & Rest of Page) -->
+
+<div class="container-inner" style="position: relative; z-index: 2;">
+<div class="hero-split-grid"><!-- Left Column: Content -->
+<div class="hero-content-col"><!-- Sleek Date and Countdown Badge (Hidden on mobile to avoid duplication with topbar) -->
+<div class="hero-date-badge" style="display: inline-flex; align-items: center; gap: 0.65rem; background: linear-gradient(135deg, var(--brand-glow-08), var(--brand-pink-glow-08)); border: 1.5px solid var(--brand-pink-glow-20); border-radius: var(--radius-full); padding: 0.45rem 1.1rem 0.45rem 0.65rem; margin-bottom: 1.5rem; width: fit-content; box-shadow: 0 4px 15px rgba(239,20,110,0.06);"><span style="display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-pink); color: #fff; border-radius: var(--radius-full); padding: 0.22rem 0.75rem; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 0.78rem; box-shadow: 0 2px 8px var(--brand-pink-glow-25);"> March 23-24, 2027 </span> <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--color-brand-purple); display: flex; align-items: center; gap: 0.35rem;"> South San Francisco, CA &middot; <svg fill="none" height="13" stroke="currentColor" stroke-width="2" style="color: var(--color-brand-purple);" viewbox="0 0 24 24" width="13"> <circle cx="12" cy="12" r="10"></circle> <polyline points="12 6 12 12 16 14"></polyline> </svg> <span id="hrw27-days-away">218</span> Days Away </span></div>
+<!-- Main Headline with Brand Logo Lockup -->
+
+<div class="hero-animate-2 hero-brand-lockup" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;"><img alt="HR West Conference Logo" class="hero-brand-logo" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/HR-west-2024/images/HR-West-HR-Conference-HR-West-Logo.png" style="height: 88px; width: auto; max-height: 96px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06)); display: block; flex-shrink: 0;" />
+<div>
+<h1 class="hero-h1" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.15; letter-spacing: -0.035em; color: var(--color-text-primary); margin: 0;">HRWest 2027:<br />
+<span class="hero-glow-text">Imagine What&#39;s Possible</span></h1>
+</div>
+</div>
+<!-- Subtitle Paragraph -->
+
+<div class="hero-animate-3 hero-sub-wrap" style="margin-bottom: 2.25rem; max-width: 580px;">
+<p style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: clamp(1.15rem, 1.6vw, 1.35rem); color: var(--color-text-primary); line-height: 1.4; margin: 0 0 0.75rem 0; letter-spacing: -0.015em;">The most impactful HR transformation conference on the West Coast!</p>
+
+<p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.65; margin: 0;">Connect with <strong>500+ HR decision-makers</strong>, earn <strong style="color: var(--color-brand-pink);">SHRM and HRCI credits</strong>, and walk away with strategies you can implement Monday morning and for years to come.</p>
+</div>
+<!-- CTA Buttons -->
+
+<div class="hero-animate-4 hero-cta-group" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;"><a class="btn btn-primary btn-lg" href="/en/webcasts_events/live_events/hrwest-2027-registration_msy2qo61.html">Register <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a> <a class="btn btn-outline btn-lg" href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html"> Sponsor &amp; Exhibit </a></div>
+</div>
+<!-- Right Column: Glass Video Card -->
+
+<div class="hero-image-col">
+<div class="fade-scale" style="position: relative; z-index: 3; width: 100%; max-width: 520px; margin: 0 0 0 auto;">
+<div style="background: rgba(11, 15, 23, 0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-radius: var(--radius-xl); padding: 1.25rem; border: 1.5px solid rgba(255, 255, 255, 0.22); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(93, 47, 199, 0.25); color: #ffffff;">
+<div style="position: relative; padding-top: 56.25%; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.65); margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.15);"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/REG_71cn0wY?si=wYaJT6Cys4mFhucj&amp;autoplay=1&amp;mute=1&amp;rel=0&amp;loop=1&amp;playlist=REG_71cn0wY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" title="HRWest 2027 Conference Experience"></iframe></div>
+
+<div>
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 1.1rem; color: #ffffff; letter-spacing: -0.01em;">Experience the Energy of HRWest 2027</div>
+
+<div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.85); margin-top: 0.3rem; line-height: 1.55;">Join 500+ HR leaders and solution providers in South San Francisco to drive your career and company forward.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Early Bird Urgency Strip -->
+
+<section class="section-wrap eb-strip-wrap" style="background: var(--gradient-pink); padding: 14px 24px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(239, 20, 110, 0.25);">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%); animation: hrw27-shimmer 3s infinite; pointer-events: none;">&nbsp;</div>
+
+<div class="container-inner eb-strip-inner" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; position: relative; z-index: 1;">
+<div class="eb-badge-group" style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 18px;">🔥</span> <span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 15px; color: #ffffff; letter-spacing: -0.01em;"> Early Bird Registration Open </span> <span style="background: #ffffff; color: var(--color-brand-pink); font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 11px; padding: 3px 10px; border-radius: var(--radius-full); box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-transform: uppercase; letter-spacing: 0.04em;"> Save 50% </span></div>
+
+<div class="hide-mobile" style="width: 1px; height: 20px; background: rgba(255,255,255,0.35);">&nbsp;</div>
+<!-- Explicit Price Comparison Lockup -->
+
+<div class="eb-price-group" style="display: flex; align-items: center; gap: 8px; font-family: 'Outfit', system-ui, sans-serif; font-size: 14px; color: #ffffff;"><span style="opacity: 0.95;">Limited Rate (Ends Jan 15):</span> <span style="background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.45); padding: 3px 10px; border-radius: var(--radius-sm); font-weight: 900; font-size: 15px; color: #ffffff; letter-spacing: -0.02em;"> $399 Early Bird </span> <span style="text-decoration: line-through; opacity: 0.85; font-size: 13px; font-weight: 600;"> $799 Regular </span></div>
+<a class="eb-cta-btn" href="/en/webcasts_events/live_events/hrwest-2027-registration_msy2qo61.html" id="hrw27-eb-btn" style="background: #ffffff; color: var(--color-brand-pink); font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 13px; padding: 8px 18px; border-radius: var(--radius-full); text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,0.15); display: inline-flex; align-items: center; gap: 6px; transition: transform 0.2s ease;">Register <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a></div>
+</section>
+<!-- 3. Social Proof Dual-Row Marquee Showcase -->
+
+<section class="section-wrap" style="background: var(--color-surface); padding: 42px 0; border-bottom: 1px solid var(--color-subtle); display: flex; flex-direction: column; gap: 20px;">
+<div class="container-inner" style="text-align: center;"><span class="eyebrow" style="margin-bottom: 10px;">Trusted by HR Leaders. Backed by Industry</span>
+
+<h2 class="section-h2" style="margin: 0 auto !important;">See Who Shows Up at HRWest</h2>
+</div>
+<!-- Row 1: Photos from HRWest 2026 (Scrolls Left) -->
+
+<div class="marquee-track">
+<div class="marquee-strip"><!-- Loop 1 -->
+<div class="photo-marquee-card"><img alt="Yael Schy Emcee" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp" />
+<div class="photo-marquee-caption">Yael Schy Emcee</div>
 </div>
 
+<div class="photo-marquee-card"><img alt="Jane Kow Legal Session" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp" />
+<div class="photo-marquee-caption">Jane Kow Legal Session</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Jason Averbook Opening" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" />
+<div class="photo-marquee-caption">Jason Averbook Opening</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Let's Build Workshop" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp" />
+<div class="photo-marquee-caption">Let&#39;s Build Workshop</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Let's Build Part 1" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp" />
+<div class="photo-marquee-caption">Let&#39;s Build Part 1</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Allison West Keynote" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" />
+<div class="photo-marquee-caption">Allison West Keynote</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Attendees Networking" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp" />
+<div class="photo-marquee-caption">Attendees Networking</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Exhibitor Expo" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp" />
+<div class="photo-marquee-caption">Exhibitor Expo</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Closing Keynote" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp" />
+<div class="photo-marquee-caption">Closing Keynote</div>
+</div>
+<!-- Loop 2 -->
+
+<div class="photo-marquee-card"><img alt="Yael Schy Emcee" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/EmceeAndSpeakerYaelSchy.webp" />
+<div class="photo-marquee-caption">Yael Schy Emcee</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Jane Kow Legal Session" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JaneKow.webp" />
+<div class="photo-marquee-caption">Jane Kow Legal Session</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Jason Averbook Opening" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" />
+<div class="photo-marquee-caption">Jason Averbook Opening</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Let's Build Workshop" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_sBuildDay2.webp" />
+<div class="photo-marquee-caption">Let&#39;s Build Workshop</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Let's Build Part 1" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/Let_s_Build!_Part_1.webp" />
+<div class="photo-marquee-caption">Let&#39;s Build Part 1</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Allison West Keynote" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" />
+<div class="photo-marquee-caption">Allison West Keynote</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Attendees Networking" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWestAttendees.webp" />
+<div class="photo-marquee-caption">Attendees Networking</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Exhibitor Expo" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/CapturelyTable.webp" />
+<div class="photo-marquee-caption">Exhibitor Expo</div>
+</div>
+
+<div class="photo-marquee-card"><img alt="Closing Keynote" loading="lazy" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ClosingKeynote2.webp" />
+<div class="photo-marquee-caption">Closing Keynote</div>
+</div>
+</div>
+</div>
+<!-- Row 2: Enterprise Sponsor Logos (Scrolls Right in Reverse) -->
+
+<div class="marquee-track">
+<div class="marquee-strip-reverse"><!-- Loop 1 -->
+<div class="marquee-logo-pill"><img alt="PerformYard" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="SAP SuccessFactors" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png" /></div>
+
+<div class="marquee-logo-pill"><img alt="UKG" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Robert Half" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Insperity" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Alliant Insurance" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="AwardCo" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Zapier" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="LHH" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="HUB International" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg" /></div>
+<!-- Loop 2 -->
+
+<div class="marquee-logo-pill"><img alt="PerformYard" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/performyard-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="SAP SuccessFactors" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/sap-sf-1382x167.png" /></div>
+
+<div class="marquee-logo-pill"><img alt="UKG" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/ukg-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Robert Half" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Insperity" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Alliant Insurance" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/alliant-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="AwardCo" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/awardco-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="Zapier" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/zapier-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="LHH" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/lhh-logo.jpg" /></div>
+
+<div class="marquee-logo-pill"><img alt="HUB International" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/hub-logo.jpg" /></div>
+</div>
+</div>
+</section>
+<!-- 4. Animated Stat Counters -->
+
+<section class="section-wrap section-pad" style="background: var(--color-canvas);">
+<div class="container-inner">
+<div class="fade-up" style="text-align: center; margin-bottom: 32px;"><span class="eyebrow" style="margin-bottom: 10px;">By the Numbers</span>
+
+<h2 class="section-h2" style="max-width: 750px; margin: 0 auto !important;">Why 500+ HR Leaders<br />
+Choose HRWest</h2>
+</div>
+
+<div class="grid-3"><!-- Stat 1 -->
+<div class="card fade-up delay-1" style="text-align: center;">
+<div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"> <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path> <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path> <line x1="12" x2="12" y1="19" y2="23"></line> <line x1="8" x2="16" y1="23" y2="23"></line> </svg></div>
+
+<div data-suffix="+" data-target="50" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">50+</div>
+
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">Expert-Led Sessions</div>
+
+<div class="body-sm">Actionable keynotes &amp; roundtables</div>
+</div>
+<!-- Stat 2 -->
+
+<div class="card fade-up delay-2" style="text-align: center;">
+<div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-pink-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-pink);"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"> <circle cx="12" cy="8" r="7"></circle> <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline> </svg></div>
+
+<div data-suffix="+" data-target="8" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">8+</div>
+
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">SHRM &amp; HRCI Credits</div>
+
+<div class="body-sm">Accelerate your recertification</div>
+</div>
+<!-- Stat 3 -->
+
+<div class="card fade-up delay-3" style="text-align: center;">
+<div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--brand-glow-08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; color: var(--color-brand-purple);"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"> <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect> <line x1="9" x2="9" y1="22" y2="22.01"></line> <line x1="15" x2="15" y1="22" y2="22.01"></line> <line x1="9" x2="9" y1="18" y2="18.01"></line> <line x1="15" x2="15" y1="18" y2="18.01"></line> <line x1="9" x2="9" y1="14" y2="14.01"></line> <line x1="15" x2="15" y1="14" y2="14.01"></line> <line x1="9" x2="9" y1="10" y2="10.01"></line> <line x1="15" x2="15" y1="10" y2="10.01"></line> <line x1="9" x2="9" y1="6" y2="6.01"></line> <line x1="15" x2="15" y1="6" y2="6.01"></line> </svg></div>
+
+<div data-suffix="+" data-target="30" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">30+</div>
+
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--color-text-primary); margin-bottom: 4px;">Solution Providers</div>
+
+<div class="body-sm">See cutting-edge HR solutions</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Featured Speakers and Faculty -->
+
+<section class="section-wrap section-pad" style="background: var(--color-surface);">
+<div class="container-inner">
+<div class="fade-up" style="text-align: center; margin-bottom: 32px;"><span class="eyebrow" style="margin-bottom: 10px;">2026 Speaker Highlights</span>
+
+<h2 class="section-h2" style="max-width: 720px; margin: 0 auto 8px auto !important;">Real Experts Who<br />
+Help HR Move Forward</h2>
+
+<p class="body-md" style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">A look at the transformative keynotes and industry leaders from our previous edition while the 2027 faculty is being finalized.</p>
+</div>
+<!-- Spotlight Grid -->
+
+<div class="grid-3" style="margin-bottom: 28px; align-items: stretch;"><!-- Speaker 1: Jason Averbook -->
+<div class="card fade-up delay-1" style="display: flex; flex-direction: column; padding: 24px;">
+<div style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;"><img alt="Jason Averbook" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" /></div>
+
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">Jason Averbook</h3>
+
+<div style="font-size: 14px; font-weight: 700; color: var(--color-brand-purple); margin-bottom: 2px;">Global HR Transformation Leader and Author</div>
+
+<div style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 14px;">Now to Next</div>
+
+<div style="background: rgba(93, 47, 199, 0.05); border-radius: var(--radius-sm); padding: 10px 12px; margin-bottom: 16px; border-left: 3px solid var(--color-brand-purple);">
+<div style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--color-brand-purple); letter-spacing: 0.05em; margin-bottom: 2px;">Headline Keynote</div>
+
+<div style="font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.4;">&quot;The AI-First HR Function: Strategy, Structure, and Systems&quot;</div>
+</div>
+
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: space-between;"><span class="badge badge-purple">HR Strategy and AI</span> <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-brand-purple); display: inline-flex; align-items: center; gap: 4px;"> Details <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"> <polyline points="9 18 15 12 9 6"></polyline> </svg> </a></div>
+</div>
+<!-- Center Testimonial Card with Auto-Play Video Transition -->
+
+<div class="fade-up delay-2" id="hrw27-quote-video-card" style="background: var(--gradient-brand-soft); border: 2px solid var(--brand-glow-25); border-radius: var(--radius-lg); position: relative; overflow: hidden; min-height: 480px; display: flex; flex-direction: column; box-shadow: 0 12px 35px rgba(93,47,199,0.1); transition: all 0.3s ease;"><!-- Background Video Layer (HTML5 Video with Automatic Playback & Mute/Unmute Controls) -->
+<div id="hrw27-video-wrapper" style="position: absolute; inset: 0; width: 100%; height: 100%; background: #0b0814; z-index: 1; overflow: hidden;">
+<video id="hrw27-testimonial-video" muted="" playsinline="" preload="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;"><source src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/fetterly_4.mp4" type="video/mp4" /></video>
+<!-- Vignette Gradients for Badge & Control Legibility -->
+
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,8,20,0.65) 0%, transparent 28%, transparent 55%, rgba(11,8,20,0.92) 100%); pointer-events: none; z-index: 2;">&nbsp;</div>
+<!-- Top Floating Bar: Badge (Left) & Mute/Unmute (Right) -->
+
+<div style="position: absolute; top: 14px; left: 14px; right: 14px; z-index: 10; display: flex; align-items: center; justify-content: space-between;"><span class="badge badge-pink" style="background: rgba(239, 20, 110, 0.9); color: #ffffff; border: none; font-size: 11px; padding: 5px 12px; backdrop-filter: blur(8px); box-shadow: 0 2px 10px rgba(239,20,110,0.4);"> Attendee Reaction </span> <!-- Mute / Unmute Toggle Button --><button aria-label="Unmute Video" id="hrw27-video-mute-btn" style="background: rgba(11, 15, 23, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1.5px solid rgba(255, 255, 255, 0.4); border-radius: var(--radius-full); padding: 7px 14px; color: #ffffff; font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.5);" type="button"><svg fill="none" height="14" id="hrw27-mute-icon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14"> <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon> <line x1="23" x2="17" y1="9" y2="15"></line> <line x1="17" x2="23" y1="9" y2="15"></line> </svg> <span id="hrw27-mute-text">Unmute</span></button></div>
+<!-- Bottom Floating Controls & Attendee Info -->
+
+<div style="position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; padding: 16px; display: flex; flex-direction: column; gap: 10px;"><!-- Video Scrub / Progress Bar -->
+<div style="width: 100%; height: 4px; background: rgba(255,255,255,0.25); border-radius: 2px; overflow: hidden; cursor: pointer;">
+<div id="hrw27-video-time-progress" style="width: 0%; height: 100%; background: var(--gradient-pink); transition: width 0.1s linear;">&nbsp;</div>
+</div>
+<!-- Controls Row: Play/Pause, Replay & Caption -->
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 8px;"><!-- Play / Pause Button --><button aria-label="Pause Video" id="hrw27-video-play-btn" style="width: 34px; height: 34px; border-radius: 50%; background: var(--gradient-brand); color: #ffffff; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px var(--brand-glow-35); transition: transform 0.2s ease;" type="button"><svg fill="currentColor" height="14" id="hrw27-play-icon" viewbox="0 0 24 24" width="14"> <rect height="16" width="4" x="6" y="4"></rect> <rect height="16" width="4" x="14" y="4"></rect> </svg></button><!-- Replay Button --><button aria-label="Replay Video" id="hrw27-video-replay-btn" style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease;" title="Replay Video" type="button"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14"> <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path> <path d="M3 3v5h5"></path> </svg></button></div>
+<!-- Attendee Caption -->
+
+<div style="text-align: right; color: #ffffff;">
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13.5px; line-height: 1.1; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Katelynn Fetterly</div>
+
+<div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); margin-top: 2px;">HRWest Attendee</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Animated Quote Layer (Shows quote for 7s, then smoothly crossfades into video) -->
+
+<div id="hrw27-quote-layer" style="position: absolute; inset: 0; z-index: 3; background: linear-gradient(135deg, #f8f6ff 0%, #fff0f6 100%); padding: 36px 26px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; cursor: pointer; transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;"><span class="badge badge-pink" style="margin-bottom: 18px; padding: 6px 16px; font-size: 12px; box-shadow: 0 2px 8px rgba(239,20,110,0.12);"> Attendee Experience </span>
+
+<div style="font-size: 44px; color: var(--color-brand-purple); line-height: 0.8; margin-bottom: 10px; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; opacity: 0.85;">&quot;</div>
+
+<blockquote style="font-family: 'Outfit', system-ui, sans-serif; font-size: 1.32rem; font-weight: 800; color: var(--color-text-primary); line-height: 1.42; margin: 0 0 16px 0; letter-spacing: -0.015em;">&quot;The sessions are so attuned to what is happening in the HR environment!&quot;</blockquote>
+
+<div style="width: 40px; height: 3px; background: var(--gradient-pink); border-radius: 2px; margin-bottom: 12px;">&nbsp;</div>
+
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 16px; color: var(--color-brand-purple);">Katelynn Fetterly</div>
+
+<div style="font-size: 13px; font-weight: 600; color: var(--color-text-muted); margin-top: 2px; margin-bottom: 20px;">HRWest 2026 Attendee</div>
+<!-- Animated Video Preview Countdown Pill -->
+
+<div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', system-ui, sans-serif; font-size: 12px; font-weight: 800; color: var(--color-brand-purple); background: rgba(93, 47, 199, 0.08); border: 1px solid rgba(93, 47, 199, 0.2); padding: 5px 14px; border-radius: var(--radius-full);"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-pink); animation: hrw27-pulse 1.5s infinite;"></span> <span>Playing Video in <strong id="hrw27-quote-countdown">7</strong>s...</span></div>
+</div>
+<!-- Bottom Progress Indicator -->
+
+<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(93, 47, 199, 0.1);">
+<div id="hrw27-quote-progress" style="width: 0%; height: 100%; background: var(--gradient-pink); transition: width 7s linear;">&nbsp;</div>
+</div>
+</div>
+</div>
+<!-- Speaker 2: Allison West -->
+
+<div class="card fade-up delay-3" style="display: flex; flex-direction: column; padding: 24px;">
+<div style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;"><img alt="Allison West" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" /></div>
+
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">Allison West, Esq., SHRM-SCP</h3>
+
+<div style="font-size: 14px; font-weight: 700; color: var(--color-brand-purple); margin-bottom: 2px;">Principal and Employment Law Specialist</div>
+
+<div style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 14px;">Employment Practices Specialists</div>
+
+<div style="background: rgba(93, 47, 199, 0.05); border-radius: var(--radius-sm); padding: 10px 12px; margin-bottom: 16px; border-left: 3px solid var(--color-brand-purple);">
+<div style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--color-brand-purple); letter-spacing: 0.05em; margin-bottom: 2px;">Feature Session</div>
+
+<div style="font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.4;">&quot;Documentation Mistakes Plaintiff Attorneys Hope You&#39;ll Keep Making&quot;</div>
+</div>
+
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: space-between;"><span class="badge badge-purple">Legal and Compliance</span> <a href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; color: var(--color-brand-purple); display: inline-flex; align-items: center; gap: 4px;"> Details <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"> <polyline points="9 18 15 12 9 6"></polyline> </svg> </a></div>
+</div>
+</div>
+<!-- Faculty Grid -->
+
+<div style="text-align: center; margin-bottom: 18px;"><span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-brand-purple);"> Featured 2026 Faculty Highlights </span></div>
+
+<div class="grid-4" style="margin-bottom: 32px;"><!-- Faculty 1 -->
+<div class="card fade-up delay-1" style="padding: 18px;">
+<div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;"><img alt="Nancy Hauge" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/nancy-hauge-350x350.jpg" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+
+<h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Nancy Hauge</h4>
+
+<div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Chief People Experience Officer</div>
+
+<div style="font-size: 12px; color: var(--color-text-muted);">Automation Anywhere</div>
+</div>
+<!-- Faculty 2 -->
+
+<div class="card fade-up delay-2" style="padding: 18px;">
+<div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;"><img alt="Treena Diebolt" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/treena-diebolt-350x350.jpg" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+
+<h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Treena Diebolt</h4>
+
+<div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Vice President, People</div>
+
+<div style="font-size: 12px; color: var(--color-text-muted);">Otter.ai</div>
+</div>
+<!-- Faculty 3 -->
+
+<div class="card fade-up delay-3" style="padding: 18px;">
+<div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;"><img alt="Debbie McGrath" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/HRWest-2025/images/speaker-headshots/debbie-mcgrath2.jpg" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+
+<h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Debbie McGrath</h4>
+
+<div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">CEO, Founder and Chief Instigator</div>
+
+<div style="font-size: 12px; color: var(--color-text-muted);">HR.com</div>
+</div>
+<!-- Faculty 4 -->
+
+<div class="card fade-up delay-4" style="padding: 18px;">
+<div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 14px;"><img alt="Lee Cage Jr." class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/speakers/lee-cage-350x350.jpg" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+
+<h4 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 17px; margin: 0 0 2px 0;">Lee Cage Jr.</h4>
+
+<div style="font-size: 13px; font-weight: 700; color: var(--color-brand-purple);">Director, Enterprise Transformation</div>
+
+<div style="font-size: 12px; color: var(--color-text-muted);">BDO USA</div>
+</div>
+</div>
+<!-- Speaker CTA -->
+
+<div style="text-align: center;"><a class="btn btn-primary btn-lg spk-roster-btn" href="/en/webcasts_events/live_events/hrwest/hrwest-conference-speakers---hrcom_laaqsa2l.html">View Full 2026 Speaker Roster and Bios <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a></div>
+</div>
+</section>
+<!-- 6. Conference Tracks -->
+
+<section class="section-wrap section-pad" style="background: var(--color-canvas); position: relative;">
+<div class="container-inner"><!-- Header and Controls -->
+<div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 20px;">
+<div><span class="eyebrow" style="margin-bottom: 10px;">Curate Your Experience</span>
+
+<h2 class="section-h2" style="margin: 0 0 8px 0 !important;">6 Deep-Dive Conference Tracks</h2>
+
+<p class="body-md" style="margin: 0; max-width: 560px;">Tailor your HRWest 2027 agenda across 6 specialized learning tracks designed for maximum workforce impact.</p>
+</div>
+<!-- Slider Arrows (Desktop View) -->
+
+<div class="track-arrows-desktop" style="display: flex; gap: 12px;"><button aria-label="Previous Track" class="slider-btn hrw27-track-prev-btn" id="hrw27-track-prev" style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm);"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"> <polyline points="15 18 9 12 15 6"></polyline> </svg></button><button aria-label="Next Track" class="slider-btn hrw27-track-next-btn" id="hrw27-track-next" style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35);"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"> <polyline points="9 18 15 12 9 6"></polyline> </svg></button></div>
+</div>
+<!-- Track Slider Carousel -->
+
+<div class="track-slider" id="hrw27-track-slider"><!-- Track 1: HR Strategy and AI -->
+<div class="track-card">
+<div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);"><img alt="HR Strategy and AI" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_ai_real.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">&nbsp;</div>
+</div>
+
+<div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">HR Strategy and AI</h3>
+
+<p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Explore forward-thinking strategies and practical AI applications that help you drive better workforce and HR outcomes.</p>
+
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;"><span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Strategy &amp; AI </span> <span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Approx. 8 Tracks </span></div>
+</div>
+</div>
+<!-- Track 2: Legal and Compliance -->
+
+<div class="track-card">
+<div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);"><img alt="Legal and Compliance" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_legal_real.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">&nbsp;</div>
+</div>
+
+<div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">Legal and Compliance</h3>
+
+<p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Get guidance from recognized authorities on critical employment law updates, compliance issues, and managing workplace risk.</p>
+
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;"><span class="badge badge-pink" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Legal &amp; Risk </span> <span class="badge badge-pink" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Approx. 8 Tracks </span></div>
+</div>
+</div>
+<!-- Track 3: HR Tech -->
+
+<div class="track-card">
+<div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);"><img alt="HR Tech" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_hrtech_real.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">&nbsp;</div>
+</div>
+
+<div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">HR Tech</h3>
+
+<p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Discover how to use innovative tools to streamline your work, make better decisions, and create better employee experiences.</p>
+
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;"><span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Tools &amp; Systems </span> <span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Approx. 8 Tracks </span></div>
+</div>
+</div>
+<!-- Track 4: Talent -->
+
+<div class="track-card">
+<div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);"><img alt="Talent" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_talent_real.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">&nbsp;</div>
+</div>
+
+<div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">Talent</h3>
+
+<p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Better approaches not only for attracting, hiring, developing and retaining employees, but also for nurturing your own talent to advance your HR career.</p>
+
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;"><span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Talent &amp; Growth </span> <span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Approx. 8 Tracks </span></div>
+</div>
+</div>
+<!-- Track 5: Leadership -->
+
+<div class="track-card">
+<div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);"><img alt="Leadership" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_leadership_real.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">&nbsp;</div>
+</div>
+
+<div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">Leadership</h3>
+
+<p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Lead with greater impact. Discover how today&#39;s HR leaders are developing people, influencing strategy, and driving organizational success.</p>
+
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;"><span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Leadership Impact </span> <span class="badge badge-purple" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Approx. 8 Tracks </span></div>
+</div>
+</div>
+<!-- Track 6: Health, Wellness and Benefits -->
+
+<div class="track-card">
+<div style="position: relative; height: 180px; overflow: hidden; background: var(--color-surface);"><img alt="Health, Wellness and Benefits" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/track_wellness_real.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--color-elevated) 0%, transparent 60%);">&nbsp;</div>
+</div>
+
+<div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+<h3 style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 10px 0;">Health, Wellness &amp; Benefits</h3>
+
+<p class="body-sm" style="margin: 0 0 20px 0; line-height: 1.6;">Build a healthier, more engaged workforce with modern approaches to well-being and benefits.</p>
+
+<div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;"><span class="badge badge-pink" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Culture &amp; Wellness </span> <span class="badge badge-pink" style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;"> Approx. 8 Tracks </span></div>
+</div>
+</div>
+</div>
+<!-- Slider Footer -->
+
+<div class="track-footer-wrap" style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; gap: 16px;"><span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--color-text-muted);"> 6 Learning Tracks across 2 Immersive Days </span> <a class="btn btn-primary btn-lg" href="/en/webcasts_events/live_events/hrwest/hrwest-2027-agenda-listing_mnq4uvmw.html"> View Full Conference Agenda <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a></div>
+</div>
+</section>
+<!-- 7. Testimonials Section -->
+
+<section class="section-wrap section-pad" style="background: var(--color-surface);">
+<div class="container-inner">
+<div class="fade-up" style="text-align: center; margin-bottom: 32px;"><span class="eyebrow" style="margin-bottom: 10px;">Verified Attendee and Partner Feedback</span>
+
+<h2 class="section-h2" style="max-width: 720px; margin: 0 auto !important;">Have You Heard<br />
+What People Are Saying?</h2>
+</div>
+
+<div class="grid-2" style="margin-bottom: 28px;"><!-- Attendee Spotlight -->
+<div class="card fade-up delay-1" style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid var(--brand-glow-20);">
+<div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;"><span class="badge badge-purple">Attendee Spotlight</span>
+
+<div class="stars"><svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg></div>
+</div>
+
+<p style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 24px 0;">&quot;I picked up some great practical tips that I can take back to my office and use right away.&quot;</p>
+</div>
+
+<div style="border-top: 1px solid var(--color-subtle); padding-top: 18px; display: flex; align-items: center; gap: 12px;">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">H</div>
+
+<div>
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 15px; color: var(--color-text-primary);">HR Practitioner</div>
+
+<div style="font-size: 13px; color: var(--color-text-muted);">Enterprise Attendee</div>
+</div>
+</div>
+</div>
+<!-- Sponsor Spotlight -->
+
+<div class="card fade-up delay-2" style="display: flex; flex-direction: column; justify-content: space-between; background: var(--gradient-brand-soft); border: 2px solid var(--brand-pink-glow-20);">
+<div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;"><span class="badge badge-pink">Sponsor Success Story</span>
+
+<div class="stars"><svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg> <svg class="star-icon" viewbox="0 0 24 24"> <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"> </polygon> </svg></div>
+</div>
+
+<p style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.5; color: var(--color-text-primary); margin: 0 0 24px 0;">&quot;My team and I were really well taken care of by the HR.com staff ... We had people coming up to our booth throughout the whole conference. It was an excellent experience for us, and we will be back.&quot;</p>
+</div>
+
+<div style="border-top: 1px solid var(--brand-glow-15); padding-top: 18px; display: flex; align-items: center; gap: 12px;">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-pink); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px;">G</div>
+
+<div>
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 800; font-size: 15px; color: var(--color-brand-purple);">Gregg Ward</div>
+
+<div style="font-size: 13px; color: var(--color-text-muted);">The Center for Respectful Leadership</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="text-align: center;"><a class="btn btn-primary btn-lg testi-all-btn" href="/en/webcasts_events/live_events/hrwest/hrwest-testimonials_lyd2mwd1.html">View All Attendee and Sponsor Testimonials <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a></div>
+</div>
+</section>
+<!-- 9. Venue Section -->
+
+<section class="section-wrap section-pad" style="background: var(--color-surface); border-top: 1px solid var(--color-subtle); border-bottom: 1px solid var(--color-subtle);">
+<div class="container-inner">
+<div class="grid-2 venue-grid" style="align-items: center;">
+<div class="fade-left venue-text-col"><span class="eyebrow" style="margin-bottom: 12px;"> <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"> <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path> <circle cx="12" cy="10" r="3"></circle> </svg> South San Francisco Venue </span>
+
+<h2 class="section-h2" style="margin-bottom: 12px !important;">South San Francisco Conference Center</h2>
+
+<p class="body-lg" style="margin: 0 0 22px 0;">A premier venue built for world-class events &mdash; 5 minutes from SFO, 15 minutes from downtown San Francisco, with immersive keynote halls and an expansive sponsor exhibit floor.</p>
+
+<div class="venue-stat-group" style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
+<div style="padding: 12px 20px; background: var(--color-elevated); border-radius: var(--radius-md); border: 1.5px solid var(--color-subtle); box-shadow: var(--shadow-sm);">
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: var(--color-brand-purple);">5 min</div>
+
+<div style="font-size: 12px; color: var(--color-text-muted);">From SFO Airport</div>
+</div>
+
+<div style="padding: 12px 20px; background: var(--color-elevated); border-radius: var(--radius-md); border: 1.5px solid var(--color-subtle); box-shadow: var(--shadow-sm);">
+<div style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 18px; color: var(--color-brand-pink);">Free</div>
+
+<div style="font-size: 12px; color: var(--color-text-muted);">On-Site Parking</div>
+</div>
+</div>
+<a class="btn btn-primary btn-lg venue-btn" href="/en/webcasts_events/live_events/hrwest/hrwest-hr-conference-location_laar45d5.html"> Hotel Deals and Travel Guide <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a></div>
+
+<div class="fade-right venue-img-card" style="height: 360px; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); border: 2px solid var(--color-subtle);"><img alt="South San Francisco Conference Center" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/south-fransisco-conference-center.webp" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+</div>
+</div>
+</section>
+<!-- 10. Final CTA Banner -->
+
+<section class="section-wrap section-pad" style="background: var(--color-canvas);">
+<div class="container-inner">
+<div class="fade-up final-cta-card" style="background: var(--gradient-brand-soft); border-radius: var(--radius-xl); padding: 40px 32px; border: 1.5px solid var(--brand-glow-20); box-shadow: var(--shadow-xl); position: relative; overflow: hidden;">
+<div style="position: absolute; top: -30%; left: 10%; width: 40%; height: 80%; background: radial-gradient(circle, var(--brand-glow-12) 0%, transparent 70%); filter: blur(50px); pointer-events: none;">&nbsp;</div>
+
+<div style="position: absolute; bottom: -30%; right: 5%; width: 35%; height: 80%; background: radial-gradient(circle, rgba(239,20,110,0.1) 0%, transparent 70%); filter: blur(50px); pointer-events: none;">&nbsp;</div>
+
+<div class="grid-2 final-cta-grid" style="align-items: center; position: relative; z-index: 1;">
+<div class="final-cta-text-col">
+<div class="final-cta-eb-pill" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; background: rgba(239, 20, 110, 0.08); border: 1.5px solid rgba(239, 20, 110, 0.25); border-radius: var(--radius-full); padding: 4px 14px; width: fit-content;"><div class="final-cta-eb-prices" style="display: flex; align-items: center; gap: 8px;"><span style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 14px; color: var(--color-brand-pink);">$399 Early Bird</span> <span style="font-size: 13px; text-decoration: line-through; color: var(--color-text-muted); font-weight: 600;">$799 Regular</span></div> <span class="badge badge-pink" style="padding: 2px 8px; font-size: 10px;">Save 50% &bull; Ends Jan 15, 2027</span></div>
+
+<h2 class="section-h2" style="margin-bottom: 14px !important;">Your Most Impactful<br />
+HR Year Starts Here</h2>
+
+<p class="body-lg" style="margin: 0 0 24px 0;">Join 500+ HR professionals on the leading edge of AI, culture, and workforce innovation. Register today and save $400 with limited $399 early bird pricing before the <strong>January 15, 2027 deadline</strong>.</p>
+
+<div class="final-cta-btn-group" style="display: flex; gap: 14px; flex-wrap: wrap;"><a class="btn btn-pink btn-lg" href="/en/webcasts_events/live_events/hrwest-2027-registration_msy2qo61.html">Register <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg> </a> <a class="btn btn-outline btn-lg" href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html"> Bring Your Team </a></div>
+</div>
+
+<div class="final-cta-img-card" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 300px; box-shadow: var(--shadow-lg); border: 2px solid var(--brand-glow-25);"><img alt="Cheering HR Professionals at HRWest" class="img-cover" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/cta_cheering_hr.webp" style="width: 100%; height: 100%; object-fit: cover;" />
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--brand-glow-25) 0%, transparent 60%);">&nbsp;</div>
+
+<div style="position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: 10px 16px; font-size: 13px; font-weight: 700; color: var(--color-brand-purple); display: flex; align-items: center; gap: 8px;"><span>✨</span> 500+ HR Leaders Joining in 2027</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
 <script>
   (function () {
     /* 1. Live Countdown for Days Away */
@@ -1694,6 +1347,17 @@
       } else {
         showQuote();
       }
+    }
+
+    /* 5. Track Slider Navigation (Standalone Support) */
+    var trackSlider = document.getElementById('hrw27-track-slider');
+    if (trackSlider) {
+      document.querySelectorAll('.hrw27-track-prev-btn, #hrw27-track-prev').forEach(function (btn) {
+        btn.addEventListener('click', function () { trackSlider.scrollBy({ left: -370, behavior: 'smooth' }); });
+      });
+      document.querySelectorAll('.hrw27-track-next-btn, #hrw27-track-next').forEach(function (btn) {
+        btn.addEventListener('click', function () { trackSlider.scrollBy({ left: 370, behavior: 'smooth' }); });
+      });
     }
   })();
 </script>

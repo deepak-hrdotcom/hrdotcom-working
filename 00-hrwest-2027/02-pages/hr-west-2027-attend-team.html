@@ -1,29 +1,117 @@
-
-
 <style id="hrw27-fouc-blocker">
-  /* Prevent Flash of Unwanted CMS Content (FOUC) */
-  #intro-header,
-  section#intro-header,
-  div#intro-header,
-  .sf-nav-main,
-  .socialshare,
-  #socialshare,
-  .social-share,
-  .floating-social,
-  .st-sticky-share-buttons,
-  div[class*="socialshare"],
-  div[id*="socialshare"],
-  #content,
-  .TopLink_new,
-  .TopBar,
-  #hradbtmwrapper {
+  /* 0ms Synchronous FOUC and CMS Parent Widget Suppression */
+  .TopLink_new, #loggedIn_TopLink, div#loggedIn_TopLink, div.TopLink_new,
+  .TopBar, div.TopBar, #TopBar,
+  .HeaderWrap, div.HeaderWrap, .HeaderBG, div.HeaderBG,
+  .headertopbg, div.headertopbg, .TopHeader, div.TopHeader,
+  .HeaderMain, div.HeaderMain, .header-top, .header-bottom,
+  .site-header, #site-header,
+  body > header:not(.hrw27-header), body > div.header:not(.hrw27-header),
+  body > div.HeaderWrap, body > div.HeaderBG, body > div.TopHeader,
+  body > div.TopBar, body > div.TopLink_new,
+  body > nav:not(.hrw27-nav), body > .navbar:not(.hrw27-nav),
+  #header:not(.hrw27-header), header.header:not(.hrw27-header), div.header:not(.hrw27-header),
+  #intro-header, section#intro-header, div#intro-header, header#intro-header,
+  .sf-nav-main, div.sf-nav-main, nav.sf-nav-main, header.sf-nav-main,
+  .socialshare, #socialshare, .social-share, .floating-social,
+  .st-sticky-share-buttons, div[class*="socialshare"], div[id*="socialshare"],
+  #content, #hradbtmwrapper {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -99999px !important;
+    z-index: -99999 !important;
+    pointer-events: none !important;
   }
-  body, body.sf-nav-main-mode, .sf-nav-main-mode {
+  html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
   }
+  body { background: #ffffff !important; margin: 0 !important; padding: 0 !important; }
+  .hrw27-header {
+    border: 0 !important; padding-block: 0 !important; margin-bottom: 0 !important;
+    padding: 0 !important; margin: 0 !important; overflow: visible !important; z-index: 99999 !important;
+  }
+  .ContentArea, .container {
+    max-width: 100% !important; width: 100% !important;
+    padding-left: 0 !important; padding-right: 0 !important;
+    margin-left: 0 !important; margin-right: 0 !important;
+  }
+  *, *::before, *::after { -webkit-tap-highlight-color: transparent !important; }
+  a, a:hover, a:focus, a:focus-visible, a:active, a:visited, a:link,
+  button, button:hover, button:focus, button:focus-visible, button:active,
+  :focus, :focus-visible, :active {
+    text-decoration: none !important;
+    outline: none !important; outline-width: 0 !important;
+    outline-style: none !important; outline-color: transparent !important;
+  }
 </style>
+<script>
+(function() {
+  'use strict';
+  var sels = [
+    '.TopLink_new','#loggedIn_TopLink','div#loggedIn_TopLink','div.TopLink_new',
+    '.TopBar','div.TopBar','#TopBar',
+    '.HeaderWrap','div.HeaderWrap','.HeaderBG','div.HeaderBG',
+    '.headertopbg','div.headertopbg','.TopHeader','div.TopHeader',
+    '.HeaderMain','div.HeaderMain','.header-top','.header-bottom',
+    '.site-header','#site-header',
+    '#intro-header','section#intro-header','div#intro-header','header#intro-header',
+    '.sf-nav-main','div.sf-nav-main','nav.sf-nav-main',
+    '.socialshare','#socialshare','.social-share','.floating-social',
+    '.st-sticky-share-buttons','#hradbtmwrapper',
+    'body > header:not(.hrw27-header)','body > div.header:not(.hrw27-header)',
+    'body > div.HeaderWrap','body > div.HeaderBG','body > div.TopHeader',
+    'body > div.TopBar','body > div.TopLink_new','body > nav:not(.hrw27-nav)',
+    '#header:not(.hrw27-header)','header.header:not(.hrw27-header)','div.header:not(.hrw27-header)'
+  ];
+  var ks = document.createElement('style');
+  ks.id = 'hrw27-root-fouc-killer';
+  ks.textContent = sels.join(',') + '{display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;max-height:0!important;overflow:hidden!important;position:absolute!important;top:-99999px!important;left:-99999px!important;z-index:-99999!important;pointer-events:none!important;}';
+  (document.head || document.documentElement).appendChild(ks);
+  function kill() {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty('padding-top','0px','important');
+      document.documentElement.style.setProperty('margin-top','0px','important');
+    }
+    if (document.body) {
+      document.body.style.setProperty('padding-top','0px','important');
+      document.body.style.setProperty('margin-top','0px','important');
+    }
+    sels.forEach(function(s) {
+      try {
+        var els = document.querySelectorAll(s);
+        for (var i = 0; i < els.length; i++) {
+          if (els[i].classList && els[i].classList.contains('hrw27-header')) continue;
+          els[i].style.setProperty('display','none','important');
+          els[i].style.setProperty('visibility','hidden','important');
+          els[i].style.setProperty('opacity','0','important');
+          els[i].style.setProperty('height','0px','important');
+          els[i].style.setProperty('position','absolute','important');
+          els[i].style.setProperty('top','-99999px','important');
+          if (els[i].parentNode) els[i].parentNode.removeChild(els[i]);
+        }
+      } catch(e) {}
+    });
+  }
+  kill();
+  if (window.MutationObserver) {
+    var obs = new MutationObserver(kill);
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class','style'], childList: true, subtree: true });
+    window.addEventListener('DOMContentLoaded', kill);
+    window.addEventListener('load', function() { kill(); setTimeout(function(){ obs.disconnect(); }, 4000); });
+  }
+})();
+</script>
 
 <style>
   /* ATTEND AS A TEAM PAGE STYLES AND DESIGN TOKENS */
@@ -66,7 +154,7 @@
     position: relative;
     min-height: 480px;
     background-color: #0b0814;
-    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/hero_conference.webp');
+    background-image: url('https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/attend_team_hero_bg_v2.webp');
     background-size: cover;
     background-position: 55% center;
     overflow: hidden;
@@ -491,6 +579,170 @@
     margin: 0.85rem 0 0 0.5rem !important;
   }
 
+  /* Mobile 3-Block Pricing Stack (Visible on Mobile <= 768px, Hidden on Desktop) */
+  .hrw27 .team-mobile-pricing-stack {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .hrw27 .team-table-card {
+      display: none !important;
+    }
+
+    .hrw27 .team-mobile-pricing-stack {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .hrw27 .team-mob-tier-card {
+      background: #ffffff !important;
+      border: 1.5px solid rgba(93, 47, 199, 0.16) !important;
+      border-radius: 18px !important;
+      padding: 18px 16px 16px !important;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .hrw27 .team-mob-tier-card.featured {
+      background: linear-gradient(180deg, #ffffff 0%, #faf6ff 100%) !important;
+      border: 2px solid #ef146e !important;
+      box-shadow: 0 8px 24px rgba(239, 20, 110, 0.12) !important;
+    }
+
+    .hrw27 .team-mob-tier-header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: flex-start !important;
+      padding-bottom: 12px !important;
+      border-bottom: 1px solid rgba(93, 47, 199, 0.1) !important;
+      margin-bottom: 12px !important;
+    }
+
+    .hrw27 .team-mob-tier-title {
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      font-weight: 900 !important;
+      font-size: 1.15rem !important;
+      color: #0f172a !important;
+      margin: 0 !important;
+    }
+
+    .hrw27 .team-mob-tier-card.featured .team-mob-tier-title {
+      color: #5d2fc7 !important;
+    }
+
+    .hrw27 .team-mob-tier-pill {
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      font-weight: 800 !important;
+      font-size: 0.72rem !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      color: #ffffff !important;
+      background: var(--gradient-pink) !important;
+      padding: 3px 9px !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 2px 6px rgba(239, 20, 110, 0.3) !important;
+      white-space: nowrap !important;
+    }
+
+    .hrw27 .team-mob-tier-timeframe {
+      display: flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      color: #64748b !important;
+      margin-top: 3px !important;
+    }
+
+    .hrw27 .team-mob-tier-card.featured .team-mob-tier-timeframe {
+      color: #ef146e !important;
+    }
+
+    .hrw27 .team-mob-rates-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 9px !important;
+    }
+
+    .hrw27 .team-mob-rate-row {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 9px 12px !important;
+      background: #f8fafc !important;
+      border-radius: 12px !important;
+      border: 1px solid #edf2f7 !important;
+    }
+
+    .hrw27 .team-mob-rate-row.highlight-group {
+      background: rgba(93, 47, 199, 0.06) !important;
+      border-color: rgba(93, 47, 199, 0.2) !important;
+    }
+
+    .hrw27 .team-mob-rate-row.highlight-vip {
+      background: rgba(239, 20, 110, 0.07) !important;
+      border-color: rgba(239, 20, 110, 0.25) !important;
+    }
+
+    .hrw27 .team-mob-rate-left {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1px !important;
+    }
+
+    .hrw27 .team-mob-rate-name {
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
+    }
+
+    .hrw27 .team-mob-rate-sub {
+      font-size: 0.73rem !important;
+      font-weight: 600 !important;
+      color: #64748b !important;
+    }
+
+    .hrw27 .team-mob-rate-sub.tag-pink {
+      color: #ef146e !important;
+      font-weight: 800 !important;
+    }
+
+    .hrw27 .team-mob-rate-sub.tag-purple {
+      color: #5d2fc7 !important;
+      font-weight: 800 !important;
+    }
+
+    .hrw27 .team-mob-rate-price {
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      font-weight: 900 !important;
+      font-size: 1.1rem !important;
+      color: #0f172a !important;
+      white-space: nowrap !important;
+      text-align: right !important;
+      line-height: 1.15 !important;
+    }
+
+    .hrw27 .team-mob-rate-price span {
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+      color: #64748b !important;
+      display: block !important;
+      line-height: 1 !important;
+      margin-top: 2px !important;
+    }
+
+    .hrw27 .team-mob-rate-price.price-purple {
+      color: #5d2fc7 !important;
+    }
+
+    .hrw27 .team-mob-rate-price.price-pink {
+      color: #ef146e !important;
+    }
+  }
+
   /* 3. 3-Card Offer Trio Grid */
   .hrw27 .team-offer-grid {
     display: grid;
@@ -910,7 +1162,7 @@
         <p class="team-sub">All prices are per-person rates based on team size and registration timeframe.</p>
       </div>
 
-      <!-- Pricing Table -->
+      <!-- Pricing Table (Desktop / Tablet >= 769px) -->
       <div class="team-table-card">
         <div style="overflow-x: auto;">
           <table class="team-table">
@@ -955,6 +1207,154 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <!-- Mobile 3-Block Pricing Stack (Visible on Mobile <= 768px) -->
+      <div class="team-mobile-pricing-stack">
+
+        <!-- Block 1: Early-Bird (Featured Spotlight) -->
+        <div class="team-mob-tier-card featured">
+          <div class="team-mob-tier-header">
+            <div>
+              <h3 class="team-mob-tier-title">
+                Early-Bird Rate
+              </h3>
+              <div class="team-mob-tier-timeframe">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Ends Jan 15, 2027
+              </div>
+            </div>
+            <span class="team-mob-tier-pill">Best Value</span>
+          </div>
+
+          <div class="team-mob-rates-list">
+            <!-- Individual -->
+            <div class="team-mob-rate-row">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Individual Pass</span>
+                <span class="team-mob-rate-sub">Standard single ticket</span>
+              </div>
+              <div class="team-mob-rate-price">
+                $399
+                <span>/ person</span>
+              </div>
+            </div>
+
+            <!-- Group 5 to 9 -->
+            <div class="team-mob-rate-row highlight-group">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Group (5 to 9)</span>
+                <span class="team-mob-rate-sub tag-purple">Save $100 / person</span>
+              </div>
+              <div class="team-mob-rate-price price-purple">
+                $299
+                <span>/ person</span>
+              </div>
+            </div>
+
+            <!-- Group 10+ -->
+            <div class="team-mob-rate-row highlight-vip">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Group (10+)</span>
+                <span class="team-mob-rate-sub tag-pink">Save $170 / person &bull; Max Savings</span>
+              </div>
+              <div class="team-mob-rate-price price-pink">
+                $229
+                <span>/ person</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2: Regular Rate -->
+        <div class="team-mob-tier-card">
+          <div class="team-mob-tier-header">
+            <div>
+              <h3 class="team-mob-tier-title">Regular Rate</h3>
+              <div class="team-mob-tier-timeframe">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Jan 16 &ndash; Mar 22, 2027
+              </div>
+            </div>
+          </div>
+
+          <div class="team-mob-rates-list">
+            <!-- Individual -->
+            <div class="team-mob-rate-row">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Individual Pass</span>
+                <span class="team-mob-rate-sub">Standard single ticket</span>
+              </div>
+              <div class="team-mob-rate-price">
+                $799
+                <span>/ person</span>
+              </div>
+            </div>
+
+            <!-- Group 5 to 9 -->
+            <div class="team-mob-rate-row">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Group (5 to 9)</span>
+                <span class="team-mob-rate-sub">Save $100 / person</span>
+              </div>
+              <div class="team-mob-rate-price">
+                $699
+                <span>/ person</span>
+              </div>
+            </div>
+
+            <!-- Group 10+ -->
+            <div class="team-mob-rate-row highlight-group">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Group (10+)</span>
+                <span class="team-mob-rate-sub tag-purple">Save $220 / person</span>
+              </div>
+              <div class="team-mob-rate-price price-purple">
+                $579
+                <span>/ person</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 3: On-Site Rate -->
+        <div class="team-mob-tier-card">
+          <div class="team-mob-tier-header">
+            <div>
+              <h3 class="team-mob-tier-title" style="color: #64748b;">On-Site Rate</h3>
+              <div class="team-mob-tier-timeframe">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                March 23&ndash;24, 2027
+              </div>
+            </div>
+          </div>
+
+          <div class="team-mob-rates-list">
+            <!-- Individual -->
+            <div class="team-mob-rate-row">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Individual Pass</span>
+                <span class="team-mob-rate-sub">At-the-door registration</span>
+              </div>
+              <div class="team-mob-rate-price">
+                $999
+                <span>/ person</span>
+              </div>
+            </div>
+
+            <!-- Group Passes -->
+            <div class="team-mob-rate-row" style="opacity: 0.7;">
+              <div class="team-mob-rate-left">
+                <span class="team-mob-rate-name">Group Passes (5+)</span>
+                <span class="team-mob-rate-sub">Advance registration only</span>
+              </div>
+              <div class="team-mob-rate-price" style="color: #94a3b8; font-size: 0.95rem;">
+                N/A
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <p class="team-table-note">* Dollar amounts are per-person rates. Discounts apply automatically at registration checkout or via invoice billing.</p>
 
@@ -1138,7 +1538,7 @@
           Secure early-bird group pricing before January 15, 2027. We make corporate registration, PO generation, and attendee substitution simple and hassle-free.
         </p>
         <div class="team-cta-btns">
-          <a href="/en/webcasts_events/live_events/hrwest-2026-registration_ml6ofh1g.html" class="team-hero-btn-primary" style="padding: 0.95rem 2.2rem; font-size: 0.96rem; background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);">
+          <a href="/en/webcasts_events/live_events/hrwest-2027-registration_msy2qo61.html" class="team-hero-btn-primary" style="padding: 0.95rem 2.2rem; font-size: 0.96rem; background: var(--gradient-pink); box-shadow: 0 8px 24px rgba(239, 20, 110, 0.4);">
             Register Your Team Today
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
