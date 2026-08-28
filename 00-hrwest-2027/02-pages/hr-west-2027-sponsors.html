@@ -583,9 +583,12 @@
           Companies that have used HRWest to connect with the HR community
         </p>
 
+        <!-- CMS vendor lead form popup injection -->
+        <div>$vendorLeadForm</div>
+
         <div>
-          <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247" name="fc_1786988265247" disabled
-            style="opacity: 0.65; cursor: not-allowed !important; pointer-events: none; box-shadow: none;">
+          <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247" name="fc_1786988265247"
+            onclick="loadPopup('fc_1786988265247')">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -618,18 +621,17 @@
             alt="UKG" class="spn-float-img" />
         </div>
 
-        <!-- Card 3: Robert Half -->
+        <!-- Card 3: BambooHR -->
         <div class="spn-float-card spn-float-card-3">
+          <img src="https://public-cdn.hr.com/system/app/media/rs/2023/4/5/lg475uwm/160.jpg"
+            alt="BambooHR" class="spn-float-img" />
+        </div>
+
+        <!-- Card 4: Robert Half -->
+        <div class="spn-float-card spn-float-card-4">
           <img
             src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/robert-half-logo.jpg"
             alt="Robert Half" class="spn-float-img" />
-        </div>
-
-        <!-- Card 4: Insperity -->
-        <div class="spn-float-card spn-float-card-4">
-          <img
-            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/insperity-logo.jpg"
-            alt="Insperity" class="spn-float-img" />
         </div>
 
       </div>
@@ -656,7 +658,7 @@
         </h2>
       </div>
 
-      <!-- Logo Wall Grid (All 59 Sponsors) -->
+      <!-- Logo Wall Grid (All 60 Sponsors) -->
       <div class="spn-logos-grid">
 
         <!-- 1. SAP SuccessFactors -->
@@ -674,7 +676,14 @@
             alt="UKG" class="spn-logo-img" loading="lazy" />
         </a>
 
-        <!-- 3. Robert Half -->
+        <!-- 3. BambooHR -->
+        <a href="https://www.hr.com/directory/company/bamboohr_2" target="_blank" rel="noopener noreferrer"
+          class="spn-logo-card">
+          <img src="https://public-cdn.hr.com/system/app/media/rs/2023/4/5/lg475uwm/160.jpg"
+            alt="BambooHR" class="spn-logo-img" loading="lazy" />
+        </a>
+
+        <!-- 4. Robert Half -->
         <a href="https://www.hr.com/directory/company/robert_half_intl_inc_1" target="_blank" rel="noopener noreferrer"
           class="spn-logo-card">
           <img
@@ -682,7 +691,7 @@
             alt="Robert Half" class="spn-logo-img" loading="lazy" />
         </a>
 
-        <!-- 4. Insperity -->
+        <!-- 5. Insperity -->
         <a href="https://www.hr.com/directory/company/insperity_28" target="_blank" rel="noopener noreferrer"
           class="spn-logo-card">
           <img
@@ -1132,7 +1141,7 @@
           </p>
           <div class="spn-cta-buttons">
             <button type="button" class="spn-hero-btn-primary" id="fc_1786988265247_bottom" name="fc_1786988265247"
-              disabled style="opacity: 0.65; cursor: not-allowed !important; pointer-events: none; box-shadow: none;">
+              onclick="loadPopup('fc_1786988265247')">
               Download Sponsorship Brochure
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>

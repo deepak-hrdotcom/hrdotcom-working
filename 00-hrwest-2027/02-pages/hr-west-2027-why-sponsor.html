@@ -262,10 +262,13 @@
   .hrw27 .whyspn-hero-btn-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.55rem;
     padding: 0.85rem 1.8rem;
     background: linear-gradient(135deg, #5d2fc7 0%, #91278c 100%);
     color: #ffffff !important;
+    border: none;
+    outline: none;
     border-radius: 9999px;
     font-family: 'Outfit', system-ui, sans-serif !important;
     font-weight: 800 !important;
@@ -273,6 +276,7 @@
     text-decoration: none !important;
     box-shadow: 0 8px 24px rgba(239, 20, 110, 0.35);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
   }
 
   .hrw27 .whyspn-hero-btn-primary:hover {
@@ -1100,14 +1104,16 @@
           Position your company as a must-have partner for <strong style="color: #ffffff;">500+ HR decision-makers</strong>. Meet leaders eager to learn about HR innovations and solutions.
         </p>
 
+        <!-- CMS vendor lead form popup injection -->
+        <div>$vendorLeadForm</div>
+
         <div>
           <button
             type="button"
             class="whyspn-hero-btn-primary"
             id="fc_1786988265247"
             name="fc_1786988265247"
-            disabled
-            style="background: var(--gradient-pink); opacity: 0.65; cursor: not-allowed !important; pointer-events: none; border: none; box-shadow: none;"
+            onclick="loadPopup('fc_1786988265247')"
           >
             Download Sponsorship Brochure
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -1143,7 +1149,7 @@
         <div class="whyspn-float-card whyspn-float-card-3">
           <div class="whyspn-float-dot"></div>
           <div>
-            <div class="whyspn-float-num">55%</div>
+            <div class="whyspn-float-num">68%</div>
             <div class="whyspn-float-label">Managers or Above</div>
           </div>
         </div>
@@ -1288,8 +1294,7 @@
             class="whyspn-hero-btn-primary"
             id="fc_1786988265247_sec3"
             name="fc_1786988265247"
-            disabled
-            style="background: var(--gradient-pink); opacity: 0.65; cursor: not-allowed !important; pointer-events: none; border: none; box-shadow: none;"
+            onclick="loadPopup('fc_1786988265247')"
           >
             Download Sponsorship Brochure
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -1361,8 +1366,7 @@
               class="whyspn-hero-btn-primary"
               id="fc_1786988265247_sec4"
               name="fc_1786988265247"
-              disabled
-              style="background: var(--gradient-pink); opacity: 0.65; cursor: not-allowed !important; pointer-events: none; border: none; box-shadow: none;"
+              onclick="loadPopup('fc_1786988265247')"
             >
               Download Sponsorship Brochure
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -1501,8 +1505,7 @@
             class="whyspn-hero-btn-primary"
             id="fc_1786988265247_bottom_cta"
             name="fc_1786988265247"
-            disabled
-            style="background: var(--gradient-pink); opacity: 0.65; cursor: not-allowed !important; pointer-events: none; border: none; box-shadow: none;"
+            onclick="loadPopup('fc_1786988265247')"
           >
             Download Sponsorship Brochure
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
