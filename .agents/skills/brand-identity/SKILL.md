@@ -153,8 +153,8 @@ design-guidelines/brand-guidelines.pdf
 
 Guidelines:
 
-- **Primary Font Family**: All generated HTML and designs must explicitly use the **Manrope** font family (`font-family: 'Manrope', sans-serif;`).
-- **Font Import**: You must include the Google Fonts import for Manrope in all HTML output: `@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;900&display=swap');`
+- **Primary Font Family**: All generated HTML and designs must explicitly use the **Roboto** font family (`font-family: 'Roboto', Arial, sans-serif;`).
+- **Font Import**: You must include the Google Fonts import for Roboto in all HTML output: `@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap');`
 - headings should be bold and large  
 - all heading elements (h1, h2, h3) must have normal casing (no uppercase or title case) and exactly 100% letter spacing  
 - body text must remain highly readable  

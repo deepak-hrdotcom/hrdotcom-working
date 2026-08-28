@@ -64,7 +64,7 @@ To ensure columns stack on mobile but stay side-by-side in Outlook, use the "Gho
 
 ### 2. Typography & Fonts
 
-- **Primary Font**: 'Manrope', Arial, sans-serif.
+- **Primary Font**: 'Roboto', Arial, sans-serif.
 - **Import**: Include the Google Fonts `@import` but provide a safe fallback for Outlook.
 - **MSO Fallback**:
   ```html

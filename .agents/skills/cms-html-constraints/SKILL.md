@@ -128,7 +128,7 @@ Fluid typography is explicitly encouraged using `clamp()`, `rem`, or `em` to ens
    Example: 
    ```css
    .cms-page h1, .cms-page p, .cms-page a, .cms-page li, .cms-page span, .cms-page div {
-       font-family: 'Manrope', sans-serif !important;
+       font-family: 'Roboto', Arial, sans-serif !important;
    }
    ```
 2. **Typography Properties**: **ALL** typography properties (`font-size`, `font-weight`, `line-height`, `letter-spacing`, `color`) **MUST include `!important`**. 
