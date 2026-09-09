@@ -1,0 +1,1405 @@
+<!-- FOUC Prevention -->
+<style>.edu-pass-page{visibility:hidden;}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var p=document.querySelector('.edu-pass-page');if(p)p.style.visibility='visible';});</script>
+
+<div class="edu-pass-page">
+
+<!-- ================================================================
+  HR.com Pass Assurance Program — 2026 Executive Redesign
+  Scope Wrapper : .edu-pass-page
+  Design System : 2026 International Executive Education Standard
+  Typography    : Plus Jakarta Sans exclusively
+  Brand Palette : Cobalt (#2563EB), Obsidian (#090D1A), Emerald (#15803D), Gold (#B45309)
+  Strict Rules  : 100% EXACT text & copy preserved, Zero invented metrics
+================================================================ -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* ---- CMS FULL-WIDTH CANVAS OVERRIDES ---- */
+body > .ContentArea {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+body > .ContentArea > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ---- SCOPED RESET & TYPOGRAPHY SHIELD ---- */
+.edu-pass-page,
+.edu-pass-page *,
+.edu-pass-page *::before,
+.edu-pass-page *::after {
+  box-sizing: border-box !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.edu-pass-page {
+  /* 2026 International Executive Education Palette (brand-guidelines.html) */
+  --color-primary: #2563EB;             /* Primary Action (International Cobalt) */
+  --color-primary-hover: #1D4ED8;
+  --color-primary-soft: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+
+  --color-dark-anchor: #090D1A;         /* Midnight Obsidian */
+  --color-dark-surface: #0F172A;
+  --color-dark-subtle: #1E293B;
+
+  --color-text-primary: #0F172A;        /* Deep Slate Headings */
+  --color-text-secondary: #334155;      /* Slate Body Text */
+  --color-text-muted: #64748B;          /* Muted Slate */
+
+  --color-background: #FFFFFF;
+  --color-background-subtle: #F8FAFC;   /* Porcelain Slate */
+  --color-background-soft: #F1F5F9;     /* Soft Slate */
+
+  --color-border: #E2E8F0;              /* Hairline Borders */
+  --color-border-strong: #CBD5E1;
+
+  --color-success: #15803D;             /* Growth Emerald */
+  --color-success-soft: #ECFDF5;
+  --color-success-border: #BBF7D0;
+
+  --color-warning: #B45309;             /* Burnished Honor Gold */
+  --color-warning-soft: #FFFBEB;
+  --color-warning-border: #FDE68A;
+
+  --color-indigo: #4F46E5;
+  --color-indigo-soft: #EEF2FF;
+  --color-indigo-border: #C7D2FE;
+
+  /* Restrained Geometry */
+  --radius-control: 8px;                /* Controls & Buttons */
+  --radius-card: 16px;                  /* Standard Cards */
+  --radius-panel: 20px;                 /* Feature Panels */
+  --radius-pill: 999px;                 /* Strictly for Tags, Badges & Chips */
+
+  /* Elevation Shadows */
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 16px 36px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 10px 28px rgba(37, 99, 235, 0.22);
+  --shadow-gold: 0 10px 28px rgba(180, 83, 9, 0.16);
+
+  /* Typography Scale Tokens */
+  --edu-fs-display: 44px;
+  --edu-fs-h1: 38px;
+  --edu-fs-h2: 28px;
+  --edu-fs-h3: 20px;
+  --edu-fs-lead: 17.5px;
+  --edu-fs-body: 15px;
+  --edu-fs-meta: 13px;
+  --edu-fs-caption: 12px;
+  --edu-fs-btn: 14.5px;
+
+  /* Line Heights */
+  --edu-lh-tight: 1.18;
+  --edu-lh-heading: 1.25;
+  --edu-lh-body: 1.62;
+
+  width: 100vw !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background-color: var(--color-background) !important;
+  color: var(--color-text-secondary) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  overflow-x: hidden !important;
+}
+
+.edu-pass-page section {
+  width: 100vw !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  padding: 70px 0 !important;
+}
+
+.edu-pass-page h1,
+.edu-pass-page h2,
+.edu-pass-page h3,
+.edu-pass-page h4,
+.edu-pass-page h5,
+.edu-pass-page h6 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: -0.03em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+.edu-pass-page p,
+.edu-pass-page span,
+.edu-pass-page li,
+.edu-pass-page div {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.edu-pass-page img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+}
+
+/* Reusable Container */
+.edu-pass-page .edu-container {
+  width: min(100% - 48px, 1180px) !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* ================================================================
+   SECTION 1 — EXECUTIVE HERO & GUARANTEE SHOWCASE
+================================================================ */
+.edu-pass-page .hero-section {
+  background: radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.05) 0%, transparent 55%),
+              radial-gradient(circle at 15% 85%, rgba(180, 83, 9, 0.04) 0%, transparent 50%),
+              #FFFFFF !important;
+  padding: 65px 0 50px 0 !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-pass-page .hero-header {
+  text-align: center !important;
+  max-width: 860px !important;
+  margin: 0 auto 48px auto !important;
+}
+
+/* Pulse Eyebrow Beacon */
+.edu-pass-page .edu-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: var(--color-warning-soft) !important;
+  border: 1px solid var(--color-warning-border) !important;
+  color: var(--color-warning) !important;
+  font-size: var(--edu-fs-meta) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 6px 14px !important;
+  border-radius: var(--radius-pill) !important;
+  margin-bottom: 18px !important;
+}
+
+.edu-pass-page .edu-eyebrow-beacon {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: var(--color-warning) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 0 rgba(180, 83, 9, 0.7) !important;
+  animation: eduPulse 2s infinite !important;
+}
+
+@keyframes eduPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(180, 83, 9, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(180, 83, 9, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(180, 83, 9, 0); }
+}
+
+.edu-pass-page .hero-title {
+  font-size: var(--edu-fs-display) !important;
+  line-height: var(--edu-lh-tight) !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  margin-bottom: 18px !important;
+}
+
+.edu-pass-page .hero-lead {
+  font-size: var(--edu-fs-lead) !important;
+  line-height: var(--edu-lh-body) !important;
+  color: var(--color-text-secondary) !important;
+  font-weight: 400 !important;
+  margin: 0 auto !important;
+  max-width: 800px !important;
+}
+
+.edu-pass-page .hero-lead strong,
+.edu-pass-page .hero-lead b {
+  color: var(--color-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+/* Guarantee Showcase Card */
+.edu-pass-page .guarantee-showcase-card {
+  background: var(--color-background) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-panel) !important;
+  box-shadow: var(--shadow-hover) !important;
+  display: grid !important;
+  grid-template-columns: 320px 1fr !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.edu-pass-page .guarantee-showcase-card:hover {
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Left Shield Wing */
+.edu-pass-page .shield-wing {
+  background: linear-gradient(160deg, #090D1A 0%, #0F172A 100%) !important;
+  padding: 40px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  position: relative !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.edu-pass-page .shield-wing::before {
+  content: '' !important;
+  position: absolute !important;
+  width: 180px !important;
+  height: 180px !important;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%) !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+
+.edu-pass-page .shield-badge-box {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(254, 243, 199, 0.12) 0%, rgba(15, 23, 42, 0.4) 80%) !important;
+  border: 2px solid rgba(253, 230, 138, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 18px !important;
+  padding: 12px !important;
+  position: relative !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.edu-pass-page .shield-badge-img {
+  width: 100% !important;
+  max-width: 116px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35)) !important;
+}
+
+.edu-pass-page .shield-caption {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #FDE68A !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 12px !important;
+}
+
+.edu-pass-page .shield-pill-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.edu-pass-page .shield-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 5px 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #E2E8F0 !important;
+}
+
+.edu-pass-page .shield-pill svg {
+  color: #10B981 !important;
+}
+
+/* Right Content Wing */
+.edu-pass-page .content-wing {
+  padding: 44px 44px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.edu-pass-page .content-wing-title {
+  font-size: 24px !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 800 !important;
+  margin-bottom: 12px !important;
+  letter-spacing: -0.025em !important;
+}
+
+.edu-pass-page .content-wing-desc {
+  font-size: var(--edu-fs-body) !important;
+  line-height: 1.65 !important;
+  color: var(--color-text-secondary) !important;
+  margin-bottom: 24px !important;
+}
+
+/* 3 Quick Value Highlights */
+.edu-pass-page .showcase-values-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding-top: 24px !important;
+}
+
+.edu-pass-page .showcase-val-card {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.edu-pass-page .showcase-val-icon {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  background: var(--color-primary-soft) !important;
+  border: 1px solid var(--color-primary-border) !important;
+  border-radius: var(--radius-control) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--color-primary) !important;
+}
+
+.edu-pass-page .showcase-val-title {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  margin-bottom: 3px !important;
+}
+
+.edu-pass-page .showcase-val-sub {
+  font-size: 12px !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.4 !important;
+}
+
+/* ================================================================
+   SECTION 2 — 3-POINT ELIGIBILITY REQUIREMENTS
+================================================================ */
+.edu-pass-page .requirements-section {
+  background: var(--color-background-subtle) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-pass-page .section-header {
+  text-align: center !important;
+  max-width: 760px !important;
+  margin: 0 auto 44px auto !important;
+}
+
+.edu-pass-page .section-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: var(--color-primary-soft) !important;
+  border: 1px solid var(--color-primary-border) !important;
+  color: var(--color-primary) !important;
+  font-size: var(--edu-fs-meta) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 5px 12px !important;
+  border-radius: var(--radius-pill) !important;
+  margin-bottom: 14px !important;
+}
+
+.edu-pass-page .section-eyebrow .edu-eyebrow-beacon {
+  background-color: var(--color-primary) !important;
+}
+
+.edu-pass-page .section-title {
+  font-size: var(--edu-fs-h2) !important;
+  line-height: var(--edu-lh-heading) !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 14px !important;
+}
+
+.edu-pass-page .section-desc {
+  font-size: var(--edu-fs-body) !important;
+  line-height: var(--edu-lh-body) !important;
+  color: var(--color-text-muted) !important;
+  margin: 0 auto !important;
+}
+
+/* 3 Requirements Grid */
+.edu-pass-page .req-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+.edu-pass-page .req-card {
+  background: var(--color-background) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 32px 26px !important;
+  box-shadow: var(--shadow-card) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  transition: all 0.25s ease !important;
+}
+
+.edu-pass-page .req-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: var(--color-primary-border) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.edu-pass-page .req-header-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+
+.edu-pass-page .req-step-pill {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  background: var(--color-background-soft) !important;
+  color: var(--color-text-secondary) !important;
+  border: 1px solid var(--color-border) !important;
+  padding: 4px 10px !important;
+  border-radius: var(--radius-pill) !important;
+}
+
+.edu-pass-page .req-icon-badge {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  background: var(--color-success-soft) !important;
+  border: 1px solid var(--color-success-border) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--color-success) !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-pass-page .req-metric {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  letter-spacing: -0.025em !important;
+  margin-bottom: 10px !important;
+}
+
+.edu-pass-page .req-text {
+  font-size: var(--edu-fs-body) !important;
+  line-height: 1.6 !important;
+  color: var(--color-text-secondary) !important;
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+  flex: 1 !important;
+}
+
+.edu-pass-page .req-tagline {
+  font-size: 12px !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.45 !important;
+  background: var(--color-background-subtle) !important;
+  padding: 8px 12px !important;
+  border-radius: var(--radius-control) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+/* ================================================================
+   SECTION 3 — APPLICABLE PREPARATION COURSES
+================================================================ */
+.edu-pass-page .courses-section {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-pass-page .courses-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  margin-top: 10px !important;
+}
+
+.edu-pass-page .course-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 32px 28px 28px 28px !important;
+  box-shadow: var(--shadow-card) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+
+.edu-pass-page .course-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--color-primary-border) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.edu-pass-page .course-card-top {
+  margin-bottom: 24px !important;
+}
+
+.edu-pass-page .course-duration-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: var(--color-primary-soft) !important;
+  color: var(--color-primary) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 4px 10px !important;
+  border-radius: var(--radius-pill) !important;
+  margin-bottom: 14px !important;
+}
+
+.edu-pass-page .course-title {
+  font-size: 18.5px !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 12px !important;
+}
+
+.edu-pass-page .course-credentials-chip {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-muted) !important;
+  background: var(--color-background-soft) !important;
+  padding: 4px 10px !important;
+  border-radius: var(--radius-control) !important;
+  display: inline-block !important;
+  margin-bottom: 18px !important;
+}
+
+.edu-pass-page .course-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.edu-pass-page .course-features-list li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 9px !important;
+  font-size: 13px !important;
+  color: var(--color-text-secondary) !important;
+  line-height: 1.45 !important;
+  margin-bottom: 9px !important;
+}
+
+.edu-pass-page .course-features-list li:last-child {
+  margin-bottom: 0 !important;
+}
+
+.edu-pass-page .course-features-list svg {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  color: var(--color-success) !important;
+  margin-top: 1px !important;
+}
+
+.edu-pass-page .course-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  padding: 12px 18px !important;
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  font-size: var(--edu-fs-btn) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border-radius: var(--radius-control) !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  margin-top: 20px !important;
+}
+
+.edu-pass-page .course-btn:hover {
+  background: var(--color-primary-hover) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+  text-decoration: none !important;
+}
+
+/* ================================================================
+   SECTION 4 — FREQUENTLY ASKED QUESTIONS (ACCORDION)
+================================================================ */
+.edu-pass-page .faq-section {
+  background: var(--color-background-subtle) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-pass-page .faq-container {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+}
+
+.edu-pass-page .edu-faq-accordion {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.edu-pass-page .edu-faq-item {
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: var(--shadow-sm) !important;
+  overflow: hidden !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.edu-pass-page .edu-faq-item.is-open {
+  border-color: var(--color-primary-border) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.edu-pass-page .edu-faq-toggle {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 20px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+.edu-pass-page .edu-faq-title {
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+.edu-pass-page .edu-faq-icon {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  color: var(--color-text-muted) !important;
+  transition: transform 0.25s ease, color 0.2s ease !important;
+}
+
+.edu-pass-page .edu-faq-item.is-open .edu-faq-icon {
+  transform: rotate(180deg) !important;
+  color: var(--color-primary) !important;
+}
+
+.edu-pass-page .edu-faq-content {
+  display: none !important;
+  padding: 0 24px 22px 24px !important;
+  font-size: var(--edu-fs-body) !important;
+  line-height: 1.65 !important;
+  color: var(--color-text-secondary) !important;
+  border-top: 1px solid var(--color-background-soft) !important;
+  padding-top: 16px !important;
+}
+
+.edu-pass-page .edu-faq-item.is-open .edu-faq-content {
+  display: block !important;
+}
+
+.edu-pass-page .edu-faq-content a {
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+}
+
+.edu-pass-page .edu-faq-content a:hover {
+  color: var(--color-primary-hover) !important;
+}
+
+/* ================================================================
+   SECTION 5 — ADVISOR CONSULTATION CTA BLOCK
+================================================================ */
+.edu-pass-page .cta-section {
+  background: var(--color-background) !important;
+  padding: 60px 0 !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-pass-page .cta-box {
+  background: linear-gradient(145deg, #090D1A 0%, #0F172A 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-panel) !important;
+  padding: 48px 40px !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  max-width: 960px !important;
+  margin: 0 auto !important;
+  box-shadow: 0 16px 36px rgba(9, 13, 26, 0.15) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.edu-pass-page .cta-box::before {
+  content: '' !important;
+  position: absolute !important;
+  width: 400px !important;
+  height: 400px !important;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%) !important;
+  top: -100px !important;
+  right: -100px !important;
+  pointer-events: none !important;
+}
+
+.edu-pass-page .cta-title {
+  font-size: 30px !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  margin-bottom: 14px !important;
+  letter-spacing: -0.025em !important;
+}
+
+.edu-pass-page .cta-desc {
+  font-size: var(--edu-fs-body) !important;
+  line-height: 1.65 !important;
+  color: #CBD5E1 !important;
+  max-width: 680px !important;
+  margin: 0 auto 28px auto !important;
+}
+
+.edu-pass-page .cta-channels {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 28px !important;
+  margin-bottom: 30px !important;
+  flex-wrap: wrap !important;
+}
+
+.edu-pass-page .cta-channel-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #F8FAFC !important;
+}
+
+.edu-pass-page .cta-channel-item a {
+  color: #93C5FD !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  transition: color 0.2s ease !important;
+}
+
+.edu-pass-page .cta-channel-item a:hover {
+  color: #FFFFFF !important;
+  text-decoration: underline !important;
+}
+
+.edu-pass-page .cta-channel-item svg {
+  color: #38BDF8 !important;
+}
+
+.edu-pass-page .cta-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 13px 30px !important;
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  font-size: var(--edu-fs-btn) !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.edu-pass-page .cta-action-btn:hover {
+  background: var(--color-primary-hover) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5) !important;
+  text-decoration: none !important;
+}
+
+/* ================================================================
+   SECTION 6 — TRADEMARK DISCLAIMER
+================================================================ */
+.edu-pass-page .disclaimer-section {
+  background: var(--color-background-subtle) !important;
+  padding: 40px 0 !important;
+}
+
+.edu-pass-page .disclaimer-box {
+  max-width: 960px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.edu-pass-page .disclaimer-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-muted) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 8px !important;
+}
+
+.edu-pass-page .disclaimer-text {
+  font-size: var(--edu-fs-caption) !important;
+  line-height: 1.6 !important;
+  color: #94A3B8 !important;
+  margin: 0 !important;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+@media screen and (max-width: 1024px) {
+  .edu-pass-page .hero-title {
+    font-size: 34px !important;
+  }
+  .edu-pass-page .guarantee-showcase-card {
+    grid-template-columns: 280px 1fr !important;
+  }
+  .edu-pass-page .content-wing {
+    padding: 32px !important;
+  }
+  .edu-pass-page .courses-grid {
+    gap: 20px !important;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .edu-pass-page .guarantee-showcase-card {
+    grid-template-columns: 1fr !important;
+  }
+  .edu-pass-page .shield-wing {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 36px 20px !important;
+  }
+  .edu-pass-page .showcase-values-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .edu-pass-page .req-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .edu-pass-page .courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .edu-pass-page section {
+    padding: 48px 0 !important;
+  }
+  .edu-pass-page .hero-title {
+    font-size: 28px !important;
+  }
+  .edu-pass-page .hero-lead {
+    font-size: 15px !important;
+  }
+  .edu-pass-page .content-wing {
+    padding: 24px 20px !important;
+  }
+  .edu-pass-page .cta-box {
+    padding: 36px 20px !important;
+  }
+  .edu-pass-page .cta-channels {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+</style>
+
+<!-- ================================================================
+     HTML STRUCTURE
+================================================================ -->
+
+<!-- Section 1: Executive Hero & Guarantee Showcase -->
+<section class="hero-section">
+  <div class="edu-container">
+    
+    <!-- Hero Header -->
+    <div class="hero-header">
+      <div class="edu-eyebrow">
+        <span class="edu-eyebrow-beacon"></span>
+        100% MONEY-BACK GUARANTEE
+      </div>
+      <h1 class="hero-title">Pass Assurance Program</h1>
+      <p class="hero-lead">
+        If you meet the following eligibility requirements, and still aren't successful in passing your <b>HRCI&reg;</b> or <b>SHRM&reg;</b> certification exam - we will refund your complete tuition cost back to you!
+      </p>
+    </div>
+
+    <!-- Guarantee Showcase Card (Dual Wing) -->
+    <div class="guarantee-showcase-card">
+      
+      <!-- Left Shield Wing -->
+      <div class="shield-wing">
+        <div class="shield-badge-box">
+          <img
+            alt="Pass Assurance Program - 100% Money Back Guarantee"
+            class="shield-badge-img"
+            src="https://public-cdn.hr.com/remoteimages/website-images/2022_siteupdate/2022_Certification/images/money_back_badge.png"
+            onerror="this.style.display='none'; document.getElementById('edu-fallback-shield').style.display='block';"
+          />
+          <!-- High-End Vector Shield Fallback -->
+          <div id="edu-fallback-shield" style="display: none; text-align: center;">
+            <svg width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+        </div>
+
+        <span class="shield-caption">100% Refund Guarantee</span>
+
+        <div class="shield-pill-group">
+          <div class="shield-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Zero Financial Risk</span>
+          </div>
+          <div class="shield-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Complete Tuition Protection</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content Wing -->
+      <div class="content-wing">
+        <h3 class="content-wing-title">Our Absolute Commitment to Your Success</h3>
+        <p class="content-wing-desc">
+          When preparing for high-stakes certification exams like <b>HRCI&reg;</b> and <b>SHRM&reg;</b>, your entire focus should be on mastering the body of knowledge—never on the financial risk of failure. Our structured curriculum and expert-led instruction have prepared tens of thousands of HR professionals with industry-leading pass rates. If you complete the milestones and do not pass, your investment is fully protected.
+        </p>
+
+        <!-- 3 Quick Values Grid -->
+        <div class="showcase-values-grid">
+          
+          <div class="showcase-val-card">
+            <div class="showcase-val-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="showcase-val-title">100% Money-Back</div>
+              <div class="showcase-val-sub">Full tuition refund if you do not pass</div>
+            </div>
+          </div>
+
+          <div class="showcase-val-card">
+            <div class="showcase-val-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div>
+              <div class="showcase-val-title">HRCI&reg; &amp; SHRM&reg;</div>
+              <div class="showcase-val-sub">Valid for all primary live credentials</div>
+            </div>
+          </div>
+
+          <div class="showcase-val-card">
+            <div class="showcase-val-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <div class="showcase-val-title">Live Instructor-Led</div>
+              <div class="showcase-val-sub">Learn directly from verified HR experts</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 2: 3-Point Eligibility Requirements -->
+<section class="requirements-section">
+  <div class="edu-container">
+    
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="edu-eyebrow-beacon"></span>
+        ELIGIBILITY CRITERIA
+      </div>
+      <h2 class="section-title">3 Clear Steps to Maintain Your Guarantee</h2>
+      <p class="section-desc">
+        Our Pass Assurance criteria are structured to give you the highest statistical likelihood of passing on your first attempt. Meet these three standards to keep your guarantee active.
+      </p>
+    </div>
+
+    <div class="req-grid">
+      
+      <!-- Requirement 1 -->
+      <div class="req-card">
+        <div class="req-header-row">
+          <span class="req-step-pill">Criterion 01</span>
+          <div class="req-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="req-metric">80%+ Attendance</div>
+        <div class="req-text">
+          Must attend 80% or more of the live, scheduled sessions.
+        </div>
+        <div class="req-tagline">
+          Engage directly with certified instructors and participate in cohort Q&amp;A.
+        </div>
+      </div>
+
+      <!-- Requirement 2 -->
+      <div class="req-card">
+        <div class="req-header-row">
+          <span class="req-step-pill">Criterion 02</span>
+          <div class="req-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <path d="m9 15 2 2 4-4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="req-metric">80%+ Practice Score</div>
+        <div class="req-text">
+          Must score 80% or higher on all practice exams included in the program.
+        </div>
+        <div class="req-tagline">
+          Test and solidify domain knowledge across simulated test questions.
+        </div>
+      </div>
+
+      <!-- Requirement 3 -->
+      <div class="req-card">
+        <div class="req-header-row">
+          <span class="req-step-pill">Criterion 03</span>
+          <div class="req-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+        </div>
+        <div class="req-metric">Within 90 Days</div>
+        <div class="req-text">
+          Must attempt your HRCI or SHRM exam within 90 days of completing the program.
+        </div>
+        <div class="req-tagline">
+          Sit for your credential exam while curriculum concepts remain sharp and top-of-mind.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 3: Applicable Preparation Courses -->
+<section class="courses-section">
+  <div class="edu-container">
+    
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="edu-eyebrow-beacon"></span>
+        QUALIFYING PREPARATION PATHWAYS
+      </div>
+      <h2 class="section-title">Applicable courses that come with the Pass Assurance Program</h2>
+      <p class="section-desc">
+        Select the learning format and cohort duration that matches your schedule. All live instructor-led options automatically include the 100% Pass Assurance Program.
+      </p>
+    </div>
+
+    <div class="courses-grid">
+      
+      <!-- Course 1: 16-wk -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="course-duration-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Comprehensive Cohort
+          </div>
+          <h3 class="course-title">16-wk HRCI &amp; SHRM live instructor-led classes</h3>
+          <div class="course-credentials-chip">PHR&reg; | SPHR&reg; | SHRM-CP&reg; | SHRM-SCP&reg;</div>
+          
+          <ul class="course-features-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>36+ hours of live, interactive evening instruction</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Complete HRCP physical books &amp; digital materials</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Includes 100% Pass Assurance Guarantee</span>
+            </li>
+          </ul>
+        </div>
+
+        <a class="course-btn" href="/en/certifications/hrci_shrm_prep_courses/phrsphr-shrm-cpshrm-scp-16-week-online-prep-course_jtafq075.html">
+          <span>View 16-Week Course</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Course 2: 8-wk -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="course-duration-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Accelerated Cohort
+          </div>
+          <h3 class="course-title">8-wk HRCI &amp; SHRM live instructor-led classes</h3>
+          <div class="course-credentials-chip">PHR&reg; | SPHR&reg; | SHRM-CP&reg; | SHRM-SCP&reg;</div>
+          
+          <ul class="course-features-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Fast-track schedule meeting twice per week</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>High-intensity review with realistic practice questions</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Includes 100% Pass Assurance Guarantee</span>
+            </li>
+          </ul>
+        </div>
+
+        <a class="course-btn" href="/en/certifications/hrci_shrm_prep_courses/phr-sphr-shrm-hr-certification-exam-preparations_l6m916pu.html">
+          <span>View 8-Week Course</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Course 3: 10-wk aPHR -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="course-duration-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Foundational Cohort
+          </div>
+          <h3 class="course-title">10-wk aPHR live instructor-led classes</h3>
+          <div class="course-credentials-chip">aPHR&reg; (Associate Professional in HR)</div>
+          
+          <ul class="course-features-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Created for new and transitioning HR practitioners</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Core foundational HR operations &amp; compliance mastery</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Includes 100% Pass Assurance Guarantee</span>
+            </li>
+          </ul>
+        </div>
+
+        <a class="course-btn" href="/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html">
+          <span>View 10-Week Course</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 4: Frequently Asked Questions -->
+<section class="faq-section">
+  <div class="edu-container faq-container">
+    
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="edu-eyebrow-beacon"></span>
+        PROGRAM POLICIES
+      </div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">
+        Key details on how our Pass Assurance Guarantee operates and how attendance and refunds are managed.
+      </p>
+    </div>
+
+    <div class="edu-faq-accordion">
+      
+      <!-- FAQ 1 -->
+      <div class="edu-faq-item is-open">
+        <button type="button" class="edu-faq-toggle">
+          <span class="edu-faq-title">What is the Pass Assurance Program?</span>
+          <svg class="edu-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="edu-faq-content">
+          <p><strong>Answer:</strong> The Pass Assurance Program is our promise to you that you will pass your exam with the help of one of HR.com&rsquo;s prep courses. If you don&rsquo;t pass your exam, we will give you a complete refund for the cost of your course or we will pay for you to take your exam again. The Pass Assurance Program consists of four requirements. Please check out the <a href="/en/certifications/pass-assurance-program/">Pass Assurance Program</a> page to view the requirements.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="edu-faq-item">
+        <button type="button" class="edu-faq-toggle">
+          <span class="edu-faq-title">What happens if I miss a class?</span>
+          <svg class="edu-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="edu-faq-content">
+          <p><strong>Answer:</strong> All of HR.com&rsquo;s certification prep course lessons are recorded. Archived class recordings will be available within 24-48 hours of your class. Please note that watching an archived class does not count towards your attendance requirement for the Pass Assurance Program.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="edu-faq-item">
+        <button type="button" class="edu-faq-toggle">
+          <span class="edu-faq-title">How do I request a refund if I do not pass?</span>
+          <svg class="edu-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="edu-faq-content">
+          <p><strong>Answer:</strong> If you meet all eligibility requirements (80% attendance, 80% score on included practice exams, and attempt your official exam within 90 days of course completion) and do not pass, simply forward your official exam score report to our education team at <a href="mailto:certification@hr.com">certification@hr.com</a>. Our coordinators will review your coursework records and process your full 100% tuition refund or arrange an exam re-take per your preference.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 5: Advisor Consultation Support Block -->
+<section class="cta-section">
+  <div class="edu-container">
+    <div class="cta-box">
+      <h2 class="cta-title">We would love to help you</h2>
+      <p class="cta-desc">
+        For questions regarding course enrollment, pass assurance eligibility, or choosing the best certification pathway for your career goals, please contact our team of success ambassadors:
+      </p>
+
+      <div class="cta-channels">
+        <div class="cta-channel-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>Call: <a href="tel:18774726648">1-877-472-6648 (Ext. 102)</a></span>
+        </div>
+        <div class="cta-channel-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span>Email: <a href="mailto:certification@hr.com">certification@hr.com</a></span>
+        </div>
+      </div>
+
+      <a class="cta-action-btn" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+        <span>Enroll in a Prep Course</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: Trademark Legal Disclaimer -->
+<div class="disclaimer-section">
+  <div class="edu-container">
+    <div class="disclaimer-box">
+      <div class="disclaimer-title">Trademark Disclaimer</div>
+      <p class="disclaimer-text">
+        <em>aPHR&reg;, PHR&reg;, SPHR&reg;, SHRM-CP&reg;, SHRM-SCP&reg;, and all other HRCI&reg; and SHRM&reg; certification marks are the property of HR Certification Institute&reg; and the Society for Human Resource Management&reg;, respectively. HR.com is not affiliated with, endorsed by, or sponsored by HRCI&reg; or SHRM&reg;. All HR.com preparation courses, practice exams, and study materials are independently developed and are neither approved nor endorsed by HRCI&reg; or SHRM&reg;. Reference to these certifications does not imply ownership or official partnership.</em>
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /.edu-pass-page -->
+
+<!-- Common site navigation script -->
+<script src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/js/script.js"></script>
+
+<!-- Submenu Active State Trigger -->
+<script>
+  if (window.jQuery) {
+    $(document).ready(function () {
+      $('.submenu_list>li:nth-child(3)>a').addClass('active');
+    });
+  }
+</script>
+
+<!-- FAQ Accordion Interactive Script -->
+<script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var faqToggles = document.querySelectorAll('.edu-pass-page .edu-faq-toggle');
+      faqToggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = this.closest('.edu-faq-item');
+          var isOpen = item.classList.contains('is-open');
+          
+          // Close other items
+          document.querySelectorAll('.edu-pass-page .edu-faq-item').forEach(function (el) {
+            el.classList.remove('is-open');
+          });
+
+          // Toggle current
+          if (!isOpen) {
+            item.classList.add('is-open');
+          }
+        });
+      });
+    });
+  })();
+</script>

@@ -1,0 +1,1120 @@
+<!-- FOUC Prevention -->
+<style>.edu-testimonials-page{visibility:hidden;}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var p=document.querySelector('.edu-testimonials-page');if(p)p.style.visibility='visible';});</script>
+
+<div class="edu-testimonials-page">
+
+<!-- ================================================================
+  HR.com Education & Certification Testimonials - 2026 Executive Redesign
+  Scope Wrapper : .edu-testimonials-page
+  Design System : 2026 International Executive Education Standard
+  Typography    : Plus Jakarta Sans exclusively
+  Brand Palette : Cobalt (#2563EB), Obsidian (#090D1A), Emerald (#15803D), Gold (#B45309)
+  Strict Rules  : 100% EXACT text preserved, Zero invented stats, Zero fake claims
+  Data Binding  : Fully compatible with testimonial-2025.js data structure & classes
+================================================================ -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* ---- CMS FULL-WIDTH CANVAS OVERRIDES ---- */
+body > .ContentArea {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+body > .ContentArea > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ---- SCOPED RESET & TYPOGRAPHY SHIELD ---- */
+.edu-testimonials-page,
+.edu-testimonials-page *,
+.edu-testimonials-page *::before,
+.edu-testimonials-page *::after {
+  box-sizing: border-box !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.edu-testimonials-page {
+  /* 2026 International Executive Education Palette (brand-guidelines.html) */
+  --color-primary: #2563EB;             /* Primary Action (International Cobalt) */
+  --color-primary-hover: #1D4ED8;
+  --color-primary-soft: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+
+  --color-dark-anchor: #090D1A;         /* Midnight Obsidian */
+  --color-dark-surface: #0F172A;
+  --color-dark-subtle: #1E293B;
+
+  --color-text-primary: #0F172A;        /* Deep Slate Headings */
+  --color-text-secondary: #334155;      /* Slate Body Text */
+  --color-text-muted: #64748B;          /* Muted Slate */
+
+  --color-background: #FFFFFF;
+  --color-background-subtle: #F8FAFC;   /* Porcelain Slate */
+  --color-background-soft: #F1F5F9;     /* Soft Slate */
+
+  --color-border: #E2E8F0;              /* Hairline Borders */
+  --color-border-strong: #CBD5E1;
+
+  --color-success: #15803D;             /* Growth Emerald */
+  --color-success-soft: #ECFDF5;
+  --color-success-border: #BBF7D0;
+
+  --color-warning: #B45309;             /* Burnished Honor Gold */
+  --color-warning-soft: #FFFBEB;
+  --color-warning-border: #FDE68A;
+
+  --color-star-gold: #F59E0B;
+
+  /* Restrained Geometry */
+  --radius-control: 8px;                /* Controls & Buttons */
+  --radius-card: 16px;                  /* Standard Cards */
+  --radius-panel: 20px;                 /* Feature Panels */
+  --radius-pill: 999px;                 /* Strictly for Tags, Badges & Chips */
+
+  /* Elevation Shadows */
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-hover: 0 14px 34px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 10px 28px rgba(37, 99, 235, 0.28);
+
+  /* Typography Scale Tokens */
+  --edu-fs-h1: 44px;
+  --edu-fs-h2: 32px;
+  --edu-fs-h3: 20px;
+  --edu-fs-lead: 16.5px;
+  --edu-fs-body: 14.5px;
+  --edu-fs-caption: 12.5px;
+  --edu-fs-micro: 11px;
+
+  /* Line Heights */
+  --edu-lh-tight: 1.18;
+  --edu-lh-heading: 1.25;
+  --edu-lh-body: 1.62;
+
+  width: 100vw !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background-color: var(--color-background) !important;
+  color: var(--color-text-secondary) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  overflow-x: hidden !important;
+}
+
+/* Scoped Container */
+.edu-testimonials-page .edu-container {
+  width: min(100% - 48px, 1280px) !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* ================================================================
+   SECTION 1 — EXECUTIVE HERO
+================================================================ */
+.edu-testimonials-page .edu-hero-section {
+  position: relative !important;
+  background: radial-gradient(ellipse at 80% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 15% 75%, rgba(21, 128, 61, 0.04) 0%, transparent 50%),
+              linear-gradient(180deg, #FFFFFF 0%, var(--color-background-subtle) 100%) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 70px 0 60px 0 !important;
+  overflow: hidden !important;
+}
+
+.edu-testimonials-page .edu-hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.12fr 0.88fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+}
+
+/* Eyebrow Chip */
+.edu-testimonials-page .edu-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 7px 16px !important;
+  border-radius: var(--radius-pill) !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-primary-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--color-primary) !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 22px !important;
+}
+
+.edu-testimonials-page .edu-eyebrow-beacon {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background-color: var(--color-primary) !important;
+  position: relative !important;
+}
+
+.edu-testimonials-page .edu-eyebrow-beacon::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: -3px !important;
+  border-radius: 50% !important;
+  background-color: var(--color-primary) !important;
+  opacity: 0.3 !important;
+  animation: eduPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+}
+
+@keyframes eduPulse {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+
+/* H1 Headline */
+.edu-testimonials-page .edu-hero-h1 {
+  font-size: var(--edu-fs-h1) !important;
+  line-height: var(--edu-lh-tight) !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.edu-testimonials-page .edu-gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4F46E5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+}
+
+/* Authority Rating Bar */
+.edu-testimonials-page .edu-rating-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding: 12px 18px !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-panel) !important;
+  box-shadow: var(--shadow-sm) !important;
+  width: fit-content !important;
+  margin-bottom: 28px !important;
+}
+
+.edu-testimonials-page .edu-rating-badge {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28) !important;
+}
+
+.edu-testimonials-page .edu-rating-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.edu-testimonials-page .edu-stars {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.edu-testimonials-page .edu-stars svg {
+  width: 17px !important;
+  height: 17px !important;
+  fill: var(--color-star-gold) !important;
+}
+
+.edu-testimonials-page .edu-rating-caption {
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* Featured Testimonial Card (Marky Hyde) */
+.edu-testimonials-page .edu-featured-quote-card {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 24px 28px !important;
+  box-shadow: var(--shadow-subtle) !important;
+  max-width: 580px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.edu-testimonials-page .edu-featured-quote-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.edu-testimonials-page .edu-quote-icon {
+  color: var(--color-primary) !important;
+  opacity: 0.18 !important;
+  position: absolute !important;
+  top: 18px !important;
+  right: 22px !important;
+}
+
+.edu-testimonials-page .edu-quote-text {
+  font-size: 15px !important;
+  line-height: 1.62 !important;
+  color: var(--color-text-secondary) !important;
+  margin: 0 0 18px 0 !important;
+  font-weight: 400 !important;
+}
+
+.edu-testimonials-page .edu-quote-author {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.edu-testimonials-page .edu-author-avatar {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--color-primary-soft) !important;
+}
+
+.edu-testimonials-page .edu-author-meta {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.edu-testimonials-page .edu-author-name {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.3 !important;
+}
+
+.edu-testimonials-page .edu-author-date {
+  font-size: 12.5px !important;
+  color: var(--color-text-muted) !important;
+  font-weight: 500 !important;
+}
+
+.edu-testimonials-page .edu-verified-chip {
+  margin-left: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: var(--color-success) !important;
+  background: var(--color-success-soft) !important;
+  border: 1px solid var(--color-success-border) !important;
+  padding: 4px 10px !important;
+  border-radius: var(--radius-pill) !important;
+}
+
+/* Right Column Hero Visual */
+.edu-testimonials-page .edu-hero-visual-frame {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-panel) !important;
+  padding: 16px !important;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.edu-testimonials-page .edu-hero-banner-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 520px !important;
+  object-fit: contain !important;
+  border-radius: 14px !important;
+  display: block !important;
+}
+
+/* Floating Proof Badges */
+.edu-testimonials-page .edu-floating-proof-chip {
+  position: absolute !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 10px 16px !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  z-index: 2 !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.edu-testimonials-page .edu-proof-top {
+  top: 24px !important;
+  right: -12px !important;
+}
+
+.edu-testimonials-page .edu-proof-bottom {
+  bottom: 24px !important;
+  left: -12px !important;
+}
+
+.edu-testimonials-page .edu-proof-icon {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-testimonials-page .edu-proof-icon.emerald {
+  background: var(--color-success-soft) !important;
+  color: var(--color-success) !important;
+  border: 1px solid var(--color-success-border) !important;
+}
+
+.edu-testimonials-page .edu-proof-icon.gold {
+  background: var(--color-warning-soft) !important;
+  color: var(--color-warning) !important;
+  border: 1px solid var(--color-warning-border) !important;
+}
+
+.edu-testimonials-page .edu-proof-text {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.edu-testimonials-page .edu-proof-text strong {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.25 !important;
+}
+
+.edu-testimonials-page .edu-proof-text small {
+  font-size: 11.5px !important;
+  color: var(--color-text-muted) !important;
+  font-weight: 500 !important;
+}
+
+/* ================================================================
+   SECTION 2 — CREDENTIAL FILTER NAVIGATION
+================================================================ */
+.edu-testimonials-page .edu-filter-section {
+  padding: 42px 0 32px 0 !important;
+  background-color: var(--color-background) !important;
+}
+
+.edu-testimonials-page .tes_section_top {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.edu-testimonials-page .tes_section_top ul,
+.edu-testimonials-page .edu-filter-tabs {
+  list-style: none !important;
+  padding: 6px !important;
+  margin: 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: var(--color-background-subtle) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.edu-testimonials-page .tes_section_top ul > li,
+.edu-testimonials-page .edu-filter-tabs > li {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.edu-testimonials-page .tes-btn,
+.edu-testimonials-page .tes_section_top .hr_custom_btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 24px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  color: var(--color-text-secondary) !important;
+  border-radius: var(--radius-pill) !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+.edu-testimonials-page .tes-btn:hover {
+  color: var(--color-text-primary) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.edu-testimonials-page .tes-btn.active,
+.edu-testimonials-page .tes_section_top .tes-btn.active {
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* ================================================================
+   SECTION 3 — TESTIMONIALS MASONRY GRID & CARDS
+================================================================ */
+.edu-testimonials-page .edu-cards-section {
+  padding: 10px 0 50px 0 !important;
+  background-color: var(--color-background) !important;
+}
+
+.edu-testimonials-page .edu_js_wrapper {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.edu-testimonials-page .testimonials {
+  column-count: 3 !important;
+  column-gap: 24px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Card Container */
+.edu-testimonials-page .testimonial_card {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  -webkit-column-break-inside: avoid !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 26px !important;
+  margin-bottom: 24px !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s ease, border-color 0.24s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.edu-testimonials-page .testimonial_card::before {
+  content: '\201C' !important;
+  position: absolute !important;
+  top: 10px !important;
+  right: 18px !important;
+  font-family: Georgia, serif !important;
+  font-size: 64px !important;
+  line-height: 1 !important;
+  color: rgba(37, 99, 235, 0.07) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.edu-testimonials-page .testimonial_card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--color-primary-border) !important;
+}
+
+/* Card Header: Avatar & Name */
+.edu-testimonials-page .testimonial_card .ts_card_img {
+  width: 100% !important;
+  height: auto !important;
+  min-height: unset !important;
+  padding: 0 !important;
+  margin: 0 0 16px 0 !important;
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  overflow: visible !important;
+}
+
+.edu-testimonials-page .testimonial_card .ts_card_img > img {
+  display: block !important;
+  width: 52px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  min-width: 52px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--color-background-soft) !important;
+  background-color: var(--color-primary-soft) !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-testimonials-page .testimonial_card .ts_card_img .ts_card_dls {
+  width: 100% !important;
+  position: static !important;
+}
+
+.edu-testimonials-page .testimonial_card .ts_card_img .ts_card_dls > h3 {
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.edu-testimonials-page .testimonial_card .ts_card_img .ts_card_dls > h4 {
+  display: block !important;
+  font-size: 12.5px !important;
+  color: var(--color-text-muted) !important;
+  font-weight: 500 !important;
+  margin: 3px 0 0 0 !important;
+  line-height: 1.3 !important;
+}
+
+.edu-testimonials-page .testimonial_card .ts_card_img .ts_card_dls > h4:empty {
+  display: none !important;
+}
+
+/* Card Body: Quote text & Date (Supports both .js_card_info and .ts_card_info) */
+.edu-testimonials-page .testimonial_card .js_card_info,
+.edu-testimonials-page .testimonial_card .ts_card_info {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.edu-testimonials-page .testimonial_card .js_card_info > p,
+.edu-testimonials-page .testimonial_card .ts_card_info > p {
+  width: 100% !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--color-text-secondary) !important;
+  line-height: 1.65 !important;
+  margin: 0 0 14px 0 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+}
+
+.edu-testimonials-page .testimonial_card .js_card_info > span,
+.edu-testimonials-page .testimonial_card .ts_card_info > span {
+  display: block !important;
+  width: 100% !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-muted) !important;
+  margin: 0 0 14px 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* Card Course Header Divider */
+.edu-testimonials-page .testimonial_card .js_card_info > h5,
+.edu-testimonials-page .testimonial_card .ts_card_info > h5 {
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.edu-testimonials-page .testimonial_card .js_card_info > h5::after,
+.edu-testimonials-page .testimonial_card .ts_card_info > h5::after {
+  content: '' !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: var(--color-border) !important;
+  position: static !important;
+  border-radius: 0 !important;
+}
+
+/* Card Footer: Course name & CTA button */
+.edu-testimonials-page .testimonial_card .ts_card_btn {
+  width: 100% !important;
+  margin-top: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.edu-testimonials-page .testimonial_card .ts_card_btn small {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--color-primary) !important;
+  line-height: 1.35 !important;
+  display: block !important;
+}
+
+.edu-testimonials-page .testimonial_card .cust_line_button,
+.edu-testimonials-page .testimonial_card .hr_custom_btn.cust_line_button {
+  border-radius: 50% !important;
+  background: var(--color-background-subtle) !important;
+  border: 1.5px solid var(--color-border-strong) !important;
+  font-size: 14px !important;
+  color: var(--color-text-primary) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.edu-testimonials-page .testimonial_card .cust_line_button svg {
+  width: 18px !important;
+  height: 18px !important;
+  fill: currentColor !important;
+  transition: transform 0.2s ease !important;
+}
+
+.edu-testimonials-page .testimonial_card .cust_line_button:hover {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.32) !important;
+  transform: scale(1.05) !important;
+}
+
+.edu-testimonials-page .testimonial_card .cust_line_button:hover svg {
+  transform: translateX(2px) !important;
+  fill: #FFFFFF !important;
+}
+
+/* ================================================================
+   SECTION 4 — LOAD MORE BUTTON
+================================================================ */
+.edu-testimonials-page .edu-loadmore-container {
+  text-align: center !important;
+  margin: 30px 0 20px 0 !important;
+}
+
+.edu-testimonials-page #loadMore,
+.edu-testimonials-page .gray_edu_btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 13px 34px !important;
+  border-radius: var(--radius-pill) !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--color-border-strong) !important;
+  color: var(--color-text-primary) !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.edu-testimonials-page #loadMore:hover,
+.edu-testimonials-page .gray_edu_btn:hover {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  background: var(--color-primary-soft) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-subtle) !important;
+}
+
+/* ================================================================
+   SECTION 5 — TRADEMARK DISCLAIMER
+================================================================ */
+.edu-testimonials-page .trademark-disclaimer {
+  background: var(--color-background-subtle) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 28px 36px !important;
+  margin: 50px auto 40px auto !important;
+  max-width: 1200px !important;
+  width: 100% !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.edu-testimonials-page .trademark-disclaimer h4 {
+  margin: 0 0 10px 0 !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.edu-testimonials-page .trademark-disclaimer p {
+  margin: 0 !important;
+  font-size: 12.5px !important;
+  line-height: 1.65 !important;
+  color: var(--color-text-muted) !important;
+  text-align: center !important;
+}
+
+.edu-testimonials-page .trademark-disclaimer em {
+  font-style: normal !important;
+}
+
+/* ================================================================
+   BACK TO TOP BUTTON
+================================================================ */
+.edu-testimonials-page .gotop {
+  display: none;
+  position: fixed !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  z-index: 99 !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  outline: none !important;
+  background: var(--color-dark-anchor) !important;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22) !important;
+  transition: all 0.24s ease !important;
+}
+
+.edu-testimonials-page .gotop:hover {
+  background: var(--color-primary) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.32) !important;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+@media (max-width: 1024px) {
+  .edu-testimonials-page .edu-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .edu-testimonials-page .edu-hero-col-right {
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .edu-testimonials-page .testimonials {
+    column-count: 2 !important;
+    column-gap: 20px !important;
+  }
+
+  .edu-testimonials-page .edu-proof-top {
+    right: 8px !important;
+  }
+
+  .edu-testimonials-page .edu-proof-bottom {
+    left: 8px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .edu-testimonials-page .edu-hero-section {
+    padding: 45px 0 40px 0 !important;
+  }
+
+  .edu-testimonials-page .edu-hero-h1 {
+    font-size: 32px !important;
+  }
+
+  .edu-testimonials-page .edu-rating-bar {
+    width: 100% !important;
+  }
+
+  .edu-testimonials-page .edu-featured-quote-card {
+    padding: 20px !important;
+  }
+
+  .edu-testimonials-page .edu-filter-tabs {
+    flex-wrap: wrap !important;
+    border-radius: var(--radius-card) !important;
+    width: 100% !important;
+  }
+
+  .edu-testimonials-page .tes-btn {
+    padding: 8px 16px !important;
+    font-size: 13.5px !important;
+    width: 100% !important;
+  }
+
+  .edu-testimonials-page .testimonials {
+    column-count: 1 !important;
+  }
+
+  .edu-testimonials-page .trademark-disclaimer {
+    padding: 20px !important;
+    margin-top: 35px !important;
+  }
+
+  .edu-testimonials-page .edu-proof-top,
+  .edu-testimonials-page .edu-proof-bottom {
+    position: static !important;
+    margin: 10px 0 !important;
+  }
+
+  .edu-testimonials-page .edu-hero-visual-frame {
+    flex-direction: column !important;
+  }
+}
+</style>
+
+<!-- ================================================================
+     HTML BODY
+================================================================ -->
+<div class="edu-hero-section">
+  <div class="edu-container">
+    <div class="edu-hero-grid">
+      <!-- Left Column: Authority & Featured Quote -->
+      <div class="edu-hero-col-left">
+        <div class="edu-eyebrow">
+          <span class="edu-eyebrow-beacon"></span>
+          <span>What people say about us</span>
+        </div>
+
+        <h1 class="edu-hero-h1">Trusted by <span class="edu-gradient-text">10,000+</span> HR Professionals Worldwide</h1>
+
+        <!-- 5.0 Star Rating Lockup -->
+        <div class="edu-rating-bar">
+          <div class="edu-rating-badge">5.0</div>
+          <div class="edu-rating-details">
+            <div class="edu-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="edu-rating-caption">Candidate Rating &bull; Verified Alumni</span>
+          </div>
+        </div>
+
+        <!-- Featured Testimonial Quote (Marky Hyde) -->
+        <div class="edu-featured-quote-card">
+          <div class="edu-quote-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="edu-quote-text">
+            &ldquo;I highly recommend taking the HR Professional Certification Exam Preparations Course! The course and materials were extremely helpful and gave me the confidence to take and pass the exam!&rdquo;
+          </p>
+          <div class="edu-quote-author">
+            <img alt="Marky Hyde" class="edu-author-avatar" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/Marky-Hyde.png" onerror="this.src='$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/Marky-Hyde.png'" />
+            <div class="edu-author-meta">
+              <span class="edu-author-name">Marky Hyde</span>
+              <span class="edu-author-date">Jun 8, 2023</span>
+            </div>
+            <span class="edu-verified-chip">
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Verified Graduate
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Authentic Graduate Proof Showcase -->
+      <div class="edu-hero-col-right">
+        <div class="edu-hero-visual-frame">
+          <img alt="HR Certified Graduates Savanna Welch PHR and Jessica Goodell SPHR" class="edu-hero-banner-img" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial_banner.png" onerror="this.src='$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial_banner.png'" />
+          
+          <div class="edu-floating-proof-chip edu-proof-top">
+            <span class="edu-proof-icon emerald">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </span>
+            <div class="edu-proof-text">
+              <strong>93% Pass Rate</strong>
+              <small>First-Time Exam Candidates</small>
+            </div>
+          </div>
+
+          <div class="edu-floating-proof-chip edu-proof-bottom">
+            <span class="edu-proof-icon gold">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div class="edu-proof-text">
+              <strong>100% Pass Assurance</strong>
+              <small>Money-Back Guarantee</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     CREDENTIAL FILTER NAVIGATION
+================================================================ -->
+<div class="edu-filter-section">
+  <div class="edu-container">
+    <div class="tes_section_top" id="myBtnContainer">
+      <ul class="edu-filter-tabs">
+        <li><a class="hr_custom_btn dark_line_button btn_large round active tes-btn all" data-filter="testimonial_card" href="javascript:void(0)">All</a></li>
+        <li><a class="hr_custom_btn dark_line_button btn_large round tes-btn" data-filter="hrcishrm" href="javascript:void(0)">PHR/SPHR/SHRM</a></li>
+        <li><a class="hr_custom_btn dark_line_button btn_large round tes-btn" data-filter="aphr" href="javascript:void(0)">aPHR</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     TESTIMONIAL CARDS MASONRY CONTAINER
+================================================================ -->
+<div class="edu-cards-section">
+  <div class="edu-container">
+    <div class="edu_js_wrapper">
+      <div class="testimonials"></div>
+    </div>
+
+    <div class="edu-loadmore-container">
+      <a class="hr_custom_btn gray_edu_btn btn_medium round shadow" href="#" id="loadMore">
+        <span>View more comments</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </a>
+    </div>
+
+    <!-- Trademark Disclaimer -->
+    <div class="trademark-disclaimer">
+      <h4>Trademark Disclaimer</h4>
+      <p><em> aPHR&reg;, PHR&reg;, SPHR&reg;, SHRM-CP&reg;, SHRM-SCP&reg;, and all other HRCI&reg; and SHRM&reg; certification marks are the property of HR Certification Institute&reg; and the Society for Human Resource Management&reg;, respectively. HR.com is not affiliated with, endorsed by, or sponsored by HRCI&reg; or SHRM&reg;. All HR.com preparation courses, practice exams, and study materials are independently developed and are neither approved nor endorsed by HRCI&reg; or SHRM&reg;. Reference to these certifications does not imply ownership or official partnership. </em></p>
+    </div>
+
+    <a class="gotop" href="#top" title="Go to top" aria-label="Go to top">&uarr;</a>
+  </div>
+</div>
+
+<!-- ================================================================
+     SCRIPTS & DATA BINDING
+================================================================ -->
+<!-- Local & CMS jQuery safeguard -->
+<script>
+  if (typeof jQuery === 'undefined') {
+    document.write('<script src="https://code.jquery.com/jquery-3.7.1.min.js"><\/script>');
+  }
+</script>
+
+<!-- Testimonials Data Script (CMS Path) -->
+<script
+  src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial-2025.js"
+  type="text/javascript"
+></script>
+
+<!-- Testimonials Data Script (CDN Fallback for local inspection if $public is unexpanded) -->
+<script>
+  if (typeof testimonialArray === 'undefined') {
+    var cdnScript = document.createElement('script');
+    cdnScript.src = 'https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial-2025.js';
+    document.head.appendChild(cdnScript);
+  }
+</script>
+
+<!-- Filtering & Interaction Script -->
+<script>
+  (function () {
+    function setupFilter() {
+      if (typeof jQuery === 'undefined') {
+        setTimeout(setupFilter, 100);
+        return;
+      }
+      var $ = jQuery;
+      var $more = $('#loadMore');
+
+      // Delegated filter button handler
+      $(document).on('click', '#myBtnContainer .tes-btn', function (e) {
+        e.preventDefault();
+        var $btns = $('#myBtnContainer .tes-btn');
+        $btns.removeClass('active');
+        $(this).addClass('active');
+
+        var active = $(this).data('filter');
+        var $items = $('.testimonials .testimonial_card');
+
+        if (active === 'testimonial_card' || active === 'all') {
+          $items.hide().fadeIn(300);
+        } else {
+          $items.hide().filter('.' + active).fadeIn(300);
+        }
+
+        $more.hide();
+      });
+
+      // Back to top behavior
+      $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 300) {
+          $('.gotop').css('display', 'inline-flex').fadeIn(200);
+        } else {
+          $('.gotop').fadeOut(200);
+        }
+      });
+
+      $('.gotop').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 400);
+        return false;
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupFilter);
+    } else {
+      setupFilter();
+    }
+  })();
+</script>
+
+<!-- Common site navigation script -->
+<script src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/js/script.js"></script>
+<script>
+  if (window.jQuery) {
+    $(document).ready(function () {
+      $('.submenu_list>li:nth-child(6)>a').addClass('active');
+    });
+  }
+</script>
+
+</div><!-- /.edu-testimonials-page -->

@@ -1,0 +1,767 @@
+<!-- FOUC Prevention -->
+<style>.edu-ask-page{visibility:hidden;}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var p=document.querySelector('.edu-ask-page');if(p)p.style.visibility='visible';});</script>
+
+<div class="edu-ask-page">
+
+<!-- ================================================================
+  HR.com Convince Your Employer Toolkit — 2026 Executive Redesign
+  Scope Wrapper : .edu-ask-page
+  Design System : 2026 International Executive Education Standard
+  Typography    : Plus Jakarta Sans exclusively
+  Brand Palette : Cobalt (#2563EB), Obsidian (#090D1A), Emerald (#15803D), Gold (#B45309)
+  Strict Rules  : 100% EXACT text & copy preserved, Zero invented copy or sections
+================================================================ -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* ---- CMS FULL-WIDTH CANVAS OVERRIDES ---- */
+body > .ContentArea {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+body > .ContentArea > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ---- SCOPED RESET & TYPOGRAPHY SHIELD ---- */
+.edu-ask-page,
+.edu-ask-page *,
+.edu-ask-page *::before,
+.edu-ask-page *::after {
+  box-sizing: border-box !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.edu-ask-page {
+  /* 2026 International Executive Education Palette (brand-guidelines.html) */
+  --color-primary: #2563EB;             /* Primary Action (International Cobalt) */
+  --color-primary-hover: #1D4ED8;
+  --color-primary-soft: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+
+  --color-dark-anchor: #090D1A;         /* Midnight Obsidian */
+  --color-dark-surface: #0F172A;
+  --color-dark-subtle: #1E293B;
+
+  --color-text-primary: #0F172A;        /* Deep Slate Headings */
+  --color-text-secondary: #334155;      /* Slate Body Text */
+  --color-text-muted: #64748B;          /* Muted Slate */
+
+  --color-background: #FFFFFF;
+  --color-background-subtle: #F8FAFC;   /* Porcelain Slate */
+  --color-background-soft: #F1F5F9;     /* Soft Slate */
+
+  --color-border: #E2E8F0;              /* Hairline Borders */
+  --color-border-strong: #CBD5E1;
+
+  --color-success: #15803D;             /* Growth Emerald */
+  --color-success-soft: #ECFDF5;
+  --color-success-border: #BBF7D0;
+
+  --color-warning: #B45309;             /* Burnished Honor Gold */
+  --color-warning-soft: #FFFBEB;
+  --color-warning-border: #FDE68A;
+
+  --color-indigo: #4F46E5;
+  --color-indigo-soft: #EEF2FF;
+  --color-indigo-border: #C7D2FE;
+
+  /* Restrained Geometry */
+  --radius-control: 8px;                /* Controls & Buttons */
+  --radius-card: 14px;                  /* Standard Cards */
+  --radius-panel: 20px;                 /* Feature Panels */
+  --radius-pill: 999px;                 /* Strictly for Tags, Badges & Chips */
+
+  /* Elevation Shadows */
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-hover: 0 14px 34px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 10px 28px rgba(37, 99, 235, 0.28);
+
+  /* Typography Scale Tokens */
+  --edu-fs-h1: 42px;
+  --edu-fs-h2: 30px;
+  --edu-fs-h3: 20px;
+  --edu-fs-lead: 18px;
+  --edu-fs-body: 15px;
+  --edu-fs-btn: 15px;
+
+  /* Line Heights */
+  --edu-lh-tight: 1.18;
+  --edu-lh-heading: 1.25;
+  --edu-lh-body: 1.62;
+
+  width: 100vw !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background-color: var(--color-background) !important;
+  color: var(--color-text-secondary) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  overflow-x: hidden !important;
+}
+
+.edu-ask-page section {
+  width: 100vw !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  padding: 75px 0 !important;
+}
+
+.edu-ask-page h1,
+.edu-ask-page h2,
+.edu-ask-page h3,
+.edu-ask-page h4,
+.edu-ask-page h5,
+.edu-ask-page h6 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: -0.03em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+.edu-ask-page p,
+.edu-ask-page span,
+.edu-ask-page li,
+.edu-ask-page div {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.edu-ask-page img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+}
+
+/* Reusable Container */
+.edu-ask-page .edu-container {
+  width: min(100% - 48px, 1280px) !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* ================================================================
+   SECTION 1 — HERO
+================================================================ */
+.edu-ask-page .hero {
+  background: radial-gradient(ellipse at 85% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 55%),
+              radial-gradient(ellipse at 10% 80%, rgba(21, 128, 61, 0.04) 0%, transparent 50%),
+              #FFFFFF !important;
+  padding: 75px 0 65px 0 !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-ask-page .hero-container {
+  display: grid !important;
+  grid-template-columns: 1.18fr 0.82fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+}
+
+.edu-ask-page .title {
+  font-size: var(--edu-fs-h1) !important;
+  line-height: var(--edu-lh-tight) !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.035em !important;
+}
+.edu-ask-page .title span {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #4F46E5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.edu-ask-page .sub-title {
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-secondary) !important;
+  line-height: 1.38 !important;
+  margin-bottom: 28px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.edu-ask-page .hero-info {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+}
+
+.edu-ask-page .btn-container {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 14px !important;
+}
+
+/* Button Styles — Preserving Original Classes & Overriding for Executive Design */
+.edu-ask-page .hr_custom_btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 13px 26px !important;
+  font-size: var(--edu-fs-btn) !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+}
+
+.edu-ask-page .gradient_btn {
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25) !important;
+}
+.edu-ask-page .gradient_btn:hover {
+  background: var(--color-primary-hover) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35) !important;
+}
+
+.edu-ask-page .dark_line_button {
+  background: #FFFFFF !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.edu-ask-page .dark_line_button:hover {
+  background: var(--color-background-subtle) !important;
+  border-color: var(--color-border-strong) !important;
+  color: var(--color-text-primary) !important;
+  transform: translateY(-1px) !important;
+}
+
+.edu-ask-page .cert-prep-logo {
+  max-width: 80px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-ask-page .hero-img-wrap {
+  position: relative !important;
+  border-radius: var(--radius-panel) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-hover) !important;
+  border: 1px solid var(--color-border) !important;
+  background: #FFFFFF !important;
+}
+.edu-ask-page .hero-img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* ================================================================
+   SECTION 2 — FEATURES / TRUST BAR
+================================================================ */
+.edu-ask-page .features {
+  background: var(--color-background-subtle) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 40px 0 !important;
+}
+
+.edu-ask-page .features-container {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+}
+
+.edu-ask-page .feature {
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 24px 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.2s ease !important;
+}
+.edu-ask-page .feature:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-subtle) !important;
+  border-color: var(--color-primary-border) !important;
+}
+
+.edu-ask-page .feature-img-box {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+.edu-ask-page .feature:nth-child(1) .feature-img-box {
+  background: var(--color-primary-soft) !important;
+  border: 1px solid var(--color-primary-border) !important;
+  color: var(--color-primary) !important;
+}
+.edu-ask-page .feature:nth-child(3) .feature-img-box {
+  background: var(--color-success-soft) !important;
+  border: 1px solid var(--color-success-border) !important;
+  color: var(--color-success) !important;
+}
+.edu-ask-page .feature:nth-child(5) .feature-img-box {
+  background: var(--color-warning-soft) !important;
+  border: 1px solid var(--color-warning-border) !important;
+  color: var(--color-warning) !important;
+}
+
+.edu-ask-page .feature-img {
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain !important;
+}
+
+.edu-ask-page .feature-text {
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+.edu-ask-page .vertical-divider {
+  display: none !important;
+}
+
+.edu-ask-page .horizontal-divider {
+  display: none !important;
+}
+
+/* ================================================================
+   SECTION 3 — REASONS
+================================================================ */
+.edu-ask-page .reasons-section {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 80px 0 !important;
+}
+
+.edu-ask-page .reasons-title {
+  text-align: center !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 800 !important;
+  font-size: var(--edu-fs-h2) !important;
+  line-height: var(--edu-lh-heading) !important;
+  margin-bottom: 50px !important;
+  letter-spacing: -0.03em !important;
+}
+.edu-ask-page .reasons-title span.reasons-pay {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 800 !important;
+}
+.edu-ask-page .reasons-subtitle {
+  display: block !important;
+  font-size: 16px !important;
+  color: var(--color-text-secondary) !important;
+  font-weight: 500 !important;
+  margin-top: 8px !important;
+  letter-spacing: 0 !important;
+}
+
+.edu-ask-page .reasons {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+}
+
+.edu-ask-page .wiget_cont {
+  background: var(--color-background-subtle) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 34px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+.edu-ask-page .wiget_cont:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--color-primary-border) !important;
+  background: #FFFFFF !important;
+}
+
+.edu-ask-page .reason-label-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+
+.edu-ask-page .reason-label {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 5px 12px !important;
+  border-radius: var(--radius-pill) !important;
+  margin: 0 !important;
+}
+.edu-ask-page .wiget_cont:nth-child(1) .reason-label {
+  background: var(--color-primary-soft) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary-border) !important;
+}
+.edu-ask-page .wiget_cont:nth-child(2) .reason-label {
+  background: var(--color-success-soft) !important;
+  color: var(--color-success) !important;
+  border: 1px solid var(--color-success-border) !important;
+}
+.edu-ask-page .wiget_cont:nth-child(3) .reason-label {
+  background: var(--color-indigo-soft) !important;
+  color: var(--color-indigo) !important;
+  border: 1px solid var(--color-indigo-border) !important;
+}
+
+.edu-ask-page .reason-icon-wrap {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.edu-ask-page .wiget_cont:nth-child(1) .reason-icon-wrap {
+  background: var(--color-primary-soft) !important;
+  color: var(--color-primary) !important;
+}
+.edu-ask-page .wiget_cont:nth-child(2) .reason-icon-wrap {
+  background: var(--color-success-soft) !important;
+  color: var(--color-success) !important;
+}
+.edu-ask-page .wiget_cont:nth-child(3) .reason-icon-wrap {
+  background: var(--color-indigo-soft) !important;
+  color: var(--color-indigo) !important;
+}
+
+.edu-ask-page .reason-title {
+  font-size: 22px !important;
+  line-height: 1.3 !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 800 !important;
+  margin-bottom: 14px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.edu-ask-page .reason-text {
+  font-size: var(--edu-fs-body) !important;
+  line-height: var(--edu-lh-body) !important;
+  color: var(--color-text-secondary) !important;
+  margin: 0 !important;
+  flex-grow: 1 !important;
+}
+
+/* ================================================================
+   SECTION 4 — CTA BLOCK (Replacing Purple Gradient with Executive Dark Anchor)
+================================================================ */
+.edu-ask-page .cta-section {
+  background: var(--color-background-subtle) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 80px 0 !important;
+}
+
+.edu-ask-page .cta-block {
+  background: linear-gradient(135deg, #090D1A 0%, #0F172A 60%, #1E1B4B 100%) !important;
+  border-radius: var(--radius-panel) !important;
+  padding: 56px 48px !important;
+  color: #FFFFFF !important;
+  max-width: 860px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  box-shadow: var(--shadow-hover) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.edu-ask-page .cta-block::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -120px !important;
+  right: -120px !important;
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+}
+
+.edu-ask-page .cta-title {
+  font-size: 34px !important;
+  line-height: 1.25 !important;
+  margin-bottom: 16px !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.edu-ask-page .cta-text {
+  color: #CBD5E1 !important;
+  line-height: 1.65 !important;
+  max-width: 600px !important;
+  margin: 0 auto 28px auto !important;
+  font-size: 16px !important;
+}
+
+.edu-ask-page .phone {
+  font-size: 20px !important;
+  padding-top: 0.5rem !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.edu-ask-page .cta-link {
+  color: #93C5FD !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+.edu-ask-page .cta-link:hover {
+  color: #FFFFFF !important;
+}
+
+.edu-ask-page .cta-block .hr_custom_btn {
+  padding: 14px 32px !important;
+  font-size: 16px !important;
+}
+
+/* ================================================================
+   SECTION 5 — TRADEMARK DISCLAIMER
+================================================================ */
+.edu-ask-page .trademark-disclaimer {
+  background: var(--color-background-subtle) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 24px 30px !important;
+  max-width: 1120px !important;
+  margin: 45px auto 60px auto !important;
+  text-align: center !important;
+}
+
+.edu-ask-page .trademark-disclaimer h4 {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  margin-bottom: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.edu-ask-page .trademark-disclaimer p {
+  font-size: 12.5px !important;
+  line-height: 1.6 !important;
+  color: var(--color-text-muted) !important;
+  margin: 0 !important;
+  font-style: italic !important;
+}
+
+/* ================================================================
+   RESPONSIVE ADAPTATIONS
+================================================================ */
+@media (max-width: 1024px) {
+  .edu-ask-page .hero-container { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .edu-ask-page .features-container { grid-template-columns: 1fr !important; }
+  .edu-ask-page .reasons { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 768px) {
+  .edu-ask-page section { padding: 50px 0 !important; }
+  .edu-ask-page .title { font-size: 30px !important; }
+  .edu-ask-page .sub-title { font-size: 18px !important; }
+  .edu-ask-page .reasons-title { font-size: 24px !important; }
+  .edu-ask-page .btn-container { flex-direction: column !important; width: 100% !important; }
+  .edu-ask-page .hr_custom_btn { width: 100% !important; }
+  .edu-ask-page .cta-block { padding: 36px 24px !important; }
+  .edu-ask-page .cta-title { font-size: 26px !important; }
+  .edu-ask-page .phone { font-size: 18px !important; }
+}
+</style>
+
+<!-- hero -->
+<section class="edu_container-fluid hero">
+  <div class="edu_container edu-container">
+    <div class="hero-container">
+      <div>
+        <h1 class="title"><span>Convince Your Employer</span> to Pay for Your HR Certification Prep Course</h1>
+
+        <div class="hero-info">
+          <div>
+            <h2 class="sub-title">This Course Guarantees a Pass on Your Exam!</h2>
+
+            <div class="btn-container">
+              <div>$vendorLeadForm</div>
+              <a class="hr_custom_btn gradient_btn btn_medium round" id="fc_1712194093602" name="fc_1712194093602"
+                onclick="loadPopup('fc_1712194093602')">Download Template Now</a> <a
+                class="hr_custom_btn dark_line_button btn_medium round"
+                href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">Enroll Today</a>
+            </div>
+          </div>
+          <img alt="Certification Exam Preparation Round Logo" class="img cert-prep-logo"
+            src="https://public-cdn.hr.com/remoteimages/website-images/HRDotCom_Product_Logos/cert-exam-prem-round-badge.png"
+            onerror="this.style.display='none';" />
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img alt="Happy Indian Man Browsing Laptop" class="img hero-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/ask-employer-meeting.jpg"
+          onerror="this.src='$public/remoteimages/website-images/2024_Siteupdate/ask-my-employer/happy-indian-man-browsing-laptop.gif';" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end hero -->
+
+<!-- features -->
+<section class="edu_container-fluid features">
+  <div class="edu_container edu-container">
+    <div class="features-container">
+      <article class="feature">
+        <div class="feature-img-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="feature-text">Trusted by 10,000+ HR professionals worldwide</p>
+      </article>
+
+      <div class="vertical-divider">&nbsp;</div>
+
+      <article class="feature">
+        <div class="feature-img-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <p class="feature-text">93% exam pass rate (far exceeding average of 60%)</p>
+      </article>
+
+      <div class="vertical-divider">&nbsp;</div>
+
+      <article class="feature">
+        <div class="feature-img-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p class="feature-text">Pass assurance guarantee if you don&rsquo;t pass</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- end features -->
+
+<div class="horizontal-divider">&nbsp;</div>
+
+<!-- reasons -->
+<section class="edu_container-fluid reasons-section">
+  <div class="edu_container edu-container">
+    <h2 class="reasons-title">Why Your Employer Should <span class="reasons-pay"> Pay</span> For
+      Your Cert Prep Course <span class="reasons-subtitle">(Share these reasons with your manager!)</span></h2>
+
+    <div class="reasons">
+      <article class="wiget_cont reason">
+        <div class="reason-label-row">
+          <h3 class="reason-label">Reason 1</h3>
+          <div class="reason-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+
+        <p class="reason-title">You&rsquo;ll be a better HR professional!</p>
+
+        <p class="reason-text">You&rsquo;ll advance your HR knowledge and skills, and your improved efficiency and
+          productivity will benefit your organization.</p>
+      </article>
+
+      <article class="wiget_cont reason">
+        <div class="reason-label-row">
+          <h3 class="reason-label">Reason 2</h3>
+          <div class="reason-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+
+        <p class="reason-title">You&rsquo;ll mitigate legal risks for your organization.</p>
+
+        <p class="reason-text">The HR certification preparation program emphasizes compliance, empowering you to better
+          navigate the complexities of workplace laws and regulations.</p>
+      </article>
+
+      <article class="wiget_cont reason">
+        <div class="reason-label-row">
+          <h3 class="reason-label">Reason 3</h3>
+          <div class="reason-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
+          </div>
+        </div>
+
+        <p class="reason-title">It&rsquo;s cost-effective HR talent development.</p>
+
+        <p class="reason-text">The online format means you don&rsquo;t have to travel or miss work (unlike
+          confaerences), and you&rsquo;ll gain valuable insights and knowledge that will not only benefit you, but
+          others on your team.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- end reasons -->
+
+<!-- cta block -->
+<section class="edu_container-fluid cta-section">
+  <div class="edu_container edu-container">
+    <div class="cta-block">
+      <h2 class="cta-title">We would love to help you</h2>
+
+      <p class="cta-text">For questions regarding course enrollment, please contact our team of success ambassadors
+        at<br />
+        <br />
+        <span class="phone">Call: 1-877-472-6648 (Ext. 102)</span><br />
+        Email: <a class="cta-link" href="mailto:certification@hr.com"> certification@hr.com</a>
+      </p>
+      <a class="hr_custom_btn gradient_btn btn_medium round"
+        href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">Enroll Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- trademark disclaimer -->
+<div class="trademark-disclaimer">
+  <h4>Trademark Disclaimer</h4>
+
+  <p><em> aPHR&reg;, PHR&reg;, SPHR&reg;, SHRM-CP&reg;, SHRM-SCP&reg;, and all other HRCI&reg; and SHRM&reg;
+      certification marks are the property of HR Certification Institute&reg; and the Society for Human Resource
+      Management&reg;, respectively. HR.com is not affiliated with, endorsed by, or sponsored by HRCI&reg; or SHRM&reg;.
+      All HR.com preparation courses, practice exams, and study materials are independently developed and are neither
+      approved nor endorsed by HRCI&reg; or SHRM&reg;. Reference to these certifications does not imply ownership or
+      official partnership. </em></p>
+</div>
+<!-- end cta block -->
+
+</div><!-- /.edu-ask-page -->
+
+<script src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/js/script.js"></script>
+<script>
+  if (window.jQuery) {
+    $(document).ready(function () {
+      $('.submenu_list>li:nth-child(7)>a').addClass('active');
+    });
+  }
+</script>
