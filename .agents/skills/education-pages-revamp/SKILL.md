@@ -1,172 +1,182 @@
 ---
 name: education-pages-revamp
-description: Master strategy, behavioral psychology framework, component architecture, low-fi prototype conventions, and CMS implementation guidelines for the HR.com Education & Certification 2026 Redesign. The old 7-page structure has been consolidated into 3 conversion hubs. Activate when working on critique-app, low-fi prototypes, or certification CMS pages.
+description: Production CMS guidelines, UI/UX architecture, visual design system, and implementation workflow for the 8 HR.com Education & Certification pages in 01-education/02-certification-pages/. Activate when working on, creating, or polishing any of the 8 certification landing pages.
 ---
 
-# HR.com Education & Certification 2026 Redesign — Master Strategy & UX Blueprint
+# HR.com Education & Certification 2026 Redesign — Master Strategy & UX/UI Architecture
 
-## Core Persona
-You operate as the **Triple-Threat Specialist**:
-1. **Legendary UX/UI Designer**: Master of visual hierarchy, scannability, cognitive load reduction, progressive disclosure, and frictionless desktop-first layouts (min-width: 1440px).
-2. **Master Conversion Copywriter**: Direct, punchy, empathetic, WIIFM-driven (What's In It For Me), zero corporate fluff. Plain English always — never use academic law names in user-facing copy or explanations.
-3. **Senior HR Certification Leader & Lead Instructor**: Authentic insider understanding of HRCI (`aPHR`, `PHR`, `SPHR`, `PHRi`, `SPHRi`) & SHRM (`SHRM-CP`, `SHRM-SCP`), test anxiety, adult learning schedules, employer reimbursement hurdles, and recertification credit rules.
+## 1. Operating Directives & Collaboration Model
+
+### A. Team Roles & Strict Rules
+- **User Role**: Provides authentic, verified text content, curriculum details, pricing tiers, and business requirements.
+- **AI Role (World-Class Lead UI/UX Designer & Visual Architect)**:
+  - **🚫 STRICT CONTENT INTEGRITY RULE**:
+    - You are strictly **NOT** supposed to write new copy, modify copy, or paraphrase approved business text.
+    - **NEVER invent stats, numbers, or metrics**: Do NOT fabricate pass rates, student enrollments, salary boosts, or star ratings. Only display verified, existing numbers provided in official source files.
+    - **NEVER make fake promises**: No fabricated guarantees, artificial timers, or exaggerated outcome claims.
+  - Prioritize **stunning, modern, high-converting visual design**:
+    - Master visual ergonomics, visual hierarchy, aesthetic-usability effect, and scannable chunking.
+    - Deploy high-end UI components: structured cards (12–16px radius), restrained button controls (8px radius), hairline borders (`#E5E7EB`), soft elevation, and clear focal points. Reserve full pill radius (`999px`) strictly for tags, status badges, and metadata chips.
+    - Stacked Pricing Architecture: Track 1 (PHR/SPHR/SHRM) stacked directly above Track 2 (aPHR) without collapsed sliding doors.
+    - Ensure frictionless mobile and desktop responsiveness (baseline: 95vw, max-width 1350px).
 
 ---
 
-## Architecture — 3-Hub Consolidation (Replaces Old 7-Page Structure)
+## 2. File Organization & Directory Structure
 
-The original 7 standalone pages have been consolidated into **3 conversion-focused hubs**:
+All new production pages live in the dedicated certification folder:
+**Target Directory**: `01-education/02-certification-pages/`
+**Living Brand Guidelines HTML**: [`brand-guidelines.html`](file:///e:/HR/00-html/01-education/02-certification-pages/brand-guidelines.html)
 
+### The 8-Page Certification Suite:
+| # | Page File Name | Status | Purpose & Key Components |
+|---|----------------|--------|--------------------------|
+| 1 | `understanding-hr-certification-dev.html` | **Completed (Baseline Standard)** | Master decision hub, 2-step interactive experience matcher, 4 value pillars, 7-step roadmap, video slot, 5 authority resources. |
+| 2 | `preparation-options.html` | Next Up | Comprehensive prep course catalog (16-wk live, 8-wk accelerated, self-paced eLearning, HRCP materials), cohort schedules, comparison matrix. |
+| 3 | `pass-assurance-program.html` | Queued | 100% Money-Back Guarantee hub, 3-point eligibility checklist, confidence cues, FAQ on retakes/refunds. |
+| 4 | `hr-group-certification.html` | Queued | B2B enterprise training, volume team discount calculator (5+ / 12+), business case for CFOs, team lead form. |
+| 5 | `hr-recertification.html` | Queued | Post-certification credit renewal, 1-yr ($250) vs 3-yr ($500) passes, interactive credit tracker, ethics requirement courses. |
+| 6 | `testimonials.html` | Queued | Social proof engine, 49+ verified graduate review database, credential filtering (aPHR / PHR / SPHR / SHRM), salary accelerator stories. |
+| 7 | `ask-my-employer.html` | Queued | Employer funding toolkit, interactive 1-click boss pitch email generator, customizable business justification case. |
+| 8 | `book-a-call.html` | Queued | 1-on-1 advisor consultation, video consultation scheduler, course demo preview, advisor reassurance. |
+
+---
+
+## 3. Design System Tokens & Styling Standards
+
+The new **International Executive Education & Modern Credential System** established in [`brand-guidelines.html`](file:///e:/HR/00-html/01-education/02-certification-pages/brand-guidelines.html) serves as the universal standard for all 8 certification pages:
+
+### A. Modern International Color Palette
+- **Canvases & Neutral Surfaces**:
+  - Pure Canvas: `#FFFFFF`
+  - Porcelain Slate: `#F8FAFC`
+  - Cool Stone Tint: `#F1F5F9`
+  - Hairline Borders: `#E2E8F0` / `#CBD5E1`
+- **Dark Anchor & Executive Typography**:
+  - Midnight Obsidian: `#090D1A` (Prestige anchors, executive contrast)
+  - Deep Slate Headings: `#0F172A` (H1-H4 headings)
+  - Slate Body Text: `#334155`
+  - Muted Slate: `#64748B` / `#94A3B8`
+- **International Action & Value Accents**:
+  - **Primary Action (International Cobalt)**: `#2563EB` (Hover: `#1D4ED8`, Glow: `rgba(37,99,235,0.28)`) - Global standard of trust, institutional clarity, and primary enrollment CTA pill.
+  - **Growth & Salary Emerald**: `#059669` (Tint: `#ECFDF5`, Border: `#A7F3D0`) - Anchors the +$10k-$20k salary boost, 93% pass rate, and verified graduate checkmarks.
+  - **Burnished Honor Gold**: `#D97706` (Tint: `#FFFBEB`, Border: `#FDE68A`) - 100% Pass Assurance Guarantee shield and top-tier alumni proof.
+  - **Electric Indigo**: `#4F46E5` / `#6366F1` - Milestone roadmap steps and catalog tier accents.
+
+### B. International Typography (Plus Jakarta Sans)
+- **Primary Font Family**: `'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;`
+- **Font Import**: `@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');`
+```css
+--edu-fs-display: 46px; /* Line-height: 1.18, Tracking: -0.035em */
+--edu-fs-h1: 38px;      /* Line-height: 1.25, Tracking: -0.03em */
+--edu-fs-h2: 28px;      /* Line-height: 1.3, Tracking: -0.025em */
+--edu-fs-h3: 20px;      /* Line-height: 1.35, Tracking: -0.015em */
+--edu-fs-h4: 16px;      /* Line-height: 1.4 */
+--edu-fs-lead: 16px;    /* Line-height: 1.65 */
+--edu-fs-body: 14.5px;  /* Line-height: 1.65 */
+--edu-fs-caption: 12px;
+--edu-fs-micro: 11.5px;
 ```
-OLD (7 pages)                      NEW (3 hubs)
------------------                  -----------------
-1. Understanding HR Cert      \
-2. Preparation Options         |-->  HUB 1: Master Certification & Prep
-3. Pass Assurance Program      |     (10 sections: Hero, Pillars, Matcher, Catalog,
-6. Testimonials               /      Video, Boss Pay, Proof, Roadmap, Resources, FAQ)
+*(On mobile <768px: H1 scales to 28-32px, H2 to 22-24px).*
 
-4. HR Group Certification     \
-7. Ask My Employer            /-->  HUB 2: Employer Funding & Teams
-                                     (4 sections: Hero, Calculator, CFO Case, Email Kit)
-
-5. HR Recertification         \-->  HUB 3: Recertification & Credits
-                                     (3 sections: Hero, Pricing, Credit Tracker)
-```
-
----
-
-## Hub 1: Master Certification & Prep — Full 10-Section Blueprint
-
-Based on **Eric Anderson's** and **Shelley Marsland's** strategic content requirements:
-
-### Section Architecture
-1. **Career Value Hero**: 2-column (text left, image right). Headline from Eric: *"HR Certification: What You NEED to Know"*. Trust strip: 93% pass rate | 10,000+ certified | 100% guarantee | 74% employer paid.
-2. **Eric's 4 Value Pillars**: +$10k–$20k salary | Strategic expertise | 90%+ employer preference | Career confidence.
-3. **Important Choice #1 — Exam Matcher**: 3 chips (0–1yr → aPHR, 1–3yr → PHR/SHRM-CP, 4–7+yr → SPHR/SHRM-SCP). 1-click instant recommendation with salary boost displayed.
-4. **Important Choice #2 — 3-Tier Course Catalog**: Tier 1 (Live Cohort $1,065 | 93% pass | 100% guarantee), Tier 2 (Self-Paced $890 | 88% pass), Tier 3 (Books Only $480).
-5. **Greg's Video Explainer**: Landscape video slot — *"Pros & Cons of Every Prep Option"*. Greg Osmond is producing a fresh landscape version. Do not use the old vertical mobile cut.
-6. **'Get Your Boss to Pay' Trigger**: 1-Click Boss Pitch Email + 1-Page Business Case PDF + Direct Employer Invoice option.
-7. **Verified Graduate Proof**: Real alumni cards. Feature Gabriella Talentino (SPHR, +$18,500), Rochelle Harris (PHR, Score: 560/700), Marky Hyde (aPHR, career changer). Photo frames mandatory.
-8. **Eric's 7-Step Best Practices Roadmap**: Steps 1–7. Critical rule on Step 6: *"Don't activate your 180-day testing window until you are midway through prep!"*
-9. **Shelley's 5 Certification Authority Resource Cards** (opens `target="_blank"`):
-   - *Why Get HR Certified in 2026?* (Career salary boost & employer demand)
-   - *Get the Facts on HR Certification* (Pass rates, requirements, governing bodies)
-   - *HRCI vs SHRM: Top 3 Differences* (Exam formats, question styles, employer preference)
-   - *Secrets to Passing the SHRM-CP & SHRM-SCP* (BASK framework, situational judgment)
-   - *Secrets to Passing the HRCI aPHR, PHR & SPHR* (Federal law, strategic management traps)
-10. **Honest FAQ & Advisor Reassurance**: Searchable FAQ by category. Direct hotline: 1-877-472-6648 (Mon–Fri 8am–7pm ET).
+### C. Signature Components & Micro-Animations
+1. **Zero FOUC Block**:
+   ```html
+   <style>.edu-[page]-page{visibility:hidden;}</style>
+   <script>document.addEventListener('DOMContentLoaded',function(){var p=document.querySelector('.edu-[page]-page');if(p)p.style.visibility='visible';});</script>
+   ```
+2. **Container Width**:
+   ```css
+   .edu-[page]-wrap {
+     width: 95vw !important;
+     max-width: 1350px !important;
+     margin: 0 auto !important;
+     padding: 0 20px !important;
+     box-sizing: border-box !important;
+   }
+   ```
+3. **Executive CTA Pill Buttons**:
+   Primary buttons strictly use International Cobalt (`#2563EB`, hover `#1D4ED8`) with `border-radius: 999px !important;` and high-trust shadow glow (`rgba(37,99,235,0.25)`).
+4. **Pulse-Dot Executive Eyebrows**:
+   Eyebrow chips use `.edu-eyebrow` with `.edu-eyebrow-beacon` (luminous pulsing beacon dot in Cobalt or Emerald), completely replacing any legacy multi-color dot clusters.
+5. **Scroll Entrance Reveal**:
+   Utilize `.edu-reveal` with `IntersectionObserver` and staggered delays (`.edu-reveal-d1`, `.edu-reveal-d2`, etc.).
 
 ---
 
-## Hub 2: Employer Funding & Teams — 4-Section Blueprint
+## 4. CMS Technical Guidelines
 
-1. **Dual-Audience Hero**: 2-column. Audience toggle chips: "I'm an Employee Asking My Boss" / "I'm an HR Leader Training My Team".
-2. **Team Savings Calculator**: Interactive slider (5–50+ members). Volume discounts: 15% (5+), 25% (10+), 35% (20+). Instant price output.
-3. **CFO Business Case**: 3 stat pillars — $150,000+ compliance risk | -24% turnover | standardized policy execution.
-4. **Ready-to-Send Boss Pitch Kit**: Pre-written email + PDF download + clipboard copy button.
-
----
-
-## Hub 3: Recertification & Credits — 3-Section Blueprint
-
-1. **Zero-Panic Hero**: 2-column. Trust seals: HRCI Approved Provider | SHRM Recertification Provider | Ethics Credits Included.
-2. **Smart Pricing Comparison**: 2 cards — 3-Year All-Inclusive Pass ($500 total, "$1 year free" framing) vs 1-Year Standard ($250/yr).
-3. **Live Credit Tracker Demo**: Interactive progress meters (HRCI General, Business Credits, Ethics, SHRM PDC). 2-column: explanation left, meters right.
-
----
-
-## Shared Prototype Footer (Consistent Across All 3 Pages)
-
-Every hub ends with an identical 4-row footer:
-1. **Advisor CTA**: *"Still thinking? Talk to a real HR instructor — not a chatbot."* + Phone + 2 buttons.
-2. **Provider Seals Strip**: HRCI seal | SHRM seal | 4.9★ / 49+ reviews | 10,000+ certified | 100% guarantee.
-3. **Cross-Page Nav**: Certification Prep | Employer Funding & Teams | Recertification Credits.
-4. **Trademark Legal**: Full HRCI & SHRM trademark disclaimers + non-affiliation notice.
-
----
-
-## Low-Fi Prototype App — Technical Reference
-
-**Location**: `01-education/00-certification-2026-redesign/critique-app/`
-**Stack**: Vite + Vanilla JS + Vanilla CSS
-**Dev server**: `npm run dev` (port 5173)
-
-### File Structure
-```
-critique-app/
-  src/
-    main.js           -- All rendering logic (renderHub1/2/3Wireframe, renderPrototypeFooter)
-    style.css         -- Full wireframe component CSS
-    data/
-      lowfi-data.js   -- Single source of truth for all 3 hub content & psychology rationale
-      critique-data.js -- Page critique content (7-page analysis)
-  public/
-    screenshots/      -- PNG screenshots of current live pages for critique view
-```
-
-### Low-Fi Prototype Design Rules (STRICT — Do Not Break)
-- **Zero color** — only `#000000`, `#ffffff`, and gray shades. No brand colors whatsoever.
-- **Desktop only** — `min-width: 1440px`. No responsive/mobile needed.
-- **1:3 split layout** — Left dark panel (~310px sticky) for psychology rationale, right white canvas (~72%) for prototype.
-- **Left panel**: `#0b0f19` background, `#38bdf8` active card outline, `#34d399` conversion-fix tags. Plain English only — never reference named psychology laws or "Growth.Design".
-- **One image per page** — only in the hero section (right column). All image placeholders use `.wire-image-box` with crosshair SVG pattern.
-- **Sections alternate shaded** — `.wire-section-shaded` adds `#f7f7f7` background to alternate sections.
-- **2-column layouts** — Hero uses `.wire-hero-section` (50/50), sections use `.wire-split-section` (1fr / 1.2fr).
-
-### Key CSS Classes (Do Not Rename)
-| Class | Purpose |
-|-------|---------|
-| `.lowfi-left-panel` | Dark strategy console |
-| `.lowfi-canvas` | White prototype canvas |
-| `.wire-hero-section` | 2-column hero (50/50 grid) |
-| `.wire-split-section` | 2-column content split |
-| `.wire-section-shaded` | Alternating `#f7f7f7` section bg |
-| `.wire-pillars-grid` | Eric's 4-card value pillars grid |
-| `.wire-video-frame` | Greg's video embed dark frame |
-| `.wire-resource-grid` | Shelley's 5 authority cards (3-col) |
-| `.wire-proto-footer` | Shared 4-row footer |
-| `.wire-image-box` | Image placeholder with crosshair |
-| `.wire-proof-photo-box` | Student photo placeholder with crosshair |
+1. **Full-Width Canvas Overrides**:
+   Always include the `.ContentArea` and `.container` 100% reset to break free of legacy CMS margin constraints:
+   ```css
+   body > .ContentArea { margin: 0 !important; }
+   body > .ContentArea > .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
+   ```
+2. **Self-Contained Code**:
+   All CSS must be embedded in `<style>` blocks strictly scoped to the page wrapper (e.g. `.edu-prep-page`).
+   Use `!important` on fonts and reset properties to protect against global CMS bleed.
+3. **Icons & Graphics**:
+   Use clean, inline SVG icons for crispness and zero HTTP latency. Constrain SVG width/height explicitly.
+4. **Component Architecture & Layout Gotchas**:
+   - **Responsive Video Aspect Ratios**: Always define `aspect-ratio: 16 / 9; max-width: 860px; overflow: hidden;` on video player wrappers. Explicitly size play button SVGs (`width: 24px; height: 24px;`) to prevent SVG blow-up bugs.
+   - **Slider Document Flow**: Never apply `position: absolute` to slider containers or `.edu-uc-story-box` wrappers. Always use `position: relative` so subsequent elements (like CTAs and footers) maintain natural document flow with zero overlap.
+   - **Anchor Target Alignment**: Verify that in-page navigation anchors (e.g. `#prep-options`, `#exam-matcher`, `#certification-journey`, `#cta-banner`) match exact element `id` attributes.
+   - **Unified Feature Cards**: When structuring cards with tags, descriptions, and proof badges, organize them into a clean single vertical hierarchy and suppress redundant duplicate wrapper labels via CSS.
+5. **ASCII Clean Comments Only**:
+   Never use box-drawing symbols or emojis in code comments.
+6. **Forbidden Directories**:
+   - NEVER touch `01-live-cms/`.
+   - NEVER modify `02-hrwest-2027-revamped/`.
+   - NEVER run `git push` unless explicitly asked.
 
 ---
 
-## Behavioral Psychology Framework (Plain English)
+## 5. Page-by-Page Design Checklists
 
-Always explain WHY each section exists in plain language — never reference law names or academic frameworks by name:
-
-| Section | Plain-English Rationale |
-|---------|------------------------|
-| Hero salary lead | When people immediately see a concrete personal benefit, they stop questioning and start figuring out how to get it |
-| Value pillars | Answering "why should I do this now?" with tangible, undeniable returns before they even look at prices |
-| Exam Matcher | Reducing choices to 3 instant options eliminates decision paralysis — guided feels better than overwhelmed |
-| Pricing tiers | 3 labelled options with guarantee embedded at the price point removes the moment of financial hesitation |
-| Boss Pay trigger | The barrier isn't the manager's willingness to approve — it's the employee's fear of asking |
-| Graduate photos | Real faces and specific salary numbers convert infinitely better than anonymous star ratings |
-| 7-Step roadmap | Breaking a 16-week commitment into small named steps makes the journey feel short, not intimidating |
-| Shelley's resource cards | Research-oriented buyers want proof of expertise before they spend money — these give them authority to trust |
-| FAQ | By the time visitors scroll to FAQ, they're interested but have 1–2 final fears. Answer them before they leave |
-| Shared footer | The Peak-End Rule — ending every page with human contact closes the experience on reassurance, not a dead end |
+When building or updating each of the remaining 7 pages:
+- [ ] Receive approved content, copy, and specifics from user.
+- [ ] Establish unique, scoped wrapper class (e.g. `.edu-prep-page`, `.edu-pass-page`).
+- [ ] Apply the universal typography tokens, 4-dot brand motif, and button styles.
+- [ ] Build desktop-first layout (min-width: 1350px container) with fluid responsive breakpoints at 1024px, 768px, and 480px.
+- [ ] Add dynamic micro-interactions (tabs, filters, tooltips, calculators, sheen hover states).
+- [ ] Incorporate relevant trust cues: Pass Assurance badge, HRCI/SHRM seals, 93% pass rate, 4.9-star rating.
+- [ ] Close page with high-trust human advisor consultation block and trademark legal disclaimers.
 
 ---
 
-## Design System (High-Fidelity CMS Pages — Not Prototype)
+## 6. Official Imagery & Visual Media Directives (Photography Standard Across All 8 Pages)
 
-When building the actual CMS HTML pages (not low-fi prototype):
-- **Navy/Charcoal**: `#2a343e` / `#0f172a` (Primary typography)
-- **Brand Magenta/Pink**: `#e51069` (Badges, accents)
-- **Brand Coral/Orange**: `#ef4a3d` (Primary CTA pills)
-- **Accent Cyan**: `#4ac4d6` (Pass assurance, stats)
-- **Accent Gold**: `#fdb414` (Offer badges, star ratings)
-- **Canvas**: `#ffffff` / `#f8fafc` / `#ebf2f8` (Light sections), `#1e3a8a` (Recertification hero)
-- **4-Dot Brand Motif**: `#ef4a3d`, `#fdb414`, `#94c83d`, `#4ac4d6`
+To maintain absolute brand consistency, international executive authority, and high conversion, all images across the 8-page certification suite must adhere to these unified specifications:
 
----
+### A. Core Art Direction & Aesthetic Benchmark
+- **Visual Style**: High-end corporate editorial photography benchmarking **Stanford Executive Education**, **McKinsey Academy**, **Wharton**, and **Reforge**.
+- **Setting & Environment**: Bright, modern, architecturally refined corporate offices, executive boardrooms, or minimalist collaborative study lounges. Clean natural daylight, soft slate surfaces, subtle glass reflections, and warm wooden accents.
+- **Lighting & Color Grading**: Warm, natural diffuse daylight. Clean neutral color balance (slate, porcelain, deep indigo accents). No artificial colored gels, no neon rim lighting, and no dark dingy environments.
+- **Talent & Poses**: Real working HR professionals (specialists, HR business partners, managers, and directors). Natural, candid, and authentic expressions of focused concentration, thoughtful analysis, or warm, approachable confidence.
+- **🚫 STRICT PROHIBITIONS**:
+  - **NO cheesy stock poses**: No thumbs-up, no pointing at empty air or headlines, no exaggerated shock/gasping faces.
+  - **NO isolated PNG cutouts**: Avoid cutout people floating on plain white or flat colored cards with harsh feathered edges. All photography must have rich, natural environmental depth.
+  - **NO uncanny AI artifacts**: No distorted hands, extra fingers, unnatural glossy plastic skin, or asymmetric eyes.
+  - **NO clip-art or cartoon doodles**: Maintain an adult, professional executive posture at all times.
 
-## Key Contacts & Collaborators
-
-| Name | Role | Key Input |
-|------|------|-----------|
-| Eric Anderson | Lead Content Writer | New headlines, 4 value pillars, 7-step roadmap, 3-tier comparison matrix |
-| Jennifer Marants | Course Director / Lead Instructor | Student pathway infographic, instructor notes |
-| Greg Osmond | Video/Media Producer | Landscape pros & cons video (in production — do NOT use vertical mobile cut) |
-| Shelley Marsland | Team / Marketing Lead | 5 certification authority article cards, resource center requirement |
+### B. Standard Photo Archetypes Across the 8 Pages
+1. **Hero Ambience / Learner Portrait**:
+   - **Role**: Inspires ambition and career elevation.
+   - **Specs**: Confident, well-dressed HR professional in a modern office or thoughtful leadership pose with laptop or notebook.
+   - **Aspect Ratio**: `16:9` (horizontal banner) or `4:3` / `3:2`.
+2. **Diagnostic & Interactive Feature Cards ("Which exam is right for you?")**:
+   - **Role**: Scannable diagnostic trigger encouraging self-assessment.
+   - **Specs**: A focused HR practitioner working attentively on an ultra-slim modern laptop, reviewing notes or dashboards.
+   - **Aspect Ratio**: `4:3` or `1:1`.
+3. **1-on-1 Executive Mentorship & Coaching**:
+   - **Role**: Demonstrates human-centered, high-touch support and personalized guidance.
+   - **Specs**: A senior HR mentor/coach in an engaging, supportive conversation with an ambitious professional in a modern advisory setting.
+   - **Aspect Ratio**: `16:9` or `3:2`.
+4. **Comparison & Career Frameworks**:
+   - **Role**: Elevates strategic decision-making.
+   - **Specs**: An HR director or leader analyzing strategic frameworks, career matrices, or planning documents.
+   - **Aspect Ratio**: `4:3` or `3:2`.
+5. **Verified Graduate Proof & Social Proof**:
+   - **Role**: Concrete proof of passing and career boost.
+   - **Specs**: Authentic, diverse certified HR professionals holding framed certificates or badges in actual office settings.
+   - **Aspect Ratio**: `1:1` square.

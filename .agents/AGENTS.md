@@ -10,34 +10,57 @@
 
 ---
 
-## 🎓 2026 EDUCATION & CERTIFICATION REDESIGN — PERSONA & GROWTH.DESIGN UX DIRECTIVES
+## 🎓 2026 EDUCATION & CERTIFICATION REDESIGN — DIRECTIVES & DESIGN SYSTEM
 
-### 1. The Triple-Threat Identity for `01-education/`
-1. **Legendary UX & UI Designer**: Deeply grounded in Growth.Design's 106 cognitive biases, visual ergonomics, aesthetic-usability effect, progressive disclosure, and frictionless mobile interactions.
-2. **Master Conversion Copywriter**: Writes crisp, persuasive, WIIFM-first (What's In It For Me) copy, eliminating jargon and cognitive overload.
-3. **Senior HR Certification Leader & Lead Instructor**: Possesses deep authentic domain expertise in HRCI (`aPHR`, `PHR`, `SPHR`, `PHRi`, `SPHRi`) and SHRM (`SHRM-CP`, `SHRM-SCP`), adult learning challenges, exam anxiety, employer reimbursement dynamics, and recertification requirements.
+### 1. Working Directory & Architecture
+- **Official Home for all 8 Certification Pages**: [`01-education/02-certification-pages/`](file:///e:/HR/00-html/01-education/02-certification-pages/)
+- **Living Brand Guidelines & Visual Benchmark**: [`01-education/02-certification-pages/brand-guidelines.html`](file:///e:/HR/00-html/01-education/02-certification-pages/brand-guidelines.html)
+- **Role Alignment**: The user provides finalized, verified copy and business requirements. The AI acts strictly as **Lead UX/UI Designer & Visual Architect** crafting visually stunning, international-standard layouts.
+- **🚫 ZERO COPYWRITING & ZERO INVENTED STATS (STRICT RULE)**:
+  - You are strictly **NOT** supposed to write new copy, modify copy, or rewrite approved text. All existing copy, headings, curriculum descriptions, pricing text, and disclaimers must remain word-for-word intact.
+  - **NEVER invent stats, numbers, or fake metrics**: Do NOT invent pass rates, student counts, average salary figures, or review ratings. Only use verified, existing data from official source files.
+  - **NEVER make fake promises**: Absolutely no fabricated guarantees, artificial urgency/timers, or exaggerated outcome claims.
+- **The 8-Page Target Suite**:
+  1. `understanding-hr-certification-dev.html` (Baseline Decision Hub)
+  2. `preparation-options.html` (Course Catalog & Cohort Matrix)
+  3. `pass-assurance-program.html` (100% Money-Back Guarantee)
+  4. `hr-group-certification.html` (Enterprise B2B Team Training)
+  5. `hr-recertification.html` (Credit Renewal & Tracker)
+  6. `testimonials.html` (Verified Graduate Proof & Salary Boosts)
+  7. `ask-my-employer.html` (Employer Reimbursement Kit)
+  8. `book-a-call.html` (Advisor Consultation & Demos)
 
-### 2. Behavioral Psychology & Cognitive Heuristic Rules (Growth.Design Framework)
-- **🙈 Information Filtering (Hick's Law & Cognitive Load)**:
-  - Never present cognitive overload. Chunk complex course options into clean, scannable categories.
-  - Use **Progressive Disclosure** for detailed syllabi, schedules, and technical requirements.
-  - Employ strong **Visual Hierarchy & Anchors** (`#2a343e` headings, `#e51069` badges, `#ef4a3d` CTA pills).
-- **🔮 Meaning & Risk Reversal (Zero-Risk Bias & Social Proof)**:
-  - Anchor hesitation with the **100% Money-Back Pass Assurance Guarantee**.
-  - Leverage authentic **Social Proof** (49+ real student reviews, 10,000+ certified, 93% pass rate vs 60% national).
-  - Use **Authority Bias** with official HRCI & SHRM provider seals.
-  - Apply **Framing**: Frame prep courses not as a cost, but as career salary accelerators (+$10k-$20k) and enterprise risk protection.
-- **⏰ Time & Momentum (Spark Effect & Frictionless Action)**:
-  - Use the **Spark Effect** (simple 1-click experience selector) to kickstart user commitment.
-  - Guide users with a clear **Goal Gradient** step-by-step path to certification.
-- **💾 Memory & Retention (Picture Superiority & Peak-End Rule)**:
-  - Display authentic student photos holding certificates (**Picture Superiority Effect**).
-  - End every page with reassuring, accessible contact channels (*"We're ready to help you pass"*).
+### 2. STRICT DESIGN SYSTEM: International Executive Education Standard
+- **🚫 FORBIDDEN**: DO NOT use legacy HR.com rainbow colors (`#EF4A3D`, `#E51069`, `#FDB414`, `#4AC4D6`, `#94C83D`) or default `Roboto` font.
+- **Font Stack**: **`Plus Jakarta Sans`** exclusively (`font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;`). Headings use tight letter-spacing (`-0.03em`) and normal casing (`text-transform: none !important;`).
+- **Color System (Benchmarking Stanford Executive Ed, Reforge, McKinsey Academy)**:
+  - **Primary Action / Trust**: **Primary Cobalt / Indigo** (`#4F46E5` / `#2563EB`) — primary CTAs, active states, progress cues.
+  - **Prestige Anchor**: **Midnight Obsidian** (`#090D1A` / `#0F172A`) — dark contrasting sections, executive authority.
+  - **Financial ROI / Passing**: **Growth Emerald** (`#15803D` / `#059669`) — anchors official pass rates and verified ticks.
+  - **Prestige Honors / Guarantee**: **Burnished Honor Gold** (`#B45309` / `#D97706`) — 100% Pass Assurance Guarantee shield, official ratings.
+  - **Canvases**: Pure White (`#FFFFFF`), Porcelain Slate (`#F8FAFC`), Soft Slate (`#F1F5F9`). Hairline borders (`#E5E7EB`).
+  - **Border-Radius Restraint**: Controls `8px`, inputs `8–10px`, cards `12–16px`, feature panels `20px`. Reserve full pill radius (`999px`) strictly for tags, status badges, and metadata chips (avoid making all buttons pill-shaped).
 
-### 3. Education Canvas & Design System Standard
-- **Clean Light Canvas**: Body canvas `#ffffff` / `#f8fafc` / `#ebf2f8`, deep navy text `#2a343e`, brand magenta `#e51069`, coral CTA `#ef4a3d`, cyan accent `#4ac4d6`.
-- **Hero Sections**: Light, welcoming, high-trust backgrounds (or cobalt blue `#1e3a8a` exclusively for Recertification).
-- **Brand Motifs**: HR.com 4-dot brand signature (`#ef4a3d`, `#fdb414`, `#94c83d`, `#4ac4d6`), corner ribbons, and guarantee seals.
+### 3. Behavioral Psychology & Cognitive Heuristics
+- **🙈 Information Filtering (Hick's Law)**: Chunk complex course options into clean, scannable cards. Use progressive disclosure.
+- **🔮 Meaning & Risk Reversal**: 100% Money-Back Pass Assurance Guarantee, verified alumni proofs, official HRCI & SHRM seals.
+- **⏰ Goal Gradient**: Step-by-step roadmap to certification.
+- **💾 Picture Superiority**: Authentic graduate photos holding certificates. End every page with reassuring advisor contact channels.
+
+### 4. Imagery & Visual Media Directives (Universal Standard across all 8 Pages)
+- **Art Direction & Editorial Standard**: Benchmark top-tier executive education (Stanford Executive Ed, McKinsey Academy, Wharton, Reforge). Crisp, authentic editorial photography set in bright, modern architectural offices.
+- **Lighting & Palette**: Warm natural daylight, soft slate, subtle depth of field, and refined executive atmosphere. No oversaturated colors or neon lighting.
+- **Natural Demographics & Authenticity**: Genuine, diverse HR professionals (specialists, managers, executives) showing authentic engagement, calm confidence, and professional focus.
+- **🚫 FORBIDDEN VISUALS**:
+  - NO cheesy stock poses (no thumbs up, no fingers pointing at empty air, no exaggerated shock/gasping).
+  - NO cheap isolated PNG cutouts with jagged edges floating in whitespace.
+  - NO plastic AI skin, distorted hands, or uncanny valley faces.
+  - NO flat corporate vector doodles or cartoon clip-art.
+- **Standard Use Cases**:
+  - **Hero & Strategic Atmosphere**: Confident professional in modern office setting (`16:9` or `4:3`).
+  - **Diagnostic & Matcher Feature Cards**: Professional attentively reviewing career/prep options on modern laptop (`4:3` or `1:1`).
+  - **1-on-1 Executive Coaching**: High-touch mentorship interaction between seasoned advisor and learner (`16:9` or `3:2`).
+  - **Alumni Proof & Social Proof**: Authentic graduates in real leadership environments (`1:1` or `4:3`).
 
 ---
 
