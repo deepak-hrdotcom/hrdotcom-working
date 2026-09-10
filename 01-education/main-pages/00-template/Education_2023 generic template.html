@@ -85,8 +85,108 @@
     font-size: 14px;
     font-weight: 500;
   }
-ul.submenu_list > li > a{
-    font-size:13.5px !important
+.hr_custom_submenu {
+  background: #090D1A !important; /* Midnight Obsidian */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 999px !important;
+  padding: 6px 10px !important;
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin: 18px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 100 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  box-sizing: border-box !important;
+}
+
+.hr_custom_submenu::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+ul.submenu_list {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 2px !important;
+  box-sizing: border-box !important;
+}
+
+ul.submenu_list > li {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+ul.submenu_list > li > a {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #E2E8F0 !important;
+  height: 38px !important;
+  padding: 0 12px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  letter-spacing: -0.01em !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+ul.submenu_list > li > a:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  text-decoration: none !important;
+}
+
+ul.submenu_list > li > a.active {
+  background: #2563EB !important; /* International Cobalt */
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4) !important;
+  cursor: default !important;
+  padding: 0 14px !important;
+}
+
+@media screen and (max-width: 1024px) {
+  ul.submenu_list {
+    justify-content: flex-start !important;
+  }
+  ul.submenu_list > li {
+    flex: 0 0 auto !important;
+  }
+  ul.submenu_list > li > a {
+    font-size: 12.5px !important;
+    padding: 0 12px !important;
+    height: 36px !important;
+  }
 }
   /*
   .bg_white {
@@ -177,6 +277,9 @@ Mega Menu End -->
 <div class="edu_container">
   <div class="hr_custom_submenu mrtp20 mrbt20">
     <ul class="submenu_list">
+      <li>
+        <a href="/en/certifications/our-program_mtvdpt3u.html">Our Program</a>
+      </li>
       <li>
         <a href="/en/certifications/understanding_certification/"
           >Understanding HR Certification</a

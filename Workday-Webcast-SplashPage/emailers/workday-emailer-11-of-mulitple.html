@@ -49,9 +49,7 @@
             .hero-main-title { color: #FFFFFF !important; }
             .hero-subhead-text { color: #94A3B8 !important; }
 
-            /* Stat Pills */
-            .stat-pill-box { background-color: #1E293B !important; border-color: #334155 !important; }
-            .stat-pill-text { color: #F1F5F9 !important; }
+            .hero-meta-sentence { color: #94A3B8 !important; }
 
             /* Content Sections */
             .content-block-bg { background-color: #0B1320 !important; }
@@ -60,9 +58,13 @@
             
             /* Comparison Box */
             .comparison-box { background-color: #0F172A !important; border-color: #1E293B !important; }
-            .col-old-title { color: #EF4444 !important; }
-            .col-new-title { color: #10B981 !important; }
-            .comparison-point { color: #CBD5E1 !important; }
+            .col-old-cell { background-color: #1F1315 !important; border-color: #3D1B20 !important; }
+            .col-new-cell { background-color: #0D1F17 !important; border-color: #173D2C !important; }
+            .col-old-title { color: #F87171 !important; }
+            .col-new-title { color: #4ADE80 !important; }
+            .point-old { color: #FECACA !important; }
+            .point-new { color: #D1FAE5 !important; }
+            .point-old strong, .point-new strong { color: #FFFFFF !important; }
 
             /* Outcome Cards */
             .outcome-card { background-color: #0F172A !important; border-color: #1E293B !important; }
@@ -78,11 +80,6 @@
             .speaker-company-pill { background-color: #1E293B !important; }
             .speaker-company-text { color: #60A5FA !important; }
 
-            /* Credits Section */
-            .credit-section-bg { background-color: #0B1320 !important; border-color: #1E293B !important; }
-            .credit-card { background-color: #0F172A !important; border-color: #1E293B !important; }
-            .credit-text { color: #CBD5E1 !important; }
-
             /* Fallbacks */
             h1, h2, h3 { color: #FFFFFF !important; }
             p, span, td { color: #CBD5E1; }
@@ -95,23 +92,24 @@
         [data-ogsc] .header-bar-label { color: #60A5FA !important; }
         [data-ogsc] .hero-action-bg { background-color: #0F172A !important; }
         [data-ogsc] .hero-main-title { color: #FFFFFF !important; }
-        [data-ogsc] .hero-subhead-text { color: #94A3B8 !important; }
-        [data-ogsc] .stat-pill-box { background-color: #1E293B !important; }
-        [data-ogsc] .stat-pill-text { color: #F1F5F9 !important; }
+        [data-ogsc] .hero-meta-sentence { color: #94A3B8 !important; }
         [data-ogsc] .content-block-bg { background-color: #0B1320 !important; }
         [data-ogsc] .section-label { color: #38BDF8 !important; }
         [data-ogsc] .section-title { color: #FFFFFF !important; }
-        [data-ogsc] .comparison-box { background-color: #0F172A !important; }
-        [data-ogsc] .comparison-point { color: #CBD5E1 !important; }
+        [data-ogsc] .comparison-box { background-color: #0F172A !important; border-color: #1E293B !important; }
+        [data-ogsc] .col-old-cell { background-color: #1F1315 !important; border-color: #3D1B20 !important; }
+        [data-ogsc] .col-new-cell { background-color: #0D1F17 !important; border-color: #173D2C !important; }
+        [data-ogsc] .col-old-title { color: #F87171 !important; }
+        [data-ogsc] .col-new-title { color: #4ADE80 !important; }
+        [data-ogsc] .point-old { color: #FECACA !important; }
+        [data-ogsc] .point-new { color: #D1FAE5 !important; }
+        [data-ogsc] .point-old strong, [data-ogsc] .point-new strong { color: #FFFFFF !important; }
         [data-ogsc] .outcome-card { background-color: #0F172A !important; }
         [data-ogsc] .outcome-title { color: #FFFFFF !important; }
         [data-ogsc] .outcome-desc { color: #94A3B8 !important; }
         [data-ogsc] .speakers-section-bg { background-color: #080E1A !important; }
         [data-ogsc] .speaker-card { background-color: #0F172A !important; }
         [data-ogsc] .speaker-name { color: #FFFFFF !important; }
-        [data-ogsc] .credit-section-bg { background-color: #0B1320 !important; }
-        [data-ogsc] .credit-card { background-color: #0F172A !important; }
-        [data-ogsc] .credit-text { color: #CBD5E1 !important; }
         [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3 { color: #FFFFFF !important; }
         [data-ogsc] p { color: #CBD5E1 !important; }
 
@@ -121,14 +119,9 @@
             .main-container { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
             .hero-action-td { padding: 24px 20px 24px 20px !important; }
             .hero-main-title { font-size: 22px !important; line-height: 29px !important; }
-            .hero-subhead-text { font-size: 14px !important; line-height: 22px !important; }
+            .hero-subhead-text { font-size: 13px !important; line-height: 20px !important; }
             .content-section-td { padding: 28px 20px !important; }
             .speaker-col-div { width: 100% !important; max-width: 100% !important; display: block !important; margin: 8px 0 !important; }
-            .stat-pill-col { display: block !important; width: 100% !important; margin-bottom: 6px !important; }
-            .stat-pill-box { width: 100% !important; }
-            .credit-stack-table, .credit-stack-table tbody, .credit-stack-table tr, .credit-badge-cell, .credit-text-cell { display: block !important; width: 100% !important; }
-            .credit-badge-cell { text-align: center !important; padding-bottom: 8px !important; }
-            .credit-text-cell { text-align: center !important; padding-left: 0 !important; padding-top: 0 !important; }
             .footer-inner-td { padding: 28px 16px 0 16px !important; }
             .cta-btn-cell a { padding: 14px 28px !important; font-size: 15px !important; }
             .comparison-col-cell { display: block !important; width: 100% !important; box-sizing: border-box !important; }
@@ -220,7 +213,7 @@
                     <!-- 3. HERO BANNER IMAGE (SEND 11 CUSTOM SPEED VISUAL) -->
                     <tr>
                         <td align="center" valign="top" style="padding:0;background-color:#001838;line-height:0;">
-                            <a href="https://www.hr.com/en/about_us/splash_pages/watch-now-a-faster-workday-for-the-frontline_ms4svcn3.html"
+                            <a href="https://web.hr.com/3v8lb"
                                 target="_blank" data-cta="1" data-captcha="1" style="display:block;text-decoration:none;">
                                 <img src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/frontline-speed-banner-2.jpg"
                                     alt="Workday + Paradox: Frontline Hiring Masterclass - Interview Confirmed in 3 Minutes"
@@ -254,17 +247,17 @@
 
                             <!-- Concise 1-Sentence Subhead -->
                             <p class="hero-subhead-text"
-                                style="margin:0 0 22px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:15px;font-weight:400;color:#475569;line-height:24px;text-align:center;max-width:500px;">
+                                style="margin:0 auto 20px auto;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#475569;line-height:20px;text-align:center;max-width:530px;">
                                 See how combining <strong>Workday</strong> and <strong>Paradox</strong> automates screening and books qualified applicants directly on manager calendars in under 3 minutes.
                             </p>
 
                             <!-- Primary High-Impact CTA Button -->
-                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom:20px;">
+                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom:14px;">
                                 <tr>
                                     <td align="center" class="cta-btn-cell"
                                         style="border-radius:999px;background:linear-gradient(135deg, #F78B1E 0%, #E25217 100%);box-shadow:0 6px 20px rgba(247,139,30,0.35);"
                                         bgcolor="#F78B1E">
-                                        <a href="https://www.hr.com/en/about_us/splash_pages/watch-now-a-faster-workday-for-the-frontline_ms4svcn3.html"
+                                        <a href="https://web.hr.com/3v8lb"
                                             target="_blank" data-cta="1" data-captcha="1" class="btn-orange"
                                             style="font-size:15px;font-family:'Inter',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:15px 44px;display:inline-block;font-weight:800;letter-spacing:0.4px;mso-padding-alt:0;">
                                             Watch The 45-Min Session Now &rarr;
@@ -273,44 +266,6 @@
                                 </tr>
                             </table>
 
-                            <!-- 3 Quick Stat Badges -->
-                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:500px;">
-                                <tr>
-                                    <td align="center" style="padding:0;">
-                                        <!--[if mso]><table border="0" cellspacing="0" cellpadding="0" align="center"><tr><td style="padding:0 4px;"><![endif]-->
-                                        <div class="stat-pill-col" style="display:inline-block;vertical-align:middle;margin:3px 4px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" class="stat-pill-box" style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:6px;padding:6px 12px;">
-                                                <tr>
-                                                    <td class="stat-pill-text" style="font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;color:#334155;white-space:nowrap;">
-                                                        ⏱️ <strong>45-Min Video</strong>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <!--[if mso]></td><td style="padding:0 4px;"><![endif]-->
-                                        <div class="stat-pill-col" style="display:inline-block;vertical-align:middle;margin:3px 4px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" class="stat-pill-box" style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:6px;padding:6px 12px;">
-                                                <tr>
-                                                    <td class="stat-pill-text" style="font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;color:#334155;white-space:nowrap;">
-                                                        🏆 <strong>1 HRCI / SHRM Credit</strong>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <!--[if mso]></td><td style="padding:0 4px;"><![endif]-->
-                                        <div class="stat-pill-col" style="display:inline-block;vertical-align:middle;margin:3px 4px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" class="stat-pill-box" style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:6px;padding:6px 12px;">
-                                                <tr>
-                                                    <td class="stat-pill-text" style="font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;color:#334155;white-space:nowrap;">
-                                                        💡 <strong>OneDigital Case Study</strong>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <!--[if mso]></td></tr></table><![endif]-->
-                                    </td>
-                                </tr>
-                            </table>
 
                         </td>
                     </tr>
@@ -339,35 +294,35 @@
                                 <tr>
                                     <!-- Old Way (Red/Gray Tone) -->
                                     <!--[if mso]><td width="270" valign="top" style="padding:18px 16px;background-color:#FFF5F5;"><![endif]-->
-                                    <td class="comparison-col-cell" width="50%" valign="top"
+                                    <td class="comparison-col-cell col-old-cell" width="50%" valign="top"
                                         style="padding:18px 18px 20px 18px;background-color:#FEF2F2;border-right:1px solid #FEE2E2;">
                                         <span class="col-old-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;color:#DC2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">
                                             ❌ The Traditional Way
                                         </span>
-                                        <p class="comparison-point" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#7F1D1D;line-height:20px;">
+                                        <p class="comparison-point point-old" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#7F1D1D;line-height:20px;">
                                             • 20-minute clunky forms causing <strong>60%+ drop-offs</strong>
                                         </p>
-                                        <p class="comparison-point" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#7F1D1D;line-height:20px;">
+                                        <p class="comparison-point point-old" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#7F1D1D;line-height:20px;">
                                             • Days of endless recruiter phone tag and manual emails
                                         </p>
-                                        <p class="comparison-point" style="margin:0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#7F1D1D;line-height:20px;">
+                                        <p class="comparison-point point-old" style="margin:0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#7F1D1D;line-height:20px;">
                                             • Top frontline talent accepts offers from faster rivals
                                         </p>
                                     </td>
                                     <!--[if mso]></td><td width="270" valign="top" style="padding:18px 16px;background-color:#F0FDF4;"><![endif]-->
                                     <!-- New Way (Green/Blue Tone) -->
-                                    <td class="comparison-col-cell" width="50%" valign="top"
+                                    <td class="comparison-col-cell col-new-cell" width="50%" valign="top"
                                         style="padding:18px 18px 20px 18px;background-color:#F0FDF4;">
                                         <span class="col-new-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;color:#16A34A;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">
                                             ✅ The Workday + Paradox Way
                                         </span>
-                                        <p class="comparison-point" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#14532D;line-height:20px;">
+                                        <p class="comparison-point point-new" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#14532D;line-height:20px;">
                                             • <strong>3-minute Conversational Apply</strong> straight from mobile
                                         </p>
-                                        <p class="comparison-point" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#14532D;line-height:20px;">
+                                        <p class="comparison-point point-new" style="margin:0 0 8px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#14532D;line-height:20px;">
                                             • Instant AI scheduling onto manager calendars 24/7
                                         </p>
-                                        <p class="comparison-point" style="margin:0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#14532D;line-height:20px;">
+                                        <p class="comparison-point point-new" style="margin:0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#14532D;line-height:20px;">
                                             • <strong>3x faster time-to-hire</strong> with 80% less recruiter busywork
                                         </p>
                                     </td>
@@ -381,15 +336,15 @@
                     <!-- 6. 3 CONCISE OUTCOME CARDS (LESS TEXTY, HIGH IMPACT) -->
                     <tr>
                         <td align="left" valign="top" class="content-block-bg content-section-td"
-                            style="background-color:#FFFFFF;padding:32px 28px;border-bottom:1px solid #E2E8F0;">
+                            style="background-color:#FFFFFF;padding:24px 28px;border-bottom:1px solid #E2E8F0;">
                             
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:16px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:12px;">
                                 <tr>
                                     <td>
-                                        <span class="section-label" style="font-family:'Inter',Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;color:#0057AE;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:4px;">
+                                        <span class="section-label" style="font-family:'Inter',Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;color:#0057AE;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:3px;">
                                             Key Session Highlights
                                         </span>
-                                        <h2 class="section-title" style="margin:0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:19px;font-weight:800;color:#0F172A;line-height:26px;">
+                                        <h2 class="section-title" style="margin:0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;color:#0F172A;line-height:24px;">
                                             What you will learn in 45 minutes
                                         </h2>
                                     </td>
@@ -398,19 +353,19 @@
 
                             <!-- Outcome 1 -->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="outcome-card"
-                                style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;margin-bottom:10px;">
+                                style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;margin-bottom:8px;">
                                 <tr>
-                                    <td width="42" align="center" valign="middle" style="padding:14px 0 14px 14px;">
-                                        <div class="outcome-num" style="background-color:#EFF6FF;border-radius:6px;width:30px;height:30px;text-align:center;line-height:30px;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:800;color:#0057AE;">
+                                    <td width="38" align="center" valign="middle" style="padding:9px 0 9px 12px;">
+                                        <div class="outcome-num" style="background-color:#EFF6FF;border-radius:6px;width:26px;height:26px;text-align:center;line-height:26px;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;color:#0057AE;">
                                             01
                                         </div>
                                     </td>
-                                    <td valign="middle" style="padding:14px 16px 14px 12px;">
-                                        <span class="outcome-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:14px;font-weight:800;color:#0F172A;line-height:20px;">
+                                    <td valign="middle" style="padding:9px 14px 9px 10px;">
+                                        <span class="outcome-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;color:#0F172A;line-height:18px;">
                                             The OneDigital Transformation Blueprint
                                         </span>
-                                        <span class="outcome-desc" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#64748B;line-height:19px;margin-top:2px;">
-                                            Hear how OneDigital connected disparate HR platforms to accelerate volume recruiting and slash time-to-hire.
+                                        <span class="outcome-desc" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:400;color:#64748B;line-height:16px;margin-top:1px;">
+                                            How OneDigital connected HR platforms to accelerate volume hiring.
                                         </span>
                                     </td>
                                 </tr>
@@ -418,19 +373,19 @@
 
                             <!-- Outcome 2 -->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="outcome-card"
-                                style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;margin-bottom:10px;">
+                                style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;margin-bottom:8px;">
                                 <tr>
-                                    <td width="42" align="center" valign="middle" style="padding:14px 0 14px 14px;">
-                                        <div class="outcome-num" style="background-color:#EFF6FF;border-radius:6px;width:30px;height:30px;text-align:center;line-height:30px;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:800;color:#0057AE;">
+                                    <td width="38" align="center" valign="middle" style="padding:9px 0 9px 12px;">
+                                        <div class="outcome-num" style="background-color:#EFF6FF;border-radius:6px;width:26px;height:26px;text-align:center;line-height:26px;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;color:#0057AE;">
                                             02
                                         </div>
                                     </td>
-                                    <td valign="middle" style="padding:14px 16px 14px 12px;">
-                                        <span class="outcome-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:14px;font-weight:800;color:#0F172A;line-height:20px;">
+                                    <td valign="middle" style="padding:9px 14px 9px 10px;">
+                                        <span class="outcome-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;color:#0F172A;line-height:18px;">
                                             Automated Conversational Apply &amp; Scheduling
                                         </span>
-                                        <span class="outcome-desc" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#64748B;line-height:19px;margin-top:2px;">
-                                            Replace static job applications with an intuitive chat agent that screens candidates and books interviews in minutes.
+                                        <span class="outcome-desc" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:400;color:#64748B;line-height:16px;margin-top:1px;">
+                                            Chat agents that screen candidates and book interviews in minutes.
                                         </span>
                                     </td>
                                 </tr>
@@ -440,17 +395,17 @@
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="outcome-card"
                                 style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;margin-bottom:0;">
                                 <tr>
-                                    <td width="42" align="center" valign="middle" style="padding:14px 0 14px 14px;">
-                                        <div class="outcome-num" style="background-color:#EFF6FF;border-radius:6px;width:30px;height:30px;text-align:center;line-height:30px;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:800;color:#0057AE;">
+                                    <td width="38" align="center" valign="middle" style="padding:9px 0 9px 12px;">
+                                        <div class="outcome-num" style="background-color:#EFF6FF;border-radius:6px;width:26px;height:26px;text-align:center;line-height:26px;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;color:#0057AE;">
                                             03
                                         </div>
                                     </td>
-                                    <td valign="middle" style="padding:14px 16px 14px 12px;">
-                                        <span class="outcome-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:14px;font-weight:800;color:#0F172A;line-height:20px;">
+                                    <td valign="middle" style="padding:9px 14px 9px 10px;">
+                                        <span class="outcome-title" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;color:#0F172A;line-height:18px;">
                                             Intelligent AI Prioritization
                                         </span>
-                                        <span class="outcome-desc" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#64748B;line-height:19px;margin-top:2px;">
-                                            Surface best-fit applicants instantly so recruiters focus purely on closing high-value talent.
+                                        <span class="outcome-desc" style="display:block;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;font-weight:400;color:#64748B;line-height:16px;margin-top:1px;">
+                                            Surface best-fit applicants instantly so recruiters focus on top talent.
                                         </span>
                                     </td>
                                 </tr>
@@ -476,7 +431,7 @@
                                             <tr>
                                                 <td align="center" style="border-radius:999px;background:linear-gradient(135deg, #F78B1E 0%, #E25217 100%);"
                                                     bgcolor="#F78B1E">
-                                                    <a href="https://www.hr.com/en/about_us/splash_pages/watch-now-a-faster-workday-for-the-frontline_ms4svcn3.html"
+                                                    <a href="https://web.hr.com/3v8lb"
                                                         target="_blank" data-cta="1" data-captcha="1" class="btn-orange"
                                                         style="font-size:14px;font-family:'Inter',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:13px 36px;display:inline-block;font-weight:800;letter-spacing:0.3px;mso-padding-alt:0;">
                                                         Get Free Instant Access &rarr;
@@ -603,55 +558,51 @@
                             <!--[if mso]></td><![endif]-->
                             <!--[if mso]></tr></table><![endif]-->
 
+                      
+
                         </td>
                     </tr>
 
-                    <!-- 9. RECERTIFICATION CREDITS (HIGH TRUST ACCREDITATION) -->
+                    <!-- RECERTIFICATION CREDITS (HIGH TRUST SECTION) -->
                     <tr>
-                        <td align="center" valign="top" class="credit-section-bg"
-                            style="background-color:#FFFFFF;padding:32px 28px;border-bottom:1px solid #E2E8F0;">
-                            <span class="section-label" style="font-family:'Inter',Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;color:#0057AE;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:4px;text-align:center;">
-                                Professional Development
-                            </span>
-                            <h2 class="section-title"
-                                style="margin:0 0 18px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:19px;font-weight:800;color:#0F172A;text-align:center;line-height:26px;">
-                                Earn 1 HRCI &amp; SHRM Recertification Credit
-                            </h2>
+                        <td align="center" valign="top" class="credit-bg"
+                            style="background-color:#FFFFFF;padding:36px 28px;border-bottom:1px solid #E2E8F0;">
+                           
 
                             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody>
                                     <!-- HRCI Credit Card -->
                                     <tr>
                                         <td align="center" valign="top">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-card credit-stack-table"
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-box credit-stack-table"
                                                 style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;">
                                                 <tr>
-                                                    <td width="90" align="center" valign="middle" class="credit-badge-cell" style="padding:14px;">
+                                                    <td width="90" align="center" valign="middle" class="credit-badge-cell" style="padding:16px 14px;">
                                                         <img alt="HRCI" src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg"
-                                                            style="display:inline-block;max-width:72px;width:72px;height:72px;border:0;" width="72" />
+                                                            style="display:inline-block;max-width:76px;width:76px;height:76px;border:0;" width="76" />
                                                     </td>
                                                     <td align="left" valign="middle" class="credit-text-cell"
-                                                        style="color:#475569;padding:14px 16px 14px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400;">
-                                                        <span class="credit-text">This Program has been pre-approved for 1 HR Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)</span>
+                                                        style="color:#475569;padding:16px 16px 16px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;font-weight:400;">
+                                                        This Program has been pre-approved for 1 HR Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
-                                    <tr><td height="10" style="font-size:1px;line-height:10px;">&nbsp;</td></tr>
+                                    <tr><td height="12" style="font-size:1px;line-height:12px;">&nbsp;</td></tr>
                                     <!-- SHRM Credit Card -->
                                     <tr>
                                         <td align="center" valign="top">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-card credit-stack-table"
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-box credit-stack-table"
                                                 style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;">
                                                 <tr>
-                                                    <td width="90" align="center" valign="middle" class="credit-badge-cell" style="padding:14px;">
+                                                    <td width="90" align="center" valign="middle" class="credit-badge-cell" style="padding:16px 14px;">
                                                         <img alt="SHRM" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/shrm-recert-provider.png"
-                                                            style="display:inline-block;max-width:72px;width:72px;height:72px;border:0;" width="72" />
+                                                            style="display:inline-block;max-width:76px;width:76px;height:76px;border:0;" width="76" />
                                                     </td>
                                                     <td align="left" valign="middle" class="credit-text-cell"
-                                                        style="color:#475569;padding:14px 16px 14px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400;">
-                                                        <span class="credit-text">HR.com is recognized by SHRM to offer Professional Development Credits (PDC) for SHRM-CP® or SHRM-SCP® recertification activities.</span>
+                                                        style="color:#475569;padding:16px 16px 16px 0;font-family:'Inter',Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;font-weight:400;">
+                                                        HR.com is recognized by SHRM to offer Professional Development Credits (PDC) for SHRM-CP® or SHRM-SCP® recertification activities.
                                                     </td>
                                                 </tr>
                                             </table>
@@ -660,23 +611,10 @@
                                 </tbody>
                             </table>
 
-                            <!-- Final Clean CTA Button -->
-                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:22px;">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;background-color:#0057AE;" bgcolor="#0057AE">
-                                        <a href="https://www.hr.com/en/about_us/splash_pages/watch-now-a-faster-workday-for-the-frontline_ms4svcn3.html"
-                                            target="_blank" data-cta="1" data-captcha="1" class="btn-blue"
-                                            style="font-size:14px;font-family:'Inter',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:13px 34px;display:inline-block;font-weight:700;letter-spacing:0.3px;mso-padding-alt:0;">
-                                            Access On-Demand Recording &rarr;
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-
                         </td>
                     </tr>
 
-                    <!-- 10. FOOTER SECTION (CANONICAL HR.COM COMPLIANT FOOTER) -->
+                    <!-- 9. FOOTER SECTION (CANONICAL HR.COM COMPLIANT FOOTER) -->
                     <tr>
                         <td align="center" valign="top">
                             <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"

@@ -527,6 +527,64 @@
       opacity: 0.6;
     }
   }
+
+  /* Track Slider & Carousel */
+  .hrw27 .track-slider {
+    display: flex !important;
+    gap: 24px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x proximity !important;
+    scroll-behavior: smooth !important;
+    padding-bottom: 24px !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .hrw27 .track-slider::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .hrw27 .track-card {
+    flex: 0 0 clamp(300px, 30.5vw, 390px) !important;
+    scroll-snap-align: start !important;
+    background: var(--color-elevated) !important;
+    border-radius: var(--radius-xl) !important;
+    border: 1.5px solid var(--color-subtle) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .hrw27 .track-card:hover {
+    border-color: var(--brand-glow-50) !important;
+    box-shadow: 0 16px 40px var(--brand-glow-18) !important;
+    transform: translateY(-4px) !important;
+  }
+
+  .hrw27 .slider-btn {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    flex-shrink: 0 !important;
+    user-select: none !important;
+  }
+
+  .hrw27 .slider-btn:hover {
+    transform: scale(1.06) !important;
+  }
+
+  .hrw27 .slider-btn:active {
+    transform: scale(0.96) !important;
+  }
 </style>
 <div class="hrw27"><!-- 1. Hero Split Layout -->
   <section class="hero-split-section"><!-- Ambient Glow -->
@@ -1263,13 +1321,13 @@
         </div>
         <!-- Slider Arrows (Desktop View) -->
 
-        <div class="track-arrows-desktop" style="display: flex; gap: 12px;"><button aria-label="Previous Track"
+        <div class="track-arrows-desktop" style="display: flex; gap: 12px;"><button type="button" aria-label="Previous Track"
             class="slider-btn hrw27-track-prev-btn" id="hrw27-track-prev"
-            style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm);"><svg
+            style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm); cursor: pointer;"><svg style="pointer-events: none;"
               fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20">
               <polyline points="15 18 9 12 15 6"></polyline>
-            </svg></button><button aria-label="Next Track" class="slider-btn hrw27-track-next-btn" id="hrw27-track-next"
-            style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35);"><svg
+            </svg></button><button type="button" aria-label="Next Track" class="slider-btn hrw27-track-next-btn" id="hrw27-track-next"
+            style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35); cursor: pointer;"><svg style="pointer-events: none;"
               fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg></button></div>
@@ -1301,7 +1359,7 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Strategy &amp; AI </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks </span></div>
+                 Approx. 8 Sessions </span></div>
           </div>
         </div>
         <!-- Track 2: Legal and Compliance -->
@@ -1330,7 +1388,7 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Legal &amp; Risk </span> <span class="badge badge-pink"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks </span></div>
+                 Approx. 8 Sessions </span></div>
           </div>
         </div>
         <!-- Track 3: HR Tech -->
@@ -1359,7 +1417,7 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Tools &amp; Systems </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks </span></div>
+                 Approx. 8 Sessions </span></div>
           </div>
         </div>
         <!-- Track 4: Talent -->
@@ -1389,7 +1447,7 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Talent &amp; Growth </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks </span></div>
+                 Approx. 8 Sessions </span></div>
           </div>
         </div>
         <!-- Track 5: Leadership -->
@@ -1419,7 +1477,7 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Leadership Impact </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks </span></div>
+                 Approx. 8 Sessions </span></div>
           </div>
         </div>
         <!-- Track 6: Health, Wellness and Benefits -->
@@ -1448,7 +1506,7 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Culture &amp; Wellness </span> <span class="badge badge-pink"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                Approx. 8 Tracks </span></div>
+                 Approx. 8 Sessions </span></div>
           </div>
         </div>
       </div>
@@ -1968,14 +2026,51 @@
       }
     }
 
-    /* 5. Track Slider Navigation (Standalone Support) */
+    /* 5. Track Slider Navigation (Robust Cross-Browser Firefox & Chrome Support) */
     var trackSlider = document.getElementById('hrw27-track-slider');
     if (trackSlider) {
+      function scrollTrack(direction, e) {
+        if (e) {
+          if (typeof e.preventDefault === 'function') e.preventDefault();
+          if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        }
+        var cards = trackSlider.querySelectorAll('.track-card');
+        var cardWidth = (cards.length && cards[0].offsetWidth) ? cards[0].offsetWidth : 370;
+        var step = cardWidth + 24;
+        var currentScroll = trackSlider.scrollLeft;
+        var targetLeft = currentScroll + (direction * step);
+
+        // Firefox scroll-snap fix: temporarily disable scroll-snap-type so Firefox's
+        // snap engine does not fight and abort the programmatic smooth scroll
+        trackSlider.style.setProperty('scroll-snap-type', 'none', 'important');
+
+        if (typeof trackSlider.scrollTo === 'function') {
+          trackSlider.scrollTo({
+            left: targetLeft,
+            behavior: 'smooth'
+          });
+        } else {
+          trackSlider.scrollLeft = targetLeft;
+        }
+
+        clearTimeout(trackSlider._snapTimer);
+        trackSlider._snapTimer = setTimeout(function () {
+          trackSlider.style.removeProperty('scroll-snap-type');
+        }, 450);
+      }
+
       document.querySelectorAll('.hrw27-track-prev-btn, #hrw27-track-prev').forEach(function (btn) {
-        btn.addEventListener('click', function () { trackSlider.scrollBy({ left: -370, behavior: 'smooth' }); });
+        btn.setAttribute('type', 'button');
+        btn.addEventListener('click', function (e) {
+          scrollTrack(-1, e);
+        });
       });
+
       document.querySelectorAll('.hrw27-track-next-btn, #hrw27-track-next').forEach(function (btn) {
-        btn.addEventListener('click', function () { trackSlider.scrollBy({ left: 370, behavior: 'smooth' }); });
+        btn.setAttribute('type', 'button');
+        btn.addEventListener('click', function (e) {
+          scrollTrack(1, e);
+        });
       });
     }
   })();

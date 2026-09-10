@@ -982,7 +982,7 @@
     display: flex !important;
     gap: 24px !important;
     overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
+    scroll-snap-type: x proximity !important;
     scroll-behavior: smooth !important;
     padding-bottom: 24px !important;
     -ms-overflow-style: none !important;
@@ -2180,14 +2180,51 @@ $desc_long
     tick();
     setInterval(tick, 1000);
 
-    /* 5. TRACK SLIDER ARROWS */
+    /* 5. TRACK SLIDER ARROWS (Cross-Browser Firefox & Chrome Support) */
     var slider = document.getElementById('hrw27-track-slider');
     if (slider) {
+      function scrollTrack(direction, e) {
+        if (e) {
+          if (typeof e.preventDefault === 'function') e.preventDefault();
+          if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        }
+        var cards = slider.querySelectorAll('.track-card');
+        var cardWidth = (cards.length && cards[0].offsetWidth) ? cards[0].offsetWidth : 370;
+        var step = cardWidth + 24;
+        var currentScroll = slider.scrollLeft;
+        var targetLeft = currentScroll + (direction * step);
+
+        // Firefox scroll-snap fix: temporarily disable scroll-snap-type so Firefox's
+        // snap engine does not fight and abort the programmatic smooth scroll
+        slider.style.setProperty('scroll-snap-type', 'none', 'important');
+
+        if (typeof slider.scrollTo === 'function') {
+          slider.scrollTo({
+            left: targetLeft,
+            behavior: 'smooth'
+          });
+        } else {
+          slider.scrollLeft = targetLeft;
+        }
+
+        clearTimeout(slider._snapTimer);
+        slider._snapTimer = setTimeout(function () {
+          slider.style.removeProperty('scroll-snap-type');
+        }, 450);
+      }
+
       document.querySelectorAll('.hrw27-track-prev-btn, #hrw27-track-prev').forEach(function (btn) {
-        btn.addEventListener('click', function () { slider.scrollBy({ left: -370, behavior: 'smooth' }); });
+        btn.setAttribute('type', 'button');
+        btn.addEventListener('click', function (e) {
+          scrollTrack(-1, e);
+        });
       });
+
       document.querySelectorAll('.hrw27-track-next-btn, #hrw27-track-next').forEach(function (btn) {
-        btn.addEventListener('click', function () { slider.scrollBy({ left: 370, behavior: 'smooth' }); });
+        btn.setAttribute('type', 'button');
+        btn.addEventListener('click', function (e) {
+          scrollTrack(1, e);
+        });
       });
     }
 
