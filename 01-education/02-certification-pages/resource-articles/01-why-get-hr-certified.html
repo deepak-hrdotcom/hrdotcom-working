@@ -1,0 +1,1209 @@
+<!-- FOUC Suppression -->
+<style>
+  .edu-res-wrap { visibility: hidden; }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = document.querySelector('.edu-res-wrap');
+    if (p) p.style.visibility = 'visible';
+  });
+</script>
+
+<div class="edu-res-wrap">
+  <!-- Embedded Stylesheet (Completely Standalone & Self-Contained) -->
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+  /* Global CMS Canvas & Container Overrides */
+  .ContentArea {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .edu-res-wrap {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    background-color: #F8FAFC !important;
+    color: #1E293B !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 80px 0 !important;
+    line-height: 1.6 !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  .edu-res-wrap * {
+    box-sizing: border-box !important;
+  }
+
+  .edu-res-wrap a {
+    text-decoration: none !important;
+  }
+
+  .edu_container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+  }
+
+  /* Reading Progress Bar (Fixed Top) */
+  .edu-reading-progress {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 3.5px !important;
+    background: linear-gradient(90deg, #2563EB, #4F46E5, #38BDF8) !important;
+    width: 0%;
+    z-index: 99999 !important;
+    transition: width 0.1s ease-out !important;
+  }
+
+  /* Top Navigation Bar: Breadcrumb + Prominent Back to Program */
+  .edu-res-topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 22px 0 !important;
+    margin-bottom: 32px !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .edu-res-breadcrumb {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 13.5px !important;
+    color: #64748B !important;
+    flex-wrap: wrap !important;
+  }
+
+  .edu-res-breadcrumb a {
+    color: #2563EB !important;
+    font-weight: 600 !important;
+    transition: color 0.15s ease !important;
+  }
+  .edu-res-breadcrumb a:hover {
+    color: #1D4ED8 !important;
+    text-decoration: underline !important;
+  }
+
+  .edu-res-bc-sep {
+    color: #CBD5E1 !important;
+    font-size: 12px !important;
+  }
+
+  .edu-res-bc-current {
+    color: #0F172A !important;
+    font-weight: 700 !important;
+  }
+
+  /* High-Converting Executive Back Button */
+  .edu-res-back-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #090D1A !important;
+    color: #FFFFFF !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    padding: 10px 18px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(9, 13, 26, 0.15) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    letter-spacing: -0.01em !important;
+  }
+  .edu-res-back-btn:hover {
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35) !important;
+    text-decoration: none !important;
+  }
+  .edu-res-back-btn svg {
+    transition: transform 0.2s ease !important;
+  }
+  .edu-res-back-btn:hover svg {
+    transform: translateX(-3px) !important;
+  }
+
+  /* 2-Column Grid Layout */
+  .edu-res-layout {
+    display: grid !important;
+    grid-template-columns: 320px 1fr !important;
+    gap: 48px !important;
+    align-items: start !important;
+  }
+
+  /* Left Sticky Sidebar */
+  .edu-res-sidebar {
+    position: sticky !important;
+    top: 24px !important;
+    z-index: 40 !important;
+  }
+
+  .edu-res-sidebar-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 16px !important;
+    padding: 24px 20px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.03) !important;
+  }
+
+  .edu-res-sidebar-header {
+    margin-bottom: 18px !important;
+    padding-bottom: 16px !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+  }
+
+  .edu-res-series-badge {
+    display: inline-block !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: #2563EB !important;
+    background: #EFF6FF !important;
+    border: 1px solid #DBEAFE !important;
+    padding: 3px 10px !important;
+    border-radius: 999px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .edu-res-sidebar-title {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    letter-spacing: -0.025em !important;
+    margin: 0 0 4px 0 !important;
+    line-height: 1.25 !important;
+  }
+
+  .edu-res-sidebar-subtitle {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 13px !important;
+    color: #64748B !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Nav Links List */
+  .edu-res-nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .edu-res-nav-link {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 12px 14px !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative !important;
+  }
+
+  .edu-res-nav-link:hover {
+    background: #F8FAFC !important;
+    border-color: #E2E8F0 !important;
+    text-decoration: none !important;
+    transform: translateX(2px) !important;
+  }
+
+  .edu-res-nav-link.active {
+    background: #EFF6FF !important;
+    border-color: #BFDBFE !important;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08) !important;
+  }
+
+  .edu-res-nav-index {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    color: #64748B !important;
+    background: #F1F5F9 !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 6px !important;
+    width: 26px !important;
+    height: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin-top: 1px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .edu-res-nav-link.active .edu-res-nav-index {
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    border-color: #2563EB !important;
+  }
+
+  .edu-res-nav-text {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  .edu-res-nav-item-title {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    line-height: 1.35 !important;
+    transition: color 0.15s ease !important;
+  }
+
+  .edu-res-nav-link:hover .edu-res-nav-item-title {
+    color: #0F172A !important;
+  }
+
+  .edu-res-nav-link.active .edu-res-nav-item-title {
+    color: #1D4ED8 !important;
+    font-weight: 700 !important;
+  }
+
+  .edu-res-nav-meta {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 11.5px !important;
+    color: #64748B !important;
+  }
+
+  .edu-res-nav-link.active .edu-res-nav-meta {
+    color: #3B82F6 !important;
+  }
+
+  .edu-res-nav-arrow {
+    color: #CBD5E1 !important;
+    flex-shrink: 0 !important;
+    margin-top: 4px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .edu-res-nav-link:hover .edu-res-nav-arrow {
+    color: #64748B !important;
+    transform: translateX(2px) !important;
+  }
+
+  .edu-res-nav-link.active .edu-res-nav-arrow {
+    color: #2563EB !important;
+  }
+
+  /* Sidebar Conversion Anchor */
+  .edu-res-sidebar-anchor {
+    margin-top: 20px !important;
+    background: #F8FAFC !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    border: 1px solid #E2E8F0 !important;
+  }
+
+  .edu-res-anchor-shield {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    color: #B45309 !important;
+    margin-bottom: 6px !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  .edu-res-anchor-title {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .edu-res-anchor-text {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 12px !important;
+    color: #475569 !important;
+    line-height: 1.45 !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  .edu-res-anchor-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    padding: 9px 14px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25) !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+  }
+  .edu-res-anchor-btn:hover {
+    background: #1D4ED8 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+  }
+
+  /* Right Main Content Area */
+  .edu-res-main-content {
+    min-width: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Article Card */
+  .edu-article-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 20px !important;
+    padding: 44px 48px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 10px 30px rgba(15, 23, 42, 0.03) !important;
+  }
+
+  .edu-meta-badges {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 18px !important;
+    flex-wrap: wrap !important;
+  }
+  .edu-cat-badge {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #2563EB !important;
+    background: #EFF6FF !important;
+    border: 1px solid #DBEAFE !important;
+    padding: 4px 12px !important;
+    border-radius: 999px !important;
+  }
+  .edu-read-chip {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 12.5px !important;
+    color: #64748B !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+  }
+  .edu-updated-chip {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 12.5px !important;
+    color: #64748B !important;
+    background: #F1F5F9 !important;
+    padding: 3px 10px !important;
+    border-radius: 999px !important;
+  }
+
+  .edu-article-h1 {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 34px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.25 !important;
+    margin: 0 0 12px 0 !important;
+  }
+  .edu-article-subhead {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.4 !important;
+    margin: 0 0 28px 0 !important;
+  }
+
+  /* Editorial Hero Media */
+  .edu-article-hero-wrap {
+    margin: 0 0 36px 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+    background: #090D1A !important;
+  }
+  .edu-article-hero-img {
+    width: 100% !important;
+    height: 380px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .edu-article-hero-caption {
+    background: #F8FAFC !important;
+    padding: 10px 18px !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 12px !important;
+    color: #64748B !important;
+    border-top: 1px solid #E2E8F0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Core Body Typography */
+  .edu-article-body {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 16.5px !important;
+    line-height: 1.75 !important;
+    color: #334155 !important;
+  }
+  .edu-lead-p {
+    font-size: 18.5px !important;
+    line-height: 1.65 !important;
+    color: #0F172A !important;
+    font-weight: 500 !important;
+    margin-bottom: 24px !important;
+  }
+  .edu-article-body p {
+    margin: 0 0 20px 0 !important;
+  }
+  .edu-article-body h2 {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 23px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    letter-spacing: -0.02em !important;
+    margin: 38px 0 16px 0 !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+    line-height: 1.3 !important;
+  }
+  .edu-article-body h3 {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin: 24px 0 10px 0 !important;
+    line-height: 1.35 !important;
+  }
+  .edu-article-body strong {
+    color: #0F172A !important;
+    font-weight: 700 !important;
+  }
+  .edu-article-body ul {
+    margin: 0 0 24px 0 !important;
+    padding-left: 24px !important;
+  }
+  .edu-article-body li {
+    margin-bottom: 10px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Styled Callouts & Component Cards */
+  .edu-callout-card {
+    border-radius: 12px !important;
+    padding: 20px 24px !important;
+    margin: 26px 0 !important;
+  }
+  .edu-callout-card p {
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+  .edu-callout-card.emerald {
+    background: #F0FDF4 !important;
+    border: 1px solid #BBF7D0 !important;
+    border-left: 4px solid #15803D !important;
+    color: #166534 !important;
+  }
+  .edu-callout-card.gold {
+    background: #FFFBEB !important;
+    border: 1px solid #FDE68A !important;
+    border-left: 4px solid #D97706 !important;
+    color: #92400E !important;
+  }
+  .edu-callout-card.blue {
+    background: #EFF6FF !important;
+    border: 1px solid #BFDBFE !important;
+    border-left: 4px solid #2563EB !important;
+    color: #1E40AF !important;
+  }
+
+  .edu-org-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin: 24px 0 32px 0 !important;
+  }
+  .edu-org-card {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+  }
+  .edu-org-card h3 {
+    margin-top: 0 !important;
+    font-size: 17px !important;
+    color: #0F172A !important;
+  }
+
+  .edu-framework-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 16px !important;
+    margin: 24px 0 32px 0 !important;
+  }
+  .edu-framework-card {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    padding: 18px 20px !important;
+  }
+  .edu-framework-card h4 {
+    margin: 0 0 10px 0 !important;
+    font-size: 15px !important;
+    color: #0F172A !important;
+  }
+
+  .edu-table-responsive {
+    overflow-x: auto !important;
+    margin: 28px 0 !important;
+    border-radius: 12px !important;
+    border: 1px solid #E2E8F0 !important;
+  }
+  .edu-comparison-table, .edu-domain-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+  .edu-comparison-table th, .edu-domain-table th {
+    background: #F8FAFC !important;
+    padding: 14px 18px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    border-bottom: 2px solid #E2E8F0 !important;
+  }
+  .edu-comparison-table td, .edu-domain-table td {
+    padding: 14px 18px !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    color: #334155 !important;
+  }
+
+  .edu-strategy-card {
+    background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%) !important;
+    border: 1px solid #BBF7D0 !important;
+    border-radius: 14px !important;
+    padding: 24px 26px !important;
+    margin: 28px 0 !important;
+    border-left: 4px solid #15803D !important;
+  }
+  .edu-methodology-step {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-bottom: 16px !important;
+  }
+  .edu-step-num {
+    width: 28px !important;
+    height: 28px !important;
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .edu-step-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin-bottom: 4px !important;
+  }
+  .edu-step-desc {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+  }
+
+  .edu-secret-card, .edu-hrci-secret-box {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 14px !important;
+    padding: 24px 26px !important;
+    margin: 24px 0 32px 0 !important;
+    border-left: 4px solid #2563EB !important;
+  }
+
+  .edu-bottom-line-card {
+    background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%) !important;
+    border: 1px solid #BFDBFE !important;
+    border-radius: 14px !important;
+    padding: 28px 30px !important;
+    margin: 40px 0 32px 0 !important;
+  }
+  .edu-bottom-line-title {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: #1E40AF !important;
+    margin-bottom: 12px !important;
+  }
+
+  .edu-media-drawer {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 14px !important;
+    margin: 40px 0 24px 0 !important;
+    overflow: hidden !important;
+  }
+  .edu-media-drawer-summary {
+    padding: 16px 20px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #F1F5F9 !important;
+  }
+  .edu-media-drawer-body {
+    padding: 22px !important;
+    border-top: 1px solid #E2E8F0 !important;
+    background: #FFFFFF !important;
+  }
+  .edu-media-link-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: #EFF6FF !important;
+    color: #2563EB !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+    border-radius: 6px !important;
+    border: 1px solid #DBEAFE !important;
+    text-decoration: none !important;
+    margin: 8px 0 16px 0 !important;
+  }
+
+  /* Pagination Navigation */
+  .edu-article-pagination {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin: 48px 0 36px 0 !important;
+    padding-top: 32px !important;
+    border-top: 1px solid #E2E8F0 !important;
+  }
+  .edu-pag-card {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    padding: 18px 20px !important;
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    transition: all 0.2s ease !important;
+  }
+  .edu-pag-card:hover {
+    background: #FFFFFF !important;
+    border-color: #BFDBFE !important;
+    transform: translateY(-2px) !important;
+  }
+  .edu-pag-label {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #64748B !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+  .edu-pag-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+  }
+  .edu-pag-card.next {
+    text-align: right !important;
+    align-items: flex-end !important;
+  }
+
+  /* Bottom Conversion Banner */
+  .edu-article-cta-banner {
+    background: #090D1A !important;
+    border-radius: 16px !important;
+    padding: 36px 36px !important;
+    color: #FFFFFF !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin-top: 40px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  .edu-cta-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: #F59E0B !important;
+    background: rgba(245, 158, 11, 0.12) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    padding: 4px 12px !important;
+    border-radius: 999px !important;
+    margin-bottom: 14px !important;
+  }
+  .edu-cta-h3 {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    margin-bottom: 10px !important;
+    line-height: 1.25 !important;
+  }
+  .edu-cta-desc {
+    font-size: 15px !important;
+    color: #CBD5E1 !important;
+    max-width: 680px !important;
+    margin-bottom: 24px !important;
+    line-height: 1.55 !important;
+  }
+  .edu-cta-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+  }
+  .edu-cta-btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+  }
+  .edu-cta-btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #F8FAFC !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* Mobile Bar & Responsive */
+  .edu-res-mobile-bar {
+    display: none !important;
+    margin-bottom: 20px !important;
+  }
+  .edu-res-mobile-toggle {
+    width: 100% !important;
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: pointer !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+    text-align: left !important;
+  }
+  .edu-res-mobile-toggle-label {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+  .edu-res-mobile-badge {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    color: #2563EB !important;
+    letter-spacing: 0.04em !important;
+  }
+  .edu-res-mobile-curr {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+  }
+  .edu-res-chevron {
+    transition: transform 0.25s ease !important;
+    color: #64748B !important;
+  }
+  .edu-res-mobile-toggle.is-open .edu-res-chevron {
+    transform: rotate(180deg) !important;
+  }
+
+  /* Responsive Breakpoints */
+  @media screen and (max-width: 1024px) {
+    .edu-res-layout {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+    .edu-res-mobile-bar {
+      display: block !important;
+    }
+    .edu-res-sidebar {
+      position: static !important;
+      display: none !important;
+    }
+    .edu-res-sidebar.is-open-mobile {
+      display: block !important;
+      animation: fadeInMobile 0.2s ease !important;
+    }
+    @keyframes fadeInMobile {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .edu-res-topbar {
+      padding: 14px 0 !important;
+      margin-bottom: 18px !important;
+    }
+    .edu-article-card {
+      padding: 32px 24px !important;
+    }
+    .edu-org-grid, .edu-framework-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .edu-res-topbar {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+    }
+    .edu-res-back-btn {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+    .edu_container {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+    }
+    .edu-article-card {
+      padding: 24px 16px !important;
+      border-radius: 16px !important;
+    }
+    .edu-article-hero-img {
+      height: 220px !important;
+    }
+    .edu-article-h1 {
+      font-size: 26px !important;
+    }
+    .edu-article-subhead {
+      font-size: 16px !important;
+    }
+    .edu-article-pagination {
+      grid-template-columns: 1fr !important;
+    }
+    .edu-cta-actions {
+      flex-direction: column !important;
+      width: 100% !important;
+    }
+    .edu-cta-btn-primary, .edu-cta-btn-secondary {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
+
+  </style>
+
+  <!-- Reading Progress Bar -->
+  <div class="edu-reading-progress" id="readingProgress"></div>
+
+  <div class="edu_container">
+    <!-- Top Bar: Breadcrumb + Prominent Back to Our Program Button -->
+    <div class="edu-res-topbar">
+      <nav class="edu-res-breadcrumb" aria-label="Breadcrumb">
+        <a href="/en/certifications/our-program_mtvdpt3u.html">Certification Hub</a>
+        <span class="edu-res-bc-sep">/</span>
+        <a href="/en/certifications/resource-articles/why-get-hr-certified.html">Resource Articles</a>
+        <span class="edu-res-bc-sep">/</span>
+        <span class="edu-res-bc-current">Why Should You Get HR Certified?</span>
+      </nav>
+      <a href="/en/certifications/our-program_mtvdpt3u.html" class="edu-res-back-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span>Back to Our Program</span>
+      </a>
+    </div>
+
+    <!-- Mobile Quick Switcher Bar -->
+    <div class="edu-res-mobile-bar">
+      <button type="button" class="edu-res-mobile-toggle" id="eduResMobileToggle" onclick="toggleResourceMobileNav()">
+        <span class="edu-res-mobile-toggle-label">
+          <span class="edu-res-mobile-badge">Article Series (5 Parts)</span>
+          <span class="edu-res-mobile-curr" id="eduResMobileCurr">Part 01: Why Get HR Certified? ▾</span>
+        </span>
+        <svg class="edu-res-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- Main 2-Column Grid -->
+    <div class="edu-res-layout">
+      <!-- Left Navigation Sidebar -->
+      <aside class="edu-res-sidebar" id="eduResSidebar">
+        <div class="edu-res-sidebar-card">
+          <div class="edu-res-sidebar-header">
+            <span class="edu-res-series-badge">CANDIDATE RESOURCE SERIES</span>
+            <h2 class="edu-res-sidebar-title">Certification Guides</h2>
+            <p class="edu-res-sidebar-subtitle">5-part comprehensive authority series</p>
+          </div>
+
+          <!-- Hardcoded Nav Links with Part 1 Active -->
+          <nav class="edu-res-nav-menu" aria-label="Resource Articles Series">
+          <a href="/en/certifications/resource-articles/why-get-hr-certified.html" class="edu-res-nav-link active" aria-current="page">
+            <span class="edu-res-nav-index">01</span>
+            <div class="edu-res-nav-text">
+              <span class="edu-res-nav-item-title">Why Get HR Certified?</span>
+              <span class="edu-res-nav-meta">4 min read • Career Growth & ROI</span>
+            </div>
+            <svg class="edu-res-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+
+          <a href="/en/certifications/resource-articles/get-the-facts-on-hr-certification.html" class="edu-res-nav-link">
+            <span class="edu-res-nav-index">02</span>
+            <div class="edu-res-nav-text">
+              <span class="edu-res-nav-item-title">Get the Facts on HR Certification</span>
+              <span class="edu-res-nav-meta">8 min read • 6-Step Complete Roadmap</span>
+            </div>
+            <svg class="edu-res-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+
+          <a href="/en/certifications/resource-articles/secrets-to-passing-the-hr-cert-exam.html" class="edu-res-nav-link">
+            <span class="edu-res-nav-index">03</span>
+            <div class="edu-res-nav-text">
+              <span class="edu-res-nav-item-title">Secrets to Passing the HR Exam</span>
+              <span class="edu-res-nav-meta">5 min read • 3 Core Keys to Pass</span>
+            </div>
+            <svg class="edu-res-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+
+          <a href="/en/certifications/resource-articles/secrets-to-passing-the-shrm-certification-exam.html" class="edu-res-nav-link">
+            <span class="edu-res-nav-index">04</span>
+            <div class="edu-res-nav-text">
+              <span class="edu-res-nav-item-title">Secrets to Passing the SHRM Exam</span>
+              <span class="edu-res-nav-meta">6 min read • BASK® & Situational SJTs</span>
+            </div>
+            <svg class="edu-res-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+
+          <a href="/en/certifications/resource-articles/secrets-to-passing-the-hrci-certification-exam.html" class="edu-res-nav-link">
+            <span class="edu-res-nav-index">05</span>
+            <div class="edu-res-nav-text">
+              <span class="edu-res-nav-item-title">Secrets to Passing the HRCI Exam</span>
+              <span class="edu-res-nav-meta">6 min read • ECO Domains & Compliance</span>
+            </div>
+            <svg class="edu-res-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          </nav>
+
+          <!-- Sticky Sidebar Conversion Anchor -->
+          <div class="edu-res-sidebar-anchor">
+            <div class="edu-res-anchor-shield">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+              <span>100% Pass Assurance</span>
+            </div>
+            <h4 class="edu-res-anchor-title">Aiming to Pass on Your First Try?</h4>
+            <p class="edu-res-anchor-text">Our live instructor-led cohorts boast industry-leading pass rates backed by a full money-back guarantee.</p>
+            <a href="/en/certifications/our-program_mtvdpt3u.html" class="edu-res-anchor-btn">
+              <span>Explore Prep Cohorts</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Column: Article Story Content -->
+      <main class="edu-res-main-content">
+        <article class="edu-article-card" data-current-article="1">
+  <!-- Article Header & Metadata -->
+  <div class="edu-meta-badges">
+    <span class="edu-cat-badge">CAREER GROWTH &amp; SALARY ROI</span>
+    <span class="edu-read-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      4 min read
+    </span>
+    <span class="edu-updated-chip">Updated for 2026 Testing Cycles</span>
+  </div>
+
+  <h1 class="edu-article-h1">Why Should You Get HR Certified?</h1>
+  <h2 class="edu-article-subhead">Your Career Deserves Better Than Hoping for the Best</h2>
+
+  <!-- Hero Image Container -->
+  <div class="edu-article-hero-wrap">
+    <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-01-why-certify.jpg" alt="Confident HR leader in executive meeting" class="edu-article-hero-img" />
+    <div class="edu-article-hero-caption">
+      <span>Executive Career Progression • HR Leadership</span>
+      <span>Source: HR.com Research</span>
+    </div>
+  </div>
+
+  <!-- Article Content: 100% EXACT VERIFIED COPY FROM MARKDOWN -->
+  <div class="edu-article-body">
+    <p class="edu-lead-p">Have you ever noticed how many of the human resources professionals in management and leadership roles have a PHR, SPHR, SHRM-CP or SHRM-SCP after their name?</p>
+
+    <p>There's a reason for that. Actually, quite a few!</p>
+
+    <p>And this quick guide is here to cover six of the most important ones for you, and help you better understand why getting certified is planning for success, rather than merely hoping for the best.</p>
+
+    <h2>1. Show Me the Money (Because We All Have Bills)</h2>
+
+    <p><strong>Career Growth &amp; Higher Salary:</strong> Here's a fun fact that'll make your wallet happy: a PayScale study found that certified HR professionals earn on average $10,000–$20,000 more per year than their non-certified peers. That's more than just "treat yourself to fancy coffee" money.</p>
+
+    <div class="edu-callout-card emerald">
+      <p><strong>The ROI Math:</strong> Yes, quality instructor-led exam preparation might cost around $2,000, but let's do the math: if you earn even an extra $10,000 annually, you've paid for that investment five times over in just one year.</p>
+    </div>
+
+    <h2>2. Stand Out in a Sea of Sameness</h2>
+
+    <p><strong>Competitive Edge:</strong> Picture a recruiter staring at 200 resumes that all blur together. Then suddenly, there it is: your certification shining like a beacon of competence. Most supervisors prefer certified candidates, which means you're not just another resume in the pile — you're the top choice.</p>
+
+    <h2>3. Earn Your Stripes (And Keeping Them)</h2>
+
+    <p><strong>Credibility &amp; Confidence:</strong> HR certifications demonstrate validated knowledge in compliance, employee relations, and talent management. It's the difference between being seen as someone who handles HR tasks versus someone who understands HR strategy. When colleagues and leadership need guidance on complex workforce issues, they're more likely to turn to someone whose expertise has been independently validated.</p>
+
+    <p>You'll find yourself speaking with more authority in meetings and decision-making situations. The certification process builds genuine confidence because you know your recommendations are grounded in proven frameworks and best practices, not just gut instinct.</p>
+
+    <h2>4. Enjoy the Sweet Taste of Achievement</h2>
+
+    <p><strong>Personal Achievement:</strong> Passing a rigorous HR certification exam requires studying and hard work. You'll spend evenings and weekends preparing when you could be binge-watching Netflix. But here's the thing: anything worth having requires effort, and the satisfaction of conquering a challenging exam will give you unmatched confidence.</p>
+
+    <h2>5. See How Knowledge Is Power</h2>
+
+    <p><strong>Build Skills:</strong> The certification study process isn't just about memorizing facts for a test — it's about genuinely expanding your professional toolkit. You'll dive deep into areas you might have only touched on before, connecting dots you didn't even know existed.</p>
+
+    <p>Here's the reality: you might be good at your job, maybe even passionate about it, but that doesn't always translate to career advancement. Certification bridges that gap by providing measurable proof of your capabilities. This isn't theoretical knowledge that looks pretty on paper but crumbles under pressure. It's practical, applicable expertise that makes you better at your job from day one.</p>
+
+    <h2>6. Avoid Having Regrets. Plan for Results Instead.</h2>
+
+    <p><strong>No Regrets:</strong> Career opportunities don't usually come with a "do-over" button. How many times have you watched a colleague get promoted and thought, "That could have been me if only I had..." Well, certification eliminates that particular flavor of professional regret.</p>
+
+    <p>Getting certified gives you the best possible chance to succeed. You're removing variables and stacking the deck in your favor. Years from now, when you're in that better position or leading that team, you won't be wondering "what if." You'll be enjoying the results of the investment you made in yourself.</p>
+
+    <!-- Bottom Line Card -->
+    <div class="edu-bottom-line-card">
+      <div class="edu-bottom-line-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span>The Bottom Line</span>
+      </div>
+      <p>HR certification isn't just a nice-to-have credential; it's a strategic investment in your career that typically pays dividends in terms of opportunities and compensation. It's the difference between hoping your experience speaks for itself and having concrete evidence of your expertise.</p>
+      <p>So ask yourself: do you want to keep explaining why you deserve opportunities, or do you want to start choosing between them? In the world of HR, certification isn't just about proving you know your stuff — it's about positioning yourself for the growth you've been working toward.</p>
+      <p>The investment in yourself is real. The potential returns are too.</p>
+    </div>
+
+    <!-- Companion Webcast & Multimedia Drawer -->
+    <details class="edu-media-drawer">
+      <summary class="edu-media-drawer-summary">
+        <span>📹 Companion Multimedia &amp; Original Webcast Recording</span>
+        <span>▾</span>
+      </summary>
+      <div class="edu-media-drawer-body">
+        <h4>Original Webcast Recording</h4>
+        <p>Access the full archived webcast session from the HR.com video library:</p>
+        <a href="https://www.hr.com/en?t=/CustomCode/webcasts/videoContainer&id=1706126894758" target="_blank" rel="noopener noreferrer" class="edu-media-link-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <span>Watch Original Webcast Recording</span>
+        </a>
+
+        <h4>Quick Video Summary Script</h4>
+        <p><em>"Ever notice how many HR leaders have those impressive credentials — PHR, SPHR, SHRM-CP, or SHRM-SCP after their names? There are good reasons they got certified: 1. More Money ($10k-$20k higher salary), 2. More Skills, 3. A Competitive Edge with recruiters, 4. Big Confidence. HR.com Can Help You Get Certified… Guaranteed!"</em></p>
+      </div>
+    </details>
+
+    <!-- Article Pagination -->
+    <div class="edu-article-pagination">
+      <div></div> <!-- Empty placeholder for previous on first article -->
+      <a href="/en/certifications/resource-articles/get-the-facts-on-hr-certification.html" class="edu-pag-card next">
+        <span class="edu-pag-label">
+          <span>Next Article (Part 2 of 5)</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+        <span class="edu-pag-title">Get the Facts on HR Certification: 6 Simple Steps</span>
+      </a>
+    </div>
+
+    <!-- Primary Conversion Banner -->
+    <div class="edu-article-cta-banner">
+      <div class="edu-cta-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>HR.COM 100% PASS ASSURANCE GUARANTEE</span>
+      </div>
+      <h3 class="edu-cta-h3" style="color: #FFFFFF !important; font-size: 28px !important; font-weight: 800 !important; line-height: 1.25 !important; margin: 0 0 12px 0 !important;">Ready to Turn Career Potential into Validated Credentials?</h3>
+      <p class="edu-cta-desc" style="color: #E2E8F0 !important; font-size: 15.5px !important; line-height: 1.6 !important; max-width: 700px !important; margin: 0 0 26px 0 !important;">Join thousands of HR professionals who passed their exam on their first attempt with HR.com's live instructor-led cohorts, comprehensive study portals, and 100% money-back guarantee.</p>
+      <div class="edu-cta-actions">
+        <a href="/en/certifications/our-program_mtvdpt3u.html" class="edu-cta-btn-primary" style="color: #FFFFFF !important; background-color: #2563EB !important; border: 1px solid #1D4ED8 !important;">
+          <span>Explore Our Program &amp; Cohorts</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="/en/certifications/pass-assurance-program_mtu5col0.html" class="edu-cta-btn-secondary" style="color: #FFFFFF !important; background-color: rgba(255, 255, 255, 0.15) !important; border: 1px solid rgba(255, 255, 255, 0.3) !important;">
+          <span>Pass Assurance Guarantee Terms</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</article>
+      </main>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleResourceMobileNav() {
+    var sidebar = document.getElementById('eduResSidebar');
+    var toggle = document.getElementById('eduResMobileToggle');
+    if (sidebar && toggle) {
+      var isOpen = sidebar.classList.contains('is-open-mobile');
+      if (isOpen) {
+        sidebar.classList.remove('is-open-mobile');
+        toggle.classList.remove('is-open');
+      } else {
+        sidebar.classList.add('is-open-mobile');
+        toggle.classList.add('is-open');
+      }
+    }
+  }
+
+  // Reading progress indicator
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    var el = document.getElementById('readingProgress');
+    if (el) el.style.width = scrolled + '%';
+  });
+</script>

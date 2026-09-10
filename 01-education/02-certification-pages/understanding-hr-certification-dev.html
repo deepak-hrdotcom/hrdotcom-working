@@ -1401,134 +1401,231 @@ body > .ContentArea > .container {
 .edu-uc-page .edu-uc-mag-wrap {
   display: flex !important;
   flex-direction: column !important;
-  gap: 24px !important;
-}
-.edu-uc-page .edu-uc-mag-lead {
-  background: var(--color-background-subtle) !important;
-  border: 1px solid var(--color-border) !important;
-  border-radius: var(--radius-panel) !important;
-  padding: 34px 32px !important;
-  box-shadow: var(--shadow-subtle) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
   gap: 32px !important;
 }
-.edu-uc-page .edu-uc-mag-lead-meta {
+
+/* Header with Slider Navigation Controls */
+.edu-uc-page .edu-uc-res-header {
   display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  margin-bottom: 10px !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  margin-bottom: 8px !important;
 }
-.edu-uc-page .edu-uc-mag-badge {
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-  color: var(--color-primary) !important;
-  background: var(--color-primary-soft) !important;
-  padding: 3px 8px !important;
-  border-radius: var(--radius-pill) !important;
-}
-.edu-uc-page .edu-uc-mag-time {
-  font-size: 12.5px !important;
-  color: var(--color-text-muted) !important;
-  font-weight: 500 !important;
-}
-.edu-uc-page .edu-uc-mag-lead h3 {
-  font-size: 22px !important;
-  font-weight: 800 !important;
-  color: var(--color-text-primary) !important;
-  margin: 0 0 8px 0 !important;
-  letter-spacing: -0.025em !important;
-}
-.edu-uc-page .edu-uc-mag-lead p {
-  font-size: 14.5px !important;
-  color: var(--color-text-secondary) !important;
-  line-height: 1.6 !important;
+.edu-uc-page .edu-uc-res-header-text {
   max-width: 680px !important;
+}
+.edu-uc-page .edu-uc-res-header-text h2 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--color-text-primary, #0F172A) !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.25 !important;
+}
+.edu-uc-page .edu-uc-res-header-text p {
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+  color: var(--color-text-secondary, #475569) !important;
   margin: 0 !important;
 }
-.edu-uc-page .edu-uc-mag-lead-btn {
-  display: inline-flex !important;
+.edu-uc-page .edu-uc-res-arrows {
+  display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 12px 22px !important;
-  background: var(--color-primary) !important;
-  color: #FFFFFF !important;
-  font-size: 14.5px !important;
-  font-weight: 700 !important;
-  border-radius: var(--radius-control) !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  transition: all 0.2s ease !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
 }
-.edu-uc-page .edu-uc-mag-lead-btn:hover {
-  background: var(--color-primary-hover) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+.edu-uc-page .edu-uc-slider-btn {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1.5px solid var(--color-border, #E2E8F0) !important;
+  flex-shrink: 0 !important;
+  user-select: none !important;
+  outline: none !important;
+  background: #FFFFFF !important;
+  color: var(--color-text-primary, #0F172A) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-uc-page .edu-uc-slider-btn:hover {
+  background: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1) !important;
+}
+.edu-uc-page .edu-uc-slider-btn:active {
+  transform: scale(0.96) !important;
+}
+.edu-uc-page .edu-uc-slider-btn-next {
+  background: var(--color-primary, #2563EB) !important;
+  border-color: var(--color-primary, #2563EB) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+.edu-uc-page .edu-uc-slider-btn-next:hover {
+  background: var(--color-primary-hover, #1D4ED8) !important;
+  border-color: var(--color-primary-hover, #1D4ED8) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45) !important;
 }
 
-/* 4-Grid Cards */
-.edu-uc-page .edu-uc-mag-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 20px !important;
+/* Horizontal Track Slider */
+.edu-uc-page .edu-uc-res-slider {
+  display: flex !important;
+  gap: 24px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x proximity !important;
+  scroll-behavior: smooth !important;
+  padding: 6px 2px 28px 2px !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  -webkit-overflow-scrolling: touch !important;
 }
-.edu-uc-page .edu-uc-mag-card {
+.edu-uc-page .edu-uc-res-slider::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Equal Cards: 4 across with 4th card half-visible on Desktop (3.45 cards span) */
+.edu-uc-page .edu-uc-res-card {
+  flex: 0 0 calc((100% - 72px) / 3.45) !important;
+  min-width: 290px !important;
+  max-width: 370px !important;
+  scroll-snap-align: start !important;
   background: #FFFFFF !important;
-  border: 1px solid var(--color-border) !important;
-  border-radius: var(--radius-card) !important;
-  padding: 24px !important;
-  box-shadow: var(--shadow-subtle) !important;
+  border: 1.5px solid var(--color-border, #E2E8F0) !important;
+  border-radius: var(--radius-card, 16px) !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
   text-decoration: none !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.2s ease !important;
 }
-.edu-uc-page .edu-uc-mag-card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: var(--shadow-hover) !important;
-  border-color: #CBD5E1 !important;
+.edu-uc-page .edu-uc-res-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: var(--color-primary, #2563EB) !important;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.14) !important;
+  text-decoration: none !important;
 }
-.edu-uc-page .edu-uc-mag-meta {
+
+/* Card Image Box: NO FADE OVERLAY! Pure Editorial Image */
+.edu-uc-page .edu-uc-res-card-img {
+  position: relative !important;
+  height: 180px !important;
+  overflow: hidden !important;
+  background: #090D1A !important;
+}
+.edu-uc-page .edu-uc-res-card-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+.edu-uc-page .edu-uc-res-card:hover .edu-uc-res-card-img img {
+  transform: scale(1.04) !important;
+}
+
+/* Card Body Content */
+.edu-uc-page .edu-uc-res-card-body {
+  padding: 22px 22px 20px 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  background: #FFFFFF !important;
+}
+.edu-uc-page .edu-uc-res-card-meta {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 8px !important;
   margin-bottom: 12px !important;
 }
-.edu-uc-page .edu-uc-mag-num {
-  font-size: 11.5px !important;
+.edu-uc-page .edu-uc-res-badge {
+  font-size: 11px !important;
   font-weight: 800 !important;
-  color: var(--color-primary) !important;
-}
-.edu-uc-page .edu-uc-mag-card h4 {
-  font-size: 16px !important;
-  font-weight: 800 !important;
-  color: var(--color-text-primary) !important;
-  margin: 0 0 8px 0 !important;
-  line-height: 1.35 !important;
-}
-.edu-uc-page .edu-uc-mag-card p {
-  font-size: 13px !important;
-  color: var(--color-text-secondary) !important;
-  line-height: 1.5 !important;
-  margin: 0 0 16px 0 !important;
-  flex-grow: 1 !important;
-}
-.edu-uc-page .edu-uc-mag-link {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  color: var(--color-primary) !important;
-  text-decoration: none !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  color: var(--color-primary, #2563EB) !important;
+  background: var(--color-primary-soft, #EFF6FF) !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 4px !important;
-  transition: transform 0.2s ease !important;
 }
-.edu-uc-page .edu-uc-mag-card:hover .edu-uc-mag-link {
-  transform: translateX(3px) !important;
+.edu-uc-page .edu-uc-res-readtime {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-muted, #64748B) !important;
+}
+.edu-uc-page .edu-uc-res-card h3 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 17px !important;
+  line-height: 1.38 !important;
+  color: var(--color-text-primary, #0F172A) !important;
+  margin: 0 0 10px 0 !important;
+  letter-spacing: -0.02em !important;
+  transition: color 0.2s ease !important;
+}
+.edu-uc-page .edu-uc-res-card:hover h3 {
+  color: var(--color-primary, #2563EB) !important;
+}
+.edu-uc-page .edu-uc-res-card p {
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: var(--color-text-secondary, #475569) !important;
+  margin: 0 0 18px 0 !important;
+  flex: 1 !important;
+}
+.edu-uc-page .edu-uc-res-card-footer {
+  margin-top: auto !important;
+  padding-top: 14px !important;
+  border-top: 1px solid var(--color-border-subtle, #F1F5F9) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.edu-uc-page .edu-uc-res-card-link {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--color-primary, #2563EB) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: gap 0.2s ease, transform 0.2s ease !important;
+}
+.edu-uc-page .edu-uc-res-card:hover .edu-uc-res-card-link {
+  gap: 9px !important;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1024px) {
+  .edu-uc-page .edu-uc-res-card {
+    flex: 0 0 calc((100% - 24px) / 2.35) !important;
+    min-width: 270px !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .edu-uc-page .edu-uc-res-header {
+    margin-bottom: 18px !important;
+  }
+  .edu-uc-page .edu-uc-res-card {
+    flex: 0 0 calc((100% - 16px) / 1.25) !important;
+    min-width: 250px !important;
+  }
+  .edu-uc-page .edu-uc-res-card-img {
+    height: 165px !important;
+  }
 }
 
 /* Advisor Concierge Bar */
@@ -2616,74 +2713,124 @@ body > .ContentArea > .container {
 ================================================================ -->
 <section class="edu-uc-resources">
   <div class="edu-uc-wrap">
-    <div class="edu-uc-sechead edu-reveal">
-      <span class="edu-uc-chip edu-uc-chip-amber">Certification Reading Room</span>
-      <h2>Executive Briefings &amp; Exam Secrets</h2>
-      <p>Curated, bite-sized authority guides to help you navigate credential choices and pass on your first attempt.</p>
+    <!-- Header with Desktop & Mobile Arrow Controls -->
+    <div class="edu-uc-res-header edu-reveal">
+      <div class="edu-uc-res-header-text">
+        <span class="edu-uc-chip edu-uc-chip-amber" style="margin-bottom: 12px; display: inline-flex;">Certification Reading Room</span>
+        <h2>Executive Briefings &amp; Exam Secrets</h2>
+        <p>Curated, bite-sized authority guides to help you navigate credential choices and pass on your first attempt.</p>
+      </div>
+
+      <div class="edu-uc-res-arrows">
+        <button type="button" aria-label="Previous Article" class="edu-uc-slider-btn" id="edu-res-prev">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" style="pointer-events: none;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" aria-label="Next Article" class="edu-uc-slider-btn edu-uc-slider-btn-next" id="edu-res-next">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" style="pointer-events: none;">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div class="edu-uc-mag-wrap">
 
-      <!-- Featured Lead Story Banner -->
-      <article class="edu-uc-mag-lead edu-reveal edu-reveal-d1">
-        <div class="edu-uc-mag-lead-content">
-          <div class="edu-uc-mag-lead-meta">
-            <span class="edu-uc-mag-badge">Featured Briefing</span>
-            <span class="edu-uc-mag-time">&bull; 6 Min Read</span>
-          </div>
-          <h3>HRCI vs SHRM: Which Credential Truly Accelerates Your Career?</h3>
-          <p>An executive comparison of exam structures, federal law vs. behavioral competencies, and employer hiring preferences.</p>
-        </div>
-        <a href="https://www.hr.com/en/certifications/" target="_blank" class="edu-uc-mag-lead-btn">
-          Read Full Analysis
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </article>
+      <!-- 5-Card Horizontal Carousel Slider (3 Full + 4th Card Half-Visible) -->
+      <div class="edu-uc-res-slider edu-reveal edu-reveal-d1" id="edu-res-slider">
 
-      <!-- 2x2 Curated Article Grid -->
-      <div class="edu-uc-mag-grid">
-
-        <a href="https://www.hr.com/en/certifications/" target="_blank" class="edu-uc-mag-card edu-reveal edu-reveal-d2">
-          <div class="edu-uc-mag-meta">
-            <span class="edu-uc-mag-num">01 &bull; Career ROI</span>
-            <span class="edu-uc-mag-time">4 Min Read</span>
+        <!-- Card 1: Chapter 1 -->
+        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-1" class="edu-uc-res-card">
+          <div class="edu-uc-res-card-img">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-01-why-certify.jpg" alt="Why Get HR Certified in 2026" />
           </div>
-          <h4>Why Get HR Certified in 2026?</h4>
-          <p>Salary benchmarks and the 15% promotion advantage for certified HR leaders.</p>
-          <span class="edu-uc-mag-link">Read Briefing &rarr;</span>
+          <div class="edu-uc-res-card-body">
+            <div class="edu-uc-res-card-meta">
+              <span class="edu-uc-res-badge">01 &bull; Career ROI</span>
+              <span class="edu-uc-res-readtime">4 Min Read</span>
+            </div>
+            <h3>Why Get HR Certified in 2026?</h3>
+            <p>Salary benchmarks, credibility gains, and the 15% promotion advantage for certified HR leaders.</p>
+            <div class="edu-uc-res-card-footer">
+              <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
+            </div>
+          </div>
         </a>
 
-        <a href="https://www.hr.com/en/certifications/certification-guidelines_icnmg6la.html" target="_blank" class="edu-uc-mag-card edu-reveal edu-reveal-d3">
-          <div class="edu-uc-mag-meta">
-            <span class="edu-uc-mag-num">02 &bull; Benchmark Data</span>
-            <span class="edu-uc-mag-time">5 Min Read</span>
+        <!-- Card 2: Chapter 2 -->
+        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-2" class="edu-uc-res-card">
+          <div class="edu-uc-res-card-img">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-02-get-facts.jpg" alt="The Facts on HR Certification" />
           </div>
-          <h4>The Facts on Pass Rates &amp; Costs</h4>
-          <p>National pass rates (60%) vs accredited course rates (93%), exam fees, and audit rules.</p>
-          <span class="edu-uc-mag-link">Read Briefing &rarr;</span>
+          <div class="edu-uc-res-card-body">
+            <div class="edu-uc-res-card-meta">
+              <span class="edu-uc-res-badge">02 &bull; Benchmark Data</span>
+              <span class="edu-uc-res-readtime">5 Min Read</span>
+            </div>
+            <h3>The Facts on HR Certification</h3>
+            <p>National pass rates (60%) vs accredited course rates (93%), exam fees, and audit rules.</p>
+            <div class="edu-uc-res-card-footer">
+              <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
+            </div>
+          </div>
         </a>
 
-        <a href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/shrm-16-week-online-prep-course_lgagdxx6.html" target="_blank" class="edu-uc-mag-card edu-reveal edu-reveal-d1">
-          <div class="edu-uc-mag-meta">
-            <span class="edu-uc-mag-num">03 &bull; Exam Blueprint</span>
-            <span class="edu-uc-mag-time">5 Min Read</span>
+        <!-- Card 3: Chapter 3 -->
+        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-3" class="edu-uc-res-card">
+          <div class="edu-uc-res-card-img">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-03-exam-secrets.jpg" alt="HRCI vs SHRM: Which Credential Truly Accelerates Your Career" />
           </div>
-          <h4>Secrets to Passing SHRM-CP &amp; SCP</h4>
-          <p>How to master 134&ndash;175 situational judgment scenarios and the SHRM BASK framework.</p>
-          <span class="edu-uc-mag-link">Read Briefing &rarr;</span>
+          <div class="edu-uc-res-card-body">
+            <div class="edu-uc-res-card-meta">
+              <span class="edu-uc-res-badge">03 &bull; Credential Match</span>
+              <span class="edu-uc-res-readtime">6 Min Read</span>
+            </div>
+            <h3>HRCI vs SHRM: Which Credential Truly Accelerates Your Career?</h3>
+            <p>An executive comparison of exam structures, federal law vs. behavioral competencies, and employer hiring preferences.</p>
+            <div class="edu-uc-res-card-footer">
+              <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
+            </div>
+          </div>
         </a>
 
-        <a href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/phrsphr-shrm-cpshrm-scp-16-week-online-prep-course_jtafq075.html" target="_blank" class="edu-uc-mag-card edu-reveal edu-reveal-d2">
-          <div class="edu-uc-mag-meta">
-            <span class="edu-uc-mag-num">04 &bull; Exam Blueprint</span>
-            <span class="edu-uc-mag-time">5 Min Read</span>
+        <!-- Card 4: Chapter 4 -->
+        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-4" class="edu-uc-res-card">
+          <div class="edu-uc-res-card-img">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-04-shrm-secrets.jpg" alt="Secrets to Passing the SHRM-CP and SHRM-SCP" />
           </div>
-          <h4>Secrets to Passing HRCI (aPHR, PHR, SPHR)</h4>
-          <p>Mastering federal employment law questions, tricky distractor traps, and exam endurance.</p>
-          <span class="edu-uc-mag-link">Read Briefing &rarr;</span>
+          <div class="edu-uc-res-card-body">
+            <div class="edu-uc-res-card-meta">
+              <span class="edu-uc-res-badge">04 &bull; Exam Blueprint</span>
+              <span class="edu-uc-res-readtime">5 Min Read</span>
+            </div>
+            <h3>Secrets to Passing the SHRM-CP &amp; SHRM-SCP</h3>
+            <p>How to master 134&ndash;175 situational judgment scenarios and the SHRM BASK framework.</p>
+            <div class="edu-uc-res-card-footer">
+              <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
+            </div>
+          </div>
         </a>
 
-      </div><!-- /.edu-uc-mag-grid -->
+        <!-- Card 5: Chapter 5 -->
+        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-5" class="edu-uc-res-card">
+          <div class="edu-uc-res-card-img">
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-05-hrci-secrets.jpg" alt="Secrets to Passing HRCI (aPHR, PHR, SPHR)" />
+          </div>
+          <div class="edu-uc-res-card-body">
+            <div class="edu-uc-res-card-meta">
+              <span class="edu-uc-res-badge">05 &bull; Exam Blueprint</span>
+              <span class="edu-uc-res-readtime">5 Min Read</span>
+            </div>
+            <h3>Secrets to Passing HRCI (aPHR, PHR, SPHR)</h3>
+            <p>Mastering federal employment law questions, tricky distractor traps, and timed exam endurance.</p>
+            <div class="edu-uc-res-card-footer">
+              <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+      </div><!-- /.edu-uc-res-slider -->
 
       <!-- Distinct Advisor Concierge Action Banner (Non-Resource Direct Contact Bridge) -->
       <div class="edu-uc-mag-advisor edu-reveal edu-reveal-d3">
@@ -3127,6 +3274,50 @@ document.addEventListener('DOMContentLoaded', function() {
     sliderBox.addEventListener('touchend', ucStartSlideTimer, { passive: true });
   }
   ucStartSlideTimer();
+
+  // 5-Card Reading Room Slider Controls
+  var resSlider = document.getElementById('edu-res-slider');
+  if (resSlider) {
+    function scrollResSlider(direction, e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+      var cards = resSlider.querySelectorAll('.edu-uc-res-card');
+      var cardWidth = (cards.length && cards[0].offsetWidth) ? cards[0].offsetWidth : 330;
+      var step = cardWidth + 24;
+      var currentScroll = resSlider.scrollLeft;
+      var targetLeft = currentScroll + (direction * step);
+
+      resSlider.style.setProperty('scroll-snap-type', 'none', 'important');
+      if (typeof resSlider.scrollTo === 'function') {
+        resSlider.scrollTo({
+          left: targetLeft,
+          behavior: 'smooth'
+        });
+      } else {
+        resSlider.scrollLeft = targetLeft;
+      }
+
+      clearTimeout(resSlider._snapTimer);
+      resSlider._snapTimer = setTimeout(function () {
+        resSlider.style.removeProperty('scroll-snap-type');
+      }, 450);
+    }
+
+    var prevBtn = document.getElementById('edu-res-prev');
+    var nextBtn = document.getElementById('edu-res-next');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        scrollResSlider(-1, e);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        scrollResSlider(1, e);
+      });
+    }
+  }
 
   // Scroll Reveal Observer
   if ('IntersectionObserver' in window) {
