@@ -141,7 +141,7 @@
       margin-left: auto !important;
       margin-right: auto !important;
       box-sizing: border-box !important;
-      padding: 80px 0 !important;
+      padding: 48px 0 !important;
     }
 
     .edu-program-page h1,
@@ -319,21 +319,25 @@
     }
 
     /* ================================================================
-   SECTION 1 — HERO SECTION (2-COLUMN GRID)
+   SECTION 1 — UNIFIED MASTER HERO (2-TIER STAGE + VALUE DOCK)
+   Combines Hero Value Proposition, Problem/Solution Hook, 
+   3 Core Pillars & 5 Supported Certification Pathways
 ================================================================ */
     .edu-program-page .edu-program-hero {
       background: radial-gradient(ellipse at 85% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 55%),
         radial-gradient(ellipse at 15% 85%, rgba(217, 119, 6, 0.04) 0%, transparent 55%),
         #FFFFFF !important;
-      padding: 85px 0 80px 0 !important;
+      padding: 56px 0 48px 0 !important;
       border-bottom: 1px solid var(--color-border) !important;
     }
 
+    /* Upper Stage: 2-Column Grid */
     .edu-program-page .edu-hero-grid {
       display: grid !important;
       grid-template-columns: 1.15fr 0.85fr !important;
       gap: 52px !important;
       align-items: center !important;
+      margin-bottom: 44px !important;
     }
 
     /* Left Column Content Area */
@@ -345,18 +349,45 @@
 
     /* Main Display H1 Headline */
     .edu-program-page .edu-hero-title {
-      font-size: var(--edu-fs-h1) !important;
-      line-height: var(--edu-lh-tight) !important;
+      font-size: 52px !important;
+      line-height: 1.12 !important;
       color: var(--color-text-primary) !important;
       font-weight: 800 !important;
       letter-spacing: -0.035em !important;
-      margin-bottom: 18px !important;
+      margin: 14px 0 16px 0 !important;
     }
 
     .edu-program-page .edu-hero-highlight {
       color: var(--color-primary) !important;
       position: relative !important;
       display: inline-block !important;
+    }
+
+    /* Problem / Solution Empathy Hook Block */
+    .edu-program-page .edu-hero-hook {
+      margin-bottom: 20px !important;
+    }
+
+    .edu-program-page .edu-hero-hook-lead {
+      font-size: 19px !important;
+      line-height: 1.35 !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      letter-spacing: -0.02em !important;
+      margin: 0 0 6px 0 !important;
+    }
+
+    .edu-program-page .edu-hero-hook-lead span {
+      color: var(--color-primary) !important;
+    }
+
+    .edu-program-page .edu-hero-hook-mission {
+      font-size: 14.5px !important;
+      font-style: italic !important;
+      font-weight: 600 !important;
+      color: var(--color-text-secondary) !important;
+      margin: 0 !important;
+      letter-spacing: -0.01em !important;
     }
 
     /* Trust Metric Subheading (Gold / Amber Accent) */
@@ -369,10 +400,10 @@
       color: var(--color-warning) !important;
       border: 1px solid var(--color-warning-border) !important;
       border-radius: var(--radius-pill) !important;
-      font-size: 15.5px !important;
+      font-size: 15px !important;
       font-weight: 700 !important;
       letter-spacing: -0.01em !important;
-      margin-bottom: 32px !important;
+      margin-bottom: 24px !important;
       box-shadow: var(--shadow-sm) !important;
     }
 
@@ -408,114 +439,104 @@
     }
 
     /* ================================================================
-   SECTION 2 — THE EXAMS ARE HARD + 5 CREDENTIALS + TESTIMONIAL COLLAGE
-================================================================ */
-    .edu-program-page .edu-sec2-wrap {
-      background: var(--color-background-subtle) !important;
-      padding: 80px 0 90px 0 !important;
-      border-bottom: 1px solid var(--color-border) !important;
+       LOWER HERO DOCK: STATIC VALUE BAND & INTERACTIVE CREDENTIAL BUTTONS
+    ================================================================ */
+    .edu-program-page .edu-hero-dock {
+      border-top: 1px solid var(--color-border) !important;
+      padding-top: 32px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 18px !important;
     }
 
-    /* 5-Credential Segmented Row */
-    .edu-program-page .edu-sec2-credential-bar {
-      width: 100% !important;
-      max-width: 960px !important;
-      margin: 0 auto 52px auto !important;
-      background: #FFFFFF !important;
+    /* Row 1: Informational Value Feature Band (Static, Non-Clickable) */
+    .edu-program-page .edu-hero-pillars-band {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 16px !important;
+      background: var(--color-background-subtle) !important;
       border: 1px solid var(--color-border) !important;
       border-radius: var(--radius-card) !important;
-      padding: 8px !important;
-      box-shadow: var(--shadow-card) !important;
+      padding: 12px 24px !important;
+      cursor: default !important;
     }
 
-    .edu-program-page .edu-sec2-credential-grid {
-      display: grid !important;
-      grid-template-columns: repeat(5, 1fr) !important;
-      gap: 6px !important;
-    }
-
-    .edu-program-page .edu-sec2-credential-item {
+    .edu-program-page .edu-hero-pillar-item {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 16px 12px !important;
-      background: var(--color-background-soft) !important;
-      border: 1px solid var(--color-border) !important;
-      border-radius: var(--radius-control) !important;
-      text-decoration: none !important;
-      font-size: 17px !important;
-      font-weight: 800 !important;
-      color: var(--color-text-primary) !important;
-      letter-spacing: -0.01em !important;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      text-align: center !important;
+      gap: 10px !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 2px 0 !important;
+      cursor: default !important;
     }
 
-    .edu-program-page .edu-sec2-credential-item:hover {
-      background: var(--color-primary-soft) !important;
-      border-color: var(--color-primary-border) !important;
-      color: var(--color-primary) !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12) !important;
+    .edu-program-page .edu-hero-pillar-icon {
+      width: 24px !important;
+      height: 24px !important;
+      border-radius: 50% !important;
+      background: #ECFDF5 !important;
+      color: #15803D !important;
+      border: 1px solid #BBF7D0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
     }
 
-    /* Section 2 Header Block */
-    .edu-program-page .edu-sec2-header {
-      max-width: 860px !important;
-      margin: 0 auto 40px auto !important;
-      text-align: center !important;
-    }
-
-    .edu-program-page .edu-sec2-title {
-      font-size: var(--edu-fs-h2) !important;
-      line-height: var(--edu-lh-heading) !important;
-      color: var(--color-text-primary) !important;
-      font-weight: 800 !important;
-      letter-spacing: -0.03em !important;
-      margin-bottom: 12px !important;
-    }
-
-    .edu-program-page .edu-sec2-lead {
-      font-size: var(--edu-fs-lead) !important;
-      line-height: var(--edu-lh-body) !important;
-      color: var(--color-text-secondary) !important;
-      font-weight: 500 !important;
-      margin: 0 0 16px 0 !important;
-    }
-
-    /* Mission Tagline (Italic) */
-    .edu-program-page .edu-sec2-mission {
-      text-align: center !important;
-      margin: 0 0 40px 0 !important;
-    }
-
-    .edu-program-page .edu-sec2-mission em {
-      font-style: italic !important;
-      font-size: 19px !important;
+    .edu-program-page .edu-hero-pillar-text {
+      font-size: 14.5px !important;
       font-weight: 600 !important;
       color: var(--color-text-secondary) !important;
       letter-spacing: -0.01em !important;
     }
 
-    /* Collage Showcase Card */
-    .edu-program-page .edu-sec2-collage-wrap {
-      position: relative !important;
-      width: 100% !important;
-      max-width: 1080px !important;
-      margin: 0 auto !important;
-      border-radius: var(--radius-panel) !important;
-      overflow: hidden !important;
-      border: 1px solid var(--color-border) !important;
-      box-shadow: var(--shadow-hover) !important;
-      background: #FFFFFF !important;
+    /* Row 2: Interactive Credential Pathways (Actionable Buttons with Affordance) */
+    .edu-program-page .edu-hero-credentials {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 10px !important;
     }
 
-    .edu-program-page .edu-sec2-collage-img {
-      width: 100% !important;
-      height: auto !important;
-      display: block !important;
-      aspect-ratio: 16 / 9 !important;
-      object-fit: cover !important;
+    .edu-program-page .edu-hero-cred-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      padding: 12px 10px !important;
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--color-border-strong) !important;
+      border-radius: var(--radius-control) !important;
+      text-decoration: none !important;
+      font-size: 14.5px !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      letter-spacing: -0.01em !important;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-align: center !important;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.06) !important;
+      cursor: pointer !important;
+    }
+
+    .edu-program-page .edu-hero-cred-pill:hover {
+      background: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+      color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3) !important;
+    }
+
+    .edu-program-page .edu-hero-cred-arrow {
+      color: var(--color-primary) !important;
+      transition: transform 0.2s ease, color 0.2s ease !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-program-page .edu-hero-cred-pill:hover .edu-hero-cred-arrow {
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+      transform: translateX(3px) !important;
     }
 
     /* ================================================================
@@ -523,7 +544,7 @@
 ================================================================ */
     .edu-program-page .edu-matcher-sec {
       background: #FFFFFF !important;
-      padding: 85px 0 95px 0 !important;
+      padding: 50px 0 54px 0 !important;
       border-bottom: 1px solid var(--color-border) !important;
     }
 
@@ -550,120 +571,79 @@
       margin: 0 !important;
     }
 
-    /* Master Inline Matcher Panel (2-Column Desktop) */
+    /* Master Inline Matcher Panel (Spacious, Executive Single-Column Card) */
     .edu-program-page .edu-matcher-panel {
-      display: grid !important;
-      grid-template-columns: 360px 1fr !important;
+      display: flex !important;
+      flex-direction: column !important;
       background: #FFFFFF !important;
-      border: 1px solid var(--color-border) !important;
-      border-radius: var(--radius-panel) !important;
-      box-shadow: var(--shadow-hover) !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 20px !important;
+      box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.07), 0 4px 12px -2px rgba(15, 23, 42, 0.03) !important;
       overflow: hidden !important;
-      max-width: 1140px !important;
+      max-width: 1080px !important;
       margin: 0 auto !important;
     }
 
-    /* Left Column: Context Card & Visual */
-    .edu-program-page .edu-matcher-left {
-      background: var(--color-background-subtle) !important;
-      border-right: 1px solid var(--color-border) !important;
-      display: flex !important;
-      flex-direction: column !important;
+    /* Top Horizontal Stepper Bar (Polished & Balanced) */
+    .edu-program-page .edu-matcher-top-bar {
+      background: #F8FAFC !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      padding: 20px 36px !important;
     }
 
-    .edu-program-page .edu-matcher-img {
-      width: 100% !important;
-      height: 230px !important;
-      object-fit: cover !important;
-      display: block !important;
-    }
-
-    .edu-program-page .edu-matcher-left-body {
-      padding: 28px 24px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      flex-grow: 1 !important;
-    }
-
-    .edu-program-page .edu-matcher-chip {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      padding: 4px 12px !important;
-      border-radius: var(--radius-pill) !important;
-      font-size: 11.5px !important;
-      font-weight: 700 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.04em !important;
-      background: var(--color-primary-soft) !important;
-      color: var(--color-primary) !important;
-      border: 1px solid var(--color-primary-border) !important;
-      margin-bottom: 12px !important;
-      width: fit-content !important;
-    }
-
-    .edu-program-page .edu-matcher-left-title {
-      font-size: 21px !important;
-      font-weight: 800 !important;
-      color: var(--color-text-primary) !important;
-      letter-spacing: -0.02em !important;
-      line-height: 1.3 !important;
-      margin-bottom: 8px !important;
-    }
-
-    .edu-program-page .edu-matcher-left-desc {
-      font-size: 14px !important;
-      line-height: 1.55 !important;
-      color: var(--color-text-secondary) !important;
-      margin-bottom: 24px !important;
-    }
-
-    /* Matcher Progress Indicators */
     .edu-program-page .edu-matcher-progress-list {
-      margin-top: auto !important;
       display: flex !important;
-      flex-direction: column !important;
-      gap: 10px !important;
-      padding-top: 16px !important;
-      border-top: 1px solid var(--color-border) !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 48px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
     }
 
     .edu-program-page .edu-matcher-step-indicator {
-      display: flex !important;
+      display: inline-flex !important;
       align-items: center !important;
-      gap: 10px !important;
-      font-size: 12.5px !important;
+      gap: 12px !important;
+      font-size: 14.5px !important;
       font-weight: 600 !important;
-      color: var(--color-text-muted) !important;
+      color: #64748B !important;
+      transition: all 0.2s ease !important;
     }
 
     .edu-program-page .edu-matcher-step-indicator.is-active {
-      color: var(--color-primary) !important;
+      color: #0F172A !important;
       font-weight: 700 !important;
     }
 
     .edu-program-page .edu-matcher-step-indicator.is-done {
       color: var(--color-success) !important;
+      font-weight: 700 !important;
     }
 
     .edu-program-page .edu-step-num {
-      width: 22px !important;
-      height: 22px !important;
+      width: 28px !important;
+      height: 28px !important;
       border-radius: 50% !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      font-size: 11px !important;
+      font-size: 12.5px !important;
       font-weight: 800 !important;
-      background: var(--color-background-soft) !important;
-      color: var(--color-text-muted) !important;
-      border: 1px solid var(--color-border) !important;
+      background: #FFFFFF !important;
+      color: #64748B !important;
+      border: 1.5px solid #CBD5E1 !important;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+      transition: all 0.2s ease !important;
+      flex-shrink: 0 !important;
     }
 
     .edu-program-page .edu-matcher-step-indicator.is-active .edu-step-num {
-      background: var(--color-primary) !important;
+      background: #2563EB !important;
       color: #FFFFFF !important;
-      border-color: var(--color-primary) !important;
+      border-color: #2563EB !important;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3) !important;
     }
 
     .edu-program-page .edu-matcher-step-indicator.is-done .edu-step-num {
@@ -672,36 +652,43 @@
       border-color: var(--color-success) !important;
     }
 
-    /* Right Column: Interactive Questions & Results Area */
+    /* Interactive Questions & Results Area (Airy & Pleasant) */
     .edu-program-page .edu-matcher-right {
-      padding: 36px 36px !important;
+      padding: 44px 52px !important;
       display: flex !important;
       flex-direction: column !important;
-      justify-content: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     /* Question Filter Groups */
     .edu-program-page .edu-fltr-group {
-      margin-bottom: 24px !important;
+      margin-bottom: 32px !important;
     }
 
     .edu-program-page .edu-fltr-group h4 {
-      font-size: 15px !important;
-      font-weight: 700 !important;
-      color: var(--color-text-primary) !important;
-      margin-bottom: 12px !important;
+      font-size: 17.5px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      margin-bottom: 18px !important;
       display: flex !important;
       align-items: center !important;
-      gap: 8px !important;
+      gap: 12px !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .edu-program-page .edu-fltr-group h4 svg {
+      color: #2563EB !important;
+      flex-shrink: 0 !important;
     }
 
     .edu-program-page .edu-fltr-options-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
-      gap: 10px !important;
+      gap: 14px !important;
     }
 
-    /* Radio Cards */
+    /* Radio Cards (Spacious, Tactile & Pleasant for Eyes) */
     .edu-program-page .edu-radio-card {
       position: relative !important;
     }
@@ -713,33 +700,39 @@
     }
 
     .edu-program-page .edu-radio-card label {
-      display: block !important;
-      padding: 12px 14px !important;
-      background: var(--color-background-soft) !important;
-      border: 1px solid var(--color-border) !important;
-      border-radius: var(--radius-control) !important;
-      font-size: 13.5px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 56px !important;
+      padding: 14px 20px !important;
+      background: #F8FAFC !important;
+      border: 1.5px solid #E2E8F0 !important;
+      border-radius: 12px !important;
+      font-size: 15px !important;
       font-weight: 600 !important;
-      color: var(--color-text-secondary) !important;
+      color: #334155 !important;
       cursor: pointer !important;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
       text-align: center !important;
       user-select: none !important;
+      box-sizing: border-box !important;
     }
 
     .edu-program-page .edu-radio-card label:hover {
       background: #FFFFFF !important;
-      border-color: var(--color-primary-border) !important;
-      color: var(--color-primary) !important;
-      box-shadow: var(--shadow-sm) !important;
+      border-color: #93C5FD !important;
+      color: #2563EB !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1) !important;
     }
 
     .edu-program-page .edu-radio-card input[type="radio"]:checked+label {
-      background: var(--color-primary-soft) !important;
-      border-color: var(--color-primary) !important;
-      color: var(--color-primary) !important;
+      background: #EFF6FF !important;
+      border-color: #2563EB !important;
+      color: #1D4ED8 !important;
       font-weight: 700 !important;
-      box-shadow: 0 0 0 1px var(--color-primary) !important;
+      box-shadow: 0 0 0 1.5px #2563EB, 0 6px 18px rgba(37, 99, 235, 0.15) !important;
+      transform: translateY(-2px) !important;
     }
 
     /* Interactive Results Screen */
@@ -819,7 +812,7 @@
     .edu-program-page .edu-options-sec {
       background: var(--color-background-soft) !important;
       border-top: 1px solid var(--color-border) !important;
-      padding: 88px 0 !important;
+      padding: 50px 0 !important;
     }
 
     .edu-program-page .edu-options-header {
@@ -967,6 +960,7 @@
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 24px !important;
       align-items: stretch !important;
+      padding-top: 14px !important;
     }
 
     .edu-program-page .edu-pricing-card {
@@ -987,14 +981,27 @@
       border-color: var(--color-primary-border) !important;
     }
 
+    /* ================================================================
+       FLAGSHIP INSTRUCTOR-LED TIER — DEEP NAVY COBALT TREATMENT
+    ================================================================ */
     .edu-program-page .edu-pricing-card.is-featured {
-      border: 2px solid var(--color-primary) !important;
-      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1), 0 8px 10px -6px rgba(37, 99, 235, 0.05) !important;
+      background: linear-gradient(180deg, #0e172e 0%, #080d1b 100%) !important;
+      border: 1.5px solid rgba(59, 130, 246, 0.55) !important;
+      border-top: 3.5px solid var(--color-primary) !important;
+      box-shadow: 0 16px 36px -8px rgba(9, 13, 26, 0.35), 0 0 0 1px rgba(37, 99, 235, 0.25) !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .edu-program-page .edu-pricing-card.is-featured:hover {
+      transform: translateY(-4px) !important;
+      border-color: #60A5FA !important;
+      box-shadow: 0 24px 44px -10px rgba(9, 13, 26, 0.45), 0 0 0 1px rgba(96, 165, 250, 0.4) !important;
     }
 
     .edu-program-page .edu-featured-ribbon {
       position: absolute !important;
-      top: -12px !important;
+      top: -13px !important;
       left: 50% !important;
       transform: translateX(-50%) !important;
       background: var(--color-primary) !important;
@@ -1003,9 +1010,51 @@
       font-weight: 800 !important;
       text-transform: uppercase !important;
       letter-spacing: 0.05em !important;
-      padding: 3px 14px !important;
+      padding: 4px 14px !important;
       border-radius: var(--radius-pill) !important;
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+      white-space: nowrap !important;
+      z-index: 3 !important;
+    }
+
+    /* Featured Header & Format Label */
+    .edu-program-page .edu-pricing-card.is-featured .edu-card-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+    }
+
+    .edu-program-page .edu-pricing-card.is-featured .edu-format-label {
+      color: #93C5FD !important;
+    }
+
+    /* Featured Price */
+    .edu-program-page .edu-pricing-card.is-featured .edu-price-val {
+      color: #FFFFFF !important;
+    }
+
+    .edu-program-page .edu-pricing-card.is-featured .edu-price-plus {
+      color: #94A3B8 !important;
+    }
+
+    /* Featured Checklist Items */
+    .edu-program-page .edu-pricing-card.is-featured .edu-feature-checklist li {
+      color: #E2E8F0 !important;
+    }
+
+    /* Featured Checkmark Icon */
+    .edu-program-page .edu-pricing-card.is-featured .edu-check-icon {
+      background: rgba(16, 185, 129, 0.2) !important;
+      color: #34D399 !important;
+      border: 1px solid rgba(52, 211, 153, 0.4) !important;
+    }
+
+    /* Featured Footer Separator & Button */
+    .edu-program-page .edu-pricing-card.is-featured .edu-card-footer {
+      border-top: 1px dashed rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .edu-program-page .edu-card-footer .edu-btn-primary {
+      width: 100% !important;
+      text-align: center !important;
     }
 
     .edu-program-page .edu-card-header {
@@ -1146,7 +1195,7 @@
     .edu-program-page .edu-live-sec {
       background: #FFFFFF !important;
       border-top: 1px solid var(--color-border) !important;
-      padding: 92px 0 !important;
+      padding: 50px 0 !important;
     }
 
     .edu-program-page .edu-live-header {
@@ -1434,7 +1483,7 @@
     .edu-program-page .edu-team-sec {
       background: var(--color-background-subtle) !important;
       border-top: 1px solid var(--color-border) !important;
-      padding: 92px 0 !important;
+      padding: 50px 0 !important;
     }
 
     .edu-program-page .edu-team-header {
@@ -1480,7 +1529,7 @@
       border-color: #FDE68A !important;
     }
 
-    /* Leadership 2-Column Grid */
+    /* Leadership 2-Column Grid (Distinguished Executive Treatment for Top 2) */
     .edu-program-page .edu-leadership-grid {
       display: grid !important;
       grid-template-columns: repeat(2, 1fr) !important;
@@ -1491,61 +1540,92 @@
 
     .edu-program-page .edu-leadership-card {
       background: #FFFFFF !important;
-      border: 1px solid var(--color-border) !important;
-      border-radius: var(--radius-card) !important;
-      overflow: hidden !important;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      box-shadow: var(--shadow-sm) !important;
+      border: 1.5px solid var(--color-border) !important;
+      border-radius: var(--radius-panel) !important;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
       display: flex !important;
       flex-direction: column !important;
+      align-items: center !important;
       text-align: center !important;
+      padding: 36px 28px 30px 28px !important;
+      position: relative !important;
+      background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 36%) !important;
+    }
+
+    .edu-program-page .edu-leadership-card::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 12% !important;
+      right: 12% !important;
+      height: 3px !important;
+      background: linear-gradient(90deg, transparent, #2563EB, transparent) !important;
+      border-radius: 999px !important;
     }
 
     .edu-program-page .edu-leadership-card:hover {
       transform: translateY(-4px) !important;
       border-color: var(--color-primary-border) !important;
-      box-shadow: var(--shadow-hover) !important;
+      box-shadow: 0 16px 36px -6px rgba(37, 99, 235, 0.14), 0 6px 12px rgba(15, 23, 42, 0.06) !important;
     }
 
     .edu-program-page .edu-leadership-photo-wrap {
-      width: 100% !important;
-      height: 320px !important;
-      background: #F1F5F9 !important;
+      width: 200px !important;
+      height: 200px !important;
+      border-radius: 50% !important;
       position: relative !important;
-      overflow: hidden !important;
+      margin: 0 auto 22px auto !important;
+      flex-shrink: 0 !important;
+      background: #F1F5F9 !important;
+      box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 7px #E2E8F0, 0 10px 25px -3px rgba(15, 23, 42, 0.12) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .edu-program-page .edu-leadership-card:hover .edu-leadership-photo-wrap {
+      box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 7px var(--color-primary), 0 14px 28px -2px rgba(37, 99, 235, 0.25) !important;
     }
 
     .edu-program-page .edu-leadership-img {
-      width: 100% !important;
-      height: 100% !important;
+      width: 200px !important;
+      height: 200px !important;
+      border-radius: 50% !important;
       object-fit: cover !important;
       display: block !important;
       transition: transform 0.35s ease !important;
     }
 
     .edu-program-page .edu-leadership-card:hover .edu-leadership-img {
-      transform: scale(1.02) !important;
+      transform: scale(1.03) !important;
     }
 
     .edu-program-page .edu-leadership-content {
-      padding: 22px 24px !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
 
     .edu-program-page .edu-leadership-name {
-      font-size: 20px !important;
+      font-size: 21px !important;
       font-weight: 800 !important;
       color: var(--color-text-primary) !important;
-      margin-bottom: 4px !important;
+      margin-bottom: 6px !important;
       letter-spacing: -0.015em !important;
     }
 
     .edu-program-page .edu-leadership-role {
-      font-size: 14.5px !important;
-      font-weight: 600 !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
       color: var(--color-primary) !important;
+      background: #EFF6FF !important;
+      border: 1px solid #DBEAFE !important;
+      border-radius: var(--radius-pill) !important;
+      padding: 4px 14px !important;
+      display: inline-block !important;
     }
 
-    /* Instructors 4-Column Grid */
+    /* Instructors 4-Column Grid (150px x 150px Avatars) */
     .edu-program-page .edu-instructors-grid {
       display: grid !important;
       grid-template-columns: repeat(4, 1fr) !important;
@@ -1558,43 +1638,53 @@
       background: #FFFFFF !important;
       border: 1px solid var(--color-border) !important;
       border-radius: var(--radius-card) !important;
-      overflow: hidden !important;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
       box-shadow: var(--shadow-sm) !important;
       display: flex !important;
       flex-direction: column !important;
+      align-items: center !important;
       text-align: center !important;
+      padding: 26px 18px 22px 18px !important;
     }
 
     .edu-program-page .edu-instructor-card:hover {
-      transform: translateY(-3px) !important;
+      transform: translateY(-4px) !important;
       border-color: var(--color-primary-border) !important;
-      box-shadow: var(--shadow-hover) !important;
+      box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.1) !important;
     }
 
     .edu-program-page .edu-instructor-photo-wrap {
-      width: 100% !important;
-      height: 220px !important;
-      background: #F1F5F9 !important;
+      width: 150px !important;
+      height: 150px !important;
+      border-radius: 50% !important;
       position: relative !important;
-      overflow: hidden !important;
+      margin: 0 auto 16px auto !important;
+      flex-shrink: 0 !important;
+      background: #F1F5F9 !important;
+      box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 5px #E2E8F0, 0 6px 16px -2px rgba(15, 23, 42, 0.08) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .edu-program-page .edu-instructor-card:hover .edu-instructor-photo-wrap {
+      box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 5px var(--color-primary-border), 0 8px 20px -2px rgba(37, 99, 235, 0.18) !important;
     }
 
     .edu-program-page .edu-instructor-img {
-      width: 100% !important;
-      height: 100% !important;
+      width: 150px !important;
+      height: 150px !important;
+      border-radius: 50% !important;
       object-fit: cover !important;
       display: block !important;
       transition: transform 0.35s ease !important;
     }
 
     .edu-program-page .edu-instructor-card:hover .edu-instructor-img {
-      transform: scale(1.03) !important;
+      transform: scale(1.04) !important;
     }
 
     .edu-program-page .edu-instructor-content {
-      padding: 18px 16px 20px 16px !important;
-      flex: 1 !important;
+      padding: 0 !important;
+      width: 100% !important;
       display: flex !important;
       flex-direction: column !important;
       justify-content: flex-start !important;
@@ -1635,7 +1725,7 @@
     .edu-program-page .edu-stories-sec {
       background: #FFFFFF !important;
       border-top: 1px solid var(--color-border) !important;
-      padding: 96px 0 !important;
+      padding: 52px 0 !important;
     }
 
     .edu-program-page .edu-stories-header {
@@ -1653,7 +1743,30 @@
       margin-bottom: 8px !important;
     }
 
-    /* Stack of Story Cards */
+    /* Stories Slider Architecture */
+    .edu-program-page .edu-stories-slider-wrap {
+      max-width: 1060px !important;
+      margin: 0 auto !important;
+      position: relative !important;
+      overflow: hidden !important;
+      padding: 6px 4px 10px 4px !important;
+    }
+
+    .edu-program-page .edu-stories-track {
+      display: flex !important;
+      width: 100% !important;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: transform !important;
+    }
+
+    .edu-program-page .edu-story-slide {
+      width: 100% !important;
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Card Design Preserved 100% Intact */
     .edu-program-page .edu-stories-stack {
       display: flex !important;
       flex-direction: column !important;
@@ -1663,61 +1776,139 @@
     }
 
     .edu-program-page .edu-story-card {
-      background: var(--color-background-subtle) !important;
+      background: #FFFFFF !important;
       border: 1px solid var(--color-border) !important;
       border-radius: var(--radius-panel) !important;
-      overflow: hidden !important;
       display: flex !important;
+      align-items: center !important;
+      padding: 32px 36px !important;
+      gap: 36px !important;
       box-shadow: var(--shadow-sm) !important;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     .edu-program-page .edu-story-card:hover {
-      background: #FFFFFF !important;
       transform: translateY(-3px) !important;
       border-color: var(--color-primary-border) !important;
       box-shadow: var(--shadow-hover) !important;
     }
 
-    /* Story Left: Photo Container */
+    /* Slider Controls: Clean Rounded Arrows & Modern Pill Dots */
+    .edu-program-page .edu-stories-nav {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 16px !important;
+      margin-top: 24px !important;
+    }
+
+    .edu-program-page .edu-stories-arrow {
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50% !important;
+      background: #FFFFFF !important;
+      border: 1px solid var(--color-border) !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      color: var(--color-text-primary) !important;
+      transition: all 0.2s ease !important;
+      padding: 0 !important;
+    }
+
+    .edu-program-page .edu-stories-arrow:hover {
+      background: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+      color: #FFFFFF !important;
+      transform: scale(1.06) !important;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25) !important;
+    }
+
+    .edu-program-page .edu-stories-dots {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+
+    .edu-program-page .edu-stories-dot {
+      width: 10px !important;
+      height: 10px !important;
+      border-radius: 50% !important;
+      background: #CBD5E1 !important;
+      border: none !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .edu-program-page .edu-stories-dot:hover {
+      background: #94A3B8 !important;
+    }
+
+    .edu-program-page .edu-stories-dot.is-active {
+      width: 28px !important;
+      border-radius: 999px !important;
+      background: var(--color-primary) !important;
+    }
+
+    /* Story Left: Photo Container (Vertical Rounded Square with Outline) */
     .edu-program-page .edu-story-photo-wrap {
-      width: 320px !important;
-      flex-shrink: 0 !important;
-      background: #F1F5F9 !important;
+      width: 180px !important;
+      min-width: 180px !important;
+      aspect-ratio: 3 / 4 !important;
+      border-radius: 18px !important;
       position: relative !important;
       overflow: hidden !important;
+      flex-shrink: 0 !important;
+      background: #F1F5F9 !important;
+      box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #E2E8F0, 0 10px 24px -3px rgba(15, 23, 42, 0.12) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .edu-program-page .edu-story-card:hover .edu-story-photo-wrap {
+      box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px var(--color-primary), 0 14px 28px -2px rgba(37, 99, 235, 0.22) !important;
     }
 
     .edu-program-page .edu-story-img {
       width: 100% !important;
       height: 100% !important;
-      min-height: 280px !important;
+      aspect-ratio: 3 / 4 !important;
       object-fit: cover !important;
+      object-position: center 15% !important;
       display: block !important;
+      border-radius: 14px !important;
       transition: transform 0.35s ease !important;
     }
 
     .edu-program-page .edu-story-card:hover .edu-story-img {
-      transform: scale(1.02) !important;
+      transform: scale(1.03) !important;
     }
 
     .edu-program-page .edu-story-badge {
       position: absolute !important;
-      top: 14px !important;
-      left: 14px !important;
+      bottom: 12px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
       display: inline-flex !important;
       align-items: center !important;
       gap: 6px !important;
       padding: 5px 12px !important;
       border-radius: var(--radius-pill) !important;
-      background: rgba(9, 13, 26, 0.82) !important;
+      background: rgba(9, 13, 26, 0.88) !important;
       color: #FFFFFF !important;
-      font-size: 12px !important;
+      font-size: 11.5px !important;
       font-weight: 700 !important;
-      letter-spacing: 0.03em !important;
+      letter-spacing: 0.02em !important;
       backdrop-filter: blur(8px) !important;
       -webkit-backdrop-filter: blur(8px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+      white-space: nowrap !important;
+      z-index: 2 !important;
     }
 
     .edu-program-page .edu-story-badge svg {
@@ -1727,7 +1918,7 @@
     /* Story Right: Content & Quotation (Large, High-Legibility) */
     .edu-program-page .edu-story-body {
       flex: 1 !important;
-      padding: 36px 42px !important;
+      padding: 0 !important;
       display: flex !important;
       flex-direction: column !important;
       justify-content: center !important;
@@ -1773,6 +1964,12 @@
       font-style: normal !important;
     }
 
+    /* Footer Row CTA */
+    .edu-program-page .edu-stories-footer {
+      text-align: center !important;
+      margin-top: 28px !important;
+    }
+
     /* ================================================================
        SECTION 8: GREG OSMOND INTRO VIDEO EXPLAINER (REGULAR LIGHT CANVAS)
     ================================================================ */
@@ -1780,7 +1977,7 @@
       background: var(--color-background-subtle) !important;
       color: var(--color-text-primary) !important;
       border-top: 1px solid var(--color-border) !important;
-      padding: 92px 0 !important;
+      padding: 50px 0 !important;
       text-align: center !important;
     }
 
@@ -1822,10 +2019,23 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
     }
 
-    .edu-program-page .edu-video-frame:hover {
+    .edu-program-page .edu-video-frame:not(.is-playing):hover {
       transform: translateY(-3px) !important;
       box-shadow: 0 26px 60px rgba(15, 23, 42, 0.2), 0 0 30px rgba(37, 99, 235, 0.18) !important;
       border-color: var(--color-primary-border) !important;
+    }
+
+    .edu-program-page .edu-video-frame.is-playing {
+      cursor: default !important;
+    }
+
+    .edu-program-page .edu-video-frame video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      background: #000000 !important;
+      display: block !important;
+      border-radius: inherit !important;
     }
 
     .edu-program-page .edu-video-frame img {
@@ -1849,6 +2059,15 @@
       align-items: center !important;
       justify-content: center !important;
       background: radial-gradient(circle at center, rgba(9, 13, 26, 0.15) 0%, rgba(9, 13, 26, 0.5) 100%) !important;
+      transition: opacity 0.25s ease !important;
+    }
+
+    .edu-program-page .edu-video-frame.is-playing .edu-video-overlay,
+    .edu-program-page .edu-video-overlay.is-hidden {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
     }
 
     .edu-program-page .edu-video-overlay-btn {
@@ -1879,71 +2098,189 @@
       margin-left: 3px !important;
     }
 
-    .edu-program-page .edu-video-caption {
-      text-align: center !important;
-      font-size: 14px !important;
-      color: var(--color-text-muted) !important;
-      margin-top: 18px !important;
-    }
-
-    .edu-program-page .edu-video-caption strong {
-      color: var(--color-text-primary) !important;
-    }
-
-    .edu-program-page .edu-video-btn-wrap {
-      margin-top: 32px !important;
+    /* ================================================================
+       INTERACTIVE ADVISOR DOCK (MIRRORS VIDEO END SLIDE)
+    ================================================================ */
+    .edu-program-page .edu-video-advisor-dock {
+      max-width: 860px !important;
+      margin: 28px auto 0 auto !important;
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--color-border) !important;
+      border-radius: var(--radius-card) !important;
+      padding: 24px 28px !important;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
       display: flex !important;
-      justify-content: center !important;
+      flex-direction: column !important;
+      gap: 18px !important;
+      text-align: left !important;
+      transition: all 0.25s ease !important;
     }
 
-    .edu-program-page .edu-video-btn-ghost {
+    .edu-program-page .edu-video-advisor-dock:hover {
+      border-color: var(--color-primary-border) !important;
+      box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.12) !important;
+    }
+
+    .edu-program-page .edu-video-dock-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+      padding-bottom: 16px !important;
+      border-bottom: 1px solid var(--color-border) !important;
+    }
+
+    .edu-program-page .edu-video-dock-title-group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-program-page .edu-video-dock-title {
+      font-size: 18.5px !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      letter-spacing: -0.015em !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+    }
+
+    .edu-program-page .edu-video-dock-tag {
       display: inline-flex !important;
       align-items: center !important;
-      justify-content: center !important;
-      height: 48px !important;
-      padding: 0 24px !important;
-      font-size: 15px !important;
+      padding: 3px 10px !important;
+      background: #ECFDF5 !important;
+      color: #15803D !important;
+      border: 1px solid #BBF7D0 !important;
+      border-radius: var(--radius-pill) !important;
+      font-size: 12px !important;
       font-weight: 700 !important;
-      color: var(--color-text-primary) !important;
-      background: #FFFFFF !important;
-      border: 1px solid var(--color-border) !important;
-      border-radius: var(--radius-control) !important;
-      text-decoration: none !important;
-      transition: all 0.2s ease !important;
-      box-shadow: var(--shadow-sm) !important;
+      letter-spacing: 0.01em !important;
     }
 
-    .edu-program-page .edu-video-btn-ghost:hover {
-      background: var(--color-background-soft) !important;
+    .edu-program-page .edu-video-dock-advisor {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 13.5px !important;
+      color: var(--color-text-secondary) !important;
+    }
+
+    .edu-program-page .edu-video-dock-advisor strong {
+      color: var(--color-text-primary) !important;
+      font-weight: 700 !important;
+    }
+
+    .edu-program-page .edu-video-dock-avatar-dot {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      background: #10B981 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-program-page .edu-video-dock-actions {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+    }
+
+    .edu-program-page .edu-video-dock-chip {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 10px 16px !important;
+      background: var(--color-background-subtle) !important;
+      border: 1px solid var(--color-border) !important;
+      border-radius: var(--radius-control) !important;
+      color: var(--color-text-primary) !important;
+      text-decoration: none !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.01em !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .edu-program-page .edu-video-dock-chip svg {
+      color: var(--color-primary) !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease !important;
+    }
+
+    .edu-program-page .edu-video-dock-chip:hover {
+      background: #FFFFFF !important;
       border-color: var(--color-primary) !important;
       color: var(--color-primary) !important;
       transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12) !important;
+    }
+
+    .edu-program-page .edu-video-dock-chip:hover svg {
+      transform: scale(1.1) !important;
+    }
+
+    .edu-program-page .edu-video-dock-btn-primary {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 10px 20px !important;
+      background: var(--color-primary) !important;
+      border: 1px solid var(--color-primary) !important;
+      border-radius: var(--radius-control) !important;
+      color: #FFFFFF !important;
+      text-decoration: none !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.01em !important;
+      transition: all 0.2s ease !important;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25) !important;
+      margin-left: auto !important;
+    }
+
+    .edu-program-page .edu-video-dock-btn-primary:hover {
+      background: var(--color-primary-hover) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+    }
+
+    .edu-program-page .edu-video-dock-btn-primary svg {
+      transition: transform 0.2s ease !important;
+    }
+
+    .edu-program-page .edu-video-dock-btn-primary:hover svg {
+      transform: translateX(3px) !important;
     }
 
     /* ================================================================
-       SECTION 9: ADVISOR CONSULTATION & TRUST METRICS FOOTER
+       SECTION 9: ADVISOR CONSULTATION & TRUST METRICS FOOTER (PREMIUM EXECUTIVE REDESIGN)
     ================================================================ */
     .edu-program-page .edu-footer-cta-sec {
-      background: #060913 !important;
-      border-top: 1px solid #1E293B !important;
-      padding: 88px 0 60px 0 !important;
+      background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.12) 0%, rgba(15, 23, 42, 0) 70%), #0A0E1A !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      padding: 64px 0 48px 0 !important;
       color: #FFFFFF !important;
       text-align: center !important;
+      position: relative !important;
     }
 
     .edu-program-page .edu-footer-cta-box {
-      max-width: 860px !important;
+      max-width: 960px !important;
       margin: 0 auto !important;
       text-align: center !important;
     }
 
     .edu-program-page .edu-footer-cta-title {
-      font-size: var(--edu-fs-h2) !important;
-      line-height: var(--edu-lh-heading) !important;
+      font-size: 32px !important;
+      line-height: 1.25 !important;
       color: #FFFFFF !important;
       font-weight: 800 !important;
       letter-spacing: -0.03em !important;
-      margin-bottom: 32px !important;
+      margin: 0 auto 28px auto !important;
+      max-width: 780px !important;
     }
 
     .edu-program-page .edu-footer-cta-btns {
@@ -1951,7 +2288,7 @@
       align-items: center !important;
       justify-content: center !important;
       gap: 16px !important;
-      margin-bottom: 32px !important;
+      margin-bottom: 28px !important;
       flex-wrap: wrap !important;
     }
 
@@ -1961,22 +2298,22 @@
       justify-content: center !important;
       gap: 10px !important;
       height: 52px !important;
-      padding: 0 28px !important;
-      font-size: 16px !important;
+      padding: 0 30px !important;
+      font-size: 15.5px !important;
       font-weight: 700 !important;
       color: #FFFFFF !important;
-      background: var(--color-primary) !important;
-      border: 1px solid transparent !important;
-      border-radius: var(--radius-control) !important;
+      background: #2563EB !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 10px !important;
       text-decoration: none !important;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35) !important;
     }
 
     .edu-program-page .edu-footer-btn-primary:hover {
-      background: var(--color-primary-hover) !important;
+      background: #1D4ED8 !important;
       transform: translateY(-2px) !important;
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5) !important;
       color: #FFFFFF !important;
     }
 
@@ -1985,82 +2322,123 @@
       align-items: center !important;
       justify-content: center !important;
       height: 52px !important;
-      padding: 0 26px !important;
-      font-size: 16px !important;
+      padding: 0 28px !important;
+      font-size: 15.5px !important;
       font-weight: 700 !important;
       color: #FFFFFF !important;
-      background: rgba(255, 255, 255, 0.08) !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      border-radius: var(--radius-control) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+      border-radius: 10px !important;
       text-decoration: none !important;
       transition: all 0.2s ease !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
     }
 
     .edu-program-page .edu-footer-btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.16) !important;
-      border-color: rgba(255, 255, 255, 0.35) !important;
+      background: rgba(255, 255, 255, 0.12) !important;
+      border-color: rgba(255, 255, 255, 0.45) !important;
+      transform: translateY(-2px) !important;
       color: #FFFFFF !important;
     }
 
-    /* Subordinate contact channels */
+    /* Subordinate Interactive Contact Chips */
     .edu-program-page .edu-footer-contact-row {
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
-      gap: 28px !important;
+      gap: 14px !important;
       margin-bottom: 36px !important;
       flex-wrap: wrap !important;
-      font-size: 14.5px !important;
-      color: #94A3B8 !important;
     }
 
-    .edu-program-page .edu-footer-contact-item {
-      display: flex !important;
+    .edu-program-page .edu-footer-contact-chip {
+      display: inline-flex !important;
       align-items: center !important;
-      gap: 8px !important;
-    }
-
-    .edu-program-page .edu-footer-contact-item a {
-      color: #E2E8F0 !important;
+      gap: 9px !important;
+      padding: 8px 18px !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 999px !important;
+      color: #CBD5E1 !important;
+      font-size: 13.5px !important;
       font-weight: 600 !important;
       text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .edu-program-page .edu-footer-contact-chip svg {
+      color: #94A3B8 !important;
       transition: color 0.2s ease !important;
+      flex-shrink: 0 !important;
     }
 
-    .edu-program-page .edu-footer-contact-item a:hover {
+    .edu-program-page .edu-footer-contact-chip:hover {
+      background: rgba(255, 255, 255, 0.09) !important;
+      border-color: rgba(37, 99, 235, 0.45) !important;
       color: #FFFFFF !important;
-      text-decoration: underline !important;
+      transform: translateY(-1px) !important;
     }
 
-    /* Trust Metric Seals */
-    .edu-program-page .edu-footer-seals {
-      display: flex !important;
-      justify-content: center !important;
+    .edu-program-page .edu-footer-contact-chip:hover svg {
+      color: #60A5FA !important;
+    }
+
+    /* 4 Trust Metric Seals Grid (4 on desktop, 2x2 on tablet, 1 on mobile) */
+    .edu-program-page .edu-footer-seals-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
       gap: 12px !important;
-      flex-wrap: wrap !important;
-      margin-bottom: 32px !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-      padding-top: 28px !important;
+      margin-bottom: 36px !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      padding-top: 32px !important;
     }
 
-    .edu-program-page .edu-footer-seal {
+    .edu-program-page .edu-footer-seal-card {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      padding: 13px 14px !important;
+      border-radius: 10px !important;
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
       font-size: 12.5px !important;
       font-weight: 700 !important;
-      color: #F1F5F9 !important;
-      padding: 7px 16px !important;
-      border-radius: var(--radius-pill) !important;
-      background: rgba(255, 255, 255, 0.06) !important;
-      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      color: #E2E8F0 !important;
+      letter-spacing: -0.01em !important;
+      transition: all 0.2s ease !important;
+      text-align: left !important;
     }
+
+    .edu-program-page .edu-footer-seal-card:hover {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.16) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .edu-program-page .edu-footer-seal-icon {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-program-page .edu-footer-seal-icon.is-shield { color: #60A5FA !important; }
+    .edu-program-page .edu-footer-seal-icon.is-doc { color: #CBD5E1 !important; }
+    .edu-program-page .edu-footer-seal-icon.is-star { color: #FBBF24 !important; }
+    .edu-program-page .edu-footer-seal-icon.is-guarantee { color: #34D399 !important; }
 
     /* Trademark Legal Text */
     .edu-program-page .edu-footer-legal {
-      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
       padding-top: 24px !important;
       font-size: 11.5px !important;
       line-height: 1.65 !important;
       color: #64748B !important;
       text-align: center !important;
+      max-width: 840px !important;
+      margin: 0 auto !important;
     }
 
     .edu-program-page .edu-footer-legal p {
@@ -2076,28 +2454,53 @@
         gap: 40px !important;
       }
 
+      .edu-program-page .edu-hero-title {
+        font-size: 42px !important;
+      }
+
       .edu-program-page .edu-hero-photo-wrap {
         max-width: 640px !important;
         margin: 0 auto !important;
         width: 100% !important;
       }
 
-      .edu-program-page .edu-sec2-credential-grid {
+      .edu-program-page .edu-hero-pillars-band {
+        gap: 12px !important;
+        padding: 10px 18px !important;
+      }
+
+      .edu-program-page .edu-hero-pillar-item {
+        padding: 12px 14px !important;
+      }
+
+      .edu-program-page .edu-hero-pillar-text {
+        font-size: 14px !important;
+      }
+
+      .edu-program-page .edu-hero-credentials {
         grid-template-columns: repeat(5, 1fr) !important;
         gap: 6px !important;
       }
 
       .edu-program-page .edu-matcher-panel {
-        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
       }
 
-      .edu-program-page .edu-matcher-left {
-        border-right: none !important;
-        border-bottom: 1px solid var(--color-border) !important;
+      .edu-program-page .edu-matcher-top-bar {
+        padding: 18px 28px !important;
+      }
+
+      .edu-program-page .edu-matcher-progress-list {
+        gap: 28px !important;
+      }
+
+      .edu-program-page .edu-matcher-right {
+        padding: 36px 32px !important;
       }
 
       .edu-program-page .edu-fltr-options-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
       }
 
       .edu-program-page .edu-pillars-row {
@@ -2118,12 +2521,18 @@
         gap: 20px !important;
       }
 
+      .edu-program-page .edu-story-card {
+        padding: 26px 28px !important;
+        gap: 28px !important;
+      }
+
       .edu-program-page .edu-story-photo-wrap {
-        width: 280px !important;
+        width: 165px !important;
+        min-width: 165px !important;
       }
 
       .edu-program-page .edu-story-body {
-        padding: 28px 30px !important;
+        padding: 0 !important;
       }
 
       .edu-program-page .edu-story-heading {
@@ -2137,11 +2546,11 @@
 
     @media (max-width: 768px) {
       .edu-program-page section {
-        padding: 52px 0 !important;
+        padding: 34px 0 !important;
       }
 
       .edu-program-page .edu-live-sec {
-        padding: 52px 0 !important;
+        padding: 34px 0 !important;
       }
 
       .edu-program-page .edu-live-title {
@@ -2165,16 +2574,25 @@
         font-size: 32px !important;
       }
 
-      .edu-program-page .edu-sec2-title {
-        font-size: 24px !important;
-      }
-
-      .edu-program-page .edu-sec2-lead {
-        font-size: 16px !important;
-      }
-
-      .edu-program-page .edu-sec2-mission em {
+      .edu-program-page .edu-hero-hook-lead {
         font-size: 17px !important;
+      }
+
+      .edu-program-page .edu-hero-dock {
+        padding-top: 28px !important;
+        gap: 18px !important;
+      }
+
+      .edu-program-page .edu-hero-pillars-band {
+        grid-template-columns: 1fr !important;
+        max-width: 420px !important;
+        margin: 0 auto !important;
+        gap: 10px !important;
+        padding: 12px 18px !important;
+      }
+
+      .edu-program-page .edu-hero-pillar-item {
+        justify-content: flex-start !important;
       }
 
       .edu-program-page .edu-matcher-title {
@@ -2194,12 +2612,12 @@
         padding: 6px 14px !important;
       }
 
-      .edu-program-page .edu-sec2-credential-grid {
+      .edu-program-page .edu-hero-credentials {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 6px !important;
       }
 
-      .edu-program-page .edu-sec2-credential-item:last-child {
+      .edu-program-page .edu-hero-cred-pill:last-child {
         grid-column: span 2 !important;
       }
 
@@ -2212,7 +2630,7 @@
       }
 
       .edu-program-page .edu-options-sec {
-        padding: 52px 0 !important;
+        padding: 34px 0 !important;
       }
 
       .edu-program-page .edu-options-title {
@@ -2242,7 +2660,7 @@
       }
 
       .edu-program-page .edu-team-sec {
-        padding: 52px 0 !important;
+        padding: 34px 0 !important;
       }
 
       .edu-program-page .edu-team-title {
@@ -2251,12 +2669,8 @@
 
       .edu-program-page .edu-leadership-grid {
         grid-template-columns: 1fr !important;
-        gap: 20px !important;
+        gap: 24px !important;
         max-width: 420px !important;
-      }
-
-      .edu-program-page .edu-leadership-photo-wrap {
-        height: 280px !important;
       }
 
       .edu-program-page .edu-instructors-grid {
@@ -2264,12 +2678,8 @@
         gap: 16px !important;
       }
 
-      .edu-program-page .edu-instructor-photo-wrap {
-        height: 190px !important;
-      }
-
       .edu-program-page .edu-stories-sec {
-        padding: 52px 0 !important;
+        padding: 34px 0 !important;
       }
 
       .edu-program-page .edu-stories-title {
@@ -2278,15 +2688,20 @@
 
       .edu-program-page .edu-story-card {
         flex-direction: column !important;
+        padding: 28px 20px !important;
+        gap: 20px !important;
+        text-align: center !important;
       }
 
       .edu-program-page .edu-story-photo-wrap {
-        width: 100% !important;
-        height: 240px !important;
+        width: 160px !important;
+        min-width: 160px !important;
+        margin: 0 auto !important;
       }
 
       .edu-program-page .edu-story-body {
-        padding: 24px 20px !important;
+        padding: 0 !important;
+        text-align: center !important;
       }
 
       .edu-program-page .edu-story-heading {
@@ -2299,7 +2714,7 @@
       }
 
       .edu-program-page .edu-video-sec {
-        padding: 52px 0 !important;
+        padding: 34px 0 !important;
       }
 
       .edu-program-page .edu-video-title {
@@ -2316,8 +2731,36 @@
         height: 20px !important;
       }
 
+      .edu-program-page .edu-video-advisor-dock {
+        padding: 20px 18px !important;
+        gap: 14px !important;
+        text-align: center !important;
+      }
+
+      .edu-program-page .edu-video-dock-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      .edu-program-page .edu-video-dock-title-group {
+        justify-content: center !important;
+      }
+
+      .edu-program-page .edu-video-dock-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+
+      .edu-program-page .edu-video-dock-chip,
+      .edu-program-page .edu-video-dock-btn-primary {
+        width: 100% !important;
+        justify-content: center !important;
+        margin-left: 0 !important;
+      }
+
       .edu-program-page .edu-footer-cta-sec {
-        padding: 52px 0 40px 0 !important;
+        padding: 48px 0 36px 0 !important;
       }
 
       .edu-program-page .edu-footer-cta-title {
@@ -2330,8 +2773,46 @@
       }
 
       .edu-program-page .edu-footer-contact-row {
-        flex-direction: column !important;
         gap: 12px !important;
+      }
+
+      .edu-program-page .edu-footer-seals-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      .edu-program-page .edu-matcher-panel {
+        border-radius: 16px !important;
+        margin: 0 auto !important;
+      }
+
+      .edu-program-page .edu-matcher-top-bar {
+        padding: 16px 20px !important;
+      }
+
+      .edu-program-page .edu-matcher-progress-list {
+        gap: 20px !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+      }
+
+      .edu-program-page .edu-matcher-step-indicator {
+        font-size: 13.5px !important;
+      }
+
+      .edu-program-page .edu-matcher-right {
+        padding: 32px 24px !important;
+      }
+
+      .edu-program-page .edu-fltr-options-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .edu-program-page .edu-radio-card label {
+        min-height: 52px !important;
+        padding: 12px 16px !important;
+        font-size: 14.5px !important;
       }
     }
 
@@ -2340,11 +2821,15 @@
         font-size: 27px !important;
       }
 
-      .edu-program-page .edu-sec2-credential-grid {
+      .edu-program-page .edu-hero-hook-lead {
+        font-size: 16px !important;
+      }
+
+      .edu-program-page .edu-hero-credentials {
         grid-template-columns: repeat(2, 1fr) !important;
       }
 
-      .edu-program-page .edu-sec2-credential-item:last-child {
+      .edu-program-page .edu-hero-cred-pill:last-child {
         grid-column: span 2 !important;
       }
 
@@ -2358,20 +2843,82 @@
         margin: 0 auto !important;
       }
 
-      .edu-program-page .edu-instructor-photo-wrap {
-        height: 240px !important;
+      .edu-program-page .edu-matcher-panel {
+        border-radius: 14px !important;
+      }
+
+      .edu-program-page .edu-matcher-top-bar {
+        padding: 14px 16px !important;
+      }
+
+      .edu-program-page .edu-matcher-progress-list {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+
+      .edu-program-page .edu-matcher-step-indicator {
+        font-size: 13px !important;
+      }
+
+      .edu-program-page .edu-matcher-right {
+        padding: 24px 16px !important;
+      }
+
+      .edu-program-page .edu-fltr-group {
+        margin-bottom: 24px !important;
+      }
+
+      .edu-program-page .edu-fltr-group h4 {
+        font-size: 16px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .edu-program-page .edu-fltr-options-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .edu-program-page .edu-radio-card label {
+        min-height: 50px !important;
+        padding: 12px 16px !important;
+        font-size: 15px !important;
+      }
+
+      .edu-program-page #inlineShowCourses,
+      .edu-program-page #inlineShwCrs {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .edu-program-page .edu-footer-contact-row {
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+
+      .edu-program-page .edu-footer-contact-chip {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .edu-program-page .edu-footer-seals-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
       }
     }
   </style>
 
   <!-- ================================================================
-     SECTION 1: HERO SECTION
+     SECTION 1: UNIFIED MASTER HERO (2-TIER STAGE + VALUE DOCK)
+     Combines Hero Value Proposition, Problem/Solution Hook, 
+     3 Core Pillars & 5 Supported Certification Pathways
 ================================================================ -->
   <section class="edu-program-hero">
     <div class="edu-program-wrap">
 
+      <!-- Upper Hero Stage: 2-Column Display -->
       <div class="edu-hero-grid">
-        <!-- Left Column: Title, Subhead, Primary CTA -->
+        <!-- Left Column: Title, Empathy Hook, Proof & CTA -->
         <div class="edu-hero-left">
           <!-- Eyebrow Pill -->
           <div class="edu-eyebrow edu-reveal edu-reveal-d1">
@@ -2384,6 +2931,16 @@
             Your Best Choice for<br />
             <span class="edu-hero-highlight">HR Certification Success</span>
           </h1>
+
+          <!-- Problem / Solution Empathy Hook -->
+          <div class="edu-hero-hook edu-reveal edu-reveal-d2">
+            <p class="edu-hero-hook-lead">
+              The Exams Are HARD. <span>They Don’t Have to Be.</span>
+            </p>
+            <p class="edu-hero-hook-mission">
+              <em>We Help More HR Professionals Get Certified</em>
+            </p>
+          </div>
 
           <!-- Trust Metric (Gold / Amber Accent) -->
           <div class="edu-hero-stat-badge edu-reveal edu-reveal-d2">
@@ -2412,56 +2969,85 @@
 
         <!-- Right Column: Editorial Learner Visual -->
         <div class="edu-hero-photo-wrap edu-reveal edu-reveal-d2">
-          <img class="edu-hero-photo" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-hero-learner.jpg"
+          <img class="edu-hero-photo"
+            src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/our-program-hero-img-2.jpg"
             alt="HR Leader preparing for certification exam in modern executive workspace" />
         </div>
       </div>
 
-    </div>
-  </section>
+      <!-- Lower Hero Dock: 3 Core Pillars & 5 Supported Credential Pathways -->
+      <div class="edu-hero-dock edu-reveal edu-reveal-d3">
+        <!-- Row 1: Informational Value Feature Band (Static, Non-Clickable) -->
+        <div class="edu-hero-pillars-band">
+          <div class="edu-hero-pillar-item">
+            <div class="edu-hero-pillar-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="edu-hero-pillar-text">Experienced instructors.</span>
+          </div>
 
-  <!-- ================================================================
-     SECTION 2: THE EXAMS ARE HARD + 5 CREDENTIALS + TESTIMONIAL COLLAGE
-================================================================ -->
-  <section class="edu-sec2-wrap">
-    <div class="edu-program-wrap">
+          <div class="edu-hero-pillar-item">
+            <div class="edu-hero-pillar-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="edu-hero-pillar-text">Top-notch materials.</span>
+          </div>
 
-      <!-- 5-Credential Segmented Row -->
-      <div class="edu-sec2-credential-bar edu-reveal edu-reveal-d1">
-        <div class="edu-sec2-credential-grid">
-          <a class="edu-sec2-credential-item"
-            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">PHR</a>
-          <a class="edu-sec2-credential-item"
-            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">SPHR</a>
-          <a class="edu-sec2-credential-item"
-            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">SHRM-CP</a>
-          <a class="edu-sec2-credential-item"
-            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">SHRM-SCP</a>
-          <a class="edu-sec2-credential-item"
-            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">aPHR</a>
+          <div class="edu-hero-pillar-item">
+            <div class="edu-hero-pillar-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="edu-hero-pillar-text">Unmatched support.</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Section 2 Header Block -->
-      <div class="edu-sec2-header edu-reveal edu-reveal-d2">
-        <h2 class="edu-sec2-title">
-          The Exams Are HARD. They Don’t Have to Be.
-        </h2>
-        <p class="edu-sec2-lead">
-          Experienced instructors. Top-notch materials. Unmatched support.
-        </p>
-
-        <!-- Italic Mission Tagline -->
-        <div class="edu-sec2-mission">
-          <em>We Help More HR Professionals Get Certified</em>
+        <!-- Row 2: 5-Credential Pathway Action Buttons (Clickable) -->
+        <div class="edu-hero-credentials">
+          <a class="edu-hero-cred-pill"
+            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+            <span>PHR</span>
+            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a class="edu-hero-cred-pill"
+            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+            <span>SPHR</span>
+            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a class="edu-hero-cred-pill"
+            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+            <span>SHRM-CP</span>
+            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a class="edu-hero-cred-pill"
+            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+            <span>SHRM-SCP</span>
+            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a class="edu-hero-cred-pill"
+            href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+            <span>aPHR</span>
+            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
         </div>
-      </div>
-
-      <!-- Graduate Proof Collage Visual -->
-      <!-- CREATE COLLAGE OF IMAGES FROM PICS IN TESTIMONIALS DOC: https://docs.google.com/document/d/1C0IOOtdyW36so4zTHqs8EBKMFGMArq7MZyWiEF5s1rc/edit?tab=t.0 -->
-      <div class="edu-sec2-collage-wrap edu-reveal edu-reveal-d2">
-        <img class="edu-sec2-collage-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/program-hero-collage.jpg"
-          alt="Collage of verified HR professionals celebrating their HRCI and SHRM certification success" />
       </div>
 
     </div>
@@ -2486,26 +3072,16 @@
 
       <!-- Master Inline Matcher Panel -->
       <div class="edu-matcher-panel edu-reveal edu-reveal-d2">
-        <!-- Left Column: Guidance & Visual -->
-        <div class="edu-matcher-left">
-          <img class="edu-matcher-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-exam-matcher.jpg"
-            alt="HR practitioner assessing certification options on modern laptop" />
-
-          <div class="edu-matcher-left-body">
-            <span class="edu-matcher-chip">Diagnostic Matcher</span>
-            <h3 class="edu-matcher-left-title">Which exam is right for you?</h3>
-            <p class="edu-matcher-left-desc">We&#39;ll help find which exam is right for you. Answer 2 quick questions!
-            </p>
-
-            <div class="edu-matcher-progress-list">
-              <div class="edu-matcher-step-indicator is-active" id="inlineStepIndicator1">
-                <span class="edu-step-num">1</span>
-                <span>Step 1: Experience &amp; Education</span>
-              </div>
-              <div class="edu-matcher-step-indicator" id="inlineStepIndicator2">
-                <span class="edu-step-num">2</span>
-                <span>Step 2: Study Style &amp; Format</span>
-              </div>
+        <!-- Top Horizontal Stepper Bar -->
+        <div class="edu-matcher-top-bar">
+          <div class="edu-matcher-progress-list">
+            <div class="edu-matcher-step-indicator is-active" id="inlineStepIndicator1">
+              <span class="edu-step-num">1</span>
+              <span>Step 1: Experience &amp; Education</span>
+            </div>
+            <div class="edu-matcher-step-indicator" id="inlineStepIndicator2">
+              <span class="edu-step-num">2</span>
+              <span>Step 2: Study Style &amp; Format</span>
             </div>
           </div>
         </div>
@@ -2526,7 +3102,7 @@
                 </h4>
                 <div class="edu-fltr-options-grid">
                   <div class="edu-radio-card"><input class="inline-exp" id="iyoe1" name="inline_fltr_yoe" type="radio"
-                      value="0-1 year" /><label for="iyoe1">0-1 year</label></div>
+                      value="< 1 year" /><label for="iyoe1">&lt; 1 year</label></div>
                   <div class="edu-radio-card"><input class="inline-exp" id="iyoe2" name="inline_fltr_yoe" type="radio"
                       value="1-2 year" /><label for="iyoe2">1-2 year</label></div>
                   <div class="edu-radio-card"><input class="inline-exp" id="iyoe3" name="inline_fltr_yoe" type="radio"
@@ -3319,7 +3895,7 @@
 
           <!-- Instructor Photo -->
           <div class="edu-live-photo-wrap">
-            <img class="edu-live-photo" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-executive-coaching.jpg" alt="HR.com Certified Instructor Leading an Online Class" loading="lazy">
+            <img class="edu-live-photo" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/virtual-class-hr-pro.jpg" alt="HR.com Certified Instructor Leading an Online Class" loading="lazy">
             <div class="edu-live-photo-overlay">
               <span class="edu-live-photo-chip">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
@@ -3387,9 +3963,11 @@
 
         <!-- Leader 1: Jennifer Marants -->
         <div class="edu-leadership-card">
-          <!-- Photo: Replace src with actual photo (e.g. images/jennifer-marants.jpg) -->
           <div class="edu-leadership-photo-wrap">
-            <img class="edu-leadership-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Jennifer Marants - Program Director" loading="lazy">
+            <img class="edu-leadership-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/jennifer-marants.jpg"
+              alt="Jennifer Marants - Program Director"
+              width="200" height="200" loading="lazy">
           </div>
           <div class="edu-leadership-content">
             <div class="edu-leadership-name">Jennifer Marants</div>
@@ -3399,9 +3977,11 @@
 
         <!-- Leader 2: Greg Osmond -->
         <div class="edu-leadership-card">
-          <!-- Photo: Replace src with actual photo (e.g. images/greg-osmond.jpg) -->
           <div class="edu-leadership-photo-wrap">
-            <img class="edu-leadership-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Greg Osmond - HR Certification Advisor" loading="lazy">
+            <img class="edu-leadership-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/greg-osmond.jpg"
+              alt="Greg Osmond - HR Certification Advisor"
+              width="200" height="200" loading="lazy">
           </div>
           <div class="edu-leadership-content">
             <div class="edu-leadership-name">Greg Osmond</div>
@@ -3421,9 +4001,11 @@
 
         <!-- Instructor 1: Melissa Bowen -->
         <div class="edu-instructor-card edu-reveal">
-          <!-- Photo: Replace src with actual photo (e.g. images/melissa-bowen.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Melissa Bowen" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/melissa-bowen.jpg"
+              alt="Melissa Bowen"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Melissa Bowen</div>
@@ -3437,9 +4019,11 @@
 
         <!-- Instructor 2: Debra Braden -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d1">
-          <!-- Photo: Replace src with actual photo (e.g. images/debra-braden.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Debra Braden" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/debra-braden.jpg"
+              alt="Debra Braden"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Debra Braden</div>
@@ -3452,9 +4036,11 @@
 
         <!-- Instructor 3: Steven Yee -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d2">
-          <!-- Photo: Replace src with actual photo (e.g. images/steven-yee.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Steven Yee" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/steven-yee.jpg"
+              alt="Steven Yee"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Steven Yee</div>
@@ -3468,9 +4054,11 @@
 
         <!-- Instructor 4: Billy Keene -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d3">
-          <!-- Photo: Replace src with actual photo (e.g. images/billy-keene.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Billy Keene" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/billy-keene.jpg"
+              alt="Billy Keene"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Billy Keene</div>
@@ -3483,9 +4071,11 @@
 
         <!-- Instructor 5: Alaena Mallory -->
         <div class="edu-instructor-card edu-reveal">
-          <!-- Photo: Replace src with actual photo (e.g. images/alaena-mallory.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Alaena Mallory" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/alaena-mallory.jpg"
+              alt="Alaena Mallory"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Alaena Mallory</div>
@@ -3498,9 +4088,11 @@
 
         <!-- Instructor 6: Beverly Dance -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d1">
-          <!-- Photo: Replace src with actual photo (e.g. images/beverly-dance.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Beverly Dance" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/beverly-dance.jpg"
+              alt="Beverly Dance"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Beverly Dance</div>
@@ -3514,9 +4106,11 @@
 
         <!-- Instructor 7: Chris Vokaty -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d2">
-          <!-- Photo: Replace src with actual photo (e.g. images/chris-vokaty.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Chris Vokaty" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/chris-vokaty.jpg"
+              alt="Chris Vokaty"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Chris Vokaty</div>
@@ -3530,9 +4124,11 @@
 
         <!-- Instructor 8: Dan Rivera -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d3">
-          <!-- Photo: Replace src with actual photo (e.g. images/dan-rivera.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Dan Rivera" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/dan-rivera.jpg"
+              alt="Dan Rivera"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Dan Rivera</div>
@@ -3544,9 +4140,11 @@
 
         <!-- Instructor 9: Helena Quick -->
         <div class="edu-instructor-card edu-reveal">
-          <!-- Photo: Replace src with actual photo (e.g. images/helena-quick.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Helena Quick" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/helena-quick.jpg"
+              alt="Helena Quick"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Helena Quick</div>
@@ -3559,9 +4157,11 @@
 
         <!-- Instructor 10: Maricela Disch -->
         <div class="edu-instructor-card edu-reveal edu-reveal-d1">
-          <!-- Photo: Replace src with actual photo (e.g. images/maricela-disch.jpg) -->
           <div class="edu-instructor-photo-wrap">
-            <img class="edu-instructor-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-avatar.svg" alt="Maricela Disch" loading="lazy">
+            <img class="edu-instructor-img"
+              src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/maricela-disch.jpg"
+              alt="Maricela Disch"
+              width="150" height="150" loading="lazy">
           </div>
           <div class="edu-instructor-content">
             <div class="edu-instructor-name">Maricela Disch</div>
@@ -3588,82 +4188,121 @@
         <h2 class="edu-stories-title">Real HR Certification Prep Success Stories</h2>
       </div>
 
-      <!-- Stack of Story Cards -->
-      <div class="edu-stories-stack">
+      <!-- Testimonials Slider Container -->
+      <div class="edu-stories-slider-wrap edu-reveal edu-reveal-d1" id="eduStoriesSlider" role="region" aria-label="Student Testimonials Slider">
+        <div class="edu-stories-track" id="eduStoriesTrack">
 
-        <!-- Story 1: Alma L -->
-        <div class="edu-story-card edu-reveal">
-          <!-- Photo: Replace src with actual photo (e.g. images/story-alma.jpg) -->
-          <div class="edu-story-photo-wrap">
-            <img class="edu-story-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-certificate.svg" alt="Alma L holding certification results" loading="lazy">
-            <span class="edu-story-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Dual Certified
-            </span>
-          </div>
-          <div class="edu-story-body">
-            <h3 class="edu-story-heading">Achieving 2 Senior Certifications With One Course</h3>
-            <p class="edu-story-quote">
-              “From the moment I enrolled, I knew I was in good hands. The curriculum was comprehensive and well-organized … and the instructors were knowledgeable and passionate, always eager to answer my questions and provide clear explanations.<br><br>
-              You won't find a more comprehensive, supportive, and effective program anywhere else.”
-            </p>
-            <div class="edu-story-attribution">
-              <em>&mdash; Alma L,</em>
-              <span class="edu-story-cred">SHRM-SCP and SPHR</span>
+          <!-- Slide 1: Alma L -->
+          <div class="edu-story-slide" data-slide="0">
+            <div class="edu-story-card">
+              <div class="edu-story-photo-wrap">
+                <img class="edu-story-img"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/alma.jpg"
+                  alt="Alma L holding certification results"
+                  width="150" height="200" loading="lazy">
+                <span class="edu-story-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Dual Certified
+                </span>
+              </div>
+              <div class="edu-story-body">
+                <h3 class="edu-story-heading">Achieving 2 Senior Certifications With One Course</h3>
+                <p class="edu-story-quote">
+                  “From the moment I enrolled, I knew I was in good hands. The curriculum was comprehensive and well-organized … and the instructors were knowledgeable and passionate, always eager to answer my questions and provide clear explanations.<br><br>
+                  You won't find a more comprehensive, supportive, and effective program anywhere else.”
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; Alma L,</em>
+                  <span class="edu-story-cred">SHRM-SCP and SPHR</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Story 2: Robby P -->
-        <div class="edu-story-card edu-reveal edu-reveal-d1">
-          <!-- Photo: Replace src with actual photo (e.g. images/story-robby.jpg) -->
-          <div class="edu-story-photo-wrap">
-            <img class="edu-story-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-certificate.svg" alt="Robby P holding aPHR certification" loading="lazy">
-            <span class="edu-story-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Career Pivot
-            </span>
-          </div>
-          <div class="edu-story-body">
-            <h3 class="edu-story-heading">New Human Resource Professional Earns First Certification</h3>
-            <p class="edu-story-quote">
-              “A big thank you to Jennifer Marants and the entire HR.com team. Coming from 20+ years in operations, I am new to HR, but your support through the aPHR course made all the difference. The instructors were excellent, the content was practical, and every question I had was answered quickly and clearly.”
-            </p>
-            <div class="edu-story-attribution">
-              <em>&mdash; Robby P,</em>
-              <span class="edu-story-cred">aPHR</span>
+          <!-- Slide 2: Robby P -->
+          <div class="edu-story-slide" data-slide="1">
+            <div class="edu-story-card">
+              <div class="edu-story-photo-wrap">
+                <img class="edu-story-img"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/robbie.jpg"
+                  alt="Robby P holding aPHR certification"
+                  width="150" height="200" loading="lazy">
+                <span class="edu-story-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Career Pivot
+                </span>
+              </div>
+              <div class="edu-story-body">
+                <h3 class="edu-story-heading">New Human Resource Professional Earns First Certification</h3>
+                <p class="edu-story-quote">
+                  “A big thank you to Jennifer Marants and the entire HR.com team. Coming from 20+ years in operations, I am new to HR, but your support through the aPHR course made all the difference. The instructors were excellent, the content was practical, and every question I had was answered quickly and clearly.”
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; Robby P,</em>
+                  <span class="edu-story-cred">aPHR</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Story 3: Mayra S -->
-        <div class="edu-story-card edu-reveal edu-reveal-d2">
-          <!-- Photo: Replace src with actual photo (e.g. images/story-mayra.jpg) -->
-          <div class="edu-story-photo-wrap">
-            <img class="edu-story-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/placeholder-certificate.svg" alt="Mayra S holding SPHR certification" loading="lazy">
-            <span class="edu-story-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Passed SPHR
-            </span>
-          </div>
-          <div class="edu-story-body">
-            <h3 class="edu-story-heading">Persistence &mdash; and Choosing Quality Prep &mdash; Pay Off</h3>
-            <p class="edu-story-quote">
-              “After failing my first attempt at the SPHR certification, I knew I needed something with more substance and a clear plan of where to start. The HR Exam Prep Course, along with the HRCI &amp; SHRM 3-Day Refresher course, provided exactly that. The course material, combined with practice tests, helped me refine my experience into an effective test-taking method. This time, I passed! I highly recommend these courses to anyone who needs a solid plan and strong resources to succeed.”
-            </p>
-            <div class="edu-story-attribution">
-              <em>&mdash; Mayra S,</em>
-              <span class="edu-story-cred">SPHR</span>
+          <!-- Slide 3: Mayra S -->
+          <div class="edu-story-slide" data-slide="2">
+            <div class="edu-story-card">
+              <div class="edu-story-photo-wrap">
+                <img class="edu-story-img"
+                  src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/mayra.jpg"
+                  alt="Mayra S holding SPHR certification"
+                  width="150" height="200" loading="lazy">
+                <span class="edu-story-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Passed SPHR
+                </span>
+              </div>
+              <div class="edu-story-body">
+                <h3 class="edu-story-heading">Persistence &mdash; and Choosing Quality Prep &mdash; Pay Off</h3>
+                <p class="edu-story-quote">
+                  “After failing my first attempt at the SPHR certification, I knew I needed something with more substance and a clear plan of where to start. The HR Exam Prep Course, along with the HRCI &amp; SHRM 3-Day Refresher course, provided exactly that. The course material, combined with practice tests, helped me refine my experience into an effective test-taking method. This time, I passed! I highly recommend these courses to anyone who needs a solid plan and strong resources to succeed.”
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; Mayra S,</em>
+                  <span class="edu-story-cred">SPHR</span>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
 
+        <!-- Slider Controls: Prev / Next Buttons & Pagination Dots -->
+        <div class="edu-stories-nav">
+          <button type="button" class="edu-stories-arrow edu-stories-prev" id="eduStoriesPrev" aria-label="Previous Testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="edu-stories-dots" id="eduStoriesDots">
+            <button type="button" class="edu-stories-dot is-active" data-index="0" aria-label="Go to testimonial 1"></button>
+            <button type="button" class="edu-stories-dot" data-index="1" aria-label="Go to testimonial 2"></button>
+            <button type="button" class="edu-stories-dot" data-index="2" aria-label="Go to testimonial 3"></button>
+          </div>
+          <button type="button" class="edu-stories-arrow edu-stories-next" id="eduStoriesNext" aria-label="Next Testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Verified Review Link -->
+      <div class="edu-stories-footer edu-reveal">
+        <a href="https://www.hr.com/en/certifications/hr-certification-testimonials_lm7w9lb1.html"
+           target="_blank"
+           class="edu-btn-primary">
+          Hear How Others Passed
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
     </div>
@@ -3681,31 +4320,54 @@
         <p class="edu-video-subtitle">Watch Certification Advisor Greg Osmond break down the real differences between live cohorts, self-paced learning, and study materials.</p>
       </div>
 
-      <!-- 16:9 Video Frame -->
-      <div class="edu-video-frame edu-reveal edu-reveal-d1">
-        <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/greg-osmond-video-placeholder.jpg"
-             alt="Pros and Cons of HR Certification Prep Options — Greg Osmond, HR.com" loading="lazy" />
-        <div class="edu-video-overlay" aria-hidden="true">
+      <!-- 16:9 Video Frame (Real First Frame as Thumbnail) -->
+      <div class="edu-video-frame edu-reveal edu-reveal-d1" id="gregVideoFrame">
+        <video id="gregOsmondVideo" poster="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/intro-video-greg-11-sep-2026.jpg" preload="none" playsinline muted style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit;">
+          <source src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/intro-video-greg-11-sep-2026.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="edu-video-overlay" id="gregVideoOverlay" role="button" tabindex="0" aria-label="Play Greg Osmond Video Explainer">
           <div class="edu-video-overlay-btn">
             <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
         </div>
       </div>
 
-      <!-- Video Caption -->
-      <p class="edu-video-caption edu-reveal edu-reveal-d2">
-        <strong>Video Overview:</strong> Featuring Greg Osmond, Lead Certification Advisor at HR.com.
-      </p>
+      <!-- Interactive Advisor Action Dock (Mirrors Video End Slide) -->
+      <div class="edu-video-advisor-dock edu-reveal edu-reveal-d2">
+        <div class="edu-video-dock-header">
+          <div class="edu-video-dock-title-group">
+            <h3 class="edu-video-dock-title">Talk to a Certification Advisor</h3>
+            <span class="edu-video-dock-tag">Free consultation. No obligation.</span>
+          </div>
+          <div class="edu-video-dock-advisor">
+            <span class="edu-video-dock-avatar-dot"></span>
+            <span><strong>Greg Osmond</strong> &mdash; HR Certification Advisor</span>
+          </div>
+        </div>
 
-      <!-- View Program Menu Button (from ourprogram.md line 115) -->
-      <div class="edu-video-btn-wrap edu-reveal edu-reveal-d2">
-        <a href="#prep-options" class="edu-video-btn-ghost">
-          View Program Menu
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 8px;">
-            <line x1="12" y1="5" x2="12" y2="19" />
-            <polyline points="19 12 12 19 5 12" />
-          </svg>
-        </a>
+        <div class="edu-video-dock-actions">
+          <a class="edu-video-dock-chip" href="mailto:gosmond@hr.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>gosmond@hr.com</span>
+          </a>
+          <a class="edu-video-dock-chip" href="tel:18774726648">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>1.877.472.6648 ext. 116</span>
+          </a>
+          <a class="edu-video-dock-btn-primary" href="https://www.hr.com/en/certifications/book-a-call/" target="_blank">
+            <span>Book Free 15-Min Advisor Call</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -3727,10 +4389,10 @@
         <!-- Action Buttons -->
         <div class="edu-footer-cta-btns">
           <a href="https://www.hr.com/en/certifications/book-a-call/" target="_blank" class="edu-footer-btn-primary">
-            Book Free 15-Min Advisor Call
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
+            <span>Book Free 15-Min Advisor Call</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
           <a href="#prep-options" class="edu-footer-btn-ghost">
@@ -3738,24 +4400,65 @@
           </a>
         </div>
 
-        <!-- Subordinate Contact Details -->
+        <!-- Subordinate Contact Details (Interactive Frosted Chips) -->
         <div class="edu-footer-contact-row">
-          <div class="edu-footer-contact-item">
-            <span style="font-size: 16px;">&#9742;</span>
-            <span>Call: <a href="tel:18774726648">1-877-472-6648 Ext. 102</a></span>
-          </div>
-          <div class="edu-footer-contact-item">
-            <span style="font-size: 16px;">&#9993;</span>
-            <span>Email: <a href="mailto:certification@hr.com">certification@hr.com</a></span>
-          </div>
+          <a class="edu-footer-contact-chip" href="tel:18774726648,102">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>Call: 1-877-472-6648 Ext. 102</span>
+          </a>
+          <a class="edu-footer-contact-chip" href="mailto:certification@hr.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>Email: certification@hr.com</span>
+          </a>
         </div>
 
-        <!-- 4 Trust Metric Seals -->
-        <div class="edu-footer-seals">
-          <div class="edu-footer-seal">&#128737; HRCI Approved Provider</div>
-          <div class="edu-footer-seal">&#128220; SHRM Recertification Provider</div>
-          <div class="edu-footer-seal">&#11088; 4.9/5 Rating (10,000+ Students)</div>
-          <div class="edu-footer-seal">&#9989; 100% Pass Assurance Guarantee</div>
+        <!-- 4 Trust Metric Seals (Balanced Responsive Grid) -->
+        <div class="edu-footer-seals-grid">
+          <div class="edu-footer-seal-card">
+            <div class="edu-footer-seal-icon is-shield">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <span>HRCI Approved Provider</span>
+          </div>
+
+          <div class="edu-footer-seal-card">
+            <div class="edu-footer-seal-icon is-doc">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <span>SHRM Recertification Provider</span>
+          </div>
+
+          <div class="edu-footer-seal-card">
+            <div class="edu-footer-seal-icon is-star">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <span>4.9/5 Rating (10,000+ Students)</span>
+          </div>
+
+          <div class="edu-footer-seal-card">
+            <div class="edu-footer-seal-icon is-guarantee">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <span>100% Pass Assurance Guarantee</span>
+          </div>
         </div>
 
         <!-- Trademark & Non-Affiliation Notice -->
@@ -3843,7 +4546,7 @@
             });
 
             // Determine recommended exam based on experience
-            if (selectedYoe === '0-1 year') {
+            if (selectedYoe === '< 1 year' || selectedYoe === '<1 year' || selectedYoe === '0-1 year') {
               var aphr = document.getElementById('inlineCardAPHR');
               if (aphr) aphr.style.display = 'block';
             } else if (selectedYoe === '1-2 year' || selectedYoe === '2-4 year') {
@@ -4004,6 +4707,158 @@
               stepIndicator2.classList.remove('is-done', 'is-active');
             }
           });
+        }
+
+        // 4. Student Testimonials Slider Controller (Auto-loop 5s + Hover Pause + Touch Swipe)
+        var sliderWrap = document.getElementById('eduStoriesSlider');
+        var storiesTrack = document.getElementById('eduStoriesTrack');
+        var storiesPrev = document.getElementById('eduStoriesPrev');
+        var storiesNext = document.getElementById('eduStoriesNext');
+        var storyDots = document.querySelectorAll('#eduStoriesDots .edu-stories-dot');
+        var storySlides = document.querySelectorAll('.edu-story-slide');
+
+        if (storiesTrack && storySlides.length > 0) {
+          var curSlide = 0;
+          var numSlides = storySlides.length;
+          var storyTimer = null;
+          var storyDelay = 5000; // 5 seconds auto-advance
+
+          function setSlide(idx) {
+            if (idx < 0) idx = numSlides - 1;
+            if (idx >= numSlides) idx = 0;
+            curSlide = idx;
+
+            storiesTrack.style.transform = 'translateX(-' + (curSlide * 100) + '%)';
+
+            storyDots.forEach(function (dot, i) {
+              if (i === curSlide) {
+                dot.classList.add('is-active');
+              } else {
+                dot.classList.remove('is-active');
+              }
+            });
+          }
+
+          function advanceSlide() {
+            setSlide(curSlide + 1);
+          }
+
+          function rewindSlide() {
+            setSlide(curSlide - 1);
+          }
+
+          function startStoryTimer() {
+            stopStoryTimer();
+            storyTimer = setInterval(advanceSlide, storyDelay);
+          }
+
+          function stopStoryTimer() {
+            if (storyTimer) {
+              clearInterval(storyTimer);
+              storyTimer = null;
+            }
+          }
+
+          if (storiesNext) {
+            storiesNext.addEventListener('click', function () {
+              advanceSlide();
+              startStoryTimer();
+            });
+          }
+
+          if (storiesPrev) {
+            storiesPrev.addEventListener('click', function () {
+              rewindSlide();
+              startStoryTimer();
+            });
+          }
+
+          storyDots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+              var targetIdx = parseInt(dot.getAttribute('data-index'), 10);
+              if (!isNaN(targetIdx)) {
+                setSlide(targetIdx);
+                startStoryTimer();
+              }
+            });
+          });
+
+          if (sliderWrap) {
+            // Pause auto-loop on hover
+            sliderWrap.addEventListener('mouseenter', stopStoryTimer);
+            sliderWrap.addEventListener('mouseleave', startStoryTimer);
+
+            // Touch Swipe support for mobile devices
+            var touchStartX = 0;
+            var touchEndX = 0;
+
+            sliderWrap.addEventListener('touchstart', function (e) {
+              touchStartX = e.changedTouches[0].screenX;
+              stopStoryTimer();
+            }, { passive: true });
+
+            sliderWrap.addEventListener('touchend', function (e) {
+              touchEndX = e.changedTouches[0].screenX;
+              var diff = touchStartX - touchEndX;
+              if (Math.abs(diff) > 40) {
+                if (diff > 0) {
+                  advanceSlide();
+                } else {
+                  rewindSlide();
+                }
+              }
+              startStoryTimer();
+            }, { passive: true });
+          }
+
+          // Initial setup
+          setSlide(0);
+          startStoryTimer();
+        }
+
+        // Greg Osmond Video Explainer (Official Thumbnail + Click-to-Play)
+        var gregVideo = document.getElementById('gregOsmondVideo');
+        var gregOverlay = document.getElementById('gregVideoOverlay');
+        var gregFrame = document.getElementById('gregVideoFrame');
+
+        if (gregVideo && gregOverlay) {
+          var hideOverlay = function () {
+            gregOverlay.classList.add('is-hidden');
+            gregOverlay.style.setProperty('display', 'none', 'important');
+            if (gregFrame) gregFrame.classList.add('is-playing');
+            gregVideo.controls = true;
+          };
+
+          var showOverlay = function () {
+            gregOverlay.classList.remove('is-hidden');
+            gregOverlay.style.removeProperty('display');
+            if (gregFrame) gregFrame.classList.remove('is-playing');
+            gregVideo.controls = false;
+          };
+
+          var playGregVideo = function () {
+            hideOverlay();
+            gregVideo.muted = false;
+            var promise = gregVideo.play();
+            if (promise && promise.catch) {
+              promise.catch(function () {
+                // If browser blocks unmuted autoplay on gesture, try muted
+                gregVideo.muted = true;
+                gregVideo.play();
+              });
+            }
+          };
+
+          gregOverlay.addEventListener('click', playGregVideo);
+          gregOverlay.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              playGregVideo();
+            }
+          });
+
+          gregVideo.addEventListener('play', hideOverlay);
+          gregVideo.addEventListener('ended', showOverlay);
         }
       } // Close initProgramPage
 

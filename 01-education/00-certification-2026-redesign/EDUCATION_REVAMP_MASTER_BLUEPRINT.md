@@ -44,7 +44,7 @@ graph TD
 - **Current Layout & Visual Elements**:
   - **Submenu**: Floating dark navy pill bar with active coral pink state.
   - **Hero**: Confetti powder-explosion cutout of a woman smiling with H1 *"HR Certification. Your Ticket to Success!"* and dual action buttons (*"Not sure where to start?"* + *"Show all courses"*).
-  - **Interactive Experience Matcher**: Standalone card with rounded red accent tab, prompt *"We'll help to determine which exam is right for you"*, and experience chips (`0-1 year`, `1-2 year`, `2-4 year`, `4-5 year`, `5-7 year`, `7+ year`).
+  - **Interactive Experience Matcher**: Standalone card with rounded red accent tab, prompt *"We'll help to determine which exam is right for you"*, and experience chips (`< 1 year`, `1-2 year`, `2-4 year`, `4-5 year`, `5-7 year`, `7+ year`).
   - **Why Earn HR Certification**: 4-dot brand motif with 4 value proposition cards (Earning power, career mobility, knowledge mastery, global network).
   - **Credential Breakdown**: Deep dive into individual exam prerequisites, target roles, and exam formats.
   - **FAQ Section**: 2-column accordion answering common eligibility and exam questions.

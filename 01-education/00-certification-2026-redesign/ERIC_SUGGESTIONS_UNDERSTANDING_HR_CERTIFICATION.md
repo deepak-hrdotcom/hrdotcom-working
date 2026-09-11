@@ -52,7 +52,7 @@ graph TD
 - **Subhead**: *"Both leading certification bodies — HRCI and SHRM — offer multiple options"*
 - **Interactive Matcher Widget**:
   - Prompt: *"We'll help to determine which exam is right for you"*
-  - Experience selector chips: `0-1 year` | `1-2 year` | `2-4 year` | `4-5 year` | `5-7 year` | `7+ year`
+  - Experience selector chips: `< 1 year` | `1-2 year` | `2-4 year` | `4-5 year` | `5-7 year` | `7+ year`
 - **Team Comment (Eric Anderson)**: *"Want to improve the 'choosing your certification' quiz option."*
 
 ---

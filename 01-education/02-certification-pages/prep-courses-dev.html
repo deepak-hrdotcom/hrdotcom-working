@@ -100,7 +100,7 @@ body > .ContentArea > .container {
   margin-left: auto !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
-  padding: 80px 0 !important;
+  padding: 48px 0 !important;
 }
 
 .edu-prep-page h1,
@@ -201,7 +201,7 @@ body > .ContentArea > .container {
 ================================================================ */
 .edu-prep-page .edu-prep-hero {
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
-  padding: 70px 0 50px 0 !important;
+  padding: 50px 0 40px 0 !important;
   border-bottom: 1px solid var(--color-border) !important;
 }
 
@@ -314,81 +314,226 @@ body > .ContentArea > .container {
   line-height: 1.2 !important;
 }
 
-/* 3 Quick Navigation Cards */
+/* ================================================================
+   3 QUICK ACTION HUB CARDS (INTENT-TIERED EXECUTIVE SYSTEM)
+================================================================ */
 .edu-prep-page .edu-quick-cards-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 20px !important;
+  gap: 22px !important;
+  position: relative !important;
 }
+
 .edu-prep-page .edu-quick-card {
-  background: #FFFFFF !important;
-  border: 1px solid var(--color-border) !important;
+  position: relative !important;
   border-radius: var(--radius-card) !important;
-  padding: 24px 22px !important;
-  box-shadow: var(--shadow-subtle) !important;
+  padding: 28px 24px 22px 24px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease !important;
-  position: relative !important;
+  overflow: hidden !important;
 }
+
+/* 4px Intent Top Accent Line */
+.edu-prep-page .edu-quick-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  transition: height 0.2s ease !important;
+}
+
 .edu-prep-page .edu-quick-card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: var(--shadow-hover) !important;
-  border-color: #93C5FD !important;
+  transform: translateY(-4px) !important;
 }
+
+.edu-prep-page .edu-quick-card:hover::before {
+  height: 5px !important;
+}
+
+/* --- CARD 1: CATALOG (INTERNATIONAL COBALT) --- */
+.edu-prep-page .edu-quick-card-catalog {
+  background: linear-gradient(180deg, #F5F9FF 0%, #EBF4FE 100%) !important;
+  border-color: #BFDBFE !important;
+}
+.edu-prep-page .edu-quick-card-catalog::before {
+  background: linear-gradient(90deg, #2563EB 0%, #3B82F6 100%) !important;
+}
+.edu-prep-page .edu-quick-card-catalog:hover {
+  background: linear-gradient(180deg, #EFF6FF 0%, #E2EFFE 100%) !important;
+  border-color: #60A5FA !important;
+  box-shadow: 0 16px 36px -6px rgba(37, 99, 235, 0.18), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-prep-page .edu-quick-card-catalog .edu-quick-card-icon {
+  background: #FFFFFF !important;
+  border: 1.5px solid #BFDBFE !important;
+  color: #2563EB !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12) !important;
+}
+.edu-prep-page .edu-quick-card-catalog .edu-quick-card-link {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border: 1px solid #1D4ED8 !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.22) !important;
+}
+.edu-prep-page .edu-quick-card-catalog .edu-quick-card-link:hover {
+  background: #1D4ED8 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* --- CARD 2: INTERACTIVE MATCHER (VISIONARY INDIGO) --- */
+.edu-prep-page .edu-quick-card-matcher {
+  background: linear-gradient(180deg, #FAF8FF 0%, #F0ECFE 100%) !important;
+  border-color: #C7D2FE !important;
+}
+.edu-prep-page .edu-quick-card-matcher::before {
+  background: linear-gradient(90deg, #4F46E5 0%, #6366F1 100%) !important;
+}
+.edu-prep-page .edu-quick-card-matcher:hover {
+  background: linear-gradient(180deg, #F5F2FF 0%, #E9E3FE 100%) !important;
+  border-color: #818CF8 !important;
+  box-shadow: 0 16px 36px -6px rgba(79, 70, 229, 0.18), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-prep-page .edu-quick-card-matcher .edu-quick-card-icon {
+  background: #FFFFFF !important;
+  border: 1.5px solid #C7D2FE !important;
+  color: #4F46E5 !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.12) !important;
+}
+.edu-prep-page .edu-quick-card-matcher .edu-quick-card-link {
+  background: #4F46E5 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #4338CA !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.22) !important;
+}
+.edu-prep-page .edu-quick-card-matcher .edu-quick-card-link:hover {
+  background: #4338CA !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+}
+
+/* --- CARD 3: TEAM PREP B2B (GROWTH EMERALD & MIDNIGHT) --- */
+.edu-prep-page .edu-quick-card-team {
+  background: linear-gradient(180deg, #F6FDF9 0%, #EAF8F0 100%) !important;
+  border-color: #A7F3D0 !important;
+}
+.edu-prep-page .edu-quick-card-team::before {
+  background: linear-gradient(90deg, #059669 0%, #10B981 100%) !important;
+}
+.edu-prep-page .edu-quick-card-team:hover {
+  background: linear-gradient(180deg, #F0FDF5 0%, #E0F5E8 100%) !important;
+  border-color: #34D399 !important;
+  box-shadow: 0 16px 36px -6px rgba(5, 150, 105, 0.18), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-prep-page .edu-quick-card-team .edu-quick-card-icon {
+  background: #FFFFFF !important;
+  border: 1.5px solid #A7F3D0 !important;
+  color: #059669 !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.12) !important;
+}
+.edu-prep-page .edu-quick-card-team .edu-quick-card-link {
+  background: #090D1A !important;
+  color: #FFFFFF !important;
+  border: 1px solid #1E293B !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25) !important;
+}
+.edu-prep-page .edu-quick-card-team .edu-quick-card-link:hover {
+  background: #059669 !important;
+  border-color: #047857 !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+}
+
+/* Badge (Team Registration) */
 .edu-prep-page .edu-quick-card-badge {
   position: absolute !important;
-  top: 14px !important;
-  right: 14px !important;
-  background: var(--color-indigo-soft) !important;
-  color: var(--color-indigo) !important;
-  border: 1px solid var(--color-indigo-border) !important;
+  top: 16px !important;
+  right: 18px !important;
+  background: #FFFFFF !important;
+  color: #065F46 !important;
+  border: 1.5px solid #A7F3D0 !important;
   border-radius: var(--radius-pill) !important;
-  padding: 3px 10px !important;
+  padding: 4px 10px !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
+  box-shadow: 0 1px 4px rgba(5, 150, 105, 0.12) !important;
 }
+
+/* Icon Box */
 .edu-prep-page .edu-quick-card-icon {
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: var(--radius-control) !important;
-  background: var(--color-primary-soft) !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin-bottom: 16px !important;
-  color: var(--color-primary) !important;
+  transition: transform 0.25s ease !important;
 }
+
+.edu-prep-page .edu-quick-card:hover .edu-quick-card-icon {
+  transform: scale(1.08) !important;
+}
+
+.edu-prep-page .edu-quick-card-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Content Hierarchy */
+.edu-prep-page .edu-quick-card-content {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
 .edu-prep-page .edu-quick-card h4 {
-  font-size: 17.5px !important;
-  font-weight: 700 !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
   color: var(--color-text-primary) !important;
-  margin-bottom: 8px !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.3 !important;
 }
+
 .edu-prep-page .edu-quick-card p {
   font-size: 14px !important;
   color: var(--color-text-secondary) !important;
-  line-height: 1.5 !important;
-  margin-bottom: 18px !important;
+  line-height: 1.55 !important;
+  margin: 0 0 20px 0 !important;
   flex-grow: 1 !important;
 }
+
+/* Executive Action Button (Full-width Grounding Anchor) */
 .edu-prep-page .edu-quick-card-link {
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  color: var(--color-primary) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 11px 18px !important;
+  border-radius: var(--radius-control) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
   text-decoration: none !important;
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  transition: transform 0.2s ease !important;
+  justify-content: space-between !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
 }
-.edu-prep-page .edu-quick-card:hover .edu-quick-card-link {
-  transform: translateX(3px) !important;
-  color: var(--color-primary-hover) !important;
+
+.edu-prep-page .edu-quick-card-link svg {
+  transition: transform 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-prep-page .edu-quick-card:hover .edu-quick-card-link svg {
+  transform: translateX(4px) !important;
 }
 
 /* ================================================================
@@ -479,19 +624,96 @@ body > .ContentArea > .container {
   box-shadow: var(--shadow-hover) !important;
   border-color: #CBD5E1 !important;
 }
+/* --- CARD 1: DARK OBSIDIAN PRESTIGE FLAGSHIP --- */
 .edu-prep-page .edu-card.is-flagship {
-  border-color: #93C5FD !important;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08) !important;
+  background: linear-gradient(180deg, #0B1120 0%, #060912 100%) !important;
+  border: 1.5px solid #3B82F6 !important;
+  box-shadow: 0 18px 40px -4px rgba(11, 17, 32, 0.55), 0 0 22px -2px rgba(37, 99, 235, 0.3) !important;
+  color: #F8FAFC !important;
 }
-.edu-prep-page .edu-card-highlight-bar {
-  background: var(--color-primary) !important;
+.edu-prep-page .edu-card.is-flagship:hover {
+  transform: translateY(-5px) !important;
+  border-color: #60A5FA !important;
+  box-shadow: 0 22px 48px -6px rgba(11, 17, 32, 0.7), 0 0 30px 0 rgba(37, 99, 235, 0.45) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-highlight-bar {
+  background: linear-gradient(90deg, #1D4ED8 0%, #2563EB 50%, #38BDF8 100%) !important;
   color: #FFFFFF !important;
   font-size: 11.5px !important;
   font-weight: 800 !important;
   text-align: center !important;
-  padding: 5px 12px !important;
-  letter-spacing: 0.05em !important;
+  padding: 7px 14px !important;
+  letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-delivery-tag {
+  background: rgba(59, 130, 246, 0.16) !important;
+  color: #93C5FD !important;
+  border: 1px solid rgba(147, 197, 253, 0.3) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-delivery-tag svg {
+  stroke: #93C5FD !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-title,
+.edu-prep-page .edu-card.is-flagship .edu-card-title a {
+  color: #FFFFFF !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-title a:hover {
+  color: #93C5FD !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-subtitle {
+  color: #60A5FA !important;
+  font-weight: 700 !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-desc {
+  color: #94A3B8 !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-metrics {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-metric-chip {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #E2E8F0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-metric-chip svg {
+  stroke: #94A3B8 !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-metric-chip.chip-guarantee {
+  background: rgba(217, 119, 6, 0.2) !important;
+  color: #FCD34D !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-metric-chip.chip-guarantee svg {
+  stroke: #FCD34D !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-bottom {
+  background: #060912 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-price {
+  color: #FFFFFF !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-price span {
+  color: #94A3B8 !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-availability {
+  color: #94A3B8 !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-availability svg {
+  stroke: #60A5FA !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-btn {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid #3B82F6 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+}
+.edu-prep-page .edu-card.is-flagship .edu-card-btn:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%) !important;
+  border-color: #60A5FA !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.55) !important;
 }
 
 .edu-prep-page .edu-card-top {
@@ -651,8 +873,214 @@ body > .ContentArea > .container {
   transform: translateY(-1px) !important;
 }
 
-/* Feature Spotlight Cards (Matcher & Comparison) */
-.edu-prep-page .edu-feature-card {
+/* ================================================================
+   CARD 5: INTERACTIVE DIAGNOSTIC MATCHER TOOL CARD (REDESIGNED)
+================================================================ */
+.edu-prep-page .edu-feature-card.edu-tool-card {
+  background: linear-gradient(150deg, #4338CA 0%, #312E81 50%, #1E1B4B 100%) !important;
+  border: 1.5px solid #818CF8 !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: 0 16px 38px -4px rgba(49, 46, 129, 0.4), 0 0 24px -2px rgba(129, 140, 248, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow: hidden !important;
+  position: relative !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease !important;
+}
+
+.edu-prep-page .edu-feature-card.edu-tool-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: #A5B4FC !important;
+  box-shadow: 0 22px 48px -6px rgba(49, 46, 129, 0.5), 0 0 32px 0 rgba(129, 140, 248, 0.35) !important;
+}
+
+/* Ambient Corner Radial Aura */
+.edu-prep-page .edu-tool-card-glow {
+  position: absolute !important;
+  top: -40px !important;
+  right: -40px !important;
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(165, 180, 252, 0.35) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Top Tool Bar with Eyebrow and Tool Icon */
+.edu-prep-page .edu-tool-card-topbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 22px 22px 14px 22px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.edu-prep-page .edu-tool-card .edu-eyebrow {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  padding: 4px 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 0 !important;
+  border-radius: var(--radius-pill) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.edu-prep-page .edu-tool-card .edu-matcher-beacon {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: #38BDF8 !important;
+  box-shadow: 0 0 0 2.5px rgba(56, 189, 248, 0.4) !important;
+  animation: progBeaconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+  display: inline-block !important;
+}
+
+.edu-prep-page .edu-tool-interactive-pill {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #E0E7FF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Framed Interactive Visual Media Centerpiece */
+.edu-prep-page .edu-tool-media-frame {
+  margin: 0 22px 14px 22px !important;
+  height: 140px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35) !important;
+  z-index: 1 !important;
+}
+
+.edu-prep-page .edu-tool-card-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.edu-prep-page .edu-tool-card:hover .edu-tool-card-photo {
+  transform: scale(1.05) !important;
+}
+
+.edu-prep-page .edu-tool-media-scrim {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 50% !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.6) 100%) !important;
+  pointer-events: none !important;
+}
+
+.edu-prep-page .edu-tool-media-badge {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+  padding: 3px 9px !important;
+  border-radius: var(--radius-pill) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Tool Card Body & Typography */
+.edu-prep-page .edu-tool-card-body {
+  padding: 0 22px 24px 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  justify-content: space-between !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.edu-prep-page .edu-tool-card h4,
+.edu-prep-page .edu-tool-card h4 strong {
+  font-size: 21px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.edu-prep-page .edu-tool-card p {
+  font-size: 14px !important;
+  color: #E0E7FF !important;
+  line-height: 1.55 !important;
+  margin: 0 0 20px 0 !important;
+  flex-grow: 1 !important;
+}
+
+.edu-prep-page .edu-tool-card p strong {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+
+/* High-Contrast Luminous White Action Button */
+.edu-prep-page .edu-tool-card .edu-tool-cta-btn {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 13px 20px !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: var(--radius-control) !important;
+  color: #3730A3 !important;
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.edu-prep-page .edu-tool-card .edu-tool-cta-btn:hover {
+  background: #F8FAFC !important;
+  color: #312E81 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32) !important;
+}
+
+.edu-prep-page .edu-tool-card .edu-tool-cta-btn svg {
+  transition: transform 0.2s ease !important;
+  stroke: #3730A3 !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-prep-page .edu-tool-card:hover .edu-tool-cta-btn svg {
+  transform: translateX(4px) !important;
+}
+
+/* Standard Feature Cards (Section 5 Comparison Guide Fallback) */
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) {
   background: #FFFFFF !important;
   border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-card) !important;
@@ -664,18 +1092,63 @@ body > .ContentArea > .container {
   position: relative !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
-.edu-prep-page .edu-feature-card:hover {
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card):hover {
   transform: translateY(-3px) !important;
   box-shadow: var(--shadow-hover) !important;
 }
-.edu-prep-page .edu-feature-card-body {
-  padding: 24px 22px !important;
-}
-.edu-prep-page .edu-feature-card-photo {
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) .edu-feature-card-photo {
   width: 100% !important;
   height: 180px !important;
   object-fit: cover !important;
   border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) .edu-feature-card-body {
+  padding: 24px 22px !important;
+}
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) .edu-eyebrow {
+  background: var(--color-background-soft) !important;
+  color: var(--color-text-secondary) !important;
+  border: 1px solid var(--color-border) !important;
+  padding: 4px 10px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-pill) !important;
+  margin-bottom: 8px !important;
+  display: inline-block !important;
+}
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) h4 {
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.35 !important;
+  margin-bottom: 10px !important;
+}
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) p {
+  font-size: 13.5px !important;
+  color: var(--color-text-secondary) !important;
+  line-height: 1.5 !important;
+  margin-bottom: 20px !important;
+}
+
+.edu-prep-page .edu-feature-card:not(.edu-tool-card) .edu-btn-primary {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 11px 18px !important;
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
 /* ================================================================
@@ -765,46 +1238,193 @@ body > .ContentArea > .container {
   transform: translateY(-1px) !important;
 }
 
+/* ================================================================
+   ADVISOR ACTION CARDS (INTENT-TIERED EXECUTIVE SYSTEM)
+================================================================ */
 .edu-prep-page .edu-advisor-action-cards {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 20px !important;
+  gap: 22px !important;
+  margin-top: 14px !important;
 }
+
 .edu-prep-page .edu-adv-action-card {
-  background: var(--color-background-subtle) !important;
-  border: 1px solid var(--color-border) !important;
+  position: relative !important;
   border-radius: var(--radius-card) !important;
-  padding: 24px !important;
+  padding: 26px 22px 20px 22px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  text-align: center !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease !important;
+  overflow: hidden !important;
 }
-.edu-prep-page .edu-adv-action-card p {
-  font-size: 14.5px !important;
-  color: var(--color-text-secondary) !important;
-  line-height: 1.5 !important;
-  margin-bottom: 18px !important;
+
+/* 4px Intent Top Accent Line */
+.edu-prep-page .edu-adv-action-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  transition: height 0.2s ease !important;
 }
-.edu-prep-page .edu-adv-action-card .edu-btn-ghost {
-  display: inline-flex !important;
+
+.edu-prep-page .edu-adv-action-card:hover {
+  transform: translateY(-4px) !important;
+}
+
+.edu-prep-page .edu-adv-action-card:hover::before {
+  height: 5px !important;
+}
+
+/* Elevated Icon Box */
+.edu-prep-page .edu-adv-card-icon {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 10px 18px !important;
-  border-radius: var(--radius-control) !important;
-  background: #FFFFFF !important;
-  border: 1px solid var(--color-border-strong) !important;
-  color: var(--color-text-primary) !important;
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
-  cursor: pointer !important;
+  margin-bottom: 14px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
 }
-.edu-prep-page .edu-adv-action-card .edu-btn-ghost:hover {
-  background: var(--color-primary) !important;
+
+.edu-prep-page .edu-adv-action-card:hover .edu-adv-card-icon {
+  transform: scale(1.06) translateY(-1px) !important;
+}
+
+.edu-prep-page .edu-adv-card-content {
+  flex-grow: 1 !important;
+  margin-bottom: 18px !important;
+  width: 100% !important;
+}
+
+.edu-prep-page .edu-adv-action-card p {
+  font-size: 14px !important;
+  color: var(--color-text-secondary) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+/* Action Button */
+.edu-prep-page .edu-adv-card-btn {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 11px 16px !important;
+  border-radius: var(--radius-control) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  border: 1px solid transparent !important;
+}
+
+.edu-prep-page .edu-adv-card-btn svg {
+  transition: transform 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-prep-page .edu-adv-action-card:hover .edu-adv-card-btn svg {
+  transform: translateX(3px) !important;
+}
+
+/* --- CARD 1: FEEDBACK (ICE COBALT) --- */
+.edu-prep-page .edu-adv-card-feedback {
+  background: linear-gradient(180deg, #F5F9FF 0%, #EBF4FE 100%) !important;
+  border-color: #BFDBFE !important;
+}
+.edu-prep-page .edu-adv-card-feedback::before {
+  background: linear-gradient(90deg, #2563EB 0%, #3B82F6 100%) !important;
+}
+.edu-prep-page .edu-adv-card-feedback:hover {
+  background: linear-gradient(180deg, #EFF6FF 0%, #E2EFFE 100%) !important;
+  border-color: #60A5FA !important;
+  box-shadow: 0 16px 36px -6px rgba(37, 99, 235, 0.16), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-prep-page .edu-adv-card-feedback .edu-adv-card-icon {
+  background: #FFFFFF !important;
+  border: 1.5px solid #BFDBFE !important;
+  color: #2563EB !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12) !important;
+}
+.edu-prep-page .edu-adv-card-feedback .edu-adv-card-btn {
+  background: #2563EB !important;
   color: #FFFFFF !important;
-  border-color: var(--color-primary) !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25) !important;
+}
+.edu-prep-page .edu-adv-card-feedback .edu-adv-card-btn:hover {
+  background: #1D4ED8 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* --- CARD 2: 1-TO-1 MEETING (VISIONARY LAVENDER / INDIGO) --- */
+.edu-prep-page .edu-adv-card-meeting {
+  background: linear-gradient(180deg, #FAF8FF 0%, #F0ECFE 100%) !important;
+  border-color: #DDD6FE !important;
+}
+.edu-prep-page .edu-adv-card-meeting::before {
+  background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%) !important;
+}
+.edu-prep-page .edu-adv-card-meeting:hover {
+  background: linear-gradient(180deg, #F5F1FF 0%, #E9E3FE 100%) !important;
+  border-color: #A78BFA !important;
+  box-shadow: 0 16px 36px -6px rgba(79, 70, 229, 0.18), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-prep-page .edu-adv-card-meeting .edu-adv-card-icon {
+  background: #FFFFFF !important;
+  border: 1.5px solid #DDD6FE !important;
+  color: #4F46E5 !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.12) !important;
+}
+.edu-prep-page .edu-adv-card-meeting .edu-adv-card-btn {
+  background: #4F46E5 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25) !important;
+}
+.edu-prep-page .edu-adv-card-meeting .edu-adv-card-btn:hover {
+  background: #4338CA !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+}
+
+/* --- CARD 3: DEMO WEBINAR (GROWTH EMERALD / MINT) --- */
+.edu-prep-page .edu-adv-card-demo {
+  background: linear-gradient(180deg, #F6FDF9 0%, #EAF8F0 100%) !important;
+  border-color: #A7F3D0 !important;
+}
+.edu-prep-page .edu-adv-card-demo::before {
+  background: linear-gradient(90deg, #059669 0%, #10B981 100%) !important;
+}
+.edu-prep-page .edu-adv-card-demo:hover {
+  background: linear-gradient(180deg, #EFFBF4 0%, #E1F4E9 100%) !important;
+  border-color: #6EE7B7 !important;
+  box-shadow: 0 16px 36px -6px rgba(5, 150, 105, 0.16), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+.edu-prep-page .edu-adv-card-demo .edu-adv-card-icon {
+  background: #FFFFFF !important;
+  border: 1.5px solid #A7F3D0 !important;
+  color: #059669 !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.12) !important;
+}
+.edu-prep-page .edu-adv-card-demo .edu-adv-card-btn {
+  background: #059669 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25) !important;
+}
+.edu-prep-page .edu-adv-card-demo .edu-adv-card-btn:hover {
+  background: #047857 !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
 }
 
 /* ================================================================
@@ -1068,6 +1688,7 @@ body > .ContentArea > .container {
   .edu-prep-page .edu-hero-grid { grid-template-columns: 1fr !important; }
   .edu-prep-page .edu-catalog-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .edu-prep-page .edu-quick-cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .edu-prep-page .edu-quick-card-team { grid-column: span 2 !important; }
   .edu-prep-page .edu-coaching-panel { grid-template-columns: 1fr !important; }
   .edu-prep-page .edu-advisor-channels-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .edu-prep-page .edu-advisor-action-cards { grid-template-columns: 1fr !important; }
@@ -1075,7 +1696,7 @@ body > .ContentArea > .container {
 }
 
 @media (max-width: 768px) {
-  .edu-prep-page section { padding: 50px 0 !important; }
+  .edu-prep-page section { padding: 34px 0 !important; }
   .edu-prep-page .edu-hero-title { font-size: 30px !important; }
   .edu-prep-page .edu-hero-sub { font-size: 18px !important; }
   .edu-prep-page .edu-hero-savings-card { flex-direction: column !important; align-items: flex-start !important; }
@@ -1128,24 +1749,17 @@ body > .ContentArea > .container {
       <!-- Right Column: Editorial Visual with Money-Back Badge -->
       <div class="edu-hero-photo-wrap">
         <img class="edu-hero-photo"
-             src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-hero-learner.jpg"
+             src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/cert-prep-hero-img.jpg"
              alt="HR Leader preparing for certification exam in modern executive workspace" />
 
-        <div class="edu-hero-badge-overlay">
-          <img src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/2024-nov-special-offer/get-your-money-back-badge.png"
-               alt="Pass Assurance Program Badge" />
-          <div class="edu-hero-badge-text">
-            Pass or Get Your<br />Money Back*!
-          </div>
-        </div>
       </div>
     </div>
 
     <!-- 3 Quick Action Hub Cards -->
     <div class="edu-quick-cards-grid">
       <!-- Card 1: View all courses -->
-      <div class="edu-quick-card">
-        <div>
+      <div class="edu-quick-card edu-quick-card-catalog">
+        <div class="edu-quick-card-content">
           <div class="edu-quick-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           </div>
@@ -1153,14 +1767,14 @@ body > .ContentArea > .container {
           <p>Move your career forward. The window is now open.</p>
         </div>
         <a class="edu-quick-card-link" href="#track-phr-shrm">
-          View all prep courses
+          <span>View all prep courses</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
 
       <!-- Card 2: 2-step matcher modal -->
-      <div class="edu-quick-card">
-        <div>
+      <div class="edu-quick-card edu-quick-card-matcher">
+        <div class="edu-quick-card-content">
           <div class="edu-quick-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
@@ -1168,15 +1782,15 @@ body > .ContentArea > .container {
           <p>We’ll help you find which exam is right for you. Answer 2 quick questions!</p>
         </div>
         <a class="edu-quick-card-link edu-trigger-matcher" data-target="#coursesWidget" data-toggle="modal" href="#coursesWidget">
-          Answer 2 quick questions!
+          <span>Answer 2 quick questions!</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
 
       <!-- Card 3: Prepare my team -->
-      <div class="edu-quick-card">
+      <div class="edu-quick-card edu-quick-card-team">
         <span class="edu-quick-card-badge">Group Registration</span>
-        <div>
+        <div class="edu-quick-card-content">
           <div class="edu-quick-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
@@ -1184,7 +1798,7 @@ body > .ContentArea > .container {
           <p>Customized HRCI<sup>&reg;</sup> &amp; SHRM<sup>&reg;</sup> prep certification course for groups</p>
         </div>
         <a class="edu-quick-card-link" href="/en/certifications/cert-group-sales_kszn0hfn.html">
-          Prepare my team
+          <span>Prepare my team</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
@@ -1410,21 +2024,39 @@ body > .ContentArea > .container {
         </div>
       </div>
 
-      <!-- Card 5: Interactive Diagnostic Feature Card -->
-      <div class="edu-feature-card">
-        <img class="edu-feature-card-photo"
-             src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-exam-matcher.jpg"
-             alt="HR practitioner thoughtfully reviewing career growth options on a modern laptop" />
+      <!-- Card 5: Interactive Diagnostic Tool Card (Redesigned) -->
+      <div class="edu-feature-card edu-tool-card">
+        <div class="edu-tool-card-glow" aria-hidden="true"></div>
 
-        <div class="edu-feature-card-body">
-          <div class="edu-eyebrow" style="margin-bottom: 8px !important;">Diagnostic Matcher</div>
-          <h4 style="font-size: 20px !important; font-weight: 800 !important; margin-bottom: 6px !important;">Which exam is right for you?</h4>
-          <p style="font-size: 14px !important; color: var(--color-text-secondary) !important; line-height: 1.5 !important; margin-bottom: 20px !important;">
-            We&#39;ll help find which exam is right for you. <strong style="color: var(--color-text-primary) !important;">Answer 2 quick questions!</strong>
+        <div class="edu-tool-card-topbar">
+          <div class="edu-eyebrow">
+            <span class="edu-matcher-beacon" aria-hidden="true"></span>
+            Diagnostic Matcher
+          </div>
+          <div class="edu-tool-interactive-pill" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+        </div>
+
+        <div class="edu-tool-media-frame">
+          <img class="edu-tool-card-photo"
+               src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-exam-matcher.jpg"
+               alt="HR practitioner thoughtfully reviewing career growth options on a modern laptop" />
+          <div class="edu-tool-media-scrim" aria-hidden="true"></div>
+          <div class="edu-tool-media-badge" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2 Questions
+          </div>
+        </div>
+
+        <div class="edu-feature-card-body edu-tool-card-body">
+          <h4>Which exam is right for you?</h4>
+          <p>
+            We&#39;ll help find which exam is right for you. <strong>Answer 2 quick questions!</strong>
           </p>
-          <a class="edu-btn-primary edu-trigger-matcher" data-target="#coursesWidget" data-toggle="modal" href="#coursesWidget" style="width: 100% !important;">
-            Check our suggestion
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <a class="edu-btn-primary edu-trigger-matcher edu-tool-cta-btn" data-target="#coursesWidget" data-toggle="modal" href="#coursesWidget">
+            <span>Check our suggestion</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
       </div>
@@ -1724,27 +2356,44 @@ body > .ContentArea > .container {
         </div>
       </div>
 
-      <!-- Card 3: Comparison Chart Feature Card -->
-      <div class="edu-feature-card">
-        <img class="edu-feature-card-photo"
-             src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-comparison-guide.jpg"
-             alt="HR Director reviewing credential comparison framework on modern tablet" />
+      <!-- Card 3: Comparison Chart Feature Card (Redesigned Tool Card) -->
+      <div class="edu-feature-card edu-tool-card">
+        <div class="edu-tool-card-glow" aria-hidden="true"></div>
 
-        <div class="edu-feature-card-body">
-          <div class="edu-eyebrow" style="margin-bottom: 8px !important;">Decision Framework</div>
-          <h4 style="font-size: 19px !important; font-weight: 800 !important; margin-bottom: 10px !important; line-height: 1.35 !important;">
+        <div class="edu-tool-card-topbar">
+          <div class="edu-eyebrow">
+            <span class="edu-matcher-beacon" aria-hidden="true"></span>
+            Decision Framework
+          </div>
+          <div class="edu-tool-interactive-pill" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+        </div>
+
+        <div class="edu-tool-media-frame">
+          <img class="edu-tool-card-photo"
+               src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/prep-comparison-guide.jpg"
+               alt="HR Director reviewing credential comparison framework on modern tablet" />
+          <div class="edu-tool-media-scrim" aria-hidden="true"></div>
+          <div class="edu-tool-media-badge" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+            Comparison Matrix
+          </div>
+        </div>
+
+        <div class="edu-feature-card-body edu-tool-card-body">
+          <h4>
             <strong>HR.com</strong> has created this <strong>comparison chart</strong> to help you understand the available certifications.
           </h4>
-          <p style="font-size: 13.5px !important; color: var(--color-text-secondary) !important; line-height: 1.5 !important; margin-bottom: 20px !important;">
+          <p>
             Evaluate eligibility prerequisites, exam formats, domain weights, and career alignments side by side.
           </p>
-          <a class="edu-btn-primary"
+          <a class="edu-btn-primary edu-tool-cta-btn"
              data-feathr-click-track="true"
              data-feathr-link-aids="[&quot;6127cfab0dc20e810ab012ed&quot;]"
-             href="/en/certifications/certification-guidelines_icnmg6la.html"
-             style="width: 100% !important;">
-            Certification Comparison Chart
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+             href="/en/certifications/certification-guidelines_icnmg6la.html">
+            <span>Certification Comparison Chart</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
       </div>
@@ -1849,36 +2498,63 @@ body > .ContentArea > .container {
 
       <!-- 3 Specific Help Cards -->
       <div class="edu-advisor-action-cards">
-        <div class="edu-adv-action-card">
-          <p>Click here to share your thoughts, comments, or concerns.</p>
-          <a class="edu-btn-ghost"
+        <!-- Card 1: Feedback (Cobalt) -->
+        <div class="edu-adv-action-card edu-adv-card-feedback">
+          <div>
+            <div class="edu-adv-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="edu-adv-card-content">
+              <p>Click here to share your thoughts, comments, or concerns.</p>
+            </div>
+          </div>
+          <a class="edu-adv-card-btn"
              data-feathr-click-track="true"
              data-feathr-link-aids="[&quot;6127cfab0dc20e810ab012ed&quot;]"
              href="mailto:certification@hr.com?subject=What I think about your Certification program">
-            Share your feedback
+            <span>Share your feedback</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
 
-        <div class="edu-adv-action-card">
-          <p>You can book a 1-to-1 time slot to discuss this with our course associate.</p>
-          <a class="edu-btn-ghost"
+        <!-- Card 2: 1-to-1 Meeting (Visionary Lavender / Indigo) -->
+        <div class="edu-adv-action-card edu-adv-card-meeting">
+          <div>
+            <div class="edu-adv-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div class="edu-adv-card-content">
+              <p>You can book a 1-to-1 time slot to discuss this with our course associate.</p>
+            </div>
+          </div>
+          <a class="edu-adv-card-btn"
              data-feathr-click-track="true"
              data-feathr-link-aids="[&quot;6127cfab0dc20e810ab012ed&quot;]"
              href="https://calendly.com/hrcertification"
              target="_blank">
-            Schedule a meeting
+            <span>Schedule a meeting</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
 
-        <div class="edu-adv-action-card">
-          <p>Click below to try our on-demand information webinar!</p>
-          <a class="edu-btn-ghost edu-trigger-video"
+        <!-- Card 3: Prep Course Demo (Growth Emerald / Mint) -->
+        <div class="edu-adv-action-card edu-adv-card-demo">
+          <div>
+            <div class="edu-adv-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="edu-adv-card-content">
+              <p>Click below to try our on-demand information webinar!</p>
+            </div>
+          </div>
+          <a class="edu-adv-card-btn edu-trigger-video"
              data-feathr-click-track="true"
              data-feathr-link-aids="[&quot;6127cfab0dc20e810ab012ed&quot;]"
              data-target="#myModalSampleLesson"
              data-toggle="modal"
              href="#myModalSampleLesson">
-            Prep course demo
+            <span>Prep course demo</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
       </div>
@@ -1997,7 +2673,7 @@ body > .ContentArea > .container {
                 Select your years of HR experience
               </h4>
               <div class="edu-fltr-options-grid">
-                <div class="edu-radio-card"><input class="exp" id="yoe1" name="fltr_yoe" type="radio" value="0-1 year" /><label for="yoe1">0-1 year</label></div>
+                <div class="edu-radio-card"><input class="exp" id="yoe1" name="fltr_yoe" type="radio" value="< 1 year" /><label for="yoe1">&lt; 1 year</label></div>
                 <div class="edu-radio-card"><input class="exp" id="yoe2" name="fltr_yoe" type="radio" value="1-2 year" /><label for="yoe2">1-2 year</label></div>
                 <div class="edu-radio-card"><input class="exp" id="yoe3" name="fltr_yoe" type="radio" value="2-4 year" /><label for="yoe3">2-4 year</label></div>
                 <div class="edu-radio-card"><input class="exp" id="yoe4" name="fltr_yoe" type="radio" value="4-5 year" /><label for="yoe4">4-5 year</label></div>
@@ -2307,7 +2983,7 @@ body > .ContentArea > .container {
         });
 
         // Determine recommended exam based on experience
-        if (selectedYoe === '0-1 year') {
+        if (selectedYoe === '< 1 year' || selectedYoe === '<1 year' || selectedYoe === '0-1 year') {
           var aphr = document.getElementById('APHR');
           if (aphr) aphr.style.display = 'block';
         } else if (selectedYoe === '1-2 year' || selectedYoe === '2-4 year') {

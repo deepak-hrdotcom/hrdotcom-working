@@ -124,7 +124,7 @@ body > .ContentArea > .container {
               radial-gradient(ellipse at 15% 75%, rgba(21, 128, 61, 0.04) 0%, transparent 50%),
               linear-gradient(180deg, #FFFFFF 0%, var(--color-background-subtle) 100%) !important;
   border-bottom: 1px solid var(--color-border) !important;
-  padding: 70px 0 60px 0 !important;
+  padding: 50px 0 42px 0 !important;
   overflow: hidden !important;
 }
 
@@ -188,6 +188,7 @@ body > .ContentArea > .container {
 
 .edu-testimonials-page .edu-gradient-text {
   background: linear-gradient(135deg, var(--color-primary) 0%, #4F46E5 100%) !important;
+  background-clip: text !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   display: inline-block !important;
@@ -330,23 +331,21 @@ body > .ContentArea > .container {
 /* Right Column Hero Visual */
 .edu-testimonials-page .edu-hero-visual-frame {
   position: relative !important;
-  background: #FFFFFF !important;
+  background: transparent !important;
   border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-panel) !important;
-  padding: 16px !important;
+  padding: 0 !important;
   box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
 }
 
 .edu-testimonials-page .edu-hero-banner-img {
   width: 100% !important;
   height: auto !important;
-  max-height: 520px !important;
-  object-fit: contain !important;
-  border-radius: 14px !important;
   display: block !important;
+  border-radius: inherit !important;
+  object-fit: cover !important;
 }
 
 /* Floating Proof Badges */
@@ -418,7 +417,7 @@ body > .ContentArea > .container {
    SECTION 2 — CREDENTIAL FILTER NAVIGATION
 ================================================================ */
 .edu-testimonials-page .edu-filter-section {
-  padding: 42px 0 32px 0 !important;
+  padding: 28px 0 22px 0 !important;
   background-color: var(--color-background) !important;
 }
 
@@ -489,7 +488,7 @@ body > .ContentArea > .container {
    SECTION 3 — TESTIMONIALS MASONRY GRID & CARDS
 ================================================================ */
 .edu-testimonials-page .edu-cards-section {
-  padding: 10px 0 50px 0 !important;
+  padding: 10px 0 36px 0 !important;
   background-color: var(--color-background) !important;
 }
 
@@ -523,6 +522,25 @@ body > .ContentArea > .container {
   justify-content: flex-start !important;
   position: relative !important;
   overflow: hidden !important;
+  animation: eduCardFadeIn 0.3s ease forwards !important;
+}
+
+/* Force hide when is-hidden or display:none is present, overriding display: flex !important */
+.edu-testimonials-page .testimonial_card.is-hidden,
+.edu-testimonials-page .testimonial_card[style*="display: none"],
+.edu-testimonials-page .testimonial_card[style*="display:none"] {
+  display: none !important;
+}
+
+@keyframes eduCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .edu-testimonials-page .testimonial_card::before {
@@ -845,20 +863,12 @@ body > .ContentArea > .container {
     column-count: 2 !important;
     column-gap: 20px !important;
   }
-
-  .edu-testimonials-page .edu-proof-top {
-    right: 8px !important;
-  }
-
-  .edu-testimonials-page .edu-proof-bottom {
-    left: 8px !important;
-  }
 }
 
 @media (max-width: 768px) {
   .edu-testimonials-page .edu-hero-section {
-    padding: 45px 0 40px 0 !important;
-  }
+        padding: 34px 0 28px 0 !important;
+      }
 
   .edu-testimonials-page .edu-hero-h1 {
     font-size: 32px !important;
@@ -891,16 +901,6 @@ body > .ContentArea > .container {
   .edu-testimonials-page .trademark-disclaimer {
     padding: 20px !important;
     margin-top: 35px !important;
-  }
-
-  .edu-testimonials-page .edu-proof-top,
-  .edu-testimonials-page .edu-proof-bottom {
-    position: static !important;
-    margin: 10px 0 !important;
-  }
-
-  .edu-testimonials-page .edu-hero-visual-frame {
-    flex-direction: column !important;
   }
 }
 </style>
@@ -960,27 +960,7 @@ body > .ContentArea > .container {
       <!-- Right Column: Authentic Graduate Proof Showcase -->
       <div class="edu-hero-col-right">
         <div class="edu-hero-visual-frame">
-          <img alt="HR Certified Graduates Savanna Welch PHR and Jessica Goodell SPHR" class="edu-hero-banner-img" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial_banner.png" onerror="this.src='$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial_banner.png'" />
-          
-          <div class="edu-floating-proof-chip edu-proof-top">
-            <span class="edu-proof-icon emerald">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            </span>
-            <div class="edu-proof-text">
-              <strong>93% Pass Rate</strong>
-              <small>First-Time Exam Candidates</small>
-            </div>
-          </div>
-
-          <div class="edu-floating-proof-chip edu-proof-bottom">
-            <span class="edu-proof-icon gold">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </span>
-            <div class="edu-proof-text">
-              <strong>100% Pass Assurance</strong>
-              <small>Money-Back Guarantee</small>
-            </div>
-          </div>
+          <img alt="HR Certified Graduates Savanna Welch, Rohan Mehta, and Alumni holding official certificates" class="edu-hero-banner-img" src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/testimonial-hero-img.jpg" onerror="this.onerror=null; this.src='images/testimonial-hero-img.jpg';" />
         </div>
       </div>
     </div>
@@ -1013,7 +993,7 @@ body > .ContentArea > .container {
 
     <div class="edu-loadmore-container">
       <a class="hr_custom_btn gray_edu_btn btn_medium round shadow" href="#" id="loadMore">
-        <span>View more comments</span>
+        <span>View more testimonials</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </a>
     </div>
@@ -1040,7 +1020,7 @@ body > .ContentArea > .container {
 
 <!-- Testimonials Data Script (CMS Path) -->
 <script
-  src="$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial-2025.js"
+  src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/testimonial-2025.js"
   type="text/javascript"
 ></script>
 
@@ -1053,38 +1033,163 @@ body > .ContentArea > .container {
   }
 </script>
 
-<!-- Filtering & Interaction Script -->
+<!-- Smart Filtering & Pagination Script (6-by-6 + Show Less) -->
 <script>
   (function () {
-    function setupFilter() {
+    var INITIAL_COUNT = 6;
+    var BATCH_SIZE = 6;
+    var activeFilter = 'all';
+    var visibleCount = INITIAL_COUNT;
+
+    function getMatchingCards() {
+      if (!window.jQuery) return [];
+      var $ = window.jQuery;
+      if (activeFilter === 'all' || activeFilter === 'testimonial_card') {
+        return $('.testimonials .testimonial_card');
+      }
+      return $('.testimonials .testimonial_card.' + activeFilter);
+    }
+
+    function updateButtonUI(totalMatching) {
+      if (!window.jQuery) return;
+      var $ = window.jQuery;
+      var $loadMoreContainer = $('.edu-loadmore-container');
+      var $loadMoreBtn = $('#loadMore');
+
+      // Never allow legacy scripts to fade out or hide the button
+      $loadMoreBtn.stop(true, true).css({ display: 'inline-flex', opacity: 1 });
+      $loadMoreContainer.stop(true, true).css({ display: 'block', opacity: 1 });
+
+      if (totalMatching <= INITIAL_COUNT) {
+        $loadMoreContainer.hide();
+        return;
+      }
+
+      $loadMoreContainer.show();
+
+      if (visibleCount >= totalMatching) {
+        // ALL testimonials are displayed -> Change button text to "Show less"
+        $loadMoreBtn.attr('data-mode', 'less');
+        $loadMoreBtn.html(
+          '<span>Show less</span>' +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>'
+        );
+      } else {
+        // More testimonials remain to be shown -> "View more testimonials"
+        $loadMoreBtn.attr('data-mode', 'more');
+        $loadMoreBtn.html(
+          '<span>View more testimonials</span>' +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
+        );
+      }
+    }
+
+    function render() {
+      if (!window.jQuery) return;
+      var $ = window.jQuery;
+      var $all = $('.testimonials .testimonial_card');
+      var $matching = getMatchingCards();
+      var totalMatching = $matching.length;
+
+      if ($all.length === 0) return;
+
+      // Hide all cards first
+      $all.addClass('is-hidden').attr('style', 'display: none !important;');
+
+      // Reveal matching cards up to visibleCount
+      $matching.each(function (idx) {
+        if (idx < visibleCount) {
+          $(this).removeClass('is-hidden').removeAttr('style');
+        } else {
+          $(this).addClass('is-hidden').attr('style', 'display: none !important;');
+        }
+      });
+
+      updateButtonUI(totalMatching);
+    }
+
+    function onLoadMoreClicked(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof e.stopImmediatePropagation === 'function') {
+          e.stopImmediatePropagation();
+        }
+      }
+
+      var matching = getMatchingCards();
+      var totalMatching = matching.length;
+      var currentMode = window.jQuery ? window.jQuery('#loadMore').attr('data-mode') : 'more';
+
+      if (currentMode === 'less' || visibleCount >= totalMatching) {
+        // All displayed -> user clicked "Show less" -> Collapse back to initial batch
+        visibleCount = INITIAL_COUNT;
+        render();
+        if (window.jQuery) {
+          var $target = window.jQuery('.edu-filter-section');
+          if ($target.length) {
+            window.jQuery('html, body').animate({ scrollTop: $target.offset().top - 20 }, 350);
+          }
+        }
+      } else {
+        // User clicked "View more testimonials" -> Reveal next batch of 6
+        visibleCount += BATCH_SIZE;
+        render();
+      }
+    }
+
+    // Intercept click on #loadMore in CAPTURE phase to completely block legacy testimonial-2025.js listeners
+    document.addEventListener('click', function (e) {
+      var btn = e.target && (e.target.id === 'loadMore' ? e.target : e.target.closest('#loadMore'));
+      if (btn) {
+        onLoadMoreClicked(e);
+      }
+    }, true);
+
+    function initTestimonials() {
       if (typeof jQuery === 'undefined') {
-        setTimeout(setupFilter, 100);
+        setTimeout(initTestimonials, 40);
         return;
       }
       var $ = jQuery;
-      var $more = $('#loadMore');
+      var $allCards = $('.testimonials .testimonial_card');
 
-      // Delegated filter button handler
-      $(document).on('click', '#myBtnContainer .tes-btn', function (e) {
+      if ($allCards.length === 0) {
+        setTimeout(initTestimonials, 40);
+        return;
+      }
+
+      // Safeguard: neutralise any legacy fadeOut attempts on #loadMore
+      if ($.fn.fadeOut) {
+        var origFadeOut = $.fn.fadeOut;
+        $.fn.fadeOut = function () {
+          if (this.is('#loadMore') || this.is('.edu-loadmore-container')) {
+            return this;
+          }
+          return origFadeOut.apply(this, arguments);
+        };
+      }
+
+      // Filter tabs click handler
+      $(document).off('click.tesFilter').on('click.tesFilter', '#myBtnContainer .tes-btn', function (e) {
         e.preventDefault();
         var $btns = $('#myBtnContainer .tes-btn');
         $btns.removeClass('active');
         $(this).addClass('active');
 
-        var active = $(this).data('filter');
-        var $items = $('.testimonials .testimonial_card');
-
-        if (active === 'testimonial_card' || active === 'all') {
-          $items.hide().fadeIn(300);
+        var filter = $(this).data('filter') || 'all';
+        if (filter === 'testimonial_card' || filter === 'all') {
+          activeFilter = 'all';
         } else {
-          $items.hide().filter('.' + active).fadeIn(300);
+          activeFilter = filter;
         }
 
-        $more.hide();
+        visibleCount = INITIAL_COUNT;
+        render();
       });
 
-      // Back to top behavior
-      $(window).on('scroll', function () {
+      // Back to top button
+      $(window).off('scroll.gotop').on('scroll.gotop', function () {
         if ($(this).scrollTop() > 300) {
           $('.gotop').css('display', 'inline-flex').fadeIn(200);
         } else {
@@ -1092,17 +1197,26 @@ body > .ContentArea > .container {
         }
       });
 
-      $('.gotop').on('click', function (e) {
+      $('.gotop').off('click.gotop').on('click.gotop', function (e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, 400);
         return false;
       });
+
+      // Initial render
+      render();
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupFilter);
+      document.addEventListener('DOMContentLoaded', function () {
+        initTestimonials();
+        setTimeout(initTestimonials, 80);
+        setTimeout(initTestimonials, 250);
+      });
     } else {
-      setupFilter();
+      initTestimonials();
+      setTimeout(initTestimonials, 80);
+      setTimeout(initTestimonials, 250);
     }
   })();
 </script>
