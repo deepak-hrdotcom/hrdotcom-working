@@ -83,7 +83,7 @@ INSTRUCTORS
 
 | ![][image10] | ![][image11] | ![][image12] | ![][image13] |
 | ----- | ----- | ----- | ----- |
-| **Alaena Mallory** MHRM, SHRM-CP | **Beverly Dance** MBA, SPHR, SHRM-SCP | **Chris Vokaty** MBA, SPHR, SHRM-SCP | **Dan Rivera**  |
+| **Alaena Mallory** MHRM, SHRM-CP | **Beverly Dance** MBA, SPHR, SHRM-SCP | **Chris Vokaty** MBA, SPHR, SHRM-SCP | **Dan Rivera** PHR, MHRM |
 
 | ![][image14] | ![][image15] |  |  |
 | ----- | ----- | :---- | :---- |

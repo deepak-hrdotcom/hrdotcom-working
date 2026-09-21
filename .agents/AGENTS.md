@@ -20,7 +20,7 @@
   - You are strictly **NOT** supposed to write new copy, modify copy, or rewrite approved text. All existing copy, headings, curriculum descriptions, pricing text, and disclaimers must remain word-for-word intact.
   - **NEVER invent stats, numbers, or fake metrics**: Do NOT invent pass rates, student counts, average salary figures, or review ratings. Only use verified, existing data from official source files.
   - **NEVER make fake promises**: Absolutely no fabricated guarantees, artificial urgency/timers, or exaggerated outcome claims.
-- **The 8-Page Target Suite**:
+- **Suite A: The 8 Certification Hub & Funnel Pages** (Governed by skill `education-pages-revamp`):
   1. `understanding-hr-certification-dev.html` (Baseline Decision Hub)
   2. `preparation-options.html` (Course Catalog & Cohort Matrix)
   3. `pass-assurance-program.html` (100% Money-Back Guarantee)
@@ -29,6 +29,26 @@
   6. `testimonials.html` (Verified Graduate Proof & Salary Boosts)
   7. `ask-my-employer.html` (Employer Reimbursement Kit)
   8. `book-a-call.html` (Advisor Consultation & Demos)
+
+- **Suite B: The Certification Course Detail & Cohort Suite** (Governed by skill `course-details-page-redesign`):
+  - **Living Golden Benchmark**: [`16-weeks-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/16-weeks-dev.html) (Mandatory 1:1 reference for **Design, Visual Layout, CSS Stylesheet & HTML Component Anatomy** across all course detail pages; text, curriculum descriptions, pricing, and cohort schedules remain course-specific).
+  - **Master Outer CMS Template**: [`00-template-dev/2026_CertificationDetailsPages-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/00-template-dev/2026_CertificationDetailsPages-dev.html)
+  - **Pages in Suite**:
+    1. `16-weeks-dev.html` (16-Week Online Prep — **Production Standard**)
+    2. `8-weeks-dev.html` (8-Week Accelerated Prep)
+    3. `aphr-prep-dev.html` (aPHR Associate Professional Prep)
+    4. `shrm-prep-dev.html` (SHRM-CP & SHRM-SCP Focused Prep)
+    5. Materials-Only / Self-Paced detail pages
+  - **Mandatory 9-Section Course Anatomy**:
+    1. Executive Hero Stage (Light multi-stop atmospheric gradient, 76px/44px padding, 1.32fr/0.68fr grid, single-row 3-button CTA cluster, obsidian prestige seal card with 100% guarantee & 95.6% pass rate badges) + Support Concierge Line.
+    2. Sticky In-Page Subnav (`top: mainNavHeight + 10px`, scrollspy active sync).
+    3. Course Overview Inclusions Master Box (unified container, bold lead metrics `#0F172A`).
+    4. Features & Benefits with Progressive Disclosure (3 tabs, 6 cards with 2-line preview & animated Read more/less toggle, uniform heights).
+    5. Pricing Section — Option A (Soft Porcelain Slate Canvas `#F8FAFC`, 3 tiers, center Prime bundle highlighted in Cobalt `#2563EB` with "Popular Choice" badge, bottom Prime CTA).
+    6. Cohort Enrollment Schedule Master Card (Early bird banner, multi-column cohort rows with dual CTAs + map shipment, integrated footer with new class CTA + withdrawal policy).
+    7. Refer-a-Friend Strip (Midnight Obsidian, gift icon, point perk callout).
+    8. Prime HR Membership Bundle Banner (2-column layout, visual + checklist).
+    9. Testimonials Slider, Related Products Grid & Legal Disclaimers.
 
 ### 2. STRICT DESIGN SYSTEM: International Executive Education Standard
 - **🚫 FORBIDDEN**: DO NOT use legacy HR.com rainbow colors (`#EF4A3D`, `#E51069`, `#FDB414`, `#4AC4D6`, `#94C83D`) or default `Roboto` font.

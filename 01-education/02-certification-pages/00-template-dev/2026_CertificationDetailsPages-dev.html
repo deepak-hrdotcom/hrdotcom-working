@@ -1,0 +1,576 @@
+<!-- @format -->
+
+<div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
+<link
+  rel="stylesheet"
+  type="text/css"
+  media="screen"
+  href="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/css/hr_education.css"
+/>
+<style type="text/css">
+  .ml_btnset {
+    justify-content: center !important;
+  }
+  .hrsnbadbtm .hrbtm_fixedad img {
+    display: none !important;
+  }
+
+  /* Modal */
+  #sample.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483647 !important;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  #sample.modal .modal-box {
+    margin: 10% auto;
+    width: 1100px;
+    height: 650px;
+    background: #fff;
+    color: #333;
+    position: relative;
+    animation: modalopen 1s;
+  }
+
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  #sample.modal .modal-body {
+    padding: 50px 10px 50px 10px !important;
+  }
+  #sample.modal .closeBtn {
+    cursor: pointer;
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .ml_info_wrapper.recert
+    .ml_info_dls
+    .ml_spt_dls
+    .ml_trans_btn
+    .ml_social
+    > a {
+    cursor: pointer;
+  }
+
+  /* ---- CMS FULL-WIDTH CANVAS OVERRIDES ---- */
+  body > .ContentArea {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body > .ContentArea > .container {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body > .ContentArea > .container > div[style*='float:right'] {
+    float: none !important;
+    text-align: right;
+  }
+
+  #copy {
+    color: #ccff00;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ---- 2026 INTERNATIONAL EXECUTIVE SUBMENU & OUTER CANVAS FORCING ---- */
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+  .edu_container {
+    width: 95vw !important;
+    max-width: 1360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hr_submenu_outer_wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 75px !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2147483640 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #090D1A !important;
+  }
+
+  .hr_custom_submenu {
+    background: #090D1A !important; /* Midnight Obsidian */
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 75px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    z-index: 2147483640 !important;
+    box-sizing: border-box !important;
+  }
+
+  .hr_submenu_inner {
+    width: 100% !important;
+    max-width: 1360px !important;
+    min-height: 75px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    box-sizing: border-box !important;
+    scroll-behavior: smooth !important;
+  }
+
+  .hr_submenu_inner::-webkit-scrollbar,
+  .hr_custom_submenu::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  ul.submenu_list {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 3px !important;
+    box-sizing: border-box !important;
+  }
+
+  ul.submenu_list > li {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+  }
+
+  ul.submenu_list > li > a {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #E2E8F0 !important;
+    height: 38px !important;
+    padding: 0 14px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    letter-spacing: -0.01em !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  ul.submenu_list > li > a:hover {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    text-decoration: none !important;
+  }
+
+  ul.submenu_list > li > a.active {
+    background: #2563EB !important; /* International Cobalt */
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4) !important;
+    cursor: default !important;
+    padding: 0 16px !important;
+  }
+
+  /* Small Desktop & Laptop (1025px - 1280px) */
+  @media screen and (min-width: 1025px) and (max-width: 1280px) {
+    ul.submenu_list > li > a {
+      font-size: 12px !important;
+      padding: 0 10px !important;
+      height: 36px !important;
+    }
+    ul.submenu_list > li > a.active {
+      padding: 0 12px !important;
+    }
+  }
+
+  /* Tablets & Mobile Swiping (< 1024px) */
+  @media screen and (max-width: 1024px) {
+    .hr_custom_submenu {
+      border-radius: 0 !important;
+      padding: 6px 0 !important;
+    }
+    .hr_submenu_inner {
+      padding: 0 12px !important;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%) !important;
+      mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%) !important;
+    }
+    ul.submenu_list {
+      justify-content: flex-start !important;
+      width: max-content !important;
+      gap: 6px !important;
+    }
+    ul.submenu_list > li {
+      flex: 0 0 auto !important;
+    }
+    ul.submenu_list > li > a {
+      font-size: 12.5px !important;
+      padding: 0 13px !important;
+      height: 36px !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+    }
+  }
+
+  /* Sticky Submenu Past Fold */
+  .hr_submenu_outer_wrapper.is-stuck,
+  .hr_custom_submenu.is-stuck {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 75px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-left: none !important;
+    border-right: none !important;
+    z-index: 2147483647 !important;
+    background: rgba(9, 13, 26, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
+    animation: eduSubmenuSlideIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  @keyframes eduSubmenuSlideIn {
+    0% {
+      opacity: 0.85;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .edu_submenu_placeholder {
+    display: none;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hr_submenu_outer_wrapper.is-stuck,
+    .hr_custom_submenu.is-stuck {
+      top: 0 !important;
+      width: 100% !important;
+      border-radius: 0 !important;
+      z-index: 2147483647 !important;
+    }
+  }
+
+  #st-2 {
+    z-index: 10000000000 !important;
+  }
+</style>
+
+<script>
+  feathr(
+    'convert',
+    '615c4d7f26f75ed2358f7ccb',
+    {
+      amount: 0,
+      currency: 'USD',
+      category: 'Contact Us',
+    }
+  );
+</script>
+
+<div class="edu_submenu_placeholder" id="eduSubmenuPlaceholder"></div>
+<div class="hr_submenu_outer_wrapper" id="eduSubmenuContainer">
+  <div class="hr_custom_submenu" id="eduCustomSubmenu">
+    <div class="edu_container hr_submenu_inner">
+      <ul class="submenu_list">
+        <li>
+          <a href="/en/certifications/our-program_mtvdpt3u.html">Our Program</a>
+        </li>
+        <li>
+          <a href="/en/certifications/understanding_certification/">Why Certify</a>
+        </li>
+        <li>
+          <a class="active" href="/en/certifications/hrci_shrm_prep_courses/">Prep Courses</a>
+        </li>
+        <li>
+          <a href="/en/certifications/pass-assurance-program_mtu5col0.html">Pass Guarantee</a>
+        </li>
+        <li>
+          <a href="/en/certifications/cert-group-sales_kszn0hfn.html">For Teams</a>
+        </li>
+        <li>
+          <a href="/en/certifications/recertification/">Recertification</a>
+        </li>
+        <li>
+          <a href="/en/certifications/hr-certification-testimonials_lm7w9lb1.html">Testimonials</a>
+        </li>
+        <li>
+          <a href="/en/certifications/ask-my-employer_lwatg3j5.html">Convince Employer</a>
+        </li>
+        <li>
+          <a href="/en/certifications/why-should-you-get-hr-certified_mu3vqfhl.html">Resources</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+$desc_long
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  rel="stylesheet"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.swocas_slider').owlCarousel({
+      loop: true,
+      autoplay: false,
+      margin: 30,
+      navText: [
+        '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M1.363,10A1.363,1.363,0,0,1,0,8.636V1.363a1.363,1.363,0,1,1,2.727,0V7.273H8.636a1.363,1.363,0,0,1,0,2.727Z" fill="#454F5B" transform="translate(7.071) rotate(45)"></path></svg>',
+        '<svg height="14.142" viewBox="0 0 14.142 14.142" width="14.142" xmlns="http://www.w3.org/2000/svg"><path d="M0,8.636V1.363A1.363,1.363,0,0,1,1.363,0H8.636a1.363,1.363,0,0,1,0,2.727H2.727V8.636A1.363,1.363,0,0,1,0,8.636Z" fill="#454F5B" transform="translate(14.142 7.071) rotate(135)"></path></svg>',
+      ],
+      navContainer: '.swocas_wrapper .team .cust-nav',
+      dots: true,
+      items: 3,
+      responsive: {
+        0: {
+          items: 1,
+          stagePadding: 0,
+          nav: false,
+        },
+        767: {
+          items: 2,
+          stagePadding: 0,
+          nav: false,
+        },
+        992: {
+          items: 3,
+          stagePadding: 0,
+          nav: false,
+        },
+        1000: {
+          items: 3,
+          stagePadding: 0,
+          nav: true,
+        },
+      },
+    })
+  })
+
+  var $temp = $('<input>')
+  var $url = $(location).attr('href')
+
+  $('#copy_url').on('click', function () {
+    $('body').append($temp)
+    $temp.val($url).select()
+    document.execCommand('copy')
+    $temp.remove()
+    $('#copy').text('Link Copied!')
+    $('#copy').delay(3000).fadeOut('slow')
+  })
+
+  $(function () {
+    $('.closeBtn').click(function () {
+      $('.modal').modal('hide')
+    })
+
+    // Auto-scroll active submenu tab into center view on small desktops / mobile
+    setTimeout(function () {
+      var $active = $('.submenu_list > li > a.active')
+      var $container = $('.hr_submenu_inner').length
+        ? $('.hr_submenu_inner')
+        : $('.hr_custom_submenu')
+      if ($active.length && $container.length) {
+        var containerEl = $container[0]
+        if (containerEl.scrollWidth > containerEl.clientWidth) {
+          var scrollTarget =
+            $active.offset().left -
+            $container.offset().left +
+            containerEl.scrollLeft -
+            $container.width() / 2 +
+            $active.outerWidth() / 2
+          $container.animate({ scrollLeft: scrollTarget }, 300)
+        }
+      }
+    }, 200)
+
+    // Sticky Submenu Past Fold
+    ;(function () {
+      var submenu =
+        document.getElementById('eduCustomSubmenu') ||
+        document.querySelector('.hr_custom_submenu')
+      var container =
+        document.getElementById('eduSubmenuContainer') ||
+        (submenu ? submenu.parentElement : null)
+      var placeholder = document.getElementById('eduSubmenuPlaceholder')
+      if (!submenu || !container) return
+
+      var isStuck = false
+
+      function getDocScrollTop() {
+        return (
+          window.pageYOffset ||
+          window.scrollY ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0
+        )
+      }
+
+      var baseTop = 0
+      function measureBaseTop() {
+        if (placeholder && placeholder.style.display !== 'none') {
+          baseTop = placeholder.getBoundingClientRect().top + getDocScrollTop()
+        } else {
+          var curScroll = getDocScrollTop()
+          var rect = container.getBoundingClientRect()
+          baseTop = rect.top + curScroll
+        }
+      }
+
+      measureBaseTop()
+
+      function updateSticky() {
+        var scrollY = getDocScrollTop()
+        if (baseTop <= 0) {
+          measureBaseTop()
+        }
+
+        if (scrollY > baseTop) {
+          if (!isStuck) {
+            var h = container.offsetHeight || submenu.offsetHeight
+            if (placeholder) {
+              placeholder.style.display = 'block'
+              placeholder.style.height = h + 'px'
+              placeholder.style.margin = '0px'
+            }
+            container.classList.add('is-stuck')
+            submenu.classList.add('is-stuck')
+            isStuck = true
+          }
+        } else {
+          if (isStuck) {
+            container.classList.remove('is-stuck')
+            submenu.classList.remove('is-stuck')
+            if (placeholder) {
+              placeholder.style.display = 'none'
+              placeholder.style.height = '0px'
+            }
+            isStuck = false
+          }
+        }
+      }
+
+      var ticking = false
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateSticky()
+            ticking = false
+          })
+          ticking = true
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true })
+      document.addEventListener('scroll', onScroll, { passive: true })
+      window.addEventListener('touchmove', onScroll, { passive: true })
+      window.addEventListener('resize', function () {
+        measureBaseTop()
+        updateSticky()
+      })
+      window.addEventListener('load', function () {
+        measureBaseTop()
+        updateSticky()
+      })
+
+      setTimeout(updateSticky, 60)
+    })()
+  })
+</script>
+
+<!-- Modal -->
+<div class="modal" id="sample">
+  <div class="modal-box">
+    <div class="modal-body">
+      <iframe
+        src="$var3"
+        width="1050"
+        height="550"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </div>
+    <img
+      class="closeBtn"
+      src="$public/remoteimages/website-images/2022_siteupdate/2022_Certification/images/close.svg"
+      alt="close"
+    />
+  </div>
+</div>
+<!-- Modal end -->
+
+$designAttribute:masterD_no_sidebar
+$designAttribute:helpdesk
+$designAttribute:quick_login_m1
+$designAttribute:splashCheckout

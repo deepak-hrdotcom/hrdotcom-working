@@ -110,7 +110,6 @@ body > .ContentArea > .container {
   color: var(--color-text-secondary) !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
-  overflow-x: hidden !important;
 }
 
 .edu-recert-page section {
@@ -599,33 +598,78 @@ body > .ContentArea > .container {
    SECTION 3 — STICKY LANDMARK SUBNAV BAR
 ================================================================ */
 .edu-recert-page .edu-subnav-strip {
-  background: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--color-border) !important;
   border-top: 1px solid var(--color-border) !important;
+  position: -webkit-sticky !important;
   position: sticky !important;
-  top: 0 !important;
-  z-index: 100 !important;
-  box-shadow: var(--shadow-sm) !important;
+  top: 85px !important; /* Pins underneath the sticky CMS main navigation with 10px breathing room */
+  z-index: 9999 !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+  transition: box-shadow 0.2s ease !important;
+}
+.edu-recert-page .edu-subnav-strip.is-stuck {
+  position: fixed !important;
+  top: 85px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08) !important;
+}
+.edu-subnav-placeholder {
+  display: none;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.edu-recert-page .edu-subnav-wrap {
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
 }
 .edu-recert-page .edu-subnav-list {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 32px !important;
-  padding: 14px 0 !important;
+  gap: 16px !important;
+  padding: 10px 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+}
+.edu-recert-page .edu-subnav-item {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
 }
 .edu-recert-page .edu-subnav-item a {
-  font-size: 14px !important;
+  font-size: 13.5px !important;
   font-weight: 600 !important;
   color: var(--color-text-secondary) !important;
   text-decoration: none !important;
-  padding: 6px 10px !important;
+  padding: 7px 14px !important;
   border-radius: var(--radius-control) !important;
+  border: 1px solid transparent !important;
   transition: all 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
 }
 .edu-recert-page .edu-subnav-item a:hover {
   color: var(--color-primary) !important;
   background: var(--color-primary-soft) !important;
+  border-color: var(--color-primary-border) !important;
+}
+.edu-recert-page .edu-subnav-item a.active {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-soft) !important;
+  border-color: var(--color-primary-border) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.12) !important;
 }
 .edu-recert-page .edu-subnav-home {
   display: inline-flex !important;
@@ -637,11 +681,23 @@ body > .ContentArea > .container {
   background: var(--color-background-subtle) !important;
   border: 1px solid var(--color-border) !important;
   color: var(--color-text-secondary) !important;
+  transition: all 0.15s ease !important;
 }
 .edu-recert-page .edu-subnav-home:hover {
   background: var(--color-primary-soft) !important;
   color: var(--color-primary) !important;
   border-color: var(--color-primary-border) !important;
+}
+
+/* Precise Section Scroll Margin Offset to prevent clipping behind double sticky headers */
+.edu-recert-page section[id],
+.edu-recert-page #eduHome,
+.edu-recert-page #eduFandB,
+.edu-recert-page #eduRequirements,
+.edu-recert-page #ethics-course,
+.edu-recert-page #eduPricing,
+.edu-recert-page #eduRproduct {
+  scroll-margin-top: 145px !important;
 }
 
 /* ================================================================
@@ -1182,88 +1238,102 @@ body > .ContentArea > .container {
    SECTION 9 — RELATED PRODUCTS (GET CERTIFIED BY HR.COM)
 ================================================================ */
 .edu-recert-page .edu-related-sec {
-  background: var(--color-dark-surface) !important;
-  color: #FFFFFF !important;
-  padding: 48px 0 !important;
+  background: #090D1A !important;
+  padding: 60px 0 !important;
   border-bottom: 1px solid #1E293B !important;
 }
 .edu-recert-page .edu-related-head {
   text-align: center !important;
   max-width: 800px !important;
-  margin: 0 auto 50px auto !important;
+  margin: 0 auto 40px auto !important;
 }
 .edu-recert-page .edu-related-head h2 {
-  font-size: 32px !important;
+  font-size: 26px !important;
   color: #FFFFFF !important;
-  font-weight: 800 !important;
-  margin-bottom: 10px !important;
-}
-.edu-recert-page .edu-related-head p {
-  font-size: 16px !important;
-  color: #94A3B8 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
   margin: 0 !important;
 }
 
 .edu-recert-page .edu-related-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 28px !important;
+  gap: 24px !important;
 }
 .edu-recert-page .edu-related-card {
-  background: #1E293B !important;
-  border: 1px solid #334155 !important;
-  border-radius: var(--radius-card) !important;
+  background: linear-gradient(135deg, #1E293B 0%, #172033 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
   padding: 28px 24px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  transition: transform 0.2s ease, border-color 0.2s ease !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 .edu-recert-page .edu-related-card:hover {
   transform: translateY(-3px) !important;
-  border-color: var(--color-primary) !important;
+  border-color: rgba(37, 99, 235, 0.5) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
 }
 .edu-recert-page .edu-related-card h3 {
   font-size: 18px !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   color: #FFFFFF !important;
-  margin-bottom: 16px !important;
-  line-height: 1.3 !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.35 !important;
 }
 .edu-recert-page .edu-related-content {
   display: flex !important;
-  gap: 16px !important;
-  margin-bottom: 24px !important;
   align-items: center !important;
+  gap: 18px !important;
+  margin-bottom: 22px !important;
 }
 .edu-recert-page .edu-related-img {
-  width: 72px !important;
-  height: 72px !important;
+  width: 80px !important;
+  height: 80px !important;
+  min-width: 80px !important;
+  border-radius: 50% !important;
+  border: 4px solid rgba(255, 255, 255, 0.9) !important;
+  background: #FFFFFF !important;
   object-fit: contain !important;
+  padding: 2px !important;
   flex-shrink: 0 !important;
-  background: #0F172A !important;
-  border-radius: 8px !important;
-  padding: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 .edu-recert-page .edu-related-content p {
   font-size: 13.5px !important;
-  line-height: 1.5 !important;
-  color: #CBD5E1 !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
   margin: 0 !important;
+  transition: color 0.2s ease !important;
 }
-.edu-recert-page .edu-related-link a {
+.edu-recert-page .edu-related-card:hover .edu-related-content p {
+  color: #FFFFFF !important;
+}
+.edu-recert-page .edu-related-link {
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+}
+.edu-recert-page .edu-related-link-btn {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  color: #60A5FA !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
   text-decoration: none !important;
-  transition: gap 0.15s ease !important;
+  opacity: 0.9 !important;
+  transition: opacity 0.15s ease, gap 0.15s ease !important;
 }
-.edu-recert-page .edu-related-link a:hover {
-  gap: 12px !important;
-  color: #93C5FD !important;
+.edu-recert-page .edu-related-link-btn:hover {
+  opacity: 1 !important;
+  gap: 11px !important;
+  color: #FFFFFF !important;
+}
+.edu-recert-page .edu-related-dots {
+  flex-shrink: 0 !important;
 }
 
 /* ================================================================
@@ -1351,6 +1421,22 @@ body > .ContentArea > .container {
   .edu-recert-page .edu-ethics-grid { grid-template-columns: 1fr !important; }
   .edu-recert-page .edu-related-grid { grid-template-columns: 1fr !important; }
   .edu-recert-page .edu-advisor-box { flex-direction: column !important; align-items: flex-start !important; }
+  .edu-recert-page .edu-subnav-list {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    gap: 8px !important;
+    padding: 8px 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .edu-recert-page .edu-subnav-list::-webkit-scrollbar {
+    display: none !important;
+  }
+  .edu-recert-page .edu-subnav-item a {
+    font-size: 12.5px !important;
+    padding: 6px 11px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1360,12 +1446,393 @@ body > .ContentArea > .container {
   .edu-recert-page .edu-plans-grid { grid-template-columns: 1fr !important; }
   .edu-recert-page .edu-sysreq-grid { grid-template-columns: 1fr !important; }
   .edu-recert-page .edu-referral-card { flex-direction: column !important; align-items: flex-start !important; }
-  .edu-recert-page .edu-subnav-list { flex-wrap: wrap !important; gap: 12px !important; justify-content: flex-start !important; }
   .edu-recert-page .edu-hero-seals-card { flex-direction: column !important; align-items: flex-start !important; }
   .edu-recert-page .edu-cred-grid { grid-template-columns: 1fr !important; }
   .edu-recert-page .edu-advisor-channels { flex-direction: column !important; width: 100% !important; }
   .edu-recert-page .edu-advisor-phone,
   .edu-recert-page .edu-advisor-email { width: 100% !important; justify-content: center !important; }
+}
+
+/* ================================================================
+   RECERTIFICATION PROGRAM FAQ MODAL (EXECUTIVE SIDE DRAWER BELOW NAV)
+================================================================ */
+.modal#myModal-RecertificationFAQ,
+#myModal-RecertificationFAQ {
+  z-index: 99999 !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  display: none;
+  position: fixed !important;
+  top: 75px !important;
+  top: var(--main-nav-h, 75px) !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  height: calc(100vh - 75px) !important;
+  height: calc(100vh - var(--main-nav-h, 75px)) !important;
+  overflow: hidden !important;
+  outline: 0 !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+#myModal-RecertificationFAQ.in,
+#myModal-RecertificationFAQ.show {
+  display: block !important;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  z-index: 99990 !important;
+  position: fixed !important;
+  top: 75px !important;
+  top: var(--main-nav-h, 75px) !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  height: calc(100vh - 75px) !important;
+  height: calc(100vh - var(--main-nav-h, 75px)) !important;
+  background-color: #090D1A !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+.modal-backdrop.in,
+.modal-backdrop.show {
+  opacity: 0.65 !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* SideModal Drawer Positioning */
+#myModal-RecertificationFAQ .modal-dialog.SideModal {
+  position: fixed !important;
+  margin: 0 !important;
+  width: 580px !important;
+  max-width: 94vw !important;
+  height: calc(100vh - 75px) !important;
+  height: calc(100vh - var(--main-nav-h, 75px)) !important;
+  top: 75px !important;
+  top: var(--main-nav-h, 75px) !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 100000 !important;
+  transform: translate3d(100%, 0, 0) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+#myModal-RecertificationFAQ.in .modal-dialog.SideModal,
+#myModal-RecertificationFAQ.show .modal-dialog.SideModal {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Modal Content Container */
+#myModal-RecertificationFAQ .modal-content {
+  height: 100% !important;
+  max-height: calc(100vh - 75px) !important;
+  max-height: calc(100vh - var(--main-nav-h, 75px)) !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-left: 1px solid #E2E8F0 !important;
+  border-top: 1px solid #E2E8F0 !important;
+  background: #F8FAFC !important;
+  box-shadow: -16px 0 50px rgba(9, 13, 26, 0.22) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+/* Drawer Header */
+.edu-faq-modal-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 20 !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  padding: 22px 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  flex-shrink: 0 !important;
+}
+.edu-faq-modal-title-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+.edu-faq-modal-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #2563EB !important;
+  background: #EFF6FF !important;
+  border: 1px solid #DBEAFE !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  width: fit-content !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+.edu-faq-modal-title {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #090D1A !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+.edu-faq-modal-close {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #F1F5F9 !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #475569 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+.edu-faq-modal-close:hover {
+  background: #E2E8F0 !important;
+  color: #090D1A !important;
+  transform: rotate(90deg) !important;
+}
+
+/* Drawer Body (Scrollable) */
+.edu-faq-modal-body {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 24px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+}
+
+/* FAQ Item Cards */
+.edu-faq-item-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.edu-faq-item-card:hover {
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
+}
+.edu-faq-item-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 0 12px 0 !important;
+}
+.edu-faq-num-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  padding: 0 6px !important;
+  border-radius: 8px !important;
+  background: #EFF6FF !important;
+  border: 1px solid #DBEAFE !important;
+  color: #2563EB !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+.edu-faq-item-title {
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+  color: #090D1A !important;
+  letter-spacing: -0.015em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.35 !important;
+}
+.edu-faq-item-answer {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  margin: 0 0 14px 0 !important;
+}
+.edu-faq-item-answer:last-child {
+  margin-bottom: 0 !important;
+}
+.edu-faq-links-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 12px !important;
+}
+.edu-faq-link-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #2563EB !important;
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+.edu-faq-link-pill:hover {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border-color: #2563EB !important;
+}
+.edu-faq-link-pill svg {
+  transition: transform 0.15s ease !important;
+}
+.edu-faq-link-pill:hover svg {
+  transform: translateX(2px) !important;
+}
+
+/* Webcast Filter Categories Box in FAQ #4 */
+.edu-faq-filter-box {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  margin-top: 14px !important;
+}
+.edu-faq-filter-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #090D1A !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 12px !important;
+}
+.edu-faq-filter-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+.edu-faq-filter-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  padding: 5px 11px !important;
+  border-radius: 6px !important;
+}
+.edu-faq-filter-chip svg {
+  color: #15803D !important;
+}
+
+/* Drawer Footer */
+.edu-faq-modal-footer {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 20 !important;
+  background: #FFFFFF !important;
+  border-top: 1px solid #E2E8F0 !important;
+  padding: 16px 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  flex-shrink: 0 !important;
+}
+.edu-faq-footer-advisor {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.edu-faq-advisor-avatar {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: #EFF6FF !important;
+  border: 1.5px solid #BFDBFE !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #2563EB !important;
+  flex-shrink: 0 !important;
+}
+.edu-faq-advisor-text {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.edu-faq-advisor-text span {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #090D1A !important;
+}
+.edu-faq-advisor-text a {
+  font-size: 12px !important;
+  color: #2563EB !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+.edu-faq-advisor-text a:hover {
+  text-decoration: underline !important;
+}
+.edu-faq-done-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 18px !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  background: #2563EB !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+.edu-faq-done-btn:hover {
+  background: #1D4ED8 !important;
+}
+
+/* Also ensure legacy fallback elements inside $designAttribute:Recert_FAQ are styled if raw HTML gets injected */
+#myModal-RecertificationFAQ h4,
+#myModal-RecertificationFAQ h3 {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  color: #090D1A !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+}
+#myModal-RecertificationFAQ p {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  color: #475569 !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 12px !important;
+}
+#myModal-RecertificationFAQ a {
+  color: #2563EB !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+#myModal-RecertificationFAQ a:hover {
+  text-decoration: underline !important;
 }
 </style>
 
@@ -1380,7 +1847,7 @@ body > .ContentArea > .container {
       <div class="edu-reveal">
         <div class="edu-eyebrow">
           <span class="edu-eyebrow-beacon"></span>
-          Pre-Approved Recertification Provider • 2026 Credits
+          Pre-Approved Recertification Provider
         </div>
 
         <h1 class="edu-hero-title">HR Recertification Program</h1>
@@ -1506,11 +1973,12 @@ body > .ContentArea > .container {
 <!-- ================================================================
      SECTION 3 — STICKY IN-PAGE LANDMARK NAVIGATION
 ================================================================ -->
-<div class="edu-subnav-strip">
-  <div class="edu-recert-wrap">
+<div class="edu-subnav-placeholder" id="eduSubnavPlaceholder"></div>
+<div class="edu-subnav-strip" id="eduSubnavStrip">
+  <div class="edu-recert-wrap edu-subnav-wrap">
     <ul class="edu-subnav-list">
       <li class="edu-subnav-item">
-        <a class="edu-subnav-home" href="#eduHome" title="Back to top">
+        <a class="edu-subnav-home" href="#eduHome" title="Back to top" aria-label="Back to top">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
         </a>
       </li>
@@ -1995,45 +2463,63 @@ body > .ContentArea > .container {
   <div class="edu-recert-wrap">
     <div class="edu-related-head edu-reveal">
       <h2>Related products. Get certified by HR.com</h2>
-      <p>Explore comprehensive preparatory programs for team members pursuing initial certification.</p>
     </div>
 
     <div class="edu-related-grid">
 
-      <!-- Card 1: aPHR eLearning -->
+      <!-- Card 1: aPHR study program (eLearning) -->
       <div class="edu-related-card edu-reveal">
         <div>
           <h3>aPHR study program (eLearning)</h3>
           <div class="edu-related-content">
             <img class="edu-related-img"
-                 src="$public/remoteimages/website-images/2017_SiteRedesign/images/aPHR-Instructor600.png"
-                 alt="aPHR Certification Training" />
+                 src="https://public-cdn.hr.com/remoteimages/website-images/2017_SiteRedesign/images/aPHR-Instructor600.png"
+                 alt="aPHR study program (eLearning)"
+                 onerror="this.src='$public/remoteimages/website-images/2017_SiteRedesign/images/aPHR-Instructor600.png'" />
             <p>A self-paced course to help you pass your associate Professional in Human Resources Exam (aPHR).</p>
           </div>
         </div>
         <div class="edu-related-link">
-          <a href="/en/certifications/hrci_shrm_prep_courses/aphr-study-program-elearning_iphdj0js.html" target="_blank">
+          <a href="/en/certifications/hrci_shrm_prep_courses/aphr-study-program-elearning_iphdj0js.html" target="_blank" class="edu-related-link-btn">
             View more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg class="edu-related-dots" height="15" viewBox="0 0 11 15" width="11" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8" transform="translate(-251 -2400)">
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(259 2406)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2406)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2403)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2400)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2412)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2409)"></circle>
+              </g>
+            </svg>
           </a>
         </div>
       </div>
 
-      <!-- Card 2: eLearning course -->
+      <!-- Card 2: eLearning course (self-paced) -->
       <div class="edu-related-card edu-reveal edu-reveal-d1">
         <div>
           <h3>eLearning course (self-paced)</h3>
           <div class="edu-related-content">
             <img class="edu-related-img"
                  src="https://www.hr.com/en/app/media/resource/_j1rwp970.deliver?&amp;layout=og.png"
-                 alt="eLearning Self Paced Course" />
+                 alt="eLearning course (self-paced)" />
             <p>Industry leading LMS-based learning platform tailored specifically for HR certification exams</p>
           </div>
         </div>
         <div class="edu-related-link">
-          <a href="/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html" target="_blank">
+          <a href="/en/certifications/hrci_shrm_prep_courses/phrsphrshrm-cp-elearning-prep-course_ipipuycy.html" target="_blank" class="edu-related-link-btn">
             View more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg class="edu-related-dots" height="15" viewBox="0 0 11 15" width="11" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8" transform="translate(-251 -2400)">
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(259 2406)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2406)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2403)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2400)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2412)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2409)"></circle>
+              </g>
+            </svg>
           </a>
         </div>
       </div>
@@ -2044,15 +2530,25 @@ body > .ContentArea > .container {
           <h3>PHR and SPHR materials only</h3>
           <div class="edu-related-content">
             <img class="edu-related-img"
-                 src="$public/story_images/Sitepages/StudyBooks2016.png"
-                 alt="HRCP Study Books" />
+                 src="https://public-cdn.hr.com/story_images/Sitepages/StudyBooks2016.png"
+                 alt="PHR and SPHR materials only"
+                 onerror="this.src='$public/story_images/Sitepages/StudyBooks2016.png'" />
             <p>HRCP study program materials only (print + online). Get certified with HR.com</p>
           </div>
         </div>
         <div class="edu-related-link">
-          <a href="/en/certifications/hrci_shrm_prep_courses/hr-certification---materials-only_ipiuoeji.html" target="_blank">
+          <a href="/en/certifications/hrci_shrm_prep_courses/hr-certification---materials-only_ipiuoeji.html" target="_blank" class="edu-related-link-btn">
             View more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg class="edu-related-dots" height="15" viewBox="0 0 11 15" width="11" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8" transform="translate(-251 -2400)">
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(259 2406)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2406)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2403)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2400)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(251 2412)"></circle>
+                <circle cx="1.5" cy="1.5" fill="#fff" r="1.5" transform="translate(255 2409)"></circle>
+              </g>
+            </svg>
           </a>
         </div>
       </div>
@@ -2098,16 +2594,124 @@ body > .ContentArea > .container {
 </section>
 
 <!-- ================================================================
-     MODAL — RECERTIFICATION FAQ
+     MODAL — RECERTIFICATION FAQ (OFF-CANVAS SIDE DRAWER)
 ================================================================ -->
 <div aria-labelledby="myModalLabel2" class="modal right fade" id="myModal-RecertificationFAQ" role="dialog" tabindex="-1">
   <div class="modal-dialog SideModal" role="document">
-    <div class="modal-content">$designAttribute:Recert_FAQ</div>
+    <div class="modal-content">
+
+      <!-- Drawer Header -->
+      <div class="edu-faq-modal-header">
+        <div class="edu-faq-modal-title-group">
+          <span class="edu-faq-modal-badge">Pre-Approved Recertification Provider</span>
+          <h3 class="edu-faq-modal-title">Program FAQ</h3>
+        </div>
+        <button type="button" class="edu-faq-modal-close" data-dismiss="modal" aria-label="Close" title="Close FAQ">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Drawer Body (Scrollable) -->
+      <div class="edu-faq-modal-body">
+
+        <!-- FAQ Item 1 -->
+        <div class="edu-faq-item-card">
+          <div class="edu-faq-item-head">
+            <span class="edu-faq-num-pill">01</span>
+            <h4 class="edu-faq-item-title">What is Recertification?</h4>
+          </div>
+          <p class="edu-faq-item-answer">Attaining your HR certification is an exceptional accomplishment. However, as an HR leader, you are required to renew your certification every three years! You can do this by completing professional development activities and demonstrating professional achievement to receive recertification credits.</p>
+          <div class="edu-faq-links-row">
+            <a class="edu-faq-link-pill" href="https://www.hrci.org/recertification" target="_blank" rel="noopener">
+              HRCI Recertification Information
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a class="edu-faq-link-pill" href="https://www.shrm.org/certification/recertification" target="_blank" rel="noopener">
+              SHRM Recertification Information
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="edu-faq-item-card">
+          <div class="edu-faq-item-head">
+            <span class="edu-faq-num-pill">02</span>
+            <h4 class="edu-faq-item-title">Why choose HR.com for recertification?</h4>
+          </div>
+          <p class="edu-faq-item-answer">The HR.com program offers the lowest cost available when it comes to all-in-one HRCI &amp; SHRM Recertification. Our program features 1000s of webinars and credits available on demand, 24/7. Our preferred partner, HRCI, has pre-approved each educational webcast for HRCI recertification credit. If you were with us live, we'll email you the code and place it in your HR.com account. If you viewed the OnDemand webcast, click the 'receive credit' box to add your code to your HR.com account. We also track all of your earned HRCI credits. If you are asked to show proof of your HRCI recertification, we have all of the required documentation to back you up. The program also meets recertification credit standards set by SHRM, but candidates must manually enter their activity into their records.</p>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="edu-faq-item-card">
+          <div class="edu-faq-item-head">
+            <span class="edu-faq-num-pill">03</span>
+            <h4 class="edu-faq-item-title">How long does it take to Recertify?</h4>
+          </div>
+          <p class="edu-faq-item-answer">Our program features 1000s of webinars and credits available on demand, 24/7. You can earn the required credits by watching webcasts and complete your recertification quickly, if needed.</p>
+          <div class="edu-faq-links-row">
+            <a class="edu-faq-link-pill" href="https://www.hrci.org/recertification" target="_blank" rel="noopener">
+              HRCI Recertification Information
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a class="edu-faq-link-pill" href="https://www.shrm.org/certification/recertification" target="_blank" rel="noopener">
+              SHRM Recertification Information
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="edu-faq-item-card">
+          <div class="edu-faq-item-head">
+            <span class="edu-faq-num-pill">04</span>
+            <h4 class="edu-faq-item-title">How do I know which webcast is designated for HRCI or SHRM?</h4>
+          </div>
+          <p class="edu-faq-item-answer">Our preferred partner, HRCI, has pre-approved each educational webcast for HRCI recertification credit. If you were with us live, we'll email you the code and place it in your HR.com account. If you viewed the OnDemand webcast, click the 'receive credit' box to add your code to your HR.com account. We also track all of your earned HRCI credits. If you are asked to show proof of your HRCI recertification, we have all of the required documentation to back you up. The program also meets recertification credit standards set by SHRM, but candidates must manually enter their activity into their records.</p>
+          <p class="edu-faq-item-answer">From our <a href="/en/webcasts_events/webcasts/archived_webcasts_podcasts" target="_blank">OnDemand Webcasts</a> page, you can also <strong>FILTER</strong> for whichever types of credits you are seeking for your recertification.</p>
+
+          <!-- Webcast Credit Filter Breakdown -->
+          <div class="edu-faq-filter-box">
+            <div class="edu-faq-filter-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+              Webcast Credit Types
+            </div>
+            <div class="edu-faq-filter-tags">
+              <span class="edu-faq-filter-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> HRCI General (PHR / SPHR / GPHR)</span>
+              <span class="edu-faq-filter-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> HRCI Strategic (SPHR)</span>
+              <span class="edu-faq-filter-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> HRCI Global (GPHR)</span>
+              <span class="edu-faq-filter-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> HRCI California (PHR-CA)</span>
+              <span class="edu-faq-filter-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> HRCI Ethics Credit</span>
+              <span class="edu-faq-filter-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> SHRM PDCs (SHRM-CP / SCP)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="edu-faq-modal-footer">
+        <div class="edu-faq-footer-advisor">
+          <div class="edu-faq-advisor-avatar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="edu-faq-advisor-text">
+            <span>Have questions?</span>
+            <a href="tel:18774726648">Call: 1-877-472-6648</a>
+          </div>
+        </div>
+        <button type="button" class="edu-faq-done-btn" data-dismiss="modal">Close FAQ</button>
+      </div>
+
+      <!-- CMS Attribute hook -->
+      <div style="display:none;">$designAttribute:Recert_FAQ</div>
+
+    </div>
   </div>
 </div>
 
 <!-- ================================================================
-     SCRIPTS — REVEAL OBSERVER & CMS ACTIVE SUBMENU
+     SCRIPTS — REVEAL OBSERVER, STICKY SUBNAV SYNC & CMS ACTIVE SUBMENU
 ================================================================ -->
 <script>
 // Progressive Entrance Reveal Observer
@@ -2133,6 +2737,290 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Sticky Landmark Subnav Synchronization, Fixed Past Fold & ScrollSpy
+(function() {
+  function getDocScrollTop() {
+    return window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  }
+
+  function getMainNavHeight() {
+    var mainNav = document.querySelector('.hr_submenu_outer_wrapper.is-stuck') ||
+                  document.querySelector('.hr_submenu_outer_wrapper') ||
+                  document.querySelector('.hr_custom_submenu.is-stuck') ||
+                  document.querySelector('.hr_custom_submenu') ||
+                  document.querySelector('#eduSubmenuContainer') ||
+                  document.querySelector('header.header') ||
+                  document.querySelector('.header');
+    if (mainNav) {
+      var rect = mainNav.getBoundingClientRect();
+      var h = rect.height || mainNav.offsetHeight;
+      if (h > 20) return h;
+    }
+    return 75; // Standard 2026 HR.com sticky header height
+  }
+
+  var isStuck = false;
+  var baseTop = 0;
+
+  function measureBaseTop() {
+    var subnav = document.getElementById('eduSubnavStrip');
+    var placeholder = document.getElementById('eduSubnavPlaceholder');
+    if (!subnav) return;
+
+    if (placeholder && placeholder.style.display !== 'none') {
+      baseTop = placeholder.getBoundingClientRect().top + getDocScrollTop();
+    } else {
+      baseTop = subnav.getBoundingClientRect().top + getDocScrollTop();
+    }
+  }
+
+  function updateStickyState() {
+    var subnav = document.getElementById('eduSubnavStrip');
+    var placeholder = document.getElementById('eduSubnavPlaceholder');
+    if (!subnav) return;
+
+    var mainNavHeight = getMainNavHeight();
+    var stickyTop = mainNavHeight + 10;
+    var scrollY = getDocScrollTop();
+
+    if (baseTop <= 0 || !isStuck) {
+      measureBaseTop();
+    }
+
+    var triggerPoint = baseTop - stickyTop;
+
+    if (scrollY > triggerPoint) {
+      if (!isStuck) {
+        var h = subnav.offsetHeight || 50;
+        if (placeholder) {
+          placeholder.style.display = 'block';
+          placeholder.style.height = h + 'px';
+        }
+        subnav.style.top = stickyTop + 'px';
+        subnav.classList.add('is-stuck');
+        isStuck = true;
+      } else {
+        subnav.style.top = stickyTop + 'px';
+      }
+    } else {
+      if (isStuck) {
+        subnav.classList.remove('is-stuck');
+        subnav.style.top = '';
+        if (placeholder) {
+          placeholder.style.display = 'none';
+          placeholder.style.height = '0px';
+        }
+        isStuck = false;
+      }
+    }
+
+    // Update section scroll margins for seamless anchor jumping
+    var subnavHeight = subnav.offsetHeight || 50;
+    var totalOffset = stickyTop + subnavHeight + 12;
+    var targetSecs = document.querySelectorAll(
+      '.edu-recert-page #eduHome, .edu-recert-page #eduFandB, .edu-recert-page #eduRequirements, .edu-recert-page #ethics-course, .edu-recert-page #eduPricing, .edu-recert-page #eduRproduct'
+    );
+    targetSecs.forEach(function(sec) {
+      sec.style.scrollMarginTop = totalOffset + 'px';
+    });
+  }
+
+  window.addEventListener('load', function() {
+    measureBaseTop();
+    updateStickyState();
+  });
+  window.addEventListener('resize', function() {
+    baseTop = 0;
+    updateStickyState();
+  });
+  window.addEventListener('scroll', updateStickyState, { passive: true });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    measureBaseTop();
+    updateStickyState();
+
+    var subnav = document.getElementById('eduSubnavStrip');
+    var subnavLinks = document.querySelectorAll('.edu-recert-page .edu-subnav-item a[href^="#"]');
+    var sections = [
+      { id: 'eduHome', el: document.getElementById('eduHome') },
+      { id: 'eduFandB', el: document.getElementById('eduFandB') },
+      { id: 'eduRequirements', el: document.getElementById('eduRequirements') },
+      { id: 'ethics-course', el: document.getElementById('ethics-course') },
+      { id: 'eduPricing', el: document.getElementById('eduPricing') },
+      { id: 'eduRproduct', el: document.getElementById('eduRproduct') }
+    ];
+
+    // Smooth Scroll Click Handling
+    subnavLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        var targetId = href.substring(1);
+        var targetEl = document.getElementById(targetId);
+
+        if (targetEl) {
+          e.preventDefault();
+          var navHeight = getMainNavHeight();
+          var stickyTop = navHeight + 10;
+          var subnavHeight = subnav ? (subnav.offsetHeight || 50) : 50;
+          var totalStickyOffset = stickyTop + subnavHeight + 4;
+          var elementTop = targetEl.getBoundingClientRect().top + getDocScrollTop();
+          var targetPosition = Math.max(0, elementTop - totalStickyOffset);
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+          // Set active immediately
+          subnavLinks.forEach(function(l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // ScrollSpy to highlight active section in subnav
+    window.addEventListener('scroll', function() {
+      var navHeight = getMainNavHeight();
+      var stickyTop = navHeight + 10;
+      var subnavHeight = subnav ? (subnav.offsetHeight || 50) : 50;
+      var scrollPos = getDocScrollTop() + stickyTop + subnavHeight + 60;
+      var currentSectionId = '';
+
+      for (var i = sections.length - 1; i >= 0; i--) {
+        var item = sections[i];
+        if (item.el) {
+          var top = item.el.getBoundingClientRect().top + getDocScrollTop();
+          if (scrollPos >= top) {
+            currentSectionId = item.id;
+            break;
+          }
+        }
+      }
+
+      if (currentSectionId) {
+        subnavLinks.forEach(function(link) {
+          var href = link.getAttribute('href');
+          if (href === '#' + currentSectionId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    }, { passive: true });
+  });
+})();
+
+// Recertification Program FAQ Side Drawer Controller
+(function() {
+  function initFAQModal() {
+    var modal = document.getElementById('myModal-RecertificationFAQ');
+    if (!modal) return;
+
+    // Helper to calculate exact main nav height
+    function getNavHeight() {
+      var nav = document.querySelector('.hr_submenu_outer_wrapper') ||
+                document.querySelector('.hr_custom_submenu') ||
+                document.querySelector('.header');
+      if (nav) {
+        var h = nav.offsetHeight || nav.getBoundingClientRect().height;
+        if (h > 20) return h;
+      }
+      return 75;
+    }
+
+    function syncModalTop() {
+      var nh = getNavHeight();
+      modal.style.setProperty('--main-nav-h', nh + 'px');
+      document.documentElement.style.setProperty('--main-nav-h', nh + 'px');
+    }
+
+    syncModalTop();
+    window.addEventListener('resize', syncModalTop);
+
+    // Bootstrap jQuery Modal integration if available
+    if (window.jQuery && typeof jQuery.fn.modal === 'function') {
+      var $modal = jQuery('#myModal-RecertificationFAQ');
+
+      $modal.on('show.bs.modal', function() {
+        syncModalTop();
+      });
+
+      $modal.on('hidden.bs.modal', function() {
+        jQuery('.modal-backdrop').remove();
+        jQuery('body').removeClass('modal-open');
+      });
+      return;
+    }
+
+    // Standalone Vanilla Modal controller
+    var openBtns = document.querySelectorAll('[data-target="#myModal-RecertificationFAQ"], [href="#myModal-RecertificationFAQ"], .edu-hero-faq-btn');
+    var closeBtns = modal.querySelectorAll('[data-dismiss="modal"], .edu-faq-modal-close, .edu-faq-done-btn');
+    var backdrop = null;
+
+    function openVanillaModal(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      syncModalTop();
+
+      backdrop = document.querySelector('.modal-backdrop.edu-faq-backdrop');
+      if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop fade edu-faq-backdrop';
+        backdrop.addEventListener('click', closeVanillaModal);
+        document.body.appendChild(backdrop);
+      }
+
+      document.body.classList.add('modal-open');
+      modal.style.display = 'block';
+      void modal.offsetWidth;
+
+      backdrop.classList.add('in', 'show');
+      modal.classList.add('in', 'show');
+    }
+
+    function closeVanillaModal(e) {
+      if (e && e.preventDefault) e.preventDefault();
+
+      modal.classList.remove('in', 'show');
+      if (backdrop) {
+        backdrop.classList.remove('in', 'show');
+      }
+
+      setTimeout(function() {
+        modal.style.display = 'none';
+        if (backdrop && backdrop.parentNode) {
+          backdrop.parentNode.removeChild(backdrop);
+          backdrop = null;
+        }
+        document.body.classList.remove('modal-open');
+      }, 300);
+    }
+
+    openBtns.forEach(function(btn) {
+      btn.removeEventListener('click', openVanillaModal);
+      btn.addEventListener('click', openVanillaModal);
+    });
+
+    closeBtns.forEach(function(btn) {
+      btn.removeEventListener('click', closeVanillaModal);
+      btn.addEventListener('click', closeVanillaModal);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if ((e.key === 'Escape' || e.keyCode === 27) && (modal.classList.contains('in') || modal.classList.contains('show'))) {
+        closeVanillaModal(e);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQModal);
+  } else {
+    initFAQModal();
+  }
+})();
 
 // CMS Active Submenu Tab Highlight for Recertification (Page #6)
 if (window.jQuery) {

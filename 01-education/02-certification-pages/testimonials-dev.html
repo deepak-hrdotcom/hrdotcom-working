@@ -619,7 +619,7 @@ body > .ContentArea > .container {
   display: none !important;
 }
 
-/* Card Body: Quote text & Date (Supports both .js_card_info and .ts_card_info) */
+/* Card Body: Quote text & Date Suppression (No dates displayed) */
 .edu-testimonials-page .testimonial_card .js_card_info,
 .edu-testimonials-page .testimonial_card .ts_card_info {
   width: 100% !important;
@@ -641,15 +641,11 @@ body > .ContentArea > .container {
   letter-spacing: normal !important;
 }
 
+/* Suppress all dates across testimonials */
 .edu-testimonials-page .testimonial_card .js_card_info > span,
-.edu-testimonials-page .testimonial_card .ts_card_info > span {
-  display: block !important;
-  width: 100% !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  color: var(--color-text-muted) !important;
-  margin: 0 0 14px 0 !important;
-  line-height: 1.3 !important;
+.edu-testimonials-page .testimonial_card .ts_card_info > span,
+.edu-testimonials-page .edu-author-date {
+  display: none !important;
 }
 
 /* Card Course Header Divider */
@@ -947,7 +943,6 @@ body > .ContentArea > .container {
             <img alt="Marky Hyde" class="edu-author-avatar" src="https://public-cdn.hr.com/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/Marky-Hyde.png" onerror="this.src='$public/remoteimages/website-images/2023_siteupdate/cert-prep-2023/testimonial/Marky-Hyde.png'" />
             <div class="edu-author-meta">
               <span class="edu-author-name">Marky Hyde</span>
-              <span class="edu-author-date">Jun 8, 2023</span>
             </div>
             <span class="edu-verified-chip">
               <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -1158,6 +1153,9 @@ body > .ContentArea > .container {
         setTimeout(initTestimonials, 40);
         return;
       }
+
+      // Remove date timestamps from all cards
+      $('.testimonials .testimonial_card .js_card_info > span, .testimonials .testimonial_card .ts_card_info > span').remove();
 
       // Safeguard: neutralise any legacy fadeOut attempts on #loadMore
       if ($.fn.fadeOut) {

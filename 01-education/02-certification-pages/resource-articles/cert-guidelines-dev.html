@@ -1,0 +1,2266 @@
+<!-- FOUC Suppression -->
+<style>
+  .edu-res-wrap,
+  .edu-guidelines-page {
+    visibility: hidden;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = document.querySelector('.edu-guidelines-page') || document.querySelector('.edu-res-wrap');
+    if (p) p.style.visibility = 'visible';
+  });
+</script>
+
+<div class="edu-res-wrap edu-guidelines-page" id="tab-Header">
+  <!-- Embedded Stylesheet (Completely Standalone, Scoped & Self-Contained) -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+    /* Global CMS Canvas & Container Overrides */
+    body > .ContentArea,
+    .ContentArea {
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    body > .ContentArea > .container,
+    .ContentArea > .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .edu-guidelines-page {
+      /* 2026 International Executive Education Palette (brand-guidelines.html) */
+      --edu-cobalt: #2563EB;
+      --edu-cobalt-hover: #1D4ED8;
+      --edu-cobalt-soft: #EFF6FF;
+      --edu-cobalt-border: #BFDBFE;
+      --edu-indigo: #4F46E5;
+      
+      --edu-obsidian: #090D1A;
+      --edu-slate-dark: #0F172A;
+      --edu-slate-body: #334155;
+      --edu-slate-muted: #64748B;
+      --edu-slate-light: #94A3B8;
+
+      --edu-canvas: #FFFFFF;
+      --edu-porcelain: #F8FAFC;
+      --edu-stone: #F1F5F9;
+
+      --edu-border: #E2E8F0;
+      --edu-border-strong: #CBD5E1;
+
+      --edu-emerald: #15803D;
+      --edu-emerald-soft: #ECFDF5;
+      --edu-emerald-border: #A7F3D0;
+
+      --edu-gold: #B45309;
+      --edu-gold-soft: #FFFBEB;
+      --edu-gold-border: #FDE68A;
+
+      --edu-hrci-color: #2563EB;
+      --edu-hrci-bg: #EFF6FF;
+      --edu-hrci-border: #DBEAFE;
+
+      --edu-shrm-color: #0F172A;
+      --edu-shrm-bg: #F8FAFC;
+      --edu-shrm-border: #E2E8F0;
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      background-color: #F8FAFC !important;
+      color: var(--edu-slate-body) !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 0 100px 0 !important;
+      line-height: 1.6 !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      overflow-x: hidden !important;
+    }
+
+    .edu-guidelines-page * {
+      box-sizing: border-box !important;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .edu-guidelines-page a {
+      text-decoration: none !important;
+      color: inherit;
+    }
+
+    .edu-guidelines-container {
+      width: 100% !important;
+      max-width: 1360px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Reading Progress Bar (Fixed Top) */
+    .edu-reading-progress {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      height: 3.5px !important;
+      background: linear-gradient(90deg, #2563EB, #4F46E5, #38BDF8) !important;
+      width: 0%;
+      z-index: 99999 !important;
+      transition: width 0.1s ease-out !important;
+    }
+
+    /* Top Navigation Bar: Breadcrumb + Executive Back Button */
+    .edu-top-nav-bar {
+      background: #FFFFFF !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      padding: 16px 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .edu-top-nav-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-breadcrumb {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 13.5px !important;
+      color: #64748B !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-breadcrumb a {
+      color: #2563EB !important;
+      font-weight: 600 !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .edu-breadcrumb a:hover {
+      color: #1D4ED8 !important;
+      text-decoration: underline !important;
+    }
+
+    .edu-bc-sep {
+      color: #CBD5E1 !important;
+      font-size: 11px !important;
+    }
+
+    .edu-bc-current {
+      color: #0F172A !important;
+      font-weight: 700 !important;
+    }
+
+    .edu-back-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: #090D1A !important;
+      color: #FFFFFF !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      padding: 9px 18px !important;
+      border-radius: 8px !important;
+      box-shadow: 0 2px 8px rgba(9, 13, 26, 0.12) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .edu-back-btn:hover {
+      background: #2563EB !important;
+      transform: translateX(-3px) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* ---- HERO SECTION ---- */
+    .edu-hero-section {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+      padding: 56px 0 44px 0 !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      position: relative !important;
+    }
+
+    .edu-hero-grid {
+      display: grid !important;
+      grid-template-columns: 1.25fr 0.95fr !important;
+      gap: 48px !important;
+      align-items: center !important;
+    }
+
+    .edu-hero-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: #EFF6FF !important;
+      border: 1px solid #BFDBFE !important;
+      padding: 6px 14px !important;
+      border-radius: 999px !important;
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      color: #2563EB !important;
+      letter-spacing: -0.01em !important;
+      margin-bottom: 18px !important;
+    }
+
+    .edu-hero-badge-dot {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      background: #2563EB !important;
+      animation: eduPulse 2s infinite !important;
+    }
+
+    @keyframes eduPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+    }
+
+    .edu-hero-title {
+      font-size: 42px !important;
+      line-height: 1.18 !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      letter-spacing: -0.035em !important;
+      margin: 0 0 16px 0 !important;
+    }
+
+    .edu-hero-subtitle {
+      font-size: 20px !important;
+      line-height: 1.4 !important;
+      font-weight: 700 !important;
+      color: #2563EB !important;
+      letter-spacing: -0.02em !important;
+      margin: 0 0 16px 0 !important;
+    }
+
+    .edu-hero-description {
+      font-size: 15.5px !important;
+      line-height: 1.65 !important;
+      color: #475569 !important;
+      margin: 0 0 24px 0 !important;
+    }
+
+    .edu-hero-callout {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 14px !important;
+      background: #FFFBEB !important;
+      border: 1px solid #FDE68A !important;
+      border-left: 4px solid #D97706 !important;
+      padding: 16px 18px !important;
+      border-radius: 10px !important;
+      font-size: 14.5px !important;
+      line-height: 1.55 !important;
+      color: #78350F !important;
+      font-weight: 500 !important;
+    }
+
+    .edu-hero-callout svg {
+      flex-shrink: 0 !important;
+      width: 22px !important;
+      height: 22px !important;
+      margin-top: 2px !important;
+      fill: #D97706 !important;
+    }
+
+    .edu-hero-visual-card {
+      position: relative !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px #E2E8F0 !important;
+      background: #FFFFFF !important;
+    }
+
+    .edu-hero-visual-card img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+      aspect-ratio: 16 / 10 !important;
+    }
+
+    .edu-hero-floating-badge {
+      position: absolute !important;
+      bottom: 18px !important;
+      left: 18px !important;
+      right: 18px !important;
+      background: rgba(9, 13, 26, 0.88) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      padding: 14px 18px !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 12px !important;
+      color: #FFFFFF !important;
+    }
+
+    .edu-hfb-title {
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      color: #FFFFFF !important;
+    }
+
+    .edu-hfb-sub {
+      font-size: 11.5px !important;
+      color: #94A3B8 !important;
+    }
+
+    .edu-hfb-pill {
+      background: #15803D !important;
+      color: #FFFFFF !important;
+      font-size: 11.5px !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 999px !important;
+      white-space: nowrap !important;
+    }
+
+    /* ---- OVERVIEW CARDS (HRCI vs SHRM) ---- */
+    .edu-overview-section {
+      padding: 36px 0 24px 0 !important;
+    }
+
+    .edu-org-cards-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 24px !important;
+    }
+
+    .edu-org-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 16px !important;
+      padding: 28px !important;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      position: relative !important;
+    }
+
+    .edu-org-card:hover {
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .edu-org-card-hrci {
+      border-top: 4px solid #2563EB !important;
+    }
+
+    .edu-org-card-shrm {
+      border-top: 4px solid #0F172A !important;
+    }
+
+    .edu-org-header {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      margin-bottom: 18px !important;
+      padding-bottom: 16px !important;
+      border-bottom: 1px solid #F1F5F9 !important;
+    }
+
+    .edu-org-logo-wrap {
+      width: 56px !important;
+      height: 56px !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-weight: 800 !important;
+      font-size: 18px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-org-logo-hrci {
+      background: #EFF6FF !important;
+      color: #2563EB !important;
+      border: 1px solid #BFDBFE !important;
+    }
+
+    .edu-org-logo-shrm {
+      background: #F8FAFC !important;
+      color: #0F172A !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+
+    .edu-org-title {
+      font-size: 20px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+    }
+
+    .edu-org-subtitle {
+      font-size: 13.5px !important;
+      font-weight: 500 !important;
+      color: #64748B !important;
+      margin-top: 4px !important;
+      display: block !important;
+    }
+
+    .edu-org-creds-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 9px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+    }
+
+    .edu-org-cred-item {
+      display: flex !important;
+      align-items: baseline !important;
+      gap: 10px !important;
+      font-size: 14px !important;
+      color: #334155 !important;
+      line-height: 1.45 !important;
+    }
+
+    .edu-org-cred-tag {
+      background: #F1F5F9 !important;
+      color: #0F172A !important;
+      font-weight: 700 !important;
+      font-size: 12.5px !important;
+      padding: 3px 8px !important;
+      border-radius: 6px !important;
+      border: 1px solid #E2E8F0 !important;
+      min-width: 74px !important;
+      text-align: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-org-card-hrci .edu-org-cred-tag {
+      background: #EFF6FF !important;
+      color: #2563EB !important;
+      border-color: #DBEAFE !important;
+    }
+
+    /* ---- STICKY CONTROL & NAVIGATION DOCK ---- */
+    .edu-sticky-dock {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 9999 !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border-top: 1px solid #E2E8F0 !important;
+      border-bottom: 1px solid #CBD5E1 !important;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+      padding: 12px 0 !important;
+      margin: 24px 0 40px 0 !important;
+    }
+
+    .edu-sticky-dock-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-jump-nav-list {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      flex-wrap: wrap !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+    }
+
+    .edu-jump-nav-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      padding: 8px 16px !important;
+      border-radius: 999px !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      color: #475569 !important;
+      background: #F1F5F9 !important;
+      border: 1px solid #E2E8F0 !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      white-space: nowrap !important;
+    }
+
+    .edu-jump-nav-link:hover {
+      background: #EFF6FF !important;
+      color: #2563EB !important;
+      border-color: #BFDBFE !important;
+    }
+
+    .edu-jump-nav-link.active {
+      background: #2563EB !important;
+      color: #FFFFFF !important;
+      border-color: #2563EB !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+    }
+
+    .edu-jump-num {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 18px !important;
+      height: 18px !important;
+      border-radius: 50% !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      background: rgba(0, 0, 0, 0.08) !important;
+      color: inherit !important;
+    }
+
+    .edu-jump-nav-link.active .edu-jump-num {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Interactive Filter Switcher (Column Focus) */
+    .edu-filter-group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-filter-label {
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      color: #64748B !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    .edu-filter-pill {
+      font-size: 12.5px !important;
+      font-weight: 600 !important;
+      padding: 6px 12px !important;
+      border-radius: 8px !important;
+      background: #FFFFFF !important;
+      border: 1px solid #CBD5E1 !important;
+      color: #334155 !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .edu-filter-pill:hover {
+      background: #F8FAFC !important;
+      border-color: #94A3B8 !important;
+    }
+
+    .edu-filter-pill.active {
+      background: #090D1A !important;
+      color: #FFFFFF !important;
+      border-color: #090D1A !important;
+    }
+
+    /* ---- SECTION BLOCK & DATA MATRIX ---- */
+    .edu-section-block {
+      scroll-margin-top: 90px !important;
+      margin-bottom: 48px !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 18px !important;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+      overflow: hidden !important;
+    }
+
+    .edu-section-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 22px 28px !important;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-section-title-wrap {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+    }
+
+    .edu-section-number-badge {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 10px !important;
+      background: #2563EB !important;
+      color: #FFFFFF !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25) !important;
+    }
+
+    .edu-section-title {
+      font-size: 24px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      margin: 0 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .edu-section-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    .edu-swipe-hint {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: #64748B !important;
+      background: #F1F5F9 !important;
+      padding: 5px 10px !important;
+      border-radius: 6px !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+
+    .edu-top-link-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      background: #F1F5F9 !important;
+      color: #475569 !important;
+      border: 1px solid #E2E8F0 !important;
+      padding: 6px 12px !important;
+      border-radius: 6px !important;
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .edu-top-link-btn:hover {
+      background: #2563EB !important;
+      color: #FFFFFF !important;
+      border-color: #2563EB !important;
+    }
+
+    /* Matrix Table Responsive Wrapper */
+    .edu-matrix-wrapper {
+      position: relative !important;
+      width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      background: #FFFFFF !important;
+    }
+
+    .edu-matrix-table {
+      width: 100% !important;
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+      text-align: left !important;
+      font-size: 13.5px !important;
+      line-height: 1.55 !important;
+      min-width: 1150px !important;
+    }
+
+    /* Table Header Styling */
+    .edu-matrix-table thead th {
+      padding: 16px 14px !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      border-bottom: 2px solid #CBD5E1 !important;
+      vertical-align: middle !important;
+      background: #F8FAFC !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 10 !important;
+    }
+
+    .edu-col-feature {
+      width: 18% !important;
+      min-width: 200px !important;
+      background: #F8FAFC !important;
+      color: #0F172A !important;
+      font-weight: 800 !important;
+      font-size: 14.5px !important;
+      border-right: 1px solid #E2E8F0 !important;
+    }
+
+    .edu-col-hrci-hdr {
+      background: #EFF6FF !important;
+      color: #1E40AF !important;
+      text-align: center !important;
+      border-right: 1px solid #DBEAFE !important;
+      width: 11.7% !important;
+    }
+
+    .edu-col-shrm-hdr {
+      background: #F1F5F9 !important;
+      color: #0F172A !important;
+      text-align: center !important;
+      border-right: 1px solid #E2E8F0 !important;
+      width: 11.7% !important;
+    }
+
+    .edu-cred-badge-name {
+      display: inline-block !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.02em !important;
+      margin-bottom: 2px !important;
+    }
+
+    .edu-cred-sub-body {
+      display: block !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      opacity: 0.8 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+    }
+
+    /* Table Body Rows */
+    .edu-matrix-table tbody tr {
+      transition: background-color 0.15s ease !important;
+    }
+
+    .edu-matrix-table tbody tr:nth-child(even) {
+      background-color: #FAFCFF !important;
+    }
+
+    .edu-matrix-table tbody tr:hover {
+      background-color: #F0F7FF !important;
+    }
+
+    .edu-matrix-table td {
+      padding: 18px 14px !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      border-right: 1px solid #F1F5F9 !important;
+      vertical-align: top !important;
+      color: #334155 !important;
+      font-size: 13.5px !important;
+    }
+
+    .edu-cell-feature-label {
+      font-weight: 700 !important;
+      color: #0F172A !important;
+      background: #FFFFFF !important;
+      border-right: 1px solid #E2E8F0 !important;
+      font-size: 14px !important;
+      position: sticky !important;
+      left: 0 !important;
+      z-index: 5 !important;
+      box-shadow: 2px 0 6px -2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .edu-matrix-table tbody tr:nth-child(even) .edu-cell-feature-label {
+      background: #FAFCFF !important;
+    }
+
+    .edu-matrix-table tbody tr:hover .edu-cell-feature-label {
+      background: #F0F7FF !important;
+    }
+
+    /* Column Highlighting & Specific Content Styling */
+    .edu-badge-org {
+      display: inline-flex !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      font-weight: 800 !important;
+      font-size: 13px !important;
+    }
+
+    .edu-badge-org-hrci {
+      background: #EFF6FF !important;
+      color: #2563EB !important;
+      border: 1px solid #BFDBFE !important;
+    }
+
+    .edu-badge-org-shrm {
+      background: #090D1A !important;
+      color: #FFFFFF !important;
+    }
+
+    .edu-or-divider {
+      display: block !important;
+      margin: 8px 0 !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      color: #2563EB !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+    }
+
+    .edu-price-tag {
+      font-size: 15px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .edu-pass-rate-tag {
+      display: inline-block !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #15803D !important;
+      background: #ECFDF5 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      border: 1px solid #A7F3D0 !important;
+      margin-bottom: 4px !important;
+    }
+
+    .edu-note-text {
+      display: block !important;
+      font-size: 11.5px !important;
+      color: #64748B !important;
+      margin-top: 4px !important;
+      line-height: 1.4 !important;
+    }
+
+    .edu-text-link {
+      color: #2563EB !important;
+      font-weight: 700 !important;
+      text-decoration: underline !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .edu-text-link:hover {
+      color: #1D4ED8 !important;
+    }
+
+    .edu-course-btn {
+      display: block !important;
+      margin-bottom: 8px !important;
+      padding: 7px 10px !important;
+      background: #EFF6FF !important;
+      border: 1px solid #BFDBFE !important;
+      border-radius: 6px !important;
+      color: #2563EB !important;
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .edu-course-btn:hover {
+      background: #2563EB !important;
+      color: #FFFFFF !important;
+      border-color: #2563EB !important;
+    }
+
+    /* Column Dimming / Hiding via JS filter */
+    .edu-matrix-table td.dimmed,
+    .edu-matrix-table th.dimmed {
+      opacity: 0.25 !important;
+      background-color: #F8FAFC !important;
+    }
+
+    /* ---- GUARANTEE & CONVERSION ADVISOR CTA ---- */
+    .edu-guarantee-banner {
+      background: linear-gradient(135deg, #090D1A 0%, #1E293B 100%) !important;
+      border-radius: 20px !important;
+      padding: 44px 40px !important;
+      margin-top: 56px !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 20px 40px -10px rgba(9, 13, 26, 0.3) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .edu-guarantee-banner::before {
+      content: '' !important;
+      position: absolute !important;
+      top: -100px !important;
+      right: -100px !important;
+      width: 300px !important;
+      height: 300px !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, transparent 70%) !important;
+      pointer-events: none !important;
+    }
+
+    .edu-gb-grid {
+      display: grid !important;
+      grid-template-columns: 1.3fr 0.9fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .edu-gb-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: rgba(217, 119, 6, 0.2) !important;
+      border: 1px solid #D97706 !important;
+      color: #FBBF24 !important;
+      padding: 6px 14px !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .edu-gb-title {
+      font-size: 30px !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      line-height: 1.25 !important;
+      margin: 0 0 14px 0 !important;
+      letter-spacing: -0.025em !important;
+    }
+
+    .edu-gb-text {
+      font-size: 15px !important;
+      line-height: 1.6 !important;
+      color: #CBD5E1 !important;
+      margin: 0 0 22px 0 !important;
+    }
+
+    .edu-gb-links {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+    }
+
+    .edu-cta-btn-primary {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: #2563EB !important;
+      color: #FFFFFF !important;
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      padding: 13px 24px !important;
+      border-radius: 8px !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .edu-cta-btn-primary:hover {
+      background: #1D4ED8 !important;
+      transform: translateY(-2px) !important;
+      color: #FFFFFF !important;
+    }
+
+    .edu-cta-btn-secondary {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      padding: 13px 22px !important;
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .edu-cta-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: #FFFFFF !important;
+    }
+
+    .edu-gb-card-right {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      border-radius: 14px !important;
+      padding: 24px !important;
+    }
+
+    .edu-gb-right-title {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      margin: 0 0 14px 0 !important;
+    }
+
+    .edu-gb-checklist {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 0 18px 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+
+    .edu-gb-checklist li {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 10px !important;
+      font-size: 13.5px !important;
+      color: #E2E8F0 !important;
+      line-height: 1.4 !important;
+    }
+
+    .edu-gb-checklist svg {
+      width: 18px !important;
+      height: 18px !important;
+      flex-shrink: 0 !important;
+      fill: #10B981 !important;
+      margin-top: 1px !important;
+    }
+
+    /* Disclaimer Section */
+    .edu-disclaimer-box {
+      margin-top: 36px !important;
+      padding: 20px 24px !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 12px !important;
+      font-size: 12px !important;
+      line-height: 1.6 !important;
+      color: #64748B !important;
+    }
+
+    /* Floating Back to Top Button */
+    .edu-floating-top-btn {
+      position: fixed !important;
+      bottom: 28px !important;
+      right: 28px !important;
+      width: 46px !important;
+      height: 46px !important;
+      border-radius: 50% !important;
+      background: #090D1A !important;
+      color: #FFFFFF !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 6px 18px rgba(9, 13, 26, 0.25) !important;
+      cursor: pointer !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      z-index: 999 !important;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s ease !important;
+    }
+
+    .edu-floating-top-btn.is-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .edu-floating-top-btn:hover {
+      background: #2563EB !important;
+      transform: translateY(-3px) !important;
+    }
+
+    /* ---- RESPONSIVE BREAKPOINTS ---- */
+    @media (max-width: 1024px) {
+      .edu-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+      }
+      .edu-gb-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .edu-hero-title {
+        font-size: 32px !important;
+      }
+      .edu-hero-subtitle {
+        font-size: 18px !important;
+      }
+      .edu-org-cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .edu-section-header {
+        padding: 16px 20px !important;
+      }
+      .edu-section-title {
+        font-size: 20px !important;
+      }
+      .edu-sticky-dock {
+        padding: 10px 0 !important;
+      }
+      .edu-jump-nav-link {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+      }
+      .edu-guarantee-banner {
+        padding: 30px 22px !important;
+      }
+    }
+  </style>
+
+  <!-- Reading Progress Indicator -->
+  <div class="edu-reading-progress" id="eduReadingProgress"></div>
+
+  <!-- Top Navigation & Breadcrumbs -->
+  <header class="edu-top-nav-bar">
+    <div class="edu-guidelines-container">
+      <div class="edu-top-nav-inner">
+        <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+          <a href="/education">Education &amp; Certification</a>
+          <span class="edu-bc-sep">&#9656;</span>
+          <a href="/understanding-hr-certification">Decision Hub</a>
+          <span class="edu-bc-sep">&#9656;</span>
+          <span class="edu-bc-current">Comparison Guidelines</span>
+        </nav>
+        <a href="/understanding-hr-certification" class="edu-back-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Certification Program
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="edu-hero-section">
+    <div class="edu-guidelines-container">
+      <div class="edu-hero-grid">
+        <div class="edu-hero-content">
+          <div class="edu-hero-badge">
+            <span class="edu-hero-badge-dot"></span>
+            Official 2026 Examination &amp; Credential Matrix
+          </div>
+          <h1 class="edu-hero-title">Certification<br />Comparison Chart</h1>
+          <h2 class="edu-hero-subtitle">HR.com prepares you to pass any HR exam - or your money back!</h2>
+          <p class="edu-hero-description">
+            Whether it be from HRCI or SHRM, a professional certification demonstrates to peers and colleagues within the Human Resources profession that you are a recognized expert and have mastered the core HR principles.
+          </p>
+          <div class="edu-hero-callout">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <div>
+              HR.com has created this comparison chart to help you understand the available certifications, and decide which credential is best suited for you.
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-hero-visual-card">
+          <img src="images/cert-comparison-hero.jpg" alt="HR Executive reviewing certification guidelines" />
+          <div class="edu-hero-floating-badge">
+            <div>
+              <div class="edu-hfb-title">HRCI &amp; SHRM Dual Alignment</div>
+              <div class="edu-hfb-sub">7 Core Credentials Compared Across 5 Dimensions</div>
+            </div>
+            <span class="edu-hfb-pill">100% Guaranteed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifying Bodies Overview Cards -->
+  <section class="edu-overview-section">
+    <div class="edu-guidelines-container">
+      <div class="edu-org-cards-grid">
+        <!-- HRCI Card -->
+        <div class="edu-org-card edu-org-card-hrci">
+          <div class="edu-org-header">
+            <div class="edu-org-logo-wrap edu-org-logo-hrci">HRCI</div>
+            <div>
+              <h3 class="edu-org-title">HRCI</h3>
+              <span class="edu-org-subtitle">HR Certification Institute</span>
+            </div>
+          </div>
+          <ul class="edu-org-creds-list">
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">aPHR</span>
+              <span>Associate Professional in Human Resources</span>
+            </li>
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">PHR</span>
+              <span>Professional in Human Resources</span>
+            </li>
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">SPHR</span>
+              <span>Senior Professional in Human Resources</span>
+            </li>
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">PHRi</span>
+              <span>Professional in Human Resources (International)</span>
+            </li>
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">SPHRi</span>
+              <span>Senior Professional in Human Resources (International)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SHRM Card -->
+        <div class="edu-org-card edu-org-card-shrm">
+          <div class="edu-org-header">
+            <div class="edu-org-logo-wrap edu-org-logo-shrm">SHRM</div>
+            <div>
+              <h3 class="edu-org-title">SHRM</h3>
+              <span class="edu-org-subtitle">Society for Human Resource Management</span>
+            </div>
+          </div>
+          <ul class="edu-org-creds-list">
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">SHRM-CP</span>
+              <span>Certified Professional</span>
+            </li>
+            <li class="edu-org-cred-item">
+              <span class="edu-org-cred-tag">SHRM-SCP</span>
+              <span>Senior Certified Professional</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Quick-Jump & Interactive Filter Bar -->
+  <nav class="edu-sticky-dock" id="eduStickyDock">
+    <div class="edu-guidelines-container">
+      <div class="edu-sticky-dock-inner">
+        <!-- Vertical Jump Links -->
+        <ul class="edu-jump-nav-list">
+          <li>
+            <a href="#tab1" class="edu-jump-nav-link active" data-section="tab1">
+              <span class="edu-jump-num">1</span> Eligibility
+            </a>
+          </li>
+          <li>
+            <a href="#tab2" class="edu-jump-nav-link" data-section="tab2">
+              <span class="edu-jump-num">2</span> About
+            </a>
+          </li>
+          <li>
+            <a href="#tab3" class="edu-jump-nav-link" data-section="tab3">
+              <span class="edu-jump-num">3</span> Registration
+            </a>
+          </li>
+          <li>
+            <a href="#tab4" class="edu-jump-nav-link" data-section="tab4">
+              <span class="edu-jump-num">4</span> Preparation
+            </a>
+          </li>
+          <li>
+            <a href="#tab5" class="edu-jump-nav-link" data-section="tab5">
+              <span class="edu-jump-num">5</span> Recertification
+            </a>
+          </li>
+        </ul>
+
+        <!-- Credential Filter Pills -->
+        <div class="edu-filter-group">
+          <span class="edu-filter-label">Filter:</span>
+          <button type="button" class="edu-filter-pill active" data-filter="all">All 7</button>
+          <button type="button" class="edu-filter-pill" data-filter="hrci">HRCI (5)</button>
+          <button type="button" class="edu-filter-pill" data-filter="shrm">SHRM (2)</button>
+          <button type="button" class="edu-filter-pill" data-filter="early">Early Career</button>
+          <button type="button" class="edu-filter-pill" data-filter="operational">Operational</button>
+          <button type="button" class="edu-filter-pill" data-filter="strategic">Strategic</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN COMPARISON MATRICES CONTAINER -->
+  <main class="edu-guidelines-container">
+    
+    <!-- ==================== SECTION 1: ELIGIBILITY (#tab1) ==================== -->
+    <section class="edu-section-block" id="tab1">
+      <div class="edu-section-header">
+        <div class="edu-section-title-wrap">
+          <div class="edu-section-number-badge">1</div>
+          <h2 class="edu-section-title">Eligibility</h2>
+        </div>
+        <div class="edu-section-actions">
+          <span class="edu-swipe-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Scroll across to compare
+          </span>
+          <button class="edu-top-link-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" type="button">
+            &uarr; Top
+          </button>
+        </div>
+      </div>
+
+      <div class="edu-matrix-wrapper">
+        <table class="edu-matrix-table" aria-label="Eligibility Comparison Matrix">
+          <thead>
+            <tr>
+              <th class="edu-col-feature">Criteria</th>
+              <th class="edu-col-hrci-hdr col-aphr col-hrci col-early">
+                <span class="edu-cred-badge-name">aPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phr col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphr col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phri col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphri col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmcp col-shrm col-operational">
+                <span class="edu-cred-badge-name">SHRM-CP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmscp col-shrm col-strategic">
+                <span class="edu-cred-badge-name">SHRM-SCP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="edu-cell-feature-label">Certifying Body</td>
+              <td class="col-aphr col-hrci col-early"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-shrmcp col-shrm col-operational"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Exam Eligibility Guidelines</td>
+              <td class="col-aphr col-hrci col-early">
+                To be eligible for the aPHR you must have a high school diploma or global equivalent. No HR experience is required since this is a knowledge-based credential<strong>.</strong>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                A minimum of 1 year of experience in a professional-level HR position with a Master&rsquo;s degree or higher,<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 2 years of experience in a professional HR position with a Bachelor&rsquo;s degree,<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 4 years of experience in a professional-level HR position with less than a Bachelor&rsquo;s degree
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                A minimum of 4 years of experience in a professional-level HR position with a Master&rsquo;s degree or higher<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 5 years experience in a professional HR position with a Bachelor&rsquo;s degree,<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 7 years of experience in a professional-level HR position with less than a Bachelor&rsquo;s degree
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                A minimum of 1 year of professional-level experience in an HR position with a Master's degree or global equivalent,<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 2 years of professional-level experience in an HR position with a Bachelor's degree or global equivalent,<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 4 years of professional-level experience in an HR position with less than a Bachelor's degree or global equivalent<br />
+                <em class="edu-note-text">The PHRi is only available to candidates outside of the United States.</em>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                A minimum of 4 years of professional-level experience in an HR position with a Master's degree or global equivalent<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 5 years of professional-level experience in an HR position with a Bachelor's degree or global equivalent<br />
+                <span class="edu-or-divider">---- &nbsp;OR ----</span>
+                A minimum of 7 years of professional-level experience in an HR position with less than a Bachelor's degree or global equivalent<br />
+                <em class="edu-note-text">The SPHRi is available only to candidates outside of the United States.</em>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                Intended for individuals that perform HR/HR-related duties, or individuals pursuing a career in Human Resource Management.<br />
+                <strong>HR title not required.</strong><br />
+                <strong>HR degree not required.</strong><br />
+                <strong>Previous HR experience is not required.</strong>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                Minimum 3 years of work history performing strategic level HR/HR-related duties; or SHRM-CP credential holders who have held the credential for at least 3 years and are pursuing or currently in a strategic role.<br />
+                <strong>HR title not required.</strong><br />
+                <strong>HR degree not required.</strong><br />
+                <strong>1,000 hrs per calendar year required</strong>, comprised of strategic HR/ HR-related work.
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Who should take this exam?</td>
+              <td class="col-aphr col-hrci col-early">
+                Anyone interested in pursuing a career in HR, who lacks the work experience for a more senior-level certification (PHR, SPHR, SHRM-CP, SHRM-SCP)
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                HR practitioners with an operational focus.<br />
+                <span class="edu-note-text">Exam candidates will need to satisfy exam eligibility criteria.</span>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                Senior HR practitioners with a strategic focus.<br />
+                <span class="edu-note-text">Exam candidates will need to satisfy exam eligibility criteria.</span>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                HR practitioners based outside of the United States with an international operational focus.<br />
+                <span class="edu-note-text">Exam candidates will need to satisfy exam eligibility criteria.</span>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                HR practitioners based outside of the United States with an international strategic focus.<br />
+                <span class="edu-note-text">Exam candidates will need to satisfy exam eligibility criteria.</span>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                HR practitioners with an operational focus.<br />
+                <span class="edu-note-text">Exam candidates will need to satisfy exam eligibility criteria.</span>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                Senior HR practitioners with a strategic focus.<br />
+                <span class="edu-note-text">Exam candidates will need to satisfy exam eligibility criteria.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: ABOUT (#tab2) ==================== -->
+    <section class="edu-section-block" id="tab2">
+      <div class="edu-section-header">
+        <div class="edu-section-title-wrap">
+          <div class="edu-section-number-badge">2</div>
+          <h2 class="edu-section-title">About</h2>
+        </div>
+        <div class="edu-section-actions">
+          <span class="edu-swipe-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Scroll across to compare
+          </span>
+          <button class="edu-top-link-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" type="button">
+            &uarr; Top
+          </button>
+        </div>
+      </div>
+
+      <div class="edu-matrix-wrapper">
+        <table class="edu-matrix-table" aria-label="About and Accreditation Comparison Matrix">
+          <thead>
+            <tr>
+              <th class="edu-col-feature">Criteria</th>
+              <th class="edu-col-hrci-hdr col-aphr col-hrci col-early">
+                <span class="edu-cred-badge-name">aPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phr col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphr col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phri col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphri col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmcp col-shrm col-operational">
+                <span class="edu-cred-badge-name">SHRM-CP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmscp col-shrm col-strategic">
+                <span class="edu-cred-badge-name">SHRM-SCP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="edu-cell-feature-label">Accreditation</td>
+              <td class="col-aphr col-hrci col-early"><strong>HRCI</strong><br /><span class="edu-note-text">NCCA</span></td>
+              <td class="col-phr col-hrci col-operational"><strong>HRCI</strong><br /><span class="edu-note-text">NCCA</span></td>
+              <td class="col-sphr col-hrci col-strategic"><strong>HRCI</strong><br /><span class="edu-note-text">NCCA</span></td>
+              <td class="col-phri col-hrci col-operational"><strong>HRCI</strong><br /><span class="edu-note-text">NCCA</span></td>
+              <td class="col-sphri col-hrci col-strategic"><strong>HRCI</strong><br /><span class="edu-note-text">NCCA</span></td>
+              <td class="col-shrmcp col-shrm col-operational"><strong>SHRM</strong><br /><span class="edu-note-text">The Buros Center for Testing</span></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong>SHRM</strong><br /><span class="edu-note-text">The Buros Center for Testing</span></td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Body of Knowledge</td>
+              <td class="col-aphr col-hrci col-early">
+                <a href="https://www.hrci.org/our-programs/our-certifications/aphr" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                <a href="https://www.hrci.org/our-programs/our-certifications/phr" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                <a href="https://www.hrci.org/our-programs/our-certifications/sphr" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                <a href="https://www.hrci.org/our-programs/our-certifications/phri" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                <a href="https://www.hrci.org/our-programs/our-certifications/sphri" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <a href="https://www.shrm.org/credentials/certification/exam-preparation/bask" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <a href="https://www.shrm.org/credentials/certification/exam-preparation/bask" target="_blank" rel="noopener noreferrer" class="edu-text-link">Click Here &rarr;</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">
+                Number of Certified Members in Good Standing<br />
+                <span class="edu-note-text">(as of Jan 12, 2021)</span>
+              </td>
+              <td class="col-aphr col-hrci col-early"><strong>7,692</strong> active</td>
+              <td class="col-phr col-hrci col-operational"><strong>71,130</strong> active</td>
+              <td class="col-sphr col-hrci col-strategic"><strong>47,903</strong> active</td>
+              <td class="col-phri col-hrci col-operational"><strong>2,144</strong> active</td>
+              <td class="col-sphri col-hrci col-strategic"><strong>1,759</strong> active</td>
+              <td class="col-shrmcp col-shrm col-operational"><strong>65,730</strong></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong>45,677</strong></td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Industry Pass Rate</td>
+              <td class="col-aphr col-hrci col-early">
+                <span class="edu-pass-rate-tag">71%</span>
+                <span class="edu-note-text">(as of Dec 31 2025)</span>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                <span class="edu-pass-rate-tag">72%</span>
+                <span class="edu-note-text">(as of Dec 31 2025)</span>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                <span class="edu-pass-rate-tag">76%</span>
+                <span class="edu-note-text">(as of Dec 31 2025)</span>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                <span class="edu-pass-rate-tag">84%</span>
+                <span class="edu-note-text">(as of Dec 31 2025)</span>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                <span class="edu-pass-rate-tag">76%</span>
+                <span class="edu-note-text">(as of Dec 31 2025)</span>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <span class="edu-pass-rate-tag">68%</span>
+                <span class="edu-note-text">(based on the spring 2025 testing window)</span>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <span class="edu-pass-rate-tag">50%</span>
+                <span class="edu-note-text">(based on the spring 2025 testing window)</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Exam Cancellation Policies</td>
+              <td class="col-aphr col-hrci col-early">
+                Once an exam application is approved, no refunds will be made if you no longer wish to take the exam.<br /><br />
+                &quot;<em>Never scheduled an exam appointment</em>&quot; or &quot;<em>missed the exam appointment</em>&quot; (during the 180 calendar days eligibility period) No refund, exception or extension will be provided. You will need to reapply and pay all applicable fees.<br /><br />
+                Refunds may be considered if an application is made ineligible. However, a processing fee will be applied.
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                Once an exam application is approved, no refunds will be made if you no longer wish to take the exam.<br /><br />
+                &quot;<em>Never scheduled an exam appointment</em>&quot; or &quot;<em>missed the exam appointment</em>&quot; (during the 180 calendar days eligibility period) No refund, exception or extension will be provided. You will need to reapply and pay all applicable fees.<br /><br />
+                Refunds may be considered if an application is made ineligible. However, a processing fee will be applied.
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                Once an exam application is approved, no refunds will be made if you no longer wish to take the exam.<br /><br />
+                &quot;<em>Never scheduled an exam appointment</em>&quot; or &quot;<em>missed the exam appointment</em>&quot; (during the 180 calendar days eligibility period) No refund, exception or extension will be provided. You will need to reapply and pay all applicable fees.<br /><br />
+                Refunds may be considered if an application is made ineligible. However, a processing fee will be applied.
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                Once an exam application is approved, no refunds will be made if you no longer wish to take the exam.<br /><br />
+                &quot;<em>Never scheduled an exam appointment</em>&quot; or &quot;<em>missed the exam appointment</em>&quot; (during the 180 calendar days eligibility period) No refund, exception or extension will be provided. You will need to reapply and pay all applicable fees.<br /><br />
+                Refunds may be considered if an application is made ineligible. However, a processing fee will be applied.
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                Once an exam application is approved, no refunds will be made if you no longer wish to take the exam.<br /><br />
+                &quot;<em>Never scheduled an exam appointment</em>&quot; or &quot;<em>missed the exam appointment</em>&quot; (during the 180 calendar days eligibility period) No refund, exception or extension will be provided. You will need to reapply and pay all applicable fees.<br /><br />
+                Refunds may be considered if an application is made ineligible. However, a processing fee will be applied.
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                If a candidate cancels less than 30 days but no later than five days prior to an exam appointment, a <strong>$53 cancellation fee</strong> will be charged by Prometric.
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                If a candidate cancels less than 30 days but no later than five days prior to an exam appointment, a <strong>$53 cancellation fee</strong> will be charged by Prometric.
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Time in the Market</td>
+              <td class="col-aphr col-hrci col-early"><strong>5 years</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong>45 years</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong>45 years</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong>5 yrs</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong>5 yrs</strong></td>
+              <td class="col-shrmcp col-shrm col-operational"><strong>6 years</strong></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong>6 years</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: REGISTRATION (#tab3) ==================== -->
+    <section class="edu-section-block" id="tab3">
+      <div class="edu-section-header">
+        <div class="edu-section-title-wrap">
+          <div class="edu-section-number-badge">3</div>
+          <h2 class="edu-section-title">Registration</h2>
+        </div>
+        <div class="edu-section-actions">
+          <span class="edu-swipe-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Scroll across to compare
+          </span>
+          <button class="edu-top-link-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" type="button">
+            &uarr; Top
+          </button>
+        </div>
+      </div>
+
+      <div class="edu-matrix-wrapper">
+        <table class="edu-matrix-table" aria-label="Registration and Pricing Comparison Matrix">
+          <thead>
+            <tr>
+              <th class="edu-col-feature">Criteria</th>
+              <th class="edu-col-hrci-hdr col-aphr col-hrci col-early">
+                <span class="edu-cred-badge-name">aPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phr col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphr col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phri col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphri col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmcp col-shrm col-operational">
+                <span class="edu-cred-badge-name">SHRM-CP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmscp col-shrm col-strategic">
+                <span class="edu-cred-badge-name">SHRM-SCP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="edu-cell-feature-label">Accrediting Body</td>
+              <td class="col-aphr col-hrci col-early"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-shrmcp col-shrm col-operational"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Test Booking Period</td>
+              <td class="col-aphr col-hrci col-early"><strong>Registration open year-round</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong>Registration open year-round</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong>Registration open year-round</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong>Registration open year-round</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong>Registration open year-round</strong></td>
+              <td class="col-shrmcp col-shrm col-operational">
+                a) Jan. 4-Apr. 8<br />
+                b) May 14-Nov. 9<br />
+                <em class="edu-note-text">*subject to change</em>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                a) Jan. 4-Apr. 8<br />
+                b) May 14-Nov. 9<br />
+                <em class="edu-note-text">*subject to change</em>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Testing Windows</td>
+              <td class="col-aphr col-hrci col-early">
+                <strong>OPEN:</strong> Exams are given year-round
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                <strong>OPEN:</strong> Exams are given year-round
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                <strong>OPEN:</strong> Exams are given year-round
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                <strong>OPEN:</strong> Exams are given year-round
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                <strong>OPEN:</strong> Exams are given year-round
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                a) Dec 1 &ndash; Feb 15<br />
+                b) May 1 - July 15
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                a) Dec 1 &ndash; Feb 15<br />
+                b) May 1 - July 15
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">
+                Exam Price<br />
+                <span class="edu-note-text"><em>*prices may vary; verify on the certifying institute website</em></span>
+              </td>
+              <td class="col-aphr col-hrci col-early">
+                <span class="edu-price-tag">$300</span><br />
+                <span class="edu-note-text">+ $100 application fee</span>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                <span class="edu-price-tag">$395</span><br />
+                <span class="edu-note-text">+ $100 application fee</span>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                <span class="edu-price-tag">$495</span><br />
+                <span class="edu-note-text">+ $100 application fee</span>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                <span class="edu-price-tag">$395</span><br />
+                <span class="edu-note-text">+ $100 application fee</span>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                <span class="edu-price-tag">$495</span><br />
+                <span class="edu-note-text">+ $100 application fee</span>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <span class="edu-price-tag">$495</span> <span class="edu-note-text">(SHRM members)</span><br />
+                <span class="edu-price-tag">$595</span> <span class="edu-note-text">(non-SHRM members)</span>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <span class="edu-price-tag">$595</span> <span class="edu-note-text">(SHRM members)</span><br />
+                <span class="edu-price-tag">$695</span> <span class="edu-note-text">(non-SHRM members)</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Exam Format</td>
+              <td class="col-aphr col-hrci col-early">
+                65 mostly Multiple Choice Questions<br />
+                +<br />
+                25 Pre-Test Multiple Choice Questions<br /><br />
+                <strong>1 hour, 45 mins</strong>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                90 mostly Multiple Choice Questions<br />
+                +<br />
+                25 Pre-Test Multiple Choice Questions<br /><br />
+                <strong>2 hours</strong>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                115 mostly Multiple Choice Questions<br />
+                +<br />
+                25 Pre-Test Multiple Choice Questions<br /><br />
+                <strong>2 hours, 30 minutes</strong>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                145 mostly Multiple Choice Questions<br />
+                +<br />
+                25 Pre-Test Multiple Choice Questions<br /><br />
+                <strong>3 hours 15 minutes</strong>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                105 mostly Multiple Choice Questions<br />
+                +<br />
+                25 Pre-Test Multiple Choice Questions<br /><br />
+                <strong>2 hours 30 minutes</strong>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                110 Multiple Choice Questions<br />
+                +<br />
+                24 Field Test Questions<br /><br />
+                <strong>Exam Time: 3 hours, 40 minutes</strong>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                110 Multiple Choice Questions<br />
+                +<br />
+                24 Field Test Questions<br /><br />
+                <strong>Exam Time: 3 hours, 40 minutes</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: PREPARATION (#tab4) ==================== -->
+    <section class="edu-section-block" id="tab4">
+      <div class="edu-section-header">
+        <div class="edu-section-title-wrap">
+          <div class="edu-section-number-badge">4</div>
+          <h2 class="edu-section-title">Preparation</h2>
+        </div>
+        <div class="edu-section-actions">
+          <span class="edu-swipe-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Scroll across to compare
+          </span>
+          <button class="edu-top-link-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" type="button">
+            &uarr; Top
+          </button>
+        </div>
+      </div>
+
+      <div class="edu-matrix-wrapper">
+        <table class="edu-matrix-table" aria-label="Preparation Options and Course Providers Comparison Matrix">
+          <thead>
+            <tr>
+              <th class="edu-col-feature">Criteria</th>
+              <th class="edu-col-hrci-hdr col-aphr col-hrci col-early">
+                <span class="edu-cred-badge-name">aPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phr col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphr col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phri col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphri col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmcp col-shrm col-operational">
+                <span class="edu-cred-badge-name">SHRM-CP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmscp col-shrm col-strategic">
+                <span class="edu-cred-badge-name">SHRM-SCP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="edu-cell-feature-label">Accrediting Body</td>
+              <td class="col-aphr col-hrci col-early"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-shrmcp col-shrm col-operational"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Test Prep/Study Material Provider(s)</td>
+              <td class="col-aphr col-hrci col-early">
+                <a href="https://www.hr.com/10weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>10-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                <a href="https://www.hr.com/16weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>16-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+                <a href="https://www.hr.com/8weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>8-week ACCELERATED</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                <a href="https://www.hr.com/16weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>16-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+                <a href="https://www.hr.com/8weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>8-week ACCELERATED</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                <a href="https://www.hr.com/16weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>16-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+                <a href="https://www.hr.com/8weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>8-week ACCELERATED</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                <a href="https://www.hr.com/16weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>16-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+                <a href="https://www.hr.com/8weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>8-week ACCELERATED</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <a href="https://www.hr.com/16weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>16-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+                <a href="https://www.hr.com/8weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>8-week ACCELERATED</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <a href="https://www.hr.com/16weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>16-week</strong> virtual online, live instructor-led program &rarr;
+                </a>
+                <a href="https://www.hr.com/8weeks" class="edu-course-btn" target="_blank" rel="noopener noreferrer">
+                  <strong>8-week ACCELERATED</strong> virtual online, live instructor-led program &rarr;
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Price Range of Cert Prep</td>
+              <td class="col-aphr col-hrci col-early"><strong>$150 - $800</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong>$35 - $1199</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong>$35 - $1199</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong>$35 - $1199</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong>$35 - $1199</strong></td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <strong>$450 - $1400</strong><br /><br />
+                <span class="edu-note-text" style="font-weight:700; color:#0F172A;">SHRM Learning System:</span>
+                <span class="edu-note-text">$920 (USD) for non-members</span>
+                <span class="edu-note-text">$695 (USD) for members</span>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <strong>$450 - $1400</strong><br /><br />
+                <span class="edu-note-text" style="font-weight:700; color:#0F172A;">SHRM Learning System:</span>
+                <span class="edu-note-text">$920 (USD) for non-members</span>
+                <span class="edu-note-text">$695 (USD) for members</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Exam Location/Delivery:</td>
+              <td class="col-aphr col-hrci col-early">
+                Remote <span class="edu-note-text">(available only in Can or US)</span> or in-person testing via Pearson Vue Testing Center
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                Remote <span class="edu-note-text">(available only in Can or US)</span> or in-person testing via Pearson Vue Testing Center
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                Remote <span class="edu-note-text">(available only in Can or US)</span> or in-person testing via Pearson Vue Testing Center
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                Remote <span class="edu-note-text">(available only in Can or US)</span> or in-person testing via Pearson Vue Testing Center
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                Remote <span class="edu-note-text">(available only in Can or US)</span> or in-person testing via Pearson Vue Testing Center
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                In-person testing via Prometric Testing Center
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                In-person testing via Prometric Testing Center
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: RECERTIFICATION (#tab5) ==================== -->
+    <section class="edu-section-block" id="tab5">
+      <div class="edu-section-header">
+        <div class="edu-section-title-wrap">
+          <div class="edu-section-number-badge">5</div>
+          <h2 class="edu-section-title">Recertification</h2>
+        </div>
+        <div class="edu-section-actions">
+          <span class="edu-swipe-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Scroll across to compare
+          </span>
+          <button class="edu-top-link-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" type="button">
+            &uarr; Top
+          </button>
+        </div>
+      </div>
+
+      <div class="edu-matrix-wrapper">
+        <table class="edu-matrix-table" aria-label="Recertification Requirements and Fees Comparison Matrix">
+          <thead>
+            <tr>
+              <th class="edu-col-feature">Criteria</th>
+              <th class="edu-col-hrci-hdr col-aphr col-hrci col-early">
+                <span class="edu-cred-badge-name">aPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phr col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphr col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHR</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-phri col-hrci col-operational">
+                <span class="edu-cred-badge-name">PHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-hrci-hdr col-sphri col-hrci col-strategic">
+                <span class="edu-cred-badge-name">SPHRi</span>
+                <span class="edu-cred-sub-body">HRCI</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmcp col-shrm col-operational">
+                <span class="edu-cred-badge-name">SHRM-CP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+              <th class="edu-col-shrm-hdr col-shrmscp col-shrm col-strategic">
+                <span class="edu-cred-badge-name">SHRM-SCP</span>
+                <span class="edu-cred-sub-body">SHRM</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="edu-cell-feature-label">Accrediting Body</td>
+              <td class="col-aphr col-hrci col-early"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phr col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphr col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-phri col-hrci col-operational"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-sphri col-hrci col-strategic"><strong class="edu-badge-org edu-badge-org-hrci">HRCI</strong></td>
+              <td class="col-shrmcp col-shrm col-operational"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+              <td class="col-shrmscp col-shrm col-strategic"><strong class="edu-badge-org edu-badge-org-shrm">SHRM</strong></td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Recertification Requirements</td>
+              <td class="col-aphr col-hrci col-early">
+                Retake and pass the same certification exam OR earn <strong>45 credits</strong> worth of HR-related continuing professional development activities over 3 years.<br /><br />
+                <span class="edu-note-text">An unlimited amount of Webcast Credits can be used.</span>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                Retake and pass the same certification exam OR earn <strong>60 credits</strong> worth of HR-related continuing professional development activities over 3 years.<br /><br />
+                <span class="edu-note-text">An unlimited amount of Webcast Credits can be used.</span>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                Retake and pass the same certification exam OR earn <strong>60 credits</strong> worth of HR-related continuing professional development activities over 3 years. <strong>15 credits must be classified as Strategic / Business Management</strong><br /><br />
+                <span class="edu-note-text">An unlimited amount of Webcast Credits can be used.</span>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                Retake and pass the same certification exam OR earn <strong>60 credits</strong> worth of HR-related continuing professional development activities over 3 years.<br /><br />
+                <span class="edu-note-text">An unlimited amount of Webcast Credits can be used.</span>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                Retake and pass the same certification exam OR earn <strong>60 credits</strong> worth of HR-related continuing professional development activities over 3 years. <strong>15 credits must be classified as Strategic / Business Management</strong><br /><br />
+                <span class="edu-note-text">An unlimited amount of Webcast Credits can be used..</span>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <strong>60 Professional Development Credits (PDCs)</strong> every three years, or retake the certification exam.<br /><br />
+                <u><strong>No Limit</strong></u> on Instructor-Led or Self-Paced Credits.<br />
+                <a href="https://www.shrmcertification.org" target="_blank" rel="noopener noreferrer" class="edu-text-link">Visit www.shrmcertification.org &rarr;</a>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <strong>60 Professional Development Credits (PDCs)</strong> every three years, or retake the certification exam.<br /><br />
+                <u><strong>No Limit</strong></u> on Instructor-Led or Self-Paced Credits.<br />
+                <a href="https://www.shrmcertification.org" target="_blank" rel="noopener noreferrer" class="edu-text-link">Visit www.shrmcertification.org &rarr;</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="edu-cell-feature-label">Recertification Fees:</td>
+              <td class="col-aphr col-hrci col-early">
+                <strong>$169 USD</strong> for 1 certification<br /><br />
+                <span class="edu-note-text">Each additional certification = $50 USD</span><br />
+                <span class="edu-note-text">Suspended Fee = $100 USD</span>
+              </td>
+              <td class="col-phr col-hrci col-operational">
+                <strong>$169 USD</strong> for 1 certification<br /><br />
+                <span class="edu-note-text">Each additional certification = $50 USD</span><br />
+                <span class="edu-note-text">Suspended Fee = $100 USD</span>
+              </td>
+              <td class="col-sphr col-hrci col-strategic">
+                <strong>$169 USD</strong> for 1 certification<br /><br />
+                <span class="edu-note-text">Each additional certification = $50 USD</span><br />
+                <span class="edu-note-text">Suspended Fee = $100 USD</span>
+              </td>
+              <td class="col-phri col-hrci col-operational">
+                <strong>$169 USD</strong> for 1 certification<br /><br />
+                <span class="edu-note-text">Each additional certification = $50 USD</span><br />
+                <span class="edu-note-text">Suspended Fee = $100 USD</span>
+              </td>
+              <td class="col-sphri col-hrci col-strategic">
+                <strong>$169 USD</strong> for 1 certification<br /><br />
+                <span class="edu-note-text">Each additional certification = $50 USD</span><br />
+                <span class="edu-note-text">Suspended Fee = $100 USD</span>
+              </td>
+              <td class="col-shrmcp col-shrm col-operational">
+                <strong>SHRM Members = $165 USD</strong><br />
+                <strong>Nonmembers = $210 USD</strong><br />
+                <em class="edu-note-text">(non-refundable, whether or not your application is approved)</em>
+              </td>
+              <td class="col-shrmscp col-shrm col-strategic">
+                <strong>SHRM Members = $165 USD</strong><br />
+                <strong>Nonmembers = $210 USD</strong><br />
+                <em class="edu-note-text">(non-refundable, whether or not your application is approved)</em>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pass Assurance & Course Enrollment CTA Banner -->
+    <section class="edu-guarantee-banner">
+      <div class="edu-gb-grid">
+        <div>
+          <div class="edu-gb-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            100% Pass Assurance Guarantee
+          </div>
+          <h2 class="edu-gb-title">Pass Your HR Exam on the First Attempt &mdash; Or Your Money Back.</h2>
+          <p class="edu-gb-text">
+            Join thousands of HR professionals who advanced their careers with HR.com. Expert live instruction, premier study tools, and unconditional pass protection.
+          </p>
+          <div class="edu-gb-links">
+            <a href="https://www.hr.com/16weeks" class="edu-cta-btn-primary" target="_blank" rel="noopener noreferrer">
+              Explore 16-Week Comprehensive &rarr;
+            </a>
+            <a href="https://www.hr.com/8weeks" class="edu-cta-btn-secondary" target="_blank" rel="noopener noreferrer">
+              8-Week Accelerated Course
+            </a>
+            <a href="https://www.hr.com/10weeks" class="edu-cta-btn-secondary" target="_blank" rel="noopener noreferrer">
+              10-Week aPHR Course
+            </a>
+          </div>
+        </div>
+
+        <div class="edu-gb-card-right">
+          <h4 class="edu-gb-right-title">Why Prepare with HR.com?</h4>
+          <ul class="edu-gb-checklist">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>95.6% First-Time Pass Rate</strong> across all HRCI &amp; SHRM exams</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Live Interactive Instruction</strong> led by senior HR experts</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Complete Prep Materials Included</strong> (Books, Flashcards &amp; Practice Tests)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>100% Money-Back Guarantee</strong> if you don't pass</span>
+            </li>
+          </ul>
+          <a href="/education/contact-advisor" class="edu-cta-btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+            Speak with a Certification Advisor
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer Box -->
+    <div class="edu-disclaimer-box">
+      <strong>Disclaimer &amp; Official Trademark Notices:</strong><br />
+      HRCI&reg;, aPHR&reg;, PHR&reg;, SPHR&reg;, PHRi&trade;, and SPHRi&trade; are registered trademarks of the HR Certification Institute. SHRM-CP&reg; and SHRM-SCP&reg; are registered trademarks of the Society for Human Resource Management. Exam prices, eligibility criteria, and testing windows are established by the respective certifying institutes and are subject to change. Please verify current registration details directly on the official HRCI (hrci.org) and SHRM (shrm.org) websites.
+    </div>
+
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="edu-floating-top-btn" id="eduFloatingTopBtn" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Lightweight Vanilla JavaScript for Interactive Filtering & ScrollSpy -->
+  <script>
+    (function () {
+      // 1. Reading Progress Bar & Floating Top Button
+      var progressEl = document.getElementById('eduReadingProgress');
+      var topBtn = document.getElementById('eduFloatingTopBtn');
+
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0 && progressEl) {
+          var pct = (scrollTop / docHeight) * 100;
+          progressEl.style.width = pct + '%';
+        }
+
+        if (topBtn) {
+          if (scrollTop > 450) {
+            topBtn.classList.add('is-visible');
+          } else {
+            topBtn.classList.remove('is-visible');
+          }
+        }
+      });
+
+      // 2. Sticky Nav ScrollSpy
+      var sections = ['tab1', 'tab2', 'tab3', 'tab4', 'tab5'];
+      var navLinks = document.querySelectorAll('.edu-jump-nav-link');
+
+      function updateActiveNav() {
+        var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        var offset = 140;
+
+        for (var i = sections.length - 1; i >= 0; i--) {
+          var secId = sections[i];
+          var el = document.getElementById(secId);
+          if (el && el.offsetTop - offset <= scrollPos) {
+            navLinks.forEach(function (link) {
+              if (link.getAttribute('data-section') === secId) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+            break;
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateActiveNav);
+
+      // Smooth scroll for jump links
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var targetId = this.getAttribute('href').substring(1);
+          var targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            var targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo({
+              top: targetPos,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // 3. Interactive Credential Filter Pills
+      var filterButtons = document.querySelectorAll('.edu-filter-pill');
+      var allTables = document.querySelectorAll('.edu-matrix-table');
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          var filter = this.getAttribute('data-filter');
+
+          allTables.forEach(function (table) {
+            var allCells = table.querySelectorAll('th:not(.edu-col-feature), td:not(.edu-cell-feature-label)');
+
+            if (filter === 'all') {
+              allCells.forEach(function (cell) {
+                cell.classList.remove('dimmed');
+                cell.style.display = '';
+              });
+              return;
+            }
+
+            allCells.forEach(function (cell) {
+              if (cell.classList.contains('col-' + filter)) {
+                cell.classList.remove('dimmed');
+                cell.style.display = '';
+              } else {
+                cell.classList.add('dimmed');
+              }
+            });
+          });
+        });
+      });
+    })();
+  </script>
+</div>

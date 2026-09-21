@@ -40,6 +40,8 @@ All new production pages live in the dedicated certification folder:
 | 7 | `ask-my-employer.html` | Queued | Employer funding toolkit, interactive 1-click boss pitch email generator, customizable business justification case. |
 | 8 | `book-a-call.html` | Queued | 1-on-1 advisor consultation, video consultation scheduler, course demo preview, advisor reassurance. |
 
+> **Note on Individual Course Detail Pages**: For cohort prep course detail pages (16-week, 8-week, aPHR, SHRM prep), see the specialized skill [`course-details-page-redesign`](file:///e:/HR/00-html/.agents/skills/course-details-page-redesign/SKILL.md) which benchmarks [`16-weeks-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/16-weeks-dev.html).
+
 ---
 
 ## 3. Design System Tokens & Styling Standards

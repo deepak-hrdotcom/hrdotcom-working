@@ -725,12 +725,15 @@ body > .ContentArea > .container {
   background: var(--color-primary) !important;
 }
 
-/* Story Left: Photo Container (Vertical Rounded Square with Outline) */
+/* Story Left: Photo Container (220px x 200px Proportion) */
 .edu-uc-page .edu-story-photo-wrap {
-  width: 180px !important;
-  min-width: 180px !important;
-  aspect-ratio: 3 / 4 !important;
-  border-radius: 18px !important;
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  height: 200px !important;
+  max-height: 200px !important;
+  aspect-ratio: 220 / 200 !important;
+  border-radius: 16px !important;
   position: relative !important;
   overflow: hidden !important;
   flex-shrink: 0 !important;
@@ -746,11 +749,11 @@ body > .ContentArea > .container {
 .edu-uc-page .edu-story-img {
   width: 100% !important;
   height: 100% !important;
-  aspect-ratio: 3 / 4 !important;
+  aspect-ratio: 220 / 200 !important;
   object-fit: cover !important;
-  object-position: center 15% !important;
+  object-position: center 20% !important;
   display: block !important;
-  border-radius: 14px !important;
+  border-radius: 12px !important;
   transition: transform 0.35s ease !important;
 }
 
@@ -2522,7 +2525,7 @@ body > .ContentArea > .container {
   .edu-uc-page .edu-uc-hero-grid { grid-template-columns: 1fr !important; }
   .edu-uc-page .edu-uc-stat4-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .edu-uc-page .edu-story-card { padding: 26px 28px !important; gap: 28px !important; }
-  .edu-uc-page .edu-story-photo-wrap { width: 165px !important; min-width: 165px !important; }
+  .edu-uc-page .edu-story-photo-wrap { width: 210px !important; min-width: 210px !important; height: 190px !important; aspect-ratio: 210 / 190 !important; }
   .edu-uc-page .edu-story-body { padding: 0 !important; }
   .edu-uc-page .edu-matcher-panel { max-width: 100% !important; }
   .edu-uc-page .edu-matcher-top-bar { padding: 18px 28px !important; }
@@ -2543,7 +2546,7 @@ body > .ContentArea > .container {
   .edu-uc-page .edu-uc-sechead h2 { font-size: 26px !important; }
   .edu-uc-page .edu-stories-title { font-size: 26px !important; }
   .edu-uc-page .edu-story-card { flex-direction: column !important; padding: 28px 20px !important; gap: 20px !important; text-align: center !important; }
-  .edu-uc-page .edu-story-photo-wrap { width: 160px !important; min-width: 160px !important; margin: 0 auto !important; }
+  .edu-uc-page .edu-story-photo-wrap { width: 220px !important; min-width: 220px !important; max-width: 100% !important; height: 200px !important; aspect-ratio: 220 / 200 !important; margin: 0 auto !important; }
   .edu-uc-page .edu-story-body { padding: 0 !important; text-align: center !important; }
   .edu-uc-page .edu-story-heading { font-size: 19px !important; }
   .edu-uc-page .edu-story-quote { font-size: 15.5px !important; line-height: 1.65 !important; }
@@ -2641,7 +2644,7 @@ body > .ContentArea > .container {
         <div class="edu-uc-vidcard">
           <div class="edu-uc-vidthumb" id="ucHeroVidThumb" role="button" tabindex="0" aria-label="Play Greg Osmond Video Preview">
             <video id="ucHeroVideo" poster="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/intro-video-greg-11-sep-2026.jpg" preload="none" playsinline muted style="width: 100%; height: 100%; object-fit: cover; display: block;">
-              <source src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/intro-video-greg-11-sep-2026.mp4" type="video/mp4">
+              <source src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/HR.com_Cert_Prep_-_Complete_Certification_Guide_FINAL.mp4" type="video/mp4">
               Your browser does not support HTML5 video.
             </video>
             <div class="edu-uc-play" id="ucHeroPlayOverlay" aria-hidden="true">
@@ -2651,15 +2654,14 @@ body > .ContentArea > .container {
             </div>
             <div class="edu-uc-vid-duration" id="ucHeroVidDuration">
               <svg viewBox="0 0 24 24" fill="none" stroke="#4AC4D6" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              3 Min Overview
+              2 Min Overview
             </div>
           </div>
           <div class="edu-uc-vidmeta">
             <div>
-              <div class="edu-uc-vidmeta-title">HR Certification: Key Choices to Make</div>
-              <div class="edu-uc-vidmeta-sub">Featuring Greg Osmond, Lead Certification Advisor</div>
+              <div class="edu-uc-vidmeta-title">Get a Free Personalized HR Consultation</div>
+              <div class="edu-uc-vidmeta-sub">Certification Advisor Greg Osmond breaks down what&rsquo;s included.</div>
             </div>
-            <span class="edu-uc-chip edu-uc-chip-blue" style="margin:0 !important;">Preview Video</span>
           </div>
         </div>
       </div>
@@ -2733,86 +2735,57 @@ body > .ContentArea > .container {
     <div class="edu-stories-slider-wrap edu-reveal edu-reveal-d1" id="eduStoriesSlider" role="region" aria-label="Student Testimonials Slider">
       <div class="edu-stories-track" id="eduStoriesTrack">
 
-        <!-- Slide 1: Alma L -->
+        <!-- Slide 1: Rochelle Harris -->
         <div class="edu-story-slide" data-slide="0">
           <div class="edu-story-card">
             <div class="edu-story-photo-wrap">
               <img class="edu-story-img"
-                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/alma.jpg"
-                alt="Alma L holding certification results"
-                width="150" height="200" loading="lazy">
+                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/rochelle-harris.jpg"
+                alt="Rochelle Harris holding HRCI certification exam results"
+                width="220" height="200" loading="lazy">
               <span class="edu-story-badge">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                Dual Certified
+                HRCI Certified
               </span>
             </div>
             <div class="edu-story-body">
-              <h3 class="edu-story-heading">Achieving 2 Senior Certifications With One Course</h3>
+              <h3 class="edu-story-heading">“When You PASS, It Will Be WORTH IT!!”</h3>
               <p class="edu-story-quote">
-                &ldquo;From the moment I enrolled, I knew I was in good hands. The curriculum was comprehensive and well-organized &hellip; and the instructors were knowledgeable and passionate, always eager to answer my questions and provide clear explanations.<br><br>
-                You won't find a more comprehensive, supportive, and effective program anywhere else.&rdquo;
+                &ldquo;You definitely have to put in work, but when you PASS, it will be WORTH IT!!&rdquo;
               </p>
               <div class="edu-story-attribution">
-                <em>&mdash; Alma L,</em>
-                <span class="edu-story-cred">SHRM-SCP and SPHR</span>
+                <em>&mdash; Rochelle Harris,</em>
+                <span class="edu-story-cred">HRCI Certified HR Professional</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Slide 2: Robby P -->
+        <!-- Slide 2: Gabriella Talentino -->
         <div class="edu-story-slide" data-slide="1">
           <div class="edu-story-card">
             <div class="edu-story-photo-wrap">
               <img class="edu-story-img"
-                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/robbie.jpg"
-                alt="Robby P holding aPHR certification"
-                width="150" height="200" loading="lazy">
+                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/gabriella-talentino.jpg"
+                alt="Gabriella Talentino holding SPHR certification exam results"
+                width="220" height="200" loading="lazy">
               <span class="edu-story-badge">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                Career Pivot
+                SPHR Certified
               </span>
             </div>
             <div class="edu-story-body">
-              <h3 class="edu-story-heading">New Human Resource Professional Earns First Certification</h3>
+              <h3 class="edu-story-heading">“I Secured a New Job!”</h3>
               <p class="edu-story-quote">
-                &ldquo;A big thank you to Jennifer Marants and the entire HR.com team. Coming from 20+ years in operations, I am new to HR, but your support through the aPHR course made all the difference. The instructors were excellent, the content was practical, and every question I had was answered quickly and clearly.&rdquo;
+                &ldquo;With my new SPHR certification, I was able to secure a new job!&rdquo;
               </p>
               <div class="edu-story-attribution">
-                <em>&mdash; Robby P,</em>
-                <span class="edu-story-cred">aPHR</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3: Mayra S -->
-        <div class="edu-story-slide" data-slide="2">
-          <div class="edu-story-card">
-            <div class="edu-story-photo-wrap">
-              <img class="edu-story-img"
-                src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/mayra.jpg"
-                alt="Mayra S holding SPHR certification"
-                width="150" height="200" loading="lazy">
-              <span class="edu-story-badge">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                Passed SPHR
-              </span>
-            </div>
-            <div class="edu-story-body">
-              <h3 class="edu-story-heading">Persistence &mdash; and Choosing Quality Prep &mdash; Pay Off</h3>
-              <p class="edu-story-quote">
-                &ldquo;After failing my first attempt at the SPHR certification, I knew I needed something with more substance and a clear plan of where to start. The HR Exam Prep Course, along with the HRCI &amp; SHRM 3-Day Refresher course, provided exactly that. The course material, combined with practice tests, helped me refine my experience into an effective test-taking method. This time, I passed! I highly recommend these courses to anyone who needs a solid plan and strong resources to succeed.&rdquo;
-              </p>
-              <div class="edu-story-attribution">
-                <em>&mdash; Mayra S,</em>
-                <span class="edu-story-cred">SPHR</span>
+                <em>&mdash; Gabriella Talentino,</em>
+                <span class="edu-story-cred">SPHR Certified HR Professional</span>
               </div>
             </div>
           </div>
@@ -2828,7 +2801,6 @@ body > .ContentArea > .container {
         <div class="edu-stories-dots" id="eduStoriesDots">
           <button type="button" class="edu-stories-dot is-active" data-index="0" aria-label="Go to testimonial 1"></button>
           <button type="button" class="edu-stories-dot" data-index="1" aria-label="Go to testimonial 2"></button>
-          <button type="button" class="edu-stories-dot" data-index="2" aria-label="Go to testimonial 3"></button>
         </div>
         <button type="button" class="edu-stories-arrow edu-stories-next" id="eduStoriesNext" aria-label="Next Testimonial">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -3291,7 +3263,7 @@ body > .ContentArea > .container {
       <a href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/"
          class="edu-uc-btn edu-uc-btn-primary"
          target="_blank">
-        Explore Complete Cohort Schedules on the Program Page
+       Explore HR.com Prep Program Menu
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -3314,7 +3286,7 @@ body > .ContentArea > .container {
     <!-- 16:9 Video Frame (Real First Frame as Thumbnail) -->
     <div class="edu-video-frame edu-uc-video-frame edu-reveal edu-reveal-d1" id="ucGregVideoFrame">
       <video id="ucGregOsmondVideo" poster="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/intro-video-greg-11-sep-2026.jpg" preload="none" playsinline muted style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit;">
-        <source src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/intro-video-greg-11-sep-2026.mp4" type="video/mp4">
+        <source src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/HR.com_Cert_Prep_-_Complete_Certification_Guide_FINAL.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
       <div class="edu-video-overlay edu-uc-video-overlay" id="ucGregVideoOverlay" role="button" tabindex="0" aria-label="Play Greg Osmond Video Explainer">
@@ -3396,7 +3368,7 @@ body > .ContentArea > .container {
             <h3 class="edu-uc-info-card-title">Research Institutes</h3>
           </div>
           <p class="edu-uc-info-card-desc">
-            <a href="#exam-matcher">Compare HRCI and SHRM requirements</a> to select your ideal credential.
+       <a href="https://www.mypeople001.com/en/certifications/certification-guidelines_mu58ab11.html" target="_blank" rel="noopener noreferrer">  Compare HRCI and SHRM requirements</a> to select your ideal credential.
           </p>
         </div>
       </div>
@@ -3553,7 +3525,7 @@ body > .ContentArea > .container {
       <div class="edu-uc-res-slider edu-reveal edu-reveal-d1" id="edu-res-slider">
 
         <!-- Card 1: Chapter 1 -->
-        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-1" class="edu-uc-res-card">
+        <a href="/en/certifications/why-should-you-get-hr-certified_mu3vqfhl.html" class="edu-uc-res-card">
           <div class="edu-uc-res-card-img">
             <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-01-why-certify.jpg" alt="Why Get HR Certified in 2026" />
           </div>
@@ -3571,7 +3543,7 @@ body > .ContentArea > .container {
         </a>
 
         <!-- Card 2: Chapter 2 -->
-        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-2" class="edu-uc-res-card">
+        <a href="/en/certifications/your-complete-guide-to-hr-certification_mu3vt2hd.html" class="edu-uc-res-card">
           <div class="edu-uc-res-card-img">
             <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-02-get-facts.jpg" alt="The Facts on HR Certification" />
           </div>
@@ -3581,7 +3553,7 @@ body > .ContentArea > .container {
               <span class="edu-uc-res-readtime">5 Min Read</span>
             </div>
             <h3>The Facts on HR Certification</h3>
-            <p>National pass rates (60%) vs accredited course rates (93%), exam fees, and audit rules.</p>
+            <p>National pass rates (65%) vs accredited course rates (95.6%), exam fees, and audit rules.</p>
             <div class="edu-uc-res-card-footer">
               <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
             </div>
@@ -3589,17 +3561,17 @@ body > .ContentArea > .container {
         </a>
 
         <!-- Card 3: Chapter 3 -->
-        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-3" class="edu-uc-res-card">
+        <a href="/en/certifications/the-3-secrets-for-passing-your-hr-certification-ex_mu3vv03w.html" class="edu-uc-res-card">
           <div class="edu-uc-res-card-img">
-            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-03-exam-secrets.jpg" alt="HRCI vs SHRM: Which Credential Truly Accelerates Your Career" />
+            <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-03-exam-secrets.jpg" alt="The 3 Secrets for Passing Your HR Certification Exam" />
           </div>
           <div class="edu-uc-res-card-body">
             <div class="edu-uc-res-card-meta">
-              <span class="edu-uc-res-badge">03 &bull; Credential Match</span>
-              <span class="edu-uc-res-readtime">6 Min Read</span>
+              <span class="edu-uc-res-badge">03 &bull; Exam Strategy</span>
+              <span class="edu-uc-res-readtime">5 Min Read</span>
             </div>
-            <h3>HRCI vs SHRM: Which Credential Truly Accelerates Your Career?</h3>
-            <p>An executive comparison of exam structures, federal law vs. behavioral competencies, and employer hiring preferences.</p>
+            <h3>The 3 Secrets for Passing Your HR Certification Exam</h3>
+            <p>How to master the content, apply active study techniques, and conquer exam day judgment logic.</p>
             <div class="edu-uc-res-card-footer">
               <span class="edu-uc-res-card-link">Read Briefing &rarr;</span>
             </div>
@@ -3607,7 +3579,7 @@ body > .ContentArea > .container {
         </a>
 
         <!-- Card 4: Chapter 4 -->
-        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-4" class="edu-uc-res-card">
+        <a href="/en/certifications/secrets-to-passing-the-shrm-certification-exam_mu3vx17g.html" class="edu-uc-res-card">
           <div class="edu-uc-res-card-img">
             <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-04-shrm-secrets.jpg" alt="Secrets to Passing the SHRM-CP and SHRM-SCP" />
           </div>
@@ -3625,7 +3597,7 @@ body > .ContentArea > .container {
         </a>
 
         <!-- Card 5: Chapter 5 -->
-        <a href="/en/certifications/certification-resources_mtvk5an6.html#chapter-5" class="edu-uc-res-card">
+        <a href="/en/certifications/secrets-to-passing-the-hrci-certification-exam_mu3vzd3j.html" class="edu-uc-res-card">
           <div class="edu-uc-res-card-img">
             <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/article-05-hrci-secrets.jpg" alt="Secrets to Passing HRCI (aPHR, PHR, SPHR)" />
           </div>
