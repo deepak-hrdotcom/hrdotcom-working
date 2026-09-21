@@ -1,0 +1,2321 @@
+<div>$vendorLeadForm</div>
+<script>
+$( ".ml_ptitle i" ).append( document.createTextNode( "HRCP Materials ONLY" ) );
+</script>
+<style type="text/css">
+
+/* ==========================================================================
+   HR.COM 2026 INTERNATIONAL EXECUTIVE EDUCATION DESIGN SYSTEM
+   PHR/SPHR/SHRM Materials Only Landing Page CSS
+   Scoped strictly to .edu-materials-page (1:1 with 16-weeks-dev.html benchmark)
+   ========================================================================== */
+
+/* Zero FOUC rule */
+.edu-materials-page {
+  visibility: visible !important;
+}
+
+/* Base Design Tokens & Reset Scoped to .edu-materials-page */
+.edu-materials-page {
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-primary-soft: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+
+  --color-dark: #090D1A;
+  --color-dark-surface: #0F172A;
+  --color-dark-card: #1E293B;
+
+  --color-success: #059669;
+  --color-success-hover: #047857;
+  --color-success-soft: #ECFDF5;
+  --color-success-border: #A7F3D0;
+
+  --color-gold: #D97706;
+  --color-gold-hover: #B45309;
+  --color-gold-soft: #FFFBEB;
+  --color-gold-border: #FDE68A;
+
+  --color-background: #FFFFFF;
+  --color-surface-soft: #F8FAFC;
+  --color-surface-muted: #F1F5F9;
+
+  --color-border: #E2E8F0;
+  --color-border-subtle: #F1F5F9;
+  --color-border-hover: #CBD5E1;
+
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
+
+  --radius-control: 8px;
+  --radius-input: 10px;
+  --radius-card: 16px;
+  --radius-panel: 20px;
+  --radius-pill: 999px;
+
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 16px 36px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 10px 28px rgba(37, 99, 235, 0.22);
+  --shadow-gold: 0 10px 28px rgba(217, 119, 6, 0.16);
+
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background-color: var(--color-background) !important;
+  color: var(--color-text-secondary) !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  overflow: visible !important;
+  line-height: 1.6 !important;
+}
+
+.edu-materials-page * {
+  box-sizing: border-box !important;
+}
+
+.edu-materials-page section {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 64px 0 !important;
+  position: relative !important;
+}
+
+.edu-materials-page h1,
+.edu-materials-page h2,
+.edu-materials-page h3,
+.edu-materials-page h4,
+.edu-materials-page h5,
+.edu-materials-page h6 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: -0.03em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+.edu-materials-page p,
+.edu-materials-page span,
+.edu-materials-page li,
+.edu-materials-page div,
+.edu-materials-page a {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.edu-materials-page img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+}
+
+/* Reusable Container */
+.edu-materials-page .edu-container {
+  width: min(100% - 48px, 1200px) !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+}
+
+.edu-materials-page .text-center {
+  text-align: center !important;
+}
+
+.edu-materials-page .edu-section-title {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  line-height: 1.25 !important;
+  margin-bottom: 24px !important;
+}
+
+.edu-materials-page .edu-section-header {
+  margin-bottom: 40px !important;
+}
+
+/* Common Buttons */
+.edu-materials-page .edu-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 24px !important;
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1px solid var(--color-primary) !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25) !important;
+}
+.edu-materials-page .edu-btn-primary:hover {
+  background: var(--color-primary-hover) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35) !important;
+}
+
+.edu-materials-page .edu-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 11px 22px !important;
+  background: #FFFFFF !important;
+  color: var(--color-text-primary) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  text-decoration: none !important;
+  border: 1.5px solid var(--color-border) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+.edu-materials-page .edu-btn-secondary:hover {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  background: var(--color-primary-soft) !important;
+  transform: translateY(-2px) !important;
+}
+
+.edu-materials-page .full-width {
+  width: 100% !important;
+}
+
+/* ==========================================================================
+   1. HERO STAGE & SUPPORT DESK
+   ========================================================================== */
+.edu-materials-page .edu-hero-stage {
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 10% 85%, rgba(79, 70, 229, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 60%, #F1F5F9 100%) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 76px 0 44px 0 !important;
+  position: relative !important;
+}
+
+.edu-materials-page .edu-hero-container {
+  width: min(100% - 48px, 1220px) !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.edu-materials-page .edu-hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.32fr 0.68fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+  margin-bottom: 38px !important;
+}
+
+.edu-materials-page .edu-hero-top-row {
+  margin-bottom: 18px !important;
+}
+
+.edu-materials-page .edu-back-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #64748B !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-decoration-thickness: 1px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  transition: color 0.15s ease !important;
+}
+.edu-materials-page .edu-back-link:hover {
+  color: #2563EB !important;
+  text-decoration: underline !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.edu-materials-page .edu-hero-eyebrow-row {
+  margin-bottom: 14px !important;
+}
+
+.edu-materials-page .edu-hero-credentials-text {
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  color: #2563EB !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+}
+
+.edu-materials-page .edu-hero-h1 {
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  line-height: 1.18 !important;
+  margin-bottom: 12px !important;
+  letter-spacing: -0.03em !important;
+}
+
+.edu-materials-page .edu-hero-h2 {
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 18px !important;
+}
+
+.edu-materials-page .edu-hero-lead {
+  font-size: 16px !important;
+  color: #475569 !important;
+  line-height: 1.65 !important;
+  margin-bottom: 24px !important;
+  max-width: 640px !important;
+}
+
+.edu-materials-page .edu-hero-pricing-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+  border-radius: var(--radius-pill) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #1D4ED8 !important;
+  margin-bottom: 26px !important;
+}
+.edu-materials-page .edu-hero-pricing-pill svg {
+  color: #2563EB !important;
+}
+
+.edu-materials-page .edu-hero-actions-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.edu-materials-page .edu-hero-primary-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.edu-materials-page .edu-hero-primary-actions .edu-btn-primary {
+  padding: 11.5px 20px !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+}
+
+.edu-materials-page .edu-btn-hero-info {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 10.5px 14px !important;
+  background: #FFFFFF !important;
+  color: #1E293B !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  border: 1.5px solid #CBD5E1 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+.edu-materials-page .edu-btn-hero-info:hover {
+  background: #EFF6FF !important;
+  border-color: #2563EB !important;
+  color: #2563EB !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12) !important;
+}
+
+.edu-materials-page .edu-btn-hero-brochure {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 10.5px 14px !important;
+  background: #FFFFFF !important;
+  color: #475569 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-control) !important;
+  border: 1.5px solid #CBD5E1 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+  white-space: nowrap !important;
+}
+.edu-materials-page .edu-btn-hero-brochure:hover {
+  background: #F8FAFC !important;
+  border-color: #94A3B8 !important;
+  color: #0F172A !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Hero Right Visual Card — Executive Prestige Anchor */
+.edu-materials-page .edu-hero-visual-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.edu-materials-page .edu-hero-visual-wrapper {
+  background: linear-gradient(150deg, #090D1A 0%, #0F172A 50%, #1E1B4B 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-panel) !important;
+  padding: 32px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 20px !important;
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08) inset !important;
+  width: 100% !important;
+  max-width: 380px !important;
+  position: relative !important;
+}
+
+.edu-materials-page .edu-hero-media-box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.edu-materials-page .edu-hero-media-img {
+  max-width: 220px !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35)) !important;
+  transition: transform 0.3s ease !important;
+}
+.edu-materials-page .edu-hero-media-img:hover {
+  transform: scale(1.03) !important;
+}
+
+.edu-materials-page .edu-hero-stats-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  width: 100% !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.edu-materials-page .edu-hero-stat-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 9px 16px !important;
+  border-radius: var(--radius-card) !important;
+  background: rgba(37, 99, 235, 0.16) !important;
+  border: 1px solid rgba(96, 165, 250, 0.35) !important;
+}
+
+.edu-materials-page .edu-stat-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.edu-materials-page .edu-stat-number {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  color: #93C5FD !important;
+}
+
+.edu-materials-page .edu-stat-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #CBD5E1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* HERO SUPPORT CONCIERGE STRIP */
+.edu-materials-page .edu-hero-support-card {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid rgba(203, 213, 225, 0.7) !important;
+  border-radius: 0 !important;
+  padding: 22px 6px 0 6px !important;
+  box-shadow: none !important;
+}
+
+.edu-materials-page .edu-hero-support-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 18px !important;
+}
+
+.edu-materials-page .edu-support-head-col {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+}
+
+.edu-materials-page .edu-support-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+}
+
+.edu-materials-page .edu-support-contact-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+}
+
+.edu-materials-page .edu-support-contact-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13.5px !important;
+  color: #475569 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  width: fit-content !important;
+  transition: color 0.15s ease !important;
+}
+.edu-materials-page .edu-support-contact-item:hover {
+  color: #2563EB !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.edu-materials-page .edu-support-action-chips {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+}
+
+.edu-materials-page .edu-support-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #64748B !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+.edu-materials-page .edu-support-chip:hover {
+  color: #2563EB !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  background: transparent !important;
+}
+
+/* Floating Course Fee Bar */
+.edu-materials-page .edu-fee-summary-bar {
+  background: var(--color-surface-soft) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 16px 0 !important;
+}
+
+.edu-materials-page .edu-fee-summary-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+
+.edu-materials-page .edu-fee-label-group {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+}
+
+.edu-materials-page .edu-fee-label-title {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #64748B !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.edu-materials-page .edu-fee-amount {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+}
+
+.edu-materials-page .edu-fee-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+/* ==========================================================================
+   2. IN-PAGE STICKY SEGMENTED SUB-NAVIGATION (Screenshot 3: 3 Sections)
+   ========================================================================== */
+.edu-materials-page .edu-inpage-nav {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 85px !important;
+  z-index: 9999 !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding: 10px 0 !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+  transition: box-shadow 0.2s ease !important;
+  width: 100% !important;
+}
+
+.edu-materials-page .edu-inpage-nav.is-stuck {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+.edu-inpage-nav-placeholder {
+  display: none;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.edu-materials-page .edu-inpage-nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.edu-materials-page .edu-inpage-nav-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.edu-materials-page .edu-inpage-nav-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-secondary) !important;
+  text-decoration: none !important;
+  border-radius: var(--radius-control) !important;
+  border: 1px solid transparent !important;
+  transition: all 0.15s ease !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+.edu-materials-page .edu-inpage-nav-btn:hover {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-soft) !important;
+  border-color: var(--color-primary-border) !important;
+}
+.edu-materials-page .edu-inpage-nav-btn.active {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-soft) !important;
+  border-color: var(--color-primary-border) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.12) !important;
+}
+
+/* Section Scroll Margin to prevent sticky nav overlap */
+.edu-materials-page #eduOverview,
+.edu-materials-page #eduFandB,
+.edu-materials-page #eduRproduct {
+  scroll-margin-top: 155px !important;
+}
+
+/* ==========================================================================
+   3. COURSE OVERVIEW SECTION (#eduOverview)
+   ========================================================================== */
+.edu-materials-page .edu-overview-section {
+  background: var(--color-surface-soft) !important;
+  border-top: 1px solid var(--color-border) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 56px 0 !important;
+  scroll-margin-top: 155px !important;
+}
+
+.edu-materials-page .edu-overview-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+}
+
+.edu-materials-page .edu-overview-card-container {
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-panel) !important;
+  padding: 0 !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+  overflow: hidden !important;
+}
+
+.edu-materials-page .edu-overview-card-header {
+  padding: 20px 24px 16px 24px !important;
+  border-bottom: 1.5px solid #F1F5F9 !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+}
+
+.edu-materials-page .edu-overview-card-title {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.edu-materials-page .edu-overview-checklist {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 8px 20px 12px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.edu-materials-page .edu-overview-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #F1F5F9 !important;
+  border-radius: 0 !important;
+  padding: 14px 8px !important;
+  font-size: 15px !important;
+  color: #0F172A !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.edu-materials-page .edu-overview-item:last-child {
+  border-bottom: none !important;
+}
+
+.edu-materials-page .edu-overview-item:hover {
+  background: var(--color-primary-soft) !important;
+  border-radius: var(--radius-control) !important;
+  transform: translateX(4px) !important;
+}
+
+.edu-materials-page .edu-check-icon-circle {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 50% !important;
+  background: #EFF6FF !important;
+  border: 1px solid #DBEAFE !important;
+  color: var(--color-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-materials-page .edu-overview-item-text {
+  flex: 1 !important;
+}
+
+.edu-materials-page .edu-materials-display-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+}
+.edu-materials-page .edu-materials-hero-img {
+  width: 100% !important;
+  max-width: 340px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.1)) !important;
+  transition: transform 0.3s ease !important;
+}
+.edu-materials-page .edu-materials-hero-img:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* ==========================================================================
+   4. FEATURES & BENEFITS SECTION (#eduFandB)
+   ========================================================================== */
+.edu-materials-page .edu-features-section {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  scroll-margin-top: 145px !important;
+}
+
+.edu-materials-page .edu-features-header {
+  text-align: center !important;
+  max-width: 820px !important;
+  margin: 0 auto 32px auto !important;
+}
+
+.edu-materials-page .edu-tab-controls-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 36px !important;
+}
+
+/* High-Affordance Executive Segmented Dock */
+.edu-materials-page .edu-tab-pills {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #F1F5F9 !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  padding: 6px !important;
+  gap: 6px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.04), 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+
+.edu-materials-page .edu-tab-item {
+  list-style: none !important;
+}
+
+.edu-materials-page .edu-tab-nav-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 11px 24px !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  background: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: default !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+
+.edu-materials-page .eduSubHeader {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.025em !important;
+}
+
+.edu-materials-page .edu-features-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+}
+
+.edu-materials-page .edu-feature-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+.edu-materials-page .edu-feature-card:hover {
+  border-color: var(--color-primary-border) !important;
+  box-shadow: var(--shadow-hover) !important;
+  transform: translateY(-4px) !important;
+}
+
+.edu-materials-page .edu-feature-media-box {
+  width: 100% !important;
+  height: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 20px !important;
+}
+
+.edu-materials-page .edu-feature-media-box img {
+  max-width: 100% !important;
+  max-height: 110px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 4px 12px rgba(15, 23, 42, 0.08)) !important;
+  transition: transform 0.25s ease !important;
+}
+.edu-materials-page .edu-feature-card:hover .edu-feature-media-box img {
+  transform: scale(1.05) !important;
+}
+
+.edu-materials-page .edu-feature-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  color: var(--color-text-primary) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.edu-materials-page .edu-feature-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  margin-bottom: 20px !important;
+}
+
+.edu-materials-page .edu-feature-lead {
+  font-size: 14.5px !important;
+  color: #475569 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.edu-materials-page .edu-feature-action {
+  margin-top: auto !important;
+  padding-top: 6px !important;
+}
+
+.edu-materials-page .edu-feature-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  width: 100% !important;
+  padding: 11px 20px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--color-primary) !important;
+  background: var(--color-primary-soft) !important;
+  border: 1.5px solid var(--color-primary-border) !important;
+  border-radius: var(--radius-control) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.edu-materials-page .edu-feature-btn:hover {
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* ==========================================================================
+   5. REFER A FRIEND VIP PERKS STRIP
+   ========================================================================== */
+.edu-materials-page .edu-refer-section {
+  padding: 32px 0 !important;
+  background: #FFFFFF !important;
+}
+
+.edu-materials-page .edu-refer-bar {
+  background: linear-gradient(135deg, #090D1A 0%, #1E293B 100%) !important;
+  border-radius: var(--radius-card) !important;
+  padding: 20px 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15) !important;
+}
+
+.edu-materials-page .edu-refer-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.edu-materials-page .edu-refer-thumb {
+  width: 52px !important;
+  height: 52px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-materials-page .edu-refer-text {
+  font-size: 15.5px !important;
+  color: #F8FAFC !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.edu-materials-page .edu-refer-text span {
+  color: #FCD34D !important;
+  font-weight: 800 !important;
+}
+
+.edu-materials-page .edu-refer-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 20px !important;
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-pill) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+.edu-materials-page .edu-refer-btn:hover {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* ==========================================================================
+   6. GRADUATE TESTIMONIALS (Initial Letter Avatars)
+   ========================================================================== */
+.edu-materials-page .edu-testimonials-section {
+  background: var(--color-surface-soft) !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding: 60px 0 !important;
+}
+
+.edu-materials-page .edu-stories-slider-wrap {
+  max-width: 940px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 8px 4px 12px 4px !important;
+}
+
+.edu-materials-page .edu-stories-track {
+  display: flex !important;
+  width: 100% !important;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform !important;
+}
+
+.edu-materials-page .edu-story-slide {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.edu-materials-page .edu-story-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-panel) !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 36px 40px !important;
+  gap: 32px !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.edu-materials-page .edu-story-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #93C5FD !important;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1) !important;
+}
+
+.edu-materials-page .edu-story-initial-avatar {
+  width: 84px !important;
+  height: 84px !important;
+  min-width: 84px !important;
+  max-width: 84px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%) !important;
+  border: 2px solid #BFDBFE !important;
+  color: var(--color-primary) !important;
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: -0.02em !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12) !important;
+  flex-shrink: 0 !important;
+  transition: all 0.3s ease !important;
+}
+.edu-materials-page .edu-story-card:hover .edu-story-initial-avatar {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #1E40AF !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3) !important;
+}
+
+.edu-materials-page .edu-story-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.edu-materials-page .edu-story-stars {
+  display: flex !important;
+  gap: 5px !important;
+  margin-bottom: 12px !important;
+}
+
+.edu-materials-page .edu-story-quote {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+  color: #334155 !important;
+  font-style: italic !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.edu-materials-page .edu-story-attribution {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.edu-materials-page .edu-story-cred {
+  display: inline-block !important;
+  padding: 3px 10px !important;
+  border-radius: var(--radius-pill) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  background: #EFF6FF !important;
+  color: var(--color-primary) !important;
+  border: 1px solid #BFDBFE !important;
+  font-style: normal !important;
+}
+
+.edu-materials-page .edu-stories-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-top: 24px !important;
+}
+
+.edu-materials-page .edu-stories-arrow {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  color: var(--color-text-primary) !important;
+  transition: all 0.2s ease !important;
+  padding: 0 !important;
+}
+
+.edu-materials-page .edu-stories-arrow:hover {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25) !important;
+}
+
+.edu-materials-page .edu-stories-dots {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.edu-materials-page .edu-stories-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #CBD5E1 !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.edu-materials-page .edu-stories-dot:hover {
+  background: #94A3B8 !important;
+}
+
+.edu-materials-page .edu-stories-dot.is-active {
+  width: 26px !important;
+  border-radius: 999px !important;
+  background: var(--color-primary) !important;
+}
+
+/* ==========================================================================
+   7. RELATED PRODUCTS (#eduRproduct)
+   ========================================================================== */
+.edu-materials-page .edu-related-section {
+  background: #FFFFFF !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding: 60px 0 !important;
+  scroll-margin-top: 75px !important;
+}
+
+.edu-materials-page .edu-related-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+}
+
+.edu-materials-page .edu-related-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: var(--radius-card) !important;
+  padding: 32px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.25s ease !important;
+}
+.edu-materials-page .edu-related-card:hover {
+  border-color: #93C5FD !important;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.1) !important;
+  transform: translateY(-4px) !important;
+}
+
+.edu-materials-page .edu-related-img-box {
+  width: 100% !important;
+  height: 120px !important;
+  margin: 0 auto 18px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.edu-materials-page .edu-related-img-box img {
+  max-width: 100% !important;
+  max-height: 110px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.06)) !important;
+}
+
+.edu-materials-page .edu-related-name {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: var(--color-text-primary) !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 10px !important;
+}
+
+.edu-materials-page .edu-related-desc {
+  font-size: 14px !important;
+  color: #64748B !important;
+  line-height: 1.55 !important;
+  margin-bottom: 22px !important;
+  flex-grow: 1 !important;
+}
+
+.edu-materials-page .edu-related-card .edu-btn-secondary {
+  align-self: center !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  padding: 9px 20px !important;
+}
+
+/* ==========================================================================
+   8. LEGAL DISCLAIMER & MODALS
+   ========================================================================== */
+.edu-materials-page .edu-legal-disclaimer {
+  background: var(--color-surface-muted) !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding: 40px 0 !important;
+}
+
+.edu-materials-page .edu-disclaimer-box h4 {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: var(--color-text-muted) !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.edu-materials-page .edu-disclaimer-box p {
+  font-size: 12px !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+/* Modal Backdrops */
+.edu-materials-page .edu-modal-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 99999 !important;
+  padding: 20px !important;
+}
+.edu-materials-page .edu-modal-backdrop.active {
+  display: flex !important;
+}
+
+.edu-materials-page .edu-modal-card {
+  background: #FFFFFF !important;
+  border-radius: var(--radius-panel) !important;
+  width: min(100%, 720px) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3) !important;
+}
+
+.edu-materials-page .edu-modal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 24px !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.edu-materials-page .edu-modal-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+}
+
+.edu-materials-page .edu-modal-close {
+  background: none !important;
+  border: none !important;
+  font-size: 24px !important;
+  color: var(--color-text-muted) !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+}
+.edu-materials-page .edu-modal-close:hover {
+  color: var(--color-text-primary) !important;
+}
+
+.edu-materials-page .edu-modal-body {
+  padding: 24px !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .edu-materials-page .edu-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .edu-materials-page .edu-overview-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .edu-materials-page .edu-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .edu-materials-page .edu-hero-h1 {
+    font-size: 28px !important;
+  }
+  .edu-materials-page .edu-hero-h2 {
+    font-size: 18px !important;
+  }
+  .edu-materials-page .edu-features-grid,
+  .edu-materials-page .edu-related-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .edu-materials-page .edu-hero-support-inner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .edu-materials-page .edu-refer-bar {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .edu-materials-page .edu-refer-left {
+    flex-direction: column !important;
+  }
+  .edu-materials-page .edu-story-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 28px 20px !important;
+    gap: 20px !important;
+  }
+  .edu-materials-page .edu-story-stars {
+    justify-content: center !important;
+  }
+  .edu-materials-page .edu-story-attribution {
+    justify-content: center !important;
+  }
+  .edu-materials-page .edu-fee-summary-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+
+</style>
+
+<!-- =====================================================================
+     HR.COM PHR/SPHR/SHRM MATERIALS ONLY PREP COURSE
+     2026 EXECUTIVE EDUCATION SUITE (1:1 with 16-weeks-dev.html benchmark)
+     ===================================================================== -->
+
+<div class="edu-materials-page">
+
+  <!-- =====================================================================
+       1. HERO STAGE & SUPPORT DESK
+       ===================================================================== -->
+  <section class="edu-hero-stage" id="eduHome">
+    <div class="edu-hero-container">
+      <div class="edu-hero-grid">
+        
+        <!-- Left: Course Strategic Value Proposition -->
+        <div class="edu-hero-content">
+          <div class="edu-hero-top-row">
+            <a href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/" class="edu-back-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              <span>Exam Prep &mdash; HRCP Materials ONLY</span>
+            </a>
+          </div>
+
+          <div class="edu-hero-eyebrow-row">
+            <span class="edu-hero-credentials-text">PHR &middot; SPHR &middot; SHRM</span>
+          </div>
+
+          <h1 class="edu-hero-h1"> Certification - Materials Only</h1>
+          <h2 class="edu-hero-h2">Preparing for the PHR, SPHR, SHRM exams</h2>
+          
+          <p class="edu-hero-lead">
+            An in-depth comprehensive independent study approach comprised of the exam functional areas.
+          </p>
+
+          <!-- <div class="edu-hero-pricing-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span>Course Fee: $480 + Shipping</span>
+          </div> -->
+
+          <div class="edu-hero-actions-wrap">
+            <div class="edu-hero-primary-actions">
+              <a class="edu-btn-primary" href="/en?t=/merchant/singleCheckoutWizerd/basket.update&amp;s=p2aLgyhmCPOFhDeIPr&amp;ParentID=1364848898487&amp;vars=1430854788796&amp;productID=1430854788796&amp;basket.fill=1&amp;linkTo=product.show&amp;pt=100&amp;dealcat=2&amp;dealdesc=buynow-materialsonly-prep-course">
+                <span>Purchase Materials: $480</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <a href="$var3" class="edu-btn-hero-info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Join an Information Session</span>
+              </a>
+
+              <button id="fc_1715099269814" name="fc_1715099269814" onclick="loadPopup('fc_1715099269814')" class="edu-btn-hero-brochure">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download brochure</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Executive Materials Visual Card -->
+        <div class="edu-hero-visual-card">
+          <div class="edu-hero-visual-wrapper">
+            <div class="edu-hero-media-box">
+              <img src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/HRCP_Books-Cards_2026.webp" alt="Certification Exam Training Materials" class="edu-hero-media-img" loading="eager" />
+            </div>
+
+            <div class="edu-hero-stats-row">
+              <div class="edu-hero-stat-badge">
+                <div class="edu-stat-text-col">
+                  <span class="edu-stat-number">$480</span>
+                  <span class="edu-stat-label">Complete Study Pack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Support Concierge Line -->
+      <div class="edu-hero-support-card">
+        <div class="edu-hero-support-inner">
+          <div class="edu-support-head-col">
+            <span class="edu-support-title">Support Details:</span>
+            <div class="edu-support-contact-row">
+              <a href="tel:18774726648" class="edu-support-contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Call: 1-877-472-6648 Ext. 102</span>
+              </a>
+              <a href="mailto:certification@hr.com?subject=Tell%20me%20more%20about%20how%20I%20can%20get%20certified" class="edu-support-contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>Email: certification@hr.com</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="edu-support-action-chips">
+            <a href="/en/certifications/hrci_shrm_prep_courses/prep_course_faq/" class="edu-support-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>FAQ</span>
+            </a>
+            <a href="https://web.hr.com/ooo3" class="edu-support-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              <span>Refer a Friend</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Fee Strip -->
+  <!-- <div class="edu-fee-summary-bar">
+    <div class="edu-container">
+      <div class="edu-fee-summary-inner">
+        <div class="edu-fee-label-group">
+          <span class="edu-fee-label-title">Course Fees + Shipping:</span>
+          <span class="edu-fee-amount">$480 + shipping</span>
+        </div>
+        <div class="edu-fee-actions">
+          <button id="fc_1715099269814_bar" name="fc_1715099269814" onclick="loadPopup('fc_1715099269814')" class="edu-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download brochure</span>
+          </button>
+          <a href="$var3" class="edu-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Join an Information Session</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- =====================================================================
+       2. IN-PAGE STICKY SUB-NAVIGATION (Screenshot 3: 3 Landmark Sections)
+       ===================================================================== -->
+  <nav class="edu-inpage-nav" id="eduSubnav" aria-label="Course Sections Subnavigation">
+    <div class="edu-container">
+      <div class="edu-inpage-nav-inner">
+        <ul class="edu-inpage-nav-list" role="tablist">
+      
+          <li><a href="#eduOverview" class="edu-inpage-nav-btn active">Overview</a></li>
+          <li><a href="#eduFandB" class="edu-inpage-nav-btn">Features and Benefits</a></li>
+          <li><a href="#eduRproduct" class="edu-inpage-nav-btn">Related Products</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+       3. COURSE OVERVIEW SECTION (#eduOverview)
+       ===================================================================== -->
+  <section class="edu-overview-section" id="eduOverview">
+    <div class="edu-container">
+      <div class="edu-overview-grid">
+        
+        <!-- Left Master Inclusions Box -->
+        <div class="edu-overview-card-container">
+          <div class="edu-overview-card-header">
+            <h2 class="edu-overview-card-title">Course Overview</h2>
+          </div>
+          <ul class="edu-overview-checklist">
+            <li class="edu-overview-item">
+              <span class="edu-check-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="edu-overview-item-text">6 Study Manuals (shipped to you)</span>
+            </li>
+            <li class="edu-overview-item">
+              <span class="edu-check-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="edu-overview-item-text">100s of Quick-Testing Flash Cards (shipped to you)</span>
+            </li>
+            <li class="edu-overview-item">
+              <span class="edu-check-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="edu-overview-item-text">800+ Online Practice Exam Questions</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Materials Graphic Display -->
+        <div class="edu-materials-display-card">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/HRCP_MonitorBooks-cards_2026.webp" alt="HRCP Course Study Materials and Online Exam Simulation" class="edu-materials-hero-img" loading="lazy" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       4. FEATURES & BENEFITS SECTION (#eduFandB)
+       ===================================================================== -->
+  <section class="edu-features-section" id="eduFandB">
+    <div class="edu-container">
+      
+      <div class="edu-features-header">
+        <div class="edu-tab-controls-wrapper">
+          <ul class="edu-tab-pills" role="tablist">
+            <li class="edu-tab-item">
+              <span class="edu-tab-nav-btn active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                <span>Features</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <h3 class="eduSubHeader">Features and Benefits</h3>
+      </div>
+
+      <div class="edu-features-grid">
+        
+        <!-- Feature 1: Study Manuals -->
+        <div class="edu-feature-card">
+          <div class="edu-feature-media-box">
+            <img alt="6 Study Manuals" src="https://public-cdn.hr.com/remoteimages/website-images/2024_Siteupdate/education/HRCP-2025.png" loading="lazy" />
+          </div>
+          <h4 class="edu-feature-title">6 Study Manuals</h4>
+          <div class="edu-feature-body">
+            <p class="edu-feature-lead">
+              These 6 study manuals are reflective of the &quot;Bodies of Knowledge&quot; that make up HR Certification Exams. All study manuals are updated and republished each year, to ensure that the materials you study are the up-to-date, and above all else, reflective of your upcoming exam.
+            </p>
+          </div>
+          <div class="edu-feature-action">
+            <button type="button" class="edu-feature-btn" onclick="openStudyManualsModal()">
+              <span>Sample Study Manuals</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Feature 2: Flashcards -->
+        <div class="edu-feature-card">
+          <div class="edu-feature-media-box">
+            <img alt="Quick-Testing Flash Cards" src="https://public-cdn.hr.com/remoteimages/website-images/2015_siteupdate/images/Certification/hrcpstudymaterials_150.png" loading="lazy" />
+          </div>
+          <h4 class="edu-feature-title">Quick-Testing Flash Cards</h4>
+          <div class="edu-feature-body">
+            <p class="edu-feature-lead">
+              Course includes 100&#39;s of color coded flashcards, featuring BuzzWords and definitions (reverse-side) to reinforce your ability to recall HR concepts by memory and by understanding.
+            </p>
+          </div>
+          <div class="edu-feature-action">
+            <button type="button" class="edu-feature-btn" onclick="openFlashcardsModal()">
+              <span>Sample Flashcards</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Feature 3: Practice Exams -->
+        <div class="edu-feature-card">
+          <div class="edu-feature-media-box">
+            <img alt="Practice Exams" src="https://public-cdn.hr.com/remoteimages/website-images/2015_siteupdate/images/Certification/flashcards_150.png" loading="lazy" />
+          </div>
+          <h4 class="edu-feature-title">Practice Exams</h4>
+          <div class="edu-feature-body">
+            <p class="edu-feature-lead">
+              Over 800 practice exam questions. The testing simulator very closely mimics the real testing scenario (timed, computer-based, layout and appearance) to ensure that there are no surprises when you take the real exam!
+            </p>
+          </div>
+          <div class="edu-feature-action">
+            <button type="button" class="edu-feature-btn" onclick="openSampleLessonModal()">
+              <span>Sample Practice Exams</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       5. REFER A FRIEND VIP PERKS STRIP
+       ===================================================================== -->
+  <div class="edu-refer-section">
+    <div class="edu-container">
+      <div class="edu-refer-bar">
+        <div class="edu-refer-left">
+          <img alt="Join a Class" src="https://public-cdn.hr.com/remoteimages/website-images/2022_siteupdate/2022_Certification/images/en_jc_img.png" class="edu-refer-thumb" loading="lazy" />
+          <p class="edu-refer-text">
+            Join an HR certification prep course and earn <span>up to 200</span> points!
+          </p>
+        </div>
+        <a class="edu-refer-btn" href="https://web.hr.com/ooo3">
+          <span>Refer a Friend</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       6. GRADUATE TESTIMONIALS (Initial Letter Avatars)
+       ===================================================================== -->
+  <section class="edu-testimonials-section" id="eduTestimonials">
+    <div class="edu-container">
+      <div class="edu-section-header text-center">
+        <h2 class="edu-section-title">See what our customers are saying</h2>
+      </div>
+
+      <!-- Testimonials Slider Container -->
+      <div class="edu-stories-slider-wrap" id="eduTestimonialsSlider" role="region" aria-label="Customer Testimonials Slider">
+        <div class="edu-stories-track" id="eduTestimonialsTrack">
+
+          <!-- Slide 1: A Reed -->
+          <div class="edu-story-slide" data-slide="0">
+            <div class="edu-story-card">
+              <div class="edu-story-initial-avatar">
+                <span>A</span>
+              </div>
+              <div class="edu-story-body">
+                <div class="edu-story-stars">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="edu-story-quote">
+                  &ldquo;Thank you HRCP for all the practice questions and advice! I passed my PHR exam yesterday!&rdquo;
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; A Reed</em>
+                  <span class="edu-story-cred">PHR Graduate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: E Brown -->
+          <div class="edu-story-slide" data-slide="1">
+            <div class="edu-story-card">
+              <div class="edu-story-initial-avatar">
+                <span>E</span>
+              </div>
+              <div class="edu-story-body">
+                <div class="edu-story-stars">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="edu-story-quote">
+                  &ldquo;I just came back from taking the PHR exam and I PASSED!!!!!! I am soooooo HAPPY! HRCP's study materials were a HUGE help!!!! Thank you so, so much!!!&rdquo;
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; E Brown</em>
+                  <span class="edu-story-cred">PHR Graduate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: J Santos -->
+          <div class="edu-story-slide" data-slide="2">
+            <div class="edu-story-card">
+              <div class="edu-story-initial-avatar">
+                <span>J</span>
+              </div>
+              <div class="edu-story-body">
+                <div class="edu-story-stars">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="edu-story-quote">
+                  &ldquo;I took the PHR exam today, too, and passed! Between the flash cards the online exams, I knew I was ready the minute I started the exam. Thanks HRCP!&rdquo;
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; J Santos</em>
+                  <span class="edu-story-cred">PHR Graduate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: M Weidenfeller -->
+          <div class="edu-story-slide" data-slide="3">
+            <div class="edu-story-card">
+              <div class="edu-story-initial-avatar">
+                <span>M</span>
+              </div>
+              <div class="edu-story-body">
+                <div class="edu-story-stars">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="edu-story-quote">
+                  &ldquo;Passed yesterday morning! Thanks HRCP!!!&rdquo;
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; M Weidenfeller</em>
+                  <span class="edu-story-cred">PHR Graduate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: A Rodriguez -->
+          <div class="edu-story-slide" data-slide="4">
+            <div class="edu-story-card">
+              <div class="edu-story-initial-avatar">
+                <span>A</span>
+              </div>
+              <div class="edu-story-body">
+                <div class="edu-story-stars">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="edu-story-quote">
+                  &ldquo;Thanks for the information in your books and the flash cards!!!! I passed my exam yesterday!&rdquo;
+                </p>
+                <div class="edu-story-attribution">
+                  <em>&mdash; A Rodriguez</em>
+                  <span class="edu-story-cred">PHR Graduate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Controls: Prev / Next Buttons & Pagination Dots -->
+        <div class="edu-stories-nav">
+          <button type="button" class="edu-stories-arrow edu-stories-prev" id="eduTestimonialsPrev" aria-label="Previous Testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="edu-stories-dots" id="eduTestimonialsDots">
+            <button type="button" class="edu-stories-dot is-active" data-index="0" aria-label="Go to testimonial 1"></button>
+            <button type="button" class="edu-stories-dot" data-index="1" aria-label="Go to testimonial 2"></button>
+            <button type="button" class="edu-stories-dot" data-index="2" aria-label="Go to testimonial 3"></button>
+            <button type="button" class="edu-stories-dot" data-index="3" aria-label="Go to testimonial 4"></button>
+            <button type="button" class="edu-stories-dot" data-index="4" aria-label="Go to testimonial 5"></button>
+          </div>
+          <button type="button" class="edu-stories-arrow edu-stories-next" id="eduTestimonialsNext" aria-label="Next Testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       7. RELATED PRODUCTS (#eduRproduct)
+       ===================================================================== -->
+  <section class="edu-related-section" id="eduRproduct">
+    <div class="edu-container">
+      <div class="edu-section-header text-center">
+        <h2 class="edu-section-title">Related Products. Get Certified by HR.com</h2>
+      </div>
+
+      <div class="edu-related-grid">
+        
+        <!-- Product 1: 16-Week Online Prep Course -->
+        <div class="edu-related-card">
+          <div class="edu-related-img-box">
+            <img alt="Instructor-Led Prep Course" src="https://public-cdn.hr.com/remoteimages/website-images/2022_siteupdate/2022_Certification/images/edu_certification_logo.jpg" loading="lazy" />
+          </div>
+          <h3 class="edu-related-name">Instructor-Led Prep Course</h3>
+          <p class="edu-related-desc">Our 16-Week Online Prep Course boasts a 95.6% pass rate among participants</p>
+          <a class="edu-btn-secondary" href="/en/certifications/hrci_shrm_prep_courses/phrsphr-shrm-cpshrm-scp-16-week-online-prep-course_ip4gf61u.html" target="_blank">
+            <span>View More</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Product 2: aPHR Course -->
+        <div class="edu-related-card">
+          <div class="edu-related-img-box">
+            <img alt="aPHR Instructor Led Course" src="https://public-cdn.hr.com/remoteimages/website-images/2022_siteupdate/2022_Certification/images/aphr_logo_22.jpg" loading="lazy" />
+          </div>
+          <h3 class="edu-related-name">aPHR Instructor Led Course</h3>
+          <p class="edu-related-desc">Industry leading LMS-Based learning platform tailored specifically for HR Certification Exams</p>
+          <a class="edu-btn-secondary" href="/en/certifications/hrci_shrm_prep_courses/aphr-instructor-led-courses_iphdqgfw.html" target="_blank">
+            <span>View More</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Product 3: Recertification -->
+        <div class="edu-related-card">
+          <div class="edu-related-img-box">
+            <img alt="Recertification" src="https://media-cdn.hr.com/media.hr.com/2026HRCIRecertificationProviderSealNEW_V3.jpg" loading="lazy" />
+          </div>
+          <h3 class="edu-related-name">Recertification</h3>
+          <p class="edu-related-desc">An ALL ACCESS pass for PHR, SPHR, GPHR, PHR-CA, SPHR-CA, and SHRM Certification credits</p>
+          <a class="edu-btn-secondary" href="/en/certifications/hr_certification/recertification/" target="_blank">
+            <span>View More</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       8. LEGAL DISCLAIMER
+       ===================================================================== -->
+  <footer class="edu-legal-disclaimer">
+    <div class="edu-container">
+      <div class="edu-disclaimer-box">
+        <h4>Trademark Disclaimer</h4>
+        <p>
+          <em>aPHR&reg;, PHR&reg;, SPHR&reg;, SHRM-CP&reg;, SHRM-SCP&reg;, and all other HRCI&reg; and SHRM&reg; certification marks are the property of HR Certification Institute&reg; and the Society for Human Resource Management&reg;, respectively. HR.com is not affiliated with, endorsed by, or sponsored by HRCI&reg; or SHRM&reg;. All HR.com preparation courses, practice exams, and study materials are independently developed and are neither approved nor endorsed by HRCI&reg; or SHRM&reg;. Reference to these certifications does not imply ownership or official partnership.</em>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       MODALS: Sample Lesson Video, Study Manuals, Flashcards
+       ===================================================================== -->
+  <div class="edu-modal-backdrop" id="myModalSampleLesson" onclick="closeModalOnBackdrop(event, 'myModalSampleLesson')">
+    <div class="edu-modal-card">
+      <div class="edu-modal-header">
+        <h3 class="edu-modal-title">Sample Practice Exams</h3>
+        <button class="edu-modal-close" onclick="closeEduModal('myModalSampleLesson')" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="edu-modal-body">
+        <div class="edu-video-embed" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+          <iframe id="iframeSampleLesson" width="100%" height="100%" style="position:absolute; top:0; left:0; width:100%; height:100%;" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="HRCI &amp; SHRM Exam Preparations" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-modal-backdrop" id="myModalStudyManuals" onclick="closeModalOnBackdrop(event, 'myModalStudyManuals')">
+    <div class="edu-modal-card">
+      <div class="edu-modal-header">
+        <h3 class="edu-modal-title">Sample Study Manuals</h3>
+        <button class="edu-modal-close" onclick="closeEduModal('myModalStudyManuals')" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="edu-modal-body">
+        <div class="edu-materials-preview">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/certification/Study_manuals_2023.jpg" alt="Study Manuals" style="width:100%; border-radius:8px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-modal-backdrop" id="myModalFlashcards" onclick="closeModalOnBackdrop(event, 'myModalFlashcards')">
+    <div class="edu-modal-card">
+      <div class="edu-modal-header">
+        <h3 class="edu-modal-title">Sample Flashcards</h3>
+        <button class="edu-modal-close" onclick="closeEduModal('myModalFlashcards')" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="edu-modal-body">
+        <div class="edu-materials-preview">
+          <img src="https://public-cdn.hr.com/remoteimages/website-images/certification/Flash-Card-Example_2023.png" alt="Flashcards" style="width:100%; border-radius:8px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="fc_1715099269814_form" style="display:none;">$vendorLeadForm</div>
+
+</div>
+
+<!-- Interactive Client-Side JavaScript -->
+<script>
+// Modal Controllers
+function openSampleLessonModal() {
+  var modal = document.getElementById('myModalSampleLesson');
+  var iframe = document.getElementById('iframeSampleLesson');
+  if (modal && iframe) {
+    iframe.src = "https://www.youtube.com/embed/Iy4xkZa4-io";
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function openStudyManualsModal() {
+  var modal = document.getElementById('myModalStudyManuals');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function openFlashcardsModal() {
+  var modal = document.getElementById('myModalFlashcards');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeEduModal(modalId) {
+  var modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    var iframe = modal.querySelector('iframe');
+    if (iframe) iframe.src = '';
+  }
+}
+
+function closeModalOnBackdrop(e, modalId) {
+  if (e.target.id === modalId) {
+    closeEduModal(modalId);
+  }
+}
+
+// Sticky Landmark Subnav Synchronization, Fixed Past Fold & ScrollSpy
+(function() {
+  function getDocScrollTop() {
+    return window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  }
+
+  function getMainNavHeight() {
+    var mainNav = document.querySelector('.hr_submenu_outer_wrapper.is-stuck') ||
+                  document.querySelector('.hr_submenu_outer_wrapper') ||
+                  document.querySelector('.hr_custom_submenu.is-stuck') ||
+                  document.querySelector('.hr_custom_submenu') ||
+                  document.querySelector('#eduSubmenuContainer') ||
+                  document.querySelector('header.header') ||
+                  document.querySelector('.header');
+    if (mainNav) {
+      var rect = mainNav.getBoundingClientRect();
+      var h = rect.height || mainNav.offsetHeight;
+      if (h > 20) return h;
+    }
+    return 0;
+  }
+
+  var subnav = document.getElementById('eduSubnav');
+  var placeholder = document.getElementById('eduSubnavPlaceholder');
+  if (!subnav) return;
+
+  if (!placeholder) {
+    placeholder = document.createElement('div');
+    placeholder.id = 'eduSubnavPlaceholder';
+    placeholder.className = 'edu-inpage-nav-placeholder';
+    subnav.parentNode.insertBefore(placeholder, subnav);
+  }
+
+  var navLinks = subnav.querySelectorAll('.edu-inpage-nav-btn');
+  var sectionIds = ['eduOverview', 'eduFandB', 'eduRproduct'];
+  var cachedSubnavTop = 0;
+  var isFixed = false;
+
+  function updateSubnavTopCache() {
+    if (!isFixed) {
+      var rect = subnav.getBoundingClientRect();
+      cachedSubnavTop = rect.top + getDocScrollTop();
+    } else if (placeholder && placeholder.style.display === 'block') {
+      var pRect = placeholder.getBoundingClientRect();
+      cachedSubnavTop = pRect.top + getDocScrollTop();
+    }
+  }
+
+  function syncSubnavSticky() {
+    var mainNavHeight = getMainNavHeight();
+    var stickyTop = mainNavHeight > 0 ? (mainNavHeight + 10) : 0;
+    var scrollTop = getDocScrollTop();
+
+    if (cachedSubnavTop === 0) {
+      updateSubnavTopCache();
+    }
+
+    var triggerPoint = cachedSubnavTop - stickyTop;
+
+    if (scrollTop >= triggerPoint && triggerPoint > 0) {
+      if (!isFixed) {
+        var navHeight = subnav.offsetHeight;
+        placeholder.style.height = navHeight + 'px';
+        placeholder.style.display = 'block';
+        subnav.classList.add('is-stuck');
+        isFixed = true;
+      }
+      subnav.style.top = stickyTop + 'px';
+    } else {
+      if (isFixed) {
+        subnav.classList.remove('is-stuck');
+        subnav.style.top = '';
+        placeholder.style.display = 'none';
+        isFixed = false;
+      }
+    }
+  }
+
+  function syncScrollSpy() {
+    var mainNavHeight = getMainNavHeight();
+    var subnavHeight = subnav.offsetHeight || 50;
+    var scrollOffset = getDocScrollTop() + mainNavHeight + subnavHeight + 60;
+    var currentSection = '';
+
+    for (var i = 0; i < sectionIds.length; i++) {
+      var sec = document.getElementById(sectionIds[i]);
+      if (sec) {
+        var top = sec.offsetTop;
+        var height = sec.offsetHeight;
+        if (scrollOffset >= top && scrollOffset < top + height) {
+          currentSection = sectionIds[i];
+          break;
+        }
+      }
+    }
+
+    if (!currentSection && sectionIds.length > 0) {
+      var firstSec = document.getElementById(sectionIds[0]);
+      if (firstSec && scrollOffset < firstSec.offsetTop) {
+        currentSection = sectionIds[0];
+      }
+    }
+
+    if (currentSection) {
+      navLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href === '#' + currentSection) {
+          link.classList.add('active');
+        } else if (href !== '#eduHome') {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        syncSubnavSticky();
+        syncScrollSpy();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function() {
+    isFixed = false;
+    subnav.classList.remove('is-stuck');
+    if (placeholder) placeholder.style.display = 'none';
+    cachedSubnavTop = 0;
+    updateSubnavTopCache();
+    syncSubnavSticky();
+    syncScrollSpy();
+  });
+
+  setTimeout(function() {
+    updateSubnavTopCache();
+    syncSubnavSticky();
+    syncScrollSpy();
+  }, 150);
+
+  // Smooth scroll click handler
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        var targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          var mainNavH = getMainNavHeight();
+          var subnavH = subnav.offsetHeight || 50;
+          var totalHeaderOffset = mainNavH + subnavH + 20;
+          var elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+          var offsetPosition = elementPosition - totalHeaderOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+})();
+
+// Testimonials Carousel Controller (Auto-advance, touch, pause on hover)
+(function() {
+  var sliderWrap = document.getElementById('eduTestimonialsSlider');
+  var track = document.getElementById('eduTestimonialsTrack');
+  var prevBtn = document.getElementById('eduTestimonialsPrev');
+  var nextBtn = document.getElementById('eduTestimonialsNext');
+  var dots = document.querySelectorAll('#eduTestimonialsDots .edu-stories-dot');
+  
+  if (!sliderWrap || !track) return;
+  
+  var slides = track.querySelectorAll('.edu-story-slide');
+  var totalSlides = slides.length;
+  if (totalSlides === 0) return;
+  
+  var currentIndex = 0;
+  var autoPlayTimer = null;
+  var autoPlayDelay = 6000;
+  
+  function goToSlide(index) {
+    if (index < 0) {
+      currentIndex = totalSlides - 1;
+    } else if (index >= totalSlides) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+    
+    track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+    
+    dots.forEach(function(dot, i) {
+      if (i === currentIndex) {
+        dot.classList.add('is-active');
+        dot.setAttribute('aria-current', 'true');
+      } else {
+        dot.classList.remove('is-active');
+        dot.removeAttribute('aria-current');
+      }
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      goToSlide(currentIndex + 1);
+      resetAutoPlay();
+    });
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      goToSlide(currentIndex - 1);
+      resetAutoPlay();
+    });
+  }
+  
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var targetIdx = parseInt(this.getAttribute('data-index'), 10);
+      if (!isNaN(targetIdx)) {
+        goToSlide(targetIdx);
+        resetAutoPlay();
+      }
+    });
+  });
+  
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(function() {
+      goToSlide(currentIndex + 1);
+    }, autoPlayDelay);
+  }
+  
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+  
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+  
+  sliderWrap.addEventListener('mouseenter', stopAutoPlay);
+  sliderWrap.addEventListener('mouseleave', startAutoPlay);
+  
+  // Touch / Swipe Gesture Support
+  var startX = 0;
+  var endX = 0;
+  
+  sliderWrap.addEventListener('touchstart', function(e) {
+    startX = e.changedTouches[0].screenX;
+    stopAutoPlay();
+  }, { passive: true });
+  
+  sliderWrap.addEventListener('touchend', function(e) {
+    endX = e.changedTouches[0].screenX;
+    handleSwipe();
+    startAutoPlay();
+  }, { passive: true });
+  
+  function handleSwipe() {
+    var diff = startX - endX;
+    var threshold = 45;
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        goToSlide(currentIndex + 1);
+      } else {
+        goToSlide(currentIndex - 1);
+      }
+    }
+  }
+  
+  startAutoPlay();
+})();
+</script>
