@@ -492,11 +492,11 @@
       letter-spacing: -0.01em !important;
     }
 
-    /* Row 2: Interactive Credential Pathways (Actionable Buttons with Affordance) */
+    /* Row 2: Supported Credential Pathways Highlight Points (Informational Badges) */
     .edu-program-page .edu-hero-credentials {
       display: grid !important;
       grid-template-columns: repeat(5, 1fr) !important;
-      gap: 10px !important;
+      gap: 12px !important;
     }
 
     .edu-program-page .edu-hero-cred-pill {
@@ -504,39 +504,28 @@
       align-items: center !important;
       justify-content: center !important;
       gap: 8px !important;
-      padding: 12px 10px !important;
-      background: #FFFFFF !important;
-      border: 1.5px solid var(--color-border-strong) !important;
-      border-radius: var(--radius-control) !important;
-      text-decoration: none !important;
-      font-size: 14.5px !important;
+      padding: 10px 16px !important;
+      background: var(--color-primary-soft) !important;
+      border: 1px solid var(--color-primary-border) !important;
+      border-radius: var(--radius-pill) !important;
+      font-size: 14px !important;
       font-weight: 800 !important;
-      color: var(--color-text-primary) !important;
-      letter-spacing: -0.01em !important;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      color: #1D4ED8 !important;
+      letter-spacing: 0.01em !important;
       text-align: center !important;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.06) !important;
-      cursor: pointer !important;
+      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.05) !important;
+      cursor: default !important;
+      user-select: none !important;
+      box-sizing: border-box !important;
     }
 
-    .edu-program-page .edu-hero-cred-pill:hover {
+    .edu-program-page .edu-hero-cred-bullet {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
       background: var(--color-primary) !important;
-      border-color: var(--color-primary) !important;
-      color: #FFFFFF !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3) !important;
-    }
-
-    .edu-program-page .edu-hero-cred-arrow {
-      color: var(--color-primary) !important;
-      transition: transform 0.2s ease, color 0.2s ease !important;
+      display: inline-block !important;
       flex-shrink: 0 !important;
-    }
-
-    .edu-program-page .edu-hero-cred-pill:hover .edu-hero-cred-arrow {
-      color: #FFFFFF !important;
-      stroke: #FFFFFF !important;
-      transform: translateX(3px) !important;
     }
 
     /* ================================================================
@@ -3021,43 +3010,28 @@
           </div>
         </div>
 
-        <!-- Row 2: 5-Credential Pathway Action Buttons (Clickable) -->
+        <!-- Row 2: 5 Supported Certification Pathways Highlight Points -->
         <div class="edu-hero-credentials">
-          <a class="edu-hero-cred-pill" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+          <div class="edu-hero-cred-pill">
+            <span class="edu-hero-cred-bullet"></span>
             <span>PHR</span>
-            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </a>
-          <a class="edu-hero-cred-pill" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+          </div>
+          <div class="edu-hero-cred-pill">
+            <span class="edu-hero-cred-bullet"></span>
             <span>SPHR</span>
-            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </a>
-          <a class="edu-hero-cred-pill" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+          </div>
+          <div class="edu-hero-cred-pill">
+            <span class="edu-hero-cred-bullet"></span>
             <span>SHRM-CP</span>
-            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </a>
-          <a class="edu-hero-cred-pill" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+          </div>
+          <div class="edu-hero-cred-pill">
+            <span class="edu-hero-cred-bullet"></span>
             <span>SHRM-SCP</span>
-            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </a>
-          <a class="edu-hero-cred-pill" href="https://www.hr.com/en/certifications/hrci_shrm_prep_courses/">
+          </div>
+          <div class="edu-hero-cred-pill">
+            <span class="edu-hero-cred-bullet"></span>
             <span>aPHR</span>
-            <svg class="edu-hero-cred-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </a>
+          </div>
         </div>
       </div>
 
