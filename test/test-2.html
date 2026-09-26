@@ -1,72 +1,456 @@
-<style id="hrw27-fouc-blocker">
-    /* 0ms Synchronous FOUC and CMS Parent Widget Suppression */
-    .FooterBG .container,
-    .FooterMidBG .container {
-        gap: 0 !important;
-    }
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
 
-    .hrw27-header {
-        border: 0 !important;
-        padding-block: 0 !important;
-        margin-bottom: 0 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: visible !important;
-        z-index: 99999 !important;
-    }
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+     <title>AI Can Find the Risk. Who Owns It? Rethinking Compliance in Global EOR | HR.com Webcast</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
-    .header::before {
-        display: none !important;
-    }
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yyygA.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
 
-    *,
-    *::before,
-    *::after {
-        -webkit-tap-highlight-color: transparent !important;
-    }
+        :root {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--color--red: #FF3924;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgb(6, 147, 227) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgb(252, 185, 0) 0%, rgb(255, 105, 0) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgb(255, 105, 0) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+        }
 
-    a,
-    a:hover,
-    a:focus,
-    a:focus-visible,
-    a:active,
-    a:visited,
-    a:link,
-    button,
-    button:hover,
-    button:focus,
-    button:focus-visible,
-    button:active,
-    :focus,
-    :focus-visible,
-    :active {
-        text-decoration: none !important;
-        outline: none !important;
-        outline-width: 0 !important;
-        outline-style: none !important;
-        outline-color: transparent !important;
-    }
-</style>
+        /* === EMAIL RESETS === */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+        .ReadMsgBody { width: 100%; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+        body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #ECEEF0; }
 
+        /* === DARK MODE === */
+        @media (prefers-color-scheme: dark) {
+            body, .email-body-bg { background-color: #0D1117 !important; }
+            .main-container { background-color: #161B22 !important; }
+            .hero-bg { background-color: #161B22 !important; }
+            .hero-title { color: #E8EEF4 !important; }
+            .hero-meta { color: #94A3B8 !important; }
+            .split-hero-left { background-color: #161B22 !important; }
+            .split-hero-left .hero-title { color: #E8EEF4 !important; }
+            .intro-section-td { background-color: #161B22 !important; }
+            .takeaways-bg { background-color: #161B22 !important; }
+            .takeaway-card-table, .takeaway-card-cell { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+            .takeaway-title { color: #E8EEF4 !important; }
+            .takeaway-desc { color: #94A3B8 !important; }
+            .sec-cta-section-td { background-color: #161B22 !important; }
+            .speakers-bg { background-color: #161B22 !important; }
+            .speaker-card-inner { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+            .speaker-name { color: #E8EEF4 !important; }
+            .speaker-role { color: #FF3924 !important; }
+            .section-heading { color: #E8EEF4 !important; }
+            .sponsor-section-bg { background-color: #161B22 !important; }
+            .hero-sponsor-chip { background-color: #FFFFFF !important; }
+            .header-bar-bg { background-color: #FFFFFF !important; }
+            .header-bar-label { color: #A0AEC0 !important; }
+            .sponsor-logo-cell { background-color: #FFFFFF !important; border-radius: 6px; }
+            .credit-bg { background-color: #1C2128 !important; }
+            .body-copy-p { color: #CBD5E1 !important; }
+            .ve-callout-td { background-color: #1C2128 !important; border-color: #2D3748 !important; }
+            .ve-callout-td p { color: #CBD5E1 !important; }
+            .ve-callout-td strong { color: #E8EEF4 !important; }
+        }
+        [data-ogsc] body, [data-ogsc] .email-body-bg { background-color: #0D1117 !important; }
+        [data-ogsc] .main-container { background-color: #161B22 !important; }
+        [data-ogsc] .hero-bg { background-color: #161B22 !important; }
+        [data-ogsc] .hero-title { color: #E8EEF4 !important; }
+        [data-ogsc] .hero-meta { color: #94A3B8 !important; }
+        [data-ogsc] .split-hero-left { background-color: #161B22 !important; }
+        [data-ogsc] .split-hero-left .hero-title { color: #E8EEF4 !important; }
+        [data-ogsc] .intro-section-td { background-color: #161B22 !important; }
+        [data-ogsc] .takeaways-bg { background-color: #161B22 !important; }
+        [data-ogsc] .takeaway-card-table, [data-ogsc] .takeaway-card-cell { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+        [data-ogsc] .takeaway-title { color: #E8EEF4 !important; }
+        [data-ogsc] .takeaway-desc { color: #94A3B8 !important; }
+        [data-ogsc] .sec-cta-section-td { background-color: #161B22 !important; }
+        [data-ogsc] .speakers-bg { background-color: #161B22 !important; }
+        [data-ogsc] .speaker-card-inner { background-color: #0D1117 !important; border-color: #2D3748 !important; }
+        [data-ogsc] .speaker-name { color: #E8EEF4 !important; }
+        [data-ogsc] .speaker-role { color: #FF3924 !important; }
+        [data-ogsc] .section-heading { color: #E8EEF4 !important; }
+        [data-ogsc] .credit-bg { background-color: #1C2128 !important; }
+        [data-ogsc] .body-copy-p { color: #CBD5E1 !important; }
+        [data-ogsc] .ve-callout-td { background-color: #1C2128 !important; border-color: #2D3748 !important; }
+        [data-ogsc] .ve-callout-td p { color: #CBD5E1 !important; }
+        [data-ogsc] .ve-callout-td strong { color: #E8EEF4 !important; }
+        [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3 { color: #E8EEF4 !important; }
+        [data-ogsc] p { color: #94A3B8 !important; }
 
-<div>$vendorLeadForm</div>
+        @media screen and (max-width: 600px) {
+            .email-outer-td { padding-top: 0 !important; padding-bottom: 0 !important; }
+            .main-container { width: 100% !important; max-width: 100% !important; }
+            .hero-section-td { padding: 24px 20px 28px 20px !important; }
+            .hero-title { font-size: 25px !important; line-height: 33px !important; }
+            .hero-meta { font-size: 13px !important; }
+            .utility-bar-td { font-size: 11px !important; padding: 8px 16px !important; }
+            .takeaways-td { padding: 24px 16px !important; }
+            .speakers-section-td { padding: 28px 16px 24px 16px !important; }
+            .speaker-card-div { width: 100% !important; display: block !important; padding: 8px 0 !important; }
+            .sponsor-section-td { padding: 24px 12px 20px 12px !important; }
+            .credit-stack-table, .credit-stack-table tbody, .credit-stack-table tr, .credit-badge-cell, .credit-text-cell { display: block !important; width: 100% !important; }
+            .credit-badge-cell { text-align: center !important; padding-bottom: 12px !important; }
+            .credit-text-cell { text-align: center !important; padding-left: 0 !important; padding-top: 0 !important; }
+            .footer-inner-td { padding: 28px 16px 0 16px !important; }
+            .grid-2col-cell { display: block !important; width: 100% !important; box-sizing: border-box !important; padding: 6px 0 !important; }
+            .split-hero-cell { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; padding: 28px 20px !important; }
+            .split-hero-parent { padding: 0 !important; }
+        }
+        @media screen and (max-width: 400px) {
+            .hero-title { font-size: 21px !important; line-height: 29px !important; }
+        }
+    </style>
+    <!--[if mso]>
+    <style type="text/css">
+        body, table, td, p, a, h1, h2, h3 { font-family: 'Plus Jakarta Sans', Arial, sans-serif !important; }
+    </style>
+    <![endif]-->
+</head>
 
-<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
-<link rel="stylesheet" type="text/css" media="screen"
-    href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
+<body class="email-body-bg"
+    style="margin: 0; padding: 0; background-color: #ECEEF0; font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+    <!-- SUBJECT: 1. Who really owns your global EOR compliance risk?
+2. Stop facing unexpected compliance exposure alone.
+3. Are your global severance liabilities tracking correctly?
+4. How to use AI to find global workforce risks early?
+5. Master global compliance with smart agentic AI tools.
+6. Evaluate your EOR contracts for hidden liabilities.
+7. What happens when your EOR provider avoids accountability?
+8. Protect your company from global workforce penalties.
+9. Build a foolproof compliance model for global hiring.
+10. Prevent complex global terminations from costing you. -->
 
+   <div style="display:none;font-size:1px;color:#ECEEF0;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;font-family:Arial,sans-serif;">
+    Join our full-day virtual event to rethink EOR compliance. Get your free pass today!
+</div>
 
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="email-body-bg"
+        style="background-color:#ECEEF0;width:100%;">
+        <tr>
+            <td align="center" valign="top" class="email-outer-td" style="padding:20px 0 40px 0;">
+                <!--[if (gte mso 9)|(IE)]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:0 auto;"
+                    class="main-container">
+<tr>
+                        <td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="25%" style="background-color:#FF3924;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="25%" style="background-color:#fcb900;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="25%" style="background-color:#00d084;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="25%" style="background-color:#0693e3;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+<tr>
+                        <td class="header-bar-bg"
+                            style="background-color:#FFFFFF;padding:12px 20px;border-bottom:1px solid #ECEEF0;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="middle" style="padding:0;">
+                                        <img src="https://public-cdn.hr.com/system/app/media/rs/2023/9/1/lm0kd2ly/120.jpg"
+                                            alt="Papaya Global"
+                                            style="display:block;width:auto;height:auto;max-width:131px;max-height:58px;border:0;" />
+                                    </td>
+                                    <td align="right" valign="middle" style="padding:0;">
+                                        <span class="header-bar-label"
+                                            style="font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">Virtual Event Webcast</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+<tr>
+                        <td align="left" valign="top" class="hero-section-td hero-bg"
+                            style="background-color:#FFFFFF; padding: 40px 36px 36px 36px; border-bottom: 1px solid #ECEEF0;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td style="padding:0;">
+                                        <table border="0" cellpadding="0" cellspacing="0"><tr><td style="background-color:#FF3924;width:40px;height:4px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+                                    </td>
+                                </tr>
+                                <tr><td height="16" style="font-size:0;line-height:0;">&nbsp;</td></tr>
+                            </table>
+                            <h1 class="hero-title"
+                                style="margin:0 0 12px 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:34px;font-weight:900;color:#000000;line-height:42px;text-align:left;letter-spacing:-0.5px;">
+                               AI Can Find the Risk. Who Owns It? Rethinking Compliance in Global EOR
+                            </h1>
+                            <p class="hero-meta" style="margin:0 0 0 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:500;color:#4A5568;text-align:left;line-height:22px;letter-spacing:0.3px;">
+                                October 21, 2026 at 3:00 PM - 3:55 PM ET &nbsp;&middot;&nbsp; Free to Attend
+                            </p>
+                            <table border="0" cellspacing="0" cellpadding="0" style="margin-top:20px;">
+                                <tr>
+                                    <td align="center" style="border-radius:999px;background:#FF3924;"
+                                        bgcolor="#FF3924">
+                                        <a href="https://www.hr.com/en?t=/CustomCode/webcasts/registration&storyID=1790183517778&email=__EMAIL__"
+                                            target="_blank"
+                                            style="font-size:14px;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:14px 38px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
+                                            Register Free &rarr;
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+<tr>
+                        <td align="center" valign="top" class="intro-section-td" style="background-color: #FFFFFF; padding: 40px 36px 6px 36px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="4" style="background-color:#FF3924;width:4px;padding:0;" valign="top">&nbsp;</td>
+                                    <td style="padding:0 0 0 20px;" valign="top">
+                                        <p class="body-copy-p" style="margin:0 0 16px 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#4A5568;text-align:left;line-height:28px;">Global EOR providers look identical until complex terminations or payroll exceptions create severe compliance exposure. Without knowing who truly owns these risks, organizations face dangerous liabilities in unfamiliar jurisdictions.</p>
+                            <p class="body-copy-p" style="margin:0 0 0 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#4A5568;text-align:left;line-height:28px;">This session reveals how to properly allocate global compliance accountability and leverage agentic AI to catch workforce risks early. Discover how to evaluate EOR contracts, track severance, and combine AI with expert validation.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+<tr>
+                        <td align="left" valign="top" class="takeaways-bg takeaways-td"
+                            style="background-color:#FFFFFF;padding:14px 36px 32px 36px;">
+                            <p style="margin:0 0 18px 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">
+                                What You'll Learn</p>
 
-<!-- Story Injection Point -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:12px;">
+                                <tr>
+                                    <td class="takeaway-card-cell" style="border-left:4px solid #FF3924;padding:10px 0 10px 16px;background-color:#F8FAFC;">
+                                        <span class="takeaway-title"
+                                            style="font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Evaluate continuous severance tracking versus exit-only calculations.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:12px;">
+                                <tr>
+                                    <td class="takeaway-card-cell" style="border-left:4px solid #0693e3;padding:10px 0 10px 16px;background-color:#F8FAFC;">
+                                        <span class="takeaway-title"
+                                            style="font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Identify termination guarantees and provider liability assumption.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:12px;">
+                                <tr>
+                                    <td class="takeaway-card-cell" style="border-left:4px solid #00d084;padding:10px 0 10px 16px;background-color:#F8FAFC;">
+                                        <span class="takeaway-title"
+                                            style="font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Validate worker classifications using intelligent AI compliance tools.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:0px;">
+                                <tr>
+                                    <td class="takeaway-card-cell" style="border-left:4px solid #fcb900;padding:10px 0 10px 16px;background-color:#F8FAFC;">
+                                        <span class="takeaway-title"
+                                            style="font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">Ask essential questions during your next EOR review.</span>
+                                    </td>
+                                </tr>
+                            </table>
 
-<div class="editlink">$designAttribute:story_edit_link $storyToolBar</div>
+                        </td>
+                    </tr>
+<tr>
+                        <td align="center" valign="top" class="sec-cta-section-td" style="background-color:#FFFFFF;padding:0 36px 32px 36px;">
+                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                <tr>
+                                    <td align="center" style="border-radius:10px;background:linear-gradient(135deg, #ff6900 0%, #FF3924 100%);">
+                                        <a href="https://web.hr.com/ho00" data-cta="1" data-captcha="1" target="_blank"
+                                            style="font-size:14px;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:10px;padding:14px 28px;display:block;font-weight:700;letter-spacing:0.3px;text-align:center;mso-padding-alt:0;">
+                                            Curious? Find out more here &rarr;
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+<tr>
+                        <td align="center" valign="top" class="speakers-bg speakers-section-td"
+                            style="background-color:#F8FAFC;padding:36px 24px 32px 24px;border-top:1px solid #ECEEF0;border-bottom:1px solid #ECEEF0;">
+                            <p
+                                style="margin:0 0 6px 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;text-align:center;">
+                                Your expert host</p>
+                            <h2 class="section-heading"
+                                style="margin:0 0 28px 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:19px;font-weight:800;color:#000000;text-align:center;line-height:27px;">
+                                Learn directly from industry leader
+                            </h2>
+                            <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="552" align="center"><tr><![endif]-->
 
-<script src="$public/Certifications/scripts/menu/index.js"></script>
-$designAttribute:masterD_no_sidebar
+                         <!--[if mso]><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->
+<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width:260px;margin:8px 6px;">
+    <tr>
+        <td style="padding:0;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px;background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;" class="speaker-card-inner">
+                <tr>
+                    <td style="padding:0;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="80" valign="top" style="padding:16px 0 16px 16px;">
+                                    <img alt="Sarah Ilan" src="https://public-cdn.hr.com/profile_images/2026/9/23/1790178274964_120" width="70" height="70" style="display:block;width:70px;height:70px;object-fit:cover;border-radius:8px;" />
+                                </td>
+                                <td valign="middle" style="padding:16px 16px 16px 14px;">
+                                    <span class="speaker-name" style="display:block;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:15px;font-weight:800;color:#000000;line-height:20px;">Sarah Ilan</span>
+                                    <span class="speaker-role" style="display:block;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;color:#FF3924;line-height:18px;margin-top:4px;">GTM Enablement Manager - EOR (Papaya Global)</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--[if mso]></td><![endif]-->
+                            <!--[if mso]></tr></table><![endif]-->
+
+                        </td>
+                    </tr>
+<tr>
+                        <td align="center" valign="middle" class="ve-callout-td"
+                            style="background-color:#F0F4F8;padding:18px 36px 20px 36px;border-top:1px solid #CBD5E1;border-bottom:1px solid #CBD5E1;">
+                            <p
+                                style="margin:0 0 16px 0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#4A5568;line-height:20px;text-align:center;">
+                                This webcast is part of the <strong style="color:#2A343E;">HR.com's State of Legal and Compliance</strong> Virtual
+                                Event.
+                                Click the button below to see other webcasts associated with this event.
+                            </p>
+                            <table border="0" cellspacing="0" cellpadding="0" align="center">
+                                <tr>
+                                    <td align="center" style="border-radius:999px;background:#000000;"
+                                        bgcolor="#000000">
+                                        <a href="https://web.hr.com/i3jub" data-cta="1" target="_blank"
+                                            style="font-size:13px;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:11px 30px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
+                                            Check it out here &rarr;
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+<tr>
+                        <td align="center" valign="middle" class="takeaways-bg"
+                            style="background-color:#E8ECEF;padding:22px 28px;">
+                            <p class="body-copy-p"
+                                style="margin:0;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;color:#4A5568;line-height:20px;text-align:center;">
+                                Can't attend the live webcast? <a href="https://web.hr.com/ho00" target="_blank"
+                                    data-cta="1" data-captcha="1"
+                                    style="color:#FF3924;text-decoration:underline;font-weight:600;">Register anyway</a>
+                                to access the recording. Ensure you are logged in to your HR.com account to access
+                                registration for this webcast.
+                            </p>
+                        </td>
+                    </tr>
+                   
+<tr>
+    <td align="center" valign="top" style="background-color:#F8F9FA;padding:32px 30px;" class="credit-bg credit-section-td">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-stack-table">
+                            <tr>
+                                <td width="90" align="center" valign="top" class="credit-badge-cell">
+                                    <img alt="HRCI" src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg" style="display:inline-block;max-width:90px;width:80px;height:80px;border:0;" width="80" />
+                                </td>
+                                <td align="left" valign="top" class="credit-text-cell" style="color:#718096;padding-left:14px;padding-top:10px;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
+                                    This Program has been pre-approved for 1 GLOBAL Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr><td height="18" style="font-size:1px; line-height:18px;">&nbsp;</td></tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-stack-table">
+                            <tr>
+                                <td width="90" align="center" valign="top" class="credit-badge-cell">
+                                    <img alt="SHRM" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/shrm-recert-provider.png" style="display:inline-block;width:80px;height:80px;border:0;" />
+                                </td>
+                                <td align="left" valign="top" class="credit-text-cell" style="color:#718096;padding-left:14px;padding-top:10px;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
+                                    HR.com is recognized by SHRM to offer Professional Development Credits (PDC) for SHRM-CP® or SHRM-SCP® recertification activities.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
+
+<tr>
+                        <td align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="background-color:#000000;max-width:600px;">
+                                <tbody>
+                                    <tr><td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="25%" style="background-color:#FF3924;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#fcb900;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#00d084;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#0693e3;height:3px;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+                                    <tr>
+                                        <td align="center" valign="top" class="footer-inner-td" style="padding:36px 20px 0 20px;">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="max-width:560px;">
+                                                <tbody>
+                                                    <tr><td align="center" style="padding-bottom:20px;"><img alt="HR.com" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/hrdotcom-white.png" width="120" style="display:block;border:0;width:120px;" /></td></tr>
+                                                    <tr><td style="padding:0 0 20px 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td style="border-top:1px solid #2D3F50;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+                                                    <tr><td align="center" style="padding-bottom:12px;font-size:11px;line-height:18px;color:#abb8c3;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-weight:400;">HR.com Limited - 56 Malone Road, Jackson's Point, ON, Canada, L0E 1L0</td></tr>
+                                                    <tr><td align="center" style="padding-bottom:16px;font-size:11px;line-height:16px;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;"><a data-cta="0" href="https://www.hr.com/en/about_us/privacy_information/" target="_blank" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Privacy Policy</a><span style="color:#2D3F50;padding:0 8px;">|</span><a data-cta="0" data-captcha="0" href="mailto:events@hr.com?subject=Contact Us: HR.com Virtual Events and Webcasts" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Contact Us</a></td></tr>
+                                                    <tr><td align="center" style="padding:0 10px 32px 10px;font-size:11px;line-height:19px;color:#abb8c3;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;font-weight:400;text-align:center;">If you would like to change your subscription settings please access the <a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/accsetting/lib/navigation&amp;mode=show&amp;tabid=3&amp;action=notifications" style="color:#FF3924;text-decoration:none;font-weight:600;" target="_blank">subscription page</a> or if you no longer wish to receive these email campaigns you may&nbsp;<a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/hr/subscribe/sub.campaign.7&amp;cid1=__CUSTOMER_ID__&amp;cid2=1170172078066" style="color:#FF3924;text-decoration:none;font-weight:600;" target="_blank" data-captcha="1">unsubscribe here</a>.<br><br><span style="color:#8490a5;">This email account is not monitored. Please do not reply to this email.</span></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr><td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="25%" style="background-color:#FF3924;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#fcb900;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#00d084;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#0693e3;height:3px;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td></tr></table>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
