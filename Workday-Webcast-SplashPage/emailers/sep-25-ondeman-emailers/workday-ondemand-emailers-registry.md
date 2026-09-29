@@ -30,14 +30,32 @@ This file stores all master assets, brand tokens, webcast links, presenter detai
 - **Speaker Card Accents**: Card `#FFFFFF`, Border `#E2E8F0`, Avatar Ring `3px solid #0057AE`, Company Tag `#0057AE`
 - **Dark Mode & Footer**: `#001229` / `#000F24` (Workday Obsidian Midnight)
 
+### 🔒 Mandatory Immutable Sections (Text & Links Must Remain Identical at Any Cost)
+
+#### 1. Recertification Credits Section
+- **HRCI Seal Asset**: `https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg` (Width: 80px)
+- **HRCI Copy**: `This Program has been pre-approved for <strong style="color:#022043;">1 BUSINESS Credit</strong> toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®).`
+- **SHRM Seal Asset**: `https://public-cdn.hr.com/remoteimages/website-images/emailer-images/shrm-recert-provider.png` (Width: 80px)
+- **SHRM Copy**: `HR.com is recognized by SHRM to offer Professional Development Credits (PDC) for SHRM-CP® or SHRM-SCP® recertification activities.`
+
+#### 2. Legal Footer Section
+- **HR.com Logo**: `https://public-cdn.hr.com/remoteimages/website-images/emailer-images/hrdotcom-white.png` (Width: 120px)
+- **Physical Address**: `HR.com Limited - 56 Malone Road, Jackson's Point, ON, Canada, L0E 1L0`
+- **Privacy Policy**: `https://www.hr.com/en/about_us/privacy_information/` (`data-cta="0"` `target="_blank"`)
+- **Contact Us**: `mailto:events@hr.com?subject=Contact Us: HR.com Virtual Events and Webcasts` (`data-cta="0"` `data-captcha="0"`)
+- **Subscription Page**: `https://www.hr.com/en?t=/CustomCode/accsetting/lib/navigation&amp;mode=show&amp;tabid=3&amp;action=notifications` (`data-cta="0"` `target="_blank"`)
+- **Unsubscribe Here**: `https://www.hr.com/en?t=/CustomCode/hr/subscribe/sub.campaign.7&amp;cid1=__CUSTOMER_ID__&amp;cid2=1170172078066` (`data-cta="0"` `target="_blank"` `data-captcha="1"`)
+- **Disclaimer**: `This email account is not monitored. Please do not reply to this email.`
+- **Color Accent Strips**: 4 equal bands: `#EF4A3D` (Red), `#FDB414` (Yellow), `#94C83D` (Green), `#4AC4D6` (Cyan).
+
 ---
 
 ## 📧 Emailer 1 of 10
 
 ### 📁 File & Destination Info
 - **HTML File**: [`workday-sep25-1-of-multiple.html`](workday-sep25-1-of-multiple.html)
-- **OnDemand CTA URL**: [`https://www.hr.com/en/webcasts_events/approved_event_webcasts/the-system-of-work-why-workforce-management-drives_mufnbtne.html`](https://www.hr.com/en/webcasts_events/approved_event_webcasts/the-system-of-work-why-workforce-management-drives_mufnbtne.html)
-- **Hero Banner Asset**: `./the-system-of-work-banner.jpg` (or `../../assets/the-system-of-work-banner.jpg`)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./the-system-of-work-banner.jpg` (or `../assets/the-system-of-work-banner.jpg`)
   - *Image Concept*: Candid documentary-style photo of operations managers actively collaborating over a live shift-scheduling tablet in an enterprise operations hub (no screaming duplicate text overlay).
 
 ### 🎯 Creative Angle & Positioning
@@ -107,12 +125,61 @@ To keep subsequent emailers engaging, avoid duplicating Emailer 1's "back-office
 
 ---
 
-## 📧 Emailer 2 of 10 (Pending)
-- **HTML File**: `workday-sep25-2-of-multiple.html`
-- **Webcast Title**: *(To be added)*
-- **CTA Link**: *(To be added)*
-- **Presenters**: *(To be added)*
-- **Angle**: *(Select from matrix above)*
+## 📧 Emailer 2 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-2-of-multiple.html`](workday-sep25-2-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./system-of-work-growth-banner.jpg`
+  - *Image Concept*: High-end commercial banner featuring clean Workday Orange pill (`THE SYSTEM OF WORK`), bold white headline (`Turn Workforce Management from a Cost Center into a Growth Engine`), and documentary photography of operations and HR executives reviewing real-time workforce analytics on a tablet.
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: Strategic Shift — Moving Workforce Management from Cost Center to Growth Engine
+- **Hook Type**: Direct alignment with the official Sapient Insights research showing organizations with advanced workforce management are 2x more likely to achieve higher profits and customer growth. Unifying HR, pay, time, and scheduling.
+- **Audience Focus**: Senior HR Leaders, CHROs, VP/Directors of Operations, and Workforce Strategy Executives.
+
+### 📝 Complete Copy Inventory (Used in Emailer 2)
+- **Preheader**:
+  > `Discover why advanced workforce management drives 2x higher profits and execution.`
+- **Banner Eyebrow Pill**:
+  > `THE SYSTEM OF WORK`
+- **Banner Headline**:
+  > `Turn Workforce Management from a Cost Center into a Growth Engine`
+- **Hero Title (`<h1>`)**:
+  > `The System of Work: Why Workforce Management Drives Business Execution`
+- **Primary CTA Button**:
+  > `View OnDemand →`
+- **Intro Callout Box**:
+  > `Why does workforce management still get treated as an administrative back-office cost center?`  
+  > `Sapient Insights research reveals that organizations with advanced workforce management are 2x more likely to achieve higher profits and customer growth. Yet, disconnected scheduling, rigid policies, and siloed labor data continue to hold frontline businesses back.`  
+  > `Join Workday leader Cristina Goldt and Sapient Insights' Stacey Harris for a research-driven conversation on how unifying HR, time, scheduling, and real-time labor data transforms frontline execution into a sustainable growth engine.`
+- **Key Takeaways (2x2 Grid with Brand Accent Borders)**:
+  - **Card 01** (`#F78B1E` Orange): `The Strategic Shift: Moving workforce management from administrative overhead to a core business lever`
+  - **Card 02** (`#0057AE` Royal Blue): `The Balancing Act: Managing high frontline variability and growth without losing control of costs`
+  - **Card 03** (`#0875E1` Sky Blue): `The Connected Workforce: Measurable business impact of unifying HR, time, pay, and scheduling data`
+  - **Card 04** (`#022043` Midnight Navy): `Operational Intelligence: How real-time labor analytics and AI empower leaders to optimize execution`
+- **Mid-Funnel Conversion Card**:
+  > Heading: `Ready to turn workforce management into your growth engine?`  
+  > Button: `View OnDemand →`
+- **Speakers Section (Master Executive Spotlight Duo Card)**:
+  - Eyebrow: `FEATURED SPEAKERS`
+  - Heading: `Learn directly from industry leaders`
+  - **Host 1**: Cristina Goldt — General Manager, Workforce & Payroll, **Vndly (Workday)** (`https://public-cdn.hr.com/profile_images/2017/2/26/1488102994054_120`)
+  - **Host 2**: Stacey Harris — Chief Research Officer & Managing Partner, **Sapient Insights Group** (`https://public-cdn.hr.com/profile_images/2021/1/18/1610947159452_120`)
+- **Recertification Section (IMMUTABLE)**: 1 BUSINESS Credit (HRCI) & SHRM PDC.
+- **Footer Section (IMMUTABLE)**: Canonical address, Privacy Policy, Contact Us, subscription page, unsubscribe here, disclaimer.
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars)
+1. *Turn Workforce Management into a Growth Engine* (46 chars)
+2. *Is Workforce Management Costing You Growth?* (43 chars)
+3. *How to Turn Labor Systems into a Profit Lever* (45 chars)
+4. *Why Top Brands Make Workforce a Growth Engine* (45 chars)
+5. *Move Workforce Management Past the Cost Center* (47 chars)
+6. *How Connected Workforce Data Drives 2x Growth* (46 chars)
+7. *Unlock 2x Higher Profit with Workforce Systems* (46 chars)
+8. *Why Workforce Systems Now Drive Business Growth* (47 chars)
+9. *Turn Siloed Labor Data into Business Execution* (47 chars)
+10. *From Back-Office Cost to Core Business Lever* (46 chars)
 
 ---
 

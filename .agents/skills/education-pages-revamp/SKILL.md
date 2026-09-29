@@ -182,3 +182,13 @@ To maintain absolute brand consistency, international executive authority, and h
    - **Role**: Concrete proof of passing and career boost.
    - **Specs**: Authentic, diverse certified HR professionals holding framed certificates or badges in actual office settings.
    - **Aspect Ratio**: `1:1` square.
+
+---
+
+## 7. CMS Minisite Architecture & External Scripts Integration
+
+For technical architecture, configuration tabs, CSS selectors, and script injection rules regarding HR.com Minisites, refer to the dedicated guide:
+- **Documentation**: [`references/cms-minisite-architecture.md`](file:///e:/HR/00-html/.agents/skills/education-pages-revamp/references/cms-minisite-architecture.md)
+- **Custom Stylesheet**: [`01-education/02-certification-pages/mini-site/css/main-navigation-custom.css`](file:///e:/HR/00-html/01-education/02-certification-pages/mini-site/css/main-navigation-custom.css)
+- **Active Navigation Controller**: [`01-education/02-certification-pages/mini-site/js/mini-site-cert-prep-course.js`](file:///e:/HR/00-html/01-education/02-certification-pages/mini-site/js/mini-site-cert-prep-course.js)
+- **Injection Field**: External scripts must be injected via **`Body-end scripts`** in CMS Admin -> Appearance / Analytics -> External scripts so the DOM chrome is already rendered before execution.

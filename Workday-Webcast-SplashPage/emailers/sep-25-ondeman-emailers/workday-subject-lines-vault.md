@@ -1,7 +1,7 @@
 # Workday Campaign: 30 High-Converting Subject Lines
 **Webcast**: *The System of Work: Why Workforce Management Drives Business Execution*  
 **Sponsor**: Workday (featuring Cristina Goldt & Stacey Harris)  
-**Destination**: [On-Demand Webcast Portal](https://www.hr.com/en/webcasts_events/approved_event_webcasts/the-system-of-work-why-workforce-management-drives_mufnbtne.html)
+**Destination**: [On-Demand Webcast Portal](https://web.hr.com/9d4t)
 
 ---
 
