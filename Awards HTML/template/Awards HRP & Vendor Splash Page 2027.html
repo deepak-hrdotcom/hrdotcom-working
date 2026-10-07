@@ -1,0 +1,2217 @@
+<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
+
+<style type="text/css">
+body>.container-fluid>.row>.ContentArea>.container {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+body>.container-fluid>.row>.ContentArea> {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body {
+  background-color: #fff !important;
+}
+
+#intro-header {
+  display: none;
+}
+
+a,
+a:hover,
+a:link {
+  text-decoration: none;
+}
+
+.sf-nav-main,
+.socialshare {
+  display: none !important;
+}
+
+/* Reset + Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(0, 0, 0); */
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.custom-container img {
+  max-height: 100% !important;
+}
+
+.custom-container ul li {
+  font-size: 15px !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+
+.hero {
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+}
+
+/* Left Column: Logo stacked over Image */
+.hero-left-col {
+  flex: 0 0 auto;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero-logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* hero-image stretches to fill remaining height so its bottom
+   aligns with the hero-last-row buttons in the right column */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  flex: 1;
+}
+
+.hero-image .desktop-img {
+  display: block;
+}
+
+.hero-image .mobile-img {
+  display: none;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  object-fit: cover;
+}
+
+/* Right Column: Video + Text stacked */
+.hero-text-col {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Video box above hero-text — capped at 500px */
+.hero-video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.hero-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hero-text h1 {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 65px;
+  color: #fde68a;
+  margin-bottom: 15px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.hero-text h1:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
+.hero-subhead {
+  font-size: 24px !important;
+  font-weight: lighter;
+  line-height: 25px;
+  padding-bottom: 20px;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #d1d5db;
+  margin: 5px 0;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.hero-text h2:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
+.special-head {
+  color: #FDB414 !important;
+}
+
+.special-date {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+
+.para-head {
+  font-size: 16px;
+  line-height: 20px;
+  color: white;
+  padding-top: 30px;
+}
+
+.hero-last-row {
+  padding-top: 20px;
+  padding-bottom: 20px !important;
+}
+
+.hero-last-row button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #EF4A3D;
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.hero-last-row button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Award Offering Section */
+.award-offering {
+  padding: 40px 20px 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.award-offering h3 {
+  font-weight: bold !important;
+  padding-top: 10px;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 34px;
+  color: #f0493c;
+  margin-bottom: 0px !important;
+}
+
+.award-offering h4 {
+  font-weight: normal !important;
+  padding-top: 10px !important;
+  font-size: 28px !important;
+  line-height: 32px;
+  color: #333 !important;
+  margin-top: 5px !important;
+
+}
+
+.award-offering p {
+  padding-top: 10px !important;
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Award info Section */
+
+.award-info-wrapper {
+  margin-top: 40px;
+}
+
+/* Two-column row: left text + right video */
+.award-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+
+.award-info-left {
+  flex: 1;
+  min-width: 260px;
+  max-width: 500px;
+}
+
+.award-info-video {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.award-info-heading {
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  margin-top: 40px;
+}
+
+.award-info-heading h3 {
+  padding-top: 10px;
+  font-weight: bold !important;
+  font-size: 30px;
+  line-height: 34px;
+  padding-bottom: 20px;
+  color: #f0493c;
+  margin-bottom: 5px !important;
+}
+
+.award-info-heading img {
+  max-width: 50px;
+  width: 100%;
+}
+
+.award-info {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 40px;
+  /* Left/right space outside */
+}
+
+
+.para-custom {
+  font-size: 20px !important;
+}
+
+.para-custom p {
+  font-size: 16px !important;
+  line-height: 1.5;
+}
+
+.award-card-wrapper {
+  flex: 1 1 40%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.award-card-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.award-card-wrapper h4 {
+  font-weight: bold !important;
+  letter-spacing: normal !important;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 10px !important;
+  padding-top: 5px !important;
+}
+
+.award-card-wrapper p {
+  font-size: 16px !important;
+  line-height: 1.7;
+  padding: 0 40px 10px 40px;
+}
+
+.award-card {
+  flex-grow: 1;
+  background-color: #d9e2e4;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  min-height: 250px;
+}
+
+.award-card button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #EF4A3D;
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.award-card button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-top-img-outside {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-bottom-img-outside {
+  width: 100%;
+  min-height: 10px;
+  display: block;
+}
+
+.card-top-img-outside {
+  border-radius: 10px 10px 0 0;
+  /* Top corners rounded */
+}
+
+.card-bottom-img-outside {
+  border-radius: 0 0 10px 10px;
+  /* Bottom corners rounded */
+}
+
+
+/* Award Decks */
+.award-decks {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: start;
+  /* Ensures last card is left-aligned */
+  margin: 0 150px !important;
+}
+
+.deck-wrapper {
+  max-width: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: self-start !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.deck-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.deck-top-img-outside {
+  width: 100%;
+  display: block;
+}
+
+.deck {
+  background: #d9e2e4;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.deck h4 {
+  font-size: 20px !important;
+  line-height: 28px !important;
+  margin: 10px !important;
+  font-weight: bold !important;
+  padding-bottom: 5px;
+  padding: 10px 20px !important;
+}
+
+
+.deck ul {
+  text-align: left;
+  padding: 0 15px !important;
+  padding-bottom: 20px !important;
+  list-style: none;
+  /* remove default bullets */
+  padding-left: 0;
+}
+
+.deck ul li {
+  position: relative;
+  padding-left: 25px;
+  /* space for custom bullet */
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.deck ul li::before {
+  content: "•";
+  /* bullet character */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FDB414;
+  /* bullet color */
+  font-size: 40px;
+  /* bullet size */
+  line-height: 1;
+}
+
+.benefits-hero {
+  width: 690px;
+  display: flex;
+  flex-direction: row;
+  /* <-- horizontal layout */
+  gap: 20px;
+  /* spacing between columns */
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-hero img {
+  width: 100%;
+}
+
+/* testimonial section */
+.testimonials {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  z-index: 2;
+  margin-bottom: -250px;
+}
+
+.testimonial-card {
+  position: relative;
+  background-color: #d9e2e4;
+  border-radius: 0 0 10px 10px;
+  padding: 70px 30px 60px;
+  width: 500px;
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+.testimonial-card .header-image {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  height: 10px;
+  object-fit: fill;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.testimonial-card .author-image {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  background-color: white;
+  z-index: 1;
+}
+
+.testimonial-card .quote-mark {
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.testimonial-text {
+  font-size: 16px !important;
+  color: #444;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  font-size: 18px !important;
+  margin-top: 16px;
+  font-weight: bold;
+  color: #175E69;
+  margin-bottom: 0;
+}
+
+.testimonial-author-title {
+  font-size: 14px !important;
+  line-height: 1.5;
+  margin-top: 1px;
+  font-weight: normal;
+  color: #444;
+}
+
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  /* allows it to stack on smaller screens */
+
+  padding: 60px 60px;
+
+  color: white;
+  position: relative;
+  z-index: 1;
+
+}
+
+.about-text {
+  flex: 1.2;
+  min-width: 250px;
+  text-align: center;
+  padding-top: 150px !important
+}
+
+.about-text h3 {
+  font-weight: bold !important;
+  color: #ffffff !important;
+  letter-spacing: normal !important;
+  padding-bottom: 0px !important;
+  font-size: 30px !important;
+}
+
+.about-text p {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #ffffff !important;
+  letter-spacing: normal !important;
+  padding-bottom: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA Button Section */
+.cta-button {
+  text-align: center;
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
+  /* allows it to stack on smaller screens */
+
+  min-height: 0vh;
+  color: #333;
+  position: relative;
+  z-index: 1;
+
+}
+
+.cta-button p {
+  font-size: 16px !important;
+  line-height: 1.5;
+}
+
+.cta-button h3 {
+  font-weight: bold !important;
+  letter-spacing: normal !important;
+  font-size: 30px !important;
+  color: #f0493c !important;
+}
+
+
+.cta-button button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 40px;
+  margin: 40px 0 0 0;
+  background-color: #EF4A3D;
+  /* gradient */
+  color: white;
+  border: 3px solid #ffffff;
+  /* white outline */
+  border-radius: 999px;
+  /* fully rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* shadow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.rainbow-separator {
+  width: 100%;
+  min-height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-last-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .award-info {
+    flex-direction: row;
+  }
+
+  .about {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    background-position: -150px 0px;
+  }
+
+  .hero {
+    padding: 40px 30px 50px 30px;
+  }
+
+  .hero-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hero-left-col {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+  }
+
+  .hero-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-logo img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-image .desktop-img {
+    display: none;
+  }
+
+  .hero-image .mobile-img {
+    display: block;
+  }
+
+  .hero-text-col {
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .hero-image {
+    flex: none;
+  }
+
+  .hero-video {
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    margin-top: 0 !important;
+  }
+
+  .award-info {
+    padding: 0 20px 15px 20px;
+  }
+
+  .award-info-heading {
+    padding: 20px 20px 5px 20px;
+  }
+
+  .award-decks {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: start;
+    /* Ensures last card is left-aligned */
+    margin: 0 150px !important;
+  }
+
+  .award-decks {
+    display: flex;
+    gap: 5px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 20px !important;
+  }
+
+  .award-offering img {
+    padding-top: 0 !important;
+  }
+
+  .award-offering {
+    padding-bottom: 25px !important;
+  }
+
+  .award-offering h3 {
+    font-weight: bold !important;
+    letter-spacing: normal !important;
+    line-height: 40px;
+    padding: 5px 10px 0 10px;
+    margin-top: 0;
+  }
+
+  .award-offering h4 {
+    padding-top: 0px !important;
+  }
+
+  .award-info-heading h3 {
+    margin-top: 0;
+  }
+
+  .testimonials {
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 2;
+    margin-bottom: -150px;
+  }
+
+  .award-offering p {
+    padding: 0 20px;
+  }
+
+  .award-card {
+    flex: 1 1 100%;
+  }
+
+  .testimonials .testimonial-card {
+    margin-top: 50px;
+  }
+
+  .about {
+    text-align: center;
+    background-position: 0px 0px;
+    padding-top: 50px;
+  }
+
+  .about-text {
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+
+
+  .about-image {
+    justify-content: center;
+    padding-top: 0px;
+
+  }
+
+  .cta-button {
+    padding: 40px 50px;
+  }
+
+  .cta-button img {
+    padding-top: 20px !important;
+  }
+
+  .cta-button button {
+    margin: 0;
+  }
+
+  .cta-button p {
+    padding-bottom: 30px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .award-decks {
+    padding: 0 20px
+  }
+
+  .hero-left-col {
+    width: 600px;
+
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .award-decks {
+    padding: 0 20px
+  }
+
+  .hero-left-col {
+    width: 600px;
+  }
+}
+
+/* ============================================================
+   HERO OVERRIDES — awards-no-video-top variant
+   (no video in right col; logo moves to top of right col)
+   ============================================================ */
+
+/* Hero section auto-adjusts to content height */
+.hero {
+  height: auto !important;
+}
+
+/* Columns stretch so left col matches right col height */
+.hero-columns {
+  align-items: stretch !important;
+}
+
+/* Left col: only hero-image, flex-fill to match right col */
+.hero-left-col {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 600px;
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+}
+
+/* hero-image fills all available vertical space */
+.hero-image {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* Image covers the full height of the left column */
+.hero-image .desktop-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Right col: logo stacked on top of hero-text */
+.hero-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  justify-content: center !important;
+}
+
+/* Logo at top of right column */
+.hero-text-col .hero-logo {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.hero-text-col .hero-logo img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* hero-text takes remaining space */
+.hero-text-col .hero-text {
+  flex: 1 !important;
+}
+
+/* ── Mobile / vertical window ───────────────────────────── */
+@media (max-width: 768px) {
+  /* Stack columns vertically */
+  .hero-columns {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Logo first on mobile (order -1 to put before left col) */
+  .hero-text-col {
+    order: -1 !important;   /* move entire right col to top   */
+    width: 100% !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  .hero-left-col {
+    order: 0 !important;    /* image below logo on mobile     */
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+
+  /* Image reverts to auto height on mobile */
+  .hero-image {
+    flex: none !important;
+  }
+
+  .hero-image .desktop-img {
+    height: auto !important;
+    object-fit: contain !important;
+    max-width: 100% !important;
+  }
+
+  .hero-text-col .hero-logo {
+    justify-content: center !important;
+  }
+}
+
+
+</style>
+
+
+<div class="custom-container">
+$desc_short 
+  <selection>
+    <img class="rainbow-separator"
+    src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/Award-Splash-Pages/Rainbow-separator.webp"
+    alt="">
+  </selection>
+$desc_long
+</div>
+
+$designAttribute:story_edit_Meta 
+<script src="$public/Certifications/scripts/menu/index.js" ></script>
+$designAttribute:quick_login_m1 $designAttribute:masterD_new_splashpage
+<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
+
+<style type="text/css">
+body>.container-fluid>.row>.ContentArea>.container {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+body>.container-fluid>.row>.ContentArea> {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body {
+  background-color: #fff !important;
+}
+
+#intro-header {
+  display: none;
+}
+
+a,
+a:hover,
+a:link {
+  text-decoration: none;
+}
+
+.sf-nav-main,
+.socialshare {
+  display: none !important;
+}
+
+/* Reset + Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(0, 0, 0); */
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.custom-container img {
+  max-height: 100% !important;
+}
+
+.custom-container ul li {
+  font-size: 15px !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+
+.hero {
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+}
+
+/* Left Column: Logo stacked over Image */
+.hero-left-col {
+  flex: 0 0 auto;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero-logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* hero-image stretches to fill remaining height so its bottom
+   aligns with the hero-last-row buttons in the right column */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  flex: 1;
+}
+
+.hero-image .desktop-img {
+  display: block;
+}
+
+.hero-image .mobile-img {
+  display: none;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  object-fit: cover;
+}
+
+/* Right Column: Video + Text stacked */
+.hero-text-col {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Video box above hero-text — capped at 500px */
+.hero-video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.hero-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hero-text h1 {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 65px;
+  color: #fde68a;
+  margin-bottom: 15px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.hero-text h1:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
+.hero-subhead {
+  font-size: 24px !important;
+  font-weight: lighter;
+  line-height: 25px;
+  padding-bottom: 20px;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #d1d5db;
+  margin: 5px 0;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.hero-text h2:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
+.special-head {
+  color: #FDB414 !important;
+}
+
+.special-date {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+
+.para-head {
+  font-size: 16px;
+  line-height: 20px;
+  color: white;
+  padding-top: 30px;
+}
+
+.hero-last-row {
+  padding-top: 20px;
+  padding-bottom: 20px !important;
+}
+
+.hero-last-row button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #EF4A3D;
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.hero-last-row button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Award Offering Section */
+.award-offering {
+  padding: 40px 20px 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.award-offering h3 {
+  font-weight: bold !important;
+  padding-top: 10px;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 34px;
+  color: #f0493c;
+  margin-bottom: 0px !important;
+}
+
+.award-offering h4 {
+  font-weight: normal !important;
+  padding-top: 10px !important;
+  font-size: 28px !important;
+  line-height: 32px;
+  color: #333 !important;
+  margin-top: 5px !important;
+
+}
+
+.award-offering p {
+  padding-top: 10px !important;
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Award info Section */
+
+.award-info-wrapper {
+  margin-top: 40px;
+}
+
+/* Two-column row: left text + right video */
+.award-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+
+.award-info-left {
+  flex: 1;
+  min-width: 260px;
+  max-width: 500px;
+}
+
+.award-info-video {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.award-info-heading {
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  margin-top: 40px;
+}
+
+.award-info-heading h3 {
+  padding-top: 10px;
+  font-weight: bold !important;
+  font-size: 30px;
+  line-height: 34px;
+  padding-bottom: 20px;
+  color: #f0493c;
+  margin-bottom: 5px !important;
+}
+
+.award-info-heading img {
+  max-width: 50px;
+  width: 100%;
+}
+
+.award-info {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 40px;
+  /* Left/right space outside */
+}
+
+
+.para-custom {
+  font-size: 20px !important;
+}
+
+.para-custom p {
+  font-size: 16px !important;
+  line-height: 1.5;
+}
+
+.award-card-wrapper {
+  flex: 1 1 40%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.award-card-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.award-card-wrapper h4 {
+  font-weight: bold !important;
+  letter-spacing: normal !important;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 10px !important;
+  padding-top: 5px !important;
+}
+
+.award-card-wrapper p {
+  font-size: 16px !important;
+  line-height: 1.7;
+  padding: 0 40px 10px 40px;
+}
+
+.award-card {
+  flex-grow: 1;
+  background-color: #d9e2e4;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  min-height: 250px;
+}
+
+.award-card button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #EF4A3D;
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.award-card button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-top-img-outside {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-bottom-img-outside {
+  width: 100%;
+  min-height: 10px;
+  display: block;
+}
+
+.card-top-img-outside {
+  border-radius: 10px 10px 0 0;
+  /* Top corners rounded */
+}
+
+.card-bottom-img-outside {
+  border-radius: 0 0 10px 10px;
+  /* Bottom corners rounded */
+}
+
+
+/* Award Decks */
+.award-decks {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: start;
+  /* Ensures last card is left-aligned */
+  margin: 0 150px !important;
+}
+
+.deck-wrapper {
+  max-width: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: self-start !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.deck-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.deck-top-img-outside {
+  width: 100%;
+  display: block;
+}
+
+.deck {
+  background: #d9e2e4;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.deck h4 {
+  font-size: 20px !important;
+  line-height: 28px !important;
+  margin: 10px !important;
+  font-weight: bold !important;
+  padding-bottom: 5px;
+  padding: 10px 20px !important;
+}
+
+
+.deck ul {
+  text-align: left;
+  padding: 0 15px !important;
+  padding-bottom: 20px !important;
+  list-style: none;
+  /* remove default bullets */
+  padding-left: 0;
+}
+
+.deck ul li {
+  position: relative;
+  padding-left: 25px;
+  /* space for custom bullet */
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.deck ul li::before {
+  content: "•";
+  /* bullet character */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FDB414;
+  /* bullet color */
+  font-size: 40px;
+  /* bullet size */
+  line-height: 1;
+}
+
+.benefits-hero {
+  width: 690px;
+  display: flex;
+  flex-direction: row;
+  /* <-- horizontal layout */
+  gap: 20px;
+  /* spacing between columns */
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-hero img {
+  width: 100%;
+}
+
+/* testimonial section */
+.testimonials {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  z-index: 2;
+  margin-bottom: -250px;
+}
+
+.testimonial-card {
+  position: relative;
+  background-color: #d9e2e4;
+  border-radius: 0 0 10px 10px;
+  padding: 70px 30px 60px;
+  width: 500px;
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+.testimonial-card .header-image {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  height: 10px;
+  object-fit: fill;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.testimonial-card .author-image {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  background-color: white;
+  z-index: 1;
+}
+
+.testimonial-card .quote-mark {
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.testimonial-text {
+  font-size: 16px !important;
+  color: #444;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  font-size: 18px !important;
+  margin-top: 16px;
+  font-weight: bold;
+  color: #175E69;
+  margin-bottom: 0;
+}
+
+.testimonial-author-title {
+  font-size: 14px !important;
+  line-height: 1.5;
+  margin-top: 1px;
+  font-weight: normal;
+  color: #444;
+}
+
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  /* allows it to stack on smaller screens */
+
+  padding: 60px 60px;
+
+  color: white;
+  position: relative;
+  z-index: 1;
+
+}
+
+.about-text {
+  flex: 1.2;
+  min-width: 250px;
+  text-align: center;
+  padding-top: 150px !important
+}
+
+.about-text h3 {
+  font-weight: bold !important;
+  color: #ffffff !important;
+  letter-spacing: normal !important;
+  padding-bottom: 0px !important;
+  font-size: 30px !important;
+}
+
+.about-text p {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #ffffff !important;
+  letter-spacing: normal !important;
+  padding-bottom: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA Button Section */
+.cta-button {
+  text-align: center;
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
+  /* allows it to stack on smaller screens */
+
+  min-height: 0vh;
+  color: #333;
+  position: relative;
+  z-index: 1;
+
+}
+
+.cta-button p {
+  font-size: 16px !important;
+  line-height: 1.5;
+}
+
+.cta-button h3 {
+  font-weight: bold !important;
+  letter-spacing: normal !important;
+  font-size: 30px !important;
+  color: #f0493c !important;
+}
+
+
+.cta-button button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 40px;
+  margin: 40px 0 0 0;
+  background-color: #EF4A3D;
+  /* gradient */
+  color: white;
+  border: 3px solid #ffffff;
+  /* white outline */
+  border-radius: 999px;
+  /* fully rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* shadow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.rainbow-separator {
+  width: 100%;
+  min-height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-last-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .award-info {
+    flex-direction: row;
+  }
+
+  .about {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    background-position: -150px 0px;
+  }
+
+  .hero {
+    padding: 40px 30px 50px 30px;
+  }
+
+  .hero-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hero-left-col {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+  }
+
+  .hero-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-logo img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-image .desktop-img {
+    display: none;
+  }
+
+  .hero-image .mobile-img {
+    display: block;
+  }
+
+  .hero-text-col {
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .hero-image {
+    flex: none;
+  }
+
+  .hero-video {
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    margin-top: 0 !important;
+  }
+
+  .award-info {
+    padding: 0 20px 15px 20px;
+  }
+
+  .award-info-heading {
+    padding: 20px 20px 5px 20px;
+  }
+
+  .award-decks {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: start;
+    /* Ensures last card is left-aligned */
+    margin: 0 150px !important;
+  }
+
+  .award-decks {
+    display: flex;
+    gap: 5px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 20px !important;
+  }
+
+  .award-offering img {
+    padding-top: 0 !important;
+  }
+
+  .award-offering {
+    padding-bottom: 25px !important;
+  }
+
+  .award-offering h3 {
+    font-weight: bold !important;
+    letter-spacing: normal !important;
+    line-height: 40px;
+    padding: 5px 10px 0 10px;
+    margin-top: 0;
+  }
+
+  .award-offering h4 {
+    padding-top: 0px !important;
+  }
+
+  .award-info-heading h3 {
+    margin-top: 0;
+  }
+
+  .testimonials {
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 2;
+    margin-bottom: -150px;
+  }
+
+  .award-offering p {
+    padding: 0 20px;
+  }
+
+  .award-card {
+    flex: 1 1 100%;
+  }
+
+  .testimonials .testimonial-card {
+    margin-top: 50px;
+  }
+
+  .about {
+    text-align: center;
+    background-position: 0px 0px;
+    padding-top: 50px;
+  }
+
+  .about-text {
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+
+
+  .about-image {
+    justify-content: center;
+    padding-top: 0px;
+
+  }
+
+  .cta-button {
+    padding: 40px 50px;
+  }
+
+  .cta-button img {
+    padding-top: 20px !important;
+  }
+
+  .cta-button button {
+    margin: 0;
+  }
+
+  .cta-button p {
+    padding-bottom: 30px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .award-decks {
+    padding: 0 20px
+  }
+
+  .hero-left-col {
+    width: 600px;
+
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .award-decks {
+    padding: 0 20px
+  }
+
+  .hero-left-col {
+    width: 600px;
+  }
+}
+
+/* ============================================================
+   HERO OVERRIDES — awards-no-video-top variant
+   (no video in right col; logo moves to top of right col)
+   ============================================================ */
+
+/* Hero section auto-adjusts to content height */
+.hero {
+  height: auto !important;
+}
+
+/* Columns stretch so left col matches right col height */
+.hero-columns {
+  align-items: stretch !important;
+}
+
+/* Left col: only hero-image, flex-fill to match right col */
+.hero-left-col {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 600px;
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+}
+
+/* hero-image fills all available vertical space */
+.hero-image {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* Image covers the full height of the left column */
+.hero-image .desktop-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Right col: logo stacked on top of hero-text */
+.hero-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  justify-content: center !important;
+}
+
+/* Logo at top of right column */
+.hero-text-col .hero-logo {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.hero-text-col .hero-logo img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* hero-text takes remaining space */
+.hero-text-col .hero-text {
+  flex: 1 !important;
+}
+
+/* ── Mobile / vertical window ───────────────────────────── */
+@media (max-width: 768px) {
+  /* Stack columns vertically */
+  .hero-columns {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Logo first on mobile (order -1 to put before left col) */
+  .hero-text-col {
+    order: -1 !important;   /* move entire right col to top   */
+    width: 100% !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  .hero-left-col {
+    order: 0 !important;    /* image below logo on mobile     */
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+
+  /* Image reverts to auto height on mobile */
+  .hero-image {
+    flex: none !important;
+  }
+
+  .hero-image .desktop-img {
+    height: auto !important;
+    object-fit: contain !important;
+    max-width: 100% !important;
+  }
+
+  .hero-text-col .hero-logo {
+    justify-content: center !important;
+  }
+}
+
+
+</style>
+
+
+<div class="custom-container">
+$desc_short 
+  <selection>
+    <img class="rainbow-separator"
+    src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/Award-Splash-Pages/Rainbow-separator.webp"
+    alt="">
+  </selection>
+$desc_long
+</div>
+
+$designAttribute:story_edit_Meta 
+<script src="$public/Certifications/scripts/menu/index.js" ></script>
+$designAttribute:quick_login_m1 $designAttribute:masterD_new_splashpage
+
+<script>
+(function() {
+  function normalize(text) {
+    return (text || '')
+      .replace(/\s+/g, ' ')
+      .replace(/\s*[\u2010-\u2015\u2212\uFE58\uFE63\uFF0D—–-]+\s*/g, ' - ')
+      .trim();
+  }
+
+  // Exact target paragraphs to match
+  var set1_p1_target = normalize("There is no charge to enter the awards. Simply fill out our brief questionnaire - it can be completed in just a few minutes. Our awards team will review your submission and let you know if any additional information is needed.");
+  var set1_p2_target = normalize("Once a nomination is submitted, you will receive a rating link to share with your network, peers, and colleagues to gather these required votes.");
+
+  var set2_p1_target = normalize("Award winners are selected through a combination of community support and expert evaluation. Important: Nominees must receive ratings to qualify as a winner.");
+  var set2_p2_target = normalize("A panel of judges will then carefully review each submission alongside its community ratings to select the final winner.");
+
+  function runReplace() {
+    var allP = Array.from(document.querySelectorAll('p'));
+
+    for (var i = 0; i < allP.length; i++) {
+      var currentP = allP[i];
+      var currentText = normalize(currentP.textContent);
+
+      // Set 1: Match exact 2 paragraphs together in the same container
+      if (currentText === set1_p1_target) {
+        var nextP = (allP[i + 1] && allP[i + 1].parentElement === currentP.parentElement) ? allP[i + 1] : null;
+        if (nextP && normalize(nextP.textContent) === set1_p2_target) {
+          currentP.outerHTML = '<p>There is no charge to enter the awards. Simply fill out our brief questionnaire&mdash;it can be completed in just a few minutes. Our awards team will review your submission and let you know if any additional information is needed.</p>';
+          nextP.outerHTML = '<p>After nominations close on January 8, 2027, eligible nominees will receive an email with a voting link to share with their network, peers, and colleagues. Ratings close on January 25, 2027.</p>';
+        }
+      }
+
+      // Set 2: Match exact 2 paragraphs together in the same container
+      if (currentText === set2_p1_target) {
+        var nextP = (allP[i + 1] && allP[i + 1].parentElement === currentP.parentElement) ? allP[i + 1] : null;
+        if (nextP && normalize(nextP.textContent) === set2_p2_target) {
+          currentP.outerHTML = '<p>The HR.com Awards team reviews eligible submissions against the award criteria and considers community voting results when selecting winners. Both the quality of the submission and community support are part of the decision.</p>';
+          nextP.remove();
+        }
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runReplace);
+  } else {
+    runReplace();
+  }
+  window.addEventListener('load', runReplace);
+})();
+</script>
+<script>
+(function() {
+  function normalize(text) {
+    return (text || '')
+      .replace(/\s+/g, ' ')
+      .replace(/\s*[\u2010-\u2015\u2212\uFE58\uFE63\uFF0D—–-]+\s*/g, ' - ')
+      .trim();
+  }
+
+  // Exact target paragraphs to match
+  var set1_p1_target = normalize("There is no charge to enter the awards. Simply fill out our brief questionnaire - it can be completed in just a few minutes. Our awards team will review your submission and let you know if any additional information is needed.");
+  var set1_p2_target = normalize("Once a nomination is submitted, you will receive a rating link to share with your network, peers, and colleagues to gather these required votes.");
+
+  var set2_p1_target = normalize("Award winners are selected through a combination of community support and expert evaluation. Important: Nominees must receive ratings to qualify as a winner.");
+  var set2_p2_target = normalize("A panel of judges will then carefully review each submission alongside its community ratings to select the final winner.");
+
+  function runReplace() {
+    var allP = Array.from(document.querySelectorAll('p'));
+
+    for (var i = 0; i < allP.length; i++) {
+      var currentP = allP[i];
+      var currentText = normalize(currentP.textContent);
+
+      // Set 1: Match exact 2 paragraphs together in the same container
+      if (currentText === set1_p1_target) {
+        var nextP = (allP[i + 1] && allP[i + 1].parentElement === currentP.parentElement) ? allP[i + 1] : null;
+        if (nextP && normalize(nextP.textContent) === set1_p2_target) {
+          currentP.outerHTML = '<p>There is no charge to enter the awards. Simply fill out our brief questionnaire&mdash;it can be completed in just a few minutes. Our awards team will review your submission and let you know if any additional information is needed.</p>';
+          nextP.outerHTML = '<p>After nominations close on January 8, 2027, eligible nominees will receive an email with a voting link to share with their network, peers, and colleagues. Ratings close on January 25, 2027.</p>';
+        }
+      }
+
+      // Set 2: Match exact 2 paragraphs together in the same container
+      if (currentText === set2_p1_target) {
+        var nextP = (allP[i + 1] && allP[i + 1].parentElement === currentP.parentElement) ? allP[i + 1] : null;
+        if (nextP && normalize(nextP.textContent) === set2_p2_target) {
+          currentP.outerHTML = '<p>The HR.com Awards team reviews eligible submissions against the award criteria and considers community voting results when selecting winners. Both the quality of the submission and community support are part of the decision.</p>';
+          nextP.remove();
+        }
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runReplace);
+  } else {
+    runReplace();
+  }
+  window.addEventListener('load', runReplace);
+})();
+</script>

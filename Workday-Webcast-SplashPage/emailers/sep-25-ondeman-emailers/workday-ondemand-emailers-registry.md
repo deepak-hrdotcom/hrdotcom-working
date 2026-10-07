@@ -183,8 +183,65 @@ To keep subsequent emailers engaging, avoid duplicating Emailer 1's "back-office
 
 ---
 
-## 📧 Emailer 3 of 10 (Pending)
-- **HTML File**: `workday-sep25-3-of-multiple.html`
+## 📧 Emailer 3 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-3-of-multiple.html`](workday-sep25-3-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./labor-volatility-banner.jpg` (and `../assets/labor-volatility-banner.jpg`)
+  - *Image Concept*: High-end commercial banner featuring clean Workday Orange pill (`LABOR INTELLIGENCE`), bold white headline (`Control Labor Volatility and Overtime with Real-Time Data`), and authentic documentary photography of a senior operations director analyzing real-time labor analytics, shift heatmaps, and staffing demand graphs on a large digital wall display in a sleek modern enterprise command center (breaking away from the handheld tablet motif).
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: Real-Time Labor Analytics, Overtime & Cost Volatility (Learning Objective #2: The Growth-vs.-Efficiency Balancing Act)
+- **Hook Type**: Addressing frontline variability, unplanned overtime spikes, and margin erosion with real-time labor intelligence; anchored by Sapient Insights research showing 2x higher profit and customer growth.
+- **Audience Focus**: Operations Directors, CFOs, Workforce Planning Leaders, and Senior HR Executives managing frontline labor volatility.
+
+### 📝 Complete Copy Inventory (Used in Emailer 3)
+- **Preheader**:
+  > `Learn how real-time labor data balances frontline demand without overtime leaks.`
+- **Banner Eyebrow Pill**:
+  > `LABOR INTELLIGENCE`
+- **Banner Headline**:
+  > `Control Labor Volatility and Overtime with Real-Time Data`
+- **Hero Title (`<h1>`)**:
+  > `The System of Work: Why Workforce Management Drives Business Execution`
+- **Primary CTA Button**:
+  > `View OnDemand →`
+- **Verified Research Benchmark Stat Card**:
+  - Eyebrow: `SAPIENT INSIGHTS RESEARCH`
+  - Metric: `2x Higher Profits & Customer Growth`
+  - Subtext: `Sapient Insights research shows organizations with advanced workforce management—combined with skills and internal mobility—were 2x more likely to achieve higher profits and customer growth.`
+- **Intro Callout Box (Verbatim from Official Webcast Abstract)**:
+  > `So why does workforce management still get treated as a back-office cost center?`  
+  > `Join Stacey Harris of Sapient Insights and Workday leader Cristina Goldt for a research-driven conversation on why workforce management is moving from an administrative tool to a core business lever—and what the data reveals about the organizations getting it right.`  
+  > `We'll explore how AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.`
+- **Key Takeaways (All 4 Verbatim Learning Objectives from Webcast Page)**:
+  - **Takeaway 01** (`#F78B1E` Orange badge `01`): `The strategic shift: Why workforce management is now central to business execution, not just HR administration.`
+  - **Takeaway 02** (`#0057AE` Royal Blue badge `02`): `The growth-vs.-efficiency balancing act: How leading organizations use real-time labor data to manage high-variability environments without losing control of cost.`
+  - **Takeaway 03** (`#0875E1` Sky Blue badge `03`): `The connected workforce: What the research reveals about the measurable impact of unifying HR, time, pay, and scheduling data.`
+  - **Takeaway 04** (`#022043` Midnight Navy badge `04`): `What's next: How AI is reshaping the role of workforce management — and what frontline leaders should be doing now to prepare.`
+- **Mid-Funnel Conversion Card (Verbatim Abstract Hook)**:
+  > Heading: `Ready to move workforce management from an administrative tool to a core business lever?`  
+  > Button: `View OnDemand →`
+- **Speakers Section (Master Executive Spotlight Duo Card)**:
+  - Eyebrow: `FEATURED SPEAKERS`
+  - Heading: `Learn directly from industry leaders`
+  - **Host 1**: Cristina Goldt — General Manager, Workforce & Payroll, **Vndly (Workday)** (`https://public-cdn.hr.com/profile_images/2017/2/26/1488102994054_120`)
+  - **Host 2**: Stacey Harris — Chief Research Officer & Managing Partner, **Sapient Insights Group** (`https://public-cdn.hr.com/profile_images/2021/1/18/1610947159452_120`)
+- **Recertification Section (IMMUTABLE)**: 1 BUSINESS Credit (HRCI) & SHRM PDC.
+- **Footer Section (IMMUTABLE)**: Canonical address, Privacy Policy, Contact Us, subscription page, unsubscribe here, disclaimer.
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars)
+1. *Can Real-Time Labor Data Save Your Margins?* (44 chars)
+2. *How to Balance Labor Costs and Rapid Growth* (43 chars)
+3. *Stop Overtime Surprises with Smarter Data* (42 chars)
+4. *How to Control Labor Costs Without Burnout* (42 chars)
+5. *Is Labor Volatility Costing Your Business?* (43 chars)
+6. *Manage Demand Spikes Without Overtime Leaks* (43 chars)
+7. *Why Real-Time Labor Data Protects Margins* (42 chars)
+8. *Turn Labor Volatility into Predictable Cost* (44 chars)
+9. *How Smart Leaders Master Shift Variability* (43 chars)
+10. *Are You Losing Profits to Inflexible Shifts?* (44 chars)
 
 ---
 
