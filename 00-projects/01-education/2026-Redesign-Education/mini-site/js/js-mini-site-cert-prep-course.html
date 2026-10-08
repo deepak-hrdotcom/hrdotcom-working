@@ -1,0 +1,26 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Inject Copyright text into the minisite footer
+    var footer = document.querySelector('footer.domain-minisite-footer');
+    if (footer) {
+        var currentYear = new Date().getFullYear();
+        
+        // Wrap existing content in a container for alignment
+        var innerWrapper = document.createElement('div');
+        // Setting a container that matches the site's layout
+        innerWrapper.style.cssText = 'display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1280px; margin: 0 auto;';
+        
+        // Move all children of footer into the innerWrapper
+        while (footer.firstChild) {
+            innerWrapper.appendChild(footer.firstChild);
+        }
+        
+        var copyrightDiv = document.createElement('div');
+        copyrightDiv.className = 'domain-minisite-footer-copyright';
+        copyrightDiv.innerHTML = '&copy; Copyright ' + currentYear + ' HR.COM Limited. All rights reserved.';
+        
+        innerWrapper.appendChild(copyrightDiv);
+        footer.appendChild(innerWrapper);
+    }
+});
+</script>
