@@ -13,32 +13,33 @@
 ## 🎓 2026 EDUCATION & CERTIFICATION REDESIGN — DIRECTIVES & DESIGN SYSTEM
 
 ### 1. Working Directory & Architecture
-- **Official Home for all 8 Certification Pages**: [`01-education/02-certification-pages/`](file:///e:/HR/00-html/01-education/02-certification-pages/)
-- **Living Brand Guidelines & Visual Benchmark**: [`01-education/02-certification-pages/brand-guidelines.html`](file:///e:/HR/00-html/01-education/02-certification-pages/brand-guidelines.html)
+- **Official Home for all 8 Certification Pages**: [`00-projects/01-education/2026-Redesign-Education/`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/)
+- **Living Brand Guidelines & Visual Benchmark**: [`00-projects/01-education/2026-Redesign-Education/brand-guidelines.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/brand-guidelines.html)
 - **Role Alignment**: The user provides finalized, verified copy and business requirements. The AI acts strictly as **Lead UX/UI Designer & Visual Architect** crafting visually stunning, international-standard layouts.
 - **🚫 ZERO COPYWRITING & ZERO INVENTED STATS (STRICT RULE)**:
   - You are strictly **NOT** supposed to write new copy, modify copy, or rewrite approved text. All existing copy, headings, curriculum descriptions, pricing text, and disclaimers must remain word-for-word intact.
   - **NEVER invent stats, numbers, or fake metrics**: Do NOT invent pass rates, student counts, average salary figures, or review ratings. Only use verified, existing data from official source files.
   - **NEVER make fake promises**: Absolutely no fabricated guarantees, artificial urgency/timers, or exaggerated outcome claims.
 - **Suite A: The 8 Certification Hub & Funnel Pages** (Governed by skill `education-pages-revamp`):
-  1. `understanding-hr-certification-dev.html` (Baseline Decision Hub)
-  2. `preparation-options.html` (Course Catalog & Cohort Matrix)
-  3. `pass-assurance-program.html` (100% Money-Back Guarantee)
-  4. `hr-group-certification.html` (Enterprise B2B Team Training)
-  5. `hr-recertification.html` (Credit Renewal & Tracker)
-  6. `testimonials.html` (Verified Graduate Proof & Salary Boosts)
-  7. `ask-my-employer.html` (Employer Reimbursement Kit)
-  8. `book-a-call.html` (Advisor Consultation & Demos)
+  1. `why-certify-dev.html` (Baseline Decision Hub)
+  2. `prep-courses-dev.html` (Course Catalog & Cohort Matrix)
+  3. `pass-guarantee-dev.html` (100% Money-Back Guarantee)
+  4. `for-teams-dev.html` (Enterprise B2B Team Training)
+  5. `recertification-dev.html` (Credit Renewal & Tracker)
+  6. `testimonials-dev.html` (Verified Graduate Proof & Salary Boosts)
+  7. `convince-employer.html` (Employer Reimbursement Kit)
+  8. `one-one-coaching-dev.html` (Advisor Consultation & Demos)
+  - Also in the folder: `our-program-dev.html`, `cert-guidelines-dev.html`, `resources-dev.html`, `resource-articles/`.
 
 - **Suite B: The Certification Course Detail & Cohort Suite** (Governed by skill `course-details-page-redesign`):
-  - **Living Golden Benchmark**: [`16-weeks-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/16-weeks-dev.html) (Mandatory 1:1 reference for **Design, Visual Layout, CSS Stylesheet & HTML Component Anatomy** across all course detail pages; text, curriculum descriptions, pricing, and cohort schedules remain course-specific).
-  - **Master Outer CMS Template**: [`00-template-dev/2026_CertificationDetailsPages-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/00-template-dev/2026_CertificationDetailsPages-dev.html)
-  - **Pages in Suite**:
-    1. `16-weeks-dev.html` (16-Week Online Prep — **Production Standard**)
-    2. `8-weeks-dev.html` (8-Week Accelerated Prep)
-    3. `aphr-prep-dev.html` (aPHR Associate Professional Prep)
-    4. `shrm-prep-dev.html` (SHRM-CP & SHRM-SCP Focused Prep)
-    5. Materials-Only / Self-Paced detail pages
+  - **Living Golden Benchmark**: [`16-weeks-dev.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/cert-prep-course-pages/PHR,%20SPHR,%20SHRM-CP,%20SHRM-SCP%2016-Week%20Online%20Prep%20Course.html) (Mandatory 1:1 reference for **Design, Visual Layout, CSS Stylesheet & HTML Component Anatomy** across all course detail pages; text, curriculum descriptions, pricing, and cohort schedules remain course-specific).
+  - **Master Outer CMS Template**: [`00-template-dev/2026_CertificationDetailsPages-dev.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/00-template-dev/2026_CertificationDetailsPages-dev.html)
+  - **Pages in Suite** (all in `2026-Redesign-Education/cert-prep-course-pages/`; full mapping in skill `course-details-page-redesign` section 1C):
+    1. `PHR, SPHR, SHRM-CP, SHRM-SCP 16-Week Online Prep Course.html` (a.k.a. `16-weeks-dev.html`, **Production Standard**)
+    2. `PHR, SPHR, SHRM HR Certification Exam Preparations-8-weeks.html` (8-Week Accelerated Prep)
+    3. `aPHR INSTRUCTOR LED COURSES.html` (aPHR Associate Professional Prep)
+    4. `SHRM Online Prep Course.html` (SHRM-CP & SHRM-SCP Focused Prep)
+    5. eLearning and Materials-Only detail pages (aPHR, PHR/SHRM, PHRi/SPHRi)
   - **Mandatory 9-Section Course Anatomy**:
     1. Executive Hero Stage (Light multi-stop atmospheric gradient, 76px/44px padding, 1.32fr/0.68fr grid, single-row 3-button CTA cluster, obsidian prestige seal card with 100% guarantee & 95.6% pass rate badges) + Support Concierge Line.
     2. Sticky In-Page Subnav (`top: mainNavHeight + 10px`, scrollspy active sync).

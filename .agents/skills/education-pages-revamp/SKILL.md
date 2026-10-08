@@ -1,6 +1,6 @@
 ---
 name: education-pages-revamp
-description: Production CMS guidelines, UI/UX architecture, visual design system, and implementation workflow for the 8 HR.com Education & Certification pages in 01-education/02-certification-pages/. Activate when working on, creating, or polishing any of the 8 certification landing pages.
+description: Production CMS guidelines, UI/UX architecture, visual design system, and implementation workflow for the 8 HR.com Education & Certification pages in 00-projects/01-education/2026-Redesign-Education/. Activate when working on, creating, or polishing any of the 8 certification landing pages.
 ---
 
 # HR.com Education & Certification 2026 Redesign — Master Strategy & UX/UI Architecture
@@ -25,28 +25,32 @@ description: Production CMS guidelines, UI/UX architecture, visual design system
 ## 2. File Organization & Directory Structure
 
 All new production pages live in the dedicated certification folder:
-**Target Directory**: `01-education/02-certification-pages/`
-**Living Brand Guidelines HTML**: [`brand-guidelines.html`](file:///e:/HR/00-html/01-education/02-certification-pages/brand-guidelines.html)
+**Target Directory**: `00-projects/01-education/2026-Redesign-Education/`
+**Living Brand Guidelines HTML**: [`brand-guidelines.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/brand-guidelines.html)
 
 ### The 8-Page Certification Suite:
-| # | Page File Name | Status | Purpose & Key Components |
-|---|----------------|--------|--------------------------|
-| 1 | `understanding-hr-certification-dev.html` | **Completed (Baseline Standard)** | Master decision hub, 2-step interactive experience matcher, 4 value pillars, 7-step roadmap, video slot, 5 authority resources. |
-| 2 | `preparation-options.html` | Next Up | Comprehensive prep course catalog (16-wk live, 8-wk accelerated, self-paced eLearning, HRCP materials), cohort schedules, comparison matrix. |
-| 3 | `pass-assurance-program.html` | Queued | 100% Money-Back Guarantee hub, 3-point eligibility checklist, confidence cues, FAQ on retakes/refunds. |
-| 4 | `hr-group-certification.html` | Queued | B2B enterprise training, volume team discount calculator (5+ / 12+), business case for CFOs, team lead form. |
-| 5 | `hr-recertification.html` | Queued | Post-certification credit renewal, 1-yr ($250) vs 3-yr ($500) passes, interactive credit tracker, ethics requirement courses. |
-| 6 | `testimonials.html` | Queued | Social proof engine, 49+ verified graduate review database, credential filtering (aPHR / PHR / SPHR / SHRM), salary accelerator stories. |
-| 7 | `ask-my-employer.html` | Queued | Employer funding toolkit, interactive 1-click boss pitch email generator, customizable business justification case. |
-| 8 | `book-a-call.html` | Queued | 1-on-1 advisor consultation, video consultation scheduler, course demo preview, advisor reassurance. |
+| # | Page File Name | Wrapper | Status | Purpose & Key Components |
+|---|----------------|---------|--------|--------------------------|
+| 1 | `why-certify-dev.html` | `.edu-uc-page` | Built (dev, Baseline Standard) | Master decision hub, 2-step interactive experience matcher, 4 value pillars, 7-step roadmap, video slot, 5 authority resources. |
+| 2 | `prep-courses-dev.html` | `.edu-prep-page` | Built (dev) | Comprehensive prep course catalog (16-wk live, 8-wk accelerated, self-paced eLearning, HRCP materials), cohort schedules, comparison matrix. |
+| 3 | `pass-guarantee-dev.html` | `.edu-pass-page` | Built (dev) | 100% Money-Back Guarantee hub, 3-point eligibility checklist, confidence cues, FAQ on retakes/refunds. |
+| 4 | `for-teams-dev.html` | `.edu-group-page` | Built (dev) | B2B enterprise training, volume team discount calculator (5+ / 12+), business case for CFOs, team lead form. |
+| 5 | `recertification-dev.html` | `.edu-recert-page` | Built (dev) | Post-certification credit renewal, 1-yr ($250) vs 3-yr ($500) passes, interactive credit tracker, ethics requirement courses. |
+| 6 | `testimonials-dev.html` | `.edu-testimonials-page` | Built (dev) | Social proof engine, 49+ verified graduate review database, credential filtering (aPHR / PHR / SPHR / SHRM), salary accelerator stories. |
+| 7 | `convince-employer.html` | `.edu-ask-page` | Built (dev) | Employer funding toolkit, interactive 1-click boss pitch email generator, customizable business justification case. Form: `forms/`. |
+| 8 | `one-one-coaching-dev.html` | `.edu-coaching-page` | Built (dev) | 1-on-1 advisor consultation, video consultation scheduler, course demo preview, advisor reassurance. |
 
-> **Note on Individual Course Detail Pages**: For cohort prep course detail pages (16-week, 8-week, aPHR, SHRM prep), see the specialized skill [`course-details-page-redesign`](file:///e:/HR/00-html/.agents/skills/course-details-page-redesign/SKILL.md) which benchmarks [`16-weeks-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/16-weeks-dev.html).
+**Additional pages in the same folder**: `our-program-dev.html` (`.edu-program-page`, "Our Program" hub, source copy in `ourprogram.md`), `cert-guidelines-dev.html`, `resources-dev.html`, and `resource-articles/` (5 authority articles plus resource index pages).
+
+**Related assets**: `00-template-dev/` (CMS outer templates, standard and mini-site variants), `images/`, `page-screenshots/` (current live pages for reference), `HRcom_Certification_Design_System.md` (general design principles; where its tokens differ from this skill, this skill wins).
+
+> **Note on Individual Course Detail Pages**: For cohort prep course detail pages (16-week, 8-week, aPHR, SHRM prep), see the specialized skill [`course-details-page-redesign`](file:///e:/HR/00-html/.agents/skills/course-details-page-redesign/SKILL.md) which benchmarks [`16-weeks-dev.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/cert-prep-course-pages/PHR,%20SPHR,%20SHRM-CP,%20SHRM-SCP%2016-Week%20Online%20Prep%20Course.html).
 
 ---
 
 ## 3. Design System Tokens & Styling Standards
 
-The new **International Executive Education & Modern Credential System** established in [`brand-guidelines.html`](file:///e:/HR/00-html/01-education/02-certification-pages/brand-guidelines.html) serves as the universal standard for all 8 certification pages:
+The new **International Executive Education & Modern Credential System** established in [`brand-guidelines.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/brand-guidelines.html) serves as the universal standard for all 8 certification pages:
 
 ### A. Modern International Color Palette
 - **Canvases & Neutral Surfaces**:
@@ -61,7 +65,7 @@ The new **International Executive Education & Modern Credential System** establi
   - Muted Slate: `#64748B` / `#94A3B8`
 - **International Action & Value Accents**:
   - **Primary Action (International Cobalt)**: `#2563EB` (Hover: `#1D4ED8`, Glow: `rgba(37,99,235,0.28)`) - Global standard of trust, institutional clarity, and primary enrollment CTA pill.
-  - **Growth & Salary Emerald**: `#059669` (Tint: `#ECFDF5`, Border: `#A7F3D0`) - Anchors the +$10k-$20k salary boost, 93% pass rate, and verified graduate checkmarks.
+  - **Growth & Salary Emerald**: `#059669` (Tint: `#ECFDF5`, Border: `#A7F3D0`) - Anchors the +$10k-$20k salary boost, the verified pass rate (95.6% for instructor-led PHR/SPHR/SHRM prep; use only the figure in each course's source copy), and verified graduate checkmarks.
   - **Burnished Honor Gold**: `#D97706` (Tint: `#FFFBEB`, Border: `#FDE68A`) - 100% Pass Assurance Guarantee shield and top-tier alumni proof.
   - **Electric Indigo**: `#4F46E5` / `#6366F1` - Milestone roadmap steps and catalog tier accents.
 
@@ -98,7 +102,7 @@ The new **International Executive Education & Modern Credential System** establi
    }
    ```
 3. **Executive CTA Pill Buttons**:
-   Primary buttons strictly use International Cobalt (`#2563EB`, hover `#1D4ED8`) with `border-radius: 999px !important;` and high-trust shadow glow (`rgba(37,99,235,0.25)`).
+   Primary buttons strictly use International Cobalt (`#2563EB`, hover `#1D4ED8`) with the restrained control radius (`border-radius: var(--radius-control) !important;`, 8-10px, matching section 1 and the built pages; never `999px` on buttons) and high-trust shadow glow (`rgba(37,99,235,0.25)`).
 4. **Pulse-Dot Executive Eyebrows**:
    Eyebrow chips use `.edu-eyebrow` with `.edu-eyebrow-beacon` (luminous pulsing beacon dot in Cobalt or Emerald), completely replacing any legacy multi-color dot clusters.
 5. **Scroll Entrance Reveal**:
@@ -141,7 +145,7 @@ When building or updating each of the remaining 7 pages:
 - [ ] Apply the universal typography tokens, 4-dot brand motif, and button styles.
 - [ ] Build desktop-first layout (min-width: 1350px container) with fluid responsive breakpoints at 1024px, 768px, and 480px.
 - [ ] Add dynamic micro-interactions (tabs, filters, tooltips, calculators, sheen hover states).
-- [ ] Incorporate relevant trust cues: Pass Assurance badge, HRCI/SHRM seals, 93% pass rate, 4.9-star rating.
+- [ ] Incorporate relevant trust cues: Pass Assurance badge, HRCI/SHRM seals, verified pass rate from the source copy (95.6% for instructor-led PHR/SPHR/SHRM prep), 4.9-star rating.
 - [ ] Close page with high-trust human advisor consultation block and trademark legal disclaimers.
 
 ---
@@ -189,6 +193,6 @@ To maintain absolute brand consistency, international executive authority, and h
 
 For technical architecture, configuration tabs, CSS selectors, and script injection rules regarding HR.com Minisites, refer to the dedicated guide:
 - **Documentation**: [`references/cms-minisite-architecture.md`](file:///e:/HR/00-html/.agents/skills/education-pages-revamp/references/cms-minisite-architecture.md)
-- **Custom Stylesheet**: [`01-education/02-certification-pages/mini-site/css/main-navigation-custom.css`](file:///e:/HR/00-html/01-education/02-certification-pages/mini-site/css/main-navigation-custom.css)
-- **Active Navigation Controller**: [`01-education/02-certification-pages/mini-site/js/mini-site-cert-prep-course.js`](file:///e:/HR/00-html/01-education/02-certification-pages/mini-site/js/mini-site-cert-prep-course.js)
+- **Custom Stylesheet**: [`00-projects/01-education/2026-Redesign-Education/mini-site/css/mini-site-main-navigation-custom.css`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/mini-site/css/mini-site-main-navigation-custom.css)
+- **Body-End Script** (currently only injects the footer copyright line; no active-nav logic yet): [`00-projects/01-education/2026-Redesign-Education/mini-site/js/js-mini-site-cert-prep-course.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/mini-site/js/js-mini-site-cert-prep-course.html)
 - **Injection Field**: External scripts must be injected via **`Body-end scripts`** in CMS Admin -> Appearance / Analytics -> External scripts so the DOM chrome is already rendered before execution.

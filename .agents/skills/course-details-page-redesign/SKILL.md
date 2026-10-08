@@ -11,8 +11,11 @@ description: Production design blueprint, UI/UX architecture, component skeleton
 This skill governs the redesign and production of all individual **HR.com Certification Course Detail Pages** (e.g., 16-Week Online Prep, 8-Week Accelerated Prep, aPHR Exam Prep, SHRM-CP/SCP Prep, Self-Paced Prep).
 
 ### B. The Living Golden Benchmark (`16-weeks-dev.html`)
-- **Master Design & Layout Benchmark**: [`01-education/02-certification-pages/16-weeks-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/16-weeks-dev.html)
-- **CMS Outer Master Template**: [`01-education/02-certification-pages/00-template-dev/2026_CertificationDetailsPages-dev.html`](file:///e:/HR/00-html/01-education/02-certification-pages/00-template-dev/2026_CertificationDetailsPages-dev.html)
+- **Master Design & Layout Benchmark**: [`00-projects/01-education/2026-Redesign-Education/cert-prep-course-pages/PHR, SPHR, SHRM-CP, SHRM-SCP 16-Week Online Prep Course.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/cert-prep-course-pages/PHR,%20SPHR,%20SHRM-CP,%20SHRM-SCP%2016-Week%20Online%20Prep%20Course.html)
+- **CMS Outer Master Template**: [`00-projects/01-education/2026-Redesign-Education/00-template-dev/2026_CertificationDetailsPages-dev.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/00-template-dev/2026_CertificationDetailsPages-dev.html)
+- **Mini-Site Outer Template**: [`00-template-dev/mini-site-2026_CertificationDetailsPages-dev.html`](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/00-template-dev/mini-site-2026_CertificationDetailsPages-dev.html)
+
+> **Naming note**: `16-weeks-dev.html` is the historical shorthand used throughout this skill for the 16-week benchmark page above. The production files in `cert-prep-course-pages/` are named after their CMS page titles (see table C).
 
 > [!IMPORTANT]
 > **MANDATORY DESIGN & LAYOUT BENCHMARK RULE (16-WEEKS-DEV.HTML)**:
@@ -23,13 +26,19 @@ This skill governs the redesign and production of all individual **HR.com Certif
 >   - **Text & Data (Course-Specific ONLY)**: Text is NOT copied from 16-week if the target course has its own copy. Course-specific title, description, curriculum hours, study manual counts, pricing amounts, product IDs, cohort schedules, instructors, and credential targets must come directly from the course's verified legacy source file.
 
 ### C. Target Course Detail Suite
-| Course | Legacy Source File | Target Production File | Primary Target Credentials |
-|--------|-------------------|------------------------|---------------------------|
-| **16-Week Prep** | `cert-prep-tracker/16-week/16-week.html` | `02-certification-pages/16-weeks-dev.html` | PHR, SPHR, SHRM-CP, SHRM-SCP |
-| **8-Week Prep** | `cert-prep-tracker/8-week/8-week.html` | `02-certification-pages/8-weeks-dev.html` | PHR, SPHR, SHRM-CP, SHRM-SCP (Accelerated) |
-| **aPHR Prep** | `cert-prep-tracker/aphr-prep/aphr-prep.html` | `02-certification-pages/aphr-prep-dev.html` | aPHR (Foundational) |
-| **SHRM Prep** | `cert-prep-tracker/shrm-prep/shrm-prep.html` | `02-certification-pages/shrm-prep-dev.html` | SHRM-CP, SHRM-SCP |
-| **Materials Only / Self-Paced** | `cert-prep-tracker/...` | `02-certification-pages/...` | Self-paced / LMS self-study |
+Legacy sources live in `00-projects/01-education/Current Site/cert-prep-tracker/`. Production files live in `00-projects/01-education/2026-Redesign-Education/cert-prep-course-pages/`.
+
+| Course | Legacy Source File | Production File (`cert-prep-course-pages/`) | Wrapper | Primary Target Credentials |
+|--------|-------------------|---------------------------------------------|---------|---------------------------|
+| **16-Week Prep** | `16-week/16-week.html` | `PHR, SPHR, SHRM-CP, SHRM-SCP 16-Week Online Prep Course.html` | `.edu-16week-page` | PHR, SPHR, SHRM-CP, SHRM-SCP |
+| **8-Week Prep** | `8-week/8-week.html` | `PHR, SPHR, SHRM HR Certification Exam Preparations-8-weeks.html` | `.edu-8week-page` | PHR, SPHR, SHRM-CP, SHRM-SCP (Accelerated) |
+| **aPHR Instructor-Led** | `aphr-prep/aphr-prep.html` | `aPHR INSTRUCTOR LED COURSES.html` | `.edu-aphr-page` | aPHR (Foundational) |
+| **SHRM Prep** | `shrm-prep/shrm-prep.html` | `SHRM Online Prep Course.html` | `.edu-shrm-page` | SHRM-CP, SHRM-SCP |
+| **PHR/SHRM eLearning** | n/a | `PHR SPHR SHRM-CP SHRM-SCP ELEARNING PREP COURSE.html` | `.edu-elearning-page` | Self-paced eLearning |
+| **aPHR eLearning** | n/a | `aPHR STUDY PROGRAM ELEARNING.html` | `.edu-aphr-elearning-page` | aPHR self-paced |
+| **PHR/SHRM Materials Only** | `HR Certification - Materials Only PHRi/HR Certification - Materials Only PHR.html` | `PHR, SPHR, SHRM Certification - Materials Only.html` | `.edu-phri-materials-page` | Self-study materials |
+| **PHRi/SPHRi Materials Only** | n/a (legacy folder `HR Certification - Materials Only (PHRi` is empty) | `HR Certification - Materials Only PHRi SPHRi.html` | `.edu-materials-page` | PHRi, SPHRi |
+| **aPHR Materials Only** | `HR Certification - Materials Only (aPHRI)/` | `aPHR Certification - MATERIALS ONLY.html` | `.edu-aphr-materials-page` | aPHR self-study |
 
 ---
 
@@ -274,7 +283,7 @@ function switchEduTab(tabId, btnElement) {
 
 When converting an existing course tracker page (e.g., `8-week.html`, `aphr-prep.html`, `shrm-prep.html`) into the new 2026 design:
 
-- [ ] **Step 1: Create Scoped File**: Create `[course]-dev.html` in `01-education/02-certification-pages/` (e.g. `8-weeks-dev.html`).
+- [ ] **Step 1: Create Scoped File**: Create the page in `00-projects/01-education/2026-Redesign-Education/cert-prep-course-pages/`, named after its CMS page title (see table in section 1C).
 - [ ] **Step 2: Inherit 16-Week Architecture**: Copy the complete 9-section structure and CSS from `16-weeks-dev.html`. Update the scoped wrapper (e.g. `.edu-8week-page`).
 - [ ] **Step 3: Update Course Identity**:
   - Credentials pill (e.g., `aPHR`, `SHRM-CP, SHRM-SCP`).

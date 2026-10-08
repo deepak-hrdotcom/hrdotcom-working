@@ -44,7 +44,7 @@ One tab for brand, page layout, header/footer chrome, and advanced CSS.
 ---
 
 ## 2. CSS Selectors (Stable Hooks)
-These classes are safe to target from Advanced Custom CSS ([main-navigation-custom.css](file:///e:/HR/00-html/01-education/02-certification-pages/mini-site/css/main-navigation-custom.css)):
+These classes are safe to target from Advanced Custom CSS ([mini-site-main-navigation-custom.css](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/mini-site/css/mini-site-main-navigation-custom.css)):
 - `body.domain-minisite` / `body.domain-minisite-minimal` / `body.domain-minisite-hide-sidebar`
 - `.domain-minisite-header` + `.domain-minisite-header--{preset}` (`logo-left`, `logo-left-nav-center`, `stacked`, `centered`)
 - `.domain-minisite-header-brand` · `.domain-minisite-logo-link` · `.domain-minisite-logo-img` · `.domain-minisite-site-name`
@@ -64,7 +64,7 @@ Max 50,000 characters per field.
 - **Head scripts**: End of `<head>`, after GTM and SEO when set.
 - **Body-start scripts**: Right after `<body>`, after GTM noscript when set.
 - **Body-end scripts**: Near end of page before `</body>`, after mini-site chrome and Sign in / Join modal.
-  > **Note**: For DOM-manipulation scripts such as the minisite navigation controller ([mini-site-cert-prep-course.js](file:///e:/HR/00-html/01-education/02-certification-pages/mini-site/js/mini-site-cert-prep-course.js)), **`Body-end scripts`** is the required injection target so all header and navigation markup is fully parsed and available in the DOM.
+  > **Note**: For DOM-manipulation scripts such as the minisite body-end script ([js-mini-site-cert-prep-course.html](file:///e:/HR/00-html/00-projects/01-education/2026-Redesign-Education/mini-site/js/js-mini-site-cert-prep-course.html)), **`Body-end scripts`** is the required injection target so all header and navigation markup is fully parsed and available in the DOM.
 
 ---
 

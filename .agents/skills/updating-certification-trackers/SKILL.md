@@ -135,4 +135,4 @@ This skill is designed to automate and standardize the process of updating enrol
 ```
 
 ## Resources
-- [utils.html](file:///e:/HR/00-html/01-education/cert-prep-tracker/utils.html): Contains master templates and instructor details.
+- [utils.html](file:///e:/HR/00-html/00-projects/01-education/Current%20Site/cert-prep-tracker/utils.html): Contains master templates and instructor details.

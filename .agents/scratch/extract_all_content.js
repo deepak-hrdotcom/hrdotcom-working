@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const mainPagesDir = 'e:/HR/00-html/01-education/main-pages';
-const outputFile = 'e:/HR/00-html/01-education/00-certification-2026-redesign/ALL_PAGES_TEXT_CONTENT_INVENTORY.md';
+const mainPagesDir = 'e:/HR/00-html/00-projects/01-education/Current Site/main-pages';
+const outputFile = 'e:/HR/00-html/00-projects/01-education/Current Site/00-certification-2026-redesign/ALL_PAGES_TEXT_CONTENT_INVENTORY.md';
 const fetchedTestimonialsPath = 'C:/Users/Deepak/.gemini/antigravity-ide/brain/21063e07-3592-4a8c-b82e-4e6adb9584a6/.system_generated/steps/88/content.md';
 
 const files = [
@@ -50,7 +50,7 @@ function extractStructuredContent(html, fileName) {
   
   let lines = [];
   lines.push(`\n## 📄 Page File: \`${fileName}\`\n`);
-  lines.push(`**File Path**: \`01-education/main-pages/${fileName}\`\n`);
+  lines.push(`**File Path**: \`00-projects/01-education/Current Site/main-pages/${fileName}\`\n`);
   lines.push(`---\n`);
   
   let formatted = cleaned
