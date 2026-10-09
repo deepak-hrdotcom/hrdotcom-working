@@ -185,11 +185,12 @@ li.domain-minisite-nav-item,
 .domain-minisite-nav .domain-minisite-nav-item.is-current > .domain-minisite-nav-link {
   background: #2563EB !important; /* International Cobalt */
   color: #FFFFFF !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 .5px rgba(255, 255, 255, 0.4) !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
   box-shadow: 0 2px 10px rgba(37, 99, 235, 0.45) !important;
   cursor: default !important;
-  padding: 0 16px !important;
+  padding: 0 13px !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -362,7 +363,7 @@ a.domain-minisite-cta:hover {
   .domain-minisite-nav-link.active,
   .domain-minisite-nav-link.is-active,
   .domain-minisite-nav-link[aria-current="page"] {
-    padding: 0 13px !important;
+    padding: 0 10px !important;
   }
 
   .domain-minisite-cta,
