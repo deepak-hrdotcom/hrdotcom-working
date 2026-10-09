@@ -22,5 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
         innerWrapper.appendChild(copyrightDiv);
         footer.appendChild(innerWrapper);
     }
+    
+    // Highlight 'Our Program' on the default checkout catalog root page
+    var path = window.location.href.toLowerCase();
+    if (path.includes('selectcatalog') || path.includes('/domain/checkout/index')) {
+        var ourProgramLink = document.querySelector('.domain-minisite-nav-list .domain-minisite-nav-item:nth-child(1) .domain-minisite-nav-link');
+        if (ourProgramLink) {
+            ourProgramLink.classList.add('active');
+        }
+    }
 });
 </script>
