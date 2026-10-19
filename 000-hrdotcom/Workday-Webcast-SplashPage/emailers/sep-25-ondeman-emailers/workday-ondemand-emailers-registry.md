@@ -245,13 +245,91 @@ To keep subsequent emailers engaging, avoid duplicating Emailer 1's "back-office
 
 ---
 
-## 📧 Emailer 4 of 10 (Pending)
-- **HTML File**: `workday-sep25-4-of-multiple.html`
+## 📧 Emailer 4 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-4-of-multiple.html`](workday-sep25-4-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./ai-frontline-banner.jpg` (1200x670, displayed at 600px) → referenced as `https://media-cdn.hr.com/Emails/ai-frontline-banner.jpg`
+  - *Image Concept*: Navy left panel with Workday Orange pill (`AI ON THE FRONTLINE`), bold white headline (`Prepare Your Frontline for the AI Shift`, "AI Shift" in orange) and HR.com 4-color accent bar; documentary photo of a frontline shift supervisor in an orange hi-vis vest reviewing an AI scheduling interface on a rugged tablet in a distribution center (moves from the office/executive setting to the warehouse floor).
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: AI & Automation on the Frontlines (Learning Objective #4: What's next)
+- **Copy Rule**: Low-text layout. Every line comes from the official webcast abstract and learning objectives; no invented claims.
+- **Layout (new, not reused from Emailers 1–3)**: Banner → title + one-line hook + CTA → full-bleed navy "2x" stat band → spotlight objective #4 as headline + 3 remaining objectives as title-only chips → navy closing band with compact speakers + final CTA → immutable credits/footer.
+- **Audience Focus**: Frontline Operations Leaders, HR Technology Leaders, and CHROs evaluating AI in workforce management.
+
+### 📝 Complete Copy Inventory (Used in Emailer 4)
+- **Preheader**:
+  > `How AI is reshaping workforce management, and what frontline leaders should do now to prepare.`
+- **Banner Eyebrow Pill / Headline**: `AI ON THE FRONTLINE` / `Prepare Your Frontline for the AI Shift`
+- **Hero Title (`<h1>`)**: `The System of Work: Why Workforce Management Drives Business Execution`
+- **Hook (verbatim abstract)**:
+  > `We'll explore how AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.`
+- **Stat Band (Sapient Insights finding from abstract)**: `2x` · `more likely to achieve higher profits and customer growth` · `Organizations with advanced workforce management · Sapient Insights`
+- **Spotlight (Learning Objective 4 verbatim)**: Pill `What's Next` · `How AI is reshaping the role of workforce management — and what frontline leaders should be doing now to prepare.`
+- **Also in this session (objective titles only)**: `01 The strategic shift` (`#0057AE`) · `02 The growth-vs.-efficiency balancing act` (`#0875E1`) · `03 The connected workforce` (`#022043`)
+- **Closing Band**: `FEATURED SPEAKERS` — Cristina Goldt, General Manager, Workforce & Payroll, Vndly (Workday) · Stacey Harris, Chief Research Officer & Managing Partner, Sapient Insights Group · Button `View OnDemand →`
+- **CTAs**: Banner, primary button, closing button → `https://web.hr.com/9d4t`
+- **Recertification Section (IMMUTABLE)**: Byte-identical to Emailer 3.
+- **Footer Section (IMMUTABLE)**: Byte-identical to Emailer 3.
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars)
+1. *Is Your Frontline Ready for the AI Shift?* (41 chars)
+2. *How AI Is Reshaping Workforce Management* (40 chars)
+3. *What Frontline Leaders Should Do Now About AI* (45 chars)
+4. *How AI Is Reshaping How Frontline Businesses Run* (48 chars)
+5. *Prepare Your Frontline Leaders for AI Now* (41 chars)
+6. *AI, Labor Data, and the Future of Frontline Work* (48 chars)
+7. *What's Next for Workforce Management and AI?* (44 chars)
+8. *Prepare Your Frontline for the AI Shift* (39 chars)
+9. *How AI and Labor Data Reshape the Frontline* (43 chars)
+10. *Why Workforce Management Is Now a Business Lever* (48 chars)
 
 ---
 
-## 📧 Emailer 5 of 10 (Pending)
-- **HTML File**: `workday-sep25-5-of-multiple.html`
+## 📧 Emailer 5 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-5-of-multiple.html`](workday-sep25-5-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./connected-workforce-banner.jpg` (1200x670, displayed at 600px) → referenced as `https://media-cdn.hr.com/Emails/connected-workforce-banner.jpg`
+  - *Image Concept*: Navy left panel with Workday Orange pill (`THE CONNECTED WORKFORCE`), bold white headline (`Unify HR, Time, Pay, and Scheduling Data`, "Scheduling Data" in orange) and HR.com 4-color accent bar; documentary photo of a payroll/HRIS leader and an IT systems analyst reviewing one unified dashboard (employee records, shift grid, timesheets, payroll summary) on a large desk monitor in a bright corporate office (moves away from tablets and the warehouse floor). Generated in Gemini.
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: The Unified Data Architecture (Learning Objective #3: The connected workforce)
+- **Copy Rule**: Low-text layout. Every line comes from the official webcast abstract and learning objectives; no invented claims.
+- **Layout (new, not reused from Emailers 1–4)**: Banner → title + abstract hook + CTA → soft-gray spotlight of objective #3 with a table-built **connection diagram** (4 color-coded nodes HR · Time · Pay · Scheduling → connector lines → navy "Unified Platform / The Connected Workforce" hub) → orange left-border research card (2x finding + cost-center question) → numbered agenda list (01, 02, 04) → light horizontal speaker cards → navy closing CTA band → immutable credits/footer.
+- **Audience Focus**: HRIS, IT, and Payroll Leadership; Workforce Systems owners.
+
+### 📝 Complete Copy Inventory (Used in Emailer 5)
+- **Preheader**:
+  > `What the research reveals about unifying HR, time, pay, and scheduling data.`
+- **Banner Eyebrow Pill / Headline**: `THE CONNECTED WORKFORCE` / `Unify HR, Time, Pay, and Scheduling Data`
+- **Hero Title (`<h1>`)**: `The System of Work: Why Workforce Management Drives Business Execution`
+- **Hook (verbatim abstract)**:
+  > `A research-driven conversation on why workforce management is moving from an administrative tool to a core business lever — and what the data reveals about the organizations getting it right.`
+- **Spotlight (Learning Objective 3 verbatim)**: Pill `The Connected Workforce` · `What the research reveals about the measurable impact of unifying HR, time, pay, and scheduling data.`
+- **Diagram**: Nodes `HR` (`#F78B1E`) · `Time` (`#0057AE`) · `Pay` (`#0875E1`) · `Scheduling` (`#022043`) → Hub eyebrow `UNIFIED PLATFORM` · `The Connected Workforce`
+- **Research Card**: Eyebrow `SAPIENT INSIGHTS RESEARCH` · `Organizations with advanced workforce management — combined with skills and internal mobility — were 2x more likely to achieve higher profits and customer growth.` · `So why does workforce management still get treated as a back-office cost center?`
+- **Also in this session**: `01 The strategic shift` · `02 The growth-vs.-efficiency balancing act` · `04 What's next: How AI is reshaping the role of workforce management`
+- **Speakers**: `FEATURED SPEAKERS` — Cristina Goldt, General Manager, Workforce & Payroll, Vndly (Workday) · Stacey Harris, Chief Research Officer & Managing Partner, Sapient Insights Group
+- **Closing Band**: `See how AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.` · Button `View OnDemand →`
+- **CTAs**: Banner, primary button, closing button → `https://web.hr.com/9d4t`
+- **Recertification Section (IMMUTABLE)**: Byte-identical to Emailer 4.
+- **Footer Section (IMMUTABLE)**: Byte-identical to Emailer 4.
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars)
+1. *Is Disconnected Data Holding Your Frontline Back?* (49 chars)
+2. *Why Unifying HR, Time, Pay, and Scheduling Pays* (47 chars)
+3. *What Happens When HR, Pay, and Scheduling Unite?* (48 chars)
+4. *The Measurable Impact of a Connected Workforce* (46 chars)
+5. *Are Siloed Labor Systems Costing You Growth?* (44 chars)
+6. *How Unified Platforms Reshape Frontline Business* (48 chars)
+7. *What Does Unified Workforce Data Really Deliver?* (48 chars)
+8. *Connect HR, Time, Pay, and Scheduling Data* (42 chars)
+9. *Why Leaders Are Unifying Their Workforce Data* (45 chars)
+10. *Do Your Time and Pay Systems Work Together?* (43 chars)
 
 ---
 

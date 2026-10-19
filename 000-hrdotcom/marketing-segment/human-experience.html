@@ -1,0 +1,3182 @@
+
+<script src="/en?t=/merchant/fastCheckout/initCheckout.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/bootstrap.css">
+<!--<link rel="stylesheet" type="text/css" media="screen" href="$public/remoteimages/website-images/2017_SiteRedesign/css/Custom-Style.css">-->
+
+<style type="text/css">
+  body > .container-fluid > .row > .ContentArea > .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+  body > .container-fluid > .row > .ContentArea > {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  #intro-header {
+    display: none;
+  }
+  a,
+  a:hover,
+  a:link {
+    text-decoration: none;
+  }
+  .sf-nav-main,
+  .socialshare {
+    display: none !important;
+  }
+  .TopBar, .FooterBG, .FooterMidBG, .FooterBottomBG{
+    display: none !important;
+  }
+  .TopLink_new{
+    z-index: 999999999999999999 !important;
+  }
+  body.sf-nav-main-mode{
+    padding-top: 0 !important
+  }
+  .TopLink_new::after{
+    height: 0 !important;
+  }
+</style>
+
+
+<!-- TOP BAR SECTION -->
+<div class="seg-topbar" id="top-bar-section">
+    <div class="seg-container seg-topbar-inner"><span class="seg-topbar-label">Contact:</span> <a
+            class="seg-topbar-link" href="tel:877-472-6648">877-472-6648</a> <span class="seg-topbar-sep">|</span> <a
+            class="seg-topbar-link" href="mailto:sales@hr.com">sales@hr.com</a></div>
+</div>
+<!-- MODERN NAV BAR SECTION -->
+
+<div class="seg-navbar" id="nav-bar-section">
+    <div class="seg-container">
+        <ul class="seg-nav-list">
+            <li><a href="/en/about_us/advertise/" target="_blank">Marketing Solutions</a></li>
+            <li><a href="/en/about_us/advertise/live-events_kw1p7ucq.html" target="_blank">In Person Events</a></li>
+            <li><a href="/en/about_us/advertise/webcast-and-events_joerdg5d.html" target="_blank">Webcasts &amp; Virtual
+                    Events</a></li>
+            <li><a href="/en/about_us/advertise/managed-campaign-services_joes42zo.html" target="_blank">Buyer
+                    Activation</a></li>
+            <li><a href="/en/about_us/advertise/custom-research_joermj8f.html" target="_blank">Research</a></li>
+            <li><a href="/en/about_us/advertise/online-advertising_joer9swu.html" target="_blank">Display Ads</a></li>
+            <li><a href="/en/about_us/advertise/epublications_joerjbm9.html" target="_blank">ePublications</a></li>
+        </ul>
+    </div>
+</div>
+
+<div>$vendorLeadForm</div>
+<!-- ============================================================
+     STYLES FOR HUMAN EXPERIENCE SEGMENT PAGE (V3)
+     Changes:
+     - Center everything on top-banner-section
+     - Remove seg-hero-pills
+     - Replace seg-flash-banner with centered, slightly larger seg-anim-wrap
+       (design & style copied from segments-ta-1.html, Segoe UI Historic font)
+     - Completely redesigned contact-box-section (removed CTA button)
+     - Removed underlines from all links
+     - Removed footer-section
+     ============================================================ -->
+<style type="text/css">
+    :root {
+        --red: #ef4a3d;
+        --red-hover: #d93d31;
+        --green: #94c83d;
+        --blue: #4ac4d6;
+        --yellow: #fdb414;
+        --dark: #121826;
+        --dark-surface: #1e2538;
+        --mid: #3d4566;
+        --muted: #64748b;
+        --light: #f8fafc;
+        --light-card: #f1f5f9;
+        --white: #ffffff;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
+        --font: 'Segoe UI Historic', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        --max-w: 1200px;
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font);
+        background-color: var(--white);
+        color: var(--dark);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* USER REQUIREMENT: Remove underlines from all links */
+    a,
+    a:hover,
+    a:focus,
+    a:active,
+    a:visited {
+        text-decoration: none !important;
+    }
+
+    .seg-page a,
+    .seg-page a:hover,
+    .seg-page a:focus {
+        text-decoration: none !important;
+    }
+
+    /* STICKY TOP BAR */
+    .seg-topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10001;
+        background: #0f172a;
+        color: #e2e8f0;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        border-bottom: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .seg-topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .seg-topbar-label {
+        color: #94a3b8;
+        font-weight: 600;
+    }
+
+    .seg-topbar-link {
+        color: #f8fafc !important;
+        text-decoration: none !important;
+        transition: color var(--transition);
+    }
+
+    .seg-topbar-link:hover {
+        color: var(--red) !important;
+        text-decoration: none !important;
+    }
+
+    .seg-topbar-sep {
+        color: #475569;
+    }
+
+    /* STICKY NAV BAR (MODERN) */
+    .seg-navbar {
+        position: sticky;
+        top: 38px;
+        z-index: 10000;
+        background: var(--white);
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* NAV ROBUSTNESS: items can be freely added/removed. The list centers itself
+     when it fits and scrolls horizontally (without clipping the first items)
+     when it doesn't. No other section depends on the nav item count. */
+    .seg-nav-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 32px;
+        list-style: none;
+        margin: 0;
+        padding: 16px 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .seg-nav-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .seg-nav-list li {
+        flex: 0 0 auto;
+    }
+
+    .seg-nav-list li:first-child {
+        margin-left: auto;
+    }
+
+    .seg-nav-list li:last-child {
+        margin-right: auto;
+    }
+
+    .seg-nav-list li a {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--muted) !important;
+        text-decoration: none !important;
+        transition: color var(--transition);
+        padding: 4px 0;
+    }
+
+    .seg-nav-list li a:hover {
+        color: var(--red) !important;
+    }
+
+    /* PAGE CONTAINER & BASE STYLING */
+    .seg-page * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .seg-page {
+        font-family: var(--font);
+        color: var(--dark);
+        background: var(--white);
+        line-height: 1.65;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .seg-page a {
+        color: inherit;
+        text-decoration: none !important;
+    }
+
+    .seg-page img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .seg-container {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+    }
+
+    .seg-section {
+        padding: 80px 0;
+        position: relative;
+    }
+
+    .seg-section--alt {
+        background: var(--light);
+    }
+
+    .seg-divider-spacer {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06), transparent);
+        border: none;
+        margin: 0;
+    }
+
+    /* LABELS & HEADINGS */
+    .seg-section-label {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 12px;
+    }
+
+    .seg-section-title {
+        font-size: clamp(26px, 3.4vw, 38px);
+        font-weight: 800;
+        color: var(--dark);
+        line-height: 1.25;
+        margin-bottom: 16px;
+        letter-spacing: -0.015em;
+    }
+
+    /* LARGE READABLE SERVICE TITLE SPEC */
+    .seg-service-title {
+        font-size: clamp(30px, 4vw, 44px);
+        font-weight: 800;
+        color: var(--dark);
+        line-height: 1.2;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+    }
+
+    .seg-section-desc {
+        font-size: clamp(16px, 1.8vw, 19px);
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+
+    .seg-accent-bar {
+        width: 48px;
+        height: 4px;
+        border-radius: 4px;
+        margin-bottom: 16px;
+        background: var(--red);
+    }
+
+    .seg-accent-bar--green {
+        background: var(--green);
+    }
+
+    .seg-accent-bar--blue {
+        background: var(--blue);
+    }
+
+    .seg-accent-bar--yellow {
+        background: var(--yellow);
+    }
+
+    /* BUTTONS */
+    .seg-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: var(--radius-sm);
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all var(--transition);
+        border: none;
+        outline: none;
+        text-decoration: none !important;
+    }
+
+    .seg-btn--red {
+        background: var(--red);
+        color: var(--white) !important;
+        box-shadow: 0 4px 16px rgba(239, 74, 61, 0.3);
+    }
+
+    .seg-btn--red:hover {
+        background: var(--red-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(239, 74, 61, 0.4);
+        color: var(--white) !important;
+    }
+
+    .seg-btn--white {
+        background: var(--white);
+        color: var(--dark) !important;
+        box-shadow: var(--shadow-md);
+    }
+
+    .seg-btn--white:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .seg-btn--outline {
+        background: transparent;
+        color: var(--dark) !important;
+        border: 1.5px solid #cbd5e1;
+    }
+
+    .seg-btn--outline:hover {
+        background: var(--dark);
+        color: var(--white) !important;
+        border-color: var(--dark);
+        transform: translateY(-2px);
+    }
+
+    /* USER REQUIREMENT: SECTION 1: TOP BANNER (CENTERED LAYOUT & NO PILLS) */
+    .seg-hero {
+        background-image: url("https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/hero-img-2.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: var(--white);
+        padding: 96px 0 80px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .seg-hero::after {
+        content: '';
+        position: absolute;
+        top: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(239, 74, 61, 0.12) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .seg-hero-inner {
+        max-width: 920px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .seg-hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    /* User requirement: top eyebrow words must be smaller than header title */
+    .seg-hero-eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #f87171;
+        margin-bottom: 18px;
+        display: inline-block;
+    }
+
+    .seg-hero h1 {
+        font-size: clamp(52px, 4.8vw, 82px);
+        font-weight: 800;
+        line-height: 1.18;
+        color: var(--white);
+        margin-bottom: 28px;
+        letter-spacing: -0.02em;
+        max-width: 860px;
+    }
+
+    .seg-hero h1 em {
+        font-style: normal;
+        color: #38bdf8;
+    }
+
+    .seg-hero-cta {
+        margin-bottom: 8px;
+    }
+
+    .seg-hero-video {
+        width: 100%;
+        max-width: 840px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        aspect-ratio: 16/9;
+        background: #000;
+    }
+
+    .seg-hero-video iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+    }
+
+    /* SECTION 2: TOP BLURB */
+    .seg-blurb-header {
+        text-align: center;
+        max-width: 860px;
+        margin: 0 auto 52px;
+    }
+
+    .seg-blurb-header .seg-section-title span {
+        color: var(--red);
+    }
+
+    .seg-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-bottom: 48px;
+    }
+
+    .seg-stat-card {
+        background: var(--light-card);
+        border-radius: var(--radius-md);
+        padding: 36px 28px;
+        text-align: center;
+        transition: transform var(--transition), box-shadow var(--transition);
+        border: none;
+    }
+
+    .seg-stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+        background: var(--white);
+    }
+
+    .seg-stat-number {
+        font-size: clamp(34px, 4vw, 44px);
+        font-weight: 900;
+        color: var(--dark);
+        line-height: 1.1;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+    }
+
+    .seg-stat-desc {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.6;
+        font-weight: 500;
+    }
+
+    /* USER REQUIREMENT: REPLACED seg-flash-banner WITH seg-anim-wrap
+     - Copied design and style from segments-ta-1.html
+     - Uses Segoe UI Historic font
+     - Centered and slightly larger
+  */
+    .seg-anim-wrap {
+        background: linear-gradient(90deg, #111827 0%, var(--mid) 100%);
+        border-radius: var(--radius-md);
+        padding: 32px 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        max-width: 960px;
+        margin: 0 auto;
+        box-shadow: var(--shadow-md);
+    }
+
+    .seg-anim-label {
+        font-family: var(--font);
+        font-size: 15px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        flex-shrink: 0;
+    }
+
+    .seg-anim-words {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .seg-anim-word {
+        font-family: var(--font);
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--white);
+        padding: 3px 36px;
+        border-radius: 50px;
+        opacity: 0;
+        animation: wordPulse 6s infinite;
+    }
+
+    .seg-anim-word:nth-child(1) {
+        background: var(--red);
+        animation-delay: 0s;
+    }
+
+    .seg-anim-word:nth-child(2) {
+        background: var(--green);
+        animation-delay: 1s;
+    }
+
+    .seg-anim-word:nth-child(3) {
+        background: var(--blue);
+        animation-delay: 2s;
+    }
+
+    .seg-anim-word:nth-child(4) {
+        background: var(--yellow);
+        color: var(--dark);
+        animation-delay: 3s;
+    }
+
+    .seg-anim-word:nth-child(5) {
+        background: var(--red);
+        animation-delay: 4s;
+    }
+
+    .seg-anim-word:nth-child(6) {
+        background: var(--green);
+        animation-delay: 5s;
+    }
+
+    @keyframes wordPulse {
+        0% {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+
+        8% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        30% {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* SECTION 3: MARKETING SERVICES — centered single-column */
+    .seg-marketing-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .seg-marketing-text-block {
+        max-width: 820px;
+    }
+
+    .seg-marketing-text-block .seg-section-desc {
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* USER REQUIREMENT: Full-width horizontal scrolling service tag cards with images */
+    .seg-service-shortcuts-wrap {
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+        padding: 0 40px;
+    }
+
+    .seg-service-shortcuts-list {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0 20px;
+    }
+
+    /* Carousel Arrows */
+    .seg-service-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--white);
+        color: var(--dark);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all var(--transition);
+    }
+
+    .seg-service-arrow:hover {
+        background: var(--red);
+        color: var(--white);
+        border-color: var(--red);
+    }
+
+    .seg-service-arrow.prev {
+        left: 16px;
+    }
+
+    .seg-service-arrow.next {
+        right: 16px;
+    }
+
+    /* SERVICE TAG CARD — image + label, B&W default, color on hover */
+    .seg-service-tag {
+        flex: 0 0 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        background: var(--white);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        border: 2px solid #e2e8f0;
+        text-align: center;
+        filter: grayscale(100%);
+        opacity: 0.80;
+        transition: all var(--transition);
+        scroll-snap-align: start;
+        box-shadow: var(--shadow-sm);
+        color: var(--dark);
+        text-decoration: none !important;
+    }
+
+    .seg-service-tag-img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .seg-service-tag-label {
+        padding: 12px 14px;
+        line-height: 1.35;
+    }
+
+    .seg-service-tag:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        border-color: var(--red);
+        color: var(--red);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(239, 74, 61, 0.22);
+    }
+
+    .seg-service-tag:hover .seg-service-tag-img {
+        transform: scale(1.06);
+    }
+
+    /* NEWSLETTER TWO-COLUMN GRID */
+    .seg-newsletter-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .seg-newsletter-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .seg-newsletter-visual {
+        border-radius: 0;
+        box-shadow: none;
+        aspect-ratio: 16/9;
+        flex-shrink: 0;
+    }
+
+    .seg-newsletter-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .seg-newsletter-body {
+        padding: 28px 32px;
+        flex: 1;
+    }
+
+    .seg-newsletter-title {
+        font-size: clamp(20px, 2.2vw, 26px);
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 14px;
+        line-height: 1.25;
+    }
+
+    .seg-newsletter-desc {
+        font-size: 16px;
+        color: var(--muted);
+        line-height: 1.7;
+    }
+
+    /* SERVICES TWO-COLUMN LAYOUT */
+    .seg-service-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+
+    .seg-service-layout--reverse {
+        direction: rtl;
+    }
+
+    .seg-service-layout--reverse>* {
+        direction: ltr;
+    }
+
+    .seg-service-visual {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        background: #e2e8f0;
+    }
+
+    .seg-service-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+        max-height: 1000px !important;
+    }
+
+    .seg-service-visual:hover img {
+        transform: scale(1.03);
+    }
+
+    .seg-service-desc-title {
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 600;
+        color: #334155;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .seg-service-desc-title a {
+        color: var(--red);
+        text-decoration: none !important;
+        font-weight: 700;
+    }
+
+    .seg-service-desc-title a:hover {
+        color: var(--red-hover);
+        text-decoration: none !important;
+    }
+
+    /* BULLET CARDS IN SERVICES (Clean, borderless cards) */
+    .seg-bullet-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .seg-bullet-card {
+        background: var(--light-card);
+        border-radius: var(--radius-sm);
+        padding: 16px 20px;
+        font-size: 15px;
+        color: var(--dark);
+        font-weight: 500;
+        line-height: 1.6;
+        border: none;
+        transition: background var(--transition), transform var(--transition);
+    }
+
+    .seg-bullet-card:hover {
+        background: #e2e8f0;
+        transform: translateX(4px);
+    }
+
+    .seg-bullet-num {
+        font-weight: 700;
+        color: var(--red);
+        margin-right: 6px;
+    }
+
+    /* CMS-SAFE CARD MARKUP
+     Clickable cards (virtual events, conference, awards, contact pills) use a
+     single <a> containing ONLY inline elements (<span>, <img>). The CMS editor
+     splits any <a> that wraps block elements (<div>, <h3>, <p>) whenever the
+     page is re-saved, which previously broke these layouts. The spans below
+     are given block/flex display so they render exactly like the old divs. */
+    .seg-ve-card-thumb,
+    .seg-ve-card-body,
+    .seg-ve-card-title,
+    .seg-ve-card-date,
+    .seg-conf-info,
+    .seg-conf-title,
+    .seg-conf-venue,
+    .seg-conf-desc,
+    .seg-conf-month,
+    .seg-conf-day,
+    .seg-award-thumb,
+    .seg-award-name,
+    .seg-contact-pill-label,
+    .seg-contact-pill-val {
+        display: block;
+    }
+
+    /* SECTION 5: VIRTUAL EVENTS */
+    .seg-ve-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 48px;
+    }
+
+    .seg-ve-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    /* USER REQUIREMENT: Black and white style and only colors when hovered for virtual event cards */
+    .seg-ve-card {
+        background: var(--white);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        filter: grayscale(100%);
+        opacity: 0.88;
+        transition: all var(--transition);
+        border: none;
+        text-decoration: none !important;
+    }
+
+    .seg-ve-card:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .seg-ve-card-thumb {
+        flex-shrink: 0;
+        width: 120px;
+        background: #1e293b;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .seg-ve-card-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .seg-ve-card:hover .seg-ve-card-thumb img {
+        transform: scale(1.08);
+    }
+
+    .seg-ve-card-body {
+        padding: 16px 18px;
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .seg-ve-card-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--dark);
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .seg-ve-card-date {
+        font-size: 12px;
+        color: #64748b;
+        font-weight: 600;
+        transition: color var(--transition);
+    }
+
+    .seg-ve-card:hover .seg-ve-card-date {
+        color: var(--red);
+    }
+
+    /* SECTION 10: IN-PERSON CONFERENCES CARD */
+    .seg-conf-card {
+        background: var(--white);
+        border-radius: var(--radius-md);
+        padding: 32px;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        border: none;
+        transition: transform var(--transition), box-shadow var(--transition);
+        margin-top: 24px;
+        text-decoration: none !important;
+    }
+
+    .seg-conf-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .seg-conf-date-badge {
+        flex-shrink: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, var(--red) 0%, #c23326 100%);
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .seg-conf-month {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .seg-conf-day {
+        font-size: 26px;
+        font-weight: 900;
+        line-height: 1.1;
+    }
+
+    .seg-conf-info {
+        flex: 1;
+    }
+
+    .seg-conf-title {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 6px;
+    }
+
+    .seg-conf-venue {
+        font-size: 14px;
+        color: var(--red);
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .seg-conf-desc {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.6;
+    }
+
+    .seg-conf-logo {
+        margin-bottom: 12px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .seg-conf-logo img {
+        max-height: 48px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    .seg-award-desc-bottom {
+        font-size: 16px !important;
+        font-style: italic;
+        text-align: center;
+        margin-top: 28px;
+        margin-bottom: 0;
+    }
+
+    /* SECTION 11: BONUS AWARD CARDS */
+    .seg-award-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 40px;
+    }
+
+    .seg-award-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    /* USER REQUIREMENT: Black and white style and only colors when hovered for award cards */
+    .seg-award-card {
+        background: var(--white);
+        border-radius: var(--radius-sm);
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-shadow: var(--shadow-sm);
+        filter: grayscale(100%);
+        opacity: 0.85;
+        transition: all var(--transition);
+        border: none;
+        text-decoration: none !important;
+    }
+
+    .seg-award-card:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        background: #fffbeb;
+    }
+
+    .seg-award-thumb {
+        width: 48px;
+        height: 38px;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #e2e8f0;
+        flex-shrink: 0;
+    }
+
+    .seg-award-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .seg-award-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--dark);
+        line-height: 1.35;
+    }
+
+    /* SECTION 12: DIFFERENCE SECTION */
+    .seg-diff-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 48px;
+    }
+
+    .seg-diff-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    /* USER REQUIREMENT: Black and white style and only colors when hovered for difference cards */
+    .seg-diff-card {
+        background: var(--white);
+        border-radius: var(--radius-md);
+        padding: 36px 30px;
+        box-shadow: var(--shadow-sm);
+        filter: grayscale(100%);
+        opacity: 0.88;
+        transition: all var(--transition);
+        border: none;
+        position: relative;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .seg-diff-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #94a3b8;
+        transition: background var(--transition);
+    }
+
+    .seg-diff-card:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .seg-diff-card:nth-child(1):hover::before {
+        background: var(--red);
+    }
+
+    .seg-diff-card:nth-child(2):hover::before {
+        background: var(--green);
+    }
+
+    .seg-diff-card:nth-child(3):hover::before {
+        background: var(--blue);
+    }
+
+    .seg-diff-card:nth-child(4):hover::before {
+        background: var(--yellow);
+    }
+
+    .seg-diff-card:nth-child(5):hover::before {
+        background: var(--red);
+    }
+
+    .seg-diff-title {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 16px;
+    }
+
+    .seg-diff-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .seg-diff-list li {
+        font-size: 18px;
+        color: var(--dark);
+        padding: 8px 0 8px 22px;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .seg-diff-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--green);
+        font-weight: 800;
+    }
+
+    @media (min-width: 900px) {
+        .seg-diff-card:nth-child(4) {
+            grid-column: 1 / 2;
+        }
+
+        .seg-diff-card:nth-child(5) {
+            grid-column: 2 / 4;
+        }
+    }
+
+    /* SECTION 13: TESTIMONIALS SLIDER */
+    .seg-testimonials {
+        background: #0f172a;
+        color: var(--white);
+        padding: 84px 0;
+        overflow: hidden;
+    }
+
+    .seg-testi-header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .seg-testi-header .seg-section-title {
+        color: var(--white);
+    }
+
+    .seg-testi-track {
+        overflow: hidden;
+        position: relative;
+        max-width: 940px;
+        margin: 0 auto;
+    }
+
+    .seg-testi-slides {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .seg-testi-slide {
+        flex: 0 0 100%;
+        display: flex;
+        gap: 36px;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .seg-testi-avatar {
+        flex-shrink: 0;
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #334155;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        border: none;
+    }
+
+    .seg-testi-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .seg-testi-body {
+        flex: 1;
+    }
+
+    .seg-testi-quote {
+        font-size: 16px;
+        color: #e2e8f0;
+        line-height: 1.85;
+        margin-bottom: 18px;
+        font-style: italic;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .seg-testi-quote::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -6px;
+        font-size: 38px;
+        color: #38bdf8;
+        line-height: 1;
+    }
+
+    .seg-testi-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+    }
+
+    .seg-testi-role {
+        font-size: 13px;
+        color: #94a3b8;
+    }
+
+    .seg-testi-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 36px;
+    }
+
+    .seg-testi-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        transition: all var(--transition);
+        font-size: 16px;
+    }
+
+    .seg-testi-btn:hover {
+        background: #38bdf8;
+        color: var(--dark);
+    }
+
+    .seg-testi-dots {
+        display: flex;
+        gap: 8px;
+    }
+
+    .seg-testi-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: all var(--transition);
+    }
+
+    .seg-testi-dot.active {
+        background: #38bdf8;
+        width: 28px;
+        border-radius: 6px;
+    }
+
+    /* SECTION 14: LOGOS MARQUEE */
+    .seg-logos {
+        background: var(--white);
+        padding: 64px 0;
+    }
+
+    .seg-logos-title {
+        text-align: center;
+        margin-bottom: 36px;
+    }
+
+    .seg-logos-track-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .seg-logos-track-wrap::before,
+    .seg-logos-track-wrap::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .seg-logos-track-wrap::before {
+        left: 0;
+        background: linear-gradient(to right, var(--white), transparent);
+    }
+
+    .seg-logos-track-wrap::after {
+        right: 0;
+        background: linear-gradient(to left, var(--white), transparent);
+    }
+
+    .seg-logos-track {
+        display: flex;
+        gap: 48px;
+        animation: logoScroll 30s linear infinite;
+        width: max-content;
+    }
+
+    .seg-logos-track:hover {
+        animation-play-state: paused;
+    }
+
+    /* USER REQUIREMENT: Black and white style and only colors when hovered for scrolling logos */
+    .seg-logo-item {
+        flex-shrink: 0;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.55;
+        filter: grayscale(100%);
+        transition: all var(--transition);
+    }
+
+    .seg-logo-item:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    .seg-logo-item img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        max-width: 150px;
+    }
+
+    @keyframes logoScroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* USER REQUIREMENT: COMPLETELY REDESIGNED SECTION 15: CONTACT BOX (NO CTA BUTTON, NO UNDERLINES, NO BOX) */
+    .seg-contact-box {
+        background: var(--light);
+        padding: 88px 0;
+        text-align: center;
+    }
+
+    .seg-contact-card {
+        max-width: 880px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .seg-contact-badge {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 14px;
+    }
+
+    .seg-contact-title {
+        font-size: clamp(28px, 3.8vw, 42px);
+        font-weight: 800;
+        color: var(--dark);
+        line-height: 1.25;
+        margin-bottom: 14px;
+        letter-spacing: -0.015em;
+    }
+
+    /* USER REQUIREMENT: title link is underlined (overrides the global no-underline rule) */
+    .seg-page a.seg-contact-title-link,
+    .seg-page a.seg-contact-title-link:visited,
+    .seg-page a.seg-contact-title-link:focus {
+        color: var(--red) !important;
+        text-decoration: underline !important;
+        text-underline-offset: 6px;
+        text-decoration-thickness: 3px;
+        transition: color var(--transition);
+    }
+
+    .seg-page a.seg-contact-title-link:hover,
+    .seg-page a.seg-contact-title-link:active {
+        color: var(--red-hover) !important;
+        text-decoration: underline !important;
+    }
+
+    .seg-contact-sub {
+        font-size: 18px;
+        color: var(--muted);
+        max-width: 600px;
+        margin: 0 auto 48px;
+        line-height: 1.6;
+    }
+
+    .seg-contact-grid {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .seg-contact-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        background: var(--white);
+        border-radius: var(--radius-md);
+        padding: 18px 28px;
+        color: var(--dark) !important;
+        text-decoration: none !important;
+        transition: all var(--transition);
+        min-width: 250px;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #e2e8f0;
+    }
+
+    .seg-contact-pill:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        text-decoration: none !important;
+        border-color: var(--red);
+    }
+
+    .seg-contact-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(239, 74, 61, 0.18);
+        color: var(--red);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    .seg-contact-pill:nth-child(2) .seg-contact-icon {
+        background: rgba(56, 189, 248, 0.18);
+        color: #38bdf8;
+    }
+
+    .seg-contact-pill-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .seg-contact-pill-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #94a3b8;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+
+    .seg-contact-pill-val {
+        font-size: 17px;
+        font-weight: 700;
+        color: #ef4a3d;
+    }
+
+    /* USER REQUIREMENT: BACK TO TOP BUTTON (copied design from segments-ta-1.html) */
+    .seg-back-to-top {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 9999;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--dark);
+        color: var(--white);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease;
+        pointer-events: none;
+    }
+
+    .seg-back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .seg-back-to-top:hover {
+        background: var(--red);
+        box-shadow: 0 6px 24px rgba(239, 74, 61, 0.4);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+        .seg-ve-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .seg-award-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .seg-diff-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 860px) {
+        .seg-service-layout {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+
+        .seg-newsletter-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .seg-service-layout--reverse {
+            direction: ltr;
+        }
+
+        .seg-stat-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .seg-award-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .seg-testi-slide {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .seg-testi-quote {
+            padding-left: 0;
+        }
+
+        .seg-testi-quote::before {
+            display: none;
+        }
+
+        .seg-anim-wrap {
+            flex-direction: column;
+            padding: 24px 20px;
+        }
+
+        .seg-contact-card {
+            padding: 48px 24px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .seg-section {
+            padding: 56px 0;
+        }
+
+        .seg-hero {
+            padding: 64px 0 52px;
+        }
+
+        .seg-ve-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .seg-award-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .seg-diff-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* scrolling list stays horizontal on mobile — no override needed */
+
+        .seg-conf-card {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .seg-topbar-inner {
+            justify-content: center;
+            font-size: 11px;
+        }
+
+        .seg-contact-grid {
+            flex-direction: column;
+        }
+
+        .seg-contact-pill {
+            width: 100%;
+        }
+    }
+
+    /* USER REQUIREMENT: MODERN FOOTER DESIGN */
+    .seg-footer-top {
+        background-color: var(--dark-surface);
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .seg-footer-top .seg-footer-container {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .seg-footer-link-wrap {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .seg-footer-link-wrap a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: color var(--transition);
+    }
+
+    .seg-footer-link-wrap a:hover {
+        color: var(--red);
+    }
+
+    .seg-footer-top .seg-footer-col-arrows {
+        display: flex;
+        gap: 12px;
+    }
+
+    .seg-footer-top .seg-footer-col-arrows img {
+        width: 24px;
+        opacity: 0.6;
+        transition: opacity var(--transition);
+    }
+
+    .seg-footer-top .seg-footer-col-arrows img:hover {
+        opacity: 1;
+    }
+
+    .seg-footer-mid {
+        background-color: var(--dark);
+        padding: 64px 0;
+        color: var(--light);
+    }
+
+    .seg-footer-mid .seg-footer-container {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 48px;
+    }
+
+    .seg-footer-mid h6 {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0;
+    }
+
+    .seg-footer-mid ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .seg-footer-mid ul li a {
+        color: var(--muted);
+        font-size: 15px;
+        transition: color var(--transition);
+    }
+
+    .seg-footer-mid ul li a:hover {
+        color: var(--red);
+    }
+
+    .seg-footer-social-icons {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 16px !important;
+    }
+
+    .seg-footer-social-icons li {
+        display: inline-block;
+    }
+
+    .seg-footer-social-icons svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--muted);
+        transition: fill var(--transition), transform var(--transition);
+    }
+
+    .seg-footer-social-icons a:hover svg {
+        fill: var(--red);
+        transform: translateY(-2px);
+    }
+
+    .seg-footer-bottom {
+        background-color: var(--dark);
+        padding: 24px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 14px;
+    }
+</style>
+<!-- MAIN CONTENT WRAPPER -->
+<div class="seg-page"><!-- SECTION 1: TOP BANNER (CENTERED LAYOUT & NO PILLS) -->
+    <section class="seg-hero" id="top-banner-section">
+        <div class="seg-container">
+            <div class="seg-hero-inner">
+                <div class="seg-hero-content">
+                    <!-- User requirement: top eyebrow words must be smaller than header title --><span
+                        class="seg-hero-eyebrow">HR Leads | HR Thought Leadership | HR Brand Exposure | HR Pipeline | HR
+                        Sponsorship</span>
+                    <h1>Reach the Most Influential<br />
+                        <em>Human Experience</em> Professionals
+                    </h1>
+                    <!-- User requirement: copy cta button links from segments-ta-1.html -->
+
+                    <div class="seg-hero-cta"><a class="seg-btn seg-btn--red" href="#"
+                            onclick="loadPopup('fc_1614283173294'); return false;"><svg fill="currentColor" height="14"
+                                viewbox="0 0 10.052 13.008" width="14" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5,7.5a.7.7,0,0,0,.972,0L9.214,4.358a.7.7,0,0,0-.486-1.2H6.784V.7a.7.7,0,0,0-.7-.7H4.884a.7.7,0,0,0-.7.7V3.153H2.24a.7.7,0,0,0-.486,1.2Z"
+                                    transform="translate(-0.608 2)"></path>
+                                <rect height="2.615" rx="1.308" transform="translate(0 10.393)" width="10.052"></rect>
+                            </svg> Download Media Planner </a></div>
+                </div>
+                <!-- <div class="seg-hero-video">
+          <iframe src="https://www.youtube.com/embed/4TC0xFe363U?controls=0" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 2: TOP BLURB -->
+
+    <section class="seg-section" id="top-blurb-section">
+        <div class="seg-container">
+            <div class="seg-blurb-header">
+                <div class="seg-accent-bar seg-accent-bar--green" style="margin: 0 auto 16px;">&nbsp;</div>
+
+                <h2 class="seg-section-title" style="font-size: clamp(42px, 3.4vw, 62px);">Grow your company, pipeline
+                    and thought leadership by reaching the world&#39;s largest free HR community</h2>
+
+                <p class="seg-section-desc">We offer targeted marketing opportunities that enable solution providers
+                    that offer Human Experience solutions to reach more HR professionals and generate more leads
+                    &hellip; (How&#39;s that for awesome?)</p>
+            </div>
+
+            <div class="seg-stat-grid">
+                <div class="seg-stat-card">
+                    <div class="seg-stat-number" style="color:var(--red);">LARGEST</div>
+
+                    <div class="seg-stat-desc">HR Community &mdash; The biggest free online home for HR decision-makers
+                    </div>
+                </div>
+
+                <div class="seg-stat-card">
+                    <div class="seg-stat-number" style="color:var(--blue);">75,000+</div>
+
+                    <div class="seg-stat-desc">Members focused on the Human Experience space</div>
+                </div>
+
+                <div class="seg-stat-card">
+                    <div class="seg-stat-number" style="color:var(--yellow);">8</div>
+
+                    <div class="seg-stat-desc">Marketing opportunity services to choose from</div>
+                </div>
+            </div>
+            <!-- USER REQUIREMENT: REPLACED seg-flash-banner WITH seg-anim-wrap (COPIED DESIGN & STYLE FROM segments-ta-1.html, CENTERED & SLIGHTLY LARGER, SEGOE UI HISTORIC FONT) -->
+
+            <div class="seg-anim-wrap"><span class="seg-anim-label">We deliver:</span>
+
+                <div class="seg-anim-words"><span class="seg-anim-word">Leads</span> <span
+                        class="seg-anim-word">Visibility</span> <span class="seg-anim-word">Brand Recognition</span>
+                    <span class="seg-anim-word">Thought Leadership</span> <span class="seg-anim-word">Credibility</span>
+                    <span class="seg-anim-word">Reach</span></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 3: MARKETING SERVICES (CENTERED) -->
+    <section class="seg-section seg-section--alt" id="marketing-services-section">
+        <div class="seg-container">
+            <div class="seg-marketing-layout">
+                <div class="seg-marketing-text-block"><span class="seg-section-label">Turnkey Solutions</span>
+
+                    <h2 class="seg-section-title" style="font-size: clamp(42px, 3.4vw, 62px);">What Can Our Marketing
+                        Services Do For You?</h2>
+
+                    <p class="seg-section-desc">Even if you&#39;re a marketing wizard, we have services that can help
+                        you reach new audiences and achieve more impact. Put our marketing experts to work for you. Some
+                        companies have partnered with us for years and years on multi-vehicle campaigns, while others
+                        select individual engagements and return when they need a marketing boost. It&#39;s up to you.
+                    </p>
+
+                    <p class="seg-section-desc" style="margin-bottom:0;">However you choose to move forward, we make it
+                        easy by doing the heavy lifting to help grow your brand and company. There are many turnkey
+                        marketing options to choose from, including:</p>
+                </div>
+                <!-- Full-width horizontal scrolling service tag cards with images -->
+
+                <div class="seg-service-shortcuts-wrap"><button aria-label="Previous Service"
+                        class="seg-service-arrow prev" onclick="serviceCarouselMove(-1)">◄</button><button
+                        aria-label="Next Service" class="seg-service-arrow next"
+                        onclick="serviceCarouselMove(1)">►</button>
+
+                    <div class="seg-service-shortcuts-list" id="service-carousel-list"><button class="seg-service-tag"
+                            onclick="segScrollTo('webcasts-service')"><img alt="Webcasts" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-webcasts.jpg" />
+                            <span class="seg-service-tag-label">Webcasts</span></button><button class="seg-service-tag"
+                            onclick="segScrollTo('virtual-events-service')"><img alt="Virtual Events"
+                                class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/2025-hr-com-s-future-of-human-experience/HR-com-s-future-of-human-experience_Virtual-Event-Hero-Img.png" />
+                            <span class="seg-service-tag-label">Virtual Events</span></button><button
+                            class="seg-service-tag" onclick="segScrollTo('buyer-activation-service')"><img
+                                alt="Targeted Buyer Activation Program" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-targeted-buyer.jpg" />
+                            <span class="seg-service-tag-label">Targeted Buyer Activation Program</span></button><button
+                            class="seg-service-tag" onclick="segScrollTo('online-advertising-service')"><img
+                                alt="Online Advertising" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-online-advertising-1.jpg" />
+                            <span class="seg-service-tag-label">Online Advertising</span></button><button
+                            class="seg-service-tag" onclick="segScrollTo('custom-research-service')"><img
+                                alt="Custom Research" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-custom-research-1.jpg" />
+                            <span class="seg-service-tag-label">Custom Research</span></button><button
+                            class="seg-service-tag" onclick="segScrollTo('newsletter-ad-service')"><img
+                                alt="Newsletter Advertising" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-newsletter-1.jpg" />
+                            <span class="seg-service-tag-label">Newsletter Advertising</span></button><button
+                            class="seg-service-tag" onclick="segScrollTo('conferences-service')"><img
+                                alt="In-Person Conferences" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-in-person-1.jpg" />
+                            <span class="seg-service-tag-label">In-Person Conferences</span></button><button
+                            class="seg-service-tag" onclick="segScrollTo('bonus-service')"><img
+                                alt="Free Award Opportunities" class="seg-service-tag-img"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/hr-com-awards-logo-white-no-year-500x284.png"
+                                style="object-fit:contain; background:#0f172a; padding:10px;" /> <span
+                                class="seg-service-tag-label">Bonus: Free Award Opportunities</span></button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 4: WEBCASTS -->
+    <section class="seg-section" id="webcasts-service">
+        <div class="seg-container">
+            <div class="seg-service-layout">
+                <div class="seg-service-content"><span class="seg-section-label">Proven Platform</span>
+                    <!-- User requirement: large readable services titles -->
+
+                    <h2 class="seg-service-title">Webcasts</h2>
+
+                    <p class="seg-service-desc-title">Reach the world&#39;s largest HR professional community via our
+                        proven webcast platform. Showcase your thought leadership and generate hundreds of leads.</p>
+                    <a class="seg-btn seg-btn--outline"
+                        href="https://www.hr.com/en/about_us/advertise/webcast-and-events_joerdg5d.html"
+                        target="_blank"> Learn More </a>
+                </div>
+
+                <div class="seg-service-visual"><img alt="Webcasts" loading="lazy"
+                        src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-webcasts.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 5: VIRTUAL EVENTS -->
+    <section class="seg-section seg-section--alt" id="virtual-events-service">
+        <div class="seg-container" style="text-align: center;"><span class="seg-section-label">Single-Day Focused
+                Verticals</span>
+
+            <h2 class="seg-service-title">Virtual Events</h2>
+
+            <p class="seg-service-desc-title">Research, Virtual Events and Demo Days</p>
+
+            <p class="seg-section-desc" style="max-width: 800px; margin-left: auto; margin-right: auto;">Take the
+                spotlight and showcase your expertise to a targeted audience in an HR.com Virtual Event. This is an
+                ideal opportunity to optimize your brand and expand your market reach to our global HR member community,
+                maximizing quality targeted leads for you. Virtual Events take place over 1 day, featuring a collection
+                of webcasts focusing on a single vertical in the HR space.</p>
+            <!-- <p class="seg-section-desc" style="font-weight:600; color:var(--dark); max-width: 800px; margin-left: auto; margin-right: auto;">All the perks of a real tradeshow without the risks and costs.</p> -->
+            <!-- User requirement: use black and white style and only colors when hovered for virtual event cards -->
+
+            <div class="seg-ve-grid" style="text-align: left; margin-top: 48px;"><a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/state-of-ai-in-hr-and-the-future-of-work_msng3z8a.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="State of AI in HR and the Future of Work Research and Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2027-ai4hr/hero-3.png" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">State of AI in HR and the Future of
+                            Work Research and Virtual Event</span><span class="seg-ve-card-date">January 13, April 20,
+                            July 22 and October 2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hr-demo-day-virtual-event_mah7tmo1.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img alt="HR Demo Day Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/hr-demo-day-2026/demo-day-2026-hero-img.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">HR Demo Day Virtual Event</span><span
+                            class="seg-ve-card-date">January 20, April 7 and August 11, 2027</span></span></a> <a
+                    class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/the-future-of-talent-acquisition_jm6pk99b.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="Future of Talent Acquisition Research and Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-hr-com-s-future-of-talent-acquisition/2026-02-10-hr-com-s-future-of-talent-acquisition_Hero-Image.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">Future of Talent Acquisition Research
+                            and Virtual Event</span><span class="seg-ve-card-date">January 27, and August 25,
+                            2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/chro-virtual-event_lnx7t5va.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img alt="CHRO Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/2025-CHRO-Virtual-Event/CHRO-Virtual-Event-Hero-Img.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">CHRO Virtual Event</span><span
+                            class="seg-ve-card-date">February 17, 2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hr-in-healthcare-virtual-event_lm4xe6o2.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img alt="HR in Healthcare Virtual Event"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-hr-in-healthcare/hr-in-healthcare-hero-img-1.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">HR in Healthcare Virtual
+                            Event</span><span class="seg-ve-card-date">March 3, 2027</span></span></a> <a
+                    class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hrcoms-future-of-human-experience_jxdq4mh3.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="Future of Human Experience Research and Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/2025-hr-com-s-future-of-human-experience/HR-com-s-future-of-human-experience_Virtual-Event-Hero-Img.png" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">Future of Human Experience Research and
+                            Virtual Event</span><span class="seg-ve-card-date">December 2, 2026, March 17 and December
+                            8, 2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hrcoms-state-of-legal-and-compliance_kn91492s.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="State of Legal and Compliance Research and Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-state-of-legal-and-compliance/state-of-legal-and-compliance-hero-img-1.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">State of Legal and Compliance Research
+                            and Virtual Event</span><span class="seg-ve-card-date">March 31, and November 3,
+                            2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/global-hr-virtual-event_ll58x8y1.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img alt="Global HR Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-global-expansion-in-hr/global-expansion-in-hr-hero-img-1.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">Global HR Virtual Event</span><span
+                            class="seg-ve-card-date">April 8, 2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/state-of-todays-hr-tech_k5pq3gs2.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="State of Today's HR Tech Research and Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-state-of-todays-hr-tech-and-integrations/state-of-todays-hr-tech-and-integrations-hero-img-1.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">State of Today&#39;s HR Tech Research
+                            and Virtual Event</span><span class="seg-ve-card-date">May 26, 2027</span></span></a> <a
+                    class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hrcoms-state-of-frontline-and-volume-hiring_k7m2t7s0.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="State of Hiring and Managing Frontline Workers Research and Virtual Event"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/hr-com-state-of-frontline-and-volume-hiring/state-of-frontline-and-volume-hiring-hero-img-2.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">State of Hiring and Managing Frontline
+                            Workers Research and Virtual Event</span><span class="seg-ve-card-date">April 8 and October
+                            6, 2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hr-in-retail-virtual-event_lmzazo35.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img alt="HR in Retail Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-hr-in-retail/hr-in-retail-hero-img-1.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">HR in Retail Virtual Event</span><span
+                            class="seg-ve-card-date">September 15, 2027</span></span></a> <a class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hr-for-small-business-virtual-event_lmuhab3a.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img alt="HR for Small Business Virtual Event"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-hr-for-small-business/hr-for-small-business-hero-img-1.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">HR for Small Business Virtual
+                            Event</span><span class="seg-ve-card-date">October 7, 2027</span></span></a> <a
+                    class="seg-ve-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hrcoms-future-of-recruitment-technologies_kh4zw0f3.html"
+                    target="_blank"><span class="seg-ve-card-thumb"><img
+                            alt="Future of Recruitment Technologies Research and Virtual Event" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-hr-com-s-future-of-recruitment-technologies/2025-hr-com-s-future-of-recruitment-technologies-hero-img.webp" /></span><span
+                        class="seg-ve-card-body"><span class="seg-ve-card-title">Future of Recruitment Technologies
+                            Research and Virtual Event</span><span class="seg-ve-card-date">November 18, 2026 and
+                            October 14, 2027</span></span></a></div>
+
+            <p class="seg-section-desc"
+                style="font-weight:500; color:var(--muted); max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 32px; font-style: italic;">
+                All the perks of a real tradeshow without the risks and costs.</p>
+            <!-- <div style="text-align:center; margin-top: 40px;"><a class="seg-btn seg-btn--outline" href="https://www.hr.com/en/webcasts_events/hrcom-virtual-and-in-person-event-schedule_l940kx8t.html" target="_blank"> Learn More </a></div> -->
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 6: BUYER ACTIVATION -->
+    <section class="seg-section" id="buyer-activation-service">
+        <div class="seg-container">
+            <div class="seg-service-layout seg-service-layout--reverse">
+                <div class="seg-service-content"><span class="seg-section-label">High-Intent Leads</span>
+
+                    <h2 class="seg-service-title">Targeted Buyer Activation Program</h2>
+
+                    <p class="seg-service-desc-title">A fully managed, customizable <a
+                            href="https://www.hr.com/en/about_us/advertise/managed-campaign-services_joes42zo.html"
+                            target="_blank">email marketing solution</a> that gives you access to the most highly
+                        qualified, opted-in and targeted list of global decision makers in the HR space. Our team works
+                        with you to customize your messaging and to target your audience.</p>
+                    <a class="seg-btn seg-btn--outline"
+                        href="https://www.hr.com/en/about_us/advertise/managed-campaign-services_joes42zo.html"
+                        target="_blank"> More Info </a>
+                </div>
+
+                <div class="seg-service-visual"><img alt="Targeted Buyer Activation Program" loading="lazy"
+                        src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-targeted-buyer.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 7: ONLINE ADVERTISING -->
+    <section class="seg-section seg-section--alt" id="online-advertising-service">
+        <div class="seg-container">
+            <div class="seg-service-layout">
+                <div class="seg-service-content"><span class="seg-section-label">Brand Visibility</span>
+
+                    <h2 class="seg-service-title">Online Advertising</h2>
+
+                    <p class="seg-service-desc-title">We offer <a
+                            href="https://www.hr.com/en/about_us/advertise/online-advertising_joer9swu.html"
+                            target="_blank">two online advertising solutions</a> to engage our HR community:</p>
+
+                    <div class="seg-bullet-cards">
+                        <div class="seg-bullet-card"><span class="seg-bullet-num">1.</span> Reach HR.com visitors (over
+                            144,000 unique visitors per month) with display ads.</div>
+
+                        <div class="seg-bullet-card"><span class="seg-bullet-num">2.</span> Attract our members wherever
+                            they browse the internet with retargeting ads.</div>
+                    </div>
+
+                    <p class="seg-section-desc">Our team works with you to ensure your ads target the right audience.
+                    </p>
+                    <a class="seg-btn seg-btn--outline"
+                        href="https://www.hr.com/en/about_us/advertise/online-advertising_joer9swu.html"
+                        target="_blank"> Learn More </a>
+                </div>
+
+                <div class="seg-service-visual"><img alt="Online Advertising" loading="lazy"
+                        src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-online-advertising-1.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 8: CUSTOM RESEARCH -->
+    <section class="seg-section" id="custom-research-service">
+        <div class="seg-container">
+            <div class="seg-service-layout seg-service-layout--reverse">
+                <div class="seg-service-content"><span class="seg-section-label">Thought Leadership</span>
+
+                    <h2 class="seg-service-title">Custom Research</h2>
+
+                    <p class="seg-service-desc-title">Our <a
+                            href="https://www.hr.com/en/about_us/advertise/custom-research_joermj8f.html"
+                            target="_blank">Custom Research</a> solution delivers multiple marketing benefits &mdash;
+                        valuable content, visibility, thought leadership and leads &mdash; through one offering.
+                        Here&#39;s how it works:</p>
+
+                    <div class="seg-bullet-cards">
+                        <div class="seg-bullet-card"><span class="seg-bullet-num">1.</span> With the help of our
+                            research experts, you identify the topic of your choice.</div>
+
+                        <div class="seg-bullet-card"><span class="seg-bullet-num">2.</span> We conduct and market a
+                            survey to our community, and develop a research report and infographic based on the
+                            findings.</div>
+
+                        <div class="seg-bullet-card"><span class="seg-bullet-num">3.</span> You&#39;re the start of the
+                            show on a webcast on the insights, which we promote to our audience.</div>
+
+                        <div class="seg-bullet-card"><span class="seg-bullet-num">4.</span> You get the leads from all
+                            registrants.</div>
+                    </div>
+                    <a class="seg-btn seg-btn--outline"
+                        href="https://www.hr.com/en/about_us/advertise/custom-research_joermj8f.html" target="_blank">
+                        More Info </a>
+                </div>
+
+                <div class="seg-service-visual"><img alt="Custom Research" loading="lazy"
+                        src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-custom-research-1.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" />
+    <!-- SECTION 9: NEWSLETTER ADVERTISING — two sub-sections + one Learn More button -->
+    <section class="seg-section seg-section--alt" id="newsletter-ad-service">
+        <div class="seg-container"><!-- Section header -->
+            <div style="text-align:center; margin-bottom: 48px;"><span class="seg-section-label">Weekly
+                    Touchpoints</span>
+
+                <h2 class="seg-service-title">Newsletter Advertising</h2>
+            </div>
+            <!-- Two newsletter sub-sections side by side -->
+
+            <div class="seg-newsletter-grid"><!-- Newsletter 1: Human Experience Excellence -->
+                <div class="seg-newsletter-card">
+                    <div class="seg-service-visual seg-newsletter-visual"><img
+                            alt="Human Experience Excellence Newsletter" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-newsletter-1.jpg" />
+                    </div>
+
+                    <div class="seg-newsletter-body">
+                        <h3 class="seg-newsletter-title">Human Experience Excellence</h3>
+
+                        <p class="seg-newsletter-desc">Featuring actionable insights, strategies, and trends that shape
+                            human-centered workplace experiences and foster engagement, recognition, talent growth, and
+                            belonging.</p>
+                    </div>
+                </div>
+                <!-- Newsletter 2: Weekly General Ebulletin -->
+
+                <div class="seg-newsletter-card">
+                    <div class="seg-service-visual seg-newsletter-visual"><img alt="Weekly General Ebulletin"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-newsletter-2.jpg" />
+                    </div>
+
+                    <div class="seg-newsletter-body">
+                        <h3 class="seg-newsletter-title">Weekly General Ebulletin</h3>
+
+                        <p class="seg-newsletter-desc">Connect with thousands of HR decision-makers by featuring your ad
+                            or sponsored article in this comprehensive weekly newsletter. It&rsquo;s the ideal way to
+                            showcase your talent acquisition brand, products, and services to the full spectrum of HR
+                            professionals across all disciplines and areas of expertise.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Learn More button for the entire newsletter section -->
+
+            <div style="text-align:center; margin-top: 40px;"><a class="seg-btn seg-btn--outline"
+                    href="https://www.hr.com/en/about_us/advertise/epublications_joerjbm9.html" target="_blank">Learn
+                    More </a></div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 10: CONFERENCES -->
+    <section class="seg-section" id="conferences-service">
+        <div class="seg-container">
+            <div class="seg-service-layout seg-service-layout--reverse">
+                <div class="seg-service-content"><span class="seg-section-label">Face-to-Face Engagement</span>
+
+                    <h2 class="seg-service-title">In-Person Conferences</h2>
+
+                    <p class="seg-section-desc">Connect directly with industry pioneers and active buyers in premium
+                        live settings.</p>
+                    <a class="seg-conf-card"
+                        href="https://www.hr.com/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html"
+                        target="_blank"><span class="seg-conf-date-badge"><span class="seg-conf-month">March</span><span
+                                class="seg-conf-day">23-24</span><span class="seg-conf-month">2027</span></span><span
+                            class="seg-conf-info"><span class="seg-conf-title">Sponsor &amp; Exhibit at HRWest
+                                2027</span><span class="seg-conf-venue">South San Francisco Conference
+                                Center</span><span class="seg-conf-desc">Position your company as a must-have partner
+                                for 500+ HR decision-makers. Meet leaders eager to learn about HR innovations and
+                                solutions.</span></span></a>
+
+                    <div style="text-align:left; margin-top: 40px;"><a class="seg-btn seg-btn--outline"
+                            href="https://www.hr.com/en/about_us/advertise/live-events_kw1p7ucq.html"
+                            target="_blank">More Info </a></div>
+                </div>
+
+                <div class="seg-service-visual"><img alt="In-Person Conferences" loading="lazy"
+                        src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/segments-in-person-1.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 11: BONUS AWARD OPPORTUNITIES -->
+    <section class="seg-section seg-section--alt" id="bonus-service">
+        <div class="seg-container">
+            <div class="seg-award-header"><img alt="HR.com Awards Logo"
+                    src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/hr-com-awards-logo-white-no-year-500x284.png"
+                    style="max-height:155px; margin: 0 auto 16px; width:auto; background: #0f172a; padding: 10px 20px; border-radius: 8px;" />
+                <!-- <span class="seg-section-label" style="color:var(--yellow);">Complimentary Recognition</span> -->
+                <h2 class="seg-service-title">Bonus: Free Award Opportunities</h2>
+
+                <p class="seg-service-desc-title" style="color:var(--red);">HR.com Awards Deadline January 8, 2027</p>
+            </div>
+            <!-- User requirement: use black and white style and only colors when hovered for award cards -->
+
+            <div class="seg-award-grid"><a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hrcom-payroll-awards-for-solution-providers_mfwz1j9q.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Payroll Solution of the Year" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/payroll/hero-img-4.png" /></span><span
+                        class="seg-award-name">Payroll Solution of the Year</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-healthcare-hr-platform-award_mgz6lodt.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Healthcare HR Platform" loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/hr-in-healthcare/hr-in-healthcare-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best Healthcare HR Platform</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/hr-tech-ai-innovation-award_mgs2kdnn.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="HR Tech &amp; AI Innovation Award"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/splash-pages/hr-dot-com-awards-2026/HR.coms-State-of-Todays-HR-Tech-and-Integrations-img3.png" /></span><span
+                        class="seg-award-name">HR Tech &amp; AI Innovation Award</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-employee-wellness-solution-award_mgtpot7y.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Employee Wellness Solution"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/employee-well-being/awards-future-of-employee-well-being-hero-img-2.png" /></span><span
+                        class="seg-award-name">Best Employee Wellness Solution</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-people-analytics-platform-award_mgv6bmrv.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best People Analytics Platform"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/state-of-people-analytics/state-of-people-analytics-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best People Analytics Platform</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-hr-solution-for-retail-business-award_mgze2wyq.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best HR Solution for Retail Business Award"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/hr-in-retail/hr-in-retail-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best HR Solution for Retail Business Award</span></a> <a
+                    class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/the-hrcom-learning-tech-product-award_mgpaznk7.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="HR.com's Learning Tech Product Award"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/future-of-learning-technology-and-upskilling/learning-tech-and-upskilling-hero-img-1.png" /></span><span
+                        class="seg-award-name">HR.com&#39;s Learning Tech Product Award</span></a> <a
+                    class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-employee-retention-solution-award_mgzgoeon.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Employee Retention Solution"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/state-of-employee-retention/employee-retention-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best Employee Retention Solution</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-rewards-recognition-platform-award_mgts3cey.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Rewards &amp; Recognition Platform"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/state-of-rewards-and-recognition/state-of-rewards-and-recognition-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best Rewards &amp; Recognition Platform</span></a> <a
+                    class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-financial-wellness-solution_mg14vyn3.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Financial Wellness Solution"
+                            loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2026-awards/financial-wellness/state-of-financial-wellness-hero-img-3.png" /></span><span
+                        class="seg-award-name">Best Financial Wellness Solution</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-employee-experience-platform-award_mgev14cw.html"
+                    target="_blank"><span class="seg-award-thumb"><img
+                            alt="Best Employee Experience &amp; Engagement Platform" loading="lazy"
+                            src="https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/2025-design/Award-Splash-Pages/HR-com-s-future-of-human-experience/HR-com-s-future-of-human-experience-VENDOR-hero-img.webp" /></span><span
+                        class="seg-award-name">Best Employee Experience &amp; Engagement Platform</span></a> <a
+                    class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-performance-management-platform-award_mgz7qd2e.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Performance Management Platform"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/future-of-managing-and-leading-performance/managing-and-leading-performance-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best Performance Management Platform</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-employee-benefits-platform-award_mgpciu9g.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Employee Benefits Platform"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/hot-trends-in-benefits/hot-trends-in-benefits-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best Employee Benefits Platform</span></a> <a class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-hr-solution-for-small-business-award_mgpen4fa.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best HR Solution for Small Business Award"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/hr-for-small-business/hr-for-small-business-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best HR Solution for Small Business Award</span></a> <a
+                    class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/top-compensation-or-total-rewards-solution-award_mgz9abf8.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Top Compensation or Total Rewards Solution"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/future-of-compensation-and-total-rewards/compensation-and-total-rewards-hero-img-1.png" /></span><span
+                        class="seg-award-name">Top Compensation or Total Rewards Solution</span></a> <a
+                    class="seg-award-card"
+                    href="https://www.hr.com/en/about_us/splash_pages/best-career-development-platform-award_mgzfz1vj.html"
+                    target="_blank"><span class="seg-award-thumb"><img alt="Best Career Development Platform"
+                            loading="lazy"
+                            src="https://media-cdn.hr.com/media.hr.com/Splash%20Pages/HR%20Awards/future-of-career-development-and-mobility/career-development-and-mobility-hero-img-1.png" /></span><span
+                        class="seg-award-name">Best Career Development Platform</span></a></div>
+
+            <p class="seg-section-desc seg-award-desc-bottom">We also offer a variety of custom opportunities
+                specifically for Human Experience solution providers.</p>
+            <!-- <div style="text-align:center; margin-top: 40px;"><a class="seg-btn seg-btn--outline" href="https://www.hr.com/en/awards" target="_blank"> More Info </a></div> -->
+        </div>
+    </section>
+
+    <hr class="seg-divider-spacer" /><!-- SECTION 12: DIFFERENCE SECTION -->
+    <section class="seg-section" id="difference-section">
+        <div class="seg-container">
+            <div class="seg-diff-header">
+                <div class="seg-accent-bar seg-accent-bar--green" style="margin:0 auto 16px;">&nbsp;</div>
+
+                <h2 class="seg-service-title">The HR.com Difference</h2>
+
+                <p class="seg-section-desc">Why solution providers trust HR.com to amplify their reach and accelerate
+                    pipeline growth.</p>
+            </div>
+            <!-- User requirement: use black and white style and only colors when hovered for difference cards -->
+
+            <div class="seg-diff-grid">
+                <div class="seg-diff-card"
+                    style="background-image: url(https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/diff-img-1-800x800.jpg);">
+                    <h3 class="seg-diff-title">Access</h3>
+
+                    <ul class="seg-diff-list">
+                        <li>Largest free online community of HR decision makers in the world</li>
+                        <li>Most effective tactics to get the attention of the targeted HR audience you want</li>
+                        <li>75,000+ members focused in the Human Experience space</li>
+                    </ul>
+                </div>
+
+                <div class="seg-diff-card"
+                    style="background-image: url(https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/diff-img-2-800x800.jpg);">
+                    <h3 class="seg-diff-title">Collaboration</h3>
+
+                    <ul class="seg-diff-list">
+                        <li>Dedicated team will work closely with you</li>
+                        <li>Reach the right people with the right message through the right medium</li>
+                    </ul>
+                </div>
+
+                <div class="seg-diff-card">
+                    <h3 class="seg-diff-title">Execution</h3>
+
+                    <ul class="seg-diff-list">
+                        <li>Our experts have helped hundreds of companies reach their marketing goals</li>
+                        <li>Executing marketing activities at the highest level is what they do</li>
+                        <li>Connect with buyers who need your solutions &mdash; your success is their success</li>
+                    </ul>
+                </div>
+
+                <div class="seg-diff-card">
+                    <h3 class="seg-diff-title">Metrics</h3>
+
+                    <ul class="seg-diff-list">
+                        <li>Get unmatched data and analytics</li>
+                        <li>Real-time dashboards combine metrics with integration and give you incredible insights about
+                            your marketing performance</li>
+                    </ul>
+                </div>
+
+                <div class="seg-diff-card"
+                    style="background-image: url(https://public-cdn.hr.com/remoteimages/website-images/Vendor_SplashPages/segments/diff-img-6-2100x800.jpg);">
+                    <h3 class="seg-diff-title">CRM Integration</h3>
+
+                    <ul class="seg-diff-list">
+                        <li>HR.com&#39;s dashboards integrate with the top three CRMs in real-time, at no additional
+                            charge</li>
+                        <li>Plan for pre and post event marketing</li>
+                        <li>Automatic lead lists &mdash; no need to wait!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 13: TESTIMONIALS -->
+
+    <section class="seg-testimonials" id="testimonials-section">
+        <div class="seg-container">
+            <div class="seg-testi-header"><span class="seg-section-label" style="color:#38bdf8;">Client Success</span>
+
+                <h2 class="seg-section-title">Testimonials</h2>
+            </div>
+
+            <div class="seg-testi-track">
+                <div class="seg-testi-slides" id="testiSlides">
+                    <div class="seg-testi-slide">
+                        <div class="seg-testi-avatar"><img alt="Dr. Jocelyn Tomaka"
+                                src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/Jocelyn-Tomaka.jpg" />
+                        </div>
+
+                        <div class="seg-testi-body">
+                            <p class="seg-testi-quote">I&#39;ve used all these different platforms and HR.com gave me
+                                such a great experience. The team was ready to reiterate and think about my ideas to get
+                                a true and actual depiction of what this research said. HR.com was such a great partner
+                                over months helping us get it right. We have a lot of people working on it and I found
+                                it to be one of the best experiences with working with vendors. It&#39;s not about
+                                marketing it to the right people to make people feel good about it but to get the story
+                                out there and help people do what they need to do. So, personally, it is a solid
+                                experience!</p>
+
+                            <div class="seg-testi-name">Dr. Jocelyn Tomaka</div>
+
+                            <div class="seg-testi-role">Principal, I-O psychology: Lead, People Science; Product
+                                Strategy at UKG</div>
+                        </div>
+                    </div>
+
+                    <div class="seg-testi-slide">
+                        <div class="seg-testi-avatar"><img alt="Samantha Spano"
+                                src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/Samantha-Spano.png" />
+                        </div>
+
+                        <div class="seg-testi-body">
+                            <p class="seg-testi-quote">We couldn&#39;t be happier with the service we&#39;ve had and the
+                                results we&#39;ve seen with HR.com! So far we&#39;ve run 85+ campaigns, collected 6,000+
+                                leads and have an average click-through-rate of 17%, more than double the industry
+                                average.</p>
+
+                            <div class="seg-testi-name">Samantha Spano</div>
+
+                            <div class="seg-testi-role">Senior Manager, JazzHR</div>
+                        </div>
+                    </div>
+
+                    <div class="seg-testi-slide">
+                        <div class="seg-testi-avatar"><img alt="Samantha Goldman"
+                                src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/Samantha-Goldman.jpeg" />
+                        </div>
+
+                        <div class="seg-testi-body">
+                            <p class="seg-testi-quote">Kudos to you guys! Your dashboard is so full of rich content and
+                                what you provide, as far as an external vendor that we are partnering with, is really
+                                beyond what we have seen from others! The real-time numbers we have access to, the
+                                demographics we are seeing, and the way you are collecting attendee questions ahead of
+                                time &mdash; the dashboard information is really top-notch!</p>
+
+                            <div class="seg-testi-name">Samantha Goldman</div>
+
+                            <div class="seg-testi-role">Marketing Manager, American Management Association</div>
+                        </div>
+                    </div>
+
+                    <div class="seg-testi-slide">
+                        <div class="seg-testi-avatar"><img alt="Lillian Panettiere"
+                                src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/Lillian-Panettiere.jpg" />
+                        </div>
+
+                        <div class="seg-testi-body">
+                            <p class="seg-testi-quote">We&#39;ve worked with HR.com for over a year on a series of
+                                webcasts, across a variety of product offerings and have been quite impressed. The
+                                attention and care given to speaker preparation is exceptional, the audience outreach
+                                and promotion is not only effective but also delivers cost efficient results &ndash;
+                                time and again. It&#39;s definitely been a great platform for effortlessly connecting
+                                with our desired customer base.</p>
+
+                            <div class="seg-testi-name">Lillian Panettiere</div>
+
+                            <div class="seg-testi-role">Marketing Consultant, Mercer</div>
+                        </div>
+                    </div>
+
+                    <div class="seg-testi-slide">
+                        <div class="seg-testi-avatar"><img alt="Jenny Watkins"
+                                src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/Jenny-Watkins.jpg" />
+                        </div>
+
+                        <div class="seg-testi-body">
+                            <p class="seg-testi-quote">HR.com&#39;s educational webcasts have been an effective way for
+                                Terryberry to showcase our thought leadership and to generate qualified leads. The
+                                HR.com staff helps make the process simple for us.</p>
+
+                            <div class="seg-testi-name">Jenny Watkins</div>
+
+                            <div class="seg-testi-role">Terryberry</div>
+                        </div>
+                    </div>
+
+                    <div class="seg-testi-slide">
+                        <div class="seg-testi-avatar"><img alt="Todd Grierson"
+                                src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/Todd-Grierson.jpg" />
+                        </div>
+
+                        <div class="seg-testi-body">
+                            <p class="seg-testi-quote">Thank you for your help today and for all your team does for us!
+                                We love y&#39;all!</p>
+
+                            <div class="seg-testi-name">Todd Grierson</div>
+
+                            <div class="seg-testi-role">Director, BambooHR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seg-testi-controls">
+                <!-- <button class="seg-testi-btn" onclick="testiMove(-1)" aria-label="Previous testimonial">&#8592;</button> -->
+                <div class="seg-testi-dots" id="testiDots">&nbsp;</div>
+                <!-- <button class="seg-testi-btn" onclick="testiMove(1)" aria-label="Next testimonial">&#8594;</button> -->
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 14: LOGOS --><!-- User requirement: copy logos-section of segments-ta-1.html including black and white style --><!-- User requirement: scrolling logos use black and white style and only colors when hovered -->
+
+    <section class="seg-logos" id="logos-section">
+        <div class="seg-container">
+            <div class="seg-logos-title">
+                <div class="seg-accent-bar seg-accent-bar--green" style="margin:0 auto 16px;">&nbsp;</div>
+
+                <h2 class="seg-section-title">Happy Customers</h2>
+            </div>
+        </div>
+
+        <div class="seg-logos-track-wrap">
+            <div class="seg-logos-track">
+                <div class="seg-logo-item"><img alt="People Doc"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/people-doc1.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Fuel 50"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/fuel50.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Oracle"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Oracle.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Sterling"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/sterling.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Fierce"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/fierce.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Everfi"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/everfi.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="UKG"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/ukg.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="PBSA"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/pbsa.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="SkillSoft"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/skillsoft2019sm_logo.png" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="IBM"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-IBM.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="HireVue"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-HireVue.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="PeopleFluent"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-PeopleFluent.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Adobe"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-Adobe.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Ceridian"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-Ceridian.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Iron Mountain"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-IronMountain.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Lee Hecht Harrison"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-LeeHechtHarrison.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="BetterWorks"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-BetterWorks.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="SumTotal"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/sumtotal-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="League"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/league-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="BambooHR"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/bamboohr-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="TTI"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/tti_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Deltek"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/deltek-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Eni"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/eni-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="People Doc"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/people-doc1.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Fuel 50"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/fuel50.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Oracle"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Oracle.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Sterling"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/sterling.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Fierce"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/fierce.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Everfi"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/everfi.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="UKG"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/ukg.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="PBSA"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/pbsa.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="SkillSoft"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/skillsoft2019sm_logo.png" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="IBM"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-IBM.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="HireVue"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-HireVue.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="PeopleFluent"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-PeopleFluent.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Adobe"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-Adobe.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Ceridian"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-Ceridian.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Iron Mountain"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-IronMountain.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Lee Hecht Harrison"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-LeeHechtHarrison.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="BetterWorks"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/Company-Logo-BetterWorks.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="SumTotal"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/sumtotal-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="League"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/league-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="BambooHR"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/bamboohr-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="TTI"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/tti_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Deltek"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/deltek-oh_logo.jpg" />
+                </div>
+
+                <div class="seg-logo-item"><img alt="Eni"
+                        src="$public/remoteimages/website-images/2021_siteupdate/Segment-Marketing/logos/eni-oh_logo.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- USER REQUIREMENT: COMPLETELY REDESIGNED SECTION 15: CONTACT BOX (NO CTA BUTTON, NO UNDERLINES) -->
+
+    <section class="seg-contact-box" id="contact-box-section">
+        <div class="seg-container">
+            <div class="seg-contact-card"><span class="seg-contact-badge">Direct Access &amp; Inquiries</span>
+
+                <h2 class="seg-contact-title">Download Our <a class="seg-contact-title-link" href="#"
+                        onclick="loadPopup('fc_1614283173294'); return false;">Full Media Planner</a></h2>
+
+                <p class="seg-contact-sub">Contact our sales consultants today to discuss details and explore tailored
+                    opportunities:</p>
+
+                <div class="seg-contact-grid"><a class="seg-contact-pill" href="tel:877-472-6648"><span
+                            class="seg-contact-pill-text"><span class="seg-contact-pill-label">Call Our Team</span><span
+                                class="seg-contact-pill-val">877-472-6648</span></span></a> <a class="seg-contact-pill"
+                        href="mailto:sales@hr.com"><span class="seg-contact-pill-text"><span
+                                class="seg-contact-pill-label">Email Inquiries</span><span
+                                class="seg-contact-pill-val">sales@hr.com</span></span></a></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="seg-footer-top">
+        <div class="seg-footer-fluid">
+            <div class="seg-footer-row">
+                <div class="seg-footer-container">
+                    <div class="seg-footer-col-main">
+                        <div class="seg-footer-link-wrap"><span class="seg-footer-link-wrap"> <a
+                                    data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/advertise/">Advertise with Us</a>&nbsp; | &nbsp; <a
+                                    data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/webcasts_events/webcasts/call_for_speakers/">Webcast Speakers &amp;
+                                    Sponsors</a>&nbsp; | &nbsp; <a data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/privacy_information/">Privacy &amp; Terms</a>&nbsp; | &nbsp;
+                                <span class="seg-footer-sell-data" style="display:none"> <a
+                                        data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                        data-target="#myModal-seg-footer-sell-data" data-toggle="modal"
+                                        href="#myModal-seg-footer-sell-data">Do Not Sell My Data</a>&nbsp; | &nbsp;
+                                </span> <a data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/app/my/subscription?abo_part=rss">RSS</a>&nbsp; | &nbsp; <a
+                                    data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/app/sitemap">Sitemap</a>&nbsp; | &nbsp; <a data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/contact_us/">Contact</a>&nbsp; | &nbsp; <a
+                                    data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/">About HR.com</a>&nbsp; | &nbsp; </span></div>
+                    </div>
+
+                    <div class="seg-footer-col-arrows"><a data-feathr-click-track="true"
+                            data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="javascript:void(0);"
+                            id="footer-arrow-down"><img alt="footer Arrow Down"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/2017_SiteRedesign/images/FooterArrow-Down.png" /></a>
+                        <a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                            href="javascript:void(0);" id="footer-arrow-up"><img alt="footer Arrow Up"
+                                src="https://public-cdn.hr.com/remoteimages/website-images/2017_SiteRedesign/images/FooterArrow-Up.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seg-footer-mid">
+        <div class="seg-footer-fluid">
+            <div class="seg-footer-row">
+                <div class="seg-footer-container">
+                    <div class="seg-footer-col-content">
+                        <h6>Profile Links</h6>
+
+                        <ul>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/app/profile/garchival1">Profile Details</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/app/account/hr_com?s=21a5271c-bc2f-44a3-9852-eb5a4aafbb1e">Company
+                                    Details</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/app/my/subscription">Manage Subscriptions</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en?t=/CustomCode/container/creditSidebar">View Credits</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/app/my/social_actions">Social Connections</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/cart">Cart</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="seg-footer-col-content">
+                        <h6>About HR.com</h6>
+
+                        <ul>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://hrcom.kb.help/" target="_blank">Help Center</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/the_hr_com_manifesto/">HR.com Manifesto</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/meet_our_team/">Our Team</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/careers_with_us/">Careers with Us</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://hrcom.kb.help/" target="_blank">FAQ</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/fun_box/">Funbox</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/about_us/hr_com_press_releases/">Press Releases</a></li>
+                            <li><a data-feathr-click-track="true" data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="/en/affiliates/">Referral Program</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="seg-footer-col-content">
+                        <h6>Connect with us</h6>
+
+                        <ul class="seg-footer-social-icons">
+                            <li><a alt="Facebook link" aria-label="Facebook" data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://www.facebook.com/hrdotcom" target="_blank" title="Facebook link"><svg>
+                                        <use xlink:href="#hr-facebook-icon"></use>
+                                    </svg></a></li>
+                            <li><a alt="LinkedIn link" aria-label="LinkedIn" data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://www.linkedin.com/company/hrdotcom" target="_blank"><svg>
+                                        <use xlink:href="#hr-linkedin-icon"></use>
+                                    </svg></a></li>
+                            <li><a alt="Twitter link" aria-label="Twitter" data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed" href="https://twitter.com/hrdotcom"
+                                    target="_blank"><svg>
+                                        <use xlink:href="#hr-twitter-icon"></use>
+                                    </svg></a></li>
+                            <li><a alt="YouTube link" aria-label="YouTube" data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://www.youtube.com/hrcomonline" target="_blank"><svg>
+                                        <use xlink:href="#hr-youtube-icon"></use>
+                                    </svg></a></li>
+                            <li><a alt="Instagram link" aria-label="Instagram" data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://www.instagram.com/hrdotcom" target="_blank"><svg>
+                                        <use xlink:href="#hr-instagram-icon"></use>
+                                    </svg></a></li>
+                            <li><a alt="RSS Feed" aria-label="RSS" data-feathr-click-track="true"
+                                    data-feathr-link-aids="6127cfab0dc20e810ab012ed"
+                                    href="https://www.hr.com/en/app/my/subscription?abo_part=rss"><svg>
+                                        <use xlink:href="#hr-rss-icon"></use>
+                                    </svg></a></li>
+                        </ul>
+                    </div>
+                    <svg display="none" height="0" width="0">
+                        <symbol id="hr-search-icon" viewbox="0 0 56.966 56.966">
+                            <path
+                                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17s-17-7.626-17-17S14.61,6,23.984,6z">
+                            </path>
+                        </symbol>
+                        <symbol id="hr-facebook-icon" viewbox="0 0 13.3 28.788">
+                            <path
+                                d="M590.925,1195.4V1181h4.55l.825-4.863h-5.55v-2.975s-.055-1.85,2.3-1.85h3.65v-4.7h-5.95s-4.6-.187-4.6,5.1c-.05,2.925,0,4.425,0,4.425H583.4V1181h2.875v14.4Z"
+                                transform="translate(-583.4 -1166.612)"></path>
+                        </symbol>
+                        <symbol id="hr-twitter-icon" viewbox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                            </path>
+                        </symbol>
+                        <symbol id="hr-linkedin-icon" viewbox="0 0 29.087 29.167">
+                            <path
+                                d="M-313.869,332.667V320.4s.192-3.388-2.684-3.388a3,3,0,0,0-3.2,2.492v13.166h-6.391V312h5.177v5.009s.509-5.009,7.094-5.009,6.456,8.4,6.456,8.4v12.271Zm-22.631,0V312h6v20.667Zm0-26.167a3,3,0,0,1,3-3,3,3,0,0,1,3,3,3,3,0,0,1-3,3A3,3,0,0,1-336.5,306.5Z"
+                                transform="translate(336.5 -303.5)"></path>
+                        </symbol>
+                        <symbol id="hr-instagram-icon" viewbox="0 0 26 26">
+                            <path
+                                d="M12,9.52A2.48,2.48,0,1,0,14.48,12,2.48,2.48,0,0,0,12,9.52Zm9.93-2.45a6.53,6.53,0,0,0-.42-2.26,4,4,0,0,0-2.32-2.32,6.53,6.53,0,0,0-2.26-.42C15.64,2,15.26,2,12,2s-3.64,0-4.93.07a6.53,6.53,0,0,0-2.26.42A4,4,0,0,0,2.49,4.81a6.53,6.53,0,0,0-.42,2.26C2,8.36,2,8.74,2,12s0,3.64.07,4.93a6.86,6.86,0,0,0,.42,2.27,3.94,3.94,0,0,0,.91,1.4,3.89,3.89,0,0,0,1.41.91,6.53,6.53,0,0,0,2.26.42C8.36,22,8.74,22,12,22s3.64,0,4.93-.07a6.53,6.53,0,0,0,2.26-.42,3.89,3.89,0,0,0,1.41-.91,3.94,3.94,0,0,0,.91-1.4,6.6,6.6,0,0,0,.42-2.27C22,15.64,22,15.26,22,12S22,8.36,21.93,7.07Zm-2.54,8A5.73,5.73,0,0,1,19,16.87,3.86,3.86,0,0,1,16.87,19a5.73,5.73,0,0,1-1.81.35c-.79,0-1,0-3.06,0s-2.27,0-3.06,0A5.73,5.73,0,0,1,7.13,19a3.51,3.51,0,0,1-1.31-.86A3.51,3.51,0,0,1,5,16.87a5.49,5.49,0,0,1-.34-1.81c0-.79,0-1,0-3.06s0-2.27,0-3.06A5.49,5.49,0,0,1,5,7.13a3.51,3.51,0,0,1,.86-1.31A3.59,3.59,0,0,1,7.13,5a5.73,5.73,0,0,1,1.81-.35h0c.79,0,1,0,3.06,0s2.27,0,3.06,0A5.73,5.73,0,0,1,16.87,5a3.51,3.51,0,0,1,1.31.86A3.51,3.51,0,0,1,19,7.13a5.73,5.73,0,0,1,.35,1.81c0,.79,0,1,0,3.06S19.42,14.27,19.39,15.06Zm-1.6-7.44a2.38,2.38,0,0,0-1.41-1.41A4,4,0,0,0,15,6c-.78,0-1,0-3,0s-2.22,0-3,0a4,4,0,0,0-1.38.26A2.38,2.38,0,0,0,6.21,7.62,4.27,4.27,0,0,0,6,9c0,.78,0,1,0,3s0,2.22,0,3a4.27,4.27,0,0,0,.26,1.38,2.38,2.38,0,0,0,1.41,1.41A4.27,4.27,0,0,0,9,18.05H9c.78,0,1,0,3,0s2.22,0,3,0a4,4,0,0,0,1.38-.26,2.38,2.38,0,0,0,1.41-1.41A4,4,0,0,0,18.05,15c0-.78,0-1,0-3s0-2.22,0-3A3.78,3.78,0,0,0,17.79,7.62ZM12,15.82A3.81,3.81,0,0,1,8.19,12h0A3.82,3.82,0,1,1,12,15.82Zm4-6.89a.9.9,0,0,1,0-1.79h0a.9.9,0,0,1,0,1.79Z"
+                                fill="#ffffff"></path>
+                        </symbol>
+                        <symbol id="hr-youtube-icon" viewbox="0 0 16 16">
+                            <path
+                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z">
+                            </path>
+                        </symbol>
+                        <symbol id="hr-rss-icon" viewbox="0 0 448 512">
+                            <path
+                                d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z">
+                            </path>
+                        </symbol>
+                        <symbol id="hr-google-icon" viewbox="0 0 16 16">
+                            <path
+                                d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z">
+                            </path>
+                        </symbol>
+                        <symbol height="18" id="hr-blue-tick-icon" viewbox="0 0 18 18" width="18">
+                            <path
+                                d="M-3125-55a9.01,9.01,0,0,1-9-9,9.01,9.01,0,0,1,9-9,9.01,9.01,0,0,1,9,9A9.01,9.01,0,0,1-3125-55Zm-3.587-10.172h0L-3130-63.758l3.535,3.536,6.365-6.364L-3121.516-68l-4.95,4.95-2.121-2.121Z"
+                                fill="#273a8f" transform="translate(3134 73)"></path>
+                        </symbol>
+                        <symbol height="18" id="hr-na-tick-icon" viewbox="0 0 18 18" width="18">
+                            <path
+                                d="M-3125-55a9.01,9.01,0,0,1-9-9,9.01,9.01,0,0,1,9-9,9.01,9.01,0,0,1,9,9A9.01,9.01,0,0,1-3125-55Zm-4-10a1,1,0,0,0-1,1,1,1,0,0,0,1,1h8a1,1,0,0,0,1-1,1,1,0,0,0-1-1Z"
+                                fill="#cdcdcd" transform="translate(3134 73)"></path>
+                        </symbol>
+                        <symbol height="18" id="hr-yl-arrow-icon" viewbox="0 0 18 18" width="18">
+                            <path
+                                d="M-3125-55a9.01,9.01,0,0,1-9-9,9.01,9.01,0,0,1,9-9,9.01,9.01,0,0,1,9,9A9.01,9.01,0,0,1-3125-55Zm-1.414-13.244h0l-1.414,1.415L-3125-64l-2.829,2.829,1.415,1.414,2.828-2.828,1.415-1.415-4.243-4.243Z"
+                                fill="#fdb414" transform="translate(3134 73)"></path>
+                        </symbol>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seg-footer-bottom">
+        <div class="seg-footer-fluid">
+            <div class="seg-footer-row">
+                <div class="seg-footer-col-full">&copy; Copyright 2027 HR.com Limited. All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end .seg-page --><!-- JAVASCRIPT: SLIDER, SMOOTH SCROLL, BACK TO TOP BUTTON -->
+<script>
+    /* Testimonial Slider */
+    (function () {
+        var slides = document.querySelectorAll('#testiSlides .seg-testi-slide');
+        var track = document.getElementById('testiSlides');
+        var dotsEl = document.getElementById('testiDots');
+        if (!track || !dotsEl || slides.length === 0) return;
+
+        var current = 0;
+        var total = slides.length;
+        var timer;
+
+        for (var i = 0; i < total; i++) {
+            var d = document.createElement('div');
+            d.className = 'seg-testi-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('data-i', i);
+            (function (idx) {
+                d.onclick = function () { goTo(idx); };
+            })(i);
+            dotsEl.appendChild(d);
+        }
+
+        function goTo(n) {
+            current = (n + total) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            var dots = dotsEl.querySelectorAll('.seg-testi-dot');
+            for (var j = 0; j < dots.length; j++) {
+                dots[j].classList.toggle('active', j === current);
+            }
+            resetTimer();
+        }
+
+        window.testiMove = function (dir) { goTo(current + dir); };
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(function () { goTo(current + 1); }, 6500);
+        }
+        resetTimer();
+    })();
+
+    /* Endless Carousel for Services */
+    var serviceCarouselIsMoving = false;
+    window.serviceCarouselMove = function (dir) {
+        if (serviceCarouselIsMoving) return;
+        var list = document.getElementById('service-carousel-list');
+        if (!list || list.children.length === 0) return;
+
+        serviceCarouselIsMoving = true;
+        var item = list.children[0];
+        var itemWidth = item.offsetWidth;
+        var gap = 16;
+        var moveDist = itemWidth + gap;
+
+        if (dir === 1) { // Next
+            list.style.transition = 'transform 0.3s ease-in-out';
+            list.style.transform = 'translateX(-' + moveDist + 'px)';
+
+            var onEndNext = function () {
+                list.removeEventListener('transitionend', onEndNext);
+                list.style.transition = 'none';
+                list.style.transform = 'translateX(0)';
+                list.appendChild(list.firstElementChild);
+                serviceCarouselIsMoving = false;
+            };
+            list.addEventListener('transitionend', onEndNext);
+        } else { // Prev
+            list.insertBefore(list.lastElementChild, list.firstElementChild);
+            list.style.transition = 'none';
+            list.style.transform = 'translateX(-' + moveDist + 'px)';
+
+            // Force reflow
+            void list.offsetWidth;
+
+            list.style.transition = 'transform 0.3s ease-in-out';
+            list.style.transform = 'translateX(0)';
+
+            var onEndPrev = function () {
+                list.removeEventListener('transitionend', onEndPrev);
+                serviceCarouselIsMoving = false;
+            };
+            list.addEventListener('transitionend', onEndPrev);
+        }
+    };
+
+    /* Smooth scroll to section (accounting for sticky top bar and nav bar) */
+    window.segScrollTo = function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var top = el.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+    };
+
+    /* Back to Top button (copied design "seg-back-to-top visible" from segments-ta-1.html) */
+    (function () {
+        var btn = document.createElement('button');
+        btn.className = 'seg-back-to-top';
+        btn.setAttribute('aria-label', 'Back to top');
+        btn.innerHTML = '&#9650;';
+        btn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        document.body.appendChild(btn);
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 400) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }, { passive: true });
+    })();
+
+    /* Footer toggle arrows */
+    (function () {
+        var arrowDown = document.getElementById('footer-arrow-down');
+        var arrowUp = document.getElementById('footer-arrow-up');
+        var footerMid = document.querySelector('.seg-footer-mid');
+        if (arrowDown && arrowUp && footerMid) {
+            arrowUp.style.display = 'none'; // Initially hidden
+            arrowDown.onclick = function () {
+                footerMid.style.display = 'none';
+                arrowDown.style.display = 'none';
+                arrowUp.style.display = 'inline-block';
+            };
+            arrowUp.onclick = function () {
+                footerMid.style.display = 'block'; // using block since it's a div
+                arrowUp.style.display = 'none';
+                arrowDown.style.display = 'inline-block';
+            };
+        }
+    })();
+</script>
+
+$designAttribute:masterD_no_sidebar
+
+$designAttribute:story_edit_Meta
+<script src="$public/Certifications/scripts/menu/index.js"></script>
+$designAttribute:quick_login_m1 $designAttribute:masterD_new_splashpage
