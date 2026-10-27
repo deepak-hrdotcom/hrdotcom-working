@@ -333,8 +333,59 @@ To keep subsequent emailers engaging, avoid duplicating Emailer 1's "back-office
 
 ---
 
-## 📧 Emailer 6 of 10 (Pending)
-- **HTML File**: `workday-sep25-6-of-multiple.html`
+## 📧 Emailer 6 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-6-of-multiple.html`](workday-sep25-6-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./business-execution-banner.jpg` (1200x670, displayed at 600px)
+  - *Image Concept*: Navy left panel with Workday Orange pill (`BUSINESS EXECUTION`), bold white headline (`Moving from an Administrative Tool to a Core Business Lever`); authentic documentary photograph of diverse executive leadership (operations, finance, and HR directors) collaborating around a modern boardroom conference table reviewing operational data and reports.
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: The Strategic Shift & Business Execution (Learning Objective #1: Central to business execution)
+- **Copy Rule**: STRICT zero-invention rule. Every heading, sentence, stat, and learning point is verbatim from the official webcast abstract, title, and 4 learning objectives.
+- **Layout (new archetype)**: Banner → Title + Verbatim abstract invitation + Primary CTA → Obsidian Navy Research & Cost-Center Question Box (`#001A3A` with `#F78B1E` left border) → Featured Objective #1 Spotlight (`The Strategic Shift`) → 3-Row Supporting Objectives Stack (Cards with Royal Blue `#0057AE`, Sky Blue `#0875E1`, and Obsidian `#022043` accents) → Side-by-side Speaker Cards → Closing Navy Abstract Hook CTA Stage → Immutable Credits & Footer.
+- **Audience Focus**: Executive leadership, Operations Directors, Finance Leaders, and HR Strategists.
+
+### 📝 Complete Copy Inventory (Used in Emailer 6)
+- **Preheader**:
+  > `Why workforce management is moving from an administrative tool to a core business lever.`
+- **Banner Eyebrow Pill / Headline**: `BUSINESS EXECUTION` / `Moving from an Administrative Tool to a Core Business Lever`
+- **Hero Title (`<h1>`)**: `The System of Work: Why Workforce Management Drives Business Execution`
+- **Subhead Hook (verbatim abstract)**:
+  > `Join Stacey Harris of Sapient Insights and Workday leader Cristina Goldt for a research-driven conversation on why workforce management is moving from an administrative tool to a core business lever—and what the data reveals about the organizations getting it right.`
+- **Research & Question Card (verbatim abstract)**:
+  - Header: `SAPIENT INSIGHTS RESEARCH`
+  - Stat Finding: `Sapient Insights research shows organizations with advanced workforce management — combined with skills and internal mobility — were 2x more likely to achieve higher profits and customer growth.`
+  - Question: `So why does workforce management still get treated as a back-office cost center?`
+- **Core Spotlight (Learning Objective #1 verbatim)**:
+  - Eyebrow: `KEY LEARNING OBJECTIVE`
+  - Heading: `The Strategic Shift`
+  - Body: `Why workforce management is now central to business execution, not just HR administration.`
+- **3 Supporting Objectives (Cards 02, 03, 04 verbatim)**:
+  - **The growth-vs.-efficiency balancing act**: `How leading organizations use real-time labor data to manage high-variability environments without losing control of cost.`
+  - **The connected workforce**: `What the research reveals about the measurable impact of unifying HR, time, pay, and scheduling data.`
+  - **What's next**: `How AI is reshaping the role of workforce management — and what frontline leaders should be doing now to prepare.`
+- **Speakers**: `FEATURED SPEAKERS` — Cristina Goldt, General Manager, Workforce & Payroll, Vndly (Workday) · Stacey Harris, Chief Research Officer & Managing Partner, Sapient Insights Group
+- **Closing Band (verbatim abstract)**:
+  > Eyebrow: `THE SYSTEM OF WORK`  
+  > Text: `We'll explore how AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.`  
+  > Button: `View OnDemand →`
+- **CTAs**: Banner, primary button, closing button → `https://web.hr.com/9d4t`
+- **Recertification Section (IMMUTABLE)**: Byte-identical HRCI 1 BUSINESS Credit & SHRM PDC block.
+- **Footer Section (IMMUTABLE)**: Byte-identical Workday Obsidian Dark Footer.
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars)
+1. *Why Workforce Management Drives Execution* (42 chars)
+2. *Is Workforce Management Your Business Lever?* (46 chars)
+3. *Why Treat Workforce as a Cost Center?* (39 chars)
+4. *How to Turn Labor Systems into a Business Lever* (48 chars)
+5. *Why Workforce Systems Central to Execution?* (44 chars)
+6. *Is Workforce Management Driving Execution?* (44 chars)
+7. *Move Beyond the Back-Office Cost Center* (41 chars)
+8. *How Advanced Workforce Systems Drive 2x Growth* (47 chars)
+9. *Why Workforce Is Central to Business Execution* (48 chars)
+10. *Turn Workforce Management into a Core Lever* (45 chars)
 
 ---
 

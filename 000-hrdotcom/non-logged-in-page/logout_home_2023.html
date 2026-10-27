@@ -234,7 +234,10 @@ $desc_long
     </div>
   </div>
   <div class="foot_bottom_link">
-    <p>&copy; Copyright 2024 HR.COM Limited. All rights reserved.</p>
+    <p>&copy; Copyright <span id="currentYear"></span> HR.COM Limited. All rights reserved.</p>
+    <script>
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
   </div>
 </footer>
 

@@ -1,6 +1,6 @@
-
-
-
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,367 +8,427 @@
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
-    <title>The Leadership Reset | HR.com Webcast</title>
+    <title>Compliance Countdown: Open Enrollment &amp; Copay Assistance | HR.com Webcast</title>
     <!--[if mso]>
-    <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+    <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG></o:AllowPNG><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
     <![endif]-->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
 
-        /* === EMAIL RESETS === */
+        /* === EMAIL CLIENT RESETS === */
+        :root { color-scheme: light dark; supported-color-schemes: light dark; }
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
         .ReadMsgBody { width: 100%; }
         .ExternalClass { width: 100%; }
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
         a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
         u + #body a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; }
-        body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #F5F0FF; }
+        body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #EEF1F5; }
+        
+        /* === HOVER EFFECTS === */
+        .btn-white a:hover { background-color: #F8FAFC !important; color: #8F1217 !important; }
+        .btn-secondary a:hover { background-color: #24561F !important; }
 
-        /* Workhuman palette
-           Humanity 60 #5B63E4 | Humanity 70 #3D40CC | Humanity 100 #10105C
-           Ink #171E3B | Caption #5D6276 | Lavender #F5F0FF / #F9F7FF / #E0DEFD
-           Coral #C1386A | Orange #FFA857 | Purple #9354AA */
-
-        /* === DARK MODE (Apple Mail, iOS, Outlook macOS, Thunderbird) === */
+        /* === DARK MODE (Apple Mail, iOS, Thunderbird, Outlook for Mac) === */
         @media (prefers-color-scheme: dark) {
-            body, .email-body-bg { background-color: #0B0E1F !important; }
-            .main-container, .white-bg { background-color: #12162B !important; }
-            .hero-dark { background-color: #10132A !important; }
-            .logo-chip { background-color: #FFFFFF !important; }
-            .section-heading, .speaker-name, .takeaway-title, .lead-copy { color: #F5F5FA !important; }
-            .body-copy-p { color: #C9CCDC !important; }
-            .eyebrow { color: #A3A3F7 !important; }
-            .lead-rule { border-color: #C1386A !important; }
-            .tk-section { background-color: #0F1330 !important; }
-            .tk-card { background-color: #1B2042 !important; }
-            .speaker-cell { border-color: #2E3566 !important; }
-            .speaker-photo { border-color: #3D40CC !important; }
-            .speaker-role { color: #A3A3F7 !important; }
-            .btn-solid { background-color: #5B63E4 !important; }
-            .callout-td { background-color: #1B2042 !important; border-color: #3D40CC !important; }
-            .callout-td a, .link-humanity { color: #A3A3F7 !important; }
-            .credit-bg { background-color: #12162B !important; }
-            .credit-text-cell { color: #A9ADC4 !important; }
-            .badge-chip { background-color: #FFFFFF !important; }
-            .divider { border-color: #262B4D !important; }
+            body, .email-body-bg { background-color: #0B1015 !important; }
+            .main-container { background-color: #141C24 !important; border-color: #222F3C !important; }
+            .header-bar-bg { background-color: #FFFFFF !important; }
+            .hero-section-td { background-color: #8C1318 !important; }
+            .hero-date-box { background-color: #0E141B !important; border-color: #2D3D4E !important; }
+            .intro-section-td, .takeaways-section-td, .sec-cta-section-td, .notice-section-td { background-color: #141C24 !important; }
+            .intro-callout { background-color: #1B2631 !important; border-color: #C62027 !important; }
+            .speakers-bg { background-color: #0F171F !important; }
+            .tk-card { background-color: #1A2530 !important; border-color: #2B3A4A !important; }
+            .speaker-card-inner { background-color: #1A2530 !important; border-color: #2B3A4A !important; }
+            .notice-card { background-color: #1A2530 !important; border-color: #2B3A4A !important; }
+            .section-heading, .takeaway-title, .speaker-name { color: #F0F4F8 !important; }
+            .body-copy-p, .notice-copy { color: #CAD3DD !important; }
+            .lead-p { color: #E4EAF0 !important; }
+            .eyebrow, .notice-link { color: #FF8A8E !important; }
+            .speaker-role { color: #8FD18A !important; }
+            .credit-bg { background-color: #1C2128 !important; }
         }
-        /* === DARK MODE (Outlook.com / Outlook apps) === */
-        [data-ogsc] .section-heading, [data-ogsc] .speaker-name, [data-ogsc] .takeaway-title, [data-ogsc] .lead-copy { color: #F5F5FA !important; }
-        [data-ogsc] .body-copy-p { color: #C9CCDC !important; }
-        [data-ogsc] .eyebrow { color: #A3A3F7 !important; }
-        [data-ogsc] .speaker-role { color: #A3A3F7 !important; }
-        [data-ogsc] .callout-td a, [data-ogsc] .link-humanity { color: #A3A3F7 !important; }
-        [data-ogsc] .credit-text-cell { color: #A9ADC4 !important; }
-        [data-ogsb] body, [data-ogsb] .email-body-bg { background-color: #0B0E1F !important; }
-        [data-ogsb] .main-container, [data-ogsb] .white-bg, [data-ogsb] .credit-bg { background-color: #12162B !important; }
-        [data-ogsb] .hero-dark { background-color: #10132A !important; }
-        [data-ogsb] .tk-section { background-color: #0F1330 !important; }
-        [data-ogsb] .tk-card, [data-ogsb] .callout-td { background-color: #1B2042 !important; }
-        [data-ogsb] .btn-solid { background-color: #5B63E4 !important; }
-        [data-ogsb] .logo-chip, [data-ogsb] .badge-chip { background-color: #FFFFFF !important; }
 
-        /* === RESPONSIVE === */
+        /* === DARK MODE (Outlook.com / Outlook App) === */
+        [data-ogsb] body, [data-ogsb] .email-body-bg { background-color: #0B1015 !important; }
+        [data-ogsb] .main-container { background-color: #141C24 !important; border-color: #222F3C !important; }
+        [data-ogsb] .header-bar-bg { background-color: #FFFFFF !important; }
+        [data-ogsb] .hero-section-td { background-color: #8C1318 !important; }
+        [data-ogsb] .hero-date-box { background-color: #0E141B !important; border-color: #2D3D4E !important; }
+        [data-ogsb] .intro-section-td, [data-ogsb] .takeaways-section-td, [data-ogsb] .sec-cta-section-td, [data-ogsb] .notice-section-td { background-color: #141C24 !important; }
+        [data-ogsb] .intro-callout { background-color: #1B2631 !important; border-color: #C62027 !important; }
+        [data-ogsb] .speakers-bg { background-color: #0F171F !important; }
+        [data-ogsb] .tk-card, [data-ogsb] .notice-card { background-color: #1A2530 !important; border-color: #2B3A4A !important; }
+        [data-ogsb] .speaker-card-inner { background-color: #1A2530 !important; border-color: #2B3A4A !important; }
+        [data-ogsc] .section-heading, [data-ogsc] .takeaway-title, [data-ogsc] .speaker-name { color: #F0F4F8 !important; }
+        [data-ogsc] .body-copy-p, [data-ogsc] .notice-copy { color: #CAD3DD !important; }
+        [data-ogsc] .lead-p { color: #E4EAF0 !important; }
+        [data-ogsc] .eyebrow, [data-ogsc] .notice-link { color: #FF8A8E !important; }
+        [data-ogsc] .speaker-role { color: #8FD18A !important; }
+        [data-ogsb] .credit-bg { background-color: #1C2128 !important; }
+        [data-ogsc] .credit-bg { background-color: #1C2128 !important; }
+
+        /* === RESPONSIVE LAYOUT (Mobile < 600px) === */
         @media screen and (max-width: 600px) {
             .email-outer-td { padding: 0 !important; }
             .main-container { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
-            .header-td { padding: 18px 22px 0 22px !important; }
-            .hero-section-td { padding: 36px 22px 40px 22px !important; }
-            .hero-title { font-size: 34px !important; line-height: 40px !important; }
-            .hero-meta { font-size: 14px !important; line-height: 22px !important; }
-            .pad-x { padding-left: 22px !important; padding-right: 22px !important; }
-            .lead-copy { font-size: 17px !important; line-height: 27px !important; }
-            .stack-col { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
-            .stack-gap { display: block !important; width: 100% !important; height: 12px !important; line-height: 12px !important; }
-            .stack-gap-0 { display: none !important; }
+            .px { padding-left: 20px !important; padding-right: 20px !important; }
+            .header-bar-bg { padding: 14px 20px !important; }
+            .hero-section-td { padding: 36px 20px 38px 20px !important; }
+            .hero-title { font-size: 26px !important; line-height: 34px !important; }
+            .hero-date-box { padding: 8px 12px !important; }
+            .hero-meta { font-size: 13px !important; line-height: 20px !important; }
+            .intro-section-td { padding: 30px 20px 8px 20px !important; }
+            .intro-callout { padding: 16px 16px !important; }
+            .lead-p { font-size: 16px !important; line-height: 27px !important; }
+            .takeaways-section-td { padding: 28px 20px 24px 20px !important; }
+            .tk-col { display: block !important; width: 100% !important; max-width: 100% !important; }
+            .tk-col-gap { display: none !important; width: 0 !important; height: 0 !important; }
+            .tk-col-spacer { height: 12px !important; display: block !important; }
+            .sec-cta-section-td { padding: 8px 20px 34px 20px !important; }
+            .speakers-section-td { padding: 36px 20px 38px 20px !important; }
+            .speaker-col { display: block !important; width: 100% !important; max-width: 100% !important; margin-bottom: 14px !important; }
+            .speaker-col-gap { display: none !important; width: 0 !important; height: 0 !important; }
+            .speaker-card-inner { padding: 20px 16px !important; }
+            .speaker-name { font-size: 17px !important; line-height: 23px !important; }
+            .notice-section-td { padding: 24px 20px 32px 20px !important; }
             .credit-stack-table, .credit-stack-table tbody, .credit-stack-table tr, .credit-badge-cell, .credit-text-cell { display: block !important; width: 100% !important; }
             .credit-badge-cell { text-align: center !important; padding-bottom: 12px !important; }
-            .credit-badge-cell .badge-chip { margin: 0 auto !important; }
             .credit-text-cell { text-align: center !important; padding-left: 0 !important; padding-top: 0 !important; }
-            .footer-inner-td { padding: 36px 20px 0 20px !important; }
-            .btn-full { width: 100% !important; }
-            .btn-full a { display: block !important; }
+            .footer-inner-td { padding: 28px 16px 0 16px !important; }
         }
         @media screen and (max-width: 400px) {
-            .hero-title { font-size: 29px !important; line-height: 35px !important; }
+            .hero-title { font-size: 22px !important; line-height: 30px !important; }
+            .btn-white a { padding-left: 24px !important; padding-right: 24px !important; font-size: 14px !important; }
         }
     </style>
     <!--[if mso]>
     <style type="text/css">
-        body, table, td, p, a, span, h1, h2, h3 { font-family: Arial, sans-serif !important; }
+        body, table, td, p, a, span { font-family: Arial, Helvetica, sans-serif !important; }
+        h1, h2, .serif { font-family: Georgia, 'Times New Roman', serif !important; }
     </style>
     <![endif]-->
+</head>
+<body id="body" style="margin:0 !important;padding:0 !important;background-color:#EEF1F5;">
 
+    <!-- SUBJECT: 1. Are broker cost-saving tactics exposing you to lawsuits?
+2. Protect your organization from ERISA compliance risks
+3. How to safely manage copay assistance programs
+4. Navigating open enrollment and fiduciary obligations
+5. Is your prescription drug plan violating employee trust?
+6. Avoid the hidden traps in alternative funding programs
+7. Ensure your health benefits comply with ERISA standards
+8. Why recent class action lawsuits change health benefits
+9. Stop unnecessary out-of-pocket costs for your workforce
+10. Build a compliant strategy for 2026 open enrollment -->
 
-
-
-    <!-- SUBJECT: 1. Are your leadership blind spots costing you talent?
-2. How to restore alignment in high-performing teams?
-3. Stop organizational drift before it becomes permanent.
-4. What happens when managers lose sight of engagement?
-5. The real cost of invisible burnout and high turnover.
-6. Empower your managers to lead with empathy and clarity.
-7. How to navigate high-stress environments successfully?
-8. Transform your HR systems to empower frontline leaders.
-9. Uncover the hidden forces derailing your workplace.
-10. Do you know why top performers are losing their way? -->
-
-    <div style="display:none;font-size:1px;color:#F5F0FF;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;font-family:Arial,sans-serif;">
-        Restore team alignment and fix operational friction today. Register now.
+    <div style="display:none;font-size:1px;color:#EEF1F5;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;font-family:Arial,sans-serif;">
+        Discover how to manage benefits without risking ERISA compliance. Register now.
     </div>
 
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="email-body-bg" style="background-color:#F5F0FF;width:100%;" bgcolor="#F5F0FF">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="email-body-bg" bgcolor="#EEF1F5" style="background-color:#EEF1F5;width:100%;">
         <tbody><tr>
-            <td align="center" valign="top" class="email-outer-td" style="padding:28px 12px 40px 12px;">
+            <td align="center" valign="top" class="email-outer-td" style="padding:28px 0 44px 0;">
                 <!--[if (gte mso 9)|(IE)]>
                 <table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                 <![endif]-->
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:0 auto;background-color:#FFFFFF;border-radius:16px;overflow:hidden;" bgcolor="#FFFFFF" class="main-container">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF" style="max-width:600px;margin:0 auto;background-color:#FFFFFF;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(25,35,45,0.08);" class="main-container">
 
-                    <!-- HEADER (dark band) -->
+                    <!-- ===== TOP BRAND ACCENT BAR ===== -->
                     <tbody><tr>
-                        <td class="header-td hero-dark" bgcolor="#171E3B" style="background-color:#171E3B;padding:22px 40px 0 40px;">
+                        <td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td width="68%" bgcolor="#C62027" style="background-color:#C62027;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="32%" bgcolor="#32742C" style="background-color:#32742C;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+                    <!-- ===== HEADER ===== -->
+                    <tr>
+                        <td class="header-bar-bg" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:18px 36px;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody><tr>
                                     <td align="left" valign="middle" style="padding:0;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <img src="https://public-cdn.hr.com/system/app/media/rs/2019/6/24/jxaeibbj/120.jpg" alt="Aimed Alliance" style="display:block;width:auto;height:auto;max-width:122px;max-height:52px;border:0;">
+                                    </td>
+                                    <td align="right" valign="middle" style="padding:0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="right">
                                             <tbody><tr>
-                                                <td class="logo-chip" style="padding:5px 8px;border-radius:8px;background-color:#FFFFFF;" bgcolor="#FFFFFF">
-                                                    <img src="https://public-cdn.hr.com/system/app/media/rs/2024/8/26/m0bhyp56/120.jpg" alt="Workhuman" style="display:block;width:auto;height:auto;max-width:90px;max-height:40px;border:0;">
+                                                <td bgcolor="#32742C" style="background-color:#32742C;border-radius:999px;padding:6px 14px;mso-line-height-rule:exactly;line-height:12px;">
+                                                    <span class="header-bar-label" style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#FFFFFF;text-transform:uppercase;letter-spacing:1.5px;line-height:12px;">Upcoming Webcast</span>
                                                 </td>
                                             </tr>
                                         </tbody></table>
                                     </td>
-                                    <td align="right" valign="middle" style="padding:0;">
-                                        <span style="display:inline-block;color:#FFA857;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;line-height:14px;padding:6px 12px;border:1px solid #FFA857;border-radius:4px;">Upcoming Webcast</span>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+                    <!-- ===== HERO: HIGH-URGENCY EXECUTIVE CRIMSON STAGE ===== -->
+                    <tr>
+                        <td align="left" valign="top" class="hero-section-td" bgcolor="#B81D24" style="background-color:#B81D24;background-image:linear-gradient(145deg, #96141A 0%, #B81D24 55%, #841016 100%);padding:42px 36px 44px 36px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                <tr>
+                                    <td align="left">
+                                        <h1 class="hero-title serif" style="margin:0 0 20px 0;font-family:'Roboto Slab',Georgia,'Times New Roman',serif;font-size:32px;font-weight:800;color:#FFFFFF;line-height:41px;text-align:left;letter-spacing:-0.3px;mso-line-height-rule:exactly;">
+                                           Compliance Countdown: Open Enrollment &amp; Copay Assistance
+                                        </h1>
+                                    </td>
+                                </tr>
+
+                                <!-- Event Date & Access Capsule Card -->
+                                <tr>
+                                    <td align="left" style="padding:0 0 26px 0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="hero-date-box" bgcolor="#19232D" style="background-color:#19232D;border:1px solid rgba(255,255,255,0.18);border-left:4px solid #32742C;border-radius:6px;padding:9px 16px;">
+                                            <tbody><tr>
+                                                <td style="padding:0;">
+                                                    <p class="hero-meta" style="margin:0;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:13.5px;font-weight:600;color:#FFFFFF;text-align:left;line-height:22px;letter-spacing:0.2px;">
+                                                      November 12, 2026 at 11:00 AM - 12:00 PM ET &nbsp;·&nbsp; Free to Attend
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+
+                                <!-- High-Contrast Pure White CTA Button -->
+                                <tr>
+                                    <td align="left">
+                                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" class="btn-white">
+                                            <tbody><tr>
+                                                <td align="center" bgcolor="#FFFFFF" style="border-radius:6px;background-color:#FFFFFF;box-shadow:0 6px 18px rgba(0,0,0,0.22);">
+                                                    <a href="https://www.hr.com/en?t=/CustomCode/webcasts/registration&amp;storyID=1790886388121&amp;email=__EMAIL__" target="_blank" style="font-size:15px;font-family:'Open Sans',Arial,Helvetica,sans-serif;color:#A81A20;text-decoration:none;border-radius:6px;padding:15px 36px;display:inline-block;font-weight:800;letter-spacing:0.3px;line-height:20px;background-color:#FFFFFF;mso-padding-alt:0;"><!--[if mso]><i style="mso-font-width:240%;mso-text-raise:22pt;" hidden>&emsp;</i><span style="mso-text-raise:11pt;"><![endif]-->Save My Free Spot →<!--[if mso]></span><i style="mso-font-width:240%;" hidden>&emsp;&#8203;</i><![endif]--></a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
                                     </td>
                                 </tr>
                             </tbody></table>
                         </td>
                     </tr>
 
-                    <!-- HERO (dark, left-aligned) -->
+                    <!-- Geometric Divider Accent Strip -->
                     <tr>
-                        <td align="left" valign="top" class="hero-section-td hero-dark" bgcolor="#171E3B" style="background-color:#171E3B;background-image:radial-gradient(circle at 100% 0%,rgba(91,99,228,0.45) 0%,rgba(91,99,228,0) 55%),radial-gradient(circle at 0% 100%,rgba(193,56,106,0.30) 0%,rgba(193,56,106,0) 50%);padding:48px 40px 52px 40px;">
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0;">
-                                <tbody><tr>
-                                    <td width="40" height="4" bgcolor="#FFA857" style="width:40px;height:4px;font-size:0;line-height:0;background-color:#FFA857;">&nbsp;</td>
-                                    <td width="16" height="4" bgcolor="#C1386A" style="width:16px;height:4px;font-size:0;line-height:0;background-color:#C1386A;">&nbsp;</td>
-                                    <td width="8" height="4" bgcolor="#5B63E4" style="width:8px;height:4px;font-size:0;line-height:0;background-color:#5B63E4;">&nbsp;</td>
-                                </tr>
-                            </tbody></table>
-                            <h1 class="hero-title" style="margin:0 0 16px 0;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:46px;font-weight:700;color:#FFFFFF;line-height:52px;text-align:left;letter-spacing:-1px;">
-                                The Leadership Reset
-                            </h1>
-                            <p class="hero-meta" style="margin:0 0 32px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:15px;font-weight:500;color:#C1C0FB;text-align:left;line-height:24px;">
-                                November 5, 2026 at 12:00 PM - 12:40 PM ET &nbsp;·&nbsp; Free to Attend
-                            </p>
-                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" align="left" class="btn-full">
-                                <tbody><tr>
-                                    <td align="center" bgcolor="#FFA857" style="border-radius:8px;background-color:#FFA857;mso-padding-alt:14px 36px;">
-                                        <a href="https://www.hr.com/en?t=/CustomCode/webcasts/registration&amp;storyID=1792015997469&amp;email=__EMAIL__" target="_blank" style="font-size:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#171E3B;text-decoration:none;border-radius:8px;padding:15px 36px;display:inline-block;font-weight:700;letter-spacing:0.2px;line-height:20px;mso-padding-alt:0;">
-                                            Save My Free Spot →
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                        </td>
-                    </tr>
-
-                    <!-- GRADIENT BAR -->
-                    <tr>
-                        <td height="6" bgcolor="#5B63E4" style="height:6px;font-size:0;line-height:0;mso-line-height-rule:exactly;background-color:#5B63E4;background-image:linear-gradient(90deg,#FF8A33 0%,#C1386A 35%,#5B63E4 70%,#9354AA 100%);">&nbsp;</td>
-                    </tr>
-
-                    <!-- INTRO -->
-                    <tr>
-                        <td align="left" valign="top" class="white-bg pad-x" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:44px 40px 44px 40px;">
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin:0 0 22px 0;">
-                                <tbody><tr>
-                                    <td class="lead-rule" style="border-left:4px solid #C1386A;padding:2px 0 2px 18px;">
-                                        <p class="lead-copy" style="margin:0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:18px;font-weight:500;color:#171E3B;text-align:left;line-height:29px;">In today’s fast-paced business environment, rapid change often creates severe operational friction. As organizations accelerate, leaders frequently lose visibility into subtle shifts in morale, risking hidden burnout and costly turnover.</p>
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                            <p class="body-copy-p" style="margin:0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#3B4160;text-align:left;line-height:27px;">The Leadership Reset offers actionable pathways to restore alignment. Discover proven organizational frameworks and blueprints to intervene before organizational drift becomes irreversible.</p>
-                        </td>
-                    </tr>
-
-                    <!-- TAKEAWAYS (2x2 grid) -->
-                    <tr>
-                        <td align="left" valign="top" class="tk-section pad-x" bgcolor="#F5F0FF" style="background-color:#F5F0FF;padding:44px 40px 28px 40px;">
-                            <p class="eyebrow" style="margin:0 0 20px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#3D40CC;text-transform:uppercase;letter-spacing:2px;line-height:16px;text-align:center;">
-                                What You'll Learn</p>
-
+                        <td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody><tr>
-                                    <td class="tk-card stack-col" width="254" valign="top" bgcolor="#FFFFFF" style="width:254px;background-color:#FFFFFF;border-top:4px solid #5B63E4;border-radius:12px;padding:22px 20px 24px 20px;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                            <tbody><tr>
-                                                <td align="center" valign="middle" width="40" height="28" bgcolor="#5B63E4" style="background-color:#5B63E4;border-radius:6px;width:40px;height:28px;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;line-height:28px;text-align:center;mso-line-height-rule:exactly;">01</td>
-                                            </tr>
-                                        </tbody></table>
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#171E3B;line-height:23px;display:block;padding-top:14px;">Navigate high stress without compromising culture.</span>
-                                    </td>
-                                    <td class="stack-gap" width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>
-                                    <td class="tk-card stack-col" width="254" valign="top" bgcolor="#FFFFFF" style="width:254px;background-color:#FFFFFF;border-top:4px solid #C1386A;border-radius:12px;padding:22px 20px 24px 20px;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                            <tbody><tr>
-                                                <td align="center" valign="middle" width="40" height="28" bgcolor="#C1386A" style="background-color:#C1386A;border-radius:6px;width:40px;height:28px;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;line-height:28px;text-align:center;mso-line-height-rule:exactly;">02</td>
-                                            </tr>
-                                        </tbody></table>
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#171E3B;line-height:23px;display:block;padding-top:14px;">Identify risks of hidden burnout and turnover.</span>
-                                    </td>
-                                </tr>
-                                <tr><td colspan="3" height="12" style="height:12px;font-size:0;line-height:12px;">&nbsp;</td></tr>
-                                <tr>
-                                    <td class="tk-card stack-col" width="254" valign="top" bgcolor="#FFFFFF" style="width:254px;background-color:#FFFFFF;border-top:4px solid #FFA857;border-radius:12px;padding:22px 20px 24px 20px;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                            <tbody><tr>
-                                                <td align="center" valign="middle" width="40" height="28" bgcolor="#FFA857" style="background-color:#FFA857;border-radius:6px;width:40px;height:28px;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#171E3B;line-height:28px;text-align:center;mso-line-height-rule:exactly;">03</td>
-                                            </tr>
-                                        </tbody></table>
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#171E3B;line-height:23px;display:block;padding-top:14px;">Design HR systems empowering managers with empathy.</span>
-                                    </td>
-                                    <td class="stack-gap" width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>
-                                    <td class="tk-card stack-col" width="254" valign="top" bgcolor="#FFFFFF" style="width:254px;background-color:#FFFFFF;border-top:4px solid #9354AA;border-radius:12px;padding:22px 20px 24px 20px;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                            <tbody><tr>
-                                                <td align="center" valign="middle" width="40" height="28" bgcolor="#9354AA" style="background-color:#9354AA;border-radius:6px;width:40px;height:28px;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;line-height:28px;text-align:center;mso-line-height-rule:exactly;">04</td>
-                                            </tr>
-                                        </tbody></table>
-                                        <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#171E3B;line-height:23px;display:block;padding-top:14px;">Nurture latent talent to transform business trajectory.</span>
-                                    </td>
+                                    <td width="30%" bgcolor="#32742C" style="background-color:#32742C;height:4px;font-size:0;line-height:0;">&nbsp;</td>
+                                    <td width="70%" bgcolor="#19232D" style="background-color:#19232D;height:4px;font-size:0;line-height:0;">&nbsp;</td>
                                 </tr>
                             </tbody></table>
                         </td>
                     </tr>
 
-                    <!-- SECONDARY CTA -->
+                    <!-- ===== INTRO: EDITORIAL EXECUTIVE CALLOUT ===== -->
                     <tr>
-                        <td align="center" valign="top" class="tk-section pad-x" bgcolor="#F5F0FF" style="background-color:#F5F0FF;padding:8px 40px 48px 40px;">
-                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" align="center" class="btn-full">
+                        <td align="left" valign="top" class="intro-section-td px" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:36px 36px 8px 36px;">
+                            <!-- Executive Highlight Box -->
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="intro-callout" bgcolor="#F8FAFC" style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #C62027;border-radius:0 8px 8px 0;margin-bottom:20px;">
                                 <tbody><tr>
-                                    <td align="center" class="btn-solid" bgcolor="#3D40CC" style="border-radius:8px;background-color:#3D40CC;mso-padding-alt:13px 32px;">
-                                        <a href="https://web.hr.com/ehh5" data-cta="1" data-captcha="1" target="_blank" style="font-size:15px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:8px;padding:14px 32px;display:inline-block;font-weight:700;letter-spacing:0.2px;line-height:20px;mso-padding-alt:0;">
-                                            Curious? Find out more here →
-                                        </a>
+                                    <td style="padding:18px 22px;">
+                                        <p class="lead-p" style="margin:0;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:17px;font-weight:600;color:#19232D;text-align:left;line-height:28px;">Employers must balance affordable health coverage with strict ERISA obligations. Cost-saving tactics like copay accumulators can conflict with fiduciary duties and expose your organization to class action lawsuits.</p>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+
+                            <!-- Seamless Secondary Paragraph -->
+                            <p class="body-copy-p" style="margin:0;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:15.5px;font-weight:400;color:#46525E;text-align:left;line-height:26px;">This session explores compliance risks tied to alternative funding programs before Open Enrollment. Discover actionable alternatives that satisfy legal requirements while ensuring your workforce retains accessible healthcare.</p>
+                        </td>
+                    </tr>
+
+                    <!-- ===== WHAT YOU'LL LEARN: 2x2 ACTION MATRIX ===== -->
+                    <tr>
+                        <td align="left" valign="top" class="takeaways-section-td px" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:34px 36px 26px 36px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                <tr>
+                                    <td style="padding:0 0 20px 0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                            <tbody><tr>
+                                                <td width="30" bgcolor="#C62027" style="background-color:#C62027;width:30px;height:3px;font-size:0;line-height:0;">&nbsp;</td>
+                                                <td width="6" style="width:6px;height:3px;font-size:0;line-height:0;">&nbsp;</td>
+                                                <td width="10" bgcolor="#32742C" style="background-color:#32742C;width:10px;height:3px;font-size:0;line-height:0;">&nbsp;</td>
+                                            </tr>
+                                        </tbody></table>
+                                        <p class="section-heading serif" style="margin:12px 0 0 0;font-family:'Roboto Slab',Georgia,'Times New Roman',serif;font-size:22px;font-weight:700;color:#19232D;line-height:30px;">
+                                            What You'll Learn</p>
+                                    </td>
+                                </tr>
+
+                                <!-- 2x2 Grid Container -->
+                                <tr>
+                                    <td>
+                                        <!-- ROW 1 (Cards 01 and 02) -->
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="254" valign="top">
+                                        <![endif]-->
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="left" width="254" class="tk-col" style="width:254px;max-width:100%;margin-bottom:14px;">
+                                            <tbody><tr>
+                                                <td class="tk-card" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E2E8F0;border-top:3px solid #C62027;border-radius:10px;padding:18px 18px 20px 18px;min-height:112px;" valign="top">
+                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
+                                                        <tbody><tr>
+                                                            <td bgcolor="#FDF2F2" style="background-color:#FDF2F2;border-radius:4px;padding:3px 8px;font-family:'Open Sans',Arial,sans-serif;font-size:11px;font-weight:700;color:#C62027;line-height:14px;letter-spacing:0.5px;">
+                                                                01
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                    <span class="takeaway-title" style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;color:#19232D;line-height:21px;display:block;">Stop out-of-pocket costs from hurting employee retention.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td><td width="20" style="width:20px;">&nbsp;</td><td width="254" valign="top">
+                                        <![endif]-->
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="right" width="254" class="tk-col" style="width:254px;max-width:100%;margin-bottom:14px;">
+                                            <tbody><tr>
+                                                <td class="tk-card" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E2E8F0;border-top:3px solid #32742C;border-radius:10px;padding:18px 18px 20px 18px;min-height:112px;" valign="top">
+                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
+                                                        <tbody><tr>
+                                                            <td bgcolor="#F0FDF4" style="background-color:#F0FDF4;border-radius:4px;padding:3px 8px;font-family:'Open Sans',Arial,sans-serif;font-size:11px;font-weight:700;color:#32742C;line-height:14px;letter-spacing:0.5px;">
+                                                                02
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                    <span class="takeaway-title" style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;color:#19232D;line-height:21px;display:block;">Understand how recent litigation reshapes prescription drug benefits.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td></tr></table>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <!-- ROW 2 (Cards 03 and 04) -->
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="254" valign="top">
+                                        <![endif]-->
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="left" width="254" class="tk-col" style="width:254px;max-width:100%;margin-bottom:14px;">
+                                            <tbody><tr>
+                                                <td class="tk-card" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E2E8F0;border-top:3px solid #C62027;border-radius:10px;padding:18px 18px 20px 18px;min-height:112px;" valign="top">
+                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
+                                                        <tbody><tr>
+                                                            <td bgcolor="#FDF2F2" style="background-color:#FDF2F2;border-radius:4px;padding:3px 8px;font-family:'Open Sans',Arial,sans-serif;font-size:11px;font-weight:700;color:#C62027;line-height:14px;letter-spacing:0.5px;">
+                                                                03
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                    <span class="takeaway-title" style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;color:#19232D;line-height:21px;display:block;">Discover compliant alternatives to fulfill your fiduciary obligations.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td><td width="20" style="width:20px;">&nbsp;</td><td width="254" valign="top">
+                                        <![endif]-->
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="right" width="254" class="tk-col" style="width:254px;max-width:100%;margin-bottom:14px;">
+                                            <tbody><tr>
+                                                <td class="tk-card" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E2E8F0;border-top:3px solid #32742C;border-radius:10px;padding:18px 18px 20px 18px;min-height:112px;" valign="top">
+                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
+                                                        <tbody><tr>
+                                                            <td bgcolor="#F0FDF4" style="background-color:#F0FDF4;border-radius:4px;padding:3px 8px;font-family:'Open Sans',Arial,sans-serif;font-size:11px;font-weight:700;color:#32742C;line-height:14px;letter-spacing:0.5px;">
+                                                                04
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                    <span class="takeaway-title" style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;color:#19232D;line-height:21px;display:block;">Ensure affordable health care access for your entire workforce.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td></tr></table>
+                                        <![endif]-->
                                     </td>
                                 </tr>
                             </tbody></table>
                         </td>
                     </tr>
 
-                    <!-- SPEAKERS (2-column list) -->
+                    <!-- ===== SECONDARY CTA: SLEEK FOREST GREEN PILL ===== -->
                     <tr>
-                        <td align="left" valign="top" class="white-bg pad-x" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:48px 40px 20px 40px;">
-                            <p class="eyebrow" style="margin:0 0 8px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#3D40CC;text-transform:uppercase;letter-spacing:2px;text-align:left;line-height:16px;">
+                        <td align="center" valign="top" class="sec-cta-section-td px" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:4px 36px 36px 36px;">
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" align="center" class="btn-secondary" style="margin:0 auto;">
+                                <tbody><tr>
+                                    <td align="center" bgcolor="#32742C" style="border-radius:999px;background-color:#32742C;">
+                                        <a href="https://web.hr.com/xicv" data-cta="1" data-captcha="1" target="_blank" style="font-size:14px;font-family:'Open Sans',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:12px 30px;display:inline-block;font-weight:700;letter-spacing:0.3px;line-height:20px;background-color:#32742C;mso-padding-alt:0;"><!--[if mso]><i style="mso-font-width:200%;mso-text-raise:18pt;" hidden>&emsp;</i><span style="mso-text-raise:9pt;"><![endif]-->Curious? Find out more here →<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&emsp;&#8203;</i><![endif]--></a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+                    <!-- ===== SPEAKERS SECTION: 3 FEATURED EXPERT HOSTS ===== -->
+                    <tr>
+                        <td align="center" valign="top" class="speakers-bg speakers-section-td" bgcolor="#F4F6F8" style="background-color:#F4F6F8;padding:38px 26px 42px 26px;border-top:1px solid #E5E9EE;border-bottom:1px solid #E5E9EE;">
+                            <p class="eyebrow" style="margin:0 0 8px 0;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;color:#C62027;text-transform:uppercase;letter-spacing:2px;text-align:center;line-height:16px;">
                                 Your expert hosts</p>
-                            <h2 class="section-heading" style="margin:0 0 16px 0;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:26px;font-weight:700;color:#171E3B;text-align:left;line-height:32px;letter-spacing:-0.5px;">
+                            <h2 class="section-heading serif" style="margin:0 0 26px 0;font-family:'Roboto Slab',Georgia,'Times New Roman',serif;font-size:23px;font-weight:700;color:#19232D;text-align:center;line-height:31px;">
                                 Learn directly from industry leaders
                             </h2>
 
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <!-- 3-Column Responsive Speaker Lineup -->
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+                            <td width="172" valign="top">
+                            <![endif]-->
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="left" width="172" class="speaker-col" style="width:172px;max-width:100%;">
                                 <tbody><tr>
-                                    <td class="speaker-cell stack-col" width="254" valign="top" style="width:254px;padding:16px 0;border-bottom:1px solid #E0DEFD;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tbody><tr>
-                                                <td width="64" valign="top" style="width:64px;padding:0;">
-                                                    <img class="speaker-photo" alt="Amy Edmondson" src="https://public-cdn.hr.com/profile_images/2019/4/8/1554771761837_120" width="60" height="60" style="display:block;width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #C1C0FB;">
-                                                </td>
-                                                <td valign="middle" style="padding-left:14px;">
-                                                    <span class="speaker-name" style="display:block;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;color:#171E3B;line-height:22px;">Amy Edmondson</span>
-                                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#3D40CC;line-height:18px;margin-top:3px;">Novartis Professor of Leadership and Management, Harvard Business School</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </td>
-                                    <td class="stack-gap-0" width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>
-                                    <td class="speaker-cell stack-col" width="254" valign="top" style="width:254px;padding:16px 0;border-bottom:1px solid #E0DEFD;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tbody><tr>
-                                                <td width="64" valign="top" style="width:64px;padding:0;">
-                                                    <img class="speaker-photo" alt="KeyAnna Schmiedl" src="https://public-cdn.hr.com/profile_images/2022/1/21/1642751725870_120" width="60" height="60" style="display:block;width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #C1C0FB;">
-                                                </td>
-                                                <td valign="middle" style="padding-left:14px;">
-                                                    <span class="speaker-name" style="display:block;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;color:#171E3B;line-height:22px;">KeyAnna Schmiedl</span>
-                                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#3D40CC;line-height:18px;margin-top:3px;">Chief Human Experience Officer, Workhuman</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="speaker-cell stack-col" width="254" valign="top" style="width:254px;padding:16px 0;border-bottom:1px solid #E0DEFD;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tbody><tr>
-                                                <td width="64" valign="top" style="width:64px;padding:0;">
-                                                    <img class="speaker-photo" alt="Meisha-ann Martin, Ph.D." src="https://public-cdn.hr.com/profile_images/2023/6/11/1686460105848_120" width="60" height="60" style="display:block;width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #C1C0FB;">
-                                                </td>
-                                                <td valign="middle" style="padding-left:14px;">
-                                                    <span class="speaker-name" style="display:block;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;color:#171E3B;line-height:22px;">Meisha-ann Martin, Ph.D.</span>
-                                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#3D40CC;line-height:18px;margin-top:3px;">VP, People Research, Workhuman</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </td>
-                                    <td class="stack-gap-0" width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>
-                                    <td class="speaker-cell stack-col" width="254" valign="top" style="width:254px;padding:16px 0;border-bottom:1px solid #E0DEFD;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tbody><tr>
-                                                <td width="64" valign="top" style="width:64px;padding:0;">
-                                                    <img class="speaker-photo" alt="Kara Miller" src="https://public-cdn.hr.com/profile_images/2026/10/14/1792012789415_120" width="60" height="60" style="display:block;width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #C1C0FB;">
-                                                </td>
-                                                <td valign="middle" style="padding-left:14px;">
-                                                    <span class="speaker-name" style="display:block;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;color:#171E3B;line-height:22px;">Kara Miller</span>
-                                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#3D40CC;line-height:18px;margin-top:3px;">It Turns Out Podcast</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="speaker-cell stack-col" width="254" valign="top" style="width:254px;padding:16px 0;border-bottom:1px solid #E0DEFD;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tbody><tr>
-                                                <td width="64" valign="top" style="width:64px;padding:0;">
-                                                    <img class="speaker-photo" alt="Syra Madad, Dr." src="https://public-cdn.hr.com/profile_images/2026/10/14/1792013374299_120" width="60" height="60" style="display:block;width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #C1C0FB;">
-                                                </td>
-                                                <td valign="middle" style="padding-left:14px;">
-                                                    <span class="speaker-name" style="display:block;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;color:#171E3B;line-height:22px;">Syra Madad, Dr.</span>
-                                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#3D40CC;line-height:18px;margin-top:3px;">Infectious Disease Epidemiologist and Emergency Preparedness Leader, NYC Health + Hospitals</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </td>
-                                    <td class="stack-gap-0" width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>
-                                    <td class="speaker-cell stack-col" width="254" valign="top" style="width:254px;padding:16px 0;border-bottom:1px solid #E0DEFD;">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tbody><tr>
-                                                <td width="64" valign="top" style="width:64px;padding:0;">
-                                                    <img class="speaker-photo" alt="Joanne Chang" src="https://public-cdn.hr.com/profile_images/2026/10/14/1792014105417_120" width="60" height="60" style="display:block;width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #C1C0FB;">
-                                                </td>
-                                                <td valign="middle" style="padding-left:14px;">
-                                                    <span class="speaker-name" style="display:block;font-family:'Geologica','Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;color:#171E3B;line-height:22px;">Joanne Chang</span>
-                                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#3D40CC;line-height:18px;margin-top:3px;">Flour Bakery + Cafe</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
+                                    <td class="speaker-card-inner" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E1E6EC;border-top:3px solid #C62027;border-radius:10px;padding:22px 14px 20px 14px;text-align:center;min-height:190px;" valign="top">
+                                        <img alt="Ashira Vantrees" src="https://public-cdn.hr.com/profile_images/2021/11/20/1637412874040_120" width="76" height="76" style="display:block;width:76px;height:76px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #C62027;">
+                                        <span class="speaker-name serif" style="display:block;font-family:'Roboto Slab',Georgia,'Times New Roman',serif;font-size:16px;font-weight:700;color:#19232D;line-height:22px;">Ashira Vantrees</span>
+                                        <span class="speaker-role" style="display:block;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:12.5px;font-weight:600;color:#32742C;line-height:18px;margin-top:5px;">Counsel, Aimed Alliance</span>
                                     </td>
                                 </tr>
                             </tbody></table>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="16" style="width:16px;">&nbsp;</td>
+                            <td width="172" valign="top">
+                            <![endif]-->
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="left" width="172" class="speaker-col" style="width:172px;max-width:100%;margin-left:14px;">
+                                <tbody><tr>
+                                    <td class="speaker-card-inner" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E1E6EC;border-top:3px solid #32742C;border-radius:10px;padding:22px 14px 20px 14px;text-align:center;min-height:190px;" valign="top">
+                                        <img alt="Ann Lewandowski" src="https://public-cdn.hr.com/profile_images/2026/10/20/1792531644320_120" width="76" height="76" style="display:block;width:76px;height:76px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #32742C;">
+                                        <span class="speaker-name serif" style="display:block;font-family:'Roboto Slab',Georgia,'Times New Roman',serif;font-size:16px;font-weight:700;color:#19232D;line-height:22px;">Ann Lewandowski</span>
+                                        <span class="speaker-role" style="display:block;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:12.5px;font-weight:600;color:#32742C;line-height:18px;margin-top:5px;">Founder, Healthcare Rebel Alliance</span>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="16" style="width:16px;">&nbsp;</td>
+                            <td width="172" valign="top">
+                            <![endif]-->
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="right" width="172" class="speaker-col" style="width:172px;max-width:100%;">
+                                <tbody><tr>
+                                    <td class="speaker-card-inner" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E1E6EC;border-top:3px solid #C62027;border-radius:10px;padding:22px 14px 20px 14px;text-align:center;min-height:190px;" valign="top">
+                                        <img alt="Olivia Perry" src="https://public-cdn.hr.com/profile_images/2026/10/20/1792534082633_120" width="76" height="76" style="display:block;width:76px;height:76px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #C62027;">
+                                        <span class="speaker-name serif" style="display:block;font-family:'Roboto Slab',Georgia,'Times New Roman',serif;font-size:16px;font-weight:700;color:#19232D;line-height:22px;">Olivia Perry</span>
+                                        <span class="speaker-role" style="display:block;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:12.5px;font-weight:600;color:#32742C;line-height:18px;margin-top:5px;">Coalition Director, Alliance for Patient Access</span>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td></tr></table>
+                            <![endif]-->
                         </td>
                     </tr>
 
-                    <!-- CAN'T ATTEND -->
+                    <!-- ===== RECORDING NOTICE: REFINED ON-DEMAND NOTIFICATION ===== -->
                     <tr>
-                        <td align="center" valign="top" class="white-bg pad-x" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:28px 40px 8px 40px;">
+                        <td align="center" valign="middle" class="notice-section-td px" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:28px 36px;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody><tr>
-                                    <td class="callout-td" align="center" bgcolor="#F9F7FF" style="background-color:#F9F7FF;border:2px dashed #C1C0FB;border-radius:12px;padding:20px 24px;">
-                                        <p class="body-copy-p" style="margin:0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;color:#3B4160;line-height:22px;text-align:center;">
-                                            Can't attend the live webcast? <a href="https://web.hr.com/ehh5" target="_blank" data-cta="1" data-captcha="1" style="color:#3D40CC;text-decoration:underline;font-weight:700;">Register anyway</a>
+                                    <td class="notice-card" bgcolor="#F8FAFC" style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #19232D;border-radius:0 8px 8px 0;padding:16px 20px;">
+                                        <p class="notice-copy" style="margin:0;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:13.5px;font-weight:400;color:#46525E;line-height:22px;text-align:left;">
+                                            Can't attend the live webcast? <a href="https://web.hr.com/xicv" target="_blank" data-cta="1" data-captcha="1" class="notice-link" style="color:#C62027;text-decoration:underline;font-weight:700;">Register anyway</a>
                                             to access the recording. Ensure you are logged in to your HR.com account to access
                                             registration for this webcast.
                                         </p>
@@ -378,47 +438,34 @@
                         </td>
                     </tr>
 
-                    <!-- CREDITS -->
+                    <!-- ===== CERTIFICATE CREDIT SECTION (UNTOUCHED) ===== -->
                     <tr>
-                        <td align="center" valign="top" class="credit-bg pad-x" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:28px 40px 40px 40px;">
-                            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <td align="center" valign="top" style="background-color:#F8F9FA;padding:32px 30px;" class="credit-bg credit-section-td">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody>
                                     <tr>
                                         <td align="center" valign="top">
-                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-stack-table">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-stack-table">
                                                 <tbody><tr>
                                                     <td width="90" align="center" valign="top" class="credit-badge-cell">
-                                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
-                                                            <tbody><tr>
-                                                                <td class="badge-chip" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:10px;padding:4px;">
-                                                                    <img alt="HRCI" src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg" style="display:block;max-width:90px;width:76px;height:76px;border:0;" width="76">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody></table>
+                                                        <img alt="HRCI" src="https://media-cdn.hr.com/2026HRCIRecertificationProviderSealNEW_V2.jpg" style="display:inline-block;max-width:90px;width:80px;height:80px;border:0;" width="80">
                                                     </td>
-                                                    <td align="left" valign="middle" class="credit-text-cell" style="color:#5D6276;padding-left:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
-                                                        This Program has been pre-approved for 0.5 BUSINESS Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)
+                                                    <td align="left" valign="top" class="credit-text-cell" style="color:#718096;padding-left:14px;padding-top:10px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
+                                                        This Program has been pre-approved for 1 HR Credit toward aPHR®, aPHRi™, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification through HR Certification Institute® (HRCI®)
                                                     </td>
                                                 </tr>
                                             </tbody></table>
                                         </td>
                                     </tr>
-                                    <tr><td height="16" class="divider" style="font-size:1px;line-height:16px;border-bottom:1px solid #E8E9EB;">&nbsp;</td></tr>
-                                    <tr><td height="16" style="font-size:1px;line-height:16px;">&nbsp;</td></tr>
+                                    <tr><td height="18" style="font-size:1px; line-height:18px;">&nbsp;</td></tr>
                                     <tr>
                                         <td align="center" valign="top">
-                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-stack-table">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="credit-stack-table">
                                                 <tbody><tr>
                                                     <td width="90" align="center" valign="top" class="credit-badge-cell">
-                                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
-                                                            <tbody><tr>
-                                                                <td class="badge-chip" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:10px;padding:4px;">
-                                                                    <img alt="SHRM" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/shrm-recert-provider.png" width="76" height="76" style="display:block;width:76px;height:76px;border:0;">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody></table>
+                                                        <img alt="SHRM" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/shrm-recert-provider.png" style="display:inline-block;width:80px;height:80px;border:0;">
                                                     </td>
-                                                    <td align="left" valign="middle" class="credit-text-cell" style="color:#5D6276;padding-left:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
+                                                    <td align="left" valign="top" class="credit-text-cell" style="color:#718096;padding-left:14px;padding-top:10px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;font-weight:400">
                                                         HR.com is recognized by SHRM to offer Professional Development Credits (PDC) for SHRM-CP® or SHRM-SCP® recertification activities.
                                                     </td>
                                                 </tr>
@@ -430,27 +477,26 @@
                         </td>
                     </tr>
 
-                    <!-- FOOTER -->
+                    <!-- ===== FOOTER SECTION (UNTOUCHED) ===== -->
                     <tr>
-                        <td align="center" valign="top" bgcolor="#10105C" style="background-color:#10105C;">
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#10105C" style="background-color:#10105C;background-image:linear-gradient(160deg,#171E3B 0%,#10105C 60%,#2D055D 100%);max-width:600px;">
+                        <td align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="background-color:#1C2631;max-width:600px;">
                                 <tbody>
+                                    <tr><td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td width="25%" style="background-color:#EF4A3D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#FDB414;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#94C83D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#4AC4D6;height:3px;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
                                     <tr>
-                                        <td height="4" bgcolor="#5B63E4" style="height:4px;font-size:0;line-height:0;mso-line-height-rule:exactly;background-color:#5B63E4;background-image:linear-gradient(90deg,#9354AA 0%,#5B63E4 35%,#C1386A 70%,#FF8A33 100%);">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" valign="top" class="footer-inner-td" style="padding:40px 32px 0 32px;">
-                                            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:536px;">
+                                        <td align="center" valign="top" class="footer-inner-td" style="padding:36px 20px 0 20px;">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="max-width:560px;">
                                                 <tbody>
-                                                    <tr><td align="center" style="padding-bottom:22px;"><img alt="HR.com" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/hrdotcom-white.png" width="120" style="display:block;border:0;width:120px;"></td></tr>
-                                                    <tr><td style="padding:0 0 22px 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="border-top:1px solid #2E3566;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
-                                                    <tr><td align="center" style="padding-bottom:12px;font-size:12px;line-height:18px;color:#C1C0FB;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;">HR.com Limited - 56 Malone Road, Jackson's Point, ON, Canada, L0E 1L0</td></tr>
-                                                    <tr><td align="center" style="padding-bottom:18px;font-size:12px;line-height:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;"><a data-cta="0" href="https://www.hr.com/en/about_us/privacy_information/" target="_blank" style="color:#FFFFFF;text-decoration:none;font-weight:700;letter-spacing:0.3px;">Privacy Policy</a><span style="color:#5B63E4;padding:0 10px;">|</span><a data-cta="0" data-captcha="0" href="mailto:events@hr.com?subject=Contact Us: HR.com Virtual Events and Webcasts" style="color:#FFFFFF;text-decoration:none;font-weight:700;letter-spacing:0.3px;">Contact Us</a></td></tr>
-                                                    <tr><td align="center" style="padding:0 6px 36px 6px;font-size:12px;line-height:20px;color:#C1C0FB;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;text-align:center;">If you would like to change your subscription settings please access the <a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/accsetting/lib/navigation&amp;mode=show&amp;tabid=3&amp;action=notifications" style="color:#FFA857;text-decoration:underline;font-weight:600;" target="_blank">subscription page</a> or if you no longer wish to receive these email campaigns you may&nbsp;<a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/hr/subscribe/sub.campaign.7&amp;cid1=__CUSTOMER_ID__&amp;cid2=1170172078066" style="color:#FFA857;text-decoration:underline;font-weight:600;" target="_blank" data-captcha="1">unsubscribe here</a>.<br><br><span style="color:#A3A3F7;">This email account is not monitored. Please do not reply to this email.</span></td></tr>
+                                                    <tr><td align="center" style="padding-bottom:20px;"><img alt="HR.com" src="https://public-cdn.hr.com/remoteimages/website-images/emailer-images/hrdotcom-white.png" width="120" style="display:block;border:0;width:120px;"></td></tr>
+                                                    <tr><td style="padding:0 0 20px 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="border-top:1px solid #2D3F50;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
+                                                    <tr><td align="center" style="padding-bottom:12px;font-size:11px;line-height:18px;color:#A0AEC0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;">HR.com Limited - 56 Malone Road, Jackson's Point, ON, Canada, L0E 1L0</td></tr>
+                                                    <tr><td align="center" style="padding-bottom:16px;font-size:11px;line-height:16px;font-family:'Roboto',Arial,Helvetica,sans-serif;"><a data-cta="0" href="https://www.hr.com/en/about_us/privacy_information/" target="_blank" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Privacy Policy</a><span style="color:#2D3F50;padding:0 8px;">|</span><a data-cta="0" data-captcha="0" href="mailto:events@hr.com?subject=Contact Us: HR.com Virtual Events and Webcasts" style="color:#CBD5E0;text-decoration:none;font-weight:600;letter-spacing:0.3px;">Contact Us</a></td></tr>
+                                                    <tr><td align="center" style="padding:0 10px 32px 10px;font-size:11px;line-height:19px;color:#A0AEC0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-weight:400;text-align:center;">If you would like to change your subscription settings please access the <a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/accsetting/lib/navigation&amp;mode=show&amp;tabid=3&amp;action=notifications" style="color:#4AC4D6;text-decoration:none;font-weight:600;" target="_blank">subscription page</a> or if you no longer wish to receive these email campaigns you may&nbsp;<a data-cta="0" href="https://www.hr.com/en?t=/CustomCode/hr/subscribe/sub.campaign.7&amp;cid1=__CUSTOMER_ID__&amp;cid2=1170172078066" style="color:#4AC4D6;text-decoration:none;font-weight:600;" target="_blank" data-captcha="1">unsubscribe here</a>.<br><br><span style="color:#8490a5;">This email account is not monitored. Please do not reply to this email.</span></td></tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                     </tr>
+                                    <tr><td style="padding:0;font-size:0;line-height:0;mso-line-height-rule:exactly;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td width="25%" style="background-color:#EF4A3D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#FDB414;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#94C83D;height:3px;font-size:0;line-height:0;">&nbsp;</td><td width="25%" style="background-color:#4AC4D6;height:3px;font-size:0;line-height:0;">&nbsp;</td></tr></tbody></table></td></tr>
                                 </tbody>
                             </table>
                         </td>
@@ -464,5 +510,5 @@
         </tr>
     </tbody></table>
 
-
-
+</body>
+</html>
