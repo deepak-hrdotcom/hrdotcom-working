@@ -362,7 +362,10 @@ a.domain-minisite-cta:hover {
 
   .domain-minisite-nav-link.active,
   .domain-minisite-nav-link.is-active,
-  .domain-minisite-nav-link[aria-current="page"] {
+  .domain-minisite-nav-link.is-current,
+  .domain-minisite-nav-link[aria-current="page"],
+  .domain-minisite-nav-item.active > .domain-minisite-nav-link,
+  .domain-minisite-nav-item.is-current > .domain-minisite-nav-link {
     padding: 0 10px !important;
   }
 

@@ -1528,13 +1528,216 @@
     cursor: default;
   }
   /* css for Common custom button design end */
+
+  /* SEO, GEO & AEO Structured Enhancements */
+  .prime_seo_wrapper {
+    width: 100%;
+    margin: 50px auto 40px auto;
+    clear: both;
+  }
+  .prime_seo_box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .prime_seo_title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2a343e;
+    margin: 0 0 14px 0;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .prime_seo_subtitle {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+  }
+  .prime_seo_table_responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 25px;
+  }
+  .prime_seo_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    color: #2a343e;
+  }
+  .prime_seo_table th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 600;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    white-space: nowrap;
+  }
+  .prime_seo_table td {
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+  .prime_seo_table tbody tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+  .prime_seo_badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #e0f2fe;
+    color: #0369a1;
+  }
+  .prime_seo_badge.green {
+    background: #dcfce7;
+    color: #15803d;
+  }
+
+  /* Authority & Trust Grid */
+  .prime_trust_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+  }
+  .prime_trust_card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+  }
+  .prime_trust_num {
+    font-size: 26px;
+    font-weight: 700;
+    color: #e51069;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .prime_trust_label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2a343e;
+    margin-bottom: 6px;
+  }
+  .prime_trust_desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Interactive FAQ Accordion */
+  .prime_faq_section {
+    width: 100%;
+    max-width: 960px;
+    margin: 50px auto 40px auto;
+    padding: 0 15px;
+  }
+  .prime_faq_heading {
+    text-align: center;
+    font-size: 28px;
+    color: #2a343e;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .prime_faq_subheading {
+    text-align: center;
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 30px;
+  }
+  .prime_faq_container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .prime_faq_item {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+  .prime_faq_item:hover {
+    border-color: #cbd5e1;
+  }
+  .prime_faq_toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    transition: background-color 0.2s ease;
+  }
+  .prime_faq_toggle:hover {
+    background-color: #f8fafc;
+  }
+  .prime_faq_toggle:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+  }
+  .prime_faq_icon {
+    width: 20px;
+    height: 20px;
+    color: #64748b;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+  }
+  .prime_faq_icon.rotate {
+    transform: rotate(180deg);
+  }
+  .prime_faq_content {
+    display: none;
+    padding: 0 20px 20px 20px;
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 15px;
+    border-top: 1px solid #f1f5f9;
+  }
+  .prime_faq_content p {
+    margin: 12px 0 0 0;
+  }
+  @media screen and (max-width: 768px) {
+    .prime_trust_grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .prime_seo_box {
+      padding: 20px 15px;
+    }
+    .prime_seo_title {
+      font-size: 22px;
+    }
+    .prime_faq_heading {
+      font-size: 24px;
+    }
+  }
 </style>
 <div class="prime_banner_wrapper">
 <div class="prime_info_wrapper">
 <div class="prime_b_info"><img alt="HR Prime Logo" src="$public/remoteimages/website-images/2021_siteRedesign/images/hr_prime_plus_logo_dark.png" />
-<h1>Improve Your HR Life</h1>
+<h1>Improve Your HR Life: Prime HR Memberships &amp; Recertification</h1>
 
-<p>HR.com&#39;s Prime HR membership is the best-value package of resources to keep HR professionals informed and compliant. Get all the updates and tools you need to get the job done!</p>
+<p>HR.com&#39;s Prime HR membership is the premier all-in-one resource package for HR professionals. As an officially recognized provider for both the Society for Human Resource Management (SHRM) and HR Certification Institute (HRCI), Prime gives you access to pre-approved recertification credits, live and on-demand webcasts, federal and state compliance tools powered by VirgilHR, and automated credit tracking.</p>
 </div>
 
 <div class="prime_b_action"><a class="hr_custom_btn gradient_btn btn_large round" href="#compare">View Prime Memberships</a> $include:/CustomCode/Design_Attribute/PrimeMember.RenewButton</div>
@@ -2650,6 +2853,181 @@
 </div>
 </div>
 
+<div class="prime_container">
+<div class="prime_seo_wrapper">
+  <!-- Content Block 2: Structured Comparison Tables (GEO & AEO) -->
+  <div class="prime_seo_box">
+    <h2 class="prime_seo_title">Prime HR Membership Tiers Overview</h2>
+    <p class="prime_seo_subtitle">Compare our four membership tiers designed for individual contributors, HR managers, and senior HR leaders to find the best package for your certification and compliance needs.</p>
+    
+    <div class="prime_seo_table_responsive">
+      <table class="prime_seo_table" summary="Prime HR Membership Tiers and Features Comparison">
+        <thead>
+          <tr>
+            <th scope="col">Membership Tier</th>
+            <th scope="col">Target Audience</th>
+            <th scope="col">Monthly Recertification Credits</th>
+            <th scope="col">VirgilHR Legal Compliance</th>
+            <th scope="col">On-Demand Webcasts</th>
+            <th scope="col">Live Conference Passes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Basic Membership</strong></td>
+            <td>General HR Professionals</td>
+            <td>Live Sponsored Only</td>
+            <td><span class="prime_seo_badge">Community Only</span></td>
+            <td>Up to 5 / month</td>
+            <td>Standard Pricing</td>
+          </tr>
+          <tr>
+            <td><strong>Prime HR Pro</strong></td>
+            <td>HR Specialists &amp; Generalists</td>
+            <td>Up to 10 Credits / month</td>
+            <td><span class="prime_seo_badge green">Full Access</span></td>
+            <td>Up to 10 / month</td>
+            <td>Up to 30% Off</td>
+          </tr>
+          <tr>
+            <td><strong>Prime HR Plus</strong></td>
+            <td>HR Managers &amp; Business Partners</td>
+            <td><span class="prime_seo_badge green">Unlimited Credits</span></td>
+            <td><span class="prime_seo_badge green">Full Access</span></td>
+            <td>Unlimited</td>
+            <td>Up to 40% Off</td>
+          </tr>
+          <tr>
+            <td><strong>Prime HR Elite</strong></td>
+            <td>HR Directors, VPs &amp; CHROs</td>
+            <td><span class="prime_seo_badge green">Unlimited Credits</span></td>
+            <td><span class="prime_seo_badge green">Full Access + VIP</span></td>
+            <td>Unlimited</td>
+            <td><span class="prime_seo_badge green">1 Free Pass + VIP Lounge</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="prime_seo_title" style="font-size: 20px; margin-top: 24px;">HRCI &amp; SHRM Recertification Requirements</h3>
+    <p class="prime_seo_subtitle" style="margin-bottom: 16px;">HR.com courses and webcasts are pre-approved for both major HR certifying bodies:</p>
+    
+    <div class="prime_seo_table_responsive">
+      <table class="prime_seo_table" summary="HRCI vs SHRM Recertification Requirements and Eligible HR.com Activities">
+        <thead>
+          <tr>
+            <th scope="col">Certification Body</th>
+            <th scope="col">Popular Credentials</th>
+            <th scope="col">Credits Required</th>
+            <th scope="col">Recertification Cycle</th>
+            <th scope="col">Eligible HR.com Activities</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>HRCI (HR Certification Institute)</strong></td>
+            <td>aPHR, PHR, SPHR, GPHR, PHRi, SPHRi</td>
+            <td>60 Credits (45-60 depending on credential)</td>
+            <td>Every 3 Years</td>
+            <td>Live Webcasts, Virtual Events, On-Demand E-Learning</td>
+          </tr>
+          <tr>
+            <td><strong>SHRM (Society for Human Resource Management)</strong></td>
+            <td>SHRM-CP, SHRM-SCP</td>
+            <td>60 PDCs (Professional Development Credits)</td>
+            <td>Every 3 Years</td>
+            <td>Live Webcasts, Virtual Events, On-Demand E-Learning</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Content Block 3: Authority & Trust Signals (GEO) -->
+    <h3 class="prime_seo_title" style="font-size: 20px; margin-top: 30px;">Why Over 2 Million HR Professionals Choose HR.com</h3>
+    <div class="prime_trust_grid">
+      <div class="prime_trust_card">
+        <div class="prime_trust_num">2M+</div>
+        <div class="prime_trust_label">HR Community</div>
+        <p class="prime_trust_desc">The world&#39;s largest online network of HR practitioners and executives.</p>
+      </div>
+      <div class="prime_trust_card">
+        <div class="prime_trust_num">500+</div>
+        <div class="prime_trust_label">Annual Webcasts</div>
+        <p class="prime_trust_desc">Pre-approved interactive live sessions covering compliance and strategic HR.</p>
+      </div>
+      <div class="prime_trust_card">
+        <div class="prime_trust_num">100%</div>
+        <div class="prime_trust_label">Automated Tracking</div>
+        <p class="prime_trust_desc">Seamless certificate generation and credit logging for HRCI and SHRM filing.</p>
+      </div>
+      <div class="prime_trust_card">
+        <div class="prime_trust_num">50 State</div>
+        <div class="prime_trust_label">VirgilHR Compliance</div>
+        <p class="prime_trust_desc">Prescriptive guidance, legal updates, and handbook builders across all jurisdictions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Block 4: Interactive FAQ Accordion (AEO & Featured Snippets) -->
+  <section class="prime_faq_section" aria-labelledby="prime-faq-heading">
+    <h2 id="prime-faq-heading" class="prime_faq_heading">Frequently Asked Questions</h2>
+    <p class="prime_faq_subheading">Everything you need to know about Prime HR memberships, recertification credits, and compliance resources.</p>
+    
+    <div class="prime_faq_container">
+      <div class="prime_faq_item">
+        <button class="prime_faq_toggle" aria-expanded="false" type="button">
+          <span>What is included in an HR.com Prime Membership?</span>
+          <svg class="prime_faq_icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="prime_faq_content">
+          <p>An HR.com Prime Membership gives HR professionals comprehensive access to pre-approved HRCI and SHRM recertification credits, live and on-demand webcasts, federal and state labor law compliance tools powered by VirgilHR, customizable forms and handbooks, and member discounts on certification prep courses and in-person conferences.</p>
+        </div>
+      </div>
+
+      <div class="prime_faq_item">
+        <button class="prime_faq_toggle" aria-expanded="false" type="button">
+          <span>How many credits do I need for HRCI and SHRM recertification?</span>
+          <svg class="prime_faq_icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="prime_faq_content">
+          <p>To maintain your credential, HRCI (PHR, SPHR, GPHR) requires 60 recertification credits every three years (45 credits for aPHR). SHRM (SHRM-CP, SHRM-SCP) requires 60 Professional Development Credits (PDCs) every three years. Prime HR provides all the qualifying credits you need online.</p>
+        </div>
+      </div>
+
+      <div class="prime_faq_item">
+        <button class="prime_faq_toggle" aria-expanded="false" type="button">
+          <span>Are HR.com courses pre-approved for SHRM PDCs and HRCI credits?</span>
+          <svg class="prime_faq_icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="prime_faq_content">
+          <p>Yes. HR.com is an officially approved recertification provider. Our educational webcasts, virtual conferences, and e-learning courses are pre-approved for both SHRM PDCs and HRCI General and Business recertification credits.</p>
+        </div>
+      </div>
+
+      <div class="prime_faq_item">
+        <button class="prime_faq_toggle" aria-expanded="false" type="button">
+          <span>Does HR.com automatically track my earned recertification credits?</span>
+          <svg class="prime_faq_icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="prime_faq_content">
+          <p>Yes. When you attend webinars and events on HR.com, your attendance and completed credits are automatically recorded in your personal member account. You can download official completion certificates anytime to submit directly to HRCI or SHRM.</p>
+        </div>
+      </div>
+
+      <div class="prime_faq_item">
+        <button class="prime_faq_toggle" aria-expanded="false" type="button">
+          <span>Is there a free way to earn HR recertification credits?</span>
+          <svg class="prime_faq_icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="prime_faq_content">
+          <p>Yes. HR professionals can sign up for a free Basic Membership on HR.com and earn free credits by attending live sponsored webcasts and select virtual events in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
 <div class="prime_container-fluid pr_darkbg">
 <div class="prime_container">
 <div class="pr_cm_wrapper">
@@ -3236,4 +3614,134 @@ $include:/CustomCode/Design_Attribute/PrimeMember.RenewButton</div>
       },
     },
   })
+
+  // Interactive FAQ Accordion Toggle (AEO & Featured Snippets)
+  $(document).ready(function() {
+    $('.prime_faq_toggle').on('click', function() {
+      var $btn = $(this);
+      var $content = $btn.next('.prime_faq_content');
+      var $icon = $btn.find('.prime_faq_icon');
+      var isExpanded = $btn.attr('aria-expanded') === 'true';
+
+      $btn.attr('aria-expanded', !isExpanded);
+      $('.prime_faq_content').not($content).slideUp(300);
+      $('.prime_faq_toggle').not($btn).attr('aria-expanded', 'false');
+      $('.prime_faq_icon').not($icon).removeClass('rotate');
+
+      $content.slideToggle(300);
+      $icon.toggleClass('rotate');
+    });
+  });
+</script>
+
+<!-- Structured Data (JSON-LD) for SEO, GEO & AEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.hr.com/#organization",
+      "name": "HR.com",
+      "url": "https://www.hr.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hr.com/images/hr_logo.png"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/hr-com",
+        "https://twitter.com/hrcom"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hr.com/en/prime/#webpage",
+      "url": "https://www.hr.com/en/prime/",
+      "name": "Prime HR Memberships & Recertification Credits (SHRM & HRCI) | HR.com",
+      "description": "Unlock pre-approved HRCI and SHRM recertification credits, federal and state labor compliance tools powered by VirgilHR, on-demand webcasts, and templates with HR.com Prime Memberships.",
+      "isPartOf": {
+        "@id": "https://www.hr.com/#organization"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Human Resources Membership and Professional Development"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Prime HR Membership Tiers & Inclusions",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Basic Membership",
+          "description": "Free access to live sponsored webcasts, community research, and directory resources."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prime HR Pro",
+          "description": "Up to 10 pre-approved recertification credits per month, VirgilHR compliance research, and forms."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prime HR Plus",
+          "description": "Unlimited pre-approved HRCI and SHRM recertification credits and full compliance suite."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Prime HR Elite",
+          "description": "Unlimited recertification credits, VIP compliance advisory, and 1 free live annual conference pass."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in an HR.com Prime Membership?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An HR.com Prime Membership gives HR professionals comprehensive access to pre-approved HRCI and SHRM recertification credits, live and on-demand webcasts, federal and state labor law compliance tools powered by VirgilHR, customizable forms and handbooks, and member discounts on certification prep courses and in-person conferences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many credits do I need for HRCI and SHRM recertification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To maintain your credential, HRCI (PHR, SPHR, GPHR) requires 60 recertification credits every three years (45 credits for aPHR). SHRM (SHRM-CP, SHRM-SCP) requires 60 Professional Development Credits (PDCs) every three years. Prime HR provides all the qualifying credits you need online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are HR.com courses pre-approved for SHRM PDCs and HRCI credits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. HR.com is an officially approved recertification provider. Our educational webcasts, virtual conferences, and e-learning courses are pre-approved for both SHRM PDCs and HRCI General and Business recertification credits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does HR.com automatically track my earned recertification credits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When you attend webinars and events on HR.com, your attendance and completed credits are automatically recorded in your personal member account. You can download official completion certificates anytime to submit directly to HRCI or SHRM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free way to earn HR recertification credits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. HR professionals can sign up for a free Basic Membership on HR.com and earn free credits by attending live sponsored webcasts and select virtual events in real time."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script> $designAttribute:quick_login_m1 $designAttribute:splashCheckout $designAttribute:helpdesk

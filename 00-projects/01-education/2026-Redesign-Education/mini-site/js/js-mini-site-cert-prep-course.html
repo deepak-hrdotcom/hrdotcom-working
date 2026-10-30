@@ -1,5 +1,26 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    /*
+    // Route Minisite Brand Logo to '/en/our-program'
+    function updateBrandLogoHref() {
+        var logos = document.querySelectorAll('.domain-minisite-header-brand a, a.domain-minisite-logo-link, a.domain-minisite-logo');
+        logos.forEach(function(el) {
+            el.setAttribute('href', '/en/our-program');
+        });
+    }
+    updateBrandLogoHref();
+    setTimeout(updateBrandLogoHref, 150);
+    setTimeout(updateBrandLogoHref, 500);
+
+    document.addEventListener('click', function(e) {
+        var logoLink = e.target.closest('.domain-minisite-header-brand a, a.domain-minisite-logo-link, a.domain-minisite-logo');
+        if (logoLink) {
+            e.preventDefault();
+            window.location.href = '/en/our-program';
+        }
+    });
+    */
+
     // Inject Copyright text into the minisite footer
     var footer = document.querySelector('footer.domain-minisite-footer');
     if (footer) {
@@ -31,5 +52,96 @@ document.addEventListener("DOMContentLoaded", function() {
             ourProgramLink.classList.add('active');
         }
     }
+
+    // Highlight 'Resources' tab across all 5 certification resource articles
+    function activateResourcesNav() {
+        var href = (window.location.href || '').toLowerCase();
+        var pathname = (window.location.pathname || '').toLowerCase();
+
+        var resourceKeywords = [
+            'why-get-hr-certified',
+            'why-should-you-get-hr-certified',
+            'geth-facts-on-hr-certification',
+            'get-the-facts-on-hr-certification',
+            'secrets-to-passing-the-hr-certification-exam',
+            'secrets-to-passing-the-hr-exam',
+            'secrets-to-passing-the-shrm-certification-exam',
+            'secrets-to-passing-the-shrm-exam',
+            'secrets-to-passing-the-hrci-certification-exam',
+            'secrets-to-passing-the-hrci-exam',
+            'resources_001',
+            'resource-articles',
+            'certification-resources',
+            'mvusvvx4',
+            'mvut1la4',
+            'mvut3xvs',
+            'mvut64zy',
+            'mvut81fg',
+            'mummvk42',
+            'munxm2ri',
+            'munxp9s0',
+            'munxsbbd',
+            'munxv9w5'
+        ];
+
+        var isResourcePage = resourceKeywords.some(function(kw) {
+            return href.indexOf(kw) !== -1 || pathname.indexOf(kw) !== -1;
+        }) || Boolean(document.querySelector('.edu-res-wrap, .resource-article, #eduResSidebar, .edu-article-card'));
+
+        if (!isResourcePage) return;
+
+        var allNavLinks = document.querySelectorAll('.domain-minisite-nav-link');
+        if (!allNavLinks || allNavLinks.length === 0) return;
+
+        var targetResourcesLinks = [];
+
+        // Match by link text or canonical href
+        allNavLinks.forEach(function(link) {
+            var text = (link.textContent || '').trim().toLowerCase();
+            var lHref = (link.getAttribute('href') || '').toLowerCase();
+
+            if (
+                text === 'resources' ||
+                lHref.indexOf('why-get-hr-certified') !== -1 ||
+                lHref.indexOf('resources_001') !== -1 ||
+                lHref.indexOf('resources') !== -1 ||
+                lHref.indexOf('mvusvvx4') !== -1 ||
+                lHref.indexOf('mummvk42') !== -1
+            ) {
+                targetResourcesLinks.push(link);
+            }
+        });
+
+        // Fallback: 9th item in .domain-minisite-nav-list if text or href matching returned nothing
+        if (targetResourcesLinks.length === 0) {
+            var fallback = document.querySelectorAll('.domain-minisite-nav-list .domain-minisite-nav-item:nth-child(9) .domain-minisite-nav-link, .domain-minisite-nav-list .domain-minisite-nav-item:last-child .domain-minisite-nav-link');
+            fallback.forEach(function(fb) { targetResourcesLinks.push(fb); });
+        }
+
+        if (targetResourcesLinks.length === 0) return;
+
+        // Deactivate other tabs
+        allNavLinks.forEach(function(link) {
+            link.classList.remove('active', 'is-active', 'is-current');
+            link.removeAttribute('aria-current');
+            if (link.parentElement) {
+                link.parentElement.classList.remove('active', 'is-active', 'is-current', 'domain-minisite-nav-item--active');
+            }
+        });
+
+        // Activate Resources tab across desktop, mobile drawer, and footer
+        targetResourcesLinks.forEach(function(link) {
+            link.classList.add('active', 'is-active', 'is-current');
+            link.setAttribute('aria-current', 'page');
+            if (link.parentElement) {
+                link.parentElement.classList.add('active', 'is-current', 'domain-minisite-nav-item--active');
+            }
+        });
+    }
+
+    activateResourcesNav();
+    // Safety retries for delayed CMS rendering or dynamic navigation injection
+    setTimeout(activateResourcesNav, 150);
+    setTimeout(activateResourcesNav, 500);
 });
 </script>
