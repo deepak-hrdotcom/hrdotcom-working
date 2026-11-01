@@ -1,0 +1,9 @@
+{
+  "name": "hrcom-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HR.com working files and a single-file task app preview",
+  "scripts": {
+    "dev": "node scripts/preview.mjs"
+  }
+}
