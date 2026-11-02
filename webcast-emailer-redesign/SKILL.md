@@ -35,6 +35,12 @@ Repository: `https://github.com/deepak-hrdotcom/hrdotcom-working` (branch `main`
 - `input.html` is empty or not HTML → ask the user to paste the emailer.
 - `redesigned.html` already exists → ask: overwrite it, or save as `redesigned-2.html` (etc.)?
 - The user asked for anything that conflicts with the content rules below (e.g. "shorten the footer") → ask for explicit confirmation.
+- **Brand source: ALWAYS ask before designing.** Ask the user exactly this (one question, two options) and wait for the answer:
+  > For the brand colours and fonts, should I:
+  > **A)** use the same colours and fonts as the HTML you gave me (`input.html`), or
+  > **B)** pick them up from a URL you'll give me?
+  - Don't pick a default and don't infer the answer from earlier chats. Only skip the question if the user's message for this run already says A or gives a brand URL explicitly.
+  - If **B** and no URL was given yet → ask for the URL. Follow [Brand source B: URL](#brand-source-b-url) below.
 
 ### Content rules (STRICT, zero tolerance)
 - **Text:** every visible word stays identical and in the same reading order: headline, intro, learnings, button labels, speaker name/designation, credit statements, footer, legal, unsubscribe text, hidden preheader, `<title>`. No adding, deleting, rewording, re-capitalising, fixing typos, changing punctuation/apostrophes/quotes, or swapping `&` for "and". No new labels like "Featured Speaker" or "Register Now" that aren't in the input. Don't duplicate a CTA if it would repeat its label text.
@@ -45,8 +51,20 @@ Repository: `https://github.com/deepak-hrdotcom/hrdotcom-working` (branch `main`
 
 ### Design rules
 - **Visibly different** from `input.html`. The user re-sends the same webcast, so it must not look like the previous send. Change the structure, not just colours: e.g. hero treatment (dark band ↔ light centred headline ↔ split), learnings presentation (2×2 cards ↔ numbered full-width list ↔ checklist rows ↔ timeline), CTA shape (square ↔ pill ↔ full-width bar), speaker layout (side-by-side ↔ centred spotlight), section backgrounds and dividers.
-- **Same colours:** light-mode design uses only the hex colours already in `input.html`. Dark-mode overrides may add dark neutral backgrounds and light text needed for contrast, derived from that palette.
-- **Same fonts:** keep the exact `font-family` stacks from `input.html` (and any font `<link>` / `@import` it already has). Don't add new web fonts.
+- **Colours & fonts follow the brand source the user chose in pre-flight:**
+  - **A) Same as `input.html`:** light-mode design uses only the hex colours already in `input.html`. Keep the exact `font-family` stacks from `input.html` (and any font `<link>` / `@import` it already has). Don't add new web fonts.
+  - **B) From a URL:** light-mode design uses only the palette and fonts the user confirmed from that URL (see below). Don't mix in colours or fonts from `input.html` unless the user says so.
+  - Either way, dark-mode overrides may add dark neutral backgrounds and light text needed for contrast, derived from the chosen palette.
+- Changing the brand source never changes the content rules: text, links and images stay exactly as in `input.html` (no logos, icons or images pulled from the URL).
+
+### Brand source B: URL
+1. Fetch the URL the user gave (web fetch, `curl`, or the browser tool if the page needs JavaScript). Also read the stylesheets it links to.
+2. Extract only what's actually on the page:
+   - **Colours:** hex/rgb values from CSS custom properties (e.g. `--primary`), buttons/links, headings, header/footer backgrounds and body text. Ignore third-party widget/ad colours.
+   - **Fonts:** `font-family` declarations for headings and body text, plus how they're loaded (Google Fonts `<link>`/`@import`, Adobe Fonts, or self-hosted `@font-face`).
+3. **Show the user what you found and wait for confirmation before designing:** a short table of colours with their role (e.g. `#0A4F9E` primary/buttons, `#0E2340` headings, `#F7B718` accent) and the heading/body fonts. Ask them to confirm or correct it. Never guess a role you didn't see on the page; mark it "unclear" and ask.
+4. Fonts in email: put the brand font first with an email-safe fallback stack (e.g. `'Brand Font', Arial, Helvetica, sans-serif`). Only add a font `<link>`/`@import` if it's a public Google Fonts URL. For self-hosted or licensed fonts (Adobe, custom files), ask the user before embedding anything; the default is to use the name plus the fallback stack only. Mention that Gmail and Outlook desktop will show the fallback font.
+5. If the URL can't be fetched (blocked, login wall, bot protection, timeout) or shows no usable colours/fonts → tell the user exactly what happened and ask whether to try another URL or use option A. Don't fill in colours or fonts from memory or from the brand's name.
 
 ### Technical rules (cross-client)
 - `<!DOCTYPE html>`, `lang`, `<meta charset="utf-8">`, `<meta name="viewport" content="width=device-width, initial-scale=1">`, `<meta http-equiv="X-UA-Compatible" content="IE=edge">`, `<meta name="x-apple-disable-message-reformatting">`, `<meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">`.
@@ -62,13 +80,16 @@ Repository: `https://github.com/deepak-hrdotcom/hrdotcom-working` (branch `main`
 ```
 Step 1 checklist
 - [ ] Pre-flight passed (input.html has HTML; redesigned.html overwrite decision made)
-- [ ] Read input.html fully; noted palette hex values, font stacks, section order, all links/images
+- [ ] Asked brand source: A) input.html colours/fonts or B) URL; got the answer
+- [ ] If B: fetched URL, showed palette + fonts table, user confirmed
+- [ ] Read input.html fully; noted section order, all links/images (and palette/fonts if A)
 - [ ] Wrote webcast-emailer-redesign/redesigned.html (input.html untouched)
 - [ ] Verifier PASS with no text/link/image differences
 - [ ] Lint warnings fixed or explained
 - [ ] Reported to user
 ```
-1. Read `input.html` end to end. List the palette, fonts, section order, links and images for yourself.
+1. Ask the brand-source question (pre-flight) and wait. If B, complete [Brand source B: URL](#brand-source-b-url) and get the user's confirmation.
+   Then read `input.html` end to end. List the section order, links and images (plus palette and fonts if A) for yourself.
 2. Write the new design to `webcast-emailer-redesign/redesigned.html`.
 3. Verify (must print `RESULT: PASS`):
    ```bash

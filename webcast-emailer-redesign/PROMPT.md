@@ -18,7 +18,7 @@ My emailer HTML is in webcast-emailer-redesign/input.html.
 Redesign it into webcast-emailer-redesign/redesigned.html:
 - Keep ALL text and ALL links exactly as they are. Strictly no text edits, additions, deletions, modifications, rewording or hallucinations, including alt text, button labels, preheader, credits and footer.
 - Keep every image (same src and alt) and the same section order.
-- Use the same colours and the same fonts as the original.
+- Before designing, ask me whether to use the same brand colours and fonts as my HTML, or pick them up from a URL I'll give you. If I choose the URL, show me the colours and fonts you found and wait for my confirmation.
 - The layout must look visibly different from the original (this is a repeat push to the same audience).
 - Must be responsive, dark-theme friendly, and open correctly in most email platforms (Gmail, Outlook desktop/web/app, Apple Mail, Yahoo, mobile).
 - Never edit input.html.
