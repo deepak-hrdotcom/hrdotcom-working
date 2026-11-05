@@ -1,0 +1,704 @@
+<!-- FOUC Suppression -->
+<style>
+  .edu-specials-page {
+    visibility: hidden;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = document.querySelector('.edu-specials-page');
+    if (p) p.style.visibility = 'visible';
+  });
+</script>
+
+<div class="edu-specials-page">
+  <!-- Embedded Scoped Stylesheet (2026 International Executive Standard) -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+    /* Global CMS Canvas & Container Overrides */
+    body > .ContentArea,
+    .ContentArea {
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    body > .ContentArea > .container,
+    .ContentArea > .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .edu-specials-page {
+      /* 2026 International Executive Education Palette */
+      --edu-cobalt: #2563EB;
+      --edu-cobalt-hover: #1D4ED8;
+      --edu-cobalt-soft: #EFF6FF;
+      --edu-cobalt-border: #BFDBFE;
+      --edu-indigo: #4F46E5;
+
+      --edu-obsidian: #090D1A;
+      --edu-slate-dark: #0F172A;
+      --edu-slate-body: #334155;
+      --edu-slate-muted: #64748B;
+      --edu-slate-light: #94A3B8;
+
+      --edu-canvas: #FFFFFF;
+      --edu-porcelain: #F8FAFC;
+      --edu-stone: #F1F5F9;
+
+      --edu-border: #E2E8F0;
+      --edu-border-strong: #CBD5E1;
+
+      --edu-emerald: #059669;
+      --edu-emerald-soft: #ECFDF5;
+      --edu-emerald-border: #A7F3D0;
+
+      --edu-gold: #D97706;
+      --edu-gold-soft: #FFFBEB;
+      --edu-gold-border: #FDE68A;
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      background-color: #F8FAFC !important;
+      color: var(--edu-slate-body) !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.6 !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      overflow-x: hidden !important;
+    }
+
+    .edu-specials-page * {
+      box-sizing: border-box !important;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    /* ---- MAIN STAGE: MINIMUM 80VH VERTICALLY CENTERED ---- */
+    .edu-specials-stage {
+      min-height: 80vh !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 56px 20px !important;
+      background: radial-gradient(100% 70% at 50% 0%, rgba(37, 99, 235, 0.05) 0%, rgba(248, 250, 252, 0.96) 65%, #F8FAFC 100%) !important;
+      position: relative !important;
+      width: 100% !important;
+    }
+
+    /* Subtle Architectural Background Mesh Grid */
+    .edu-specials-stage::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      background-image: 
+        radial-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+        radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
+      background-size: 32px 32px, 16px 16px !important;
+      background-position: 0 0, 16px 16px !important;
+      pointer-events: none !important;
+      opacity: 0.75 !important;
+    }
+
+    /* Outer Wrapper Card */
+    .edu-specials-center {
+      position: relative !important;
+      z-index: 2 !important;
+      max-width: 1240px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      background: #FFFFFF !important;
+      border: 1px solid var(--edu-border) !important;
+      border-radius: 24px !important;
+      padding: 44px 40px !important;
+      box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    @media (max-width: 768px) {
+      .edu-specials-center {
+        padding: 28px 18px !important;
+        border-radius: 18px !important;
+      }
+      .edu-specials-stage {
+        padding: 32px 14px !important;
+      }
+    }
+
+    /* Header Section */
+    .edu-specials-header {
+      text-align: center !important;
+      margin-bottom: 36px !important;
+      position: relative !important;
+    }
+
+    .edu-specials-eyebrow {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 7px !important;
+      background: var(--edu-cobalt-soft) !important;
+      color: var(--edu-cobalt) !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase !important;
+      padding: 6px 16px !important;
+      border-radius: 999px !important;
+      border: 1px solid var(--edu-cobalt-border) !important;
+      margin-bottom: 14px !important;
+    }
+
+    .edu-specials-title {
+      font-size: 32px !important;
+      line-height: 1.25 !important;
+      font-weight: 800 !important;
+      color: var(--edu-slate-dark) !important;
+      letter-spacing: -0.025em !important;
+      margin: 0 0 10px 0 !important;
+      text-transform: none !important;
+    }
+
+    @media (min-width: 992px) {
+      .edu-specials-title {
+        font-size: 38px !important;
+      }
+    }
+
+    /* 2-Column Grid Layout */
+    .edu-specials-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+      align-items: stretch !important;
+      margin-bottom: 36px !important;
+    }
+
+    @media (min-width: 992px) {
+      .edu-specials-grid {
+        grid-template-columns: 1fr 1.3fr !important;
+        gap: 32px !important;
+      }
+    }
+
+    /* Left Card: Stay Updated / Lead Form */
+    .edu-stay-updated-card {
+      background: linear-gradient(145deg, #090D1A 0%, #0F172A 100%) !important;
+      border-radius: 20px !important;
+      padding: 36px 32px !important;
+      color: #FFFFFF !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      position: relative !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 16px 36px -10px rgba(9, 13, 26, 0.35) !important;
+      transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+
+    .edu-stay-updated-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 22px 42px -10px rgba(9, 13, 26, 0.45) !important;
+    }
+
+    /* Glowing accent orbs */
+    .edu-stay-updated-card::before {
+      content: '' !important;
+      position: absolute !important;
+      top: -60px !important;
+      right: -60px !important;
+      width: 200px !important;
+      height: 200px !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, transparent 70%) !important;
+      pointer-events: none !important;
+    }
+
+    .edu-stay-updated-card::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: -40px !important;
+      left: -40px !important;
+      width: 160px !important;
+      height: 160px !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%) !important;
+      pointer-events: none !important;
+    }
+
+    .edu-su-inner {
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    /* 4-Dot Brand Accent */
+    .edu-su-dots {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 7px !important;
+      margin-bottom: 20px !important;
+      padding: 5px 10px !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .edu-su-dot {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      display: inline-block !important;
+    }
+
+    .edu-su-dot-1 { background-color: #EF4A3D !important; }
+    .edu-su-dot-2 { background-color: #FDB414 !important; }
+    .edu-su-dot-3 { background-color: #94C83D !important; }
+    .edu-su-dot-4 { background-color: #4AC4D6 !important; }
+
+    .edu-su-headline {
+      font-size: 24px !important;
+      font-weight: 800 !important;
+      line-height: 1.3 !important;
+      color: #FFFFFF !important;
+      letter-spacing: -0.02em !important;
+      margin: 0 0 14px 0 !important;
+      text-transform: none !important;
+    }
+
+    .edu-su-sub {
+      font-size: 15px !important;
+      line-height: 1.6 !important;
+      color: #CBD5E1 !important;
+      margin: 0 0 28px 0 !important;
+    }
+
+    .edu-su-action-wrap {
+      position: relative !important;
+      z-index: 2 !important;
+      margin-top: auto !important;
+      padding-top: 16px !important;
+    }
+
+    .su2-btn {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      width: 100% !important;
+      background: var(--edu-cobalt) !important;
+      color: #FFFFFF !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      padding: 15px 24px !important;
+      border-radius: 10px !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .su2-btn:hover {
+      background: var(--edu-cobalt-hover) !important;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45) !important;
+      transform: translateY(-2px) !important;
+      color: #FFFFFF !important;
+      text-decoration: none !important;
+    }
+
+    /* Right Card: Money-Back Guarantee & Course Selection */
+    .edu-guarantee-card {
+      background: #FFFFFF !important;
+      border: 1px solid var(--edu-border) !important;
+      border-radius: 20px !important;
+      padding: 36px 34px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05) !important;
+      position: relative !important;
+      transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+
+    .edu-guarantee-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 18px 36px -10px rgba(15, 23, 42, 0.08) !important;
+      border-color: var(--edu-border-strong) !important;
+    }
+
+    /* Money-Back Guarantee Badge */
+    .money-bar {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: var(--edu-gold-soft) !important;
+      border: 1px solid var(--edu-gold-border) !important;
+      border-radius: 12px !important;
+      padding: 8px 16px !important;
+      margin-bottom: 20px !important;
+      width: fit-content !important;
+    }
+
+    .money-icon {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 22px !important;
+      height: 22px !important;
+      border-radius: 50% !important;
+      background: var(--edu-gold) !important;
+      color: #FFFFFF !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+    }
+
+    .money-text {
+      font-size: 14.5px !important;
+      font-weight: 800 !important;
+      color: #92400E !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .mb-text > p {
+      font-size: 15px !important;
+      line-height: 1.65 !important;
+      color: var(--edu-slate-body) !important;
+      margin: 0 0 18px 0 !important;
+    }
+
+    .mb-text strong {
+      color: var(--edu-slate-dark) !important;
+      font-weight: 700 !important;
+    }
+
+    .mb-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 0 28px 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+
+    .mb-list li {
+      position: relative !important;
+      padding-left: 28px !important;
+      font-size: 14.5px !important;
+      color: var(--edu-slate-body) !important;
+      line-height: 1.55 !important;
+    }
+
+    .mb-list li::before {
+      content: '' !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 5px !important;
+      width: 17px !important;
+      height: 17px !important;
+      border-radius: 50% !important;
+      background: var(--edu-emerald-soft) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="%23059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') no-repeat center center !important;
+      border: 1px solid var(--edu-emerald-border) !important;
+    }
+
+    /* Course CTAs Section */
+    .edu-applicable-courses {
+      border-top: 1px solid var(--edu-border) !important;
+      padding-top: 22px !important;
+      margin-top: 6px !important;
+    }
+
+    .edu-applicable-courses h2 {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: var(--edu-slate-dark) !important;
+      text-transform: none !important;
+      margin: 0 0 16px 0 !important;
+      letter-spacing: -0.01em !important;
+      text-align: left !important;
+    }
+
+    .ctas {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+    }
+
+    @media (max-width: 640px) {
+      .ctas {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .course-cta {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 13px 16px !important;
+      background: var(--edu-porcelain) !important;
+      border: 1px solid var(--edu-border) !important;
+      border-radius: 10px !important;
+      color: var(--edu-slate-dark) !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      position: relative !important;
+    }
+
+    .course-cta::after {
+      content: '' !important;
+      width: 14px !important;
+      height: 14px !important;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>') no-repeat center center !important;
+      opacity: 0.6 !important;
+      transition: transform 0.2s ease, opacity 0.2s ease !important;
+      flex-shrink: 0 !important;
+      margin-left: 8px !important;
+    }
+
+    .course-cta:hover {
+      background: #FFFFFF !important;
+      border-color: var(--edu-cobalt-border) !important;
+      color: var(--edu-cobalt) !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1) !important;
+      transform: translateY(-2px) !important;
+      text-decoration: none !important;
+    }
+
+    .course-cta:hover::after {
+      opacity: 1 !important;
+      transform: translateX(3px) !important;
+    }
+
+    /* Bottom Contact Strip */
+    .edu-contact-strip {
+      background: var(--edu-porcelain) !important;
+      border: 1px solid var(--edu-border) !important;
+      border-radius: 16px !important;
+      padding: 24px 28px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 18px !important;
+      text-align: center !important;
+    }
+
+    @media (min-width: 860px) {
+      .edu-contact-strip {
+        flex-direction: row !important;
+        text-align: left !important;
+      }
+    }
+
+    .edu-contact-title {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: var(--edu-slate-dark) !important;
+      margin: 0 !important;
+      letter-spacing: -0.015em !important;
+      text-transform: none !important;
+      white-space: nowrap !important;
+    }
+
+    .cta-icons {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .edu-contact-chip {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: #FFFFFF !important;
+      border: 1px solid var(--edu-border) !important;
+      border-radius: 999px !important;
+      padding: 9px 18px !important;
+      color: var(--edu-slate-dark) !important;
+      font-size: 13.5px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .edu-contact-chip:hover {
+      background: #FFFFFF !important;
+      border-color: var(--edu-cobalt-border) !important;
+      color: var(--edu-cobalt) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
+      text-decoration: none !important;
+    }
+
+    .edu-contact-chip svg {
+      color: var(--edu-cobalt) !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease !important;
+    }
+
+    .edu-contact-chip:hover svg {
+      transform: scale(1.1) !important;
+    }
+
+    .edu-contact-chip a {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-weight: inherit !important;
+    }
+
+    .edu-contact-chip span {
+      color: inherit !important;
+    }
+  </style>
+
+  <main class="edu-specials-stage">
+    <div class="edu-specials-center">
+      <!-- HEADER (No Logo) -->
+      <header class="edu-specials-header">
+        <div class="edu-specials-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Official Enrollment Updates
+        </div>
+        <h1 class="edu-specials-title">SHRM &amp; HRCI Exam Preparation Specials &amp; Announcements</h1>
+      </header>
+
+      <!-- 2-COLUMN MAIN GRID -->
+      <section class="edu-specials-grid">
+        <!-- LEFT: Stay Updated Lead Form Card -->
+        <article class="edu-stay-updated-card">
+          <div class="edu-su-inner">
+            <!-- 4-Dot Brand Accent -->
+            <div class="edu-su-dots" aria-hidden="true">
+              <span class="edu-su-dot edu-su-dot-1"></span>
+              <span class="edu-su-dot edu-su-dot-2"></span>
+              <span class="edu-su-dot edu-su-dot-3"></span>
+              <span class="edu-su-dot edu-su-dot-4"></span>
+            </div>
+
+            <h2 class="edu-su-headline">Don't miss out on HR.com Certification Specials &amp; Announcements</h2>
+
+            <p class="edu-su-sub">
+              Get the latest updates on courses, early-bird deals, and exclusive offers &mdash; delivered directly to you.
+            </p>
+          </div>
+
+          <div class="edu-su-action-wrap">
+            <!-- Lead Form Scripts -->
+            <div>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+              <script src="https://public-cdn.hr.com/remoteimages/website-images/2017_SiteRedesign/js/HApopup.js"></script>
+              <script src="/en?t=/CustomCode/leadForm/main.js"></script>
+              <script src="https://public-cdn.hr.com/CRM/js/typeahead.js"></script>
+            </div>
+            
+            <a 
+              class="su2-btn" 
+              id="fc_1730822628746_v2" 
+              name="fc_1730822628746" 
+              onclick="loadPopup('fc_1730822628746')">
+              <span>Sign Up Now to Stay Updated</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- RIGHT: Money-Back Guarantee Card -->
+        <article class="edu-guarantee-card">
+          <div>
+            <div class="money-bar">
+              <span class="money-icon" aria-hidden="true">&#10004;</span>
+              <span class="money-text">Money-Back Guarantee</span>
+            </div>
+
+            <div class="mb-text">
+              <p>
+                If you meet the following eligibility requirements, and still aren't successful in passing your
+                HRCI&reg; or SHRM&reg; certification exam - <strong>we will refund your complete tuition cost back to you!</strong>
+              </p>
+
+              <ul class="mb-list">
+                <li>Must attend 80% or more of the live, scheduled sessions.</li>
+                <li>Must score 80% or higher on all practice exams included in the program.</li>
+                <li>Must attempt your HRCI or SHRM exam within 90 days of completing the program.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Applicable Courses -->
+          <div class="edu-applicable-courses">
+            <h2>Applicable courses that come with a money back guarantee</h2>
+
+            <div class="ctas">
+              <a class="course-cta" href="/en/hr-cert-prep/16-week-prep">
+                <span>16-wk HRCI &amp; SHRM</span>
+              </a>
+              <a class="course-cta" href="/en/hr-cert-prep/8-week-prep">
+                <span>8-wk HRCI &amp; SHRM</span>
+              </a>
+              <a class="course-cta" href="/en/hr-cert-prep/aphr-prep">
+                <span>10-wk aPHR</span>
+              </a>
+              <a class="course-cta" href="/en/hr-cert-prep/shrm-prep">
+                <span>SHRM Exam Preparations</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- BOTTOM CONTACT STRIP -->
+      <footer class="edu-contact-strip">
+        <h2 class="edu-contact-title">Contact HR.com&rsquo;s Exam Preparation Team</h2>
+
+        <div class="cta-icons">
+          <!-- Phone -->
+          <a class="edu-contact-chip" href="tel:18774726648,102">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>1-877-472-6648 Ext. 102</span>
+          </a>
+
+          <!-- Email -->
+          <a class="edu-contact-chip" href="mailto:certification@hr.com">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>certification@hr.com</span>
+          </a>
+
+          <!-- Web -->
+          <a class="edu-contact-chip" href="/en/prep-courses">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>hr.com/prepcourse</span>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
+

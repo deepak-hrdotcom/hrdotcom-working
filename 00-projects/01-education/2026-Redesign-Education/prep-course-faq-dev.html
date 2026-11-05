@@ -1,0 +1,1988 @@
+<!-- FOUC Suppression -->
+<style>
+  .edu-faq-page {
+    visibility: hidden;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = document.querySelector('.edu-faq-page');
+    if (p) p.style.visibility = 'visible';
+  });
+</script>
+
+<div class="edu-faq-page" id="tab-Header">
+
+  <!-- ================================================================
+    HR.com Certification Exam Preparation — Prep Course FAQ 2026 Redesign
+    Scope Wrapper : .edu-faq-page
+    Design System : 2026 International Executive Education Standard
+    Typography    : Plus Jakarta Sans exclusively
+    Strict Rules  : Zero copy modifications, Zero invented metrics, 100% link integrity
+  ================================================================ -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+    /* Global CMS Canvas & Container Overrides */
+    body > .ContentArea,
+    .ContentArea {
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    body > .ContentArea > .container,
+    .ContentArea > .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* Scoped Design Tokens & Variables */
+    .edu-faq-page {
+      --color-primary: #2563EB;
+      --color-primary-hover: #1D4ED8;
+      --color-primary-soft: #EFF6FF;
+      --color-primary-border: #BFDBFE;
+
+      --color-dark-anchor: #090D1A;
+      --color-dark-surface: #0F172A;
+      --color-dark-subtle: #1E293B;
+
+      --color-text-primary: #0F172A;
+      --color-text-secondary: #334155;
+      --color-text-muted: #64748B;
+      --color-text-light: #94A3B8;
+
+      --color-bg-canvas: #FFFFFF;
+      --color-bg-subtle: #F8FAFC;
+      --color-bg-soft: #F1F5F9;
+
+      --color-border: #E2E8F0;
+      --color-border-strong: #CBD5E1;
+
+      --color-emerald: #15803D;
+      --color-emerald-soft: #ECFDF5;
+      --color-emerald-border: #BBF7D0;
+
+      --color-gold: #B45309;
+      --color-gold-soft: #FFFBEB;
+      --color-gold-border: #FDE68A;
+
+      --color-indigo: #4F46E5;
+      --color-indigo-soft: #EEF2FF;
+      --color-indigo-border: #C7D2FE;
+
+      --radius-control: 8px;
+      --radius-input: 8px;
+      --radius-card: 14px;
+      --radius-panel: 20px;
+      --radius-pill: 999px;
+
+      --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.04);
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+      --shadow-card: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04);
+      --shadow-hover: 0 16px 36px -8px rgba(37, 99, 235, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      background-color: var(--color-bg-subtle) !important;
+      color: var(--color-text-secondary) !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      line-height: 1.6 !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      overflow-x: hidden !important;
+    }
+
+    .edu-faq-page *,
+    .edu-faq-page *::before,
+    .edu-faq-page *::after {
+      box-sizing: border-box !important;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .edu-faq-page a {
+      text-decoration: none !important;
+      color: inherit;
+    }
+
+    .edu-faq-container {
+      width: 100% !important;
+      max-width: 1140px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* ---- TOP BREADCRUMB NAVIGATION BAR ---- */
+    .edu-faq-page .edu-top-nav-bar {
+      background: #FFFFFF !important;
+      border-bottom: 1px solid var(--color-border) !important;
+      padding: 14px 0 !important;
+    }
+
+    .edu-faq-page .edu-top-nav-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-faq-page .edu-breadcrumb {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 13.5px !important;
+      color: var(--color-text-muted) !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-faq-page .edu-breadcrumb a {
+      color: var(--color-primary) !important;
+      font-weight: 600 !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .edu-faq-page .edu-breadcrumb a:hover {
+      color: var(--color-primary-hover) !important;
+      text-decoration: underline !important;
+    }
+
+    .edu-faq-page .edu-bc-sep {
+      color: var(--color-border-strong) !important;
+      font-size: 11px !important;
+    }
+
+    .edu-faq-page .edu-bc-current {
+      color: var(--color-text-primary) !important;
+      font-weight: 700 !important;
+    }
+
+    .edu-faq-page .edu-back-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: var(--color-dark-anchor) !important;
+      color: #FFFFFF !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      padding: 9px 18px !important;
+      border-radius: var(--radius-control) !important;
+      box-shadow: 0 2px 8px rgba(9, 13, 26, 0.12) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .edu-faq-page .edu-back-btn:hover {
+      background: var(--color-primary) !important;
+      transform: translateX(-3px) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* ---- HERO HEADER SECTION ---- */
+    .edu-faq-page .edu-hero-section {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+      padding: 56px 0 44px 0 !important;
+      border-bottom: 1px solid var(--color-border) !important;
+      text-align: center !important;
+    }
+
+    .edu-faq-page .edu-hero-inner {
+      max-width: 860px !important;
+      margin: 0 auto !important;
+    }
+
+    .edu-faq-page .edu-eyebrow {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: var(--color-primary-soft) !important;
+      border: 1px solid var(--color-primary-border) !important;
+      padding: 6px 14px !important;
+      border-radius: var(--radius-pill) !important;
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+      letter-spacing: -0.01em !important;
+      margin-bottom: 18px !important;
+      text-transform: uppercase !important;
+    }
+
+    .edu-faq-page .edu-eyebrow-beacon {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      background: var(--color-primary) !important;
+      animation: eduBeaconPulse 2s infinite !important;
+    }
+
+    @keyframes eduBeaconPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+      }
+    }
+
+    .edu-faq-page .edu-hero-title {
+      font-size: 40px !important;
+      line-height: 1.2 !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      letter-spacing: -0.035em !important;
+      margin: 0 0 16px 0 !important;
+    }
+
+    .edu-faq-page .edu-hero-lead {
+      font-size: 17px !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-muted) !important;
+      margin: 0 auto 32px auto !important;
+      max-width: 760px !important;
+    }
+
+    /* ---- HERO SEARCH & FILTER WRAPPER ---- */
+    .edu-faq-page .edu-search-box {
+      position: relative !important;
+      max-width: 680px !important;
+      margin: 0 auto 28px auto !important;
+    }
+
+    .edu-faq-page .edu-search-input {
+      width: 100% !important;
+      padding: 16px 20px 16px 52px !important;
+      font-size: 16px !important;
+      font-family: inherit !important;
+      color: var(--color-text-primary) !important;
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--color-border-strong) !important;
+      border-radius: 12px !important;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+      outline: none !important;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .edu-faq-page .edu-search-input:focus {
+      border-color: var(--color-primary) !important;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15) !important;
+    }
+
+    .edu-faq-page .edu-search-icon {
+      position: absolute !important;
+      left: 18px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 22px !important;
+      height: 22px !important;
+      color: var(--color-text-light) !important;
+      pointer-events: none !important;
+    }
+
+    .edu-faq-page .edu-search-clear {
+      position: absolute !important;
+      right: 16px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 50% !important;
+      border: none !important;
+      background: var(--color-bg-soft) !important;
+      color: var(--color-text-muted) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .edu-faq-page .edu-search-clear:hover {
+      background: var(--color-border-strong) !important;
+      color: var(--color-text-primary) !important;
+    }
+
+    /* Category Filter Chips */
+    .edu-faq-page .edu-category-chips {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      margin: 0 auto !important;
+    }
+
+    .edu-faq-page .edu-cat-chip {
+      background: #FFFFFF !important;
+      border: 1px solid var(--color-border) !important;
+      border-radius: var(--radius-pill) !important;
+      padding: 8px 18px !important;
+      font-size: 13.5px !important;
+      font-weight: 600 !important;
+      color: var(--color-text-secondary) !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      user-select: none !important;
+    }
+
+    .edu-faq-page .edu-cat-chip:hover {
+      border-color: var(--color-primary-border) !important;
+      color: var(--color-primary) !important;
+      background: var(--color-primary-soft) !important;
+    }
+
+    .edu-faq-page .edu-cat-chip.is-active {
+      background: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+    }
+
+    /* ---- MAIN FAQ CONTENT SECTION ---- */
+    .edu-faq-page .edu-faq-main-section {
+      padding: 50px 0 80px 0 !important;
+    }
+
+    /* Control Bar (Counter + Expand/Collapse All) */
+    .edu-faq-page .edu-faq-controls {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 24px !important;
+      padding-bottom: 16px !important;
+      border-bottom: 1px solid var(--color-border) !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+    }
+
+    .edu-faq-page .edu-faq-count {
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      color: var(--color-text-secondary) !important;
+    }
+
+    .edu-faq-page .edu-faq-count span {
+      color: var(--color-primary) !important;
+    }
+
+    .edu-faq-page .edu-faq-actions {
+      display: flex !important;
+      gap: 10px !important;
+    }
+
+    .edu-faq-page .edu-faq-btn-text {
+      background: transparent !important;
+      border: 1px solid var(--color-border) !important;
+      background-color: #FFFFFF !important;
+      padding: 6px 14px !important;
+      border-radius: var(--radius-control) !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: var(--color-text-secondary) !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .edu-faq-page .edu-faq-btn-text:hover {
+      border-color: var(--color-border-strong) !important;
+      color: var(--color-primary) !important;
+      background-color: var(--color-bg-subtle) !important;
+    }
+
+    /* Group Container */
+    .edu-faq-page .edu-faq-group {
+      margin-bottom: 44px !important;
+    }
+
+    .edu-faq-page .edu-faq-group.is-hidden {
+      display: none !important;
+    }
+
+    .edu-faq-page .edu-group-header {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .edu-faq-page .edu-group-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 8px !important;
+      background: var(--color-primary-soft) !important;
+      color: var(--color-primary) !important;
+      border: 1px solid var(--color-primary-border) !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-faq-page .edu-group-title {
+      font-size: 21px !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      letter-spacing: -0.02em !important;
+      margin: 0 !important;
+    }
+
+    /* Accordion Stack */
+    .edu-faq-page .edu-accordion-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 14px !important;
+    }
+
+    .edu-faq-page .edu-faq-item {
+      background: #FFFFFF !important;
+      border: 1px solid var(--color-border) !important;
+      border-radius: var(--radius-card) !important;
+      box-shadow: var(--shadow-sm) !important;
+      overflow: hidden !important;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .edu-faq-page .edu-faq-item.is-open {
+      border-color: var(--color-primary-border) !important;
+      box-shadow: var(--shadow-card) !important;
+    }
+
+    .edu-faq-page .edu-faq-item.is-filtered-out {
+      display: none !important;
+    }
+
+    .edu-faq-page .edu-faq-toggle {
+      width: 100% !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 20px 24px !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 18px !important;
+      text-align: left !important;
+      cursor: pointer !important;
+      outline: none !important;
+    }
+
+    .edu-faq-page .edu-faq-question-wrap {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+      flex: 1 !important;
+    }
+
+    .edu-faq-page .edu-faq-meta-tag {
+      display: inline-block !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.04em !important;
+      color: var(--color-text-muted) !important;
+    }
+
+    .edu-faq-page .edu-faq-question {
+      font-size: 17px !important;
+      font-weight: 700 !important;
+      color: var(--color-text-primary) !important;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+      letter-spacing: -0.015em !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .edu-faq-page .edu-faq-item.is-open .edu-faq-question,
+    .edu-faq-page .edu-faq-toggle:hover .edu-faq-question {
+      color: var(--color-primary) !important;
+    }
+
+    .edu-faq-page .edu-faq-icon-box {
+      width: 32px !important;
+      height: 32px !important;
+      min-width: 32px !important;
+      border-radius: 50% !important;
+      background: var(--color-bg-soft) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      color: var(--color-text-muted) !important;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease !important;
+      margin-top: 2px !important;
+    }
+
+    .edu-faq-page .edu-faq-item.is-open .edu-faq-icon-box {
+      transform: rotate(180deg) !important;
+      background: var(--color-primary-soft) !important;
+      color: var(--color-primary) !important;
+    }
+
+    .edu-faq-page .edu-faq-content {
+      display: none !important;
+      padding: 0 24px 26px 24px !important;
+      font-size: 15px !important;
+      line-height: 1.7 !important;
+      color: var(--color-text-secondary) !important;
+      border-top: 1px solid var(--color-bg-soft) !important;
+      padding-top: 20px !important;
+    }
+
+    .edu-faq-page .edu-faq-item.is-open .edu-faq-content {
+      display: block !important;
+    }
+
+    .edu-faq-page .edu-faq-content p {
+      margin: 0 0 14px 0 !important;
+    }
+
+    .edu-faq-page .edu-faq-content p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .edu-faq-page .edu-faq-content strong {
+      font-weight: 700 !important;
+      color: var(--color-text-primary) !important;
+    }
+
+    .edu-faq-page .edu-faq-content a {
+      color: var(--color-primary) !important;
+      text-decoration: underline !important;
+      font-weight: 600 !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .edu-faq-page .edu-faq-content a:hover {
+      color: var(--color-primary-hover) !important;
+    }
+
+    .edu-faq-page .edu-faq-content ul {
+      margin: 10px 0 16px 0 !important;
+      padding-left: 24px !important;
+    }
+
+    .edu-faq-page .edu-faq-content ul li {
+      margin-bottom: 8px !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Guarantee Requirements Highlight Box */
+    .edu-faq-page .edu-guarantee-box {
+      background: var(--color-gold-soft) !important;
+      border: 1px solid var(--color-gold-border) !important;
+      border-left: 4px solid var(--color-gold) !important;
+      border-radius: 10px !important;
+      padding: 18px 20px !important;
+      margin: 14px 0 !important;
+    }
+
+    .edu-faq-page .edu-guarantee-box ul {
+      margin: 8px 0 0 0 !important;
+      padding-left: 20px !important;
+    }
+
+    .edu-faq-page .edu-guarantee-box li {
+      color: #78350F !important;
+      font-weight: 600 !important;
+      margin-bottom: 8px !important;
+    }
+
+    .edu-faq-page .edu-guarantee-disclaimer {
+      font-size: 13.5px !important;
+      color: #92400E !important;
+      font-style: italic !important;
+      margin-top: 10px !important;
+    }
+
+    /* Video Feature Box */
+    .edu-faq-page .edu-video-callout {
+      background: var(--color-primary-soft) !important;
+      border: 1px solid var(--color-primary-border) !important;
+      border-radius: 10px !important;
+      padding: 16px 20px !important;
+      margin: 14px 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+    }
+
+    .edu-faq-page .edu-video-callout-icon {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      background: var(--color-primary) !important;
+      color: #FFFFFF !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Modern Responsive Pricing Comparison Table */
+    .edu-faq-page .edu-pricing-table-wrap {
+      margin: 16px 0 !important;
+      border: 1px solid var(--color-border) !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .edu-faq-page .edu-pricing-table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      font-size: 14.5px !important;
+      text-align: left !important;
+      background: #FFFFFF !important;
+    }
+
+    .edu-faq-page .edu-pricing-table th,
+    .edu-faq-page .edu-pricing-table td {
+      padding: 16px 20px !important;
+      border-bottom: 1px solid var(--color-border) !important;
+    }
+
+    .edu-faq-page .edu-pricing-table th {
+      background: var(--color-bg-subtle) !important;
+      color: var(--color-text-primary) !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .edu-faq-page .edu-pricing-table tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    .edu-faq-page .edu-pricing-table tr:hover td {
+      background-color: #FBFDFF !important;
+    }
+
+    .edu-faq-page .edu-format-title {
+      font-weight: 700 !important;
+      color: var(--color-text-primary) !important;
+    }
+
+    .edu-faq-page .edu-price-tag {
+      display: inline-block !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+      background: var(--color-primary-soft) !important;
+      border: 1px solid var(--color-primary-border) !important;
+      padding: 3px 10px !important;
+      border-radius: var(--radius-pill) !important;
+      font-size: 13.5px !important;
+    }
+
+    .edu-faq-page .edu-pricing-note {
+      font-size: 12.5px !important;
+      color: var(--color-text-muted) !important;
+      margin-top: 8px !important;
+      font-style: italic !important;
+    }
+
+    /* ---- DIRECTORY GRID: CONTACTS & RESOURCES ---- */
+    .edu-faq-page .edu-directory-section {
+      background: #FFFFFF !important;
+      border-top: 1px solid var(--color-border) !important;
+      border-bottom: 1px solid var(--color-border) !important;
+      padding: 64px 0 !important;
+    }
+
+    .edu-faq-page .edu-dir-header {
+      text-align: center !important;
+      max-width: 700px !important;
+      margin: 0 auto 40px auto !important;
+    }
+
+    .edu-faq-page .edu-dir-title {
+      font-size: 28px !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      letter-spacing: -0.025em !important;
+      margin: 0 0 10px 0 !important;
+    }
+
+    .edu-faq-page .edu-dir-subtitle {
+      font-size: 15.5px !important;
+      color: var(--color-text-muted) !important;
+      margin: 0 !important;
+    }
+
+    .edu-faq-page .edu-dir-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 20px !important;
+    }
+
+    .edu-faq-page .edu-dir-card {
+      background: var(--color-bg-subtle) !important;
+      border: 1px solid var(--color-border) !important;
+      border-radius: var(--radius-card) !important;
+      padding: 24px 20px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: var(--shadow-sm) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .edu-faq-page .edu-dir-card:hover {
+      transform: translateY(-3px) !important;
+      border-color: var(--color-primary-border) !important;
+      box-shadow: var(--shadow-hover) !important;
+      background: #FFFFFF !important;
+    }
+
+    .edu-faq-page .edu-dir-org-name {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: var(--color-text-primary) !important;
+      margin: 0 0 6px 0 !important;
+      letter-spacing: -0.015em !important;
+    }
+
+    .edu-faq-page .edu-dir-org-role {
+      font-size: 12.5px !important;
+      color: var(--color-text-muted) !important;
+      font-weight: 500 !important;
+      margin-bottom: 18px !important;
+      line-height: 1.4 !important;
+    }
+
+    .edu-faq-page .edu-dir-links {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+      padding-top: 14px !important;
+      border-top: 1px solid var(--color-border) !important;
+    }
+
+    .edu-faq-page .edu-dir-link-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      font-size: 13.5px !important;
+      color: var(--color-text-secondary) !important;
+    }
+
+    .edu-faq-page .edu-dir-link-item svg {
+      width: 16px !important;
+      height: 16px !important;
+      color: var(--color-primary) !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-faq-page .edu-dir-link-item a {
+      color: var(--color-text-primary) !important;
+      font-weight: 600 !important;
+      transition: color 0.15s ease !important;
+      word-break: break-all !important;
+    }
+
+    .edu-faq-page .edu-dir-link-item a:hover {
+      color: var(--color-primary) !important;
+      text-decoration: underline !important;
+    }
+
+    /* ---- ADVISOR CONSULTATION CTA SECTION ---- */
+    .edu-faq-page .edu-cta-section {
+      background: var(--color-dark-anchor) !important;
+      color: #FFFFFF !important;
+      padding: 68px 0 !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .edu-faq-page .edu-cta-section::before {
+      content: '' !important;
+      position: absolute !important;
+      top: -100px !important;
+      right: -100px !important;
+      width: 400px !important;
+      height: 400px !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0) 70%) !important;
+      pointer-events: none !important;
+    }
+
+    .edu-faq-page .edu-cta-box {
+      max-width: 860px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .edu-faq-page .edu-cta-title {
+      font-size: 32px !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 14px 0 !important;
+    }
+
+    .edu-faq-page .edu-cta-desc {
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+      color: #94A3B8 !important;
+      margin: 0 auto 30px auto !important;
+      max-width: 680px !important;
+    }
+
+    .edu-faq-page .edu-cta-channels {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 28px !important;
+      margin-bottom: 34px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-faq-page .edu-cta-channel-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      font-size: 15px !important;
+      color: #E2E8F0 !important;
+    }
+
+    .edu-faq-page .edu-cta-channel-item svg {
+      color: #60A5FA !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-faq-page .edu-cta-channel-item a {
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .edu-faq-page .edu-cta-channel-item a:hover {
+      color: #60A5FA !important;
+      text-decoration: underline !important;
+    }
+
+    .edu-faq-page .edu-cta-actions-cluster {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 14px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .edu-faq-page .edu-btn-primary {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: var(--color-primary) !important;
+      color: #FFFFFF !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      padding: 13px 26px !important;
+      border-radius: var(--radius-control) !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .edu-faq-page .edu-btn-primary:hover {
+      background: var(--color-primary-hover) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+
+    .edu-faq-page .edu-btn-secondary {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      padding: 13px 24px !important;
+      border-radius: var(--radius-control) !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .edu-faq-page .edu-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-color: rgba(255, 255, 255, 0.28) !important;
+      color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* ---- TRADEMARK LEGAL DISCLAIMER ---- */
+    .edu-faq-page .edu-disclaimer-section {
+      background: #FFFFFF !important;
+      padding: 34px 0 !important;
+      border-top: 1px solid var(--color-border) !important;
+    }
+
+    .edu-faq-page .edu-disclaimer-box {
+      max-width: 980px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+    }
+
+    .edu-faq-page .edu-disclaimer-title {
+      font-size: 12.5px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.06em !important;
+      color: var(--color-text-muted) !important;
+      margin-bottom: 8px !important;
+    }
+
+    .edu-faq-page .edu-disclaimer-text {
+      font-size: 12px !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-light) !important;
+      margin: 0 !important;
+    }
+
+    /* No search results state */
+    .edu-faq-page .edu-no-results {
+      display: none;
+      text-align: center !important;
+      padding: 48px 24px !important;
+      background: #FFFFFF !important;
+      border: 1px dashed var(--color-border-strong) !important;
+      border-radius: var(--radius-card) !important;
+      margin: 20px 0 !important;
+    }
+
+    .edu-faq-page .edu-no-results-icon {
+      width: 48px !important;
+      height: 48px !important;
+      margin: 0 auto 14px auto !important;
+      color: var(--color-text-light) !important;
+    }
+
+    .edu-faq-page .edu-no-results-title {
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      color: var(--color-text-primary) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .edu-faq-page .edu-no-results-desc {
+      font-size: 14px !important;
+      color: var(--color-text-muted) !important;
+      margin-bottom: 18px !important;
+    }
+
+    /* ---- RESPONSIVE MEDIA QUERIES ---- */
+    @media (max-width: 1024px) {
+      .edu-faq-page .edu-dir-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .edu-faq-page .edu-hero-title {
+        font-size: 30px !important;
+      }
+      .edu-faq-page .edu-hero-lead {
+        font-size: 15px !important;
+      }
+      .edu-faq-page .edu-search-input {
+        font-size: 14.5px !important;
+        padding-left: 44px !important;
+      }
+      .edu-faq-page .edu-search-icon {
+        left: 14px !important;
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .edu-faq-page .edu-cat-chip {
+        font-size: 12.5px !important;
+        padding: 6px 14px !important;
+      }
+      .edu-faq-page .edu-faq-toggle {
+        padding: 16px 18px !important;
+      }
+      .edu-faq-page .edu-faq-question {
+        font-size: 15.5px !important;
+      }
+      .edu-faq-page .edu-faq-content {
+        padding: 0 18px 20px 18px !important;
+        font-size: 14px !important;
+      }
+      .edu-faq-page .edu-dir-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .edu-faq-page .edu-cta-title {
+        font-size: 26px !important;
+      }
+      .edu-faq-page .edu-cta-channels {
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+      }
+      .edu-faq-page .edu-pricing-table th,
+      .edu-faq-page .edu-pricing-table td {
+        padding: 12px 14px !important;
+        font-size: 13.5px !important;
+      }
+    }
+  </style>
+
+  <!-- Section 1: Breadcrumb Navigation Bar -->
+  <nav class="edu-top-nav-bar" aria-label="Breadcrumb navigation">
+    <div class="edu-faq-container edu-top-nav-inner">
+      <div class="edu-breadcrumb">
+        
+       
+        <a href="/en/prep-courses">Certification Prep</a>
+        <span class="edu-bc-sep">&rsaquo;</span>
+        <span class="edu-bc-current">Prep Course FAQ</span>
+      </div>
+      <a href="/en/prep-courses" class="edu-back-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Prep Courses</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Section 2: Executive Hero Stage -->
+  <header class="edu-hero-section">
+    <div class="edu-faq-container edu-hero-inner">
+      <div class="edu-eyebrow">
+        <span class="edu-eyebrow-beacon"></span>
+        HR CERTIFICATION PREP KNOWLEDGE BASE
+      </div>
+      <h1 class="edu-hero-title">Prep Course FAQ</h1>
+      <p class="edu-hero-lead">
+        Find clear answers on course inclusions, pass assurance eligibility, class formats, schedules, exam institutions, and study resources.
+      </p>
+
+      <!-- Instant Search Filter -->
+      <div class="edu-search-box">
+        <svg class="edu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="faqSearchInput" 
+          class="edu-search-input" 
+          placeholder="Search questions, topics, or keywords (e.g. Guarantee, HRCI, Recordings, Pricing)..."
+          autocomplete="off"
+        >
+        <button type="button" id="faqSearchClear" class="edu-search-clear" aria-label="Clear search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="edu-category-chips">
+        <button type="button" class="edu-cat-chip is-active" data-cat="all">All Questions (22)</button>
+        <button type="button" class="edu-cat-chip" data-cat="orgs">Organizations &amp; Partners</button>
+        <button type="button" class="edu-cat-chip" data-cat="formats">Course Formats &amp; Inclusions</button>
+        <button type="button" class="edu-cat-chip" data-cat="schedule">Schedules &amp; Attendance</button>
+        <button type="button" class="edu-cat-chip" data-cat="guarantee">Guarantee &amp; Pricing</button>
+        <button type="button" class="edu-cat-chip" data-cat="logistics">Enrollment &amp; Logistics</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 3: Main FAQ Accordion Container -->
+  <main class="edu-faq-main-section">
+    <div class="edu-faq-container">
+
+      <!-- FAQ Control Bar -->
+      <div class="edu-faq-controls">
+        <div class="edu-faq-count">
+          Showing <span id="visibleQuestionCount">22</span> questions
+        </div>
+        <div class="edu-faq-actions">
+          <button type="button" class="edu-faq-btn-text" id="btnCollapseAll">Collapse All</button>
+        </div>
+      </div>
+
+      <!-- No Results State -->
+      <div class="edu-no-results" id="faqNoResults">
+        <svg class="edu-no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <line x1="8" y1="11" x2="14" y2="11"></line>
+        </svg>
+        <div class="edu-no-results-title">No matching questions found</div>
+        <p class="edu-no-results-desc">Try different keywords or reset your filter to view all available questions.</p>
+        <button type="button" class="edu-faq-btn-text" id="btnResetSearch">Reset Search</button>
+      </div>
+
+      <!-- ============================================================
+           GROUP 1: ORGANIZATIONS & ACCREDITING BODIES
+      ============================================================ -->
+      <div class="edu-faq-group" data-group-cat="orgs">
+        <div class="edu-group-header">
+          <div class="edu-group-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M3 7v14M21 7v14M6 7V3h12v4M9 11h2M9 15h2M13 11h2M13 15h2"/>
+            </svg>
+          </div>
+          <h2 class="edu-group-title">About HR.com, HRCP, HRCI &amp; SHRM</h2>
+        </div>
+
+        <div class="edu-accordion-list">
+
+          <!-- Q1: What is HR.com? -->
+          <div class="edu-faq-item is-open" data-faq-cat="orgs" id="faq-what-is-hr-com">
+            <button type="button" class="edu-faq-toggle" aria-expanded="true">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Overview</span>
+                <h3 class="edu-faq-question">What is HR.com?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>HR.com is a social network with extensive career resources to support human resource professionals. HR.com provides HRPs with professional certification exam preparation options and recertification credits.  HR.com is not a certifying institute and does not distribute the professional certification exams.  See HRCI and SHRM sections below for information on the certifying institutes.</p>
+              <p>More information on the Institute for Human Resources can be found at <a href="/ihr" target="_blank">www.hr.com/prepcourse</a></p>
+            </div>
+          </div>
+
+          <!-- Q2: Who is HRCP? -->
+          <div class="edu-faq-item" data-faq-cat="orgs" id="faq-who-is-hrcp">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Study Materials Partner</span>
+                <h3 class="edu-faq-question">Who is HRCP?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>HRCP is the Human Resource Certification Program. HRCP is the resource from which the HR.com prep course sources its study and learning materials.</p>
+              <p>More information can be found at <a href="http://www.hrcp.com" target="_blank" rel="noopener noreferrer">www.hrcp.com</a></p>
+            </div>
+          </div>
+
+          <!-- Q3: Who is HRCI? -->
+          <div class="edu-faq-item" data-faq-cat="orgs" id="faq-who-is-hrci">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Certifying Institute</span>
+                <h3 class="edu-faq-question">Who is HRCI?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>HRCI is the Human Resource Certificate Institute; a separate entity from HR.com. HRCI is an American organization that administers NCCA accredited HR certification exams.</p>
+              <p>Exams include:</p>
+              <ul>
+                <li>Professional in Human Resources (PHR®)</li>
+                <li>Senior Professional in Human Resources (SPHR®)</li>
+                <li>Associate Professional in Human Resources (aPHR®)</li>
+                <li>California Certification (PHR-CA®)</li>
+                <li>Associate Professional in Human Resources - International (aPHRi&trade;)</li>
+                <li>Professional in Human Resources - International (PHRi&trade;)</li>
+                <li>Senior Professional in Human Resources - International (SPHRi&trade;)</li>
+                <li>Global Professional in Human Resources (GPHR®)</li>
+              </ul>
+              <p>Visit <a href="http://www.hrci.org" target="_blank" rel="noopener noreferrer">www.hrci.org</a> for more information.</p>
+            </div>
+          </div>
+
+          <!-- Q4: Who is SHRM? -->
+          <div class="edu-faq-item" data-faq-cat="orgs" id="faq-who-is-shrm">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Certifying Institute</span>
+                <h3 class="edu-faq-question">Who is SHRM?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>SHRM is the Society of Human Resource Management; a non-profit membership organization. SHRM is well known for its cross country chapters and annual conferences and until recently its strong ties with HRCI. In 2014 SHRM distanced itself from HRCI as it created its own set of competencies based exams - the SHRM Certified Professional (SHRM-CP) and the SHRM Senior Certified Professional (SHRM-SCP).</p>
+              <p>Visit <a href="http://www.shrm.org" target="_blank" rel="noopener noreferrer">www.shrm.org</a> for more information.</p>
+            </div>
+          </div>
+
+          <!-- Q7: What is the difference between HR.com, HRCP, HRCI and SHRM? -->
+          <div class="edu-faq-item" data-faq-cat="orgs" id="faq-difference-partners">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Quick Clarification</span>
+                <h3 class="edu-faq-question">What is the difference between HR.com, HRCP, HRCI and SHRM?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p><strong>HR.com</strong> is the company that provides the prep course to help you pass your exam.<br>
+              <strong>HRCP</strong> is the company that HR.com has partnered with for their effective study materials approach.<br>
+              <strong>HRCI</strong> is the accreditation institute that you register with to take your exam.<br>
+              <strong>SHRM</strong> is a competing certification institute to HRCI.</p>
+            </div>
+          </div>
+
+          <!-- Q5: About HRCI Application Processing, Exam Periods and 2nd Chance Insurance -->
+          <div class="edu-faq-item" data-faq-cat="orgs" id="faq-hrci-applications-insurance">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">HRCI Exam Windows</span>
+                <h3 class="edu-faq-question">About HRCI Application Processing, Exam Periods and 2nd Chance Insurance.</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>HRCI exams are held year round and applications can be submitted to <a href="http://www.hrci.org" target="_blank" rel="noopener noreferrer">www.hrci.org</a> at any time. Application processing times are approximately two weeks and approved applicants may test two weeks thereafter. Applications are valid for 6 months (180 days), after which time the application becomes stale and void.</p>
+              <p>2nd chance insurance can <strong>only</strong> be purchased during the application process. Applicants are highly advised to consider this before beginning the application process as this cannot be added on after the initial exam payment. The cost of the insurance is non-refundable if an applicant passes the exam. If a test-taker does not pass their exam and needs to use the pre-paid insurance, they will then receive more instructions in their emailed final exam report (approximately two weeks after the exam). Test-takers testing on pre-paid insurance must wait 90 days before they can test again and the exam must be taken within 3 months.</p>
+              <p>Please visit the HRCI website for fees and application procedures. HRCI – <a href="http://www.hrci.org" target="_blank" rel="noopener noreferrer">www.hrci.org</a></p>
+            </div>
+          </div>
+
+          <!-- Q6: About SHRM Application Periods and Exam Periods -->
+          <div class="edu-faq-item" data-faq-cat="orgs" id="faq-shrm-application-periods">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">SHRM Exam Windows</span>
+                <h3 class="edu-faq-question">About SHRM Application Periods and Exam Periods.</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p><strong>SHRM hosts two testing cycles each year:</strong></p>
+              <p>Spring:&nbsp;&nbsp;May 1 – July 15<br>
+              Winter:&nbsp;&nbsp;December 1 – February 15</p>
+              <p>There is a preset application window in which you can apply to sit for your exam. Please visit the SHRM website for respective testing dates, fees and application deadlines. SHRM – <a href="http://www.shrm.org/certification" target="_blank" rel="noopener noreferrer">www.shrm.org/certification</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           GROUP 2: COURSE FORMATS & INCLUSIONS
+      ============================================================ -->
+      <div class="edu-faq-group" data-group-cat="formats">
+        <div class="edu-group-header">
+          <div class="edu-group-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <h2 class="edu-group-title">Course Formats &amp; Inclusions</h2>
+        </div>
+
+        <div class="edu-accordion-list">
+
+          <!-- Q8: What is included in the HR.com hybrid PHR/SPHR/SHRM-CP/SHRM-SCP prep course? -->
+          <div class="edu-faq-item" data-faq-cat="formats" id="faq-phr-sphr-shrm-inclusions">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">PHR / SPHR / SHRM Curriculum</span>
+                <h3 class="edu-faq-question">What is included in the HR.com hybrid PHR/SPHR/SHRM-CP/SHRM-SCP prep course?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p><strong>Students will receive:</strong></p>
+              <ul>
+                <li>37+ hours of live online classes with a qualified, certified professional and instructor</li>
+                <li>5 study manuals – one for each body of knowledge on the exam</li>
+                <li>Quick study flash cards</li>
+                <li>Hundreds of online practice exam questions</li>
+                <li>Ongoing mentoring and study guidance</li>
+                <li>Exclusive access to HR.com's online learing environment</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q17: What is included in the HR.com aPHR live Online Instructor-Led prep course? -->
+          <div class="edu-faq-item" data-faq-cat="formats" id="faq-aphr-inclusions">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">aPHR Curriculum</span>
+                <h3 class="edu-faq-question">What is included in the HR.com aPHR live Online Instructor-Led prep course?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p><strong>Students will receive:</strong></p>
+              <ul>
+                <li>Up to 20 hours of live online classes with a qualified professional and instructor</li>
+                <li>1 online study manual</li>
+                <li>Quick study flash cards</li>
+                <li>Hundres of online practice assessment questions</li>
+                <li>Ongoing mentoring and study guidance</li>
+                <li>Exclusive access to HR.com's online learning environment</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q16: About the Self-paced eLearning prep course -->
+          <div class="edu-faq-item" data-faq-cat="formats" id="faq-elearning-prep-course">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Self-Paced Format</span>
+                <h3 class="edu-faq-question">About the Self-paced eLearning prep course.</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>The self-paced eLearning course has been designed on an asynchronous learning platform and allows the learner to prepare for their exam at their own pace. Included in enrollment of an eLearning course is the comprehensive learning system and an assigned virtual instructor and coach to aid in your preparations.</p>
+            </div>
+          </div>
+
+          <!-- Q18: Who are the course Instructors? -->
+          <div class="edu-faq-item" data-faq-cat="formats" id="faq-course-instructors">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Faculty &amp; Mentors</span>
+                <h3 class="edu-faq-question">Who are the course Instructors?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>Instructors have been selected for their Human Resources knowledge and experience – both professionally and academically. Instructors have earned their professional designation, Masters in HR and other similar certifications.</p>
+              <p>Additionally, all online instructors have experience facilitating in an online forum and share a common purpose – to ensure the success of our valued test go'ers!</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           GROUP 3: SCHEDULES, ATTENDANCE & RECORDINGS
+      ============================================================ -->
+      <div class="edu-faq-group" data-group-cat="schedule">
+        <div class="edu-group-header">
+          <div class="edu-group-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h2 class="edu-group-title">Schedules, Attendance &amp; Recordings</h2>
+        </div>
+
+        <div class="edu-accordion-list">
+
+          <!-- Q13: How long do classes run? -->
+          <div class="edu-faq-item" data-faq-cat="schedule" id="faq-class-duration">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Pacing &amp; Duration</span>
+                <h3 class="edu-faq-question">How long do classes run?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>Each group is designed to meet once or twice per week for 16 weeks (PHR/SPHR/SHRM-CP/SHRM-SCP course) or 10 weeks (aPHR course). The total time for each lesson may range from 1 to 2.5 hours, depending on whether it meets once or twice per week.</p>
+            </div>
+          </div>
+
+          <!-- Q10: What are the Group Sizes and how are they comprised? -->
+          <div class="edu-faq-item" data-faq-cat="schedule" id="faq-group-sizes">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Cohort Dynamics</span>
+                <h3 class="edu-faq-question">What are the Group Sizes and how are they comprised?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>Each group is maintained to be as intimate as possible; however, we strive to accommodate all customers to the class date and time of their preference. Classmates will specialize in an array of HR disciplines, thereby enriching the resources within the group. Classmates may be working towards any of the available professional certifications available.</p>
+            </div>
+          </div>
+
+          <!-- Q11: When are live classes held and how can I make-up a missed class? -->
+          <div class="edu-faq-item" data-faq-cat="schedule" id="faq-makeup-classes">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Make-up Policy</span>
+                <h3 class="edu-faq-question">When are live classes held and how can I make-up a missed class?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>HR.com strives to offer multiple cohorts each month, allowing for make-up classes. </p>
+              <p>**All efforts are made to create make-up opportunities. However, make-up opportunities cannot be guaranteed under all circumstances.</p>
+            </div>
+          </div>
+
+          <!-- Q12: How is attendance tracked and why is it important? -->
+          <div class="edu-faq-item" data-faq-cat="schedule" id="faq-attendance-tracking">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Attendance &amp; Verification</span>
+                <h3 class="edu-faq-question">How is attendance tracked and why is it important?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>Attendance is tracked in the live instructor led courses. Since these classes are held in virtual classrooms, attendance records are generated for those who log-in using their username and email addresses. Instructors maintain attendance records to uphold the money back guarantee and to serve as a study coach.</p>
+            </div>
+          </div>
+
+          <!-- Q20: How long do I have access to class recordings and practice tests? -->
+          <div class="edu-faq-item" data-faq-cat="schedule" id="faq-access-duration">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Recordings &amp; Portal Access</span>
+                <h3 class="edu-faq-question">How long do I have access to class recordings and practice tests?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>All live sessions are recorded and OnDemand for access and convenience of learners. Recordings will be uploaded to the HR.com site within 48-72 hours following the live session. Learners have access to all OnDemand recordings, supplemental and supporting documents, and practice exams for two (2) years from the date of program enrollment.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           GROUP 4: PRICING & PASS ASSURANCE GUARANTEE
+      ============================================================ -->
+      <div class="edu-faq-group" data-group-cat="guarantee">
+        <div class="edu-group-header">
+          <div class="edu-group-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h2 class="edu-group-title">Pricing &amp; Pass Assurance Guarantee</h2>
+        </div>
+
+        <div class="edu-accordion-list">
+
+          <!-- Q19: What is the price? -->
+          <div class="edu-faq-item" data-faq-cat="guarantee" id="faq-course-pricing">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Investment</span>
+                <h3 class="edu-faq-question">What is the price?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <div class="edu-pricing-table-wrap">
+                <table class="edu-pricing-table" aria-label="Course Pricing Matrix">
+                  <thead>
+                    <tr>
+                      <th style="width: 38%;">Format</th>
+                      <th style="width: 36%;">PHR / SPHR / SHRM-CP / SHRM-SCP</th>
+                      <th style="width: 26%;">aPHR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="edu-format-title">Live Instructor Led Course</div>
+                      </td>
+                      <td>
+                        <span class="edu-price-tag">prices start at $1055</span>
+                      </td>
+                      <td>
+                        <span class="edu-price-tag">prices start at $755</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="edu-format-title">Online eLearning Course</div>
+                      </td>
+                      <td>
+                        <span class="edu-price-tag">prices start at $880</span>
+                      </td>
+                      <td>
+                        <span class="edu-price-tag">prices start at $580</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="edu-pricing-note">*prices are subject to change</div>
+            </div>
+          </div>
+
+          <!-- Q9: About the Money Back Guarantee -->
+          <div class="edu-faq-item" data-faq-cat="guarantee" id="faq-money-back-guarantee">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Pass Assurance Policy</span>
+                <h3 class="edu-faq-question">About the Money Back Guarantee.</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>Learners enrolled in the 16-week live instructor-led program preparing for the PHR/SPHR/SHRM-CP/SHRM-SCP prep course or the 10-week live instructor-led course for the aPHR are eligible for the money back guarantee. In order to qualify, the following stipulations must be met:</p>
+              
+              <div class="edu-guarantee-box">
+                <ul>
+                  <li>Must pass each of the practice assessments provided as part of enrollment in the prep course with an 80% or greater on each assessment. (The free 20-question practice test does not count). Only scores earned from date of enrollment or course start date (for deferred classmates) up until the scheduled exam date will be considered. Practice test scores earned after an exam has been taken will not be considered.</li>
+                  <li>Must read the Guide for Successful Exam Preparation from HRCP in its entirety.</li>
+                  <li>Must attend at least 80% of the live online classes.</li>
+                  <li>Must test within three (3) months of completing the course.</li>
+                </ul>
+                <div class="edu-guarantee-disclaimer">
+                  **HR.com reserves the right to disqualify an enrolled prep course learner if dishonest practices are identified and rendered.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           GROUP 5: ENROLLMENT & LOGISTICS
+      ============================================================ -->
+      <div class="edu-faq-group" data-group-cat="logistics">
+        <div class="edu-group-header">
+          <div class="edu-group-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h2 class="edu-group-title">Enrollment, Shipping &amp; Getting Started</h2>
+        </div>
+
+        <div class="edu-accordion-list">
+
+          <!-- Q14: How do I track my learning system package? -->
+          <div class="edu-faq-item" data-faq-cat="logistics" id="faq-tracking-package">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Shipping &amp; Delivery</span>
+                <h3 class="edu-faq-question">How do I track my learning system package?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>Your individual UPS tracking number has been provided by email from HRCP at the time of enrollment. Often this email may go to spam. Please check your spam folder in your email client. Enter your tracking number at <a href="http://www.ups.com" target="_blank" rel="noopener noreferrer">www.ups.com</a> to determine the expected delivery date.</p>
+              <p>If you are not able to locate this information please contact us at <a href="mailto:certification@hr.com">certification@hr.com</a>.</p>
+            </div>
+          </div>
+
+          <!-- Q15: How do I access my practice tests? -->
+          <div class="edu-faq-item" data-faq-cat="logistics" id="faq-access-practice-tests">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Online Testing Portal</span>
+                <h3 class="edu-faq-question">How do I access my practice tests?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>A unique has been created for individual users and is sent via email from HRCP at the time of enrollment. Often this email may be to spam. Please check your spam folder in your email client. If you are not able to locate this email please contact us at <a href="mailto:certification@hr.com">certification@hr.com</a>.</p>
+            </div>
+          </div>
+
+          <!-- Q21: I enrolled but have not received any information. What do I do? -->
+          <div class="edu-faq-item" data-faq-cat="logistics" id="faq-onboarding-welcome">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Onboarding Assistance</span>
+                <h3 class="edu-faq-question">I enrolled but have not received any information. What do I do?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>You should receive a welcome email within 12 hours of purchasing your course on the HR.com website. If you do not receive it, please check your spam folder and ensure that you have added certification@hr.com and info@hr.com to your contact list. If you purchased your course through one of our partners (HRCP or HRCI), please allow 24-48 hours after purchase to receive the welcome email. The welcome email will include options for your live orientation session. It is very important that you attend one of our scheduled orientations prior to beginning classes this semester. These orientations will get you up to speed on how to join the live sessions, where to find your online practice components, as well as other important aspects of our program.</p>
+              
+              <div class="edu-video-callout">
+                <div class="edu-video-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <div>
+                  <strong>Orientation Video:</strong> In addition, you can begin to familiarize yourself with what to expect by viewing the <a href="https://www.youtube.com/watch?v=rrZyNXlxrhM" target="_blank" rel="noopener noreferrer">How To Get Started video</a>, which will also be included in the welcome email.
+                </div>
+              </div>
+
+              <p>Please do not hesitate to email us with any questions or concerns at <a href="mailto:certification@hr.com">certification@hr.com</a>.</p>
+            </div>
+          </div>
+
+          <!-- Q22: Where do I go if I have more questions? -->
+          <div class="edu-faq-item" data-faq-cat="logistics" id="faq-more-questions">
+            <button type="button" class="edu-faq-toggle" aria-expanded="false">
+              <div class="edu-faq-question-wrap">
+                <span class="edu-faq-meta-tag">Student Support</span>
+                <h3 class="edu-faq-question">Where do I go if I have more questions?</h3>
+              </div>
+              <div class="edu-faq-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="edu-faq-content">
+              <p>The class instructors are HR practitioners and academics. They also serve as mentors and coaches throughout the course. Students are encouraged to ask questions and seek solutions with their instructor. Questions, concerns, and comments are always welcome – please email us at <a href="mailto:certification@hr.com">certification@hr.com</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Section 4: Official Contacts & Resource Directory -->
+  <section class="edu-directory-section" id="contacts-directory">
+    <div class="edu-faq-container">
+      <div class="edu-dir-header">
+        <h2 class="edu-dir-title">Contacts &amp; Resources</h2>
+        <p class="edu-dir-subtitle">Official verified contact channels for program providers, materials publishers, and testing institutes.</p>
+      </div>
+
+      <div class="edu-dir-grid">
+
+        <!-- Card 1: HR.com -->
+        <div class="edu-dir-card">
+          <div>
+            <h3 class="edu-dir-org-name">HR.com</h3>
+            <div class="edu-dir-org-role">Prep Course &amp; Recertification Provider</div>
+          </div>
+          <div class="edu-dir-links">
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="https://www.hr.com/en/" target="_blank" rel="noopener noreferrer">www.hr.com</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:certification@hr.com">certification@hr.com</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:18774726648">1-877-472-6648</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: HRCP -->
+        <div class="edu-dir-card">
+          <div>
+            <h3 class="edu-dir-org-name">HRCP</h3>
+            <div class="edu-dir-org-role">Human Resource Certification Program (Materials)</div>
+          </div>
+          <div class="edu-dir-links">
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="http://www.hrcp.com" target="_blank" rel="noopener noreferrer">www.hrcp.com</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@hrcp.com">info@hrcp.com</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:18013433699">1-801-343-3699</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: HRCI -->
+        <div class="edu-dir-card">
+          <div>
+            <h3 class="edu-dir-org-name">HRCI</h3>
+            <div class="edu-dir-org-role">Human Resource Certification Institute</div>
+          </div>
+          <div class="edu-dir-links">
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="http://www.hrci.org" target="_blank" rel="noopener noreferrer">www.hrci.org</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@hrci.org">info@hrci.org</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:18668984724">1-866-898-4724</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: SHRM -->
+        <div class="edu-dir-card">
+          <div>
+            <h3 class="edu-dir-org-name">SHRM</h3>
+            <div class="edu-dir-org-role">Society for Human Resource Management</div>
+          </div>
+          <div class="edu-dir-links">
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="http://www.shrm.org/certification" target="_blank" rel="noopener noreferrer">www.shrm.org/certification</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:shrmeducation@shrm.org">shrmeducation@shrm.org</a>
+            </div>
+            <div class="edu-dir-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:18002837476">1-800-283-7476</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Advisor Consultation Support Block -->
+  <section class="edu-cta-section">
+    <div class="edu-faq-container">
+      <div class="edu-cta-box">
+        <h2 class="edu-cta-title">Still Have Questions About Your Prep?</h2>
+        <p class="edu-cta-desc">
+          Our certification coaches and program advisors are here to help you select the ideal course format, verify pass assurance eligibility, or structure employer tuition reimbursement.
+        </p>
+
+        <div class="edu-cta-channels">
+          <div class="edu-cta-channel-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>Call: <a href="tel:18774726648">1-877-472-6648 (Ext. 102)</a></span>
+          </div>
+          <div class="edu-cta-channel-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Email: <a href="mailto:certification@hr.com">certification@hr.com</a></span>
+          </div>
+        </div>
+
+        <div class="edu-cta-actions-cluster">
+          <a class="edu-btn-primary" href="/en/prep-courses">
+            <span>Explore Prep Courses</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="edu-btn-secondary" href="/en/one-one-coaching">
+            <span>Schedule Advisor Consultation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Trademark Legal Disclaimer -->
+  <footer class="edu-disclaimer-section">
+    <div class="edu-faq-container">
+      <div class="edu-disclaimer-box">
+        <div class="edu-disclaimer-title">Official Trademark Disclaimer</div>
+        <p class="edu-disclaimer-text">
+          <em>aPHR&reg;, PHR&reg;, SPHR&reg;, SHRM-CP&reg;, SHRM-SCP&reg;, and all other HRCI&reg; and SHRM&reg; certification marks are the property of HR Certification Institute&reg; and the Society for Human Resource Management&reg;, respectively. HR.com is not affiliated with, endorsed by, or sponsored by HRCI&reg; or SHRM&reg;. All HR.com preparation courses, practice exams, and study materials are independently developed and are neither approved nor endorsed by HRCI&reg; or SHRM&reg;. Reference to these certifications does not imply ownership or official partnership.</em>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /.edu-faq-page -->
+
+<!-- ================================================================
+     INTERACTIVE JAVASCRIPT: Accordion, Filter, Search, Deep Linking
+================================================================ -->
+<script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var searchInput = document.getElementById('faqSearchInput');
+      var searchClearBtn = document.getElementById('faqSearchClear');
+      var catChips = document.querySelectorAll('.edu-faq-page .edu-cat-chip');
+      var faqItems = document.querySelectorAll('.edu-faq-page .edu-faq-item');
+      var faqGroups = document.querySelectorAll('.edu-faq-page .edu-faq-group');
+      var counterEl = document.getElementById('visibleQuestionCount');
+      var noResultsEl = document.getElementById('faqNoResults');
+      var btnCollapseAll = document.getElementById('btnCollapseAll');
+      var btnResetSearch = document.getElementById('btnResetSearch');
+
+      var currentCat = 'all';
+      var currentSearch = '';
+
+      // 1. Accordion Toggle (Strict Single Open Mode: only 1 FAQ open at any time)
+      faqItems.forEach(function (item) {
+        var toggle = item.querySelector('.edu-faq-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function () {
+            var isOpen = item.classList.contains('is-open');
+
+            // Close all items across the page first
+            faqItems.forEach(function (otherItem) {
+              otherItem.classList.remove('is-open');
+              var otherToggle = otherItem.querySelector('.edu-faq-toggle');
+              if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+            });
+
+            // If the clicked item was not open, open it
+            if (!isOpen) {
+              item.classList.add('is-open');
+              toggle.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      });
+
+      // 2. Collapse All
+      if (btnCollapseAll) {
+        btnCollapseAll.addEventListener('click', function () {
+          faqItems.forEach(function (item) {
+            item.classList.remove('is-open');
+            var toggle = item.querySelector('.edu-faq-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 3. Filtering Function (Search + Category)
+      function filterFaqs() {
+        var visibleCount = 0;
+        var query = currentSearch.toLowerCase().trim();
+
+        faqItems.forEach(function (item) {
+          var itemCat = item.getAttribute('data-faq-cat') || '';
+          var text = item.textContent.toLowerCase();
+
+          var matchesCat = (currentCat === 'all' || itemCat === currentCat);
+          var matchesSearch = (query === '' || text.indexOf(query) !== -1);
+
+          if (matchesCat && matchesSearch) {
+            item.classList.remove('is-filtered-out');
+            visibleCount++;
+          } else {
+            item.classList.add('is-filtered-out');
+          }
+        });
+
+        // Toggle Group Visibility
+        faqGroups.forEach(function (group) {
+          var groupCat = group.getAttribute('data-group-cat');
+          var visibleItemsInGroup = group.querySelectorAll('.edu-faq-item:not(.is-filtered-out)').length;
+          
+          if (visibleItemsInGroup > 0) {
+            group.classList.remove('is-hidden');
+          } else {
+            group.classList.add('is-hidden');
+          }
+        });
+
+        // Update Visible Count
+        if (counterEl) {
+          counterEl.textContent = visibleCount;
+        }
+
+        // Show/Hide No Results State
+        if (noResultsEl) {
+          noResultsEl.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+
+        // Search clear button visibility
+        if (searchClearBtn) {
+          searchClearBtn.style.display = (query.length > 0) ? 'inline-flex' : 'none';
+        }
+      }
+
+      // 4. Search Input Event
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          currentSearch = this.value;
+          filterFaqs();
+        });
+      }
+
+      if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', function () {
+          if (searchInput) {
+            searchInput.value = '';
+            currentSearch = '';
+            searchInput.focus();
+            filterFaqs();
+          }
+        });
+      }
+
+      if (btnResetSearch) {
+        btnResetSearch.addEventListener('click', function () {
+          currentCat = 'all';
+          currentSearch = '';
+          if (searchInput) searchInput.value = '';
+          catChips.forEach(function (chip) {
+            if (chip.getAttribute('data-cat') === 'all') {
+              chip.classList.add('is-active');
+            } else {
+              chip.classList.remove('is-active');
+            }
+          });
+          filterFaqs();
+        });
+      }
+
+      // 5. Category Chips Event
+      catChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          catChips.forEach(function (c) { c.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          currentCat = this.getAttribute('data-cat') || 'all';
+          filterFaqs();
+        });
+      });
+
+      // 6. URL Hash Deep-linking
+      var hash = window.location.hash;
+      if (hash && hash.length > 1) {
+        var targetEl = document.querySelector(hash);
+        if (targetEl && targetEl.classList.contains('edu-faq-item')) {
+          faqItems.forEach(function (otherItem) {
+            otherItem.classList.remove('is-open');
+            var otherToggle = otherItem.querySelector('.edu-faq-toggle');
+            if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+          });
+          targetEl.classList.add('is-open');
+          var toggle = targetEl.querySelector('.edu-faq-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'true');
+          setTimeout(function () {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 300);
+        }
+      }
+    });
+  })();
+</script>
+

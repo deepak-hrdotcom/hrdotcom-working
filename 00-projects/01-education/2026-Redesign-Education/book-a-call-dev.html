@@ -1,0 +1,625 @@
+<!-- FOUC Suppression -->
+<style>
+  .edu-book-call-page {
+    visibility: hidden;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = document.querySelector('.edu-book-call-page');
+    if (p) p.style.visibility = 'visible';
+  });
+</script>
+
+<div class="edu-book-call-page">
+  <!-- Embedded Scoped Stylesheet (2026 International Executive Standard) -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+    /* Global CMS Canvas & Container Overrides */
+    body > .ContentArea,
+    .ContentArea {
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    body > .ContentArea > .container,
+    .ContentArea > .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .edu-book-call-page {
+      /* 2026 International Executive Education Palette */
+      --edu-cobalt: #2563EB;
+      --edu-cobalt-hover: #1D4ED8;
+      --edu-cobalt-soft: #EFF6FF;
+      --edu-cobalt-border: #BFDBFE;
+      --edu-indigo: #4F46E5;
+
+      --edu-obsidian: #090D1A;
+      --edu-slate-dark: #0F172A;
+      --edu-slate-body: #334155;
+      --edu-slate-muted: #64748B;
+      --edu-slate-light: #94A3B8;
+
+      --edu-canvas: #FFFFFF;
+      --edu-porcelain: #F8FAFC;
+      --edu-stone: #F1F5F9;
+
+      --edu-border: #E2E8F0;
+      --edu-border-strong: #CBD5E1;
+
+      --edu-emerald: #059669;
+      --edu-emerald-soft: #ECFDF5;
+      --edu-emerald-border: #A7F3D0;
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      background-color: #F8FAFC !important;
+      color: var(--edu-slate-body) !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.6 !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      overflow-x: hidden !important;
+    }
+
+    .edu-book-call-page * {
+      box-sizing: border-box !important;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    /* ---- MAIN STAGE: MINIMUM 80VH VERTICALLY CENTERED ---- */
+    .edu-book-call-stage {
+      min-height: 80vh !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 64px 24px !important;
+      background: radial-gradient(100% 60% at 50% 0%, rgba(37, 99, 235, 0.05) 0%, rgba(248, 250, 252, 0.95) 60%, #F8FAFC 100%) !important;
+      position: relative !important;
+      width: 100% !important;
+    }
+
+    /* Subtle Architectural Background Mesh Grid */
+    .edu-book-call-stage::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      background-image: 
+        radial-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+        radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
+      background-size: 32px 32px, 16px 16px !important;
+      background-position: 0 0, 16px 16px !important;
+      pointer-events: none !important;
+      opacity: 0.7 !important;
+    }
+
+    .edu-book-call-container {
+      width: 100% !important;
+      max-width: 960px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    /* Pulse-Beacon Executive Eyebrow Badge */
+    .edu-eyebrow {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: #EFF6FF !important;
+      border: 1px solid #BFDBFE !important;
+      padding: 6px 16px !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: #2563EB !important;
+      letter-spacing: -0.01em !important;
+      margin-bottom: 20px !important;
+    }
+
+    .edu-eyebrow-beacon {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      background: #2563EB !important;
+      position: relative !important;
+    }
+
+    .edu-eyebrow-beacon::after {
+      content: '' !important;
+      position: absolute !important;
+      top: -3px !important;
+      left: -3px !important;
+      right: -3px !important;
+      bottom: -3px !important;
+      border-radius: 50% !important;
+      border: 2px solid #2563EB !important;
+      animation: eduBeaconPulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite !important;
+    }
+
+    @keyframes eduBeaconPulse {
+      0% { transform: scale(0.7); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* Headings & Subheadings */
+    .edu-hero-heading {
+      font-size: clamp(30px, 3.8vw, 44px) !important;
+      line-height: 1.18 !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      letter-spacing: -0.035em !important;
+      margin: 0 auto 14px auto !important;
+      max-width: 840px !important;
+      text-wrap: balance !important;
+    }
+
+    .edu-hero-subheading {
+      font-size: clamp(17px, 1.8vw, 21px) !important;
+      line-height: 1.5 !important;
+      font-weight: 500 !important;
+      color: #475569 !important;
+      letter-spacing: -0.015em !important;
+      margin: 0 auto 40px auto !important;
+      max-width: 620px !important;
+    }
+
+    /* Instructor Cards Grid */
+    .edu-instructors-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(280px, 380px)) !important;
+      justify-content: center !important;
+      gap: 28px !important;
+      margin: 0 auto 40px auto !important;
+    }
+
+    /* Interactive Instructor Card */
+    .edu-instructor-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 20px !important;
+      padding: 36px 28px !important;
+      text-align: center !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04), 0 12px 28px rgba(15, 23, 42, 0.03) !important;
+      position: relative !important;
+      overflow: hidden !important;
+      text-decoration: none !important;
+      color: inherit !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      cursor: pointer !important;
+    }
+
+    /* Card Top Shimmer Accent */
+    .edu-instructor-card::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      height: 4px !important;
+      background: linear-gradient(90deg, #2563EB, #4F46E5) !important;
+      opacity: 0.8 !important;
+      transition: opacity 0.3s ease !important;
+    }
+
+    /* Ambient Hover Sheen Sweep */
+    .edu-instructor-card::after {
+      content: '' !important;
+      position: absolute !important;
+      top: -50% !important;
+      left: -60% !important;
+      width: 60% !important;
+      height: 200% !important;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      ) !important;
+      transform: rotate(25deg) !important;
+      pointer-events: none !important;
+      transition: transform 0.75s ease !important;
+    }
+
+    .edu-instructor-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+      border-color: #BFDBFE !important;
+    }
+
+    .edu-instructor-card:hover::before {
+      opacity: 1 !important;
+      height: 5px !important;
+    }
+
+    .edu-instructor-card:hover::after {
+      transform: rotate(25deg) translate(280%, -50%) !important;
+    }
+
+    /* Photo Frame with Dual Outer Halo Rings */
+    .edu-avatar-wrap {
+      width: 140px !important;
+      height: 140px !important;
+      position: relative !important;
+      margin: 0 auto 20px auto !important;
+      border-radius: 50% !important;
+      padding: 4px !important;
+      background: linear-gradient(135deg, #2563EB 0%, #6366F1 100%) !important;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.22) !important;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+    }
+
+    .edu-instructor-card:hover .edu-avatar-wrap {
+      transform: scale(1.06) !important;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.32) !important;
+    }
+
+    .edu-avatar-img {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      display: block !important;
+      border: 3px solid #FFFFFF !important;
+      background: #E2E8F0 !important;
+    }
+
+    /* Verified Availability Dot */
+    .edu-avatar-status {
+      position: absolute !important;
+      bottom: 6px !important;
+      right: 6px !important;
+      width: 18px !important;
+      height: 18px !important;
+      background: #10B981 !important;
+      border: 3px solid #FFFFFF !important;
+      border-radius: 50% !important;
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35) !important;
+    }
+
+    /* Advisor Name */
+    .edu-instructor-name {
+      font-size: 22px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      letter-spacing: -0.025em !important;
+      margin: 0 0 8px 0 !important;
+      line-height: 1.25 !important;
+    }
+
+    /* Advisor Title / Credentials */
+    .edu-instructor-title {
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: #475569 !important;
+      line-height: 1.55 !important;
+      margin: 0 !important;
+      max-width: 280px !important;
+    }
+
+    /* Interactive Card Action Cue */
+    .edu-card-schedule-cue {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-top: 18px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: #2563EB !important;
+      transition: gap 0.2s ease, color 0.2s ease !important;
+    }
+
+    .edu-instructor-card:hover .edu-card-schedule-cue {
+      gap: 9px !important;
+      color: #1D4ED8 !important;
+    }
+
+    /* Executive Call-To-Action Button */
+    .edu-cta-wrapper {
+      margin: 8px auto 24px auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 16px !important;
+    }
+
+    .edu-call-button {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      background: #2563EB !important;
+      color: #FFFFFF !important;
+      font-size: 17px !important;
+      font-weight: 800 !important;
+      padding: 18px 42px !important;
+      border-radius: 10px !important;
+      border: 1px solid #1D4ED8 !important;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35) !important;
+      text-decoration: none !important;
+      letter-spacing: -0.015em !important;
+      cursor: pointer !important;
+      position: relative !important;
+      overflow: hidden !important;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    /* Shimmer sweep inside CTA button */
+    .edu-call-button::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: -100% !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 100%
+      ) !important;
+      transition: left 0.6s ease !important;
+    }
+
+    .edu-call-button:hover {
+      background: #1D4ED8 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45) !important;
+      color: #FFFFFF !important;
+      text-decoration: none !important;
+    }
+
+    .edu-call-button:hover::before {
+      left: 100% !important;
+    }
+
+    .edu-call-button:active {
+      transform: translateY(0) !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+    }
+
+    .edu-call-btn-icon {
+      width: 20px !important;
+      height: 20px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .edu-call-btn-arrow {
+      width: 16px !important;
+      height: 16px !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease !important;
+    }
+
+    .edu-call-button:hover .edu-call-btn-arrow {
+      transform: translateX(4px) !important;
+    }
+
+    /* Reassurance Proof Chips Strip */
+    .edu-trust-chips-strip {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 22px !important;
+      flex-wrap: wrap !important;
+      margin-top: 4px !important;
+    }
+
+    .edu-reassurance-chip {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      font-size: 13.5px !important;
+      font-weight: 600 !important;
+      color: #64748B !important;
+    }
+
+    .edu-reassurance-chip svg {
+      width: 15px !important;
+      height: 15px !important;
+      color: #059669 !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Scroll Reveal Animation Classes */
+    .edu-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .edu-reveal.is-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .edu-reveal-d1 { transition-delay: 0.1s !important; }
+    .edu-reveal-d2 { transition-delay: 0.2s !important; }
+    .edu-reveal-d3 { transition-delay: 0.3s !important; }
+    .edu-reveal-d4 { transition-delay: 0.4s !important; }
+
+    /* Responsive Adaptations */
+    @media (max-width: 680px) {
+      .edu-book-call-stage {
+        padding: 44px 16px !important;
+        min-height: auto !important;
+      }
+
+      .edu-instructors-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      .edu-instructor-card {
+        padding: 28px 20px !important;
+      }
+
+      .edu-avatar-wrap {
+        width: 120px !important;
+        height: 120px !important;
+      }
+
+      .edu-call-button {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 16px !important;
+      }
+
+      .edu-trust-chips-strip {
+        gap: 12px 16px !important;
+      }
+    }
+  </style>
+
+  <!-- Main Executive Content Stage (min-height: 80vh) -->
+  <main class="edu-book-call-stage" id="bookCallStage">
+    <div class="edu-book-call-container">
+
+      <!-- Executive Eyebrow Badge -->
+      <div class="edu-eyebrow edu-reveal">
+        <span class="edu-eyebrow-beacon"></span>
+        <span>Direct 1-on-1 Advisor Support</span>
+      </div>
+
+      <!-- Heading and Subheading (Exact content preserved) -->
+      <h1 class="edu-hero-heading edu-reveal edu-reveal-d1">The exams are hard. But they don't have to be. Let's talk.</h1>
+      <p class="edu-hero-subheading edu-reveal edu-reveal-d2">Book a call with one of us.</p>
+
+      <!-- Instructor Cards (Jennifer Marants & Greg Osmond) -->
+      <div class="edu-instructors-grid edu-reveal edu-reveal-d3">
+
+        <!-- Jennifer Marants Card -->
+        <a class="edu-instructor-card"
+           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vn7JlDrxN5BtyFFdPcYZH1oP3xpfFoHhSTDV-Naq1YUXJ74Jqj2GAoKB-IuL2dWNKBEWXbhE-"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Book a call with Jennifer Marants">
+          <div class="edu-avatar-wrap">
+            <img class="edu-avatar-img"
+                 alt="Jennifer Marants"
+                 src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/jennifer-marants.jpg"
+                 onerror="this.src='https://public-cdn.hr.com/remoteimages/website-images/2025_siteupdate/education/jennifer.png'"
+                 width="140"
+                 height="140"
+                 loading="lazy">
+            <span class="edu-avatar-status" title="Active Advisor"></span>
+          </div>
+          <h3 class="edu-instructor-name">Jennifer Marants</h3>
+          <p class="edu-instructor-title">Certification &amp; Recertification Ninja<br>(Program Director and Designer)</p>
+          <span class="edu-card-schedule-cue">
+            <span>Schedule Session</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </a>
+
+        <!-- Greg Osmond Card -->
+        <a class="edu-instructor-card"
+           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vn7JlDrxN5BtyFFdPcYZH1oP3xpfFoHhSTDV-Naq1YUXJ74Jqj2GAoKB-IuL2dWNKBEWXbhE-"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Book a call with Greg Osmond">
+          <div class="edu-avatar-wrap">
+            <img class="edu-avatar-img"
+                 alt="Greg Osmond"
+                 src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/certification/greg-osmond.jpg"
+                 onerror="this.src='https://public-cdn.hr.com/system/app/media/rs/2025/9/16/mfmrmke3/og.jpg'"
+                 width="140"
+                 height="140"
+                 loading="lazy">
+            <span class="edu-avatar-status" title="Active Advisor"></span>
+          </div>
+          <h3 class="edu-instructor-name">Greg Osmond</h3>
+          <p class="edu-instructor-title">Trusted HR Certification Advisor<br>&nbsp;</p>
+          <span class="edu-card-schedule-cue">
+            <span>Schedule Session</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </a>
+
+      </div>
+
+      <!-- Call-to-Action Cluster -->
+      <div class="edu-cta-wrapper edu-reveal edu-reveal-d4">
+        <a class="edu-call-button call-button"
+           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vn7JlDrxN5BtyFFdPcYZH1oP3xpfFoHhSTDV-Naq1YUXJ74Jqj2GAoKB-IuL2dWNKBEWXbhE-"
+           target="_blank"
+           rel="noopener noreferrer">
+          <!-- Calendar Icon -->
+          <svg class="edu-call-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Book a call with one of us</span>
+          <!-- Arrow Icon -->
+          <svg class="edu-call-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Reassurance Proof Chips -->
+        <div class="edu-trust-chips-strip">
+          <div class="edu-reassurance-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Free 1-on-1 Consultation</span>
+          </div>
+          <div class="edu-reassurance-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>No Sales Pressure</span>
+          </div>
+          <div class="edu-reassurance-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Personalized Exam Strategy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Reveal & Ripple Script -->
+  <script>
+    (function () {
+      // IntersectionObserver for entrance reveal animations
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.edu-reveal').forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback for older browsers
+        document.querySelectorAll('.edu-reveal').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    })();
+  </script>
+</div>
+

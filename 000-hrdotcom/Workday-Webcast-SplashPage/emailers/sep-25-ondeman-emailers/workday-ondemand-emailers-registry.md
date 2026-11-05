@@ -389,20 +389,167 @@ To keep subsequent emailers engaging, avoid duplicating Emailer 1's "back-office
 
 ---
 
-## 📧 Emailer 7 of 10 (Pending)
-- **HTML File**: `workday-sep25-7-of-multiple.html`
+## 📧 Emailer 7 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-7-of-multiple.html`](workday-sep25-7-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: `./frontline-experience-banner.jpg` (1376x768, displayed at 600px) → referenced as `https://media-cdn.hr.com/Emails/frontline-experience-banner.jpg` (**upload pending** — URL returned 403 on 2026-11-02)
+  - *Image Concept*: Navy left panel with Workday Orange pill (`FRONTLINE EXPERIENCE`), bold white headline (`Turn Scheduling Flexibility into Frontline Retention`); bright documentary photo of a smiling retail associate checking a mobile shift-scheduling app on the boutique floor (moves to a deskless, mobile-first frontline worker; away from executives, desks, and warehouse).
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: The Modern Deskless / Frontline Worker Experience, told through the abstract's three frontline forces (AI · real-time labor data · unified platforms)
+- **Copy Rule**: STRICT zero-invention rule (same as Emailers 4–6). Body copy, stat, and objectives are verbatim from the official abstract and 4 learning objectives. Only short section labels are new. Note: the banner headline ("Turn Scheduling Flexibility into Frontline Retention") is image copy and not from the abstract.
+- **Layout (new archetype)**: Banner → Title + frontline abstract hook + Primary CTA → `INSIDE THE SESSION` 3-column tiles (top-border accents Orange / Royal Blue / Sky Blue; stack on mobile), each pairing an abstract force with its matching objective → peach "2x" stat strip with cost-center question → "Also covered" Objective #1 card (Obsidian left border) → centered avatar speaker row → Navy closing CTA band → Immutable Credits & Footer.
+- **Audience Focus**: Frontline Operations Leaders, Store/Site Managers, and HR leaders responsible for hourly and deskless workforces.
+
+### 📝 Complete Copy Inventory (Used in Emailer 7)
+- **Preheader**:
+  > `How AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.`
+- **Banner Eyebrow Pill / Headline**: `FRONTLINE EXPERIENCE` / `Turn Scheduling Flexibility into Frontline Retention`
+- **Hero Title (`<h1>`)**: `The System of Work: Why Workforce Management Drives Business Execution`
+- **Hook (verbatim abstract)**:
+  > `We'll explore how AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.`
+- **Tiles (Eyebrow · Title · verbatim objective)**:
+  - `What's next` · `AI` (`#F78B1E`) · `How AI is reshaping the role of workforce management — and what frontline leaders should be doing now to prepare.`
+  - `Balancing act` · `Real-Time Labor Data` (`#0057AE`) · `How leading organizations use real-time labor data to manage high-variability environments without losing control of cost.`
+  - `Connected workforce` · `Unified Platforms` (`#0875E1`) · `What the research reveals about the measurable impact of unifying HR, time, pay, and scheduling data.`
+- **Stat Strip**: `2x` · `Sapient Insights research shows organizations with advanced workforce management — combined with skills and internal mobility — were 2x more likely to achieve higher profits and customer growth.` · `So why does workforce management still get treated as a back-office cost center?`
+- **Also Covered (Objective #1)**: `The strategic shift: Why workforce management is now central to business execution, not just HR administration.`
+- **Speakers**: `FEATURED SPEAKERS` — Cristina Goldt, General Manager, Workforce & Payroll, Vndly (Workday) · Stacey Harris, Chief Research Officer & Managing Partner, Sapient Insights Group
+- **Closing Band**: Eyebrow `THE SYSTEM OF WORK` · `See what the data reveals about the organizations getting it right.` · Button `View OnDemand →`
+- **CTAs**: Banner, primary button, closing button → `https://web.hr.com/9d4t`
+- **Recertification Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+- **Footer Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars, counts verified)
+1. *What Frontline Leaders Should Be Doing Right Now* (48 chars)
+2. *Is Your Frontline Built for High-Variability Work?* (50 chars)
+3. *Real-Time Labor Data for the Frontline* (38 chars)
+4. *How Frontline Businesses Are Changing How They Run* (50 chars)
+5. *AI, Labor Data, and Unified Platforms at Work* (45 chars)
+6. *Why Frontline Operations Need Connected Data* (44 chars)
+7. *Manage Frontline Variability Without Losing Cost* (48 chars)
+8. *Are Your Frontline Systems Keeping Up?* (38 chars)
+9. *Lead Your Frontline Through What's Next* (39 chars)
+10. *How Leading Organizations Run the Frontline* (43 chars)
 
 ---
 
-## 📧 Emailer 8 of 10 (Pending)
-- **HTML File**: `workday-sep25-8-of-multiple.html`
+## 📧 Emailer 8 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-8-of-multiple.html`](workday-sep25-8-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: None (by design). Live-text research hero on the Hero Canvas gradient (`#001A3A` bgcolor fallback for Outlook), so the lead message renders with images off and needs no CDN upload.
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: The Research Brief — "what the data reveals about the organizations getting it right." Replaces the matrix's *Operational Compliance & Labor Risk* angle, which is not covered by the webcast abstract and would have required invented claims.
+- **Copy Rule**: STRICT zero-invention rule (same as Emailers 4–7). Only section labels are new.
+- **Layout (new archetype)**: Live-text navy hero (pill + giant orange `2x` + finding) → Title + abstract invitation + Primary CTA → oversized pull-quote of the cost-center question → `WHAT YOU'LL LEARN` vertical timeline (4 numbered circles in badge progression colors, connector line) → stacked full-width speaker cards with **Stacey Harris (research lead) first** → Navy closing CTA band → Immutable Credits & Footer.
+- **Audience Focus**: Data-driven HR executives, CHROs, and Finance/Operations leaders who respond to benchmark research.
+
+### 📝 Complete Copy Inventory (Used in Emailer 8)
+- **Preheader**:
+  > `What the data reveals about the organizations getting workforce management right.`
+- **Hero**: Pill `SAPIENT INSIGHTS RESEARCH` · `2x` · `more likely to achieve higher profits and customer growth` · `Organizations with advanced workforce management — combined with skills and internal mobility`
+- **Hero Title (`<h1>`)**: `The System of Work: Why Workforce Management Drives Business Execution`
+- **Hook (verbatim abstract)**:
+  > `Join Stacey Harris of Sapient Insights and Workday leader Cristina Goldt for a research-driven conversation on why workforce management is moving from an administrative tool to a core business lever—and what the data reveals about the organizations getting it right.`
+- **Pull-Quote**: `So why does workforce management still get treated as a back-office cost center?`
+- **Timeline (`WHAT YOU'LL LEARN` / `The System of Work`)**: All 4 objectives verbatim — `01 The strategic shift` (`#F78B1E`) · `02 The growth-vs.-efficiency balancing act` (`#0057AE`) · `03 The connected workforce` (`#0875E1`) · `04 What's next` (`#022043`)
+- **Speakers**: `FEATURED SPEAKERS` — Stacey Harris, Chief Research Officer & Managing Partner, Sapient Insights Group (orange ring) · Cristina Goldt, General Manager, Workforce & Payroll, Vndly (Workday)
+- **Closing Band**: Eyebrow `THE SYSTEM OF WORK` · `We'll explore how AI, real-time labor data, and unified platforms are reshaping how frontline businesses run.` · Button `View OnDemand →`
+- **CTAs**: Primary button, closing button → `https://web.hr.com/9d4t` (2 CTAs; no banner link since the hero is live text)
+- **Recertification Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+- **Footer Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars, counts verified)
+1. *What the Research Reveals About Workforce Leaders* (49 chars)
+2. *Why Do Leaders Still See Workforce as a Cost?* (45 chars)
+3. *The Data Behind Organizations Getting It Right* (46 chars)
+4. *Inside the Research on Workforce Management* (43 chars)
+5. *What Do Top Organizations Do Differently?* (41 chars)
+6. *How Research Links Workforce Systems to Profit* (46 chars)
+7. *Is Your Workforce Strategy Backed by Data?* (42 chars)
+8. *What Sapient Insights Found About Growth* (40 chars)
+9. *The Research Case for Modern Workforce Systems* (46 chars)
+10. *Why the Data Favors Advanced Workforce Management* (49 chars)
 
 ---
 
-## 📧 Emailer 9 of 10 (Pending)
-- **HTML File**: `workday-sep25-9-of-multiple.html`
+## 📧 Emailer 9 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-9-of-multiple.html`](workday-sep25-9-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: None (by design). Table-built balance-scale visual in live text; no CDN upload needed.
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: Short format, one idea — Learning Objective #2 (*The growth-vs.-efficiency balancing act*). Covers the matrix's *Agility & Rapid Scenario Planning* slot using only abstract-backed content.
+- **Copy Rule**: STRICT zero-invention rule (same as Emailers 4–8). Pan labels `Growth` / `Efficiency` come from the objective title; pan text comes from the 2x finding and Objective #2.
+- **Layout (new archetype, shortest in series)**: Soft-gray balance hero (pill + objective title + two pans `Growth` orange / `Efficiency` royal blue with `vs.` chip, navy beam, fulcrum, orange `Real-time labor data` pill) → Objective #2 sentence + small webcast title + single primary CTA → one-line speakers strip (stacks on mobile) → Immutable Credits & Footer. No closing navy band.
+- **Audience Focus**: Busy Operations and Finance leaders; skimmers who need one message and one click.
+
+### 📝 Complete Copy Inventory (Used in Emailer 9)
+- **Preheader**:
+  > `How leading organizations use real-time labor data to manage high-variability environments without losing control of cost.`
+- **Balance Hero**: Pill `KEY LEARNING OBJECTIVE` · Heading `The growth-vs.-efficiency balancing act` · Pan 1 `GROWTH` / `Higher profits and customer growth` · Pan 2 `EFFICIENCY` / `Without losing control of cost` · Fulcrum pill `Real-time labor data`
+- **Body (Objective #2 verbatim)**: `How leading organizations use real-time labor data to manage high-variability environments without losing control of cost.`
+- **Webcast Title (`<h1>`)**: Eyebrow `OnDemand Webcast` · `The System of Work: Why Workforce Management Drives Business Execution`
+- **Speakers**: `FEATURED SPEAKERS` — Cristina Goldt, Vndly (Workday) · Stacey Harris, Sapient Insights Group (names + companies only)
+- **CTAs**: Primary button only → `https://web.hr.com/9d4t` (1 CTA; speakers-strip text link removed in review)
+- **Recertification Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+- **Footer Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars, counts verified)
+1. *Growth or Efficiency? You May Not Have to Choose* (48 chars)
+2. *Can You Grow Without Losing Control of Cost?* (44 chars)
+3. *The Growth-vs.-Efficiency Balancing Act* (39 chars)
+4. *How Leaders Grow Without Losing Cost Control* (44 chars)
+5. *What High-Variability Operations Get Right* (42 chars)
+6. *Balance Growth and Labor Cost in Real Time* (42 chars)
+7. *Why Top Organizations Don't Pick Growth or Cost* (47 chars)
+8. *Managing Variability Without Losing Control* (43 chars)
+9. *Where Growth and Cost Control Finally Meet* (42 chars)
+10. *Is Variability Costing You Control of Labor?* (44 chars)
 
 ---
 
-## 📧 Emailer 10 of 10 (Pending)
-- **HTML File**: `workday-sep25-10-of-multiple.html`
+## 📧 Emailer 10 of 10
+
+### 📁 File & Destination Info
+- **HTML File**: [`workday-sep25-10-of-multiple.html`](workday-sep25-10-of-multiple.html)
+- **OnDemand CTA URL**: [`https://web.hr.com/9d4t`](https://web.hr.com/9d4t)
+- **Hero Banner Asset**: None (by design). Live-text navy title hero on the Hero Canvas gradient (`#001A3A` bgcolor fallback for Outlook).
+
+### 🎯 Creative Angle & Positioning
+- **Core Theme**: Series finale, *The Complete Briefing*: the whole session in one email (all 4 objectives, the 3 abstract forces, the HRCI credit, both speakers). Fills the matrix's *Comprehensive Executive Blueprint* slot without invented checklist content.
+- **Copy Rule**: STRICT zero-invention rule (same as Emailers 4–9). The HRCI callout restates the immutable credits section.
+- **Layout (new archetype)**: Navy live-text hero (pill + white `<h1>` webcast title + abstract invitation + CTA) → `LEARNING OBJECTIVES` checklist card (4 rows, check circles in badge progression colors, dividers) → 3 force chips `AI` · `Real-time labor data` · `Unified platforms` (desktop only; hidden on mobile) → peach HRCI credit callout → side-by-side speaker cards with color top borders → Navy closing band with cost-center question + CTA → Immutable Credits & Footer.
+- **Audience Focus**: Whole list; final touch for non-openers and non-clickers from Emailers 1–9.
+
+### 📝 Complete Copy Inventory (Used in Emailer 10)
+- **Preheader**:
+  > `All four learning objectives from The System of Work, plus 1 HRCI BUSINESS Credit.`
+- **Hero**: Pill `THE COMPLETE BRIEFING` · `<h1>` `The System of Work: Why Workforce Management Drives Business Execution` · `Join Stacey Harris of Sapient Insights and Workday leader Cristina Goldt for a research-driven conversation on why workforce management is moving from an administrative tool to a core business lever—and what the data reveals about the organizations getting it right.`
+- **Checklist (`LEARNING OBJECTIVES` / `Everything this session covers`)**: All 4 objectives verbatim — The strategic shift (`#F78B1E`) · The growth-vs.-efficiency balancing act (`#0057AE`) · The connected workforce (`#0875E1`) · What's next (`#022043`)
+- **Force Chips**: `AI` · `Real-time labor data` · `Unified platforms`
+- **Credit Callout**: `Pre-approved for 1 HRCI BUSINESS Credit`
+- **Speakers**: `FEATURED SPEAKERS` — Cristina Goldt, General Manager, Workforce & Payroll, Vndly (Workday) · Stacey Harris, Chief Research Officer & Managing Partner, Sapient Insights Group
+- **Closing Band**: Eyebrow `SAPIENT INSIGHTS RESEARCH` · `So why does workforce management still get treated as a back-office cost center?` · Button `View OnDemand →`
+- **CTAs**: Hero button, closing button → `https://web.hr.com/9d4t` (2 CTAs, no text links)
+- **Recertification Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+- **Footer Section (IMMUTABLE)**: Byte-identical to Emailer 6 (verified by hash).
+
+### 💡 10 Subject Lines (Archive - strictly <= 50 chars, counts verified)
+1. *Four Lessons on Workforce Management and Growth* (47 chars)
+2. *Your Complete Guide to the System of Work* (41 chars)
+3. *The Full Briefing on Modern Workforce Management* (48 chars)
+4. *What Leaders Learned About Workforce Execution* (46 chars)
+5. *Earn HRCI Credit on Workforce Management* (40 chars)
+6. *Missed This Workforce Management Session?* (41 chars)
+7. *The System of Work Briefing, All in One Place* (45 chars)
+8. *Four Ways Workforce Management Drives Execution* (47 chars)
+9. *Still Treating Workforce as a Back-Office Cost?* (47 chars)
+10. *From Cost Center to Business Lever in One Session* (49 chars)

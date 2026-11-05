@@ -1,0 +1,1101 @@
+<div id="hrcalc" class="hrcalc-page">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+<style type="text/css">
+    /* Wrapper and tokens */
+    #hrcalc {
+        --hr-white: #ffffff;
+        --hr-ink: #1e2a35;
+        --hr-muted: #5d6670;
+        --hr-line: #e1e4e8;
+        --hr-navy: #1c3d7a;
+        --hr-magenta: #e6007e;
+        --hr-orange: #f26532;
+        --hr-navy-soft: #eef2f9;
+        --ok: #1f7a4d;
+        --warn: #b26a00;
+        --crit: #c0262d;
+        --field: #c3c9d1;
+        --f: "Roboto", Arial, Helvetica, sans-serif;
+        --shadow: 0 1px 2px rgba(28, 61, 122, .06), 0 12px 32px -12px rgba(28, 61, 122, .18);
+        color-scheme: light;
+        position: relative !important;
+        display: block !important;
+        width: 100vw !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background-color: #f7f9fc !important;
+        background-image:
+            radial-gradient(900px 520px at 0% 0%, rgba(230, 0, 126, .08), transparent 60%),
+            radial-gradient(900px 600px at 100% 10%, rgba(242, 101, 50, .08), transparent 60%),
+            radial-gradient(1200px 700px at 50% 100%, rgba(28, 61, 122, .10), transparent 65%) !important;
+        color: var(--hr-ink) !important;
+        font-family: var(--f) !important;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scoped resets */
+    #hrcalc,
+    #hrcalc *,
+    #hrcalc *::before,
+    #hrcalc *::after {
+        box-sizing: border-box
+    }
+
+    #hrcalc h1,
+    #hrcalc h2,
+    #hrcalc h3,
+    #hrcalc h4,
+    #hrcalc p,
+    #hrcalc a,
+    #hrcalc li,
+    #hrcalc span,
+    #hrcalc div,
+    #hrcalc label,
+    #hrcalc button,
+    #hrcalc input,
+    #hrcalc select,
+    #hrcalc option,
+    #hrcalc dl,
+    #hrcalc dt,
+    #hrcalc dd,
+    #hrcalc b {
+        font-family: var(--f) !important;
+    }
+
+    #hrcalc h1,
+    #hrcalc h2,
+    #hrcalc h3,
+    #hrcalc h4,
+    #hrcalc p,
+    #hrcalc dl,
+    #hrcalc dt,
+    #hrcalc dd {
+        margin: 0 !important;
+        padding: 0;
+        border: 0;
+        background: none;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+    }
+
+    #hrcalc img,
+    #hrcalc svg {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        border: 0;
+    }
+
+    #hrcalc a {
+        text-decoration: none !important;
+        box-shadow: none;
+    }
+
+    #hrcalc button,
+    #hrcalc input,
+    #hrcalc select {
+        margin: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        box-shadow: none;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+    }
+
+    #hrcalc input,
+    #hrcalc select {
+        border-style: solid
+    }
+
+    /* Layout */
+    #hrcalc .hc-section {
+        position: relative;
+        width: 100%;
+        padding: 48px 0 56px;
+    }
+
+    #hrcalc .hc-container {
+        position: relative;
+        z-index: 1;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    #hrcalc .hc-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    #hrcalc .hc-orb.o1 {
+        width: 340px;
+        height: 340px;
+        top: -120px;
+        right: 8%;
+        background: rgba(230, 0, 126, .12);
+    }
+
+    #hrcalc .hc-orb.o2 {
+        width: 420px;
+        height: 420px;
+        bottom: -160px;
+        left: -120px;
+        background: rgba(28, 61, 122, .12);
+    }
+
+    /* Hero */
+    #hrcalc .hero {
+        max-width: 820px;
+        margin: 0 0 32px;
+        padding: 0;
+        border: 0;
+    }
+
+    #hrcalc .hero .k {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        background: var(--hr-white);
+        border: 1px solid rgba(230, 0, 126, .25);
+        box-shadow: 0 4px 14px -6px rgba(230, 0, 126, .35);
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        letter-spacing: .12em !important;
+        text-transform: uppercase !important;
+        color: var(--hr-magenta) !important;
+    }
+
+    #hrcalc .hero .k::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--hr-magenta), var(--hr-orange));
+    }
+
+    #hrcalc .hero h2 {
+        margin: 18px 0 14px !important;
+        font-size: 32px !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        letter-spacing: -.01em !important;
+        color: var(--hr-navy) !important;
+        text-wrap: balance;
+    }
+
+    #hrcalc .hero p {
+        max-width: 64ch;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    /* Main grid */
+    #hrcalc .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    #hrcalc .card {
+        position: relative;
+        min-width: 0;
+        padding: 28px;
+        border: 1px solid rgba(225, 228, 232, .9);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, .86);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        transition: box-shadow .3s ease, transform .3s ease;
+    }
+
+    #hrcalc .card:hover {
+        box-shadow: 0 1px 2px rgba(28, 61, 122, .06), 0 20px 44px -14px rgba(28, 61, 122, .26);
+    }
+
+    #hrcalc .card h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 22px !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        color: var(--hr-navy) !important;
+    }
+
+    #hrcalc .card h3::before {
+        content: "";
+        width: 4px;
+        height: 22px;
+        border-radius: 4px;
+        background: linear-gradient(180deg, var(--hr-magenta), var(--hr-orange));
+    }
+
+    /* Fields */
+    #hrcalc .f {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 18px
+    }
+
+    #hrcalc .f:last-child {
+        margin-bottom: 0
+    }
+
+    #hrcalc label,
+    #hrcalc .lbl {
+        display: block;
+        margin: 0;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        letter-spacing: normal !important;
+        color: var(--hr-ink) !important;
+    }
+
+    #hrcalc .hint {
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    #hrcalc .money {
+        display: flex;
+        align-items: center;
+        height: 52px;
+        border: 1px solid var(--field);
+        border-radius: 14px;
+        background: var(--hr-white);
+        transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    #hrcalc .money:hover {
+        border-color: #9aa3ae;
+    }
+
+    #hrcalc .money:focus-within {
+        border-color: var(--hr-navy);
+        box-shadow: 0 0 0 4px rgba(28, 61, 122, .15)
+    }
+
+    #hrcalc .money span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        min-width: 44px;
+        padding: 0 0 0 4px;
+        border-right: 1px solid var(--hr-line);
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        line-height: 1 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    #hrcalc .money input {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        padding: 0 14px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        font-size: 17px !important;
+        font-weight: 500 !important;
+        line-height: 1.2 !important;
+        color: var(--hr-ink) !important;
+        font-variant-numeric: tabular-nums
+    }
+
+    #hrcalc .err {
+        min-height: 18px;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        color: var(--crit) !important;
+    }
+
+    #hrcalc .money.bad {
+        border-color: var(--crit);
+        box-shadow: 0 0 0 4px rgba(192, 38, 45, .12)
+    }
+
+    #hrcalc .seg {
+        display: flex;
+        gap: 4px;
+        height: 52px;
+        padding: 4px;
+        border: 1px solid var(--field);
+        border-radius: 999px;
+        background: var(--hr-navy-soft);
+        overflow: hidden
+    }
+
+    #hrcalc .seg button {
+        flex: 1;
+        height: 100%;
+        padding: 0 8px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: 1 !important;
+        color: var(--hr-ink) !important;
+        cursor: pointer;
+        transition: background-color .2s ease, color .2s ease, box-shadow .2s ease
+    }
+
+    #hrcalc .seg button:hover {
+        background: var(--hr-white);
+    }
+
+    #hrcalc .seg button[aria-pressed="true"] {
+        background: var(--hr-navy);
+        color: #fff !important;
+        font-weight: 700 !important;
+        box-shadow: 0 6px 14px -6px rgba(28, 61, 122, .6)
+    }
+
+    #hrcalc .seg button:focus-visible,
+    #hrcalc .btn:focus-visible,
+    #hrcalc select:focus-visible {
+        outline: 3px solid rgba(230, 0, 126, .45);
+        outline-offset: 2px
+    }
+
+    #hrcalc select {
+        width: 100%;
+        height: 52px;
+        padding: 0 44px 0 16px;
+        border: 1px solid var(--field);
+        border-radius: 14px;
+        background-color: var(--hr-white);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%231c3d7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 12px 8px;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.2 !important;
+        color: var(--hr-ink) !important;
+        cursor: pointer;
+        transition: border-color .2s ease, box-shadow .2s ease
+    }
+
+    #hrcalc select:hover {
+        border-color: #9aa3ae;
+    }
+
+    #hrcalc select:focus {
+        border-color: var(--hr-navy);
+        box-shadow: 0 0 0 4px rgba(28, 61, 122, .15)
+    }
+
+    /* Results */
+    #hrcalc .card.result {
+        padding-top: 0;
+        overflow: hidden;
+    }
+
+    #hrcalc .answer {
+        position: relative;
+        overflow: hidden;
+        margin: 0 -28px 20px;
+        padding: 30px 28px 28px;
+        background-color: var(--hr-navy);
+        background-image:
+            radial-gradient(420px 260px at 100% 0%, rgba(230, 0, 126, .45), transparent 65%),
+            radial-gradient(360px 240px at 0% 100%, rgba(242, 101, 50, .25), transparent 70%);
+        color: #fff
+    }
+
+    #hrcalc .answer::after {
+        content: "";
+        position: absolute;
+        right: -60px;
+        bottom: -60px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 30px solid rgba(255, 255, 255, .06);
+        pointer-events: none;
+    }
+
+    #hrcalc .answer .k {
+        position: relative;
+        z-index: 1;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, .92) !important;
+    }
+
+    #hrcalc .answer .big {
+        position: relative;
+        z-index: 1;
+        margin: 8px 0 10px;
+        font-size: 44px !important;
+        font-weight: 900 !important;
+        line-height: 1.05 !important;
+        letter-spacing: -.02em !important;
+        color: #fff !important;
+        font-variant-numeric: tabular-nums
+    }
+
+    #hrcalc .answer .sub {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .18);
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        color: #fff !important;
+    }
+
+    #hrcalc .rows {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    #hrcalc .rows > div {
+        padding: 14px 16px;
+        border: 1px solid var(--hr-line);
+        border-radius: 16px;
+        background: var(--hr-white);
+        transition: transform .25s ease, border-color .25s ease;
+    }
+
+    #hrcalc .rows > div:hover {
+        transform: translateY(-2px);
+        border-color: rgba(28, 61, 122, .3);
+    }
+
+    #hrcalc dl {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    #hrcalc dl dt,
+    #hrcalc dl dd {
+        width: auto;
+        padding: 0;
+        border: 0;
+    }
+
+    #hrcalc dt {
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.4 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    #hrcalc dd {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        color: var(--hr-navy) !important;
+        font-variant-numeric: tabular-nums;
+        text-align: left
+    }
+
+    #hrcalc dd.neg {
+        color: var(--warn) !important
+    }
+
+    #hrcalc .chart {
+        margin-top: 18px;
+        padding: 16px 12px 8px;
+        border-radius: 16px;
+        background: var(--hr-navy-soft);
+    }
+
+    #hrcalc .chart:empty {
+        display: none;
+    }
+
+    #hrcalc .chart svg {
+        width: 100%;
+        height: auto;
+        display: block
+    }
+
+    #hrcalc .note {
+        margin-top: 14px;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    #hrcalc .src {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed var(--hr-line);
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    /* CTA */
+    #hrcalc .cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        margin-top: 24px;
+        border: 1px solid var(--hr-line);
+        border-radius: 24px;
+        overflow: hidden;
+        background: var(--hr-white);
+        box-shadow: var(--shadow);
+    }
+
+    #hrcalc .cta .l {
+        position: relative;
+        display: grid;
+        gap: 14px;
+        align-content: start;
+        min-width: 0;
+        padding: 32px;
+        background-color: var(--hr-navy-soft);
+        background-image: radial-gradient(380px 220px at 0% 0%, rgba(230, 0, 126, .08), transparent 70%);
+    }
+
+    #hrcalc .cta .r {
+        display: grid;
+        gap: 16px;
+        align-content: center;
+        min-width: 0;
+        padding: 32px;
+    }
+
+    #hrcalc .cta h3 {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        color: var(--hr-navy) !important;
+    }
+
+    #hrcalc .cta p {
+        max-width: 56ch;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    #hrcalc .cta #c-plan-note {
+        font-size: 13px !important;
+    }
+
+    #hrcalc .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        height: 50px;
+        padding: 0 28px;
+        border: 0;
+        border-radius: 999px;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        text-decoration: none !important;
+        cursor: pointer;
+        transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease
+    }
+
+    #hrcalc .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    #hrcalc .btn:active {
+        transform: translateY(0);
+    }
+
+    #hrcalc .btn.primary {
+        width: 100%;
+        max-width: 360px;
+        background: linear-gradient(90deg, var(--hr-magenta), var(--hr-orange));
+        color: #fff !important;
+        box-shadow: 0 10px 24px -10px rgba(230, 0, 126, .6)
+    }
+
+    #hrcalc .btn.primary:hover {
+        box-shadow: 0 16px 30px -10px rgba(230, 0, 126, .7);
+        color: #fff !important;
+    }
+
+    #hrcalc .btn.ghost {
+        width: 100%;
+        background: #fff;
+        border: 1px solid var(--hr-navy);
+        color: var(--hr-navy) !important
+    }
+
+    #hrcalc .btn.ghost:hover {
+        background: var(--hr-navy);
+        color: #fff !important;
+    }
+
+    #hrcalc .proof {
+        padding: 4px 0 4px 16px;
+        border-left: 4px solid var(--hr-magenta);
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: var(--hr-ink) !important;
+    }
+
+    #hrcalc .proof b {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 40px !important;
+        font-weight: 900 !important;
+        line-height: 1.05 !important;
+        letter-spacing: -.02em !important;
+        color: var(--hr-magenta) !important;
+    }
+
+    #hrcalc .cta .r .hint {
+        text-align: center;
+        font-size: 14px !important;
+    }
+
+    #hrcalc .fine {
+        margin-top: 24px;
+        padding: 0 4px;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        color: var(--hr-muted) !important;
+    }
+
+    /* Entrance animation, only applied when JS runs */
+    #hrcalc.hc-js .hc-reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    #hrcalc.hc-js .hc-reveal.hc-in {
+        opacity: 1;
+        transform: none;
+    }
+
+    #hrcalc .answer .big {
+        transition: opacity .25s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #hrcalc *,
+        #hrcalc.hc-js .hc-reveal {
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+        }
+    }
+
+    /* Breakpoints: mobile */
+    @media (max-width: 767px) {
+        #hrcalc .hc-section {
+            padding: 32px 0 40px;
+        }
+
+        #hrcalc .hc-container {
+            padding: 0 16px;
+        }
+
+        #hrcalc .hero {
+            margin-bottom: 24px;
+        }
+
+        #hrcalc .hero h2 {
+            font-size: 28px !important;
+        }
+
+        #hrcalc .hero p {
+            font-size: 16px !important;
+        }
+
+        #hrcalc .grid,
+        #hrcalc .cta {
+            grid-template-columns: 1fr
+        }
+
+        #hrcalc .grid {
+            gap: 16px;
+        }
+
+        #hrcalc .card {
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        #hrcalc .answer {
+            margin: 0 -20px 16px;
+            padding: 24px 20px;
+        }
+
+        #hrcalc .answer .big {
+            font-size: 32px !important
+        }
+
+        #hrcalc .rows {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        #hrcalc .rows > div {
+            padding: 12px 14px;
+        }
+
+        #hrcalc dd {
+            font-size: 18px !important;
+        }
+
+        #hrcalc .card h3 {
+            font-size: 18px !important;
+        }
+
+        #hrcalc .cta {
+            border-radius: 20px;
+        }
+
+        #hrcalc .cta .l,
+        #hrcalc .cta .r {
+            padding: 24px 20px;
+        }
+
+        #hrcalc .cta h3 {
+            font-size: 22px !important;
+        }
+
+        #hrcalc .btn.primary {
+            max-width: none;
+        }
+
+        #hrcalc .proof b {
+            font-size: 34px !important;
+        }
+
+        #hrcalc .seg button {
+            font-size: 13px !important;
+        }
+    }
+
+    /* Breakpoints: tablet */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        #hrcalc .hero h2 {
+            font-size: 38px !important;
+        }
+
+        #hrcalc .grid {
+            grid-template-columns: 1fr;
+        }
+
+        #hrcalc .answer .big {
+            font-size: 40px !important;
+        }
+    }
+
+    /* Breakpoints: desktop */
+    @media (min-width: 1024px) {
+        #hrcalc .hc-section {
+            padding: 64px 0 72px;
+        }
+
+        #hrcalc .hc-container {
+            padding: 0 32px;
+        }
+
+        #hrcalc .hero h2 {
+            font-size: 42px !important;
+        }
+    }
+
+    /* Breakpoints: desktop medium */
+    @media (min-width: 1280px) {
+        #hrcalc .hero h2 {
+            font-size: 46px !important;
+        }
+
+        #hrcalc .answer .big {
+            font-size: 48px !important;
+        }
+
+        #hrcalc .grid {
+            gap: 28px;
+        }
+    }
+
+    /* Breakpoints: desktop large */
+    @media (min-width: 1440px) {
+        #hrcalc .hc-section {
+            padding: 80px 0 88px;
+        }
+
+        #hrcalc .hc-container {
+            max-width: 1320px;
+        }
+
+        #hrcalc .hero h2 {
+            font-size: 50px !important;
+        }
+
+        #hrcalc .hero p {
+            font-size: 19px !important;
+        }
+    }
+
+    /* Breakpoints: desktop xlarge */
+    @media (min-width: 1920px) {
+        #hrcalc .hc-container {
+            max-width: 1440px;
+        }
+
+        #hrcalc .hero h2 {
+            font-size: 56px !important;
+        }
+
+        #hrcalc .hero p {
+            font-size: 20px !important;
+        }
+
+        #hrcalc .answer .big {
+            font-size: 54px !important;
+        }
+    }
+</style>
+
+<section class="hc-section">
+    <span aria-hidden="true" class="hc-orb o1"></span>
+    <span aria-hidden="true" class="hc-orb o2"></span>
+
+    <div class="hc-container">
+        <div class="hero hc-reveal">
+            <div class="k">HR certification prep</div>
+
+            <h2>What could an HR certification be worth to you?</h2>
+
+            <p>Enter your salary, pick your exam and how you like to study. You&#39;ll see what a certification could add up
+                to and how fast it could cover your costs.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card hc-reveal">
+                <h3>Your numbers</h3>
+
+                <div class="f"><label for="c-salary">Current annual salary</label>
+
+                    <div class="money" id="m-salary"><span>$</span><input aria-describedby="e-salary" autocomplete="off"
+                            id="c-salary" inputmode="numeric" value="72,000" /></div>
+
+                    <div aria-live="polite" class="err" id="e-salary">&nbsp;</div>
+                </div>
+
+                <div class="f"><label for="c-cert">Certification you&#39;re considering</label> <select id="c-cert">
+                        <option>Not sure yet</option>
+                        <option>aPHR</option>
+                        <option selected="selected">PHR</option>
+                        <option>SPHR</option>
+                        <option>SHRM-CP</option>
+                        <option>SHRM-SCP</option>
+                    </select></div>
+
+                <div class="f"><label for="c-study">How you&#39;d like to study</label> <select id="c-study">
+                        <option selected="selected">Live virtual instructor-led class</option>
+                        <option>Self-paced online</option>
+                        <option>Study materials only</option>
+                        <option>Not sure yet</option>
+                    </select></div>
+
+                <div class="f"><label for="c-cost">Estimated certification investment ($)</label>
+
+                    <div class="hint" id="h-cost">Live virtual instructor-led class $1,165 + PHR exam fee $495. You can
+                        change it.</div>
+
+                    <div class="money" id="m-cost"><span>$</span><input aria-describedby="h-cost e-cost" autocomplete="off"
+                            id="c-cost" inputmode="numeric" value="1,660" /></div>
+
+                    <div aria-live="polite" class="err" id="e-cost">&nbsp;</div>
+                </div>
+
+                <div class="f"><span class="lbl" id="l-yrs">Look ahead</span>
+
+                    <div aria-labelledby="l-yrs" class="seg" role="group"><button aria-pressed="false" data-y="1"
+                            type="button">1 year</button><button aria-pressed="true" data-y="3" type="button">3
+                            years</button><button aria-pressed="false" data-y="5" type="button">5 years</button></div>
+                </div>
+            </div>
+
+            <div aria-live="polite" class="card result hc-reveal">
+                <div class="answer">
+                    <div class="k" id="o-head">Over 3 years, a certification could add</div>
+
+                    <div class="big" id="o-total">$30,000 to $60,000</div>
+
+                    <div class="sub" id="o-sub">That covers a $1,000 investment in about 1 month.</div>
+                </div>
+
+                <div class="rows">
+                    <div>
+                        <dl>
+                            <dt>Salary after the pay increase</dt>
+                            <dd id="o-new">$82,000 to $92,000</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <dl>
+                            <dt>Extra pay per month</dt>
+                            <dd id="o-mo">$833 to $1,667</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <dl>
+                            <dt>Simple investment payback illustration</dt>
+                            <dd id="o-pay">1.0 to 2.0 months</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <dl>
+                            <dt>After your investment</dt>
+                            <dd id="o-net">$29,000 to $59,000</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="chart" id="o-chart">&nbsp;</div>
+
+                <div class="note">Before tax. Assumes the pay increase starts right away and stays level.</div>
+
+                <div class="src">Projected pay increase is a projected average of 30%, based on multiple research reports
+                    conducted by HRCI, SHRM, BLS and Payscale over the past 5 to 8 years.</div>
+            </div>
+        </div>
+
+        <div class="cta hc-reveal">
+            <div class="l">
+                <h3>Get your personalized plan</h3>
+
+                <p>Takes about a minute. Your numbers, exam and study choice come along, so you only add your name and
+                    email.</p>
+                <a class="btn primary"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScC3UYw8ODdV09YvzZtUFMVfIWgr57AfAx2SyYDMaGSEy7-Ig/viewform"
+                    id="c-plan" rel="noopener" target="_blank">Email me my plan</a>
+
+                <p id="c-plan-note">Opens a short form in a new tab.</p>
+            </div>
+
+            <div class="r">
+                <div class="proof"><b>95.6%</b>of our prep students pass, compared with an industry average of about 65%.
+                </div>
+                <a class="btn ghost" href="https://calendar.app.google/bsbquCxyWy1WKzA77" rel="noopener"
+                    target="_blank">Talk to an advisor</a>
+
+                <div class="hint">Or call 1-877-472-6648</div>
+            </div>
+        </div>
+
+        <div class="fine hc-reveal">These figures are illustrative scenarios based on third-party research, not predictions or
+            guarantees of any salary increase. Actual results depend on your experience, role, employer, location and the
+            job market. Calculations are before tax and do not account for inflation. HR.com is not affiliated with,
+            endorsed by, or sponsored by HRCI or SHRM.</div>
+    </div>
+</section>
+
+<script>
+    /* Calculator logic, unchanged from the original */
+    (function () {
+        const $ = id => document.getElementById(id);
+        const fmt = n => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Math.round(n));
+        const num = v => { const c = String(v).replace(/[$,\s]/g, ''); return /^\d+(\.\d+)?$/.test(c) ? Number(c) : NaN };
+        let LOW = 0, HIGH = 0; const PCT = 0.30, MIN_COST = 500;
+        const PREP = { 'Live virtual instructor-led class': 1165, 'Self-paced online': 1000, 'Study materials only': 375 };
+        const FEE = { 'aPHR': 395, 'PHR': 495, 'SPHR': 595, 'SHRM-CP': 500, 'SHRM-SCP': 500 };
+        const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLScC3UYw8ODdV09YvzZtUFMVfIWgr57AfAx2SyYDMaGSEy7-Ig/viewform';
+        let years = 3;
+        const S = $('c-salary'), C = $('c-cost');
+        function chart(cost, y) {
+            const W = 360, H = 140, pad = 26, slot = (W - pad * 2) / y, bw = slot * 0.5, max = Math.max(HIGH * y, cost) * 1.15;
+            const yv = v => H - 18 - (v / max) * (H - 36);
+            let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Extra pay by year for the low and high scenario compared with your investment">`;
+            s += `<line x1="${pad}" x2="${W - 6}" y1="${H - 18}" y2="${H - 18}" stroke="#c3c9d1"/>`;
+            for (let i = 1; i <= y; i++) {
+                const x = pad + (i - 0.5) * slot - bw / 2, lo = LOW * i, hi = HIGH * i;
+                s += `<rect x="${x}" y="${yv(hi)}" width="${bw}" height="${yv(lo) - yv(hi)}" fill="#8fa3c8"/>`;
+                s += `<rect x="${x}" y="${yv(lo)}" width="${bw}" height="${H - 18 - yv(lo)}" fill="#1c3d7a"/>`;
+                s += `<text x="${x + bw / 2}" y="${H - 4}" font-size="10" text-anchor="middle" fill="#5d6670" font-family="Roboto,Arial">Yr ${i}</text>`;
+                s += `<text x="${x + bw / 2}" y="${yv(hi) - 4}" font-size="10" text-anchor="middle" fill="#1e2a35" font-family="Roboto,Arial" font-weight="700">${fmt(hi)}</text>`;
+            }
+            s += `<line x1="${pad}" x2="${W - 6}" y1="${yv(cost)}" y2="${yv(cost)}" stroke="#e6007e" stroke-dasharray="4 3"/><text x="${W - 8}" y="${yv(cost) - 4}" font-size="10" text-anchor="end" fill="#e6007e" font-family="Roboto,Arial">Your investment ${fmt(cost)}</text>`;
+            return s + '</svg>';
+        }
+        function planLink(s, c) { const p = new URLSearchParams({ usp: 'pp_url' }); p.set('entry.110962625', $('c-cert').value); p.set('entry.624587645', $('c-study').value); p.set('entry.1038182034', `${fmt(HIGH)} a year (30% of salary ${fmt(s)})`); p.set('entry.344205900', fmt(c)); p.set('entry.960791506', 'calculator'); return FORM + '?' + p.toString(); }
+        function calc() {
+            const s = num(S.value), c = num(C.value); let ok = true;
+            if (isNaN(s) || s < 15000 || s > 1000000) { $('e-salary').textContent = 'Enter a salary between $15,000 and $1,000,000.'; $('m-salary').classList.add('bad'); ok = false } else { $('e-salary').textContent = ''; $('m-salary').classList.remove('bad') }
+            if (isNaN(c) || c < MIN_COST || c > 50000) { $('e-cost').textContent = 'Enter an amount from $500 to $50,000.'; $('m-cost').classList.add('bad'); ok = false } else { $('e-cost').textContent = ''; $('m-cost').classList.remove('bad') }
+            document.querySelectorAll('#hrcalc .seg button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.y === years)));
+            const plan = $('c-plan');
+            if (!ok) { $('o-total').textContent = '–'; $('o-sub').textContent = 'Fix the highlighted box to see your results.';['o-new', 'o-mo', 'o-net', 'o-pay'].forEach(i => $(i).textContent = '–'); $('o-chart').innerHTML = ''; plan.href = FORM; return }
+            LOW = HIGH = s * PCT; const lo = LOW * years, hi = HIGH * years, mLo = c / (HIGH / 12), mHi = c / (LOW / 12); const r = m => Math.max(1, Math.round(m));
+            $('o-head').textContent = `Over ${years} year${years > 1 ? 's' : ''}, a certification could add`;
+            $('o-total').textContent = `${fmt(hi)}`;
+            const range = r(mLo) === r(mHi) ? `${r(mLo)}` : `${r(mLo)} to ${r(mHi)}`;
+            $('o-sub').textContent = mHi <= years * 12 ? `That covers a ${fmt(c)} investment in about ${range} month${r(mHi) > 1 ? 's' : ''}.` : `At the low end it takes about ${r(mHi)} months to cover ${fmt(c)}.`;
+            $('o-new').textContent = `${fmt(s + HIGH)}`; $('o-mo').textContent = `${fmt(HIGH / 12)}`;
+            $('o-pay').textContent = (c / (HIGH / 12)).toFixed(1) + ' months'; const n = $('o-net'), nl = lo - c, nh = hi - c; if (nl >= 0) { n.textContent = `${fmt(nh)}`; n.className = '' } else { n.textContent = `${fmt(-nh)} still to recover`; n.className = 'neg' }
+            $('o-chart').innerHTML = chart(c, years); plan.href = planLink(s, c);
+        }
+        function tidy(e) { const v = num(e.target.value); if (!isNaN(v)) e.target.value = new Intl.NumberFormat('en-US').format(Math.round(v)) }
+        [S, C].forEach(i => { i.addEventListener('input', calc); i.addEventListener('blur', e => { tidy(e); calc() }) });
+        function setCost() { const st = $('c-study').value, ce = $('c-cert').value, p = PREP[st], f = FEE[ce], h = $('h-cost'); if (p && f) { C.value = new Intl.NumberFormat('en-US').format(p + f); h.textContent = `${st} ${fmt(p)} + ${ce} exam fee ${fmt(f)}. You can change it.` } else { h.textContent = 'Prep, exam fee and materials. Pick a certification and study option for our estimate, or enter your own.' } }
+        ['c-cert', 'c-study'].forEach(id => $(id).addEventListener('change', () => { setCost(); calc() }));
+        document.querySelectorAll('#hrcalc .seg button').forEach(b => b.addEventListener('click', () => { years = +b.dataset.y; calc() }));
+        setCost(); calc();
+    })();
+
+    /* Scroll reveal, design only */
+    (function () {
+        const root = document.getElementById('hrcalc');
+        if (!root || !('IntersectionObserver' in window)) return;
+        const items = root.querySelectorAll('.hc-reveal');
+        root.classList.add('hc-js');
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (en.isIntersecting) { en.target.classList.add('hc-in'); io.unobserve(en.target) }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        items.forEach((el, i) => { el.style.transitionDelay = (i * 80) + 'ms'; io.observe(el) });
+    })();
+</script>
+</div>
