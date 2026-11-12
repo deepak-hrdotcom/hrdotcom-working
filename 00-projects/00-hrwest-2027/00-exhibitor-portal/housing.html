@@ -1,5 +1,149 @@
 <!-- @format -->
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<style>
+/* Housing hotel card (scoped, self-contained so it renders without style.css updates) */
+  .housing-container .housing-hotel-card {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    border: 1.5px solid rgba(145, 39, 140, 0.25) !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+    margin: 2rem 0 !important;
+    font-family: "Inter", system-ui, sans-serif !important;
+  }
+
+  .housing-container .housing-hotel-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .housing-container .housing-hotel-name {
+    font-family: "Outfit", system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    color: #0f172a !important;
+    text-transform: none !important;
+    margin: 0 !important;
+  }
+
+  .housing-container .housing-hotel-badge {
+    flex-shrink: 0 !important;
+    font-family: "Outfit", system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.72rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #5d2fc7 !important;
+    background: rgba(93, 47, 199, 0.1) !important;
+    padding: 0.25rem 0.65rem !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+  }
+
+  .housing-container .housing-hotel-address {
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
+    color: #64748b !important;
+    margin: 0 0 0.85rem 0 !important;
+  }
+
+  .housing-container .housing-hotel-rate {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    color: #1e293b !important;
+    margin: 0 0 0.85rem 0 !important;
+    padding: 0.85rem 1rem !important;
+    background: linear-gradient(135deg, rgba(93, 47, 199, 0.06), rgba(239, 20, 110, 0.06)) !important;
+    border-radius: 10px !important;
+    border-left: 3px solid #5d2fc7 !important;
+  }
+
+  .housing-container .housing-hotel-rate strong {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+  }
+
+  .housing-container .housing-hotel-rate strong.housing-hotel-deadline {
+    color: #5d2fc7 !important;
+  }
+
+  .housing-container .housing-hotel-amenities {
+    font-size: 0.84rem !important;
+    line-height: 1.5 !important;
+    color: #475569 !important;
+    margin: 0 0 1.5rem 0 !important;
+  }
+
+  .housing-container .housing-hotel-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .housing-container .housing-hotel-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.55rem !important;
+    padding: 0.65rem 1.4rem !important;
+    border-radius: 9999px !important;
+    font-family: "Outfit", system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .housing-container .housing-hotel-btn-primary {
+    background: linear-gradient(135deg, hsl(335, 90%, 54%) 0%, hsl(348, 92%, 58%) 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(239, 20, 110, 0.35) !important;
+  }
+
+  .housing-container .housing-hotel-btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 26px rgba(239, 20, 110, 0.5) !important;
+    color: #ffffff !important;
+  }
+
+  .housing-container .housing-hotel-btn-outline {
+    background: #ffffff !important;
+    color: #5d2fc7 !important;
+    border: 1.5px solid #cbd5e1 !important;
+    font-weight: 700 !important;
+  }
+
+  .housing-container .housing-hotel-btn-outline:hover {
+    border-color: #5d2fc7 !important;
+    color: #5d2fc7 !important;
+  }
+
+  @media screen and (max-width: 576px) {
+    .housing-container .housing-hotel-card {
+      padding: 1.5rem 1.15rem !important;
+    }
+    .housing-container .housing-hotel-head {
+      flex-direction: column-reverse !important;
+      align-items: flex-start !important;
+    }
+    .housing-container .housing-hotel-btn {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
+</style>
+
 <!-- hero section -->
 <section class="section hero-section">
   <div class="section-center hero-banner">
@@ -25,67 +169,46 @@
       conference experience for you and your team.
     </p>
 
-    <div style="background: rgba(145, 39, 140, 0.06); border: 2px dashed #91278c; border-radius: 16px; padding: 32px 24px; text-align: center; margin: 30px 0;">
-      <h3 style="font-size: 26px; font-weight: 700; color: #91278c; margin-bottom: 10px;">Stay Tuned!</h3>
-      <p style="font-size: 16px; color: #333; margin: 0;">Hotel reservation rates and booking details for HRWest 2027 will be announced soon.</p>
-    </div>
+    <div class="housing-hotel-card">
+      <div class="housing-hotel-head">
+        <h3 class="housing-hotel-name">
+          DoubleTree by Hilton San Francisco South Airport Blvd
+        </h3>
+        <span class="housing-hotel-badge">Official Hotel</span>
+      </div>
 
-    <!-- 
-    <div class="housing-btn-container">
+      <p class="housing-hotel-address">
+        275 South Airport Blvd, South San Francisco, CA 94080 &bull; Tel:
+        +1 650-873-3550
+      </p>
 
-      <div class="housing-btn-div">
+      <p class="housing-hotel-rate">
+        Book your HRWest stay at the DoubleTree by Hilton San Francisco South
+        Airport Blvd for <strong>$179 per night</strong> through
+        <strong class="housing-hotel-deadline">February 24, 2027</strong>.
+      </p>
+
+      <p class="housing-hotel-amenities">
+        Steps away from the conference center &bull; Bayfront walking paths
+        &bull; On-site dining &amp; lounge &bull; Fitness center
+      </p>
+
+      <div class="housing-hotel-actions">
         <a
-          class="btn housing-btn"
-          href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=SFOSADT&arrivalDate=2027-03-23&departureDate=2027-03-25&groupCode=905&room1NumAdults=1&displayCurrency=USD&aarpRate="
+          class="housing-hotel-btn housing-hotel-btn-primary"
+          href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=SFOSADT&amp;arrivalDate=2027-03-21&amp;departureDate=2027-03-25&amp;groupCode=CDTHRW&amp;room1NumAdults=1&amp;cid=OM%2CWW%2CHILTONLINK%2CEN%2CDirectLink"
+          rel="noopener noreferrer"
           target="_blank"
         >
-        Book Your Room
+          Book Your Room
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+        <a class="housing-hotel-btn housing-hotel-btn-outline" href="tel:+16508733550">
+          Call Hotel: +1 650-873-3550
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         </a>
       </div>
-
-      <div class="housing-btn-div">
-        <a
-          class="btn housing-btn"
-          href="http://google.com/maps?sca_esv=0c0ded2c55dfde36&output=search&q=DoubleTree+by+Hilton+San+Francisco+South+Airport+Blvd&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpUrv6YeyJhXfuYqj4Fj6c1U4Z6Yq0xAU8tFlmuJvKXCtXfDyZ6a_BxWsnnAZyDxZGXViIAx4BFzkNwbmo0r22o_WoJCEeEqm5VLT3Ivpf3QXJtLxl_tyhOdu6zuYLrm0r7APgBvXsE6rYuwGXNfY8_64dUoLwtMPAgrNyIJHErx6H6q3PSci8PHalpjzOd75KG4QmKg&entry=mc&ved=1t:200715&ictx=111"
-          target="_blank"
-        >
-          Google Maps
-        </a>
-      </div>
-
-      <div class="housing-btn-div">
-
-        <span style="font-size: clamp(1.2rem, 2vw, 1.5rem)">
-          <strong>Rate:</strong> $189/night before taxes and fees.
-        </span>
-
-        <span style="font-size: clamp(1.2rem, 2vw, 1.7rem)">
-          <strong>Booking Deadline: March 2, 2027</strong>
-     
-        </span>
-
-      </div>
-
     </div>
-
-    <p class="custom-paragraph">
-      After March 2, 2027, guests must call the hotel directly and reference
-      the <strong>HRWest group rate</strong> to check availability at the
-      discounted rate.
-    </p>
-
-    <p class="custom-paragraph">
-      <strong>Hotel Direct:</strong> (650) 873-3550
-    </p>
-
-    <p class="custom-paragraph">
-      We recommend booking early to secure the preferred rate.
-    </p>
-
-    <p class="custom-paragraph">
-      Complimentary parking is available for guests staying at the hotel.
-    </p>
-    -->
 
   </div>
 </section>

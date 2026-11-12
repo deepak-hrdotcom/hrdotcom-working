@@ -1,52 +1,92 @@
 <style id="hrw27-fouc-blocker" type="text/css">
   /* 0ms Synchronous Safe FOUC Suppression */
-  .FooterBG .container, .FooterMidBG .container {
+  .FooterBG .container,
+  .FooterMidBG .container {
     gap: 0 !important;
   }
-  .hrw27-container, .hrw27-footer-strip{
+
+  .hrw27-container,
+  .hrw27-footer-strip {
     display: none;
   }
-  .hrw27-topbar{
+
+  .hrw27-topbar {
     padding-block: 20px !important;
   }
-  html, body, body.sf-nav-main-mode, .sf-nav-main-mode {
+
+  html,
+  body,
+  body.sf-nav-main-mode,
+  .sf-nav-main-mode {
     padding-top: 0px !important;
     margin-top: 0px !important;
   }
-  body { background: #ffffff !important; margin: 0 !important; padding: 0 !important; }
-  .hrw27-header {
-    border: 0 !important; padding-block: 0 !important; margin-bottom: 0 !important;
-    padding: 0 !important; margin: 0 !important; overflow: visible !important; z-index: 99999 !important;
+
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  *, *::before, *::after { -webkit-tap-highlight-color: transparent !important; }
-  a, a:hover, a:focus, a:focus-visible, a:active, a:visited, a:link,
-  button, button:hover, button:focus, button:focus-visible, button:active,
-  :focus, :focus-visible, :active {
+
+  .hrw27-header {
+    border: 0 !important;
+    padding-block: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    z-index: 99999 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:focus-visible,
+  a:active,
+  a:visited,
+  a:link,
+  button,
+  button:hover,
+  button:focus,
+  button:focus-visible,
+  button:active,
+  :focus,
+  :focus-visible,
+  :active {
     text-decoration: none !important;
-    outline: none !important; outline-width: 0 !important;
-    outline-style: none !important; outline-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
   }
 </style>
 <style type="text/css">
   /* SCOPED BASE RESETS & FULL-WIDTH CANVAS OVERRIDES */
-  body, html {
+  body,
+  html {
     width: 100% !important;
     max-width: 100% !important;
     overflow: visible !important;
     overflow-x: clip !important;
   }
 
-  body > .ContentArea,
-  body > .container-fluid,
-  body > .container-fluid > .row,
-  body > .container-fluid > .row > .ContentArea,
+  body>.ContentArea,
+  body>.container-fluid,
+  body>.container-fluid>.row,
+  body>.container-fluid>.row>.ContentArea,
   .ContentArea,
-  .ContentArea > .container,
-  .ContentArea > .container > .row,
-  .ContentArea > .container > .row > .container,
-  body > .ContentArea > .container,
-  body > .container-fluid > .row > .ContentArea > .container,
-  body > .container,
+  .ContentArea>.container,
+  .ContentArea>.container>.row,
+  .ContentArea>.container>.row>.container,
+  body>.ContentArea>.container,
+  body>.container-fluid>.row>.ContentArea>.container,
+  body>.container,
   div.container,
   .container,
   .row,
@@ -61,9 +101,10 @@
   }
 
   @media (min-width: 768px) {
-    body > .ContentArea > .container,
-    body > .container-fluid > .row > .ContentArea > .container,
-    .ContentArea > .container,
+
+    body>.ContentArea>.container,
+    body>.container-fluid>.row>.ContentArea>.container,
+    .ContentArea>.container,
     .ContentArea .container,
     body .container,
     div.container,
@@ -80,9 +121,10 @@
   }
 
   @media (min-width: 992px) {
-    body > .ContentArea > .container,
-    body > .container-fluid > .row > .ContentArea > .container,
-    .ContentArea > .container,
+
+    body>.ContentArea>.container,
+    body>.container-fluid>.row>.ContentArea>.container,
+    .ContentArea>.container,
     .ContentArea .container,
     body .container,
     div.container,
@@ -99,9 +141,10 @@
   }
 
   @media (min-width: 1200px) {
-    body > .ContentArea > .container,
-    body > .container-fluid > .row > .ContentArea > .container,
-    .ContentArea > .container,
+
+    body>.ContentArea>.container,
+    body>.container-fluid>.row>.ContentArea>.container,
+    .ContentArea>.container,
     .ContentArea .container,
     body .container,
     div.container,
@@ -116,6 +159,7 @@
       overflow: visible !important;
     }
   }
+
   /* Hero Split Section Scoped Layout Styles */
   .hrw27 .hero-split-section {
     position: relative !important;
@@ -516,13 +560,16 @@
   }
 
   .TopLink_new .container,
-  .TopBar .container{
+  .TopBar .container {
     max-width: 1280px !important;
     margin: 0 auto !important;
   }
-  #st-2, .TopLink_new{
+
+  #st-2,
+  .TopLink_new {
     z-index: 10000000 !important;
   }
+
   /* Sticky HRWest Header Past Fold */
   .hrw27-header.hrw27-fixed-stuck {
     position: fixed !important;
@@ -564,7 +611,8 @@
                 style="color: var(--color-brand-purple);" viewbox="0 0 24 24" width="13">
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
-              </svg> <span id="hrw27-days-away">218</span> Days Away </span></div>
+              </svg> <span id="hrw27-days-away">218</span> Days Away </span>
+          </div>
           <!-- Main Headline with Brand Logo Lockup -->
 
           <div class="hero-animate-2 hero-brand-lockup"
@@ -596,11 +644,11 @@
 
           <div class="hero-animate-4 hero-cta-group"
             style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;"><a class="btn btn-primary btn-lg"
-              href="/en?t=/CustomCode/hr/hybrid/pass/pass_report_v2&pid=0&reg=1">Confirm Your Free Registration <svg fill="none"
-                height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20">
+              href="/en?t=/CustomCode/hr/hybrid/pass/pass_report_v2&pid=0&reg=1">Confirm Your Free Registration <svg
+                fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg> </a> 
-              <!-- <a class="btn btn-outline btn-lg"
+              </svg> </a>
+            <!-- <a class="btn btn-outline btn-lg"
               href="/en/webcasts_events/live_events/hrwest/sponsor-hrwest_laar1r7a.html"> Sponsor &amp; Exhibit </a> -->
           </div>
         </div>
@@ -618,7 +666,8 @@
                   allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"
                   src="https://www.youtube.com/embed/n8xlsyFHBnU?si=Y_t37u51KnXvyVbd&amp;autoplay=1&amp;mute=1&amp;rel=0&amp;loop=1&amp;playlist=n8xlsyFHBnU"
                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                  title="HRWest 2027 Conference Experience"></iframe></div>
+                  title="HRWest 2027 Conference Experience"></iframe>
+              </div>
 
               <div>
                 <div
@@ -859,7 +908,8 @@
               <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
               <line x1="12" x2="12" y1="19" y2="23"></line>
               <line x1="8" x2="16" y1="23" y2="23"></line>
-            </svg></div>
+            </svg>
+          </div>
 
           <div data-suffix="+" data-target="50"
             style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">
@@ -880,7 +930,8 @@
               stroke-width="2" viewbox="0 0 24 24" width="24">
               <circle cx="12" cy="8" r="7"></circle>
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-            </svg></div>
+            </svg>
+          </div>
 
           <div data-suffix="+" data-target="8"
             style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">
@@ -910,7 +961,8 @@
               <line x1="15" x2="15" y1="10" y2="10.01"></line>
               <line x1="9" x2="9" y1="6" y2="6.01"></line>
               <line x1="15" x2="15" y1="6" y2="6.01"></line>
-            </svg></div>
+            </svg>
+          </div>
 
           <div data-suffix="+" data-target="30"
             style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 48px); line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">
@@ -947,7 +999,8 @@
             style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
             <img alt="Jason Averbook" class="img-cover"
               src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/JasonAverbook.webp"
-              style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" /></div>
+              style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
+          </div>
 
           <h3
             style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">
@@ -976,7 +1029,8 @@
               Details <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"
                 width="14">
                 <polyline points="9 18 15 12 9 6"></polyline>
-              </svg> </a></div>
+              </svg> </a>
+          </div>
         </div>
         <!-- Center Testimonial Card with Auto-Play Video Transition -->
 
@@ -1010,7 +1064,8 @@
                   <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                   <line x1="23" x2="17" y1="9" y2="15"></line>
                   <line x1="17" x2="23" y1="9" y2="15"></line>
-                </svg> <span id="hrw27-mute-text">Unmute</span></button></div>
+                </svg> <span id="hrw27-mute-text">Unmute</span></button>
+            </div>
             <!-- Bottom Floating Controls & Attendee Info -->
 
             <div
@@ -1086,7 +1141,8 @@
                 style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', system-ui, sans-serif; font-size: 12px; font-weight: 800; color: var(--color-brand-purple); background: rgba(93, 47, 199, 0.08); border: 1px solid rgba(93, 47, 199, 0.2); padding: 5px 14px; border-radius: var(--radius-full);">
                 <span
                   style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-pink); animation: hrw27-pulse 1.5s infinite;"></span>
-                <span>Playing Video in <strong id="hrw27-quote-countdown">7</strong>s...</span></div>
+                <span>Playing Video in <strong id="hrw27-quote-countdown">7</strong>s...</span>
+              </div>
             </div>
             <!-- Bottom Progress Indicator -->
 
@@ -1105,7 +1161,8 @@
             style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
             <img alt="Allison West" class="img-cover"
               src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2026/AllisonWest.webp"
-              style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" /></div>
+              style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
+          </div>
 
           <h3
             style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 900; font-size: 20px; color: var(--color-text-primary); margin: 0 0 4px 0;">
@@ -1135,7 +1192,8 @@
               Details <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"
                 width="14">
                 <polyline points="9 18 15 12 9 6"></polyline>
-              </svg> </a></div>
+              </svg> </a>
+          </div>
         </div>
       </div>
       <!-- Faculty Grid -->
@@ -1236,14 +1294,17 @@
         </div>
         <!-- Slider Arrows (Desktop View) -->
 
-        <div class="track-arrows-desktop" style="display: flex; gap: 12px;"><button type="button" aria-label="Previous Track"
-            class="slider-btn hrw27-track-prev-btn" id="hrw27-track-prev"
-            style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm); cursor: pointer;"><svg style="pointer-events: none;"
-              fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20">
+        <div class="track-arrows-desktop" style="display: flex; gap: 12px;"><button type="button"
+            aria-label="Previous Track" class="slider-btn hrw27-track-prev-btn" id="hrw27-track-prev"
+            style="background: var(--color-elevated); border: 1.5px solid var(--color-subtle); color: var(--color-brand-purple); box-shadow: var(--shadow-sm); cursor: pointer;"><svg
+              style="pointer-events: none;" fill="none" height="20" stroke="currentColor" stroke-width="2.5"
+              viewbox="0 0 24 24" width="20">
               <polyline points="15 18 9 12 15 6"></polyline>
-            </svg></button><button type="button" aria-label="Next Track" class="slider-btn hrw27-track-next-btn" id="hrw27-track-next"
-            style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35); cursor: pointer;"><svg style="pointer-events: none;"
-              fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20">
+            </svg></button><button type="button" aria-label="Next Track" class="slider-btn hrw27-track-next-btn"
+            id="hrw27-track-next"
+            style="background: var(--gradient-brand); color: #ffffff; box-shadow: 0 6px 20px var(--brand-glow-35); cursor: pointer;"><svg
+              style="pointer-events: none;" fill="none" height="20" stroke="currentColor" stroke-width="2.5"
+              viewbox="0 0 24 24" width="20">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg></button></div>
       </div>
@@ -1274,7 +1335,8 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Strategy &amp; AI </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                 Approx. 8 Sessions </span></div>
+                Approx. 8 Sessions </span>
+            </div>
           </div>
         </div>
         <!-- Track 2: Legal and Compliance -->
@@ -1303,7 +1365,8 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Legal &amp; Risk </span> <span class="badge badge-pink"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                 Approx. 8 Sessions </span></div>
+                Approx. 8 Sessions </span>
+            </div>
           </div>
         </div>
         <!-- Track 3: HR Tech -->
@@ -1332,7 +1395,8 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Tools &amp; Systems </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                 Approx. 8 Sessions </span></div>
+                Approx. 8 Sessions </span>
+            </div>
           </div>
         </div>
         <!-- Track 4: Talent -->
@@ -1362,7 +1426,8 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Talent &amp; Growth </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                 Approx. 8 Sessions </span></div>
+                Approx. 8 Sessions </span>
+            </div>
           </div>
         </div>
         <!-- Track 5: Leadership -->
@@ -1392,7 +1457,8 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Leadership Impact </span> <span class="badge badge-purple"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                 Approx. 8 Sessions </span></div>
+                Approx. 8 Sessions </span>
+            </div>
           </div>
         </div>
         <!-- Track 6: Health, Wellness and Benefits -->
@@ -1421,7 +1487,8 @@
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
                 Culture &amp; Wellness </span> <span class="badge badge-pink"
                 style="font-size: 11px; font-weight: 800; padding: 4px 12px; display: inline-flex; align-items: center;">
-                 Approx. 8 Sessions </span></div>
+                Approx. 8 Sessions </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1435,7 +1502,8 @@
           href="/en/webcasts_events/live_events/hrwest/hrwest-2027-agenda-listing_mnq4uvmw.html"> View Full Conference
           Agenda <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18">
             <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg> </a></div>
+          </svg> </a>
+      </div>
     </div>
   </section>
   <!-- 7. Testimonials Section -->
@@ -1612,7 +1680,8 @@
           style="height: 360px; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); border: 2px solid var(--color-subtle);">
           <img alt="South San Francisco Conference Center" class="img-cover"
             src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/hrwest-2027/south-fransisco-conference-center.webp"
-            style="width: 100%; height: 100%; object-fit: cover;" /></div>
+            style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
       </div>
     </div>
   </section>
@@ -1649,17 +1718,17 @@
               culture, and workforce innovation. Register today and save $400 with limited $399 early bird pricing
               before the <strong>January 15, 2027 deadline</strong>.</p>
 
-             <div class="final-cta-btn-group" style="display: flex; gap: 14px; flex-wrap: wrap;"><a
-                class="btn btn-pink btn-lg"
-                href="/en?t=/CustomCode/hr/hybrid/pass/pass_report_v2&pid=0&reg=1">Confirm Your Free Registration <svg fill="none"
-                  height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18">
+            <div class="final-cta-btn-group" style="display: flex; gap: 14px; flex-wrap: wrap;"><a
+                class="btn btn-pink btn-lg" href="/en?t=/CustomCode/hr/hybrid/pass/pass_report_v2&pid=0&reg=1">Confirm
+                Your Free Registration <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5"
+                  viewbox="0 0 24 24" width="18">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg> </a> 
-                
-                <!-- <a class="btn btn-outline btn-lg"
+                </svg> </a>
+
+              <!-- <a class="btn btn-outline btn-lg"
                 href="/en/webcasts_events/live_events/hrwest/attend-hrwest-as-a-team_laaqzi6t.html"> Bring Your Team
               </a> -->
-            </div> 
+            </div>
           </div>
 
           <div class="final-cta-img-card"
@@ -1673,7 +1742,8 @@
 
             <div
               style="position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: 10px 16px; font-size: 13px; font-weight: 700; color: var(--color-brand-purple); display: flex; align-items: center; gap: 8px;">
-              <span>✨</span> 500+ HR Leaders Joining in 2027</div>
+              <span>✨</span> 500+ HR Leaders Joining in 2027
+            </div>
           </div>
         </div>
       </div>
@@ -2009,3 +2079,5 @@
     setTimeout(applyActiveNav, 150);
   })();
 </script>
+
+$designAttribute:hybrid_pass
