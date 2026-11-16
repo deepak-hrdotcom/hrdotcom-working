@@ -177,6 +177,9 @@ Chapter 1 ALWAYS starts with the full report title (`hero-title`) followed by th
     src="https://public-cdn.hr.com/remoteimages/research/images/[report-slug]/chart-N.webp" />
 
   <!-- Chi-square test highlight (if present in PDF) -->
+  <!-- Place AFTER the finding's body paragraphs and BEFORE the chart it relates to.
+       In the PDF it usually sits as a sidebar at the top of the finding; this keeps
+       reading order: claim, then statistical significance, then the chart. -->
   <div class="highlight">
     <h3>Results of Chi-square test</h3>
     <p>A chi-square test of independence shows that...</p>
@@ -186,6 +189,8 @@ Chapter 1 ALWAYS starts with the full report title (`hero-title`) followed by th
   <div class="highlight">
     <h3>[Cohort Name] cohort classification</h3>
     <p>Definition intro text...</p>
+    <!-- Use a list ONLY if the PDF shows bullets; if the PDF shows plain
+         paragraphs with bold labels, use <p><strong>Leaders:</strong> ...</p> -->
     <ul class="research-list">
       <li><strong>Leaders:</strong> definition...</li>
       <li><strong>Laggards:</strong> definition...</li>
@@ -193,19 +198,30 @@ Chapter 1 ALWAYS starts with the full report title (`hero-title`) followed by th
     <p>Correlation note...</p>
   </div>
 
-  <!-- Organizational size note (if present in PDF as a sidebar box) -->
-  <!-- Place this AFTER the relevant body paragraph, BEFORE the chart it relates to -->
+  <!-- Org size DEFINITION sidebar (if present in PDF, no heading) -->
+  <!-- Wherever the PDF floats it, place it IMMEDIATELY BEFORE the first
+       "Differences based on organization size" note so the definition sits next to
+       the data that uses it. Do not drop it mid-way between unrelated paragraphs. -->
+  <div class="highlight side-note">
+    <p>For the purpose of this report, large organizations have 1,000 or more employees...</p>
+  </div>
+
+  <!-- Organizational size note (if present in PDF as a sidebar box or sub-heading) -->
+  <!-- Place this AFTER the relevant body paragraph, BEFORE the chart it relates to.
+       Use the PDF heading verbatim (e.g. "Differences based on organization size"). -->
   <div class="highlight side-note">
     <h3>Differences by organizational size</h3>
     <p>Large organizations (X%) are significantly more likely than midsized (Y%)...</p>
   </div>
 
   <!-- HRRI Strategic Recommendations (if present in PDF) -->
+  <!-- Intro line verbatim from the PDF (wording varies by report). If each
+       recommendation has a bold title on its own line, keep the line break. -->
   <div class="highlight">
     <h3>HRRI Strategic Recommendations</h3>
-    <p>Based on our research, please consider the following suggestions:</p>
+    <p>Based on our research, below are some suggestions:</p>
     <ul class="research-list">
-      <li>Recommendation text verbatim from PDF.</li>
+      <li><b>Recommendation title verbatim.</b><br />Recommendation text verbatim from PDF.</li>
     </ul>
   </div>
 
@@ -254,6 +270,7 @@ When the final chapter is a "Key Takeaways" or summary chapter (no charts, just 
 | `.highlight.side-note` | Same as `.highlight` but for sidebar-style notes from the PDF (org size differences, etc.) |
 | `.chart-img` | Class on the actual chart `<img>`. **This is the ONLY chart class to use.** |
 | `.research-note` | Small-text footnote or disclaimer. Requires `!important` CSS overrides. |
+| `.research-quote` | Expert pull quote box. Custom CSS added once per report (see Expert Quote Pattern). |
 
 ---
 
@@ -271,6 +288,7 @@ The correct chart format is:
 - The user provides the **base URL** via the report slug. Only the filename at the end changes: `chart-1.webp`, `chart-2.webp`, etc.
 - **Editor's notes** below charts (e.g., "Those who responded 'don't know' were removed...") are **PART OF THE CHART IMAGE** — do NOT add them as separate HTML text.
 - **Alt text** must be the verbatim chart question from the PDF.
+- **Chart with no title/question** (e.g. a bare Yes/No donut): the PDF is the FINAL, APPROVED source. Do NOT invent, add, or request a survey question. Write alt text only from what is visible in the image (e.g. `Donut chart: Yes 65%, No 35%`) and leave it at that.
 - Chart numbers are **sequential across the whole report**, not per chapter. Continue numbering from wherever the previous chapter ended.
 - A chapter with **no chart** (e.g., Key Takeaways) does not increment the chart counter.
 - **Call-out text/Highlight boxes**: If the PDF contains highlight boxes or call-outs that are visually part of the chart in the provided screenshots/images, do NOT add them as separate HTML elements. Only add them if they are separate text blocks in the PDF that are not captured within the chart image.
@@ -279,6 +297,8 @@ The correct chart format is:
 
 ## Text Content Rules — CRITICAL
 
+> ⚠️ **The PDF is the final, approved version.** If something is missing from it (a chart question, a link URL, a heading), do NOT add or fill it in, and do not ask the user to supply it. Build only what the PDF contains.
+>
 > ⚠️ **NEVER alter, paraphrase, or summarize the report copy.** All paragraph text, bullet points, findings, and headings must be copied **verbatim** from the PDF. The only modifications allowed are HTML encoding of special characters (`&amp;`, `&lt;`, etc.).
 
 - Chapter titles → `class="chapter-title"`
@@ -290,13 +310,19 @@ The correct chart format is:
 
 ## Hyperlink Rules
 
-If the PDF text references an external study, source, or named piece of research, wrap the relevant text in a placeholder `<a>` tag. The user will fill in the correct URL later:
+Only add links that actually exist in the PDF (see "Real links embedded in the PDF" below). For reports where the user supplies chapter PDFs without link data and explicitly asks for placeholders, the legacy pattern is a placeholder `<a>` tag that the user fills in later:
 
 ```html
 <a href="#" target="_blank" rel="noopener noreferrer">referenced text</a>
 ```
 
 - **Do NOT open URLs or verify links** — the user manages all hyperlink destinations.
+- **Real links embedded in the PDF**: before building a chapter, read the PDF's link annotations for that chapter's page range (pdfjs `page.getAnnotations()`, subtype `Link`, use `url`). Match each link rectangle to the text under it on the rendered page to get the exact anchor words (text extraction alone returns the whole line). Use the real URL instead of `#`: `<a href="REAL_URL" target="_blank" rel="noopener noreferrer">anchor words</a>`. Copy the URL exactly as stored in the PDF.
+- **Link-styled text with NO URL in the PDF**: designers sometimes style words as links (blue, underlined) but forget to attach the URL. These have no annotation, so they only show up on the rendered page images. Always scan the rendered pages for blue underlined text and compare against the annotation list.
+  - If styled text has no matching annotation: list it for the user (page, exact words) and keep it as PLAIN TEXT in the HTML. Do NOT add a `#` placeholder and do not ask for a URL. The PDF is final; these are designer misses and are ignored.
+- **Hyperlink check per chapter** (report the result to the user every time):
+  1. Annotation links found in the chapter page range (with URL and anchor words).
+  2. Link-styled text found on the rendered pages without a URL (kept as plain text).
 - **Named laws/acts** (e.g., SECURE Act 2.0) also get placeholder tags.
 - Once the user edits a placeholder with a real URL, that pattern is locked in for that term — do not reset it.
 
@@ -343,6 +369,121 @@ CSS (add to per-report `<style>` block if not already in global stylesheet):
 
 ---
 
+## Expert Quote Pattern (`.research-quote`)
+
+Some reports include pull quotes from industry experts. In the PDF they look like: a light lavender box, a large purple opening quote mark at the top-left, bold blue quote text, a short red-to-yellow accent line, and an attribution line (`- **Name,** Title, Company`).
+
+### When to use it
+- Use `.research-quote` ONLY for a quote box that is visibly styled as a pull quote in the rendered PDF page.
+- Do NOT use it for quoted text inside a normal paragraph, survey question wording inside quotes, or cohort definitions. Those stay as plain `<p>` text.
+- Do NOT use `<blockquote>`, `.highlight`, or `.major-finding` for expert quotes.
+- If a quote appears inside a chart image, it is part of the image. Do not repeat it as HTML.
+
+### Markup (one block per quote)
+
+```html
+<!-- research quote -->
+<div class="research-quote">
+  <span class="research-quote-mark" aria-hidden="true">&ldquo;</span>
+  <p class="research-quote-text">
+    “Quote text verbatim from PDF.”
+  </p>
+  <span class="research-quote-line" aria-hidden="true"></span>
+  <p class="research-quote-author">
+    - <strong>First Last,</strong> Title, Company
+  </p>
+</div>
+<!-- end research quote -->
+```
+
+### Content rules
+- **Quote text**: verbatim from the PDF, including the curly quotation marks “ ” that are printed around it. The large decorative mark (`.research-quote-mark`) is separate and is hidden from screen readers.
+- **Attribution**: copy exactly as printed: leading `- `, name in `<strong>` with its trailing comma inside the bold (`<strong>Kathi Graham,</strong>`), then title and company in regular weight. Do not add or expand titles.
+- **Lead-in sentence**: if the PDF introduces the quote (e.g. "Kathi Graham, CEO of XBInsight, highlighted this distinction:"), keep it as a normal `<p>` directly before the quote block.
+- **Placement**: keep the PDF reading order. The quote goes right after its lead-in paragraph, never inside a `.highlight`, a list, or a `.major-finding`.
+- **Hyperlinks**: do not link the person or company unless the user asks.
+- **Multi-paragraph quotes**: use one `<p class="research-quote-text">` per paragraph; only the last one keeps the closing quotation mark.
+
+### CSS (add ONCE per report)
+The quote CSS is NOT in the global stylesheet. Add the block below exactly once per report, as a `<style>` block at the top of the FIRST chapter that contains a quote (inside that `chapter-container`, so no other section is touched). Later chapters reuse the same classes without repeating the CSS. Before adding, search the file for `.research-quote {` to avoid duplicates.
+
+```html
+<!-- research quote styles for this report -->
+<style>
+  .research-center .research-quote {
+    position: relative !important;
+    margin: 40px 0 32px 0 !important;
+    padding: 28px 32px 24px 72px !important;
+    background: #e9edf8 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+  .research-center .research-quote .research-quote-mark {
+    position: absolute !important;
+    top: -18px !important;
+    left: 18px !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 88px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #5b2c83 !important;
+  }
+  .research-center .research-quote p.research-quote-text {
+    margin: 0 0 16px 0 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.6 !important;
+    letter-spacing: normal !important;
+    color: #2e4e85 !important;
+  }
+  .research-center .research-quote .research-quote-line {
+    display: block !important;
+    width: 110px !important;
+    height: 3px !important;
+    margin: 0 0 14px 0 !important;
+    background: linear-gradient(90deg, #ef4a3d, #fdb414) !important;
+    border-radius: 2px !important;
+  }
+  .research-center .research-quote p.research-quote-author {
+    margin: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+    color: #555555 !important;
+  }
+  .research-center .research-quote p.research-quote-author strong {
+    font-weight: 700 !important;
+    color: #333333 !important;
+  }
+  @media (max-width: 767px) {
+    .research-center .research-quote {
+      padding: 28px 20px 20px 52px !important;
+    }
+    .research-center .research-quote .research-quote-mark {
+      left: 10px !important;
+      font-size: 68px !important;
+    }
+    .research-center .research-quote p.research-quote-text {
+      font-size: 16px !important;
+    }
+  }
+</style>
+<!-- end research quote styles -->
+```
+
+- Every selector is scoped to `.research-center` and every property uses `!important` (CMS override rule).
+- If a report's PDF uses different quote colors, change only the color values and tell the user. Keep the class names the same.
+- Reference implementation: chapter 2 of `000-hrdotcom/00-research/2026/html-HRcoms-Future-of-Career-Development-and-Mobility-2026-27/HRcoms-Future-of-Career-Development-and-Mobility-2026-27-long.html`.
+
+### Quote checklist
+- [ ] Confirmed on the rendered PDF page that it is a styled pull quote
+- [ ] Quote text and attribution are verbatim
+- [ ] Lead-in sentence kept as a `<p>` before the block
+- [ ] CSS present exactly once in the report (search for `.research-quote {`)
+
+---
+
 ## Custom Elements / New Designs
 
 If the source PDF contains any new elements or custom content blocks not covered by the standard HTML patterns, you must:
@@ -375,7 +516,8 @@ When a user provides a chapter PDF:
 - [ ] Identify all elements: findings, highlights, charts, footnotes, sidebar boxes, section pivots.
 - [ ] Determine the correct chapter type: Exec Summary / Standard / Key Takeaways.
 - [ ] Build the chapter HTML following the correct pattern.
-- [ ] Insert as `<div class="chapter-container" id="chapter-N">` before the `<!-- ======================== -->` separator.
+- [ ] Insert as `<div class="chapter-container" id="chapter-N">` before the `<!-- ======================== -->` separator at the END of `#research-content` (the LAST one, just above `</div>` and `<!-- end research content -->`). There is a similar long separator at the TOP of `#research-content` above chapter 1; never insert there. After inserting, confirm chapter ids run in order 1, 2, 3 ...
+- [ ] Run the hyperlink check (annotation links plus link-styled text on rendered pages) and report it.
 - [ ] Add the chapter's TOC entry to `<div class="nav-container" id="toc-container">`.
 - [ ] **STRICT ENFORCEMENT**: Do NOT modify, reformat, or touch any other section of the file.
 
@@ -390,6 +532,15 @@ Located in `e:\HR\00-html\.agents\skills\building-research-center\scripts\`:
 - **Usage:** `node e:\HR\00-html\.agents\skills\building-research-center\scripts\extract_pdf.js <path-to-pdf> <path-to-output.txt>`
 - **Dependencies:** `pdf.js-extract` (already installed in the `scripts` folder). If it fails, run `npm install` inside the `scripts` folder.
 - **Always auto-run** — it is safe and non-destructive.
+
+### Page-range extraction and visual check (preferred for full-report PDFs)
+When the user supplies the FULL report PDF instead of per-chapter PDFs:
+- Read only the CONTENTS page first, then extract ONLY the page range of the chapter being built (use the TOC page numbers). Never extract the whole PDF at once.
+- Render the same page range to PNG and look at it before writing HTML. Text extraction alone cannot tell bullets from paragraphs, sidebar boxes from body text, or what is inside a chart image. Poppler and winget are not available on this machine; render with `pdfjs-dist` plus `@napi-rs/canvas` from a scratch folder.
+- Open each chart image (webp) for the chapter and compare with the rendered page: anything visible inside the chart image (editorial notes, source lines, callouts) must NOT be repeated as HTML.
+
+### Chart filename variants
+Some reports number charts from `chart-00.webp` (zero-padded) inside a `/chart/` subfolder, e.g. `https://public-cdn.hr.com/remoteimages/research/images/[report-slug]/chart/chart-00.webp`. Always use the exact path pattern the user gives for that report.
 
 ---
 

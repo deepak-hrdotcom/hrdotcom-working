@@ -1,0 +1,689 @@
+<div class="plm-page">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Noto+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,400;1,700&display=swap');
+
+/* Patrick Lencioni Masterclass - HR.com CMS page */
+/* All selectors scoped to plm-page wrapper */
+
+/* Base reset */
+.plm-page, .plm-page *, .plm-page *::before, .plm-page *::after { box-sizing: border-box; }
+.plm-page { width: 100%; margin: 0; padding: 0; background: #FFFFFF; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.plm-page h1, .plm-page h2, .plm-page h3, .plm-page h4, .plm-page h5, .plm-page h6,
+.plm-page p, .plm-page a, .plm-page li, .plm-page span, .plm-page div, .plm-page strong, .plm-page em, .plm-page i, .plm-page figure, .plm-page button {
+  font-family: 'Noto Sans', Arial, sans-serif !important;
+}
+.plm-page h1, .plm-page h2, .plm-page h3, .plm-page h4, .plm-page h5, .plm-page h6 {
+  margin: 0; padding: 0; border: 0; background: none; text-transform: none !important; font-style: normal;
+}
+.plm-page p { margin: 0 0 14px 0; padding: 0; }
+.plm-page p:last-child { margin-bottom: 0; }
+.plm-page ul, .plm-page ol { margin: 0; padding: 0; list-style: none; }
+.plm-page li { margin: 0; padding: 0; list-style: none; }
+.plm-page li::marker { content: none; }
+.plm-page a { text-decoration: none; box-shadow: none; }
+.plm-page img { display: block; max-width: 100%; max-height: 100%; height: auto; border: 0; margin: 0; padding: 0; box-shadow: none; border-radius: 0; }
+.plm-page figure { margin: 0; padding: 0; }
+.plm-page svg { display: block; }
+.plm-page button { margin: 0; padding: 0; border: 0; background: none; cursor: pointer; }
+.plm-page em, .plm-page i { font-style: italic; font-weight: inherit; }
+.plm-page strong { font-weight: 700 !important; }
+
+/* Shared containers */
+.plm-page .plm-container { width: 100%; max-width: 1140px; margin-left: auto; margin-right: auto; }
+.plm-page .plm-container-wide { width: 100%; max-width: 1290px; margin-left: auto; margin-right: auto; }
+
+/* Shared buttons - square corners match the original page */
+.plm-page .plm-btn {
+  display: inline-block; text-align: center; text-transform: uppercase; text-decoration: none !important;
+  background-color: #00AEEF; color: #FFFFFF !important; border: 1px solid #DEB1FF; border-radius: 0;
+  line-height: 1 !important; letter-spacing: normal !important; cursor: pointer;
+}
+.plm-page .plm-btn:focus-visible { outline: 3px solid #DEB1FF; outline-offset: 3px; }
+.plm-page .plm-btn-sink { transition: transform 0.3s ease-out; }
+.plm-page .plm-btn-sink:hover, .plm-page .plm-btn-sink:focus { transform: translateY(8px); }
+.plm-page .plm-btn-grow { transition: transform 0.3s; }
+.plm-page .plm-btn-grow:hover, .plm-page .plm-btn-grow:focus { transform: scale(1.1); }
+
+/* ===== SECTION 1 HERO ===== */
+.plm-page .plm-hero { background-color: #00204B; background-image: linear-gradient(64deg, #00204B 60%, #00AEEF 100%); padding: 80px 20px 0 20px; }
+.plm-page .plm-hero .plm-container { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+.plm-page .plm-hero-text { flex: 0 1 56.5%; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 10px; }
+.plm-page .plm-hero-media { flex: 0 1 43.5%; padding: 0; }
+.plm-page .plm-hero-media img { width: 100%; max-width: 800px; margin: 0 auto; }
+.plm-page .plm-hero-eyebrow { font-size: 31px !important; font-weight: 700 !important; font-style: italic !important; line-height: 1 !important; letter-spacing: normal !important; color: #00AEEF !important; }
+.plm-page .plm-hero-title { font-size: 52px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+.plm-page .plm-hero-lead { margin: -7px 0 -7px 0; }
+.plm-page .plm-hero-lead p { font-size: 16px !important; font-weight: 300 !important; line-height: 1.6 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+.plm-page .plm-hero-meta { display: flex; flex-wrap: wrap; margin: 0 -8px; }
+.plm-page .plm-hero-meta li { display: flex; align-items: center; margin: 0 8px; }
+.plm-page .plm-hero-meta svg { width: 22px; height: 22px; fill: #DEB1FF; margin-right: 5.5px; flex: 0 0 auto; }
+.plm-page .plm-hero-meta span { padding-left: 5px; font-size: 16px !important; font-weight: 400 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+.plm-page .plm-hero-cta { padding-top: 40px; }
+.plm-page .plm-hero-cta .plm-btn { font-size: 16px !important; font-weight: 700 !important; padding: 12px 24px; }
+
+/* ===== SECTION 2 INTRO ===== */
+.plm-page .plm-intro { background-color: #FFFFFF; padding: 80px 40px 80px 40px; }
+.plm-page .plm-intro .plm-container { display: flex; flex-direction: row; gap: 60px; }
+.plm-page .plm-intro-col { flex: 1 1 50%; min-width: 0; }
+.plm-page .plm-intro-title { font-size: 45px !important; font-weight: 800 !important; line-height: 1.1 !important; letter-spacing: -2px !important; color: #00204B !important; }
+.plm-page .plm-intro-copy p { font-size: 16px !important; font-weight: 300 !important; line-height: 1.6 !important; letter-spacing: normal !important; color: #000000 !important; }
+
+/* ===== SECTION 3 TAKEAWAYS ===== */
+.plm-page .plm-takeaways { background-color: #00204B; background-image: linear-gradient(64deg, #00204B 60%, #00AEEF 100%); padding: 100px 20px 100px 20px; }
+.plm-page .plm-takeaways .plm-container { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; }
+.plm-page .plm-takeaways-intro { flex: 0 0 50%; padding: 10px; }
+.plm-page .plm-takeaways-title { width: 92.5%; font-size: 45px !important; font-weight: 800 !important; line-height: 1.1 !important; letter-spacing: -2px !important; color: #FFFFFF !important; }
+.plm-page .plm-takeaways-copy { width: 91.5%; margin-top: 27px; }
+.plm-page .plm-takeaways-copy p { font-size: 16px !important; font-weight: 300 !important; line-height: 1.6 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+.plm-page .plm-takeaways-card { flex: 1 1 auto; min-width: 0; background-color: #FFFFFF; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+.plm-page .plm-takeaway { display: flex; flex-direction: row; align-items: flex-start; gap: 15px; text-align: left; }
+.plm-page .plm-takeaway-icon { flex: 0 0 auto; width: 35px; height: 35px; }
+.plm-page .plm-takeaway-icon svg { width: 35px; height: 35px; }
+.plm-page .plm-takeaway-body { flex: 1 1 auto; min-width: 0; }
+.plm-page .plm-takeaway-title { margin-bottom: 5px; font-size: 18px !important; font-weight: 900 !important; line-height: 1.2 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-takeaway-desc { margin: 0; font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+
+/* ===== SECTION 4 ABOUT ===== */
+.plm-page .plm-about { background-color: #FFFFFF; padding: 80px 20px 80px 20px; }
+.plm-page .plm-about-head { width: 63.84%; padding: 10px; }
+.plm-page .plm-about-title { font-size: 48px !important; font-weight: 800 !important; line-height: 1 !important; letter-spacing: -2px !important; color: #00204B !important; }
+.plm-page .plm-about-row { display: flex; flex-direction: row; gap: 20px; padding: 10px; align-items: flex-start; }
+.plm-page .plm-about-main { flex: 0 0 65.36%; display: flex; flex-direction: column; gap: 20px; }
+.plm-page .plm-about-copy { padding: 0 40px 0 10px; margin-right: 15px; }
+.plm-page .plm-about-copy p { font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-books { display: grid; grid-template-columns: repeat(4, 1fr); }
+.plm-page .plm-books figure { text-align: center; }
+.plm-page .plm-books img { width: 200px; margin: 0 auto; }
+.plm-page .plm-about-photo { flex: 1 1 auto; min-width: 0; display: flex; justify-content: center; }
+.plm-page .plm-about-photo img { width: 333px; }
+
+/* ===== SECTION 5 HOW IT WORKS ===== */
+.plm-page .plm-how { background-color: #00204B; background-image: linear-gradient(64deg, #00204B 60%, #00AEEF 100%); padding: 100px 20px 100px 20px; }
+.plm-page .plm-how-head { display: flex; flex-direction: column; align-items: center; padding-bottom: 50px; }
+.plm-page .plm-how-title { text-align: center; font-size: 36px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+.plm-page .plm-how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.plm-page .plm-step { display: flex; flex-direction: column; align-items: stretch; border: 1px solid #DEB1FF; border-radius: 10px; padding: 0 50px 50px 50px; }
+.plm-page .plm-step-num-row { display: flex; justify-content: flex-end; margin-top: -31px; padding-bottom: 19px; position: relative; z-index: 2; }
+.plm-page .plm-step-num {
+  width: 62px; height: 62px; display: flex; align-items: center; justify-content: center;
+  background-color: #F5F5F5; border: 1px solid #D8D8D8; border-radius: 100%;
+  font-family: 'Manrope', Arial, sans-serif !important; font-size: 20px !important; font-weight: 800 !important; line-height: 1 !important; letter-spacing: -0.2px !important; color: #00AEEF !important;
+}
+.plm-page .plm-step-when { padding: 0 0 0 0; margin: 0 0 7px -3px; font-size: 16px !important; font-weight: 400 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #DEB1FF !important; }
+.plm-page .plm-step-icon { width: 75px; height: 75px; margin-bottom: 20px; }
+.plm-page .plm-step-icon svg { width: 75px; height: 75px; fill: #00AEEF; }
+.plm-page .plm-step-title { margin-bottom: 16px; font-size: 22px !important; font-weight: 800 !important; line-height: 1 !important; letter-spacing: -0.3px !important; color: #FFFFFF !important; }
+.plm-page .plm-step-desc { margin: 0; font-size: 16px !important; font-weight: 300 !important; line-height: 1.6 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+
+/* ===== SECTION 6 REGISTER ===== */
+.plm-page .plm-register { background-color: #FFFFFF; padding: 80px 20px 0 20px; }
+.plm-page .plm-register-anchor { display: block; height: 0; scroll-margin-top: 120px; }
+.plm-page .plm-register-head { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 10px; }
+.plm-page .plm-register-title { text-align: center; text-transform: capitalize !important; font-size: 36px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-register-intro { width: 79%; text-align: center; }
+.plm-page .plm-register-intro p { font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-pricing { display: flex; flex-direction: row; justify-content: center; gap: 20px; padding: 30px 10px 0 10px; }
+.plm-page .plm-price { flex: 1 1 0; min-width: 0; max-width: 40%; background-color: #F9FAFA; border: 1px solid #DEB1FF; overflow: hidden; text-align: center; display: flex; flex-direction: column; }
+.plm-page .plm-price-header { background-color: #FFFFFF; padding: 40px 0 0 0; }
+.plm-page .plm-price-heading { display: block; font-size: 25px !important; font-weight: 900 !important; line-height: 1.2 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-price-sub { display: inline; font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-price-amount { background-color: #FFFFFF; padding: 20px 0 0 0; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; }
+.plm-page .plm-price-currency { align-self: flex-start; margin-right: 3px; font-size: 21px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-price-integer { font-size: 60px !important; font-weight: 900 !important; line-height: 0.8 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-price-period { width: 100%; font-size: 18px !important; font-weight: 300 !important; line-height: 2 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-price-features { background-color: #FFFFFF; padding: 50px 20px 0 20px; text-align: center; flex: 1 1 auto; }
+.plm-page .plm-price-features li { font-size: 16px !important; font-weight: 300 !important; line-height: 1 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-price-features li + li::before { content: ""; display: block; margin: 10px 12.5%; border: 0; }
+.plm-page .plm-price-feature { display: inline-flex; align-items: flex-start; justify-content: center; text-align: left; }
+.plm-page .plm-price-feature svg { width: 20.8px; height: 20.8px; flex: 0 0 auto; margin-right: 10px; margin-top: -2px; }
+.plm-page .plm-price-feature span { font-size: 16px !important; font-weight: 300 !important; line-height: 1.1 !important; color: #000000 !important; }
+.plm-page .plm-price-footer { background-color: #FFFFFF; padding: 30px 0 15px 0; }
+.plm-page .plm-price-footer .plm-btn { font-size: 14px !important; font-weight: 900 !important; padding: 15px 45px; }
+
+/* ===== SECTION 7 TESTIMONIALS ===== */
+.plm-page .plm-quotes { background-color: #FFFFFF; padding: 80px 20px 65px 20px; }
+.plm-page .plm-quotes .plm-container { display: flex; flex-direction: row; align-items: center; }
+.plm-page .plm-quotes-intro { flex: 0 0 42.72%; margin: 20px; padding: 20px; display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+.plm-page .plm-quotes-title { font-size: 30px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-quotes-intro p { font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-quotes-slider { flex: 1 1 auto; min-width: 0; padding: 10px; display: flex; flex-direction: column; gap: 20px; }
+.plm-page .plm-quote-mark { width: 50px; height: 50px; }
+.plm-page .plm-quote-mark svg { width: 50px; height: 50px; fill: #00AEEF; }
+.plm-page .plm-carousel { position: relative; }
+.plm-page .plm-carousel-viewport { overflow: hidden; padding: 0 0 20px 0; }
+.plm-page .plm-carousel-track { display: flex; gap: 10px; transition: transform 0.5s ease; will-change: transform; }
+.plm-page .plm-slide { flex: 0 0 100%; min-width: 0; display: flex; padding: 0 12px 0 2px; }
+.plm-page .plm-quote-card { width: 100%; background-color: #FFFFFF; padding: 20px; border-radius: 20px; box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.16); text-align: left; }
+.plm-page .plm-quote-text { margin-bottom: 20px; font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-quote-job { display: block; font-size: 16px !important; font-weight: 700 !important; line-height: 1 !important; letter-spacing: normal !important; color: #00AEEF !important; }
+.plm-page .plm-dots { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
+.plm-page .plm-dot { width: 13px; height: 13px; border-radius: 50%; background-color: #00AEEF; opacity: 1; padding: 0; border: 0; transition: background-color 0.3s; }
+.plm-page .plm-dot.is-active { background-color: #000000; }
+.plm-page .plm-dot:focus-visible { outline: 2px solid #00204B; outline-offset: 2px; }
+
+/* ===== FOOTER ===== */
+.plm-page .plm-footer { background-color: #00204B; border-top: 5px solid #DEB1FF; padding: 10px; }
+.plm-page .plm-footer .plm-container { min-height: 20vh; display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; }
+.plm-page .plm-footer-logo { align-self: start; padding: 10px 10px 10px 10px; text-align: center; }
+.plm-page .plm-footer-logo img { width: 65%; margin: 0 auto; }
+.plm-page .plm-footer-contact { align-self: start; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+.plm-page .plm-footer-title { font-size: 20px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: normal !important; color: #FFFFFF !important; text-align: left; }
+.plm-page .plm-footer-list li, .plm-page .plm-footer-list a { display: flex; align-items: center; }
+.plm-page .plm-footer-list a { width: 100%; text-decoration: none !important; }
+.plm-page .plm-footer-list svg { width: 14px; height: 14px; fill: #00AEEF; flex: 0 0 auto; margin-right: 3.5px; }
+.plm-page .plm-footer-list span { padding-left: 5px; font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #FFFFFF !important; }
+.plm-page .plm-footer-list a:hover span, .plm-page .plm-footer-list a:focus span { text-decoration: underline; }
+.plm-page .plm-footer-list a:focus-visible { outline: 2px solid #DEB1FF; outline-offset: 2px; }
+
+/* Scroll entrance animations, only when JS is running */
+@keyframes plmFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes plmFadeInUp { from { opacity: 0; transform: translate3d(0, 100%, 0); } to { opacity: 1; transform: none; } }
+.plm-page.plm-js [data-plm-anim] { opacity: 0; }
+.plm-page.plm-js [data-plm-anim].plm-in { animation-duration: 0.75s; animation-fill-mode: both; }
+.plm-page.plm-js [data-plm-anim="fadeIn"].plm-in { animation-name: plmFadeIn; }
+.plm-page.plm-js [data-plm-anim="fadeInUp"].plm-in { animation-name: plmFadeInUp; }
+@media (prefers-reduced-motion: reduce) {
+  .plm-page.plm-js [data-plm-anim] { opacity: 1; animation: none !important; }
+  .plm-page .plm-carousel-track { transition: none; }
+}
+
+/* ===== DESKTOP LARGE 1440 and up ===== */
+@media (min-width: 1440px) {
+  .plm-page .plm-hero .plm-container, .plm-page .plm-takeaways .plm-container { max-width: 1140px; }
+}
+
+/* ===== TABLET up to 1025 ===== */
+@media (max-width: 1025px) {
+  .plm-page .plm-container { max-width: 1024px; }
+  .plm-page .plm-hero-eyebrow { font-size: 28px !important; }
+  .plm-page .plm-hero-title { font-size: 46px !important; }
+  .plm-page .plm-intro { padding: 80px 40px 70px 40px; }
+  .plm-page .plm-intro-title, .plm-page .plm-takeaways-title, .plm-page .plm-about-title { font-size: 42px !important; letter-spacing: -1.2px !important; }
+  .plm-page .plm-how-head { padding-bottom: 70px; }
+  .plm-page .plm-how-grid { grid-template-columns: repeat(2, 1fr); gap: 61px 30px; }
+  .plm-page .plm-step { padding: 0 40px 40px 40px; }
+  .plm-page .plm-step-num-row { padding-bottom: 10px; }
+  .plm-page .plm-price-features li .plm-price-feature { max-width: 100%; }
+  .plm-page .plm-price-footer .plm-btn { padding: 15px 30px; }
+  .plm-page .plm-footer { padding: 0 3% 10% 3%; }
+  .plm-page .plm-footer .plm-container { grid-template-columns: 1fr 1fr; }
+  .plm-page .plm-footer-logo { grid-column: 1 / -1; margin-bottom: 5%; }
+  .plm-page .plm-footer-contact { grid-column: 2; }
+}
+
+/* ===== SMALL TABLET AND LARGE PHONE up to 767 ===== */
+@media (max-width: 767px) {
+  .plm-page .plm-hero .plm-container { flex-direction: column; }
+  .plm-page .plm-hero-text { flex: 1 1 auto; width: 100%; align-items: center; text-align: center; }
+  .plm-page .plm-hero-lead { max-width: 420px; }
+  .plm-page .plm-hero-meta { justify-content: center; }
+  .plm-page .plm-hero-cta { width: 100%; text-align: center; }
+  .plm-page .plm-hero-media { flex: 1 1 auto; width: 100%; }
+  .plm-page .plm-hero-media img { width: 57%; min-width: 260px; }
+  .plm-page .plm-intro { padding: 60px 20px 50px 20px; }
+  .plm-page .plm-intro .plm-container { flex-direction: column; gap: 50px; }
+  .plm-page .plm-takeaways .plm-container { flex-direction: column; }
+  .plm-page .plm-takeaways-intro { flex: 1 1 auto; width: 100%; padding: 20px; }
+  .plm-page .plm-takeaways-title, .plm-page .plm-takeaways-copy { width: 100%; }
+  .plm-page .plm-takeaways-card { width: 100%; }
+  .plm-page .plm-about { padding: 50px 10px 50px 10px; }
+  .plm-page .plm-about-head { width: 100%; }
+  .plm-page .plm-about-row { flex-direction: column; }
+  .plm-page .plm-about-main { flex: 1 1 auto; width: 100%; }
+  .plm-page .plm-about-copy { padding: 0; margin-right: 0; }
+  .plm-page .plm-books { grid-template-columns: repeat(2, 1fr); row-gap: 10px; }
+  .plm-page .plm-about-photo { width: 100%; }
+  .plm-page .plm-how-grid { grid-template-columns: 1fr; gap: 61px; }
+  .plm-page .plm-register-intro { width: 100%; }
+  .plm-page .plm-pricing { flex-direction: column; align-items: center; gap: 20px; padding: 50px 10px 80px 10px; }
+  .plm-page .plm-price { flex: 1 1 auto; width: 100%; max-width: 480px; }
+  .plm-page .plm-price-features { padding: 15px 0 0 0; }
+  .plm-page .plm-price-footer .plm-btn { padding: 15px 45px; }
+  .plm-page .plm-quotes { padding: 0 20px 40px 20px; }
+  .plm-page .plm-quotes .plm-container { flex-direction: column; align-items: stretch; }
+  .plm-page .plm-quotes-intro { flex: 1 1 auto; margin: 20px 0 0 0; padding: 10px; }
+}
+
+/* ===== MOBILE up to 450 ===== */
+@media (max-width: 450px) {
+  .plm-page .plm-hero { padding: 50px 10px 0 10px; }
+  .plm-page .plm-hero-eyebrow { font-size: 18px !important; }
+  .plm-page .plm-hero-title { font-size: 41px !important; }
+  .plm-page .plm-hero-lead { max-width: 255px; }
+  .plm-page .plm-hero-cta .plm-btn { display: inline-block; }
+  .plm-page .plm-hero-media img { width: 57%; min-width: 0; }
+  .plm-page .plm-intro-title, .plm-page .plm-takeaways-title, .plm-page .plm-about-title { font-size: 30px !important; }
+  .plm-page .plm-takeaways { padding: 30px 10px 30px 10px; }
+  .plm-page .plm-takeaway { flex-direction: column; align-items: center; text-align: center; }
+  .plm-page .plm-how { padding: 30px 15px 60px 15px; }
+  .plm-page .plm-how-head { padding-bottom: 60px; }
+  .plm-page .plm-how-title { max-width: 305px; font-size: 30px !important; }
+  .plm-page .plm-step { padding: 0 25px 35px 25px; }
+  .plm-page .plm-register-title { font-size: 30px !important; }
+  .plm-page .plm-price-footer .plm-btn { padding: 15px 35px; }
+  .plm-page .plm-footer .plm-container { grid-template-columns: 1fr; }
+  .plm-page .plm-footer-logo { padding: 35px 10px 10px 30px; text-align: left; margin-bottom: 0; }
+  .plm-page .plm-footer-logo img { margin: 0; }
+  .plm-page .plm-footer-contact { grid-column: 1; margin-left: 7%; }
+}
+</style>
+
+<!-- SECTION 1 HERO -->
+<section class="plm-hero">
+  <div class="plm-container">
+    <div class="plm-hero-text" data-plm-anim="fadeIn">
+      <h2 class="plm-hero-eyebrow">A Chief Executive Masterclass</h2>
+      <h1 class="plm-hero-title">with Patrick Lencioni</h1>
+      <div class="plm-hero-lead">
+        <p><strong>Start 2027 ready to execute together &ndash; Improve clarity and results under pressure.</strong></p>
+      </div>
+      <ul class="plm-hero-meta">
+        <li>
+          <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>
+          <span>December 2, 2026</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>
+          <span>1:00 - 2:45 pm ET</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 640 512" aria-hidden="true"><path d="M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"/></svg>
+          <span>Online</span>
+        </li>
+      </ul>
+      <div class="plm-hero-cta" data-plm-anim="fadeInUp">
+        <a class="plm-btn plm-btn-sink" href="#register">Join the conversation</a>
+      </div>
+    </div>
+    <div class="plm-hero-media">
+      <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/lencioni.webp" width="800" height="800" alt="Patrick Lencioni" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 INTRO -->
+<section class="plm-intro">
+  <div class="plm-container">
+    <div class="plm-intro-col" data-plm-anim="fadeIn">
+      <h2 class="plm-intro-title">Before 2027 begins, prepare your team behind the plan.</h2>
+    </div>
+    <div class="plm-intro-col plm-intro-copy" data-plm-anim="fadeIn" data-plm-delay="800">
+      <p>Every leadership team will face hard calls in 2027. Whether your strategy holds depends on the team that must carry it: whether they trust each other enough to argue, commit once the argument is over, and hold each other to it when the quarter gets difficult.</p>
+      <p>That has been Patrick Lencioni&rsquo;s subject for nearly 30 years. This December he&rsquo;ll join us live to walk through the ideas CEOs return to most, from <em>The Five Dysfunctions of a Team</em> and <em>The Advantage</em> to <em>The Ideal Team Player</em> and <em>The 6 Types of Working Genius</em>. He&rsquo;ll take your questions throughout.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 TAKEAWAYS -->
+<section class="plm-takeaways">
+  <div class="plm-container">
+    <div class="plm-takeaways-intro">
+      <h2 class="plm-takeaways-title" data-plm-anim="fadeIn">What you and your team will take into 2027</h2>
+      <div class="plm-takeaways-copy" data-plm-anim="fadeIn" data-plm-delay="300">
+        <p>Most planning cycles spend weeks on the numbers and one afternoon on the people expected to deliver them. The result is a strong plan in the hands of a leadership group that can&rsquo;t agree on what matters most, doesn&rsquo;t know how to disagree productively, and ends up re-arguing the same decisions in March.</p>
+        <p>Pat flips that script. This live session is built for CEOs and senior executives who want their teams ready for a demanding year.</p>
+      </div>
+    </div>
+    <div class="plm-takeaways-card">
+      <div class="plm-takeaway" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-takeaway-icon"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg></div>
+        <div class="plm-takeaway-body">
+          <h3 class="plm-takeaway-title">A shared understanding of how your team performs under pressure.</h3>
+          <p class="plm-takeaway-desc">Using the <i>Five Dysfunctions</i> model, you'll see where trust, healthy conflict, commitment, accountability and focus on results tend to give way when the stakes rise, and what to do about it early.</p>
+        </div>
+      </div>
+      <div class="plm-takeaway" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-takeaway-icon"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg></div>
+        <div class="plm-takeaway-body">
+          <h3 class="plm-takeaway-title">Clarity that holds all the way through the company.</h3>
+          <p class="plm-takeaway-desc"><i>The Advantage</i> is built on a small set of questions every leadership team has to answer together, from why the company exists to what matters most right now. Teams that can't answer them the same way can't expect anyone else to.</p>
+        </div>
+      </div>
+      <div class="plm-takeaway" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-takeaway-icon"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg></div>
+        <div class="plm-takeaway-body">
+          <h3 class="plm-takeaway-title">Better people decisions.</h3>
+          <p class="plm-takeaway-desc">When headcount is on the table, the humble, hungry and smart framework from <i>The Ideal Team Player</i> gives you a common language for who to hire, who to develop and who to move on from.</p>
+        </div>
+      </div>
+      <div class="plm-takeaway" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-takeaway-icon"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg></div>
+        <div class="plm-takeaway-body">
+          <h3 class="plm-takeaway-title">The right people on the right work.</h3>
+          <p class="plm-takeaway-desc"><i>Working Genius</i> shows where each member of your team does their best work and where they get worn down, which matters when you're deciding who owns which parts of the plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 ABOUT -->
+<section class="plm-about">
+  <div class="plm-container">
+    <div class="plm-about-head">
+      <h2 class="plm-about-title" data-plm-anim="fadeIn">About Patrick Lencioni</h2>
+    </div>
+    <div class="plm-about-row" data-plm-anim="fadeIn">
+      <div class="plm-about-main">
+        <div class="plm-about-copy">
+          <p>Few people have shaped how leadership teams work together more than Patrick Lencioni. <em>The Five Dysfunctions of a Team</em>, first published in 2002, is still among the most widely read business books of the past quarter century, and its model has become shorthand in executive teams around the world.</p>
+          <p>Pat is the founder and president of The Table Group and a pioneer of the organizational health movement. He&rsquo;s the author of 13 books, which have sold more than 10 million copies in over 30 languages. His books are known for a distinctive approach: short, readable leadership fables that make complicated team dynamics easy to recognize in your own company. Before founding The Table Group in 1997, he worked at Bain &amp; Company, Oracle and Sybase.</p>
+          <p>The Wall Street Journal has called him &ldquo;one of the most in demand speakers in America.&rdquo; He has worked with executive teams at companies of every size and in every sector, and he hosts the podcast <em>At the Table with Patrick Lencioni</em>. He&rsquo;s been a returning voice at Chief Executive events, including our Leadership Conference.</p>
+        </div>
+        <div class="plm-books" data-plm-anim="fadeInUp">
+          <figure><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/dysfunctions-200x179.png" width="200" height="179" alt="&quot;The Five Dysfunctions of a team&quot; red book cover" loading="lazy" decoding="async"></figure>
+          <figure><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/TableGroup-Website_Shop-WG-2-200x179.webp" width="200" height="179" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/advantage-200x179.webp" width="200" height="179" alt="&quot;The Advantage&quot; white and red book cover" loading="lazy" decoding="async"></figure>
+          <figure><img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/itp-book-200x179.webp" width="200" height="179" alt="ideal team player" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+      <div class="plm-about-photo">
+        <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/pat12.webp" width="333" height="500" alt="Patrick Lencioni" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 HOW IT WORKS -->
+<section class="plm-how">
+  <div class="plm-container-wide">
+    <div class="plm-how-head" data-plm-anim="fadeIn" data-plm-delay="500">
+      <h2 class="plm-how-title">How It Works: Simple, Focused, Practical</h2>
+    </div>
+    <div class="plm-how-grid">
+      <div class="plm-step" data-plm-anim="fadeIn" data-plm-delay="750">
+        <div class="plm-step-num-row"><p class="plm-step-num">01</p></div>
+        <p class="plm-step-when">As Soon As You Register</p>
+        <div class="plm-step-icon"><svg viewBox="0 0 675 675" aria-hidden="true"><path d="M 388.3 521.5 C 405.6 510.1 417.1 490.6 417.1 468.5 C 417.1 433.5 388.7 405.1 353.7 405.1 C 318.8 405.1 290.5 433.5 290.5 468.5 C 290.5 490.6 302 510.1 319.2 521.4 C 310 525.2 301.4 530.5 293.8 537 C 281.3 518.7 263.6 504.9 243.2 497.4 C 264.6 484.7 279 461.3 279 434.5 C 279 394.2 246.3 361.4 205.9 361.4 C 196 361.4 186.4 363.3 177.4 367.2 C 150.3 378.7 132.8 405 132.8 434.5 C 132.8 460.8 146.5 484.5 168.7 497.5 C 127.3 512.8 99.3 552.6 99.3 597.4 L 99.3 656.4 C 99.3 661 103.2 664.9 107.8 664.9 L 437 664.9 C 441.6 664.9 445.5 661 445.5 656.4 L 445.5 606.4 C 445.5 568 421.7 535.1 388.3 521.5 Z M 184 486.2 C 163.2 477.4 149.8 457.1 149.8 434.5 C 149.8 411.9 163.2 391.6 184 382.9 C 190.9 379.9 198.3 378.4 205.9 378.4 C 236.9 378.4 262 403.6 262 434.5 C 262 465.4 236.9 490.6 205.9 490.6 C 198.3 490.6 190.9 489.1 184 486.2 Z M 428.4 647.9 L 312.6 647.9 L 312.6 597.4 C 312.6 595.2 312.5 593 312.4 590.7 C 312.3 589 312.2 587.3 312 585.6 C 311.8 584.2 311.6 582.6 311.3 581.1 C 310.9 578.5 310.5 576 309.8 573.4 C 309.5 571.8 309.1 570.1 308.5 568.5 C 308 566.3 307.3 564.3 306.6 562.3 C 306.1 560.7 305.4 559.1 304.8 557.5 C 304 555.7 303.2 553.8 302.4 552.1 C 316.4 539 334.3 531.7 353.7 531.7 L 353.8 531.7 C 394.9 531.7 428.4 565.2 428.4 606.4 Z M 428.4 647.9"/><path d="M 519.3 206.6 L 377.1 206.6 L 377.1 64.4 C 377.1 59.7 373.3 55.9 368.6 55.9 C 348.6 55.9 329.2 59.5 311.2 66.6 C 250.2 90.1 209.2 149.8 209.2 215.1 C 209.2 280.4 250.2 340.2 311.1 363.7 C 329.2 370.8 348.6 374.4 368.6 374.4 C 456.4 374.4 527.8 302.9 527.8 215.1 C 527.8 210.4 524 206.6 519.3 206.6 Z M 368.6 357.4 C 350.7 357.4 333.5 354.2 317.3 347.8 C 262.9 326.8 226.3 273.5 226.3 215.1 C 226.3 156.7 262.9 103.5 317.4 82.5 C 330.9 77.1 345.2 74 360.1 73.1 L 360.1 215.1 C 360.1 219.8 363.9 223.6 368.6 223.6 L 510.5 223.6 C 506.1 298.1 444.2 357.4 368.6 357.4 Z M 368.6 357.4"/><path d="M 415.3 9.1 C 410.5 9.1 406.8 13 406.8 17.6 L 406.8 168.5 C 406.8 173.2 410.5 177 415.3 177 L 566 177 C 570.7 177 574.6 173.2 574.6 168.5 C 574.6 80.6 503 9.1 415.3 9.1 Z M 415.3 9.1"/></svg></div>
+        <h3 class="plm-step-title">Discover your team's Working Genius</h3>
+        <p class="plm-step-desc">Registration includes Pat's Working Genius assessment for you and every member of your team that registers. It takes only a few minutes, and it shows where each person does their best work, where they lose energy and what that means for how your team works together.<br><br>Bring your results into the session with Pat to help solidify who on your team owns what in 2027.</p>
+      </div>
+      <div class="plm-step" data-plm-anim="fadeIn" data-plm-delay="1000">
+        <div class="plm-step-num-row"><p class="plm-step-num">02</p></div>
+        <p class="plm-step-when">December 2 | 1:00 &ndash; 2:45 pm</p>
+        <div class="plm-step-icon"><svg viewBox="0 0 675 675" aria-hidden="true"><path d="M 49.9 292.6 L 67.7 292.9 L 67.1 341.5 C 67.1 342.5 67.2 343.4 67.5 344.3 C 67.7 345.1 68.1 346 68.6 346.7 C 69.1 347.5 69.7 348.2 70.4 348.8 C 71.1 349.4 71.9 349.8 72.8 350.2 C 73.6 350.6 74.5 350.8 75.4 350.9 C 76.3 351 77.2 350.9 78.1 350.8 C 79 350.6 79.9 350.3 80.7 349.9 C 81.5 349.4 82.3 348.9 82.9 348.2 L 137.6 293.8 L 217.7 294.8 C 218.9 294.8 220 294.8 221.2 294.7 C 222.4 294.6 223.5 294.4 224.6 294.2 C 225.8 294 226.9 293.7 228 293.4 C 229.2 293.1 230.3 292.7 231.3 292.3 C 232.4 291.8 233.5 291.3 234.5 290.8 C 235.6 290.3 236.6 289.7 237.5 289.1 C 238.5 288.4 239.5 287.7 240.4 287 C 241.3 286.3 242.1 285.5 243 284.7 C 243.8 283.9 244.6 283 245.4 282.1 C 246.1 281.3 246.8 280.3 247.5 279.4 C 248.1 278.4 248.8 277.4 249.3 276.4 C 249.9 275.4 250.4 274.3 250.8 273.3 C 251.3 272.2 251.7 271.1 252.1 270 C 252.4 268.9 252.7 267.8 253 266.6 C 253.2 265.5 253.4 264.3 253.5 263.2 C 253.7 262 253.7 260.9 253.7 259.7 L 254.5 199.1 L 283.6 199.5 L 336.9 255.3 C 337.5 256 338.3 256.6 339.1 257 C 339.9 257.5 340.7 257.8 341.6 258 C 342.5 258.2 343.4 258.2 344.3 258.2 C 345.2 258.1 346.1 257.9 347 257.6 C 347.8 257.2 348.6 256.8 349.4 256.2 C 350.1 255.6 350.7 255 351.2 254.2 C 351.7 253.4 352.1 252.6 352.4 251.7 C 352.7 250.9 352.9 250 352.9 249.1 L 353.5 200.4 L 371.3 200.6 C 372.5 200.6 373.6 200.6 374.8 200.5 C 375.9 200.4 377.1 200.2 378.2 200 C 379.4 199.8 380.5 199.5 381.6 199.2 C 382.8 198.9 383.9 198.5 384.9 198.1 C 386 197.6 387.1 197.2 388.1 196.6 C 389.1 196.1 390.2 195.5 391.1 194.9 C 392.1 194.2 393.1 193.5 394 192.8 C 394.9 192.1 395.7 191.3 396.6 190.5 C 397.4 189.7 398.2 188.8 399 188 C 399.7 187.1 400.4 186.1 401.1 185.2 C 401.7 184.2 402.3 183.2 402.9 182.2 C 403.5 181.2 404 180.1 404.4 179.1 C 404.9 178 405.3 176.9 405.7 175.8 C 406 174.7 406.3 173.6 406.6 172.4 C 406.8 171.3 407 170.2 407.1 169 C 407.3 167.8 407.3 166.7 407.3 165.5 L 408.9 47.5 C 408.9 46.4 408.8 45.2 408.7 44.1 C 408.6 42.9 408.5 41.7 408.3 40.6 C 408 39.5 407.8 38.3 407.4 37.2 C 407.1 36.1 406.7 35 406.3 33.9 C 405.9 32.8 405.4 31.8 404.9 30.7 C 404.3 29.7 403.7 28.7 403.1 27.7 C 402.5 26.7 401.8 25.8 401.1 24.9 C 400.3 24 399.6 23.1 398.7 22.3 C 397.9 21.4 397.1 20.6 396.2 19.9 C 395.3 19.1 394.4 18.4 393.4 17.8 C 392.4 17.1 391.5 16.5 390.4 15.9 C 389.4 15.4 388.4 14.9 387.3 14.4 C 386.2 14 385.1 13.6 384 13.2 C 382.9 12.8 381.8 12.5 380.6 12.3 C 379.5 12.1 378.4 11.9 377.2 11.8 C 376 11.6 374.9 11.5 373.7 11.5 L 206 9.4 C 204.8 9.4 203.6 9.4 202.5 9.5 C 201.3 9.6 200.2 9.8 199 10 C 197.9 10.2 196.7 10.5 195.6 10.8 C 194.5 11.1 193.4 11.5 192.3 11.9 C 191.2 12.3 190.2 12.8 189.1 13.4 C 188.1 13.9 187.1 14.5 186.1 15.1 C 185.1 15.8 184.2 16.4 183.3 17.2 C 182.4 17.9 181.5 18.7 180.7 19.5 C 179.8 20.3 179 21.1 178.3 22 C 177.5 22.9 176.8 23.8 176.2 24.8 C 175.5 25.8 174.9 26.7 174.3 27.8 C 173.8 28.8 173.3 29.8 172.8 30.9 C 172.3 32 171.9 33.1 171.6 34.2 C 171.2 35.3 170.9 36.4 170.7 37.5 C 170.4 38.7 170.3 39.8 170.1 41 C 170 42.1 169.9 43.3 169.9 44.5 L 169.1 105.1 L 52.4 103.6 C 51.2 103.6 50 103.6 48.9 103.7 C 47.7 103.8 46.6 104 45.4 104.2 C 44.3 104.4 43.1 104.6 42 105 C 40.9 105.3 39.8 105.7 38.7 106.1 C 37.6 106.5 36.6 107 35.5 107.6 C 34.5 108.1 33.5 108.7 32.5 109.3 C 31.5 109.9 30.6 110.6 29.7 111.4 C 28.8 112.1 27.9 112.9 27.1 113.7 C 26.2 114.5 25.4 115.3 24.7 116.2 C 23.9 117.1 23.2 118 22.6 119 C 21.9 120 21.3 120.9 20.8 122 C 20.2 123 19.7 124 19.2 125.1 C 18.8 126.2 18.3 127.3 18 128.4 C 17.6 129.5 17.3 130.6 17.1 131.7 C 16.9 132.9 16.7 134 16.5 135.2 C 16.4 136.3 16.3 137.5 16.3 138.7 L 14.8 256.6 C 14.8 257.8 14.8 259 14.9 260.1 C 15 261.3 15.2 262.4 15.4 263.6 C 15.6 264.7 15.9 265.9 16.2 267 C 16.5 268.1 16.9 269.2 17.3 270.3 C 17.8 271.4 18.3 272.4 18.8 273.4 C 19.3 274.5 19.9 275.5 20.6 276.5 C 21.2 277.4 21.9 278.4 22.6 279.3 C 23.3 280.2 24.1 281.1 24.9 281.9 C 25.7 282.7 26.6 283.5 27.5 284.3 C 28.4 285 29.3 285.7 30.3 286.4 C 31.2 287.1 32.2 287.7 33.2 288.2 C 34.2 288.8 35.3 289.3 36.4 289.8 C 37.4 290.2 38.5 290.6 39.6 291 C 40.7 291.3 41.9 291.6 43 291.9 C 44.1 292.1 45.3 292.3 46.4 292.4 C 47.6 292.6 48.8 292.6 49.9 292.6 Z M 188.4 44.7 C 188.4 44.1 188.5 43.6 188.5 43 C 188.6 42.5 188.7 41.9 188.8 41.4 C 188.9 40.8 189.1 40.3 189.2 39.8 C 189.4 39.2 189.6 38.7 189.8 38.2 C 190 37.7 190.3 37.2 190.6 36.7 C 190.8 36.2 191.1 35.7 191.4 35.3 C 191.8 34.8 192.1 34.4 192.5 34 C 192.8 33.5 193.2 33.1 193.6 32.7 C 194 32.3 194.4 32 194.9 31.6 C 195.3 31.3 195.7 31 196.2 30.6 C 196.7 30.3 197.2 30.1 197.7 29.8 C 198.2 29.6 198.7 29.3 199.2 29.1 C 199.7 28.9 200.2 28.7 200.8 28.6 C 201.3 28.4 201.8 28.3 202.4 28.2 C 202.9 28.1 203.5 28 204 28 C 204.6 27.9 205.2 27.9 205.7 27.9 L 373.5 30.1 C 374 30.1 374.6 30.1 375.2 30.2 C 375.7 30.2 376.3 30.3 376.8 30.4 C 377.4 30.5 377.9 30.7 378.4 30.9 C 379 31 379.5 31.2 380 31.4 C 380.5 31.7 381 31.9 381.5 32.2 C 382 32.4 382.5 32.7 382.9 33 C 383.4 33.4 383.8 33.7 384.3 34.1 C 384.7 34.4 385.1 34.8 385.5 35.2 C 385.9 35.6 386.2 36 386.6 36.4 C 386.9 36.9 387.3 37.3 387.6 37.8 C 387.9 38.3 388.2 38.8 388.4 39.2 C 388.7 39.7 388.9 40.2 389.1 40.8 C 389.3 41.3 389.5 41.8 389.7 42.3 C 389.8 42.9 389.9 43.4 390 44 C 390.1 44.5 390.2 45.1 390.3 45.6 C 390.3 46.2 390.3 46.7 390.3 47.3 L 388.8 165.3 C 388.8 165.8 388.8 166.4 388.7 166.9 C 388.6 167.5 388.6 168 388.4 168.6 C 388.3 169.1 388.2 169.7 388 170.2 C 387.8 170.7 387.6 171.3 387.4 171.8 C 387.2 172.3 387 172.8 386.7 173.3 C 386.4 173.8 386.1 174.2 385.8 174.7 C 385.5 175.2 385.2 175.6 384.8 176 C 384.4 176.5 384.1 176.9 383.7 177.3 C 383.3 177.6 382.8 178 382.4 178.4 C 382 178.7 381.5 179 381 179.3 C 380.6 179.6 380.1 179.9 379.6 180.2 C 379.1 180.4 378.6 180.7 378.1 180.9 C 377.6 181.1 377 181.3 376.5 181.4 C 376 181.6 375.4 181.7 374.9 181.8 C 374.3 181.9 373.8 182 373.2 182 C 372.7 182.1 372.1 182.1 371.5 182.1 L 344.5 181.7 C 343.9 181.7 343.3 181.8 342.7 181.9 C 342.1 182 341.5 182.2 340.9 182.4 C 340.3 182.6 339.8 182.9 339.3 183.2 C 338.8 183.6 338.3 183.9 337.9 184.4 C 337.4 184.8 337.1 185.3 336.7 185.8 C 336.4 186.3 336.1 186.8 335.8 187.3 C 335.6 187.9 335.4 188.5 335.3 189.1 C 335.2 189.7 335.1 190.3 335.1 190.9 L 334.6 226.1 L 294.4 183.9 C 293.5 183 292.5 182.3 291.3 181.8 C 290.2 181.3 289 181 287.8 181 L 254.8 180.6 L 255.3 141.7 C 255.3 140.6 255.2 139.4 255.1 138.2 C 255 137.1 254.9 135.9 254.7 134.8 C 254.4 133.6 254.2 132.5 253.9 131.4 C 253.5 130.3 253.1 129.2 252.7 128.1 C 252.3 127 251.8 126 251.3 124.9 C 250.7 123.9 250.1 122.9 249.5 121.9 C 248.9 120.9 248.2 120 247.5 119.1 C 246.7 118.2 246 117.3 245.1 116.5 C 244.3 115.6 243.5 114.8 242.6 114.1 C 241.7 113.3 240.8 112.6 239.8 112 C 238.9 111.3 237.9 110.7 236.8 110.1 C 235.8 109.6 234.8 109.1 233.7 108.6 C 232.6 108.1 231.5 107.7 230.4 107.4 C 229.3 107 228.2 106.7 227.1 106.5 C 225.9 106.3 224.8 106.1 223.6 105.9 C 222.5 105.8 221.3 105.7 220.1 105.7 L 187.7 105.3 Z M 34.8 138.9 C 34.8 138.3 34.9 137.8 34.9 137.2 C 35 136.7 35.1 136.1 35.2 135.6 C 35.3 135 35.5 134.5 35.6 134 C 35.8 133.4 36 132.9 36.2 132.4 C 36.5 131.9 36.7 131.4 37 130.9 C 37.2 130.4 37.5 129.9 37.8 129.5 C 38.2 129 38.5 128.6 38.9 128.1 C 39.2 127.7 39.6 127.3 40 126.9 C 40.4 126.5 40.8 126.2 41.3 125.8 C 41.7 125.5 42.1 125.1 42.6 124.8 C 43.1 124.5 43.6 124.3 44.1 124 C 44.6 123.7 45.1 123.5 45.6 123.3 C 46.1 123.1 46.6 122.9 47.2 122.8 C 47.7 122.6 48.2 122.5 48.8 122.4 C 49.3 122.3 49.9 122.2 50.4 122.2 C 51 122.1 51.6 122.1 52.1 122.1 L 219.9 124.3 C 220.4 124.3 221 124.3 221.6 124.4 C 222.1 124.4 222.7 124.5 223.2 124.6 C 223.8 124.7 224.3 124.9 224.8 125 C 225.4 125.2 225.9 125.4 226.4 125.6 C 226.9 125.8 227.4 126.1 227.9 126.4 C 228.4 126.6 228.9 126.9 229.3 127.2 C 229.8 127.6 230.2 127.9 230.7 128.3 C 231.1 128.6 231.5 129 231.9 129.4 C 232.3 129.8 232.6 130.2 233 130.6 C 233.3 131.1 233.7 131.5 234 132 C 234.3 132.5 234.6 132.9 234.8 133.4 C 235.1 133.9 235.3 134.4 235.5 135 C 235.7 135.5 235.9 136 236.1 136.5 C 236.2 137.1 236.3 137.6 236.4 138.2 C 236.5 138.7 236.6 139.3 236.7 139.8 C 236.7 140.4 236.7 140.9 236.7 141.5 L 235.2 259.5 C 235.2 260 235.2 260.6 235.1 261.1 C 235.1 261.7 235 262.2 234.8 262.8 C 234.7 263.3 234.6 263.9 234.4 264.4 C 234.2 264.9 234.1 265.5 233.8 266 C 233.6 266.5 233.4 267 233.1 267.5 C 232.8 268 232.5 268.4 232.2 268.9 C 231.9 269.4 231.6 269.8 231.2 270.2 C 230.8 270.6 230.5 271.1 230.1 271.4 C 229.7 271.8 229.2 272.2 228.8 272.6 C 228.4 272.9 227.9 273.2 227.4 273.5 C 227 273.8 226.5 274.1 226 274.4 C 225.5 274.6 225 274.9 224.5 275.1 C 224 275.3 223.4 275.4 222.9 275.6 C 222.4 275.8 221.8 275.9 221.3 276 C 220.7 276.1 220.2 276.2 219.6 276.2 C 219.1 276.3 218.5 276.3 217.9 276.3 L 133.9 275.2 C 132.7 275.2 131.5 275.4 130.3 275.9 C 129.2 276.3 128.2 277 127.3 277.9 L 85.9 319.1 L 86.4 283.9 C 86.4 283.2 86.3 282.6 86.2 282 C 86.1 281.4 86 280.9 85.7 280.3 C 85.5 279.7 85.2 279.2 84.9 278.7 C 84.6 278.2 84.2 277.7 83.8 277.3 C 83.3 276.8 82.9 276.4 82.4 276.1 C 81.9 275.8 81.3 275.5 80.8 275.2 C 80.2 275 79.6 274.8 79 274.7 C 78.5 274.5 77.9 274.5 77.2 274.5 L 50.2 274.1 C 49.6 274.1 49.1 274.1 48.5 274 C 47.9 274 47.4 273.9 46.9 273.8 C 46.3 273.6 45.8 273.5 45.2 273.3 C 44.7 273.2 44.2 273 43.7 272.7 C 43.2 272.5 42.7 272.3 42.2 272 C 41.7 271.7 41.2 271.4 40.7 271.1 C 40.3 270.8 39.8 270.5 39.4 270.1 C 39 269.8 38.6 269.4 38.2 269 C 37.8 268.6 37.4 268.2 37.1 267.7 C 36.7 267.3 36.4 266.8 36.1 266.4 C 35.8 265.9 35.5 265.4 35.3 264.9 C 35 264.4 34.8 263.9 34.6 263.4 C 34.3 262.9 34.2 262.4 34 261.8 C 33.9 261.3 33.7 260.8 33.6 260.2 C 33.5 259.7 33.4 259.1 33.4 258.6 C 33.3 258 33.3 257.4 33.3 256.9 Z M 644.1 481.1 L 632.3 480.9 C 633.4 477.4 634.1 473.9 634.3 470.2 C 634.3 470 634.3 469.7 634.3 469.4 L 634.3 468.5 L 634.8 436.5 L 635.5 376.1 C 636.1 332.4 598.7 295.8 550.5 291 C 551.7 290.1 552.9 289.2 554 288.2 C 555.2 287.3 556.3 286.3 557.3 285.3 C 558.4 284.3 559.5 283.2 560.5 282.2 C 561.6 281.1 562.6 280 563.5 278.9 C 564.5 277.8 565.4 276.6 566.4 275.5 C 567.3 274.3 568.2 273.1 569 271.9 C 569.9 270.7 570.7 269.5 571.5 268.2 C 572.3 267 573 265.7 573.7 264.4 C 574.5 263.1 575.2 261.8 575.8 260.5 C 576.5 259.1 577.1 257.8 577.7 256.4 C 578.3 255.1 578.8 253.7 579.3 252.3 C 579.8 250.9 580.3 249.5 580.8 248.1 C 581.2 246.7 581.6 245.3 582 243.8 C 582.3 242.4 582.7 240.9 583 239.5 C 583.3 238 583.5 236.6 583.7 235.1 C 584 233.6 584.1 232.2 584.3 230.7 C 584.4 229.2 584.5 227.7 584.6 226.3 C 584.7 224.8 584.7 223.3 584.7 221.8 C 584.7 220.3 584.6 218.9 584.5 217.4 C 584.4 215.9 584.3 214.4 584.2 213 C 584 211.5 583.8 210 583.6 208.6 C 583.3 207.1 583 205.6 582.7 204.2 C 582.4 202.7 582.1 201.3 581.7 199.9 C 581.3 198.4 580.9 197 580.4 195.6 C 579.9 194.2 579.4 192.8 578.9 191.4 C 578.4 190 577.8 188.7 577.2 187.3 C 576.6 186 575.9 184.6 575.3 183.3 C 574.6 182 573.9 180.7 573.2 179.4 C 572.4 178.1 571.6 176.9 570.8 175.6 C 570 174.4 569.2 173.2 568.3 172 C 567.4 170.8 566.5 169.6 565.6 168.4 C 564.7 167.3 563.7 166.2 562.7 165.1 C 561.7 163.9 560.7 162.9 559.7 161.8 C 558.6 160.8 557.6 159.7 556.5 158.8 C 555.4 157.8 554.3 156.8 553.1 155.9 C 552 154.9 550.8 154 549.6 153.1 C 548.4 152.3 547.2 151.4 545.9 150.6 C 544.7 149.8 543.4 149 542.2 148.3 C 540.9 147.5 539.6 146.8 538.3 146.1 C 537 145.4 535.6 144.8 534.3 144.2 C 532.9 143.5 531.6 143 530.2 142.4 C 528.8 141.9 527.4 141.4 526 140.9 C 524.6 140.4 523.2 140 521.8 139.6 C 520.3 139.2 518.9 138.9 517.5 138.5 C 516 138.2 514.6 137.9 513.1 137.7 C 511.6 137.4 510.2 137.2 508.7 137 C 507.2 136.9 505.7 136.7 504.3 136.6 C 502.8 136.5 501.3 136.5 499.8 136.5 C 498.3 136.4 496.9 136.5 495.4 136.5 C 493.9 136.6 492.4 136.7 491 136.8 C 489.5 136.9 488 137.1 486.5 137.3 C 485.1 137.5 483.6 137.8 482.2 138.1 C 480.7 138.4 479.3 138.7 477.8 139 C 476.4 139.4 475 139.8 473.5 140.2 C 472.1 140.7 470.7 141.1 469.3 141.6 C 467.9 142.2 466.6 142.7 465.2 143.3 C 463.8 143.9 462.5 144.5 461.1 145.1 C 459.8 145.8 458.5 146.4 457.2 147.2 C 455.9 147.9 454.6 148.6 453.4 149.4 C 452.1 150.2 450.9 151 449.7 151.8 C 448.4 152.7 447.2 153.6 446.1 154.5 C 444.9 155.4 443.8 156.3 442.6 157.3 C 441.5 158.3 440.4 159.3 439.3 160.3 C 438.3 161.3 437.2 162.3 436.2 163.4 C 435.2 164.5 434.2 165.6 433.2 166.7 C 432.3 167.9 431.4 169 430.5 170.2 C 429.6 171.4 428.7 172.6 427.8 173.8 C 427 175 426.2 176.3 425.4 177.5 C 424.7 178.8 423.9 180.1 423.2 181.4 C 422.5 182.7 421.8 184 421.2 185.3 C 420.5 186.7 419.9 188 419.4 189.4 C 418.8 190.8 418.3 192.1 417.8 193.5 C 417.3 194.9 416.8 196.3 416.4 197.8 C 416 199.2 415.6 200.6 415.2 202 C 414.9 203.5 414.6 204.9 414.3 206.4 C 414 207.8 413.8 209.3 413.6 210.8 C 413.4 212.2 413.2 213.7 413.1 215.2 C 412.9 216.7 412.9 218.1 412.8 219.6 C 412.8 221.1 412.8 222.6 412.8 224.1 C 412.8 225.5 412.9 227 413 228.5 C 413.1 230 413.2 231.5 413.4 232.9 C 413.6 234.4 413.8 235.9 414.1 237.3 C 414.3 238.8 414.6 240.2 415 241.7 C 415.3 243.1 415.7 244.6 416.1 246 C 416.5 247.4 416.9 248.8 417.4 250.2 C 417.9 251.6 418.4 253 418.9 254.4 C 419.5 255.8 420.1 257.1 420.7 258.5 C 421.3 259.8 422 261.1 422.7 262.4 C 423.3 263.8 424.1 265.1 424.8 266.3 C 425.6 267.6 426.4 268.9 427.2 270.1 C 428 271.3 428.9 272.5 429.8 273.7 C 430.6 274.9 431.6 276.1 432.5 277.2 C 433.4 278.4 434.4 279.5 435.4 280.6 C 436.4 281.7 437.5 282.7 438.5 283.8 C 439.6 284.8 440.6 285.8 441.8 286.8 C 442.9 287.8 444 288.7 445.2 289.6 C 396.9 293.2 358.6 328.8 358 372.6 L 357.3 432.9 L 356.8 464.9 L 356.8 465.8 C 356.8 466.1 356.8 466.4 356.9 466.7 C 357 470.3 357.5 473.9 358.6 477.4 L 270.7 476.3 C 271.7 475.3 272.6 474.3 273.6 473.2 C 274.5 472.2 275.3 471.1 276.2 470 C 277.1 469 277.9 467.9 278.7 466.7 C 279.5 465.6 280.3 464.5 281 463.3 C 281.8 462.1 282.5 461 283.2 459.8 C 283.9 458.6 284.5 457.3 285.1 456.1 C 285.8 454.9 286.4 453.6 286.9 452.4 C 287.5 451.1 288 449.8 288.5 448.6 C 289 447.3 289.5 446 289.9 444.7 C 290.4 443.4 290.8 442 291.1 440.7 C 291.5 439.4 291.8 438 292.1 436.7 C 292.4 435.3 292.7 434 292.9 432.6 C 293.2 431.3 293.4 429.9 293.5 428.5 C 293.7 427.2 293.8 425.8 293.9 424.4 C 294 423 294.1 421.7 294.1 420.3 C 294.1 418.9 294.1 417.5 294.1 416.1 C 294.1 414.8 294 413.4 293.9 412 C 293.8 410.6 293.6 409.3 293.4 407.9 C 293.3 406.5 293.1 405.1 292.8 403.8 C 292.6 402.4 292.3 401.1 292 399.7 C 291.7 398.4 291.3 397.1 290.9 395.7 C 290.5 394.4 290.1 393.1 289.7 391.8 C 289.2 390.5 288.8 389.2 288.3 387.9 C 287.7 386.6 287.2 385.3 286.6 384.1 C 286 382.8 285.4 381.6 284.8 380.4 C 284.2 379.1 283.5 377.9 282.8 376.7 C 282.1 375.6 281.4 374.4 280.6 373.2 C 279.9 372.1 279.1 370.9 278.3 369.8 C 277.5 368.7 276.6 367.6 275.8 366.5 C 274.9 365.5 274 364.4 273.1 363.4 C 272.2 362.3 271.2 361.3 270.2 360.4 C 269.3 359.4 268.3 358.4 267.3 357.5 C 266.2 356.6 265.2 355.6 264.1 354.8 C 263.1 353.9 262 353 260.9 352.2 C 259.8 351.4 258.7 350.6 257.5 349.8 C 256.4 349 255.2 348.3 254 347.6 C 252.8 346.9 251.6 346.2 250.4 345.5 C 249.2 344.9 248 344.3 246.7 343.7 C 245.5 343.1 244.2 342.5 242.9 342 C 241.7 341.5 240.4 341 239.1 340.5 C 237.8 340.1 236.5 339.6 235.1 339.2 C 233.8 338.8 232.5 338.5 231.1 338.1 C 229.8 337.8 228.4 337.5 227.1 337.3 C 225.7 337 224.4 336.8 223 336.6 C 221.6 336.4 220.3 336.2 218.9 336.1 C 217.5 336 216.1 335.9 214.8 335.8 C 213.4 335.7 212 335.7 210.6 335.7 C 209.2 335.7 207.9 335.8 206.5 335.9 C 205.1 335.9 203.7 336.1 202.4 336.2 C 201 336.4 199.6 336.5 198.3 336.8 C 196.9 337 195.5 337.2 194.2 337.5 C 192.8 337.8 191.5 338.1 190.2 338.5 C 188.8 338.8 187.5 339.2 186.2 339.6 C 184.9 340 183.6 340.5 182.3 341 C 181 341.5 179.7 342 178.4 342.5 C 177.2 343.1 175.9 343.7 174.7 344.3 C 173.4 344.9 172.2 345.5 171 346.2 C 169.8 346.9 168.6 347.6 167.4 348.3 C 166.3 349 165.1 349.8 164 350.6 C 162.9 351.4 161.7 352.2 160.6 353 C 159.6 353.9 158.5 354.7 157.4 355.6 C 156.4 356.5 155.4 357.5 154.4 358.4 C 153.4 359.4 152.4 360.3 151.4 361.3 C 150.5 362.3 149.5 363.3 148.6 364.4 C 147.7 365.4 146.9 366.5 146 367.6 C 145.2 368.7 144.3 369.8 143.5 370.9 C 142.8 372 142 373.2 141.3 374.4 C 140.5 375.5 139.8 376.7 139.1 377.9 C 138.4 379.1 137.8 380.3 137.2 381.6 C 136.6 382.8 136 384.1 135.4 385.3 C 134.9 386.6 134.4 387.9 133.9 389.1 C 133.4 390.4 132.9 391.7 132.5 393.1 C 132.1 394.4 131.7 395.7 131.3 397 C 131 398.4 130.6 399.7 130.3 401 C 130 402.4 129.8 403.8 129.6 405.1 C 129.3 406.5 129.1 407.8 129 409.2 C 128.8 410.6 128.7 412 128.6 413.3 C 128.5 414.7 128.5 416.1 128.5 417.5 C 128.5 418.9 128.5 420.2 128.5 421.6 C 128.6 423 128.7 424.4 128.8 425.8 C 128.9 427.1 129.1 428.5 129.2 429.9 C 129.4 431.2 129.6 432.6 129.9 433.9 C 130.2 435.3 130.5 436.7 130.8 438 C 131.1 439.3 131.5 440.7 131.8 442 C 132.2 443.3 132.7 444.6 133.1 445.9 C 133.6 447.2 134.1 448.5 134.6 449.8 C 135.1 451.1 135.7 452.4 136.2 453.6 C 136.8 454.9 137.4 456.1 138.1 457.3 C 138.7 458.5 139.4 459.7 140.1 460.9 C 140.8 462.1 141.6 463.3 142.3 464.4 C 143.1 465.6 143.9 466.7 144.7 467.8 C 145.5 468.9 146.4 470 147.2 471.1 C 148.1 472.1 149 473.2 149.9 474.2 C 150.9 475.2 151.8 476.2 152.8 477.2 C 153.8 478.2 154.8 479.1 155.8 480.1 C 156.8 481 157.9 481.9 158.9 482.8 C 116.3 486.3 82 515.8 76.7 553.4 L 65 553.2 C 63.2 553.2 61.5 553.2 59.7 553.4 C 57.9 553.6 56.2 553.8 54.4 554.1 C 52.7 554.4 51 554.8 49.3 555.3 C 47.6 555.8 45.9 556.4 44.3 557.1 C 42.6 557.7 41 558.5 39.5 559.3 C 37.9 560.1 36.4 561 34.9 561.9 C 33.4 562.9 32 563.9 30.6 565 C 29.2 566.1 27.9 567.3 26.6 568.5 C 25.4 569.8 24.2 571.1 23 572.4 C 21.9 573.8 20.8 575.2 19.8 576.6 C 18.8 578.1 17.9 579.6 17 581.1 C 16.2 582.7 15.4 584.3 14.7 585.9 C 14 587.5 13.4 589.2 12.8 590.9 C 12.3 592.6 11.9 594.3 11.5 596 C 11.1 597.7 10.8 599.5 10.6 601.2 C 10.4 603 10.3 604.7 10.3 606.5 L 9.7 651.2 C 9.7 651.8 9.8 652.4 9.9 653 C 10 653.6 10.2 654.2 10.4 654.8 C 10.6 655.3 10.9 655.9 11.2 656.4 C 11.6 656.9 11.9 657.4 12.4 657.8 C 12.8 658.2 13.3 658.6 13.8 659 C 14.3 659.3 14.8 659.6 15.3 659.8 C 15.9 660.1 16.5 660.3 17.1 660.4 C 17.7 660.5 18.3 660.6 18.9 660.6 L 84 661.4 L 247.2 663.5 L 332.4 664.6 C 333 664.6 333.6 664.6 334.2 664.5 C 334.8 664.4 335.4 664.2 335.9 664 C 336.5 663.7 337 663.5 337.5 663.1 C 338 662.8 338.5 662.4 338.9 662 C 339.4 661.6 339.8 661.1 340.1 660.6 C 340.5 660.1 340.8 659.6 341 659 C 341.2 658.4 341.4 657.9 341.5 657.3 C 341.7 656.7 341.7 656.1 341.7 655.5 L 342.8 572.1 L 642.9 576 C 643.6 576 644.3 576 645 575.9 C 645.7 575.9 646.4 575.8 647.1 575.6 C 647.8 575.5 648.4 575.3 649.1 575.1 C 649.8 574.9 650.5 574.7 651.1 574.5 C 651.8 574.2 652.4 573.9 653 573.6 C 653.6 573.3 654.3 572.9 654.8 572.5 C 655.4 572.1 656 571.7 656.5 571.3 C 657.1 570.9 657.6 570.4 658.1 569.9 C 658.6 569.4 659.1 568.9 659.6 568.4 C 660 567.8 660.4 567.3 660.8 566.7 C 661.2 566.1 661.6 565.5 661.9 564.9 C 662.3 564.3 662.6 563.6 662.9 563 C 663.1 562.4 663.4 561.7 663.6 561 C 663.8 560.4 664 559.7 664.1 559 C 664.3 558.3 664.4 557.6 664.5 556.9 C 664.5 556.2 664.6 555.5 664.6 554.8 L 665.3 502.8 C 665.3 502.1 665.2 501.4 665.2 500.7 C 665.1 500 665 499.3 664.9 498.6 C 664.8 497.9 664.6 497.2 664.4 496.5 C 664.2 495.9 664 495.2 663.7 494.6 C 663.5 493.9 663.2 493.3 662.9 492.6 C 662.5 492 662.2 491.4 661.8 490.8 C 661.4 490.2 661 489.7 660.6 489.1 C 660.1 488.6 659.7 488 659.2 487.5 C 658.7 487 658.2 486.6 657.6 486.1 C 657.1 485.7 656.5 485.2 656 484.8 C 655.4 484.4 654.8 484.1 654.2 483.7 C 653.6 483.4 652.9 483.1 652.3 482.8 C 651.6 482.5 651 482.3 650.3 482.1 C 649.7 481.9 649 481.7 648.3 481.5 C 647.6 481.4 646.9 481.3 646.2 481.2 C 645.5 481.1 644.8 481.1 644.1 481.1 Z M 431.3 221.6 C 431.3 220.5 431.4 219.4 431.4 218.3 C 431.5 217.2 431.6 216.1 431.7 215 C 431.8 213.9 432 212.8 432.2 211.7 C 432.3 210.7 432.5 209.6 432.8 208.5 C 433 207.4 433.3 206.3 433.5 205.3 C 433.8 204.2 434.1 203.1 434.5 202.1 C 434.8 201 435.1 200 435.5 199 C 435.9 197.9 436.3 196.9 436.8 195.9 C 437.2 194.9 437.7 193.9 438.1 192.9 C 438.6 191.9 439.1 190.9 439.7 189.9 C 440.2 189 440.8 188 441.3 187.1 C 441.9 186.1 442.5 185.2 443.1 184.3 C 443.8 183.4 444.4 182.5 445.1 181.6 C 445.8 180.8 446.4 179.9 447.2 179.1 C 447.9 178.2 448.6 177.4 449.3 176.6 C 450.1 175.8 450.9 175 451.7 174.2 C 452.5 173.4 453.3 172.7 454.1 172 C 454.9 171.2 455.8 170.5 456.6 169.8 C 457.5 169.1 458.4 168.5 459.3 167.8 C 460.2 167.2 461.1 166.6 462 165.9 C 462.9 165.3 463.9 164.8 464.8 164.2 C 465.8 163.7 466.7 163.1 467.7 162.6 C 468.7 162.1 469.7 161.6 470.7 161.2 C 471.7 160.7 472.7 160.3 473.7 159.9 C 474.8 159.5 475.8 159.1 476.8 158.7 C 477.9 158.4 478.9 158 480 157.7 C 481 157.4 482.1 157.1 483.2 156.9 C 484.3 156.6 485.3 156.4 486.4 156.2 C 487.5 156 488.6 155.8 489.7 155.7 C 490.8 155.5 491.9 155.4 493 155.3 C 494.1 155.2 495.2 155.1 496.3 155.1 C 497.4 155.1 498.5 155.1 499.6 155.1 C 500.7 155.1 501.8 155.1 502.9 155.2 C 504 155.3 505.1 155.4 506.2 155.5 C 507.3 155.6 508.4 155.8 509.5 155.9 C 510.6 156.1 511.6 156.3 512.7 156.5 C 513.8 156.8 514.9 157 515.9 157.3 C 517 157.6 518.1 157.9 519.1 158.2 C 520.2 158.6 521.2 158.9 522.3 159.3 C 523.3 159.7 524.3 160.1 525.3 160.5 C 526.3 161 527.3 161.4 528.3 161.9 C 529.3 162.4 530.3 162.9 531.3 163.4 C 532.2 164 533.2 164.5 534.1 165.1 C 535.1 165.7 536 166.3 536.9 166.9 C 537.8 167.5 538.7 168.2 539.6 168.9 C 540.5 169.5 541.3 170.2 542.2 170.9 C 543 171.6 543.8 172.4 544.6 173.1 C 545.5 173.9 546.2 174.6 547 175.4 C 547.8 176.2 548.5 177 549.3 177.9 C 550 178.7 550.7 179.5 551.4 180.4 C 552.1 181.3 552.8 182.1 553.4 183 C 554 183.9 554.7 184.8 555.3 185.8 C 555.9 186.7 556.4 187.6 557 188.6 C 557.6 189.5 558.1 190.5 558.6 191.5 C 559.1 192.5 559.6 193.4 560 194.4 C 560.5 195.5 560.9 196.5 561.3 197.5 C 561.8 198.5 562.1 199.6 562.5 200.6 C 562.9 201.6 563.2 202.7 563.5 203.8 C 563.8 204.8 564.1 205.9 564.3 207 C 564.6 208 564.8 209.1 565 210.2 C 565.2 211.3 565.4 212.4 565.5 213.5 C 565.7 214.6 565.8 215.6 565.9 216.7 C 566 217.8 566.1 218.9 566.1 220.1 C 566.2 221.2 566.2 222.3 566.1 223.4 C 566.1 224.5 566.1 225.6 566 226.7 C 566 227.8 565.9 228.9 565.7 230 C 565.6 231.1 565.5 232.2 565.3 233.2 C 565.1 234.3 564.9 235.4 564.7 236.5 C 564.5 237.6 564.2 238.6 563.9 239.7 C 563.6 240.8 563.3 241.8 563 242.9 C 562.7 243.9 562.3 245 561.9 246 C 561.5 247.1 561.1 248.1 560.7 249.1 C 560.3 250.1 559.8 251.1 559.3 252.1 C 558.8 253.1 558.3 254.1 557.8 255 C 557.2 256 556.7 257 556.1 257.9 C 555.5 258.8 554.9 259.8 554.3 260.7 C 553.7 261.6 553 262.5 552.4 263.4 C 551.7 264.2 551 265.1 550.3 265.9 C 549.6 266.8 548.9 267.6 548.1 268.4 C 547.4 269.2 546.6 270 545.8 270.8 C 545 271.6 544.2 272.3 543.4 273 C 542.5 273.8 541.7 274.5 540.8 275.2 C 540 275.9 539.1 276.5 538.2 277.2 C 537.3 277.8 536.4 278.4 535.5 279 C 534.5 279.6 533.6 280.2 532.6 280.8 C 531.7 281.3 530.7 281.9 529.7 282.4 C 528.8 282.9 527.8 283.4 526.8 283.8 C 525.8 284.3 524.8 284.7 523.7 285.1 C 522.7 285.5 521.7 285.9 520.6 286.3 C 519.6 286.6 518.5 287 517.5 287.3 C 516.4 287.6 515.3 287.9 514.3 288.1 C 513.2 288.4 512.1 288.6 511 288.8 C 509.9 289 508.9 289.2 507.8 289.3 C 506.7 289.5 505.6 289.6 504.5 289.7 C 503.4 289.8 502.3 289.8 501.2 289.9 C 500.1 289.9 499 289.9 497.9 289.9 C 496.8 289.9 495.7 289.9 494.6 289.8 C 493.5 289.7 492.4 289.6 491.3 289.5 C 490.2 289.4 489.1 289.2 488 289.1 C 486.9 288.9 485.8 288.7 484.7 288.4 C 483.6 288.2 482.6 288 481.5 287.7 C 480.4 287.4 479.4 287.1 478.3 286.7 C 477.3 286.4 476.2 286 475.2 285.7 C 474.2 285.3 473.2 284.9 472.1 284.4 C 471.1 284 470.1 283.5 469.1 283 C 468.1 282.6 467.2 282.1 466.2 281.5 C 465.2 281 464.3 280.4 463.3 279.9 C 462.4 279.3 461.5 278.7 460.6 278 C 459.7 277.4 458.8 276.8 457.9 276.1 C 457 275.4 456.2 274.7 455.3 274 C 454.5 273.3 453.6 272.6 452.8 271.8 C 452 271.1 451.2 270.3 450.5 269.5 C 449.7 268.7 448.9 267.9 448.2 267.1 C 447.5 266.3 446.8 265.4 446.1 264.6 C 445.4 263.7 444.7 262.8 444.1 261.9 C 443.4 261 442.8 260.1 442.2 259.2 C 441.6 258.3 441 257.3 440.5 256.4 C 439.9 255.4 439.4 254.5 438.9 253.5 C 438.4 252.5 437.9 251.5 437.4 250.5 C 437 249.5 436.5 248.5 436.1 247.5 C 435.7 246.5 435.3 245.4 435 244.4 C 434.6 243.3 434.3 242.3 434 241.2 C 433.7 240.2 433.4 239.1 433.1 238 C 432.9 237 432.6 235.9 432.4 234.8 C 432.2 233.7 432.1 232.6 431.9 231.5 C 431.8 230.4 431.6 229.3 431.6 228.2 C 431.5 227.1 431.4 226 431.3 224.9 C 431.3 223.8 431.3 222.7 431.3 221.6 Z M 376.6 372.8 C 377 336.5 411.9 307.3 454.2 307.9 L 497.6 308.4 L 541 309 C 583.4 309.5 617.5 339.6 617 375.9 L 616.3 427 L 576.4 426.5 L 576.8 391.7 C 576.8 391.1 576.8 390.5 576.7 389.9 C 576.6 389.3 576.4 388.8 576.2 388.2 C 575.9 387.6 575.7 387.1 575.3 386.6 C 575 386.1 574.6 385.6 574.2 385.2 C 573.8 384.7 573.3 384.3 572.8 384 C 572.3 383.6 571.8 383.4 571.2 383.1 C 570.6 382.9 570.1 382.7 569.5 382.6 C 568.9 382.4 568.3 382.4 567.7 382.4 C 567.1 382.4 566.5 382.4 565.9 382.5 C 565.3 382.6 564.7 382.8 564.1 383 C 563.6 383.3 563 383.5 562.5 383.9 C 562 384.2 561.5 384.6 561.1 385 C 560.7 385.4 560.3 385.9 559.9 386.4 C 559.6 386.9 559.3 387.4 559 388 C 558.8 388.5 558.6 389.1 558.5 389.7 C 558.4 390.3 558.3 390.9 558.3 391.5 L 557.8 426.2 L 531.5 425.9 C 529.7 425.9 528 426 526.2 426.2 C 524.4 426.4 522.7 426.7 521 427.1 C 519.3 427.6 517.6 428.1 515.9 428.8 C 514.3 429.4 512.7 430.2 511.1 431 C 509.6 431.9 508.1 432.8 506.6 433.9 C 505.2 434.9 503.8 436.1 502.5 437.3 C 501.3 438.5 500.1 439.8 498.9 441.2 C 497.8 442.6 496.8 444 495.9 445.5 C 495 444 494 442.5 492.9 441.1 C 491.8 439.7 490.6 438.4 489.4 437.1 C 488.1 435.8 486.8 434.7 485.4 433.6 C 484 432.5 482.5 431.5 481 430.6 C 479.5 429.7 477.9 428.9 476.2 428.2 C 474.6 427.6 472.9 427 471.2 426.5 C 469.5 426 467.8 425.7 466 425.4 C 464.3 425.2 462.5 425 460.7 425 L 442.8 424.8 L 443.3 390 C 443.3 389.4 443.2 388.8 443.1 388.2 C 443 387.7 442.8 387.1 442.6 386.5 C 442.4 386 442.1 385.4 441.8 384.9 C 441.4 384.4 441 383.9 440.6 383.5 C 440.2 383.1 439.7 382.7 439.2 382.4 C 438.7 382 438.2 381.7 437.6 381.5 C 437.1 381.3 436.5 381.1 435.9 381 C 435.3 380.8 434.7 380.8 434.1 380.8 C 433.5 380.8 432.9 380.8 432.3 380.9 C 431.7 381 431.2 381.2 430.6 381.4 C 430 381.6 429.5 381.9 429 382.2 C 428.5 382.6 428 382.9 427.6 383.4 C 427.1 383.8 426.8 384.2 426.4 384.7 C 426.1 385.2 425.8 385.7 425.5 386.3 C 425.3 386.9 425.1 387.4 425 388 C 424.8 388.6 424.8 389.2 424.8 389.8 L 424.3 424.5 L 375.9 423.9 Z M 616.1 445.5 L 615.9 459.9 L 615.8 468.3 C 615.8 469 615.8 469.8 615.7 470.5 C 615.6 471.2 615.5 472 615.3 472.7 C 615.2 473.4 615 474.2 614.7 474.9 C 614.5 475.6 614.3 476.3 614 477 C 613.7 477.6 613.3 478.3 613 479 C 612.6 479.6 612.2 480.3 611.8 480.9 C 611.4 481.5 610.9 482.1 610.5 482.6 C 610 483.2 609.5 483.8 608.9 484.3 C 608.4 484.8 607.8 485.3 607.3 485.8 C 606.7 486.2 606.1 486.7 605.4 487.1 C 604.8 487.5 604.2 487.8 603.5 488.2 C 602.9 488.5 602.2 488.8 601.5 489.1 C 600.8 489.4 600.1 489.6 599.4 489.8 C 598.7 490.1 597.9 490.2 597.2 490.4 C 596.5 490.5 595.7 490.6 595 490.7 C 594.3 490.7 593.5 490.8 592.8 490.7 L 507.9 489.7 L 508.2 466.9 C 508.2 466.1 508.3 465.4 508.4 464.7 C 508.5 463.9 508.6 463.2 508.7 462.5 C 508.9 461.7 509.1 461 509.3 460.3 C 509.5 459.6 509.8 458.9 510.1 458.2 C 510.4 457.5 510.7 456.9 511.1 456.2 C 511.4 455.5 511.8 454.9 512.2 454.3 C 512.7 453.7 513.1 453.1 513.6 452.5 C 514.1 452 514.6 451.4 515.1 450.9 C 515.6 450.4 516.2 449.9 516.8 449.4 C 517.4 448.9 518 448.5 518.6 448.1 C 519.2 447.7 519.9 447.3 520.5 447 C 521.2 446.6 521.9 446.3 522.6 446.1 C 523.2 445.8 523.9 445.5 524.7 445.3 C 525.4 445.1 526.1 444.9 526.8 444.8 C 527.6 444.7 528.3 444.6 529.1 444.5 C 529.8 444.4 530.5 444.4 531.3 444.4 Z M 375.5 456.8 L 375.7 442.4 L 460.5 443.5 C 461.2 443.5 462 443.6 462.7 443.7 C 463.5 443.7 464.2 443.9 464.9 444 C 465.6 444.2 466.4 444.4 467.1 444.6 C 467.8 444.8 468.5 445.1 469.2 445.4 C 469.9 445.7 470.5 446 471.2 446.4 C 471.8 446.7 472.5 447.1 473.1 447.5 C 473.7 447.9 474.3 448.4 474.9 448.9 C 475.4 449.4 476 449.9 476.5 450.4 C 477 450.9 477.5 451.5 478 452.1 C 478.4 452.7 478.9 453.3 479.3 453.9 C 479.7 454.5 480.1 455.2 480.4 455.8 C 480.7 456.5 481.1 457.2 481.3 457.8 C 481.6 458.5 481.8 459.2 482.1 460 C 482.3 460.7 482.4 461.4 482.6 462.1 C 482.7 462.9 482.8 463.6 482.9 464.3 C 482.9 465.1 483 465.8 483 466.6 L 482.7 489.3 L 397.8 488.2 C 397.1 488.2 396.4 488.2 395.6 488.1 C 394.9 488 394.1 487.9 393.4 487.7 C 392.7 487.6 392 487.4 391.2 487.2 C 390.5 486.9 389.8 486.7 389.2 486.4 C 388.5 486.1 387.8 485.8 387.1 485.4 C 386.5 485.1 385.9 484.7 385.2 484.2 C 384.6 483.8 384 483.4 383.5 482.9 C 382.9 482.4 382.4 481.9 381.8 481.4 C 381.3 480.8 380.8 480.3 380.4 479.7 C 379.9 479.1 379.5 478.5 379 477.9 C 378.6 477.3 378.3 476.6 377.9 475.9 C 377.6 475.3 377.3 474.6 377 473.9 C 376.7 473.2 376.5 472.5 376.3 471.8 C 376.1 471.1 375.9 470.4 375.8 469.6 C 375.6 468.9 375.5 468.2 375.4 467.4 C 375.4 466.7 375.4 465.9 375.4 465.2 Z M 147 417.8 C 147 416.8 147.1 415.7 147.1 414.7 C 147.2 413.6 147.3 412.6 147.4 411.5 C 147.5 410.5 147.7 409.4 147.8 408.4 C 148 407.3 148.2 406.3 148.4 405.3 C 148.6 404.2 148.9 403.2 149.1 402.2 C 149.4 401.2 149.7 400.2 150 399.2 C 150.3 398.2 150.7 397.2 151 396.2 C 151.4 395.2 151.8 394.2 152.2 393.3 C 152.6 392.3 153.1 391.3 153.5 390.4 C 154 389.4 154.5 388.5 155 387.6 C 155.5 386.7 156 385.8 156.6 384.9 C 157.1 384 157.7 383.1 158.3 382.2 C 158.9 381.4 159.5 380.5 160.1 379.7 C 160.8 378.8 161.4 378 162.1 377.2 C 162.8 376.4 163.5 375.6 164.2 374.8 C 164.9 374.1 165.7 373.3 166.4 372.6 C 167.2 371.8 167.9 371.1 168.7 370.4 C 169.5 369.7 170.3 369.1 171.2 368.4 C 172 367.7 172.8 367.1 173.7 366.5 C 174.5 365.9 175.4 365.3 176.3 364.7 C 177.2 364.1 178.1 363.6 179 363 C 179.9 362.5 180.8 362 181.7 361.5 C 182.7 361 183.6 360.6 184.6 360.1 C 185.5 359.7 186.5 359.3 187.5 358.9 C 188.4 358.5 189.4 358.1 190.4 357.8 C 191.4 357.5 192.4 357.1 193.4 356.9 C 194.4 356.6 195.5 356.3 196.5 356.1 C 197.5 355.8 198.5 355.6 199.6 355.4 C 200.6 355.2 201.7 355 202.7 354.9 C 203.7 354.8 204.8 354.6 205.8 354.6 C 206.9 354.5 207.9 354.4 209 354.4 C 210 354.3 211.1 354.3 212.1 354.3 C 213.2 354.3 214.2 354.4 215.3 354.4 C 216.3 354.5 217.4 354.6 218.4 354.7 C 219.5 354.8 220.5 355 221.6 355.1 C 222.6 355.3 223.6 355.5 224.7 355.7 C 225.7 355.9 226.7 356.2 227.7 356.4 C 228.8 356.7 229.8 357 230.8 357.3 C 231.8 357.7 232.8 358 233.8 358.4 C 234.7 358.7 235.7 359.1 236.7 359.5 C 237.7 359.9 238.6 360.4 239.6 360.9 C 240.5 361.3 241.4 361.8 242.4 362.3 C 243.3 362.8 244.2 363.3 245.1 363.9 C 246 364.4 246.9 365 247.7 365.6 C 248.6 366.2 249.4 366.8 250.3 367.5 C 251.1 368.1 251.9 368.8 252.8 369.4 C 253.6 370.1 254.3 370.8 255.1 371.5 C 255.9 372.3 256.6 373 257.4 373.7 C 258.1 374.5 258.8 375.3 259.5 376.1 C 260.2 376.8 260.9 377.7 261.6 378.5 C 262.2 379.3 262.8 380.1 263.5 381 C 264.1 381.8 264.7 382.7 265.2 383.6 C 265.8 384.5 266.4 385.4 266.9 386.3 C 267.4 387.2 267.9 388.1 268.4 389 C 268.9 390 269.4 390.9 269.8 391.9 C 270.2 392.8 270.7 393.8 271 394.8 C 271.4 395.8 271.8 396.8 272.1 397.7 C 272.5 398.7 272.8 399.7 273.1 400.8 C 273.4 401.8 273.7 402.8 273.9 403.8 C 274.1 404.8 274.4 405.9 274.6 406.9 C 274.7 407.9 274.9 409 275.1 410 C 275.2 411.1 275.3 412.1 275.4 413.2 C 275.5 414.2 275.6 415.3 275.6 416.3 C 275.6 417.4 275.6 418.4 275.6 419.5 C 275.6 420.5 275.6 421.6 275.5 422.6 C 275.4 423.7 275.4 424.7 275.2 425.8 C 275.1 426.8 275 427.8 274.8 428.9 C 274.6 429.9 274.4 431 274.2 432 C 274 433 273.8 434 273.5 435.1 C 273.2 436.1 272.9 437.1 272.6 438.1 C 272.3 439.1 272 440.1 271.6 441.1 C 271.2 442.1 270.8 443 270.4 444 C 270 445 269.6 445.9 269.1 446.9 C 268.6 447.8 268.1 448.8 267.6 449.7 C 267.1 450.6 266.6 451.5 266.1 452.4 C 265.5 453.3 264.9 454.2 264.3 455.1 C 263.7 455.9 263.1 456.8 262.5 457.6 C 261.8 458.4 261.2 459.3 260.5 460.1 C 259.8 460.9 259.1 461.7 258.4 462.4 C 257.7 463.2 257 464 256.2 464.7 C 255.4 465.4 254.7 466.1 253.9 466.8 C 253.1 467.5 252.3 468.2 251.5 468.9 C 250.7 469.5 249.8 470.2 249 470.8 C 248.1 471.4 247.2 472 246.4 472.6 C 245.5 473.1 244.6 473.7 243.7 474.2 C 242.8 474.8 241.8 475.3 240.9 475.7 C 240 476.2 239 476.7 238.1 477.1 C 237.1 477.6 236.1 478 235.2 478.4 C 234.2 478.8 233.2 479.1 232.2 479.5 C 231.2 479.8 230.2 480.1 229.2 480.4 C 228.2 480.7 227.2 481 226.1 481.2 C 225.1 481.5 224.1 481.7 223.1 481.9 C 222 482.1 221 482.2 219.9 482.4 C 218.9 482.5 217.8 482.6 216.8 482.7 C 215.7 482.8 214.7 482.9 213.6 482.9 C 212.6 482.9 211.5 483 210.5 482.9 C 209.4 482.9 208.4 482.9 207.3 482.8 C 206.3 482.8 205.2 482.7 204.2 482.6 C 203.1 482.4 202.1 482.3 201.1 482.1 C 200 482 199 481.8 198 481.5 C 196.9 481.3 195.9 481.1 194.9 480.8 C 193.9 480.5 192.9 480.2 191.9 479.9 C 190.9 479.6 189.9 479.3 188.9 478.9 C 187.9 478.5 186.9 478.1 185.9 477.7 C 185 477.3 184 476.9 183.1 476.4 C 182.1 475.9 181.2 475.4 180.3 474.9 C 179.4 474.4 178.5 473.9 177.6 473.4 C 176.7 472.8 175.8 472.2 174.9 471.6 C 174 471 173.2 470.4 172.4 469.8 C 171.5 469.1 170.7 468.5 169.9 467.8 C 169.1 467.1 168.3 466.4 167.5 465.7 C 166.8 465 166 464.3 165.3 463.5 C 164.5 462.8 163.8 462 163.1 461.2 C 162.4 460.4 161.8 459.6 161.1 458.8 C 160.4 458 159.8 457.1 159.2 456.3 C 158.6 455.4 158 454.5 157.4 453.7 C 156.8 452.8 156.3 451.9 155.7 451 C 155.2 450.1 154.7 449.1 154.2 448.2 C 153.7 447.3 153.3 446.3 152.8 445.4 C 152.4 444.4 152 443.4 151.6 442.5 C 151.2 441.5 150.8 440.5 150.5 439.5 C 150.2 438.5 149.8 437.5 149.5 436.5 C 149.3 435.5 149 434.5 148.7 433.5 C 148.5 432.4 148.3 431.4 148.1 430.4 C 147.9 429.3 147.7 428.3 147.6 427.3 C 147.4 426.2 147.3 425.2 147.2 424.1 C 147.1 423.1 147.1 422 147 421 C 147 419.9 147 418.9 147 417.8 Z M 238.2 644.9 L 93.5 643 L 28.4 642.2 L 28.8 606.7 C 28.8 605.6 28.9 604.4 29.1 603.3 C 29.2 602.1 29.4 601 29.6 599.8 C 29.9 598.7 30.1 597.6 30.5 596.5 C 30.9 595.4 31.3 594.3 31.7 593.2 C 32.2 592.1 32.7 591.1 33.2 590.1 C 33.8 589.1 34.4 588.1 35.1 587.1 C 35.7 586.2 36.4 585.2 37.2 584.4 C 37.9 583.5 38.7 582.6 39.6 581.8 C 40.4 581 41.3 580.2 42.2 579.5 C 43.1 578.8 44 578.1 45 577.5 C 46 576.8 47 576.2 48 575.7 C 49 575.2 50.1 574.7 51.2 574.3 C 52.2 573.8 53.3 573.5 54.4 573.1 C 55.6 572.8 56.7 572.5 57.8 572.3 C 59 572.1 60.1 572 61.3 571.9 C 62.4 571.8 63.6 571.7 64.8 571.7 L 203.6 573.5 C 204.8 573.5 205.9 573.6 207.1 573.7 C 208.2 573.9 209.4 574 210.5 574.3 C 211.6 574.5 212.8 574.8 213.9 575.2 C 215 575.5 216.1 575.9 217.1 576.4 C 218.2 576.9 219.2 577.4 220.2 577.9 C 221.3 578.5 222.3 579.1 223.2 579.8 C 224.2 580.4 225.1 581.1 226 581.9 C 226.9 582.6 227.7 583.4 228.5 584.2 C 229.3 585.1 230.1 585.9 230.8 586.8 C 231.6 587.8 232.2 588.7 232.9 589.7 C 233.5 590.6 234.1 591.6 234.6 592.7 C 235.2 593.7 235.6 594.8 236.1 595.8 C 236.5 596.9 236.9 598 237.2 599.1 C 237.5 600.2 237.8 601.4 238 602.5 C 238.2 603.7 238.4 604.8 238.5 606 C 238.6 607.1 238.6 608.3 238.6 609.4 Z M 323.3 646 L 256.7 645.1 L 257.1 609.7 C 257.2 607.9 257.1 606.2 256.9 604.4 C 256.8 602.6 256.5 600.9 256.2 599.1 C 255.9 597.4 255.5 595.7 255 594 C 254.5 592.3 253.9 590.6 253.3 589 C 252.6 587.3 251.9 585.7 251.1 584.2 C 250.3 582.6 249.4 581.1 248.4 579.6 C 247.4 578.1 246.4 576.7 245.3 575.3 C 244.2 573.9 243 572.6 241.8 571.3 C 240.6 570.1 239.3 568.9 237.9 567.7 C 236.6 566.6 235.2 565.5 233.7 564.5 C 232.2 563.5 230.7 562.6 229.2 561.7 C 227.6 560.9 226.1 560.1 224.4 559.4 C 222.8 558.7 221.2 558.1 219.5 557.5 C 217.8 557 216.1 556.5 214.3 556.2 C 212.6 555.8 210.9 555.5 209.1 555.3 C 207.4 555.1 205.6 555 203.8 555 L 95.4 553.6 C 101.1 523.4 131.9 500.5 168.6 500.9 L 210.3 501.5 L 251.9 502 C 292.3 502.5 324.8 531.1 324.4 565.8 Z M 646.1 554.6 C 646.1 555 646 555.3 645.8 555.7 C 645.7 556 645.5 556.4 645.2 556.6 C 644.9 556.9 644.6 557.1 644.2 557.2 C 643.9 557.4 643.5 557.5 643.1 557.5 L 342 553.6 C 338 528.8 321.4 507.6 298.1 495.1 L 370.4 496.1 C 372.3 497.7 374.3 499.2 376.4 500.6 C 378.5 501.9 380.7 503 383 503.9 C 385.4 504.8 387.7 505.5 390.2 506 C 392.6 506.5 395.1 506.7 397.6 506.8 L 491.7 508 C 492.9 508 494 507.8 495.1 507.4 C 496.1 507.8 497.3 508 498.4 508.1 L 592.5 509.3 C 595 509.3 597.5 509.1 599.9 508.7 C 602.4 508.3 604.8 507.6 607.1 506.8 C 609.5 505.9 611.7 504.9 613.9 503.6 C 616 502.3 618.1 500.9 619.9 499.3 L 643.9 499.6 C 644.3 499.6 644.6 499.7 645 499.8 C 645.3 500 645.6 500.2 645.9 500.5 C 646.2 500.8 646.4 501.1 646.5 501.4 C 646.6 501.8 646.7 502.2 646.7 502.5 Z M 245.1 71.3 C 245.1 70.7 245.2 70.1 245.3 69.5 C 245.4 68.9 245.6 68.3 245.9 67.7 C 246.1 67.2 246.4 66.7 246.7 66.2 C 247.1 65.6 247.5 65.2 247.9 64.8 C 248.3 64.3 248.8 64 249.3 63.6 C 249.8 63.3 250.4 63 250.9 62.8 C 251.5 62.6 252.1 62.4 252.7 62.3 C 253.3 62.2 253.9 62.1 254.5 62.1 L 353.3 63.4 C 353.9 63.4 354.5 63.5 355.1 63.6 C 355.7 63.7 356.3 63.9 356.9 64.1 C 357.4 64.4 358 64.6 358.5 65 C 359 65.3 359.4 65.7 359.9 66.2 C 360.3 66.6 360.7 67.1 361 67.6 C 361.4 68.1 361.6 68.6 361.9 69.2 C 362.1 69.8 362.3 70.4 362.4 71 C 362.5 71.6 362.6 72.2 362.5 72.8 C 362.5 73.4 362.5 74 362.3 74.6 C 362.2 75.2 362 75.8 361.8 76.3 C 361.5 76.9 361.2 77.4 360.9 77.9 C 360.5 78.4 360.1 78.9 359.7 79.3 C 359.3 79.8 358.8 80.1 358.3 80.5 C 357.8 80.8 357.2 81.1 356.6 81.3 C 356.1 81.5 355.5 81.7 354.9 81.8 C 354.3 81.9 353.7 81.9 353.1 81.9 L 254.2 80.7 C 253.6 80.6 253 80.6 252.4 80.5 C 251.8 80.3 251.3 80.1 250.7 79.9 C 250.2 79.7 249.6 79.4 249.1 79 C 248.6 78.7 248.2 78.3 247.7 77.9 C 247.3 77.4 246.9 77 246.6 76.4 C 246.3 75.9 246 75.4 245.8 74.8 C 245.5 74.3 245.4 73.7 245.3 73.1 C 245.1 72.5 245.1 71.9 245.1 71.3 Z M 361.7 130.7 C 361.7 131.3 361.6 131.9 361.5 132.5 C 361.4 133.1 361.2 133.7 360.9 134.3 C 360.7 134.8 360.4 135.3 360.1 135.9 C 359.7 136.4 359.3 136.8 358.9 137.2 C 358.5 137.7 358 138 357.5 138.4 C 357 138.7 356.4 139 355.9 139.2 C 355.3 139.4 354.7 139.6 354.1 139.7 C 353.5 139.8 352.9 139.9 352.3 139.9 L 294.4 139.1 C 293.8 139.1 293.2 139.1 292.6 138.9 C 292 138.8 291.4 138.6 290.8 138.4 C 290.2 138.2 289.7 137.9 289.2 137.5 C 288.7 137.2 288.2 136.8 287.8 136.4 C 287.4 135.9 287 135.5 286.6 134.9 C 286.3 134.4 286 133.9 285.8 133.3 C 285.6 132.8 285.4 132.2 285.3 131.6 C 285.2 131 285.1 130.4 285.1 129.7 C 285.1 129.1 285.2 128.5 285.3 127.9 C 285.5 127.3 285.6 126.7 285.9 126.2 C 286.1 125.6 286.4 125.1 286.8 124.6 C 287.1 124.1 287.5 123.6 288 123.2 C 288.4 122.8 288.9 122.4 289.4 122.1 C 289.9 121.7 290.5 121.5 291 121.2 C 291.6 121 292.2 120.8 292.8 120.7 C 293.4 120.6 294 120.6 294.6 120.6 L 352.6 121.3 C 353.2 121.4 353.8 121.4 354.4 121.5 C 354.9 121.7 355.5 121.9 356.1 122.1 C 356.6 122.3 357.2 122.6 357.7 123 C 358.2 123.3 358.6 123.7 359.1 124.1 C 359.5 124.6 359.9 125 360.2 125.6 C 360.5 126.1 360.8 126.6 361 127.2 C 361.3 127.7 361.4 128.3 361.5 128.9 C 361.7 129.5 361.7 130.1 361.7 130.7 Z M 143.6 253.8 L 143.6 254.4 C 143.6 255 143.5 255.6 143.4 256.2 C 143.3 256.8 143.1 257.4 142.8 257.9 C 142.6 258.5 142.3 259 142 259.5 C 141.6 260 141.2 260.5 140.8 260.9 C 140.4 261.3 139.9 261.7 139.4 262 C 138.9 262.4 138.3 262.6 137.8 262.9 C 137.2 263.1 136.6 263.3 136 263.4 C 135.4 263.5 134.8 263.5 134.2 263.5 C 133.6 263.5 133 263.5 132.4 263.3 C 131.8 263.2 131.2 263 130.7 262.8 C 130.1 262.5 129.6 262.3 129.1 261.9 C 128.6 261.6 128.1 261.2 127.7 260.7 C 127.3 260.3 126.9 259.8 126.6 259.3 C 126.2 258.8 125.9 258.3 125.7 257.7 C 125.5 257.1 125.3 256.6 125.2 256 C 125.1 255.4 125.1 254.8 125.1 254.2 L 125.1 253.6 C 125.1 253 125.1 252.4 125.3 251.8 C 125.4 251.2 125.6 250.6 125.8 250.1 C 126.1 249.5 126.4 249 126.7 248.5 C 127 248 127.4 247.5 127.9 247.1 C 128.3 246.7 128.8 246.3 129.3 245.9 C 129.8 245.6 130.3 245.3 130.9 245.1 C 131.5 244.9 132 244.7 132.6 244.6 C 133.2 244.5 133.8 244.4 134.4 244.5 C 135.1 244.5 135.7 244.5 136.3 244.7 C 136.8 244.8 137.4 245 138 245.2 C 138.5 245.4 139.1 245.7 139.6 246.1 C 140.1 246.4 140.5 246.8 141 247.2 C 141.4 247.7 141.8 248.2 142.1 248.7 C 142.4 249.2 142.7 249.7 142.9 250.3 C 143.2 250.8 143.3 251.4 143.4 252 C 143.5 252.6 143.6 253.2 143.6 253.8 Z M 98.3 173.3 C 98.3 172.5 98.3 171.7 98.4 170.9 C 98.4 170.1 98.5 169.2 98.6 168.4 C 98.8 167.6 98.9 166.8 99.1 166.1 C 99.2 165.3 99.4 164.5 99.7 163.7 C 99.9 162.9 100.1 162.2 100.4 161.4 C 100.7 160.6 100.9 159.9 101.3 159.1 C 101.6 158.4 101.9 157.7 102.3 156.9 C 102.7 156.2 103.1 155.5 103.5 154.8 C 103.9 154.1 104.3 153.4 104.8 152.8 C 105.2 152.1 105.7 151.4 106.2 150.8 C 106.7 150.2 107.2 149.6 107.8 149 C 108.3 148.4 108.9 147.8 109.5 147.2 C 110 146.6 110.6 146.1 111.2 145.6 C 111.9 145 112.5 144.5 113.1 144.1 C 113.8 143.6 114.4 143.1 115.1 142.7 C 115.8 142.2 116.5 141.8 117.2 141.4 C 117.9 141 118.6 140.6 119.4 140.3 C 120.1 139.9 120.8 139.6 121.6 139.3 C 122.3 139 123.1 138.7 123.9 138.5 C 124.6 138.2 125.4 138 126.2 137.8 C 127 137.6 127.8 137.4 128.6 137.3 C 129.4 137.1 130.2 137 131 136.9 C 131.8 136.8 132.6 136.8 133.4 136.7 C 134.2 136.7 135 136.7 135.8 136.7 C 136.6 136.7 137.4 136.7 138.2 136.8 C 139 136.8 139.8 136.9 140.6 137 C 141.4 137.2 142.2 137.3 143 137.5 C 143.8 137.6 144.6 137.8 145.4 138 C 146.2 138.3 146.9 138.5 147.7 138.8 C 148.5 139 149.2 139.3 150 139.7 C 150.7 140 151.4 140.3 152.1 140.7 C 152.9 141 153.6 141.4 154.3 141.9 C 155 142.3 155.7 142.7 156.3 143.2 C 157 143.6 157.6 144.1 158.3 144.6 C 158.9 145.1 159.5 145.6 160.1 146.2 C 160.7 146.7 161.3 147.3 161.9 147.8 C 162.4 148.4 163 149 163.5 149.6 C 164 150.2 164.6 150.9 165 151.5 C 165.5 152.2 166 152.8 166.4 153.5 C 166.9 154.2 167.3 154.9 167.7 155.6 C 168.1 156.3 168.5 157 168.8 157.7 C 169.2 158.5 169.5 159.2 169.8 159.9 C 170.1 160.7 170.4 161.5 170.6 162.2 C 170.9 163 171.1 163.8 171.3 164.6 C 171.5 165.3 171.7 166.1 171.8 166.9 C 172 167.7 172.1 168.5 172.2 169.3 C 172.3 170.1 172.3 170.9 172.4 171.7 C 172.4 172.5 172.5 173.4 172.4 174.2 C 172.4 175 172.4 175.8 172.3 176.6 C 172.3 177.4 172.2 178.2 172.1 179 C 172 179.8 171.8 180.6 171.7 181.4 C 171.5 182.2 171.3 183 171.1 183.7 C 170.9 184.5 170.6 185.3 170.3 186.1 C 170.1 186.8 169.8 187.6 169.5 188.3 C 169.1 189.1 168.8 189.8 168.4 190.5 C 168.1 191.2 167.7 191.9 167.3 192.6 C 166.9 193.3 166.4 194 166 194.7 C 165.5 195.4 165 196 164.5 196.6 C 164 197.3 163.5 197.9 163 198.5 C 162.4 199.1 161.9 199.7 161.3 200.3 C 160.7 200.8 160.1 201.4 159.5 201.9 C 158.9 202.4 158.3 202.9 157.6 203.4 C 157 203.9 156.3 204.4 155.6 204.8 C 155 205.3 154.3 205.7 153.6 206.1 C 152.3 206.8 151.1 207.6 150 208.6 C 148.9 209.6 148 210.6 147.2 211.8 C 146.3 213.1 145.7 214.3 145.2 215.7 C 144.7 217.1 144.3 218.5 144.2 219.9 C 144.2 220 144.1 220.1 144.1 220.2 C 144 220.9 144 221.5 144 222.2 C 144 222.8 143.9 223.4 143.8 224 C 143.7 224.6 143.5 225.2 143.2 225.7 C 143 226.3 142.7 226.8 142.4 227.3 C 142 227.8 141.6 228.3 141.2 228.7 C 140.8 229.1 140.3 229.5 139.8 229.9 C 139.3 230.2 138.7 230.5 138.2 230.7 C 137.6 230.9 137 231.1 136.4 231.2 C 135.8 231.3 135.2 231.4 134.6 231.4 C 134 231.3 133.4 231.3 132.8 231.1 C 132.2 231 131.6 230.8 131.1 230.6 C 130.5 230.4 130 230.1 129.5 229.7 C 129 229.4 128.5 229 128.1 228.6 C 127.7 228.1 127.3 227.6 127 227.1 C 126.6 226.6 126.4 226.1 126.1 225.5 C 125.9 225 125.7 224.4 125.6 223.8 C 125.5 223.2 125.5 222.6 125.5 222 C 125.5 220.5 125.6 219 125.8 217.6 C 126 216.2 126.2 214.7 126.6 213.3 C 126.9 211.9 127.3 210.6 127.8 209.2 C 128.3 207.8 128.9 206.5 129.6 205.2 C 130.2 204 131 202.7 131.8 201.5 C 132.6 200.3 133.5 199.2 134.4 198.1 C 135.3 197 136.4 196 137.4 195 C 138.5 194 139.6 193.1 140.8 192.3 C 141.9 191.4 143.2 190.6 144.4 189.9 C 145.4 189.4 146.3 188.8 147.1 188.1 C 147.9 187.4 148.7 186.7 149.4 185.9 C 150.1 185 150.8 184.2 151.3 183.2 C 151.9 182.3 152.4 181.3 152.7 180.3 C 153.1 179.3 153.4 178.3 153.6 177.2 C 153.8 176.1 153.9 175.1 153.9 174 C 154 172.9 153.9 171.8 153.7 170.7 C 153.5 169.7 153.3 168.6 152.9 167.6 C 152.5 166.6 152.1 165.6 151.6 164.6 C 151 163.7 150.4 162.8 149.8 162 C 149.1 161.1 148.3 160.3 147.5 159.6 C 146.7 158.9 145.8 158.3 144.9 157.8 C 143.9 157.2 143 156.7 141.9 156.3 C 140.9 156 139.9 155.7 138.8 155.5 C 137.8 155.3 136.7 155.2 135.6 155.1 C 134.5 155.1 133.4 155.2 132.4 155.4 C 131.3 155.6 130.2 155.8 129.2 156.2 C 128.2 156.5 127.2 157 126.3 157.5 C 125.3 158.1 124.4 158.7 123.6 159.3 C 122.8 160 122 160.8 121.3 161.6 C 120.6 162.4 119.9 163.3 119.4 164.2 C 118.8 165.2 118.4 166.1 118 167.2 C 117.6 168.2 117.3 169.2 117.1 170.3 C 116.9 171.3 116.8 172.4 116.8 173.5 C 116.8 174.1 116.7 174.7 116.6 175.3 C 116.5 175.9 116.3 176.5 116 177 C 115.8 177.6 115.5 178.1 115.2 178.6 C 114.8 179.1 114.4 179.6 114 180 C 113.6 180.4 113.1 180.8 112.6 181.1 C 112.1 181.5 111.5 181.8 111 182 C 110.4 182.2 109.8 182.4 109.2 182.5 C 108.6 182.6 108 182.6 107.4 182.6 C 106.8 182.6 106.2 182.6 105.6 182.4 C 105 182.3 104.4 182.1 103.9 181.9 C 103.3 181.7 102.8 181.4 102.3 181 C 101.8 180.7 101.3 180.3 100.9 179.8 C 100.5 179.4 100.1 178.9 99.8 178.4 C 99.4 177.9 99.1 177.4 98.9 176.8 C 98.7 176.3 98.5 175.7 98.4 175.1 C 98.3 174.5 98.3 173.9 98.3 173.3 Z M 98.3 173.3"/></svg></div>
+        <h3 class="plm-step-title">A Focused 60-Minute Session with Pat</h3>
+        <p class="plm-step-desc">This is a live conversation, not a lecture. Chief Executive&rsquo;s editor Dan Bigman will interview Pat on the challenges CEOs are bringing into 2027 and will take your questions throughout.<br><br>Attend together so you leave with the same language and the same priorities.</p>
+      </div>
+      <div class="plm-step" data-plm-anim="fadeIn" data-plm-delay="1000">
+        <div class="plm-step-num-row"><p class="plm-step-num">03</p></div>
+        <p class="plm-step-when">December 2 | 2:00 &ndash; 2:45 pm</p>
+        <div class="plm-step-icon"><svg viewBox="0 0 675 675" aria-hidden="true"><path d="M 633.6 547.3 C 633.4 547.2 633.2 547 633.1 546.9 L 636.8 543.1 C 655.8 524.2 655.8 493.4 636.8 474.5 L 579.6 417.2 C 578 415.6 576.3 414.2 574.6 412.9 C 590.3 363.7 590.3 310.3 574.6 261.1 C 576.3 259.8 578 258.4 579.6 256.9 L 636.8 199.6 C 646 190.4 651 178.3 651 165.3 C 651 152.3 646 140.1 636.8 130.9 L 633.1 127.2 C 633.2 127 633.4 126.8 633.6 126.7 C 657.2 103.1 657.2 64.6 633.6 41 C 622.1 29.5 606.9 23.2 590.7 23.2 C 574.5 23.2 559.3 29.5 547.8 41 C 547.7 41.1 547.5 41.3 547.4 41.5 L 543.6 37.7 C 524.6 18.7 493.8 18.7 474.9 37.7 L 417.6 95 C 416.1 96.5 414.6 98.2 413.4 99.9 C 364.2 84.2 310.8 84.2 261.6 99.9 C 260.3 98.2 258.9 96.5 257.3 95 L 200 37.7 C 181.1 18.7 150.3 18.7 131.4 37.7 L 127.6 41.5 C 127.5 41.3 127.3 41.1 127.2 41 C 115.7 29.5 100.5 23.2 84.3 23.2 C 68.1 23.2 52.9 29.5 41.4 41 C 30 52.4 23.7 67.6 23.7 83.8 C 23.7 100 30 115.2 41.4 126.7 C 41.6 126.8 41.7 127 41.9 127.2 L 38.1 130.9 C 19.2 149.9 19.2 180.7 38.1 199.6 L 95.4 256.9 C 97 258.4 98.6 259.8 100.3 261.1 C 84.6 310.3 84.6 363.7 100.3 412.9 C 98.6 414.2 97 415.6 95.4 417.2 L 38.1 474.5 C 29 483.6 23.9 495.8 23.9 508.8 C 23.9 521.8 29 533.9 38.1 543.1 L 41.9 546.9 C 41.7 547 41.6 547.2 41.4 547.3 C 17.8 571 17.8 609.4 41.4 633.1 C 52.9 644.5 68.1 650.8 84.3 650.8 C 100.5 650.8 115.7 644.5 127.1 633.1 C 127.3 632.9 127.5 632.7 127.6 632.6 L 131.4 636.4 C 140.9 645.8 153.3 650.6 165.7 650.6 C 178.1 650.6 190.6 645.8 200 636.4 L 257.3 579.1 C 258.9 577.5 260.3 575.9 261.6 574.1 C 286.2 582 311.8 585.9 337.5 585.9 C 363.1 585.9 388.8 582 413.4 574.1 C 414.6 575.9 416 577.5 417.6 579.1 L 474.9 636.4 C 484.4 645.8 496.8 650.6 509.2 650.6 C 521.6 650.6 534.1 645.8 543.5 636.4 L 547.3 632.6 C 547.5 632.7 547.6 632.9 547.8 633.1 C 559.2 644.5 574.4 650.8 590.6 650.8 C 606.8 650.8 622.1 644.5 633.5 633.1 C 657.1 609.4 657.1 571 633.5 547.3 Z M 590.7 38.8 C 602.7 38.8 614 43.5 622.5 52 C 640 69.5 640 98.1 622.5 115.6 C 614 124.1 602.7 128.8 590.7 128.8 C 578.7 128.8 567.4 124.1 558.9 115.6 C 541.3 98.1 541.3 69.5 558.9 52 C 567.4 43.5 578.7 38.8 590.7 38.8 Z M 421.4 123.7 C 421.4 116.7 423.8 110.9 428.7 106 L 486 48.7 C 498.8 35.9 519.7 35.9 532.5 48.7 L 537.9 54.1 C 524.9 77.2 528.2 107 547.8 126.7 C 559.3 138.1 574.5 144.4 590.7 144.4 C 601.3 144.4 611.5 141.7 620.4 136.6 L 625.8 142 C 632 148.2 635.4 156.4 635.4 165.3 C 635.4 174.1 632 182.3 625.8 188.5 L 568.5 245.8 C 563.6 250.8 557.8 253.2 550.8 253.2 L 502.1 253.2 C 493.5 253.2 486.4 246.1 486.4 237.5 C 486.4 228.8 493.5 221.8 502.1 221.8 L 544.9 221.8 C 547 221.8 549 221 550.4 219.5 L 577 192.9 C 580 189.9 580 184.9 577 181.9 C 574 178.8 569 178.8 566 181.9 L 546.3 201.5 C 536.9 186.9 525.9 173.3 513.5 161 C 501.2 148.6 487.6 137.6 473 128.2 L 492.6 108.6 C 495.7 105.5 495.7 100.6 492.6 97.5 C 489.6 94.4 484.6 94.4 481.6 97.5 L 455 124 C 453.6 125.5 452.7 127.5 452.7 129.6 L 452.7 172.4 C 452.7 176.6 451.1 180.5 448.1 183.5 C 445.1 186.4 441.2 188.1 437 188.1 C 428.4 188.1 421.4 181 421.4 172.4 Z M 39.3 83.8 C 39.3 71.8 44 60.5 52.5 52 C 61 43.5 72.3 38.8 84.3 38.8 C 96.3 38.8 107.6 43.5 116.1 52 C 124.6 60.5 129.3 71.8 129.3 83.8 C 129.3 95.8 124.6 107.1 116.1 115.6 C 107.6 124.1 96.3 128.8 84.3 128.8 C 72.3 128.8 61 124.1 52.5 115.6 C 44 107.1 39.3 95.8 39.3 83.8 Z M 49.2 188.5 C 36.4 175.7 36.4 154.8 49.2 142 L 54.6 136.6 C 63.5 141.7 73.7 144.4 84.3 144.4 C 100.5 144.4 115.7 138.1 127.2 126.7 C 138.6 115.2 144.9 100 144.9 83.8 C 144.9 73.2 142.2 63 137.1 54.1 L 142.5 48.7 C 155.3 35.9 176.2 35.9 189 48.7 L 246.3 106 C 251.3 110.9 253.7 116.7 253.7 123.7 L 253.7 172.4 C 253.7 181 246.6 188.1 238 188.1 C 229.3 188.1 222.3 181 222.3 172.4 L 222.3 129.6 C 222.3 127.5 221.5 125.5 220 124 L 193.4 97.5 C 190.4 94.4 185.4 94.4 182.4 97.5 C 179.3 100.5 179.3 105.5 182.4 108.6 L 202 128.2 C 187.5 137.6 173.9 148.6 161.5 161 C 149.1 173.3 138.1 186.9 128.7 201.5 L 109.1 181.9 C 106 178.8 101.1 178.8 98 181.9 C 95 184.9 95 189.9 98 192.9 L 124.6 219.5 C 126 220.9 128 221.8 130.1 221.8 L 172.9 221.8 C 177.1 221.8 181 223.4 184 226.4 C 187 229.4 188.6 233.3 188.6 237.5 C 188.6 246.1 181.6 253.2 172.9 253.2 L 124.2 253.2 C 117.3 253.2 111.5 250.8 106.5 245.8 L 49.2 188.5 Z M 84.3 635.2 C 72.3 635.2 61 630.5 52.5 622 C 35 604.5 35 575.9 52.5 558.4 C 61.3 549.6 72.8 545.2 84.3 545.2 C 95.8 545.2 107.4 549.6 116.1 558.4 C 133.7 575.9 133.7 604.5 116.1 622 C 107.6 630.5 96.3 635.2 84.3 635.2 Z M 253.6 550.3 C 253.6 557.3 251.2 563.1 246.3 568 L 189 625.3 C 176.2 638.1 155.3 638.1 142.5 625.3 L 137.1 619.9 C 150.1 596.8 146.8 567 127.2 547.3 C 107.5 527.7 77.7 524.4 54.6 537.4 L 49.2 532 C 43 525.8 39.6 517.6 39.6 508.8 C 39.6 499.9 43 491.7 49.2 485.5 L 106.5 428.2 C 111.4 423.3 117.2 420.9 124.2 420.9 L 172.9 420.9 C 181.5 420.9 188.6 427.9 188.6 436.5 C 188.6 445.2 181.5 452.2 172.9 452.2 L 130.1 452.2 C 128 452.2 126 453.1 124.5 454.5 L 98 481.1 C 94.9 484.1 94.9 489.1 98 492.1 C 101 495.2 106 495.2 109 492.1 L 128.6 472.5 C 138.1 487.1 149.1 500.7 161.5 513 C 173.8 525.4 187.4 536.4 202 545.8 L 182.4 565.4 C 179.3 568.5 179.3 573.4 182.4 576.5 C 185.4 579.5 190.4 579.5 193.4 576.5 L 220 549.9 C 221.4 548.5 222.3 546.5 222.3 544.4 L 222.3 501.6 C 222.3 497.4 223.9 493.5 226.9 490.5 C 229.8 487.5 233.8 485.9 237.9 485.9 C 246.6 485.9 253.6 492.9 253.6 501.6 Z M 268.2 559.8 C 268.9 556.8 269.3 553.6 269.3 550.3 L 269.3 501.6 C 269.3 484.3 255.2 470.3 237.9 470.3 C 229.6 470.3 221.8 473.6 215.8 479.5 C 209.9 485.4 206.6 493.3 206.6 501.6 L 206.6 530.2 C 194.5 521.9 183 512.5 172.5 502 C 162 491.5 152.6 480.1 144.3 467.9 L 172.9 467.9 C 190.2 467.9 204.2 453.8 204.2 436.6 C 204.2 419.3 190.2 405.2 172.9 405.2 L 124.2 405.2 C 120.9 405.2 117.7 405.6 114.7 406.3 C 100.8 361.3 100.8 312.7 114.7 267.7 C 117.7 268.4 120.9 268.8 124.2 268.8 L 172.9 268.8 C 190.2 268.8 204.2 254.7 204.2 237.5 C 204.2 229.1 200.9 221.3 195 215.4 C 189.1 209.4 181.2 206.2 172.9 206.2 L 144.3 206.2 C 152.6 194 162 182.5 172.5 172.1 C 183 161.6 194.5 152.1 206.6 143.8 L 206.6 172.4 C 206.6 189.7 220.7 203.7 237.9 203.7 C 255.2 203.7 269.3 189.7 269.3 172.4 L 269.3 123.8 C 269.3 120.4 268.9 117.3 268.2 114.2 C 313.2 100.3 361.8 100.3 406.8 114.2 C 406.1 117.3 405.7 120.4 405.7 123.8 L 405.7 172.4 C 405.7 189.7 419.8 203.7 437 203.7 C 445.4 203.7 453.2 200.5 459.2 194.5 C 465.1 188.6 468.4 180.8 468.4 172.4 L 468.4 143.8 C 480.5 152.1 492 161.6 502.5 172.1 C 512.9 182.6 522.4 194 530.7 206.2 L 502.1 206.2 C 484.8 206.2 470.8 220.2 470.8 237.5 C 470.8 254.7 484.8 268.8 502.1 268.8 L 550.8 268.8 C 554.1 268.8 557.3 268.4 560.3 267.7 C 574.2 312.7 574.2 361.3 560.3 406.3 C 557.2 405.6 554.1 405.2 550.8 405.2 L 502.1 405.2 C 484.8 405.2 470.8 419.3 470.8 436.6 C 470.8 444.9 474 452.8 480 458.7 C 485.9 464.6 493.8 467.9 502.1 467.9 L 530.7 467.9 C 522.4 480.1 512.9 491.5 502.5 502 C 492 512.5 480.5 521.9 468.4 530.2 L 468.4 501.6 C 468.4 484.3 454.3 470.3 437 470.3 C 419.8 470.3 405.7 484.3 405.7 501.6 L 405.7 550.3 C 405.7 553.6 406.1 556.8 406.8 559.8 C 361.8 573.8 313.2 573.8 268.2 559.8 Z M 532.5 625.3 C 519.7 638.1 498.8 638.1 486 625.3 L 428.7 568 C 423.8 563.1 421.4 557.3 421.4 550.3 L 421.4 501.6 C 421.4 493 428.4 485.9 437 485.9 C 445.7 485.9 452.7 493 452.7 501.6 L 452.7 544.4 C 452.7 546.5 453.6 548.5 455 549.9 L 481.6 576.5 C 484.6 579.5 489.6 579.5 492.6 576.5 C 495.7 573.5 495.7 568.5 492.6 565.5 L 473 545.8 C 487.6 536.4 501.2 525.4 513.5 513 C 525.9 500.7 536.9 487.1 546.3 472.5 L 565.9 492.1 C 569 495.2 573.9 495.2 577 492.1 C 580.1 489.1 580 484.1 577 481.1 L 550.4 454.5 C 549 453.1 547 452.2 544.9 452.2 L 502.1 452.2 C 497.9 452.2 494 450.6 491 447.6 C 488.1 444.7 486.4 440.7 486.4 436.5 C 486.4 427.9 493.5 420.9 502.1 420.9 L 550.8 420.9 C 557.8 420.9 563.6 423.3 568.5 428.2 L 625.8 485.5 C 638.6 498.3 638.6 519.2 625.8 532 L 620.5 537.4 C 611.5 532.3 601.3 529.6 590.7 529.6 C 574.5 529.6 559.3 535.9 547.8 547.3 C 528.2 567 524.9 596.8 537.9 619.9 Z M 622.5 622 C 614 630.5 602.7 635.2 590.7 635.2 C 578.7 635.2 567.4 630.5 558.9 622 C 541.3 604.5 541.3 575.9 558.9 558.4 C 567.4 549.9 578.7 545.2 590.7 545.2 C 602.7 545.2 614 549.9 622.5 558.4 C 640.1 575.9 640.1 604.5 622.5 622 Z M 433.4 437 C 434.9 437 436.4 436.6 437.8 435.7 C 440.3 434 441.6 430.9 441.1 427.9 L 436.3 400 C 455.9 387.2 467.8 365.6 467.8 342.1 C 467.8 304 436.8 273.1 398.8 273.1 L 383.1 273.1 C 371.1 251 347.8 237 322.5 237 L 276.2 237 C 238.2 237 207.2 267.9 207.2 306 C 207.2 329.5 219.1 351.2 238.7 363.9 L 233.9 391.8 C 233.4 394.8 234.7 397.9 237.3 399.6 C 238.6 400.5 240.1 400.9 241.6 400.9 C 243 400.9 244.5 400.5 245.8 399.7 L 285.2 375 L 291.8 375 C 303.6 396.5 326.3 411.1 352.5 411.1 L 389.8 411.1 L 429.3 435.8 C 430.5 436.6 432 437 433.4 437 Z M 283 359.4 C 281.5 359.4 280 359.8 278.8 360.6 L 252.2 377.2 L 255 361.2 C 255.6 357.9 254 354.6 251 353 C 233.6 343.6 222.8 325.6 222.8 306 C 222.8 276.6 246.8 252.6 276.2 252.6 L 322.5 252.6 C 339 252.6 354.4 260.4 364.4 273.1 L 352.5 273.1 C 314.4 273.1 283.4 304 283.4 342.1 C 283.4 348.1 284.2 353.9 285.6 359.4 L 282.9 359.4 Z M 420 397.3 L 422.8 413.3 L 396.2 396.7 C 394.9 395.9 393.5 395.5 392 395.5 L 352.5 395.5 C 323 395.5 299.1 371.5 299.1 342.1 C 299.1 312.7 323 288.7 352.5 288.7 L 398.8 288.7 C 428.2 288.7 452.2 312.7 452.2 342.1 C 452.2 361.7 441.4 379.7 424 389.1 C 421 390.7 419.4 394 420 397.3 Z M 346.1 342.1 C 346.1 346.4 342.6 349.9 338.3 349.9 C 334 349.9 330.5 346.4 330.5 342.1 C 330.5 337.8 334 334.3 338.3 334.3 C 342.6 334.3 346.1 337.8 346.1 342.1 Z M 383.4 342.1 C 383.4 346.4 379.9 349.9 375.6 349.9 C 371.3 349.9 367.8 346.4 367.8 342.1 C 367.8 337.8 371.3 334.3 375.6 334.3 C 379.9 334.3 383.4 337.8 383.4 342.1 Z M 420.7 342.1 C 420.7 346.4 417.2 349.9 412.9 349.9 C 408.6 349.9 405.1 346.4 405.1 342.1 C 405.1 337.8 408.6 334.3 412.9 334.3 C 417.2 334.3 420.7 337.8 420.7 342.1 Z M 420.7 342.1"/></svg></div>
+        <h3 class="plm-step-title">45-Minute discussion with peers</h3>
+        <p class="plm-step-desc">Move into small groups with other CEOs and senior leaders to talk through what you just heard. Compare notes on the challenges you're taking into 2027 and how other leadership teams are handling them. Leave with practical ideas from people facing the same hard calls you are.<br><br>Each group is led by a Chief Executive facilitator to keep the conversation focused.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 REGISTER -->
+<section class="plm-register">
+  <span class="plm-register-anchor" id="register"></span>
+  <div class="plm-container">
+    <div class="plm-register-head">
+      <h2 class="plm-register-title" data-plm-anim="fadeIn">join the conversation</h2>
+      <div class="plm-register-intro">
+        <p><strong>Who should attend?</strong> CEOs and their leadership teams heading into 2027 with a plan to execute and hard decisions to make, and who want to start January as a team that trusts each other, argues well and is ready to commit.</p>
+      </div>
+    </div>
+    <div class="plm-pricing">
+      <div class="plm-price" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-price-header">
+          <h3 class="plm-price-heading">Individual</h3>
+          <span class="plm-price-sub">Single ticket</span>
+        </div>
+        <div class="plm-price-amount">
+          <span class="plm-price-currency">$</span><span class="plm-price-integer">495</span>
+          <span class="plm-price-period">Per Person</span>
+        </div>
+        <ul class="plm-price-features">
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>Working Genius Assessment</span></div></li>
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>Live event access</span></div></li>
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>On-demand access to event recording</span></div></li>
+        </ul>
+        <div class="plm-price-footer">
+          <a class="plm-btn plm-btn-grow scoPage quick-login-m1" href="/en?t=/merchant/product.show&productID=1794573288640&ParentID=0&sort=0">Register Now</a>
+        </div>
+      </div>
+      <div class="plm-price" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-price-header">
+          <h3 class="plm-price-heading">Teams of 3+</h3>
+          <span class="plm-price-sub">20% discount</span>
+        </div>
+        <div class="plm-price-amount">
+          <span class="plm-price-currency">$</span><span class="plm-price-integer">395</span>
+          <span class="plm-price-period">Per Person</span>
+        </div>
+        <ul class="plm-price-features">
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>Working Genius Assessment</span></div></li>
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>Live event access</span></div></li>
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>On-demand access to event recording</span></div></li>
+        </ul>
+        <div class="plm-price-footer">
+          <a class="plm-btn plm-btn-grow scoPage quick-login-m1" href="/en?t=/merchant/product.show&productID=1794579179816&ParentID=0&sort=0">Register Now</a>
+        </div>
+      </div>
+      <div class="plm-price" data-plm-anim="fadeInUp" data-plm-delay="500">
+        <div class="plm-price-header">
+          <h3 class="plm-price-heading">Teams of 6+</h3>
+          <span class="plm-price-sub">30% discount</span>
+        </div>
+        <div class="plm-price-amount">
+          <span class="plm-price-currency">$</span><span class="plm-price-integer">345</span>
+          <span class="plm-price-period">Per Person</span>
+        </div>
+        <ul class="plm-price-features">
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>Working Genius Assessment</span></div></li>
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>Live event access</span></div></li>
+          <li><div class="plm-price-feature"><svg viewBox="0 0 768 768" aria-hidden="true" fill="#00AEEF"><path d="M325.3 519.8L195.5 390l47.2-47.2 82.6 82.6 318.4-318.4 47.2 47.2z"/><path d="M589.9 301.5v322.4H113.7V147.7h446.5l37-37H76.7v550.2h550.2V264.5z"/></svg><span>On-demand access to event recording</span></div></li>
+        </ul>
+        <div class="plm-price-footer">
+          <a class="plm-btn plm-btn-grow scoPage quick-login-m1" href="/en?t=/merchant/product.show&productID=1794579406256&ParentID=0&sort=0">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 TESTIMONIALS -->
+<section class="plm-quotes" data-plm-anim="fadeInUp">
+  <div class="plm-container">
+    <div class="plm-quotes-intro">
+      <h2 class="plm-quotes-title">Chief Executive Masterclasses</h2>
+      <p>Efficient, focused and custom-built for busy executives and their key personnel, <em>Chief Executive</em> pulls together some of the most experienced, creative minds in business to take a deep dive into the biggest challenges confronting your business today.</p>
+    </div>
+    <div class="plm-quotes-slider">
+      <div class="plm-quote-mark">
+        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/></svg>
+      </div>
+      <div class="plm-carousel" role="region" aria-roledescription="carousel" aria-label="Testimonials">
+        <div class="plm-carousel-viewport">
+          <div class="plm-carousel-track">
+            <div class="plm-slide" role="group" aria-roledescription="slide" aria-label="1 / 3">
+              <div class="plm-quote-card">
+                <p class="plm-quote-text">Relevant information, thought provoking. We will make some long-term planning changes because of it.</p>
+                <span class="plm-quote-job">Attendee at Inflation Masterclass</span>
+              </div>
+            </div>
+            <div class="plm-slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
+              <div class="plm-quote-card">
+                <p class="plm-quote-text">Great content and wealth or real-world knowledge and business case examples for what&rsquo;s worked and why.</p>
+                <span class="plm-quote-job">Attendee at Lead Better, Live Better Masterclass</span>
+              </div>
+            </div>
+            <div class="plm-slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
+              <div class="plm-quote-card">
+                <p class="plm-quote-text">The information was straightforward and applicable to our situation. It provided insights to focus on our most important projects.</p>
+                <span class="plm-quote-job">Attendee at Pricing Masterclass</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="plm-dots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="plm-footer">
+  <div class="plm-container">
+    <div class="plm-footer-logo">
+      <img src="https://public-cdn.hr.com/remoteimages/website-images/2026_siteupdate/patrick-lencioni-2026-masterclass/ceg-corporate-logo-white.png" width="600" height="67" alt="Chief Executive Group" loading="lazy" decoding="async">
+    </div>
+    <div class="plm-footer-spacer" aria-hidden="true"></div>
+    <div class="plm-footer-contact">
+      <h2 class="plm-footer-title">CONTACT US</h2>
+      <ul class="plm-footer-list">
+        <li><a href="mailto:events@chiefexecutivegroup.com"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg><span>events@chiefexecutivegroup.com</span></a></li>
+        <li><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/></svg><span>203-930-2700</span></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.currentScript ? document.currentScript.closest('.plm-page') : null;
+  if (!root) { root = document.querySelector('.plm-page'); }
+  if (!root) { return; }
+
+  /* Scroll entrance animations */
+  var animated = root.querySelectorAll('[data-plm-anim]');
+  if ('IntersectionObserver' in window && animated.length) {
+    root.classList.add('plm-js');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { return; }
+        var el = entry.target;
+        var delay = parseInt(el.getAttribute('data-plm-delay') || '0', 10);
+        el.style.animationDelay = delay + 'ms';
+        el.classList.add('plm-in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0.1 });
+    animated.forEach(function (el) { io.observe(el); });
+  }
+
+  /* Smooth scroll for in page anchor */
+  root.querySelectorAll('a[href="#register"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = root.querySelector('#register');
+      if (!target) { return; }
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* Testimonial carousel with loop, autoplay, dots and swipe */
+  var carousel = root.querySelector('.plm-carousel');
+  if (!carousel) { return; }
+  var viewport = carousel.querySelector('.plm-carousel-viewport');
+  var track = carousel.querySelector('.plm-carousel-track');
+  var dotsWrap = carousel.querySelector('.plm-dots');
+  var slides = Array.prototype.slice.call(track.children);
+  var total = slides.length;
+  var GAP = 10;
+  var index = 0;
+  var timer = null;
+
+  /* Clones of the first two slides allow a seamless loop when two are visible */
+  for (var c = 0; c < 2; c++) {
+    var clone = slides[c].cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.classList.add('plm-slide-clone');
+    track.appendChild(clone);
+  }
+  var allSlides = Array.prototype.slice.call(track.children);
+
+  function perView() {
+    var w = window.innerWidth;
+    return (w <= 1025 && w >= 768) ? 2 : 1;
+  }
+
+  function layout() {
+    var pv = perView();
+    var basis = 'calc((100% - ' + (GAP * (pv - 1)) + 'px) / ' + pv + ')';
+    allSlides.forEach(function (s) { s.style.flex = '0 0 ' + basis; });
+    move(false);
+  }
+
+  function slideStep() {
+    return allSlides[0].getBoundingClientRect().width + GAP;
+  }
+
+  function move(animate) {
+    track.style.transition = animate ? '' : 'none';
+    track.style.transform = 'translate3d(' + (-index * slideStep()) + 'px,0,0)';
+    var active = index % total;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('is-active', i === active);
+      d.setAttribute('aria-current', i === active ? 'true' : 'false');
+    });
+    if (!animate) { void track.offsetWidth; track.style.transition = ''; }
+  }
+
+  function goTo(i) {
+    index = i;
+    move(true);
+  }
+
+  function next() { goTo(index + 1); }
+  function prev() {
+    if (index === 0) { index = total; move(false); }
+    goTo(index - 1);
+  }
+
+  track.addEventListener('transitionend', function () {
+    if (index >= total) { index = index - total; move(false); }
+  });
+
+  var dots = [];
+  for (var d = 0; d < total; d++) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'plm-dot';
+    dot.setAttribute('aria-label', 'Go to slide ' + (d + 1));
+    (function (n) { dot.addEventListener('click', function () { goTo(n); restart(); }); })(d);
+    dotsWrap.appendChild(dot);
+    dots.push(dot);
+  }
+
+  function start() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+    stop();
+    timer = setInterval(next, 5000);
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function restart() { stop(); start(); }
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  var startX = null;
+  viewport.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; stop(); }, { passive: true });
+  viewport.addEventListener('touchend', function (e) {
+    if (startX === null) { return; }
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { if (dx < 0) { next(); } else { prev(); } }
+    startX = null;
+    start();
+  });
+
+  var resizeTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(layout, 120);
+  });
+
+  layout();
+  start();
+})();
+</script>
+
+</div>
+$designAttribute:quick_login_m1
+$designAttribute:splashCheckout
