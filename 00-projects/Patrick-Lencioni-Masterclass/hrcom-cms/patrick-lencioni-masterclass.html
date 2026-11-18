@@ -140,6 +140,49 @@
 .plm-page .plm-price-feature span { font-size: 16px !important; font-weight: 300 !important; line-height: 1.1 !important; color: #000000 !important; }
 .plm-page .plm-price-footer { background-color: #FFFFFF; padding: 30px 0 15px 0; }
 .plm-page .plm-price-footer .plm-btn { font-size: 14px !important; font-weight: 900 !important; padding: 15px 45px; }
+.plm-page .plm-promo-wrap { padding: 20px 10px 0 10px; }
+.plm-page .plm-promo { position: relative; overflow: hidden; display: flex; flex-direction: row; align-items: center; gap: 20px; background-color: #F8F0FF; border: 1px solid #DEB1FF; border-left: 6px solid #00AEEF; padding: 22px 30px; }
+.plm-page .plm-promo > *:not(.plm-confetti) { position: relative; z-index: 1; }
+.plm-page .plm-confetti { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.plm-page .plm-confetti i { position: absolute; top: -16px; display: block; width: 7px; height: 12px; opacity: 0.75; animation: plmConfetti 5s linear infinite; }
+.plm-page .plm-confetti i:nth-child(4n+1) { background-color: #00AEEF; }
+.plm-page .plm-confetti i:nth-child(4n+2) { background-color: #B86BFF; border-radius: 50%; width: 8px; height: 8px; }
+.plm-page .plm-confetti i:nth-child(4n+3) { background-color: #FFB800; }
+.plm-page .plm-confetti i:nth-child(4n+4) { background-color: #00204B; width: 5px; height: 10px; }
+.plm-page .plm-confetti i:nth-child(1)  { left: 3%;  animation-duration: 4.6s; animation-delay: 0s; }
+.plm-page .plm-confetti i:nth-child(2)  { left: 9%;  animation-duration: 5.4s; animation-delay: 1.8s; }
+.plm-page .plm-confetti i:nth-child(3)  { left: 15%; animation-duration: 4.2s; animation-delay: 3.1s; }
+.plm-page .plm-confetti i:nth-child(4)  { left: 22%; animation-duration: 5.8s; animation-delay: 0.9s; }
+.plm-page .plm-confetti i:nth-child(5)  { left: 29%; animation-duration: 4.9s; animation-delay: 2.5s; }
+.plm-page .plm-confetti i:nth-child(6)  { left: 36%; animation-duration: 5.2s; animation-delay: 0.4s; }
+.plm-page .plm-confetti i:nth-child(7)  { left: 43%; animation-duration: 4.4s; animation-delay: 3.6s; }
+.plm-page .plm-confetti i:nth-child(8)  { left: 50%; animation-duration: 5.6s; animation-delay: 1.3s; }
+.plm-page .plm-confetti i:nth-child(9)  { left: 57%; animation-duration: 4.7s; animation-delay: 2.9s; }
+.plm-page .plm-confetti i:nth-child(10) { left: 64%; animation-duration: 5.3s; animation-delay: 0.6s; }
+.plm-page .plm-confetti i:nth-child(11) { left: 71%; animation-duration: 4.3s; animation-delay: 2.2s; }
+.plm-page .plm-confetti i:nth-child(12) { left: 77%; animation-duration: 5.7s; animation-delay: 3.9s; }
+.plm-page .plm-confetti i:nth-child(13) { left: 83%; animation-duration: 4.8s; animation-delay: 1.1s; }
+.plm-page .plm-confetti i:nth-child(14) { left: 88%; animation-duration: 5.1s; animation-delay: 2.7s; }
+.plm-page .plm-confetti i:nth-child(15) { left: 93%; animation-duration: 4.5s; animation-delay: 0.2s; }
+.plm-page .plm-confetti i:nth-child(16) { left: 97%; animation-duration: 5.5s; animation-delay: 3.4s; }
+@keyframes plmConfetti {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25%  { transform: translate3d(10px, 80px, 0) rotate(120deg); }
+  50%  { transform: translate3d(-8px, 160px, 0) rotate(240deg); }
+  75%  { transform: translate3d(8px, 240px, 0) rotate(360deg); }
+  100% { transform: translate3d(-6px, 320px, 0) rotate(480deg); }
+}
+.plm-page .plm-promo-icon { flex: 0 0 auto; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background-color: #00204B; border-radius: 50%; }
+.plm-page .plm-promo-icon svg { width: 26px; height: 26px; fill: #00AEEF; }
+.plm-page .plm-promo-text { flex: 1 1 auto; min-width: 0; text-align: left; }
+.plm-page .plm-promo-title { margin-bottom: 4px; font-size: 22px !important; font-weight: 900 !important; line-height: 1.2 !important; letter-spacing: normal !important; color: #00204B !important; }
+.plm-page .plm-promo-desc { margin: 0; font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; letter-spacing: normal !important; color: #000000 !important; }
+.plm-page .plm-promo-desc strong { color: #00204B !important; }
+.plm-page .plm-promo-code { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 6px; background-color: #FFFFFF; border: 2px dashed #00204B; padding: 12px 22px; cursor: pointer; transition: transform 0.3s; }
+.plm-page .plm-promo-code:hover, .plm-page .plm-promo-code:focus { transform: scale(1.05); }
+.plm-page .plm-promo-code:focus-visible { outline: 3px solid #00AEEF; outline-offset: 3px; }
+.plm-page .plm-promo-code-value { font-size: 22px !important; font-weight: 900 !important; line-height: 1 !important; letter-spacing: 1px !important; color: #00204B !important; }
+.plm-page .plm-promo-code-hint { font-size: 12px !important; font-weight: 400 !important; line-height: 1 !important; letter-spacing: normal !important; text-transform: uppercase; color: #4A4A4A !important; }
 
 /* ===== SECTION 7 TESTIMONIALS ===== */
 .plm-page .plm-quotes { background-color: #FFFFFF; padding: 80px 20px 65px 20px; }
@@ -186,6 +229,7 @@
 @media (prefers-reduced-motion: reduce) {
   .plm-page.plm-js [data-plm-anim] { opacity: 1; animation: none !important; }
   .plm-page .plm-carousel-track { transition: none; }
+  .plm-page .plm-confetti { display: none; }
 }
 
 /* ===== DESKTOP LARGE 1440 and up ===== */
@@ -236,7 +280,10 @@
   .plm-page .plm-about-photo { width: 100%; }
   .plm-page .plm-how-grid { grid-template-columns: 1fr; gap: 61px; }
   .plm-page .plm-register-intro { width: 100%; }
-  .plm-page .plm-pricing { flex-direction: column; align-items: center; gap: 20px; padding: 50px 10px 80px 10px; }
+  .plm-page .plm-pricing { flex-direction: column; align-items: center; gap: 20px; padding: 50px 10px 0 10px; }
+  .plm-page .plm-promo-wrap { padding: 20px 10px 80px 10px; }
+  .plm-page .plm-promo { max-width: 480px; margin: 0 auto; flex-direction: column; text-align: center; gap: 14px; padding: 25px 20px; border-left-width: 1px; border-top: 6px solid #00AEEF; }
+  .plm-page .plm-promo-text { text-align: center; }
   .plm-page .plm-price { flex: 1 1 auto; width: 100%; max-width: 480px; }
   .plm-page .plm-price-features { padding: 15px 0 0 0; }
   .plm-page .plm-price-footer .plm-btn { padding: 15px 45px; }
@@ -483,6 +530,20 @@
         </div>
       </div>
     </div>
+    <div class="plm-promo-wrap" data-plm-anim="fadeInUp" data-plm-delay="700">
+      <div class="plm-promo">
+        <div class="plm-confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="plm-promo-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.41 11.58l-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7A1.5 1.5 0 1 1 7 5.5 1.5 1.5 0 0 1 5.5 7z"/></svg></div>
+        <div class="plm-promo-text">
+          <h3 class="plm-promo-title">Exclusive HR.com Member Offer!</h3>
+          <p class="plm-promo-desc">Save <strong>$100</strong> when you register using promo code <strong>Patrick2027</strong> at checkout.</p>
+        </div>
+        <button type="button" class="plm-promo-code" data-plm-copy="Patrick2027" aria-label="Copy promo code Patrick2027">
+          <span class="plm-promo-code-value">Patrick2027</span>
+          <span class="plm-promo-code-hint" aria-live="polite">Click to copy</span>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -573,6 +634,31 @@
       if (!target) { return; }
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* Promo code copy to clipboard */
+  root.querySelectorAll('[data-plm-copy]').forEach(function (btn) {
+    var hint = btn.querySelector('.plm-promo-code-hint');
+    btn.addEventListener('click', function () {
+      var code = btn.getAttribute('data-plm-copy');
+      function done() {
+        if (!hint) { return; }
+        hint.textContent = 'Copied!';
+        setTimeout(function () { hint.textContent = 'Click to copy'; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, function () {});
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = code;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (err) {}
+        document.body.removeChild(ta);
+      }
     });
   });
 
