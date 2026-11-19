@@ -32,6 +32,11 @@ This skill is designed to automate and standardize the process of updating enrol
 5.  **Set Instructor**:
     *   Default to "To Be Announced" (`.en_it.tba`).
     *   If a name is provided, check `utils.html` for the instructor's photo and credentials.It it is not available notify user.
+    *   Linked instructors use `<a class="en_it" href="profile">`. `hr_education.css` only sizes `div:nth-child(3)`, so make sure the page `<style>` contains the column-width fix below (otherwise linked and unlinked cards misalign):
+        ```css
+        .en_list_card > a.en_it { width: 25%; }
+        @media screen and (max-width: 767px) { .en_list_card > a.en_it { width: 35%; } }
+        ```
 6.  **Verify CTA Links**:
     *   Ensure `productID` and `dealdesc` are correctly inserted into the URL.
 
