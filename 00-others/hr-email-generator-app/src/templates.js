@@ -1,15 +1,51 @@
 // ============================================================================
-// HR.com Email Template System — v3.0.0
-// 4 visual variants per event type (16 total templates)
+// HR.com Email Template System — v4.0.0
+// 10 visual variants per event type (40 total templates)
 // All variants share identical placeholders, links, and logic
+// Built for dark mode, classic + new Outlook, Gmail, Apple Mail and mobile
 // ============================================================================
 
 // -------------------------------------------------------
 // SHARED HTML BUILDING BLOCKS
 // -------------------------------------------------------
 
-// Common <head> boilerplate (resets, dark mode, responsive)
-const HEAD_BOILERPLATE = (heroDarkBg = '#161B22') => `<head>
+// Dark-mode surface/text colors shared by every template
+const DM = { page: '#0D1117', surface: '#161B22', raised: '#1F2630', line: '#30363D', strong: '#F0F3F6', body: '#C9D1D9', muted: '#8B949E' };
+
+// Dark-mode rules. Applied via prefers-color-scheme (Apple Mail, iOS, Outlook for Mac,
+// Thunderbird) and via [data-ogsc]/[data-ogsb] (Outlook.com, new Outlook, Outlook apps).
+// Sections designed dark stay as they are; light sections opt in with dm-* classes.
+function darkCss(p) {
+  const rules = [
+    ['body, .email-body-bg, .dm-page, .speakers-bg', `background-color:${DM.page} !important;`],
+    ['.main-container, .dm-surface, .intro-section-td, .takeaways-bg, .sec-cta-section-td', `background-color:${DM.surface} !important;`],
+    ['.dm-raised, .credit-bg, .ve-callout-td, .takeaway-card-cell, .speaker-card-inner', `background-color:${DM.raised} !important;border-color:${DM.line} !important;`],
+    ['.dm-tint', `background-color:${p.tintDm} !important;border-color:${p.tintDm} !important;`],
+    ['.dm-line', `border-color:${DM.line} !important;`],
+    ['.dm-strong, .takeaway-title, .speaker-name, .section-heading, .ve-callout-td strong', `color:${DM.strong} !important;`],
+    ['.dm-body, .body-copy-p, .ve-callout-td p', `color:${DM.body} !important;`],
+    ['.dm-muted, .credit-text-cell', `color:${DM.muted} !important;`],
+    ['.dm-accent, .speaker-role, .body-copy-p a', `color:${p.accentDm} !important;`],
+    ['.dm-btn-invert', `background-color:${DM.strong} !important;border-color:${DM.strong} !important;`],
+    ['.dm-btn-invert a', `color:${DM.page} !important;`],
+    ['.dm-outline-invert', `background-color:transparent !important;border-color:${DM.strong} !important;`],
+    ['.dm-outline-invert a', `color:${DM.strong} !important;`],
+    ['.header-bar-bg', 'background-color:#FFFFFF !important;'],
+  ];
+  const block = (prefix) => rules
+    .map(([sel, decl]) => `        ${sel.split(',').map((s) => `${prefix}${s.trim()}`).join(', ')} { ${decl} }`)
+    .join('\n');
+  return `        @media (prefers-color-scheme: dark) {
+${block('    ')}
+        }
+${block('[data-ogsc] ')}
+${block('[data-ogsb] ')}`;
+}
+
+// Common <head>: resets, Outlook settings, responsive rules, dark mode.
+// Responsive and dark-mode CSS sit in separate <style> blocks so a client that
+// rejects one block (e.g. over attribute selectors) still applies the other.
+const HEAD_BOILERPLATE = (p) => `<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +54,14 @@ const HEAD_BOILERPLATE = (heroDarkBg = '#161B22') => `<head>
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
      <title>{{TITLE}} | HR.com Webcast</title>
+    <!--[if mso]>
+    <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+    <![endif]-->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
         /* === EMAIL RESETS === */
+        :root { color-scheme: light dark; supported-color-schemes: light dark; }
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
@@ -29,87 +69,43 @@ const HEAD_BOILERPLATE = (heroDarkBg = '#161B22') => `<head>
         .ExternalClass { width: 100%; }
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
         a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+        u + #body a, #MessageViewBody a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; }
         body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #ECEEF0; }
-
-        /* === DARK MODE === */
-        @media (prefers-color-scheme: dark) {
-            body, .email-body-bg { background-color: #0D1117 !important; }
-            .main-container { background-color: #161B22 !important; }
-            .hero-bg { background-color: ${heroDarkBg} !important; }
-            .split-hero-left { background-color: #161B22 !important; }
-            .split-hero-left .hero-title { color: #E8EEF4 !important; }
-            .intro-section-td { background-color: #161B22 !important; }
-            .takeaways-bg { background-color: #161B22 !important; }
-            .takeaway-card-table, .takeaway-card-cell { background-color: #0D1117 !important; border-color: #2D3748 !important; }
-            .takeaway-title { color: #E8EEF4 !important; }
-            .takeaway-desc { color: #94A3B8 !important; }
-            .sec-cta-section-td { background-color: #161B22 !important; }
-            .speakers-bg { background-color: #1C2128 !important; }
-            .speaker-card-inner { background-color: #0D1117 !important; border-color: #2D3748 !important; }
-            .speaker-name { color: #E8EEF4 !important; }
-            .speaker-role { color: #4AC4D6 !important; }
-            .section-heading { color: #E8EEF4 !important; }
-            .sponsor-section-bg { background-color: #161B22 !important; }
-            .hero-sponsor-chip { background-color: #FFFFFF !important; }
-            .header-bar-bg { background-color: #FFFFFF !important; }
-            .header-bar-label { color: #A0AEC0 !important; }
-            .sponsor-logo-cell { background-color: #FFFFFF !important; border-radius: 6px; }
-            .credit-bg { background-color: #1C2128 !important; }
-            .body-copy-p { color: #CBD5E1 !important; }
-            .ve-callout-td { background-color: #1C2128 !important; border-color: #2D3748 !important; }
-            .ve-callout-td p { color: #CBD5E1 !important; }
-            .ve-callout-td strong { color: #E8EEF4 !important; }
-        }
-        [data-ogsc] body, [data-ogsc] .email-body-bg { background-color: #0D1117 !important; }
-        [data-ogsc] .main-container { background-color: #161B22 !important; }
-        [data-ogsc] .hero-bg { background-color: ${heroDarkBg} !important; }
-        [data-ogsc] .split-hero-left { background-color: #161B22 !important; }
-        [data-ogsc] .split-hero-left .hero-title { color: #E8EEF4 !important; }
-        [data-ogsc] .intro-section-td { background-color: #161B22 !important; }
-        [data-ogsc] .takeaways-bg { background-color: #161B22 !important; }
-        [data-ogsc] .takeaway-card-table, [data-ogsc] .takeaway-card-cell { background-color: #0D1117 !important; border-color: #2D3748 !important; }
-        [data-ogsc] .takeaway-title { color: #E8EEF4 !important; }
-        [data-ogsc] .takeaway-desc { color: #94A3B8 !important; }
-        [data-ogsc] .sec-cta-section-td { background-color: #161B22 !important; }
-        [data-ogsc] .speakers-bg { background-color: #1C2128 !important; }
-        [data-ogsc] .speaker-card-inner { background-color: #0D1117 !important; border-color: #2D3748 !important; }
-        [data-ogsc] .speaker-name { color: #E8EEF4 !important; }
-        [data-ogsc] .speaker-role { color: #4AC4D6 !important; }
-        [data-ogsc] .section-heading { color: #E8EEF4 !important; }
-        [data-ogsc] .credit-bg { background-color: #1C2128 !important; }
-        [data-ogsc] .body-copy-p { color: #CBD5E1 !important; }
-        [data-ogsc] .ve-callout-td { background-color: #1C2128 !important; border-color: #2D3748 !important; }
-        [data-ogsc] .ve-callout-td p { color: #CBD5E1 !important; }
-        [data-ogsc] .ve-callout-td strong { color: #E8EEF4 !important; }
-        [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3 { color: #E8EEF4 !important; }
-        [data-ogsc] p { color: #94A3B8 !important; }
-
+    </style>
+    <style>
+        /* === RESPONSIVE === */
         @media screen and (max-width: 600px) {
             .email-outer-td { padding-top: 0 !important; padding-bottom: 0 !important; }
             .main-container { width: 100% !important; max-width: 100% !important; }
-            .hero-section-td { padding: 24px 20px 28px 20px !important; }
-            .hero-title { font-size: 25px !important; line-height: 33px !important; }
+            .m-pad { padding-left: 20px !important; padding-right: 20px !important; }
+            .hero-title { font-size: 27px !important; line-height: 34px !important; }
             .hero-meta { font-size: 13px !important; }
-            .utility-bar-td { font-size: 11px !important; padding: 8px 16px !important; }
-            .takeaways-td { padding: 24px 16px !important; }
-            .speakers-section-td { padding: 28px 16px 24px 16px !important; }
-            .speaker-card-div { width: 100% !important; display: block !important; padding: 8px 0 !important; }
-            .sponsor-section-td { padding: 24px 12px 20px 12px !important; }
+            .speakers-section-td { padding: 32px 12px 28px 12px !important; }
+            .speaker-card-div { display: block !important; width: 100% !important; margin: 8px auto !important; }
+            .stack-cell { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+            .tile-cell { display: block !important; width: auto !important; margin: 0 0 10px 0 !important; }
+            .frame-td { padding-left: 10px !important; padding-right: 10px !important; }
+            .ticket-stub { border-right: 0 !important; border-bottom: 2px dashed #CBD5E1 !important; border-radius: 18px 18px 0 0 !important; }
+            .ticket-main { border-radius: 0 0 18px 18px !important; }
+            .split-left { border-radius: 18px 18px 0 0 !important; }
+            .split-right { border-radius: 0 0 18px 18px !important; }
             .credit-stack-table, .credit-stack-table tbody, .credit-stack-table tr, .credit-badge-cell, .credit-text-cell { display: block !important; width: 100% !important; }
             .credit-badge-cell { text-align: center !important; padding-bottom: 12px !important; }
             .credit-text-cell { text-align: center !important; padding-left: 0 !important; padding-top: 0 !important; }
             .footer-inner-td { padding: 28px 16px 0 16px !important; }
-            .grid-2col-cell { display: block !important; width: 100% !important; box-sizing: border-box !important; padding: 6px 0 !important; }
-            .split-hero-cell { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; padding: 28px 20px !important; }
-            .split-hero-parent { padding: 0 !important; }
         }
         @media screen and (max-width: 400px) {
-            .hero-title { font-size: 21px !important; line-height: 29px !important; }
+            .hero-title { font-size: 23px !important; line-height: 30px !important; }
         }
+    </style>
+    <style>
+        /* === DARK MODE === */
+${darkCss(p)}
     </style>
     <!--[if mso]>
     <style type="text/css">
-        body, table, td, p, a, h1, h2, h3 { font-family: Arial, sans-serif !important; }
+        body, table, td, p, a, h1, h2, h3, span { font-family: Arial, sans-serif !important; }
+        .serif { font-family: Georgia, 'Times New Roman', serif !important; }
     </style>
     <![endif]-->
 </head>`;
@@ -211,386 +207,6 @@ const HEADER_BAR = (label) => `<tr>
                         </td>
                     </tr>`;
 
-// Speakers section wrapper
-const SPEAKERS_SECTION = (bgColor = '#F8F9FA') => `<tr>
-                        <td align="center" valign="top" class="speakers-bg speakers-section-td"
-                            style="background-color:${bgColor};padding:36px 24px 32px 24px;">
-                            <p
-                                style="margin:0 0 6px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;text-align:center;">
-                                Your expert hosts</p>
-                            <h2 class="section-heading"
-                                style="margin:0 0 28px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:19px;font-weight:800;color:#2A343E;text-align:center;line-height:27px;">
-                                Learn directly from industry leaders
-                            </h2>
-                            <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><![endif]-->
-
-                         {{HOSTS_SECTION}}
-                            <!--[if mso]></tr></table><![endif]-->
-
-                        </td>
-                    </tr>`;
-
-
-// =====================================================
-// VARIANT-SPECIFIC LAYOUT BUILDERS
-// =====================================================
-
-// --- VARIANT A: "Classic Editorial" (original design) ---
-// Centered gradient hero, numbered takeaway badges, inline speaker cards
-
-function classicHero(gradient, bgFallback, ctaTextColor, ctaUrl, ctaText, metaLine) {
-  return `<tr>
-                        <td align="center" valign="top" class="hero-section-td hero-bg"
-                            style="background: linear-gradient(160deg, ${gradient}); background-color: ${bgFallback}; padding: 24px 36px 28px 36px;">
-                            <h1 class="hero-title"
-                                style="margin:0 0 8px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:32px;font-weight:900;color:#FFFFFF;line-height:41px;text-align:center;letter-spacing:-0.3px;">
-                               {{TITLE}}
-                            </h1>
-                            ${metaLine}
-                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:4px;">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;background:#FFFFFF;"
-                                        bgcolor="#FFFFFF">
-                                        <a href="${ctaUrl}"
-                                            target="_blank"${ctaUrl.includes('__STORY_ID__') ? '' : ' data-cta="1" data-captcha="1"'}
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:${ctaTextColor};text-decoration:none;border-radius:999px;padding:13px 42px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
-                                            ${ctaText}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-function classicTakeaways(colors = ['#EF4A3D','#4AC4D6','#94C83D','#FDB414'], textColors = ['#FFFFFF','#0D1F28','#1A2A00','#1A1000']) {
-  return `<tr>
-                        <td align="left" valign="top" class="takeaways-bg takeaways-td"
-                            style="background-color:#FFFFFF;padding:14px 36px 32px 36px;">
-                            <p style="margin:0 0 18px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">
-                                What You'll Learn</p>
-${[1,2,3,4].map((n,i) => `
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:${i<3?'14':'0'}px;">
-                                <tr>
-                                    <td width="36" valign="middle" align="center" style="vertical-align:middle;padding:0;width:36px;">
-                                        <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                                            <tr>
-                                                <td align="center" valign="middle"
-                                                    style="background-color:${colors[i]};border-radius:6px;width:26px;height:26px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;color:${textColors[i]};line-height:26px;text-align:center;mso-line-height-rule:exactly;vertical-align:middle;">
-                                                    0${n}
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td valign="middle" style="padding-left:12px;vertical-align:middle;">
-                                        <span class="takeaway-title"
-                                            style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">{{LEARN${n}}}</span>
-                                    </td>
-                                </tr>
-                            </table>`).join('')}
-
-                        </td>
-                    </tr>`;
-}
-
-function secondaryCTA(href, borderColor, textColor, label) {
-  return `<tr>
-                        <td align="center" valign="top" class="sec-cta-section-td" style="background-color:#FFFFFF;padding:0 36px 32px 36px;">
-                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin:0 auto;">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;border:2px solid ${borderColor};"
-                                        bgcolor="#FFFFFF">
-                                        <a href="${href}" data-cta="1" data-captcha="1" target="_blank"
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:${textColor};text-decoration:none;border-radius:999px;padding:10px 28px;display:inline-block;font-weight:700;letter-spacing:0.3px;mso-padding-alt:0;">
-                                            ${label}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-// --- VARIANT B: "Bold Magazine" ---
-// Dark full-width hero, left-aligned oversized title, colored left-border takeaway cards, full-width gradient CTA
-
-function boldHero(bgColor, accentColor, ctaUrl, ctaText, metaLine) {
-  return `<tr>
-                        <td align="left" valign="top" class="hero-section-td hero-bg"
-                            style="background-color:${bgColor}; padding: 40px 36px 36px 36px;">
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                    <td style="padding:0;">
-                                        <table border="0" cellpadding="0" cellspacing="0"><tr><td style="background-color:${accentColor};width:40px;height:4px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-                                    </td>
-                                </tr>
-                                <tr><td height="16" style="font-size:0;line-height:0;">&nbsp;</td></tr>
-                            </table>
-                            <h1 class="hero-title"
-                                style="margin:0 0 12px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:34px;font-weight:900;color:#FFFFFF;line-height:42px;text-align:left;letter-spacing:-0.5px;">
-                               {{TITLE}}
-                            </h1>
-                            ${metaLine}
-                            <table border="0" cellspacing="0" cellpadding="0" style="margin-top:20px;">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;background:${accentColor};"
-                                        bgcolor="${accentColor}">
-                                        <a href="${ctaUrl}"
-                                            target="_blank"${ctaUrl.includes('__STORY_ID__') ? '' : ' data-cta="1" data-captcha="1"'}
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:14px 38px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
-                                            ${ctaText}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-function boldIntro(accentColor) {
-  return `<tr>
-                        <td align="center" valign="top" class="intro-section-td" style="background-color: #FFFFFF; padding: 40px 36px 6px 36px;">
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                    <td width="4" style="background-color:${accentColor};width:4px;padding:0;" valign="top">&nbsp;</td>
-                                    <td style="padding:0 0 0 20px;" valign="top">
-                                        {{INTRO}}
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-function boldTakeaways(colors = ['#EF4A3D','#4AC4D6','#94C83D','#FDB414']) {
-  return `<tr>
-                        <td align="left" valign="top" class="takeaways-bg takeaways-td"
-                            style="background-color:#FFFFFF;padding:14px 36px 32px 36px;">
-                            <p style="margin:0 0 18px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">
-                                What You'll Learn</p>
-${[1,2,3,4].map((n,i) => `
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:${i<3?'12':'0'}px;">
-                                <tr>
-                                    <td class="takeaway-card-cell" style="border-left:4px solid ${colors[i]};padding:10px 0 10px 16px;background-color:#F8FAFC;">
-                                        <span class="takeaway-title"
-                                            style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">{{LEARN${n}}}</span>
-                                    </td>
-                                </tr>
-                            </table>`).join('')}
-
-                        </td>
-                    </tr>`;
-}
-
-function boldSecondaryCTA(href, gradientFrom, gradientTo, label) {
-  return `<tr>
-                        <td align="center" valign="top" class="sec-cta-section-td" style="background-color:#FFFFFF;padding:0 36px 32px 36px;">
-                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                                <tr>
-                                    <td align="center" style="border-radius:10px;background:linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%);">
-                                        <a href="${href}" data-cta="1" data-captcha="1" target="_blank"
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:10px;padding:14px 28px;display:block;font-weight:700;letter-spacing:0.3px;text-align:center;mso-padding-alt:0;">
-                                            ${label}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-// --- VARIANT C: "Minimal Clean" ---
-// Solid-color hero, thin divider, checkmark takeaways, generous whitespace
-
-function minimalHero(solidColor, ctaUrl, ctaText, ctaBgColor, metaLine) {
-  return `<tr>
-                        <td align="center" valign="top" class="hero-section-td hero-bg"
-                            style="background-color:${solidColor}; padding: 44px 36px 40px 36px;">
-                            <h1 class="hero-title"
-                                style="margin:0 0 10px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:30px;font-weight:900;color:#FFFFFF;line-height:40px;text-align:center;letter-spacing:-0.3px;">
-                               {{TITLE}}
-                            </h1>
-                            ${metaLine}
-                            <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin-top:8px;"><tr><td style="background-color:rgba(255,255,255,0.3);height:1px;width:60px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-                            <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:20px;">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;background:${ctaBgColor};"
-                                        bgcolor="${ctaBgColor}">
-                                        <a href="${ctaUrl}"
-                                            target="_blank"${ctaUrl.includes('__STORY_ID__') ? '' : ' data-cta="1" data-captcha="1"'}
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:13px 42px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
-                                            ${ctaText}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-function minimalTakeaways(checkColor = '#4AC4D6') {
-  return `<tr>
-                        <td align="left" valign="top" class="takeaways-bg takeaways-td"
-                            style="background-color:#FFFFFF;padding:14px 36px 32px 36px;">
-                            <p style="margin:0 0 18px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">
-                                What You'll Learn</p>
-${[1,2,3,4].map((n,i) => `
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:${i<3?'14':'0'}px;">
-                                <tr>
-                                    <td width="28" valign="top" align="center" style="padding:2px 0 0 0;width:28px;">
-                                        <span style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:${checkColor};line-height:22px;">&#10003;</span>
-                                    </td>
-                                    <td valign="middle" style="padding-left:10px;vertical-align:middle;">
-                                        <span class="takeaway-title"
-                                            style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#2A343E;line-height:22px;display:block;">{{LEARN${n}}}</span>
-                                    </td>
-                                </tr>
-                            </table>`).join('')}
-
-                        </td>
-                    </tr>`;
-}
-
-function minimalSecondaryCTA(href, bgColor, textColor, label) {
-  return `<tr>
-                        <td align="center" valign="top" class="sec-cta-section-td" style="background-color:#FFFFFF;padding:0 36px 32px 36px;">
-                            <table border="0" cellspacing="0" cellpadding="0" align="center">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;background:${bgColor};"
-                                        bgcolor="${bgColor}">
-                                        <a href="${href}" data-cta="1" data-captcha="1" target="_blank"
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:${textColor};text-decoration:none;border-radius:999px;padding:12px 36px;display:inline-block;font-weight:700;letter-spacing:0.3px;mso-padding-alt:0;">
-                                            ${label}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-// --- VARIANT D: "Split Accent" ---
-// 60/40 split hero, 2×2 grid takeaway cards, gradient CTA band
-
-function splitHero(accentColor, ctaUrl, ctaText, ctaBtnColor, metaLine) {
-  const btnLabel = ctaText.includes('Register Free') ? 'Register Free &rarr;' : ctaText;
-  const rightMeta = metaLine
-    ? `<p class="hero-meta" style="margin:0 0 16px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#FFFFFF;line-height:20px;letter-spacing:0.2px;text-align:center;">
-        {{SPLIT_DATE_TIME}}<br><span style="font-weight:400;font-size:12px;opacity:0.9;">Free to Attend</span>
-       </p>`
-    : '';
-
-  return `<tr>
-                        <td align="center" valign="top" class="hero-section-td split-hero-parent hero-bg" style="padding:0;">
-                            <!--[if mso]><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="340" valign="middle" style="padding:32px 28px;"><![endif]-->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                    <!-- LEFT COLUMN: Webcast Title -->
-                                    <td class="split-hero-cell" width="55%" valign="middle" style="box-sizing:border-box;padding:36px 28px 36px 32px;background-color:#F8FAFC;">
-                                        <h1 class="hero-title"
-                                            style="margin:0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:26px;font-weight:900;color:#2A343E;line-height:35px;text-align:left;letter-spacing:-0.3px;">
-                                           {{TITLE}}
-                                        </h1>
-                                    </td>
-                                    <!--[if mso]></td><td width="260" valign="middle" style="background-color:${accentColor};padding:32px 20px;"><![endif]-->
-                                    <!-- RIGHT COLUMN: Date/Time + CTA Button -->
-                                    <td class="split-hero-cell" width="45%" valign="middle" style="box-sizing:border-box;background-color:${accentColor};padding:36px 20px;text-align:center;">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            ${rightMeta ? `<tr><td align="center">${rightMeta}</td></tr>` : ''}
-                                            <tr>
-                                                <td align="center">
-                                                    <table border="0" cellspacing="0" cellpadding="0" align="center">
-                                                        <tr>
-                                                            <td align="center" style="border-radius:999px;background:#FFFFFF;" bgcolor="#FFFFFF">
-                                                                <a href="${ctaUrl}"
-                                                                    target="_blank"${ctaUrl.includes('__STORY_ID__') ? '' : ' data-cta="1" data-captcha="1"'}
-                                                                    style="font-size:13px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:${accentColor};text-decoration:none;border-radius:999px;padding:12px 24px;display:inline-block;font-weight:700;letter-spacing:0.3px;white-space:nowrap;mso-padding-alt:0;">
-                                                                    ${btnLabel}
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!--[if mso]></td></tr></table><![endif]-->
-                        </td>
-                    </tr>`;
-}
-
-function splitTakeaways(colors = ['#EF4A3D','#4AC4D6','#94C83D','#FDB414']) {
-  return `<tr>
-                        <td align="left" valign="top" class="takeaways-bg takeaways-td"
-                            style="background-color:#FFFFFF;padding:14px 36px 32px 36px;">
-                            <p style="margin:0 0 18px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#A0AEC0;text-transform:uppercase;letter-spacing:2px;">
-                                What You'll Learn</p>
-${[1,2,3,4].map((n,i) => `
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-table" style="margin-bottom:${i<3?'12':'0'}px;background-color:#F8FAFC;border-radius:8px;overflow:hidden;">
-                                <tr><td style="background-color:${colors[i]};height:2px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                                <tr>
-                                    <td class="takeaway-card-cell" style="padding:14px 16px;">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tr>
-                                                <td width="20" valign="top" style="width:20px;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:20px;font-weight:700;color:${colors[i]};line-height:23px;padding:0;">&bull;</td>
-                                                <td valign="top" style="padding:0;">
-                                                    <span class="takeaway-title" style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#2A343E;line-height:23px;display:block;">{{LEARN${n}}}</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>`).join('')}
-
-                        </td>
-                    </tr>`;
-}
-
-function splitSecondaryCTA(href, bgFrom, bgTo, label) {
-  return `<tr>
-                        <td align="center" valign="top" class="sec-cta-section-td" style="background-color:#F0F2F5;padding:24px 36px;">
-                            <table border="0" cellspacing="0" cellpadding="0" align="center">
-                                <tr>
-                                    <td align="center" style="border-radius:999px;background:linear-gradient(135deg, ${bgFrom} 0%, ${bgTo} 100%);">
-                                        <a href="${href}" data-cta="1" data-captcha="1" target="_blank"
-                                            style="font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:13px 36px;display:inline-block;font-weight:700;letter-spacing:0.3px;mso-padding-alt:0;">
-                                            ${label}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>`;
-}
-
-// Speakers section for Bold (dark bg)
-const SPEAKERS_DARK = `<tr>
-                        <td align="center" valign="top" class="speakers-bg speakers-section-td"
-                            style="background-color:#1C2631;padding:36px 24px 32px 24px;">
-                            <p
-                                style="margin:0 0 6px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#718096;text-transform:uppercase;letter-spacing:2px;text-align:center;">
-                                Your expert hosts</p>
-                            <h2 class="section-heading"
-                                style="margin:0 0 28px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:19px;font-weight:800;color:#FFFFFF;text-align:center;line-height:27px;">
-                                Learn directly from industry leaders
-                            </h2>
-                            <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><![endif]-->
-
-                         {{HOSTS_SECTION}}
-                            <!--[if mso]></tr></table><![endif]-->
-
-                        </td>
-                    </tr>`;
-
-// Intro section (white bg, standard)
-const INTRO_SECTION = `<tr>
-                        <td align="center" valign="top" class="intro-section-td" style="background-color: #FFFFFF; padding: 40px 36px 6px 36px;">
-                            {{INTRO}}
-                        </td>
-                    </tr>`;
-
 // VE Callout section
 function veCallout(bgColor, borderColor, btnColor) {
   return `<tr>
@@ -604,7 +220,7 @@ function veCallout(bgColor, borderColor, btnColor) {
                             </p>
                             <table border="0" cellspacing="0" cellpadding="0" align="center">
                                 <tr>
-                                    <td align="center" style="border-radius:999px;background:${btnColor};"
+                                    <td align="center" style="border-radius:999px;background:${btnColor};mso-padding-alt:11px 30px;"
                                         bgcolor="${btnColor}">
                                         <a href="__VE_CTA__" data-cta="1" target="_blank"
                                             style="font-size:13px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:11px 30px;display:inline-block;font-weight:700;letter-spacing:0.4px;mso-padding-alt:0;">
@@ -746,32 +362,583 @@ const EVENTS = {
   }
 };
 
-// Color themes per event type for each variant
-const THEMES = {
-  demo: {
-    A: { gradient: '#C01060 0%, #D44030 100%', bgFallback: '#C01060', ctaText: '#C01060', secBorder: '#02588E', heroDark: '#4A0D2A' },
-    B: { bgColor: '#0F172A', accent: '#4AC4D6', gradFrom: '#0F172A', gradTo: '#1E293B', heroDark: '#0F172A' },
-    C: { solid: '#02588E', ctaBg: '#C01060', checkColor: '#02588E', secBg: '#02588E', heroDark: '#02304E' },
-    D: { accent: '#C01060', ctaBtn: '#C01060', secFrom: '#C01060', secTo: '#EF4A3D', heroDark: '#161B22' },
+// =====================================================
+// DESIGN SYSTEM
+// Every variant shares the same copy, placeholders, links, CTA attributes and
+// section order; only layout and styling differ.
+//
+// Client support rules followed throughout:
+// - Table layout, inline styles, bgcolor fallback behind every gradient
+// - Solid hex colors only (no rgba), so classic Outlook never drops a color
+// - Buttons carry mso-padding-alt on the cell so Outlook keeps their size
+// - Light sections tag themselves with dm-* classes for dark mode
+// - Multi-column rows stack on phones via stack-cell / tile-cell
+// =====================================================
+
+const FONT = "'Roboto',Arial,Helvetica,sans-serif";
+const SERIF = "Georgia,'Times New Roman',Times,serif";
+const BRAND = ['#EF4A3D', '#FDB414', '#94C83D', '#4AC4D6'];
+const BRAND_TEXT = ['#FFFFFF', '#1A1000', '#1A2A00', '#0D1F28'];
+const ON_BRIGHT = '#0B1220';
+
+// Per-event colors; *Dm values are the dark-mode counterparts
+const PALETTES = {
+  demo:       { accent: '#C01060', deep: '#3B0A24', tint: '#FCE8F1', line: '#F6C9DC', bright: '#FDB414', glowA: '#FDE2EE', glowB: '#FFEBD9', soft: '#F7D3E3', accentDm: '#F48FB9', tintDm: '#3A1528' },
+  ondemand:   { accent: '#0F4A40', deep: '#062420', tint: '#E4F2EE', line: '#C3E1D9', bright: '#94C83D', glowA: '#E1F3EC', glowB: '#E6F6F9', soft: '#CDE6DF', accentDm: '#6FD1B8', tintDm: '#10302A' },
+  standalone: { accent: '#1E7E8C', deep: '#0A262A', tint: '#E3F4F6', line: '#C2E5EA', bright: '#4AC4D6', glowA: '#E0F5F8', glowB: '#EAF1FF', soft: '#CBE8EC', accentDm: '#6FD6E3', tintDm: '#0F3136' },
+  virtual:    { accent: '#02588E', deep: '#021F33', tint: '#E5F0F8', line: '#C4DCEE', bright: '#FDB414', glowA: '#E3EEFB', glowB: '#FFF4DC', soft: '#CFE2F1', accentDm: '#7CC4F5', tintDm: '#0D2A40' },
+};
+
+// Primary CTA: registration links get no tracking attributes, all others do
+const ctaAttrs = (url) => (url.includes('__STORY_ID__') ? '' : ' data-cta="1" data-captcha="1"');
+const SEC_ATTRS = ' data-cta="1" data-captcha="1"';
+const cls = (c) => (c ? ` class="${c}"` : '');
+
+// Hero meta copy (same text as EVENTS[*].metaLine); empty for OnDemand
+const heroMeta = (ev, style, c = '') => (ev.metaLine
+  ? `<p${cls(`hero-meta ${c}`.trim())} style="${style}">{{DATE_TIME}} &nbsp;&middot;&nbsp; Free to Attend</p>`
+  : '');
+const splitMeta = (ev, dateStyle, freeStyle, dateCls = '', freeCls = '') => (ev.metaLine
+  ? `<p${cls(`hero-meta ${dateCls}`.trim())} style="${dateStyle}">{{SPLIT_DATE_TIME}}</p>
+                                        <p${cls(freeCls)} style="${freeStyle}">Free to Attend</p>`
+  : '');
+
+function btn({ href, attrs, bg, color, label, radius = '999px', pad = '14px 34px', size = 14, border = '', center = false, block = false, font = FONT, tdCls = '', aCls = '' }) {
+  return `<table role="presentation" border="0" cellspacing="0" cellpadding="0"${block ? ' width="100%"' : ''}${center ? ' align="center"' : ''} style="margin:0${center ? ' auto' : ''};">
+                                <tr>
+                                    <td align="center" bgcolor="${bg}"${cls(tdCls)} style="border-radius:${radius};background-color:${bg};${border}mso-padding-alt:${pad};">
+                                        <a href="${href}" target="_blank"${attrs}${cls(aCls)}
+                                            style="font-size:${size}px;font-family:${font};color:${color};text-decoration:none;border-radius:${radius};padding:${pad};display:${block ? 'block' : 'inline-block'};font-weight:700;letter-spacing:0.3px;text-align:center;mso-padding-alt:0;">
+                                            ${label}
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>`;
+}
+const primaryBtn = (ev, ctaText, opts) => btn({ href: ev.ctaUrl, attrs: ctaAttrs(ev.ctaUrl), label: ctaText, ...opts });
+const secondaryBtn = (ev, opts) => btn({ href: ev.secondaryCtaUrl, attrs: SEC_ATTRS, label: ev.secondaryCtaLabel, ...opts });
+
+const bar = (color, w, h, extra = '') => `<table role="presentation" border="0" cellpadding="0" cellspacing="0"${extra.includes('center') ? ' align="center"' : ''}><tr><td bgcolor="${color}" style="background-color:${color};width:${w}px;height:${h}px;border-radius:${Math.ceil(h / 2)}px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>`;
+const brandDots = (center = false) => `<table role="presentation" border="0" cellpadding="0" cellspacing="0"${center ? ' align="center"' : ''}><tr>${BRAND.map((c) => `<td style="padding:0 3px;"><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td bgcolor="${c}" style="background-color:${c};width:8px;height:8px;border-radius:4px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table></td>`).join('')}</tr></table>`;
+const rule = (color, top = 0, weight = 1) => `<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top:${top}px;"><tr><td class="dm-line" style="border-top:${weight}px solid ${color};font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>`;
+
+const learnHeading = (color, extra = '', c = 'dm-muted') => `<p${cls(c)} style="margin:0 0 18px 0;font-family:${FONT};font-size:11px;font-weight:700;color:${color};text-transform:uppercase;letter-spacing:2px;${extra}">What You'll Learn</p>`;
+const learnTitle = (n, color = '#0F172A', extra = '') => `<span class="takeaway-title" style="font-family:${FONT};font-size:15px;font-weight:700;color:${color};line-height:23px;display:block;${extra}">{{LEARN${n}}}</span>`;
+
+// Row of four takeaways; `row(n, i, isLast)` returns the inner <tr> content
+const learnRows = (row) => [1, 2, 3, 4].map((n, i) => `
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>${row(n, i, n === 4)}</tr>
+                            </table>`).join('');
+
+// 2×2 grid; the tile is the cell itself so both tiles in a row share a height
+function learnGrid(tile) {
+  const cell = (i) => `<td class="tile-cell takeaway-card-cell" width="50%" valign="top" ${tile(i)}</td>`;
+  return `<table role="presentation" border="0" cellpadding="0" cellspacing="10" width="100%" style="border-collapse:separate;">
+                                <tr>${cell(0)}${cell(1)}</tr>
+                                <tr>${cell(2)}${cell(3)}</tr>
+                            </table>`;
+}
+
+// Standard white section row
+const section = (inner, { bg = '#FFFFFF', pad = '0 40px', align = 'left', c = 'dm-surface' } = {}) => `<tr>
+                        <td align="${align}" valign="top"${cls(`${c} m-pad`.trim())} bgcolor="${bg}" style="background-color:${bg};padding:${pad};">
+                            ${inner}
+                        </td>
+                    </tr>`;
+
+const introSection = (bg = '#FFFFFF', pad = '40px 40px 8px 40px', c = '') => `<tr>
+                        <td align="left" valign="top" class="intro-section-td m-pad${c ? ` ${c}` : ''}" bgcolor="${bg}" style="background-color:${bg};padding:${pad};">
+                            {{INTRO}}
+                        </td>
+                    </tr>`;
+
+function speakersBlock({ bg, eyebrow = '#94A3B8', heading = '#0F172A', headingFont = FONT, headingSize = 20, headingWeight = 800, headingCls = '' }) {
+  return `<tr>
+                        <td align="center" valign="top" class="speakers-bg speakers-section-td" bgcolor="${bg}"
+                            style="background-color:${bg};padding:44px 24px 40px 24px;">
+                            <p class="dm-muted"
+                                style="margin:0 0 6px 0;font-family:${FONT};font-size:11px;font-weight:700;color:${eyebrow};text-transform:uppercase;letter-spacing:2px;text-align:center;">
+                                Your expert hosts</p>
+                            <h2${cls(`section-heading ${headingCls}`.trim())}
+                                style="margin:0 0 26px 0;font-family:${headingFont};font-size:${headingSize}px;font-weight:${headingWeight};color:${heading};text-align:center;line-height:28px;">
+                                Learn directly from industry leaders
+                            </h2>
+                            <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><![endif]-->
+
+                         {{HOSTS_SECTION}}
+                            <!--[if mso]></tr></table><![endif]-->
+
+                        </td>
+                    </tr>`;
+}
+
+// Host card shell: 260px inline-block cards; the App wraps them in 2-column Outlook cells
+const hostShell = (bg, innerStyle, inner) => `
+<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width:260px;margin:8px 6px;">
+    <tr>
+        <td style="padding:0;">
+            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%"${bg ? ` bgcolor="${bg}"` : ''} style="max-width:260px;min-width:260px;${bg ? `background-color:${bg};` : ''}${innerStyle}" class="speaker-card-inner">
+${inner}
+            </table>
+        </td>
+    </tr>
+</table>
+`;
+const hostImg = (size, radius, extra = '') => `<img alt="{{H_ALT}}" src="{{H_IMG}}" width="${size}" height="${size}" style="display:block;width:${size}px;height:${size}px;object-fit:cover;border-radius:${radius};${extra}" />`;
+const hostName = (color, extra = '', c = '') => `<span${cls(`speaker-name ${c}`.trim())} style="display:block;font-family:${FONT};font-size:16px;font-weight:800;color:${color};line-height:22px;${extra}">{{H_NAME}}</span>`;
+const hostRole = (color, extra = '') => `<span class="speaker-role" style="display:block;font-family:${FONT};font-size:13px;font-weight:600;color:${color};line-height:19px;margin-top:4px;${extra}">{{H_TITLE}}</span>`;
+const hostCentered = (img, name, role, pad = '26px 18px 24px 18px', top = '') => `
+                <tr>
+                    <td align="center" style="padding:${pad};">
+                        ${top}${img}
+                        ${name}
+                        ${role}
+                    </td>
+                </tr>`;
+const hostRow = (img, imgW, name, role, pad = 16) => `
+                <tr>
+                    <td style="padding:0;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="${imgW}" valign="middle" style="width:${imgW}px;padding:${pad}px 0 ${pad}px ${pad}px;">${img}</td>
+                                <td valign="middle" style="padding:${pad}px ${pad}px ${pad}px 14px;">
+                                    ${name}
+                                    ${role}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>`;
+
+// Reuses the existing reminder copy; only swaps its band and link colors
+const restyleReminder = (html, bg, link) => html
+  .replace('background-color:#E8ECEF;', `background-color:${bg};`)
+  .replace('color:#02588E;text-decoration:underline;', `color:${link};text-decoration:underline;`);
+
+// ---------------------------------------------------------------------------
+// VARIANTS
+// cta: 'save' → "Save My Free Spot", 'register' → "Register Free" (OnDemand always "View OnDemand")
+// ---------------------------------------------------------------------------
+const VARIANTS = {
+  // --- A: "Classic Editorial" — centered gradient hero, numbered brand badges
+  A: {
+    meta: { id: 'classic', label: 'Classic Editorial' },
+    cta: 'save',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="center" valign="top" class="m-pad" bgcolor="${p.accent}"
+                            style="background-color:${p.accent};background-image:linear-gradient(160deg, ${p.accent} 0%, ${p.deep} 100%);padding:52px 44px 48px 44px;text-align:center;">
+                            ${brandDots(true)}
+                            <h1 class="hero-title"
+                                style="margin:22px 0 14px 0;font-family:${FONT};font-size:34px;font-weight:900;color:#FFFFFF;line-height:42px;text-align:center;letter-spacing:-0.5px;">
+                               {{TITLE}}
+                            </h1>
+                            ${heroMeta(ev, `margin:0 0 28px 0;font-family:${FONT};font-size:15px;font-weight:500;color:#F1F5F9;line-height:22px;text-align:center;`)}
+                            ${primaryBtn(ev, ctaText, { bg: '#FFFFFF', color: p.accent, pad: '15px 40px', center: true })}
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FFFFFF', '44px 44px 8px 44px', 'dm-surface'),
+    takeaways: () => section(`${learnHeading('#64748B')}
+${learnRows((n, i, last) => `
+                                    <td width="34" valign="top" style="width:34px;padding:0 0 ${last ? 0 : 16}px 0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="center" valign="middle" bgcolor="${BRAND[i]}" style="background-color:${BRAND[i]};border-radius:8px;width:30px;height:30px;font-family:${FONT};font-size:12px;font-weight:800;color:${BRAND_TEXT[i]};line-height:30px;text-align:center;">0${n}</td></tr></table>
+                                    </td>
+                                    <td valign="middle" style="padding:0 0 ${last ? 0 : 16}px 14px;">${learnTitle(n, '#1E293B')}</td>`)}`, { pad: '24px 44px 32px 44px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev, p) => section(secondaryBtn(ev, { bg: '#FFFFFF', color: p.accent, border: `border:2px solid ${p.accent};`, pad: '12px 32px', center: true, tdCls: 'dm-surface', aCls: 'dm-accent' }), { pad: '4px 44px 44px 44px', align: 'center', c: 'sec-cta-section-td dm-surface' }),
+    speakers: () => speakersBlock({ bg: '#F6F8FB' }),
+    ve: (p) => veCallout(p.tint, p.line, p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F6F8FB', p.accent),
+    hostCard: (p) => hostShell('#FFFFFF', 'border:1px solid #E6EBF1;border-radius:16px;', hostCentered(
+      hostImg(88, '50%', 'margin:0 auto 14px auto;border:3px solid #ECEEF0;'), hostName('#0F172A'), hostRole(p.accent))),
   },
-  ondemand: {
-    A: { gradient: '#0F4A40 0%, #0A2E28 50%, #081916 100%', bgFallback: '#0F4A40', ctaText: '#0F4A40', secBorder: '#02588E', heroDark: '#0F3D34' },
-    B: { bgColor: '#1A1A2E', accent: '#EF4A3D', gradFrom: '#EF4A3D', gradTo: '#C01060', heroDark: '#1A1A2E' },
-    C: { solid: '#1E7E8C', ctaBg: '#0F4A40', checkColor: '#1E7E8C', secBg: '#1E7E8C', heroDark: '#0F3D34' },
-    D: { accent: '#0F4A40', ctaBtn: '#0F4A40', secFrom: '#0F4A40', secTo: '#1E7E8C', heroDark: '#161B22' },
+
+  // --- B: "Bold Magazine" — navy hero, oversized left title, colored left-border cards
+  B: {
+    meta: { id: 'bold', label: 'Bold Magazine' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="left" valign="top" class="m-pad" bgcolor="#0F172A"
+                            style="background-color:#0F172A;padding:56px 44px 48px 44px;">
+                            ${bar(p.bright, 44, 4)}
+                            <h1 class="hero-title"
+                                style="margin:22px 0 14px 0;font-family:${FONT};font-size:38px;font-weight:900;color:#FFFFFF;line-height:44px;text-align:left;letter-spacing:-1px;">
+                               {{TITLE}}
+                            </h1>
+                            ${heroMeta(ev, `margin:0 0 30px 0;font-family:${FONT};font-size:15px;font-weight:500;color:#A9B4C4;line-height:22px;`)}
+                            ${primaryBtn(ev, ctaText, { bg: p.bright, color: ON_BRIGHT, pad: '15px 36px' })}
+                        </td>
+                    </tr>`,
+    intro: (ev, p) => section(`<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="4" bgcolor="${p.accent}" style="width:4px;background-color:${p.accent};font-size:0;line-height:0;">&nbsp;</td>
+                                    <td style="padding:0 0 0 20px;">
+                                        {{INTRO}}
+                                    </td>
+                                </tr>
+                            </table>`, { pad: '44px 44px 8px 44px', c: 'intro-section-td dm-surface' }),
+    takeaways: () => section(`${learnHeading('#64748B')}
+${learnRows((n, i, last) => `
+                                    <td style="padding:0 0 ${last ? 0 : 10}px 0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr><td width="4" bgcolor="${BRAND[i]}" style="width:4px;background-color:${BRAND[i]};font-size:0;line-height:0;">&nbsp;</td><td class="takeaway-card-cell" bgcolor="#F6F8FB" style="background-color:#F6F8FB;border-radius:0 10px 10px 0;padding:14px 18px;">${learnTitle(n, '#1E293B')}</td></tr>
+                                        </table>
+                                    </td>`)}`, { pad: '24px 44px 28px 44px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev) => section(secondaryBtn(ev, { bg: '#0F172A', color: '#FFFFFF', radius: '12px', pad: '16px 28px', block: true, tdCls: 'dm-btn-invert' }), { pad: '4px 44px 44px 44px', c: 'sec-cta-section-td dm-surface' }),
+    speakers: () => speakersBlock({ bg: '#0F172A', eyebrow: '#8B97A8', heading: '#FFFFFF' }),
+    ve: (p) => veCallout('#F1F5F9', '#E2E8F0', p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F1F5F9', p.accent),
+    hostCard: (p) => hostShell('#1E293B', 'border:1px solid #334155;border-radius:12px;', hostRow(
+      hostImg(64, '12px'), 80, hostName('#FFFFFF', 'font-size:15px;line-height:20px;'), hostRole(p.bright, 'font-size:12px;line-height:18px;'))),
   },
-  standalone: {
-    A: { gradient: '#1E7E8C 0%, #0A262A 100%', bgFallback: '#1E7E8C', ctaText: '#1E7E8C', secBorder: '#02588E', heroDark: '#0F3D34' },
-    B: { bgColor: '#1B2838', accent: '#94C83D', gradFrom: '#508C1E', gradTo: '#94C83D', heroDark: '#1B2838' },
-    C: { solid: '#2A343E', ctaBg: '#EF4A3D', checkColor: '#EF4A3D', secBg: '#2A343E', heroDark: '#1C2128' },
-    D: { accent: '#02588E', ctaBtn: '#02588E', secFrom: '#02588E', secTo: '#4AC4D6', heroDark: '#161B22' },
+
+  // --- C: "Minimal Clean" — all-white, centered type, checkmark takeaways
+  C: {
+    meta: { id: 'minimal', label: 'Minimal Clean' },
+    cta: 'save',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="center" valign="top" class="dm-surface m-pad" bgcolor="#FFFFFF"
+                            style="background-color:#FFFFFF;padding:60px 48px 48px 48px;text-align:center;border-bottom:1px solid #EEF2F6;">
+                            ${bar(p.accent, 40, 3, 'center')}
+                            <h1 class="hero-title dm-strong"
+                                style="margin:24px 0 14px 0;font-family:${FONT};font-size:34px;font-weight:900;color:#0F172A;line-height:42px;text-align:center;letter-spacing:-0.5px;">
+                               {{TITLE}}
+                            </h1>
+                            ${heroMeta(ev, `margin:0 0 30px 0;font-family:${FONT};font-size:15px;font-weight:500;color:#64748B;line-height:22px;text-align:center;`, 'dm-muted')}
+                            ${primaryBtn(ev, ctaText, { bg: p.accent, color: '#FFFFFF', pad: '15px 40px', center: true })}
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FFFFFF', '44px 48px 8px 48px', 'dm-surface'),
+    takeaways: (ev, p) => section(`${learnHeading('#64748B')}
+${learnRows((n, i, last) => `
+                                    <td width="26" valign="top" class="dm-accent" style="width:26px;padding:0 0 ${last ? 0 : 14}px 0;font-family:${FONT};font-size:17px;font-weight:700;color:${p.accent};line-height:23px;">&#10003;</td>
+                                    <td valign="top" style="padding:0 0 ${last ? 0 : 14}px 8px;">${learnTitle(n, '#1E293B', 'font-weight:600;')}</td>`)}`, { pad: '24px 48px 32px 48px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev, p) => section(secondaryBtn(ev, { bg: p.accent, color: '#FFFFFF', pad: '13px 34px', center: true }), { pad: '4px 48px 48px 48px', align: 'center', c: 'sec-cta-section-td dm-surface' }),
+    speakers: () => speakersBlock({ bg: '#F8FAFC' }),
+    ve: (p) => veCallout('#F8FAFC', '#E2E8F0', p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F8FAFC', p.accent),
+    hostCard: () => hostShell('', '', hostCentered(
+      hostImg(104, '50%', 'margin:0 auto 16px auto;'), hostName('#0F172A'), hostRole('#64748B', 'font-weight:500;'), '20px 16px')),
   },
-  virtual: {
-    A: { gradient: '#02588E 0%, #013A5E 100%', bgFallback: '#02588E', ctaText: '#02588E', secBorder: '#C01060', heroDark: '#02304E' },
-    B: { bgColor: '#2D1B4E', accent: '#FDB414', gradFrom: '#FDB414', gradTo: '#EF4A3D', heroDark: '#2D1B4E' },
-    C: { solid: '#508C1E', ctaBg: '#2A343E', checkColor: '#508C1E', secBg: '#508C1E', heroDark: '#2A4010' },
-    D: { accent: '#02588E', ctaBtn: '#02588E', secFrom: '#02588E', secTo: '#475569', heroDark: '#161B22' },
-  }
+
+  // --- D: "Split Accent" — two-panel hero (title | date + CTA), top-bar takeaway cards
+  D: {
+    meta: { id: 'split', label: 'Split Accent' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="center" valign="top" class="dm-page" bgcolor="#EEF2F6" style="background-color:#EEF2F6;padding:24px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="stack-cell split-left dm-surface" width="56%" valign="middle" bgcolor="#FFFFFF"
+                                        style="background-color:#FFFFFF;border-radius:18px 0 0 18px;padding:40px 28px 40px 32px;">
+                                        ${bar(p.accent, 32, 4)}
+                                        <h1 class="hero-title dm-strong"
+                                            style="margin:18px 0 0 0;font-family:${FONT};font-size:27px;font-weight:900;color:#0F172A;line-height:35px;text-align:left;letter-spacing:-0.3px;">
+                                           {{TITLE}}
+                                        </h1>
+                                    </td>
+                                    <td class="stack-cell split-right" width="44%" valign="middle" align="center" bgcolor="${p.accent}"
+                                        style="background-color:${p.accent};background-image:linear-gradient(160deg, ${p.accent} 0%, ${p.deep} 100%);border-radius:0 18px 18px 0;padding:36px 22px;text-align:center;">
+                                        ${splitMeta(ev, `margin:0;font-family:${FONT};font-size:15px;font-weight:700;color:#FFFFFF;line-height:22px;text-align:center;`, `margin:6px 0 20px 0;font-family:${FONT};font-size:12px;font-weight:500;color:#E2E8F0;line-height:18px;text-align:center;`)}
+                                        ${primaryBtn(ev, ctaText, { bg: '#FFFFFF', color: p.accent, pad: '13px 26px', size: 13, center: true })}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FFFFFF', '40px 40px 8px 40px', 'dm-surface'),
+    takeaways: () => section(`${learnHeading('#64748B')}
+${learnRows((n, i, last) => `
+                                    <td style="padding:0 0 ${last ? 0 : 10}px 0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="takeaway-card-cell" bgcolor="#F6F8FB" style="background-color:#F6F8FB;border:1px solid #E6EBF1;border-radius:12px;overflow:hidden;">
+                                            <tr><td bgcolor="${BRAND[i]}" style="background-color:${BRAND[i]};height:3px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+                                            <tr>
+                                                <td style="padding:14px 18px;">${learnTitle(n, '#1E293B')}</td>
+                                            </tr>
+                                        </table>
+                                    </td>`)}`, { pad: '24px 40px 28px 40px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev, p) => section(secondaryBtn(ev, { bg: p.accent, color: '#FFFFFF', pad: '14px 36px', center: true }), { bg: '#F1F5F9', pad: '28px 40px', align: 'center', c: 'sec-cta-section-td dm-raised' }),
+    speakers: () => speakersBlock({ bg: '#FFFFFF' }),
+    ve: () => veCallout('#FFF8E6', '#FDE7B0', '#8A5A00'),
+    reminder: (html, p) => restyleReminder(html, '#F1F5F9', p.accent),
+    hostCard: (p) => hostShell('#F6F8FB', 'border:1px solid #E6EBF1;border-radius:14px;overflow:hidden;', `
+                <tr><td bgcolor="${p.accent}" style="background-color:${p.accent};background-image:linear-gradient(90deg, ${BRAND.join(', ')});height:4px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>${hostCentered(
+      hostImg(84, '50%', 'margin:0 auto 14px auto;border:3px solid #FFFFFF;'), hostName('#0F172A'), hostRole(p.accent), '22px 16px')}`),
+  },
+
+  // --- E: "Aurora Card" — soft gradient backdrop, floating white hero card, 2×2 tiles
+  E: {
+    meta: { id: 'aurora', label: 'Aurora Card' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="center" valign="top" class="dm-page" bgcolor="${p.glowA}"
+                            style="background-color:${p.glowA};background-image:linear-gradient(135deg, ${p.glowA} 0%, #FFFFFF 50%, ${p.glowB} 100%);padding:36px 28px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="dm-surface m-pad" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid ${p.line};border-radius:20px;padding:38px 34px;">
+                                        ${bar(p.accent, 32, 4)}
+                                        <h1 class="hero-title dm-strong"
+                                            style="margin:18px 0 16px 0;font-family:${FONT};font-size:31px;font-weight:900;color:#0F172A;line-height:39px;text-align:left;letter-spacing:-0.5px;">
+                                           {{TITLE}}
+                                        </h1>
+                                        ${ev.metaLine ? `<table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin:0 0 24px 0;"><tr><td class="dm-tint" bgcolor="${p.tint}" style="background-color:${p.tint};border-radius:999px;padding:6px 14px;">${heroMeta(ev, `margin:0;font-family:${FONT};font-size:13px;font-weight:600;color:${p.accent};line-height:20px;`, 'dm-accent')}</td></tr></table>` : ''}
+                                        ${primaryBtn(ev, ctaText, { bg: p.accent, color: '#FFFFFF' })}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FFFFFF', '40px 40px 8px 40px', 'dm-surface'),
+    takeaways: (ev, p) => section(`${learnHeading('#64748B', 'padding:0 10px;margin-bottom:6px;')}
+                            ${learnGrid((i) => `bgcolor="#F6F8FB" style="background-color:#F6F8FB;border:1px solid #E6EBF1;border-radius:16px;padding:18px 18px 20px 18px;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="dm-tint" bgcolor="${p.tint}" style="background-color:${p.tint};border-radius:999px;padding:3px 10px;"><span class="dm-accent" style="font-family:${FONT};font-size:12px;font-weight:800;color:${p.accent};letter-spacing:1px;line-height:16px;">0${i + 1}</span></td></tr></table>
+                                    ${learnTitle(i + 1, '#0F172A', 'margin-top:12px;')}`)}`, { pad: '24px 30px 20px 30px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev, p) => section(secondaryBtn(ev, { bg: '#FFFFFF', color: p.accent, border: `border:2px solid ${p.accent};`, pad: '11px 30px', center: true, tdCls: 'dm-surface', aCls: 'dm-accent' }), { pad: '4px 40px 40px 40px', align: 'center', c: 'sec-cta-section-td dm-surface' }),
+    speakers: () => speakersBlock({ bg: '#F6F8FB' }),
+    ve: (p) => veCallout(p.tint, p.line, p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F6F8FB', p.accent),
+    hostCard: (p) => hostShell('#FFFFFF', 'border:1px solid #E6EBF1;border-radius:18px;', hostCentered(`<table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto 14px auto;">
+                            <tr><td bgcolor="${p.accent}" style="padding:3px;border-radius:50%;background-color:${p.accent};background-image:linear-gradient(135deg, ${p.accent} 0%, ${p.bright} 100%);">${hostImg(86, '50%', 'border:3px solid #FFFFFF;')}</td></tr>
+                        </table>`, hostName('#0F172A'), hostRole(p.accent))),
+  },
+
+  // --- F: "Midnight Frame" — deep hero and frame around a white content card
+  F: {
+    meta: { id: 'midnight', label: 'Midnight Frame' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="left" valign="top" class="m-pad" bgcolor="${p.deep}"
+                            style="background-color:${p.deep};padding:52px 40px 44px 40px;">
+                            ${brandDots()}
+                            <h1 class="hero-title"
+                                style="margin:20px 0 14px 0;font-family:${FONT};font-size:35px;font-weight:900;color:#FFFFFF;line-height:43px;text-align:left;letter-spacing:-0.5px;">
+                               {{TITLE}}
+                            </h1>
+                            ${heroMeta(ev, `margin:0 0 28px 0;font-family:${FONT};font-size:14px;font-weight:500;color:#C3CAD5;line-height:22px;letter-spacing:0.3px;`)}
+                            ${primaryBtn(ev, ctaText, { bg: p.bright, color: ON_BRIGHT, pad: '15px 36px' })}
+                        </td>
+                    </tr>`,
+    intro: (ev, p) => `<tr>
+                        <td class="frame-td" bgcolor="${p.deep}" style="background-color:${p.deep};padding:0 20px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="intro-section-td dm-surface m-pad" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:18px 18px 0 0;padding:38px 34px 8px 34px;">
+                                        {{INTRO}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    takeaways: (ev, p) => `<tr>
+                        <td class="frame-td" bgcolor="${p.deep}" style="background-color:${p.deep};padding:0 20px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="takeaways-bg dm-surface m-pad" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:24px 34px 8px 34px;">
+                                        ${learnHeading('#64748B')}
+${learnRows((n) => `
+                                                <td width="44" valign="top" class="dm-line dm-accent" style="width:44px;border-top:1px solid #EDF0F4;padding:14px 0;font-family:${FONT};font-size:13px;font-weight:800;color:${p.accent};line-height:23px;letter-spacing:1px;">0${n}</td>
+                                                <td valign="top" class="dm-line" style="border-top:1px solid #EDF0F4;padding:14px 0;">${learnTitle(n, '#1E293B')}</td>`)}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    secCta: (ev, p) => `<tr>
+                        <td class="frame-td" bgcolor="${p.deep}" style="background-color:${p.deep};padding:0 20px 24px 20px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="sec-cta-section-td dm-surface m-pad" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:0 0 18px 18px;padding:16px 34px 36px 34px;">
+                                        ${secondaryBtn(ev, { bg: p.deep, color: '#FFFFFF', pad: '13px 30px', tdCls: 'dm-btn-invert' })}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    speakers: (p) => speakersBlock({ bg: p.deep, eyebrow: '#9AA3B2', heading: '#FFFFFF' }),
+    ve: (p) => veCallout('#F1F5F9', '#E2E8F0', p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F1F5F9', p.accent),
+    hostCard: (p) => hostShell('', `border:1px solid #3A4556;border-radius:14px;`, hostRow(
+      hostImg(64, '50%', `border:2px solid ${p.bright};`), 80, hostName('#FFFFFF', 'font-size:15px;line-height:20px;'), hostRole(p.bright, 'font-size:12px;line-height:18px;'))),
+  },
+
+  // --- G: "Editorial Serif" — warm paper tone, serif headlines, hairline rules
+  G: {
+    meta: { id: 'editorial', label: 'Editorial Serif' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="left" valign="top" class="dm-surface m-pad" bgcolor="#FAF7F2"
+                            style="background-color:#FAF7F2;padding:40px 44px 0 44px;">
+                            ${rule('#111827', 0, 2)}
+                            ${heroMeta(ev, `margin:18px 0 0 0;font-family:${FONT};font-size:12px;font-weight:700;color:${p.accent};line-height:18px;text-transform:uppercase;letter-spacing:1.5px;`, 'dm-accent')}
+                            <h1 class="hero-title serif dm-strong"
+                                style="margin:14px 0 26px 0;font-family:${SERIF};font-size:38px;font-weight:700;color:#111827;line-height:46px;text-align:left;letter-spacing:-0.3px;">
+                               {{TITLE}}
+                            </h1>
+                            ${primaryBtn(ev, ctaText, { bg: '#111827', color: '#FFFFFF', radius: '2px', pad: '15px 30px', tdCls: 'dm-btn-invert' })}
+                            ${rule('#E7E0D4', 36)}
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FAF7F2', '32px 44px 6px 44px', 'dm-surface'),
+    takeaways: (ev, p) => section(`<p class="section-heading serif" style="margin:0 0 10px 0;font-family:${SERIF};font-size:23px;font-style:italic;font-weight:400;color:#111827;line-height:30px;">What You'll Learn</p>
+${learnRows((n, i, last) => `
+                                    <td width="52" valign="top" class="dm-line dm-accent serif" style="width:52px;border-top:1px solid #E7E0D4;${last ? 'border-bottom:1px solid #E7E0D4;' : ''}padding:16px 0;font-family:${SERIF};font-size:26px;font-weight:400;color:${p.accent};line-height:28px;">0${n}</td>
+                                    <td valign="top" class="dm-line" style="border-top:1px solid #E7E0D4;${last ? 'border-bottom:1px solid #E7E0D4;' : ''}padding:18px 0 16px 0;">${learnTitle(n, '#111827', 'font-weight:600;line-height:24px;')}</td>`)}`, { bg: '#FAF7F2', pad: '24px 44px 32px 44px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev) => section(secondaryBtn(ev, { bg: '#FAF7F2', color: '#111827', radius: '2px', pad: '12px 26px', border: 'border:1.5px solid #111827;', tdCls: 'dm-outline-invert' }), { bg: '#FAF7F2', pad: '0 44px 44px 44px', c: 'sec-cta-section-td dm-surface' }),
+    speakers: (p) => speakersBlock({ bg: '#F3EEE6', eyebrow: p.accent, heading: '#111827', headingFont: SERIF, headingSize: 23, headingWeight: 700, headingCls: 'serif' }),
+    ve: (p) => veCallout('#F3EEE6', '#E7E0D4', p.accent),
+    reminder: (html) => restyleReminder(html, '#F3EEE6', '#111827'),
+    hostCard: (p) => hostShell('', '', hostCentered(
+      hostImg(104, '6px', 'margin:0 auto 16px auto;'),
+      hostName('#111827', `font-family:${SERIF};font-size:18px;font-weight:700;line-height:24px;`, 'serif'),
+      hostRole(p.accent, 'font-size:11px;text-transform:uppercase;letter-spacing:1.2px;margin-top:6px;'), '20px 16px')),
+  },
+
+  // --- H: "Bento Grid" — rounded tiles on a cool canvas, colored takeaway tiles
+  H: {
+    meta: { id: 'bento', label: 'Bento Grid' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => {
+      const ctaTile = (width) => `<td class="tile-cell" width="${width}" valign="middle" align="center" bgcolor="${p.deep}" style="background-color:${p.deep};border-radius:20px;padding:26px 20px;">
+                                        ${primaryBtn(ev, ctaText, { bg: p.bright, color: ON_BRIGHT, center: true })}
+                                    </td>`;
+      const lower = ev.metaLine
+        ? `<td class="tile-cell dm-surface" width="50%" valign="middle" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:20px;padding:22px 24px;">
+                                        ${splitMeta(ev, `margin:0;font-family:${FONT};font-size:16px;font-weight:800;color:#0F172A;line-height:24px;`, `margin:6px 0 0 0;font-family:${FONT};font-size:13px;font-weight:600;color:${p.accent};line-height:20px;`, 'dm-strong', 'dm-accent')}
+                                    </td>
+                                    ${ctaTile('50%')}`
+        : ctaTile('100%');
+      return `<tr>
+                        <td align="center" valign="top" class="dm-page" bgcolor="#EEF2F6" style="background-color:#EEF2F6;padding:10px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="10" width="100%" style="border-collapse:separate;">
+                                <tr>
+                                    <td colspan="2" class="m-pad" bgcolor="${p.accent}" style="background-color:${p.accent};background-image:linear-gradient(135deg, ${p.accent} 0%, ${p.deep} 100%);border-radius:22px;padding:42px 34px;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr>${BRAND.map((c) => `<td bgcolor="${c}" style="background-color:${c};width:18px;height:4px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td>`).join('')}</tr></table>
+                                        <h1 class="hero-title"
+                                            style="margin:18px 0 0 0;font-family:${FONT};font-size:33px;font-weight:900;color:#FFFFFF;line-height:41px;text-align:left;letter-spacing:-0.5px;">
+                                           {{TITLE}}
+                                        </h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    ${lower}
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`;
+    },
+    intro: () => `<tr>
+                        <td align="center" valign="top" class="dm-page" bgcolor="#EEF2F6" style="background-color:#EEF2F6;padding:0 20px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="intro-section-td dm-surface m-pad" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:22px;padding:34px 34px 30px 34px;">
+                                        {{INTRO}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    takeaways: () => {
+      const tints = ['#FDECEA', '#FFF5DB', '#EEF7E1', '#E3F6F9'];
+      return section(`${learnHeading('#64748B', 'margin:0;padding:6px 10px 0 10px;')}
+                            ${learnGrid((i) => `bgcolor="${tints[i]}" style="background-color:${tints[i]};border-radius:20px;padding:22px 20px;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="center" valign="middle" bgcolor="${BRAND[i]}" style="background-color:${BRAND[i]};border-radius:10px;width:32px;height:32px;font-family:${FONT};font-size:13px;font-weight:800;color:${BRAND_TEXT[i]};line-height:32px;text-align:center;">0${i + 1}</td></tr></table>
+                                    ${learnTitle(i + 1, '#0F172A', 'margin-top:14px;')}`)}`, { bg: '#EEF2F6', pad: '18px 10px 0 10px', c: 'dm-page' }).replace(' m-pad', '');
+    },
+    secCta: (ev, p) => section(secondaryBtn(ev, { bg: p.deep, color: '#FFFFFF', radius: '16px', pad: '16px 24px', block: true }), { bg: '#EEF2F6', pad: '0 20px 28px 20px', c: 'dm-page' }),
+    speakers: () => speakersBlock({ bg: '#EEF2F6' }),
+    ve: (p) => veCallout('#FFFFFF', '#E2E8F0', p.accent),
+    reminder: (html, p) => restyleReminder(html, '#EEF2F6', p.accent),
+    hostCard: (p) => hostShell('#FFFFFF', 'border-radius:20px;overflow:hidden;', `${hostRow(
+      hostImg(66, '18px'), 84, hostName('#0F172A', 'font-size:15px;line-height:20px;'), hostRole(p.accent, 'font-size:12px;line-height:18px;'), 18)}
+                <tr><td bgcolor="${p.accent}" style="background-color:${p.accent};background-image:linear-gradient(90deg, ${BRAND.join(', ')});height:4px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>`),
+  },
+
+  // --- I: "Event Pass" — ticket-style hero with a date stub, checklist takeaways, badge host cards
+  I: {
+    meta: { id: 'pass', label: 'Event Pass' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="center" valign="top" bgcolor="${p.deep}"
+                            style="background-color:${p.deep};background-image:linear-gradient(160deg, ${p.accent} 0%, ${p.deep} 100%);padding:40px 24px;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="stack-cell ticket-stub dm-tint" width="34%" valign="middle" align="center" bgcolor="${p.tint}"
+                                        style="background-color:${p.tint};border-right:2px dashed ${p.line};border-radius:18px 0 0 18px;padding:28px 16px;text-align:center;">
+                                        ${ev.metaLine
+                                          ? splitMeta(ev, `margin:0;font-family:${FONT};font-size:15px;font-weight:800;color:${p.accent};line-height:22px;text-align:center;`, `margin:8px 0 0 0;font-family:${FONT};font-size:12px;font-weight:600;color:#475569;line-height:18px;text-align:center;`, 'dm-accent', 'dm-muted')
+                                          : `<p class="dm-accent" style="margin:0;font-family:${FONT};font-size:12px;font-weight:800;color:${p.accent};line-height:18px;text-transform:uppercase;letter-spacing:1.5px;text-align:center;">${ev.label}</p>`}
+                                    </td>
+                                    <td class="stack-cell ticket-main dm-surface" width="66%" valign="middle" bgcolor="#FFFFFF"
+                                        style="background-color:#FFFFFF;border-radius:0 18px 18px 0;padding:30px 26px;">
+                                        <h1 class="hero-title dm-strong"
+                                            style="margin:0 0 20px 0;font-family:${FONT};font-size:25px;font-weight:900;color:#0F172A;line-height:33px;text-align:left;letter-spacing:-0.3px;">
+                                           {{TITLE}}
+                                        </h1>
+                                        ${primaryBtn(ev, ctaText, { bg: p.accent, color: '#FFFFFF', pad: '13px 28px' })}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FFFFFF', '40px 40px 8px 40px', 'dm-surface'),
+    takeaways: (ev, p) => section(`${learnHeading('#64748B')}
+${learnRows((n, i, last) => `
+                                    <td width="24" valign="top" style="width:24px;padding:0 0 ${last ? 0 : 14}px 0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="center" valign="middle" bgcolor="${p.accent}" style="background-color:${p.accent};border-radius:12px;width:24px;height:24px;font-family:${FONT};font-size:12px;font-weight:700;color:#FFFFFF;line-height:24px;text-align:center;">&#10003;</td></tr></table>
+                                    </td>
+                                    <td valign="top" style="padding:0 0 ${last ? 0 : 14}px 14px;">${learnTitle(n, '#1E293B')}</td>`)}`, { pad: '18px 40px 30px 40px', c: 'takeaways-bg dm-surface' }),
+    secCta: (ev, p) => section(secondaryBtn(ev, { bg: p.tint, color: p.accent, border: `border:1px solid ${p.line};`, pad: '12px 32px', center: true, tdCls: 'dm-tint', aCls: 'dm-accent' }), { pad: '0 40px 40px 40px', align: 'center', c: 'sec-cta-section-td dm-surface' }),
+    speakers: () => speakersBlock({ bg: '#F8FAFC' }),
+    ve: (p) => veCallout(p.tint, p.line, p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F1F5F9', p.accent),
+    hostCard: (p) => hostShell('#FFFFFF', 'border:1.5px dashed #CBD5E1;border-radius:16px;', hostCentered(
+      hostImg(84, '50%', `margin:0 auto 14px auto;border:3px solid ${p.tint};`), hostName('#0F172A'), hostRole(p.accent), '14px 16px 24px 16px',
+      `<table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto 16px auto;"><tr><td bgcolor="#CBD5E1" style="background-color:#CBD5E1;width:36px;height:6px;border-radius:3px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+                        `)),
+  },
+
+  // --- J: "Color Block" — full-bleed brand color hero, offset brand bars, dark takeaways band
+  J: {
+    meta: { id: 'colorblock', label: 'Color Block' },
+    cta: 'register',
+    hero: (ev, p, ctaText) => `<tr>
+                        <td align="left" valign="top" class="m-pad" bgcolor="${p.accent}"
+                            style="background-color:${p.accent};padding:56px 40px 50px 40px;">
+                            <h1 class="hero-title"
+                                style="margin:0 0 16px 0;font-family:${FONT};font-size:40px;font-weight:900;color:#FFFFFF;line-height:46px;text-align:left;letter-spacing:-1px;">
+                               {{TITLE}}
+                            </h1>
+                            ${heroMeta(ev, `margin:0 0 30px 0;font-family:${FONT};font-size:15px;font-weight:500;color:#F1F5F9;line-height:22px;`)}
+                            ${primaryBtn(ev, ctaText, { bg: '#FFFFFF', color: p.accent, radius: '6px', pad: '15px 32px' })}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;font-size:0;line-height:0;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>${[40, 25, 20, 15].map((w, i) => `<td width="${w}%" bgcolor="${BRAND[i]}" style="background-color:${BRAND[i]};height:10px;font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td>`).join('')}</tr>
+                            </table>
+                        </td>
+                    </tr>`,
+    intro: () => introSection('#FFFFFF', '42px 40px 36px 40px', 'dm-surface'),
+    takeaways: (ev, p) => `<tr>
+                        <td align="left" valign="top" class="m-pad" bgcolor="${p.deep}"
+                            style="background-color:${p.deep};padding:42px 40px 12px 40px;">
+                            ${learnHeading(p.bright, 'margin-bottom:22px;', '')}
+${learnRows((n, i) => `
+                                    <td width="56" valign="top" style="width:56px;padding:0 0 20px 0;font-family:${FONT};font-size:30px;font-weight:900;color:${BRAND[i]};line-height:30px;">0${n}</td>
+                                    <td valign="top" style="padding:3px 0 20px 0;">${learnTitle(n, '#FFFFFF', 'font-size:16px;font-weight:600;line-height:24px;')}</td>`)}
+                        </td>
+                    </tr>`,
+    secCta: (ev, p) => `<tr>
+                        <td align="left" valign="top" class="m-pad" bgcolor="${p.deep}" style="background-color:${p.deep};padding:8px 40px 46px 40px;">
+                            ${secondaryBtn(ev, { bg: p.bright, color: ON_BRIGHT, radius: '6px', pad: '13px 28px' })}
+                        </td>
+                    </tr>`,
+    speakers: () => speakersBlock({ bg: '#FFFFFF' }),
+    ve: (p) => veCallout(p.tint, p.line, p.accent),
+    reminder: (html, p) => restyleReminder(html, '#F1F5F9', p.accent),
+    hostCard: (p) => hostShell(p.tint, `border-left:6px solid ${p.accent};border-radius:4px;`, hostRow(
+      hostImg(66, '50%', 'border:3px solid #FFFFFF;'), 82, hostName('#0F172A', 'font-size:15px;line-height:20px;'), hostRole(p.accent, 'font-size:12px;line-height:18px;'), 18)),
+  },
 };
 
 
@@ -781,194 +948,30 @@ const THEMES = {
 
 function buildTemplate(eventKey, variantKey) {
   const ev = EVENTS[eventKey];
-  const th = THEMES[eventKey][variantKey];
-  const head = HEAD_BOILERPLATE(th.heroDark || '#161B22');
-  const headerBar = HEADER_BAR(ev.label);
-  
-  // Decide CTA text for this variant/event
-  let ctaText = ev.ctaText;
-  if (eventKey !== 'ondemand') {
-    if (variantKey === 'A' || variantKey === 'C') {
-      ctaText = 'Save My Free Spot &rarr;';
-    } else {
-      ctaText = 'Register Free &rarr;';
-    }
-  }
+  const v = VARIANTS[variantKey];
+  const p = PALETTES[eventKey];
+  const ctaText = eventKey === 'ondemand'
+    ? ev.ctaText
+    : (v.cta === 'save' ? 'Save My Free Spot &rarr;' : 'Register Free &rarr;');
 
-  let hero, intro, takeaways, secCta;
-  
-  switch (variantKey) {
-    case 'A': // Classic Editorial
-      hero = classicHero(th.gradient, th.bgFallback, th.ctaText, ev.ctaUrl, ctaText, ev.metaLine);
-      intro = INTRO_SECTION;
-      takeaways = classicTakeaways();
-      secCta = secondaryCTA(ev.secondaryCtaUrl, th.secBorder, th.secBorder, ev.secondaryCtaLabel);
-      break;
-      
-    case 'B': // Bold Magazine
-      hero = boldHero(th.bgColor, th.accent, ev.ctaUrl, ctaText, ev.metaLineLeft);
-      intro = boldIntro(th.accent);
-      takeaways = boldTakeaways();
-      secCta = boldSecondaryCTA(ev.secondaryCtaUrl, th.gradFrom, th.gradTo, ev.secondaryCtaLabel);
-      break;
-      
-    case 'C': // Minimal Clean
-      hero = minimalHero(th.solid, ev.ctaUrl, ctaText, th.ctaBg, ev.metaLine);
-      intro = INTRO_SECTION;
-      takeaways = minimalTakeaways(th.checkColor);
-      secCta = minimalSecondaryCTA(ev.secondaryCtaUrl, th.secBg, '#FFFFFF', ev.secondaryCtaLabel);
-      break;
-      
-    case 'D': // Split Accent
-      hero = splitHero(th.accent, ev.ctaUrl, ctaText, th.ctaBtn, ev.metaLineDark);
-      intro = INTRO_SECTION;
-      takeaways = splitTakeaways();
-      secCta = splitSecondaryCTA(ev.secondaryCtaUrl, th.secFrom, th.secTo, ev.secondaryCtaLabel);
-      break;
-  }
-  
-  // Speakers section — Bold uses dark bg, others use light
-  const speakers = variantKey === 'B' ? SPEAKERS_DARK : SPEAKERS_SECTION();
-  
-  // Assemble
   let body = '';
-  body += RAINBOW();
-  body += '\n' + headerBar;
-  body += '\n' + hero;
-  body += '\n' + intro;
-  body += '\n' + takeaways;
-  body += '\n' + secCta;
-  body += '\n' + speakers;
-  
+  body += RAINBOW(3);
+  body += '\n' + HEADER_BAR(ev.label);
+  body += '\n' + v.hero(ev, p, ctaText);
+  body += '\n' + v.intro(ev, p);
+  body += '\n' + v.takeaways(ev, p);
+  body += '\n' + v.secCta(ev, p);
+  body += '\n' + v.speakers(p);
   // VE Callout (demo & virtual only)
-  if (ev.hasVE) {
-    const veColors = {
-      A: { bg: '#F0F7EC', border: '#D6EABF', btn: '#508C1E' },
-      B: { bg: '#F0F4F8', border: '#CBD5E1', btn: '#0F172A' },
-      C: { bg: '#F0F7EC', border: '#D6EABF', btn: '#508C1E' },
-      D: { bg: '#FFF8E1', border: '#FFEEB4', btn: '#B8860B' },
-    };
-    const vc = veColors[variantKey];
-    body += '\n' + veCallout(vc.bg, vc.border, vc.btn);
-  }
-  
+  if (ev.hasVE) body += '\n' + v.ve(p);
   // Registration reminder (not on ondemand)
-  if (ev.regReminder) {
-    body += '\n' + ev.regReminder();
-  }
-  
+  if (ev.regReminder) body += '\n' + v.reminder(ev.regReminder(), p);
   // Credit section placeholder
   body += '\n                   {{CREDIT_SECTION}}';
-  
-  // Footer
   body += '\n' + FOOTER;
-  
-  return DOC_OPEN(head) + '\n' + body + '\n' + DOC_CLOSE;
+
+  return DOC_OPEN(HEAD_BOILERPLATE(p)) + '\n' + body + '\n' + DOC_CLOSE;
 }
-
-
-// =====================================================
-// HOST CARD VARIANTS
-// =====================================================
-
-// Classic (A) — inline-block cards with circular photo, centered text, white bg
-const HOST_CARD_CLASSIC = `
-<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width: 260px;margin:8px 6px;">
-    <tr>
-        <td style="padding:0;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px; background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);" class="speaker-card-inner">
-                <tr>
-                    <td align="center" style="padding:24px 16px;">
-                        <img alt="{{H_ALT}}" src="{{H_IMG}}" width="90" height="90" style="display:block;width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #ECEEF0;" />
-                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">{{H_NAME}}</span>
-                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">{{H_TITLE}}</span>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-`;
-
-// Bold (B) — dark-bg friendly card with subtle border, left-aligned
-const HOST_CARD_BOLD = `
-<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width:260px;margin:8px 6px;">
-    <tr>
-        <td style="padding:0;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px;background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;" class="speaker-card-inner">
-                <tr>
-                    <td style="padding:0;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td width="80" valign="top" style="padding:16px 0 16px 16px;">
-                                    <img alt="{{H_ALT}}" src="{{H_IMG}}" width="70" height="70" style="display:block;width:70px;height:70px;object-fit:cover;border-radius:8px;" />
-                                </td>
-                                <td valign="middle" style="padding:16px 16px 16px 14px;">
-                                    <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:15px;font-weight:800;color:#2A343E;line-height:20px;">{{H_NAME}}</span>
-                                    <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;color:#4AC4D6;line-height:18px;margin-top:4px;">{{H_TITLE}}</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-`;
-
-// Minimal (C) — larger photo, very clean, no border
-const HOST_CARD_MINIMAL = `
-<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width:260px;margin:8px 6px;">
-    <tr>
-        <td style="padding:0;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px;" class="speaker-card-inner">
-                <tr>
-                    <td align="center" style="padding:20px 16px;">
-                        <img alt="{{H_ALT}}" src="{{H_IMG}}" width="110" height="110" style="display:block;width:110px;height:110px;object-fit:cover;border-radius:50%;margin:0 auto 16px auto;" />
-                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">{{H_NAME}}</span>
-                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;color:#718096;line-height:19px;margin-top:4px;">{{H_TITLE}}</span>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-`;
-
-// Split (D) — card with colored top accent bar
-const HOST_CARD_SPLIT = `
-<table class="speaker-card-div" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;display:inline-block;vertical-align:top;width:100%;max-width:260px;min-width:260px;margin:8px 6px;">
-    <tr>
-        <td style="padding:0;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:260px;min-width:260px;background-color:#F8FAFC;border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;" class="speaker-card-inner">
-                <tr><td style="background:linear-gradient(90deg,#EF4A3D,#FDB414,#94C83D,#4AC4D6);height:3px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                <tr>
-                    <td align="center" style="padding:22px 16px;">
-                        <img alt="{{H_ALT}}" src="{{H_IMG}}" width="85" height="85" style="display:block;width:85px;height:85px;object-fit:cover;border-radius:50%;margin:0 auto 14px auto;border:3px solid #FFFFFF;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-                        <span class="speaker-name" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:800;color:#2A343E;line-height:22px;">{{H_NAME}}</span>
-                        <span class="speaker-role" style="display:block;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#02588E;line-height:19px;margin-top:4px;">{{H_TITLE}}</span>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-`;
-
-const HOST_CARDS = {
-  A: HOST_CARD_CLASSIC,
-  B: HOST_CARD_BOLD,
-  C: HOST_CARD_MINIMAL,
-  D: HOST_CARD_SPLIT,
-};
-
-const VARIANT_META = {
-  A: { id: 'classic', label: 'Classic Editorial' },
-  B: { id: 'bold',    label: 'Bold Magazine' },
-  C: { id: 'minimal', label: 'Minimal Clean' },
-  D: { id: 'split',   label: 'Split Accent' },
-};
 
 
 // =====================================================
@@ -984,14 +987,14 @@ export const TEMPLATES = {};
     standalone: 'Standalone',
     virtual: 'Virtual Event'
   };
-  
+
   TEMPLATES[eventKey] = {
     name: eventNames[eventKey],
-    variants: ['A', 'B', 'C', 'D'].map(vk => ({
-      id: VARIANT_META[vk].id,
-      label: VARIANT_META[vk].label,
+    variants: Object.keys(VARIANTS).map(vk => ({
+      id: VARIANTS[vk].meta.id,
+      label: VARIANTS[vk].meta.label,
       html: buildTemplate(eventKey, vk),
-      hostCard: HOST_CARDS[vk],
+      hostCard: VARIANTS[vk].hostCard(PALETTES[eventKey]),
     }))
   };
 });
@@ -1002,7 +1005,7 @@ export const TEMPLATES = {};
 // =====================================================
 
 // Default HOST_CARD (Classic) for backward compatibility
-export const HOST_CARD = HOST_CARD_CLASSIC;
+export const HOST_CARD = TEMPLATES.demo.variants[0].hostCard;
 
 // Credit section (shared across ALL variants)
 export const CREDIT_HTML_BLOCK = `

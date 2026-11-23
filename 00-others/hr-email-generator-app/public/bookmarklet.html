@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webcast Grabber Install</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue: #02588E; --ink: #1e293b; --muted: #64748B; --line: #e2e8f0; --bg: #f1f5f9; --card: #ffffff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 'Inter', system-ui, sans-serif; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 16px 60px; }
+    .rainbow { display: flex; height: 5px; border-radius: 99px; overflow: hidden; margin-bottom: 28px; }
+    .rainbow span { flex: 1; } .rainbow span:nth-child(1){background:#EF4A3D} .rainbow span:nth-child(2){background:#FDB414} .rainbow span:nth-child(3){background:#94C83D} .rainbow span:nth-child(4){background:#4AC4D6}
+    h1 { font: 800 26px/1.25 'Plus Jakarta Sans', sans-serif; color: var(--blue); margin: 0 0 6px; letter-spacing: -0.3px; }
+    h2 { font: 700 15px/1.3 'Plus Jakarta Sans', sans-serif; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.6px; color: #475569; }
+    .lede { color: var(--muted); margin: 0 0 28px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-bottom: 18px; box-shadow: 0 4px 14px rgba(15,23,42,0.04); }
+    .drag-zone { text-align: center; padding: 28px 16px; border: 2px dashed #bae6fd; border-radius: 12px; background: #f0f9ff; }
+    .bm { display: inline-block; padding: 13px 26px; border-radius: 999px; background: linear-gradient(135deg, #02588E, #01436d); color: #fff; text-decoration: none; font: 700 15px 'Plus Jakarta Sans', sans-serif; box-shadow: 0 6px 18px rgba(2,88,142,0.3); cursor: grab; }
+    .bm:active { cursor: grabbing; }
+    .hint { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+    ol { margin: 0; padding-left: 22px; } ol li { margin-bottom: 10px; }
+    kbd { font: 600 12px 'Inter', monospace; background: #f1f5f9; border: 1px solid #cbd5e1; border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    td { padding: 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+    td:first-child { font-weight: 600; width: 38%; padding-right: 12px; }
+    tr:last-child td { border-bottom: 0; }
+    code { font-size: 12.5px; background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
+    .note { font-size: 13.5px; color: #475569; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px; margin-top: 14px; }
+    @media (max-width: 520px) { td:first-child { width: 45%; } .card { padding: 18px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="rainbow"><span></span><span></span><span></span><span></span></div>
+    <h1>HR.com Webcast Grabber</h1>
+    <p class="lede">A one-click bookmark that reads an HR.com webcast page and copies its details so the Email Builder can fill in the fields for you.</p>
+
+    <div class="card">
+      <h2>1 · Install (one time)</h2>
+      <div class="drag-zone">
+        <a class="bm" id="bm" href="#" title="Drag me to your bookmarks bar">📋 Grab Webcast</a>
+        <p class="hint">Drag this button onto your bookmarks bar. Don't click it here.</p>
+      </div>
+      <p class="hint">Can't see the bookmarks bar? Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> in Chrome or Edge.</p>
+    </div>
+
+    <div class="card">
+      <h2>2 · Use it</h2>
+      <ol>
+        <li>Open the webcast page on hr.com (log in as usual).</li>
+        <li>Click <strong>📋 Grab Webcast</strong> on your bookmarks bar. A panel shows what was found, and the data is copied.</li>
+        <li>In the Email Builder, click <strong>Paste from Webcast Page</strong>. The template type, title, date, sponsor logo, story ID, credit, hosts, learnings and description are filled in.</li>
+        <li>Carry on with the Gemini step as before to write the subject lines and copy.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>What it reads from the page</h2>
+      <table>
+        <tr><td>Template type</td><td>Breadcrumb, e.g. "Upcoming Webcasts / Standalone"</td></tr>
+        <tr><td>Title</td><td>The page heading</td></tr>
+        <tr><td>Date &amp; time</td><td>"Date &amp; Time" box</td></tr>
+        <tr><td>Story ID</td><td>Register / Add to Calendar link</td></tr>
+        <tr><td>Sponsor logo &amp; name</td><td>"Presented by" logo</td></tr>
+        <tr><td>Credit</td><td>Credit image in the description (e.g. "1 HR CREDIT"), then credit types</td></tr>
+        <tr><td>Key learnings</td><td>"Here's What You'll Learn" bullets</td></tr>
+        <tr><td>Hosts</td><td>"Your Hosts": photo, name, designation and company</td></tr>
+        <tr><td>Description</td><td>Description tab, up to "By registering for this webcast…"</td></tr>
+      </table>
+      <div class="note">The AP shortcode and the Virtual Event name and link aren't on the webcast page. Take them from the flowchart sheet as usual.</div>
+    </div>
+  </div>
+
+<script>
+/* The bookmarklet. Runs on the hr.com webcast page, never on this page. */
+function hrWebcastGrab() {
+  var d = document;
+  var OVERLAY_ID = 'hr-email-grab-panel';
+  var old = d.getElementById(OVERLAY_ID);
+  if (old) old.remove();
+
+  if (!d.querySelector('.WebcastDetailBlock h1')) {
+    alert('Grab Webcast: this does not look like an HR.com webcast page.');
+    return;
+  }
+
+  function clean(s) {
+    return (s || '').replace(/ /g, ' ').replace(/[ \t]+/g, ' ').replace(/ *\n */g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+  /* Text of an element with <br> and block tags turned into line breaks */
+  function blockText(el, dropSelector) {
+    if (!el) return '';
+    var c = el.cloneNode(true);
+    c.querySelectorAll('script,style,img' + (dropSelector ? ',' + dropSelector : '')).forEach(function (n) { n.remove(); });
+    var walker = d.createTreeWalker(c, NodeFilter.SHOW_TEXT);
+    var t;
+    while ((t = walker.nextNode())) t.nodeValue = t.nodeValue.replace(/\s+/g, ' ');
+    c.querySelectorAll('br').forEach(function (n) { n.replaceWith('\n'); });
+    c.querySelectorAll('p,div,li,h1,h2,h3,h4').forEach(function (n) { n.append('\n'); });
+    return clean(c.textContent);
+  }
+  /* Single line: collapses the hard line breaks hr.com leaves inside bullets and headings */
+  function flat(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+  function text(sel) {
+    var e = d.querySelector(sel);
+    return e ? flat(e.textContent) : '';
+  }
+
+  var out = { __hrEmailImport: 1, source: location.href.split('#')[0] };
+
+  out.title = text('.WebcastDetailBlock h1');
+  out.dateTime = text('.wv_dt_info');
+
+  var crumb = text('.wv_head_title span').replace(/^\/\s*/, '');
+  out.pageType = crumb;
+  var typeHint = crumb + ' ' + location.pathname;
+  out.eventType = /on.?demand/i.test(typeHint) ? 'ondemand'
+    : /demo/i.test(crumb) ? 'demo'
+    : /virtual/i.test(crumb) ? 'virtual'
+    : /standalone/i.test(crumb) ? 'standalone' : '';
+
+  /* Story ID: register/calendar link first, then element ids, then the edit link */
+  var storyId = '';
+  var link = d.querySelector('.webcastCenterBtn a[href*="storyID="], [id^="reg_link_"]');
+  var m = link && (link.getAttribute('href') || '').match(/storyID=(\d{10,})/i);
+  if (m) storyId = m[1];
+  if (!storyId) {
+    var holder = d.querySelector('[id^="return_"], [id^="reg_link_"]');
+    m = holder && holder.id.match(/(\d{10,})/);
+    if (m) storyId = m[1];
+  }
+  if (!storyId) {
+    m = (d.querySelector('a[href*="/network/event/update"]') || {}).href;
+    m = m && m.match(/eID=(\d{10,})/);
+    if (m) storyId = m[1];
+  }
+  out.storyId = storyId;
+
+  out.sponsors = [].slice.call(d.querySelectorAll('.spons_list img'))
+    .filter(function (img) { return img.src && !/spacer/i.test(img.src); })
+    .map(function (img) { return { name: clean(img.alt), logo: img.src }; });
+  out.sponsorName = out.sponsors[0] ? out.sponsors[0].name : '';
+  out.sponsorLogo = out.sponsors[0] ? out.sponsors[0].logo : '';
+
+  /* Credit types live inside an HTML comment, e.g. <code>General/HR</code><li class="SHRM"> */
+  var creditTypes = '', hasSHRM = false;
+  var creditBox = d.querySelector('.wv_right') || d.querySelector('.WebcastDetailBlock');
+  var cw = d.createTreeWalker(creditBox, NodeFilter.SHOW_COMMENT);
+  var cn;
+  while ((cn = cw.nextNode())) {
+    var cm = cn.nodeValue.match(/<code[^>]*>([^<]+)<\/code>/i);
+    if (cm) creditTypes = clean(cm[1]);
+    if (/class="SHRM"/i.test(cn.nodeValue)) hasSHRM = true;
+  }
+  out.creditTypes = creditTypes;
+  out.hasSHRM = hasSHRM;
+
+  /* Credit value: the credit image in the description says it best, e.g. "NEW 2026 1 HR CREDIT" */
+  var creditValue = '';
+  d.querySelectorAll('#tab3 img').forEach(function (img) {
+    var k = ((img.alt || '') + ' ' + (img.title || '')).match(/(\d+(?:\.\d+)?)\s*(HR|BUSINESS|GLOBAL)\s*CREDIT/i);
+    if (k && !creditValue) creditValue = k[1] + ' ' + k[2].toUpperCase() + ' Credit';
+  });
+  out.creditGuessed = false;
+  if (!creditValue && creditTypes) {
+    creditValue = /business/i.test(creditTypes) ? '1 BUSINESS Credit' : /global/i.test(creditTypes) ? '1 GLOBAL Credit' : '1 HR Credit';
+    out.creditGuessed = true;
+  }
+  out.creditValue = creditValue;
+
+  var learnItems = d.querySelectorAll('.LargeIcon-BulletTxt li');
+  if (!learnItems.length) learnItems = d.querySelectorAll('#tab4 ul li');
+  out.learnings = [].map.call(learnItems, function (li) { return flat(li.textContent); }).filter(Boolean);
+
+  /* Two host layouts: table rows (photo in a sibling cell) or the photo inside .Presenter-Name.
+     Some pages leave the name heading empty, so keep any host that has a photo. */
+  out.hosts = [].map.call(d.querySelectorAll('.YourHosts .Presenter-Name'), function (box) {
+    var name = flat((box.querySelector('h4') || {}).textContent);
+    var lines = blockText(box, 'h4,a,img').split('\n').map(flat).filter(Boolean);
+    var row = box.closest('tr');
+    var img = box.querySelector('img.User-Medium-Block-Img')
+      || (row && (row.querySelector('img.User-Medium-Block-Img') || row.querySelector('img:not([alt="spacer"])')));
+    return { name: name, title: lines.join(', '), image: img ? img.src : '' };
+  }).filter(function (h) { return h.name || h.image; });
+
+  /* Parent virtual event: "This webcast is part of a Virtual Event" + View Event button */
+  out.veUrl = '';
+  out.veStoryId = '';
+  var veInfo = d.querySelector('.wv_btn_info');
+  if (veInfo && /virtual event/i.test(veInfo.textContent)) {
+    var veLink = veInfo.parentNode.querySelector('a[href*="StoryID="], a[href*="storyID="]');
+    if (veLink) {
+      out.veUrl = veLink.href;
+      var vm = veLink.href.match(/storyID=(\d{10,})/i);
+      out.veStoryId = vm ? vm[1] : '';
+    }
+  }
+
+  var desc = blockText(d.querySelector('#tab3 .col-md-12') || d.querySelector('#tab3'), '.SubHeader');
+  var stop = desc.search(/By registering for this webcast/i);
+  if (stop !== -1) {
+    var end = desc.indexOf('\n', stop);
+    desc = end === -1 ? desc : desc.slice(0, end);
+  }
+  out.description = desc;
+
+  var labels = { title: 'Title', dateTime: 'Date & time', storyId: 'Story ID', sponsorLogo: 'Sponsor logo', learnings: 'Learnings', hosts: 'Hosts', description: 'Description' };
+  out.missing = Object.keys(labels).filter(function (k) {
+    if (k === 'dateTime' && out.eventType === 'ondemand') return false;
+    var v = out[k];
+    return Array.isArray(v) ? !v.length : !v;
+  }).map(function (k) { return labels[k]; });
+  var unnamed = out.hosts.filter(function (h) { return !h.name; }).length;
+  if (unnamed) out.missing.push(unnamed + ' host name(s), blank on the page');
+
+  var json = JSON.stringify(out, null, 2);
+
+  /* ---------- Panel on the page ---------- */
+  function el(tag, css, txt) {
+    var e = d.createElement(tag);
+    if (css) e.style.cssText = css;
+    if (txt != null) e.textContent = txt;
+    return e;
+  }
+  var font = "font-family:Arial,Helvetica,sans-serif;";
+  var panel = el('div', font + 'position:fixed;top:16px;right:16px;z-index:2147483647;width:360px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);overflow:auto;background:#fff;color:#1e293b;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.25);border:1px solid #cbd5e1;font-size:13px;line-height:1.45;');
+  panel.id = OVERLAY_ID;
+  panel.appendChild(el('div', 'height:4px;background:linear-gradient(90deg,#EF4A3D 0 25%,#FDB414 25% 50%,#94C83D 50% 75%,#4AC4D6 75%);border-radius:14px 14px 0 0;'));
+  var body = el('div', 'padding:14px 16px 16px;');
+  panel.appendChild(body);
+
+  var head = el('div', 'display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;');
+  head.appendChild(el('strong', 'font-size:15px;color:#02588E;', 'Grab Webcast'));
+  var x = el('button', 'border:0;background:#f1f5f9;border-radius:6px;padding:2px 9px;font-size:16px;cursor:pointer;color:#475569;', '×');
+  x.onclick = function () { panel.remove(); };
+  head.appendChild(x);
+  body.appendChild(head);
+
+  var status = el('div', 'padding:8px 10px;border-radius:8px;margin-bottom:10px;font-weight:bold;');
+  body.appendChild(status);
+
+  function row(label, value, ok) {
+    var r = el('div', 'display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #eef2f6;');
+    r.appendChild(el('span', 'width:16px;flex:none;color:' + (ok ? '#15803d' : '#b91c1c') + ';', ok ? '✓' : '✗'));
+    r.appendChild(el('span', 'width:92px;flex:none;color:#64748B;', label));
+    r.appendChild(el('span', 'flex:1;word-break:break-word;', value || 'not found'));
+    body.appendChild(r);
+  }
+  var typeNames = { demo: 'Demo Webcast', ondemand: 'On-Demand', standalone: 'Standalone', virtual: 'Virtual Event' };
+  row('Type', typeNames[out.eventType] || out.pageType, !!out.eventType);
+  row('Title', out.title, !!out.title);
+  if (out.eventType !== 'ondemand') row('Date', out.dateTime, !!out.dateTime);
+  row('Story ID', out.storyId, !!out.storyId);
+  row('Sponsor', out.sponsorName + (out.sponsors.length > 1 ? ' (+' + (out.sponsors.length - 1) + ' more)' : ''), !!out.sponsorLogo);
+  row('Credit', out.creditValue ? out.creditValue + (out.creditGuessed ? ' (guessed from credit type)' : '') : 'none (credit section off)', true);
+  row('Learnings', out.learnings.length + ' found', out.learnings.length > 0);
+  var hostNames = out.hosts.map(function (h) { return h.name || '(name blank on page, photo found)'; }).join(', ');
+  row('Hosts', hostNames, out.hosts.length > 0 && !unnamed);
+  if (out.eventType === 'virtual' || out.veUrl) row('Event link', out.veUrl ? 'Event story ' + out.veStoryId : '', !!out.veUrl);
+  row('Description', out.description ? out.description.length + ' characters' : '', !!out.description);
+
+  function copied(ok) {
+    if (ok) {
+      status.style.cssText += 'background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;';
+      status.textContent = 'Copied. Now click "Paste from Webcast Page" in the Email Builder.';
+    } else {
+      status.style.cssText += 'background:#fef2f2;color:#991b1b;border:1px solid #fecaca;';
+      status.textContent = 'Could not copy automatically. Copy the text below with Ctrl+C.';
+      var ta = el('textarea', 'width:100%;height:140px;margin-top:10px;font:11px monospace;box-sizing:border-box;');
+      ta.value = json;
+      body.appendChild(ta);
+      ta.focus();
+      ta.select();
+    }
+  }
+  function legacyCopy() {
+    var ta = el('textarea', 'position:fixed;top:-1000px;opacity:0;');
+    ta.value = json;
+    d.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = d.execCommand('copy'); } catch (e) {}
+    ta.remove();
+    return ok;
+  }
+
+  d.body.appendChild(panel);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(json).then(function () { copied(true); }, function () { copied(legacyCopy()); });
+  } else {
+    copied(legacyCopy());
+  }
+}
+
+document.getElementById('bm').href = 'javascript:' + encodeURIComponent('(' + hrWebcastGrab.toString() + ')();void 0');
+document.getElementById('bm').addEventListener('click', function (e) {
+  e.preventDefault();
+  alert('Drag this button to your bookmarks bar, then click it while you are on an HR.com webcast page.');
+});
+</script>
+</body>
+</html>

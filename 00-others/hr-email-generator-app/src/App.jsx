@@ -192,6 +192,11 @@ export default function App() {
   const [aiVeShortcode, setAiVeShortcode] = useState('');
   const [aiCredit, setAiCredit] = useState('');
 
+  // Webcast page import (from the "Grab Webcast" bookmarklet)
+  const [importText, setImportText] = useState('');
+  const [showImportBox, setShowImportBox] = useState(false);
+  const [importMsg, setImportMsg] = useState(null);
+
   const cleanDescription = (text) => {
     if (!text) return "";
     return text
@@ -200,7 +205,7 @@ export default function App() {
       .replace(/About the presenters:.*/gi, "")
       .replace(/\s+/g, " ")
       .trim()
-      .substring(0, 1500); // Expanded context window slightly for complete variable extraction
+      .substring(0, 4000); // Full webcast descriptions from the bookmarklet run ~2,000+ chars
   };
 
   const buildPrompt = (tab, titleVal, descVal, learningsList, hostsList, sponsorLogoVal, sponsorNameVal, dateTimeVal, storyIdVal, apShortcodeVal, veNameVal, veShortcodeVal, creditVal) => {
@@ -577,6 +582,98 @@ Generate EXACTLY this JSON structure:
     }
   };
 
+  // Fill the assistant inputs and the factual email fields from bookmarklet data.
+  // Treated as starting a new email, so copy from any previous webcast is cleared.
+  const applyWebcastImport = (data) => {
+    if (!data || data.__hrEmailImport !== 1) {
+      throw new Error("That doesn't look like data from the Grab Webcast bookmarklet.");
+    }
+    const learnings = (Array.isArray(data.learnings) ? data.learnings : []).slice(0, 4);
+    while (learnings.length < 4) learnings.push('');
+    const hosts = (Array.isArray(data.hosts) ? data.hosts : []).slice(0, 5).map(h => ({
+      name: h.name || '',
+      title: h.title || '',
+      image: cleanUrl(h.image) || ''
+    }));
+    const eventType = TEMPLATES[data.eventType] ? data.eventType : activeTab;
+    const creditValue = data.creditValue || '';
+    const veUrl = cleanUrl(data.veUrl) || '';
+
+    if (eventType !== activeTab) setActiveTab(eventType);
+
+    setAiTitle(data.title || '');
+    setAiDateTime(eventType === 'ondemand' ? '' : (data.dateTime || ''));
+    setAiSponsorLogo(cleanUrl(data.sponsorLogo) || '');
+    setAiSponsorName(data.sponsorName || '');
+    setAiLearnings(learnings);
+    setAiHostsList(hosts.length ? hosts : [{ name: '', title: '', image: '' }]);
+    setAiDesc(data.description || '');
+    setAiStoryId(data.storyId || '');
+    setAiCredit(creditValue);
+    setAiApShortcode('');
+    setAiVeName('');
+    setAiVeShortcode(veUrl);
+    setAiResponse('');
+
+    setFields(prev => ({
+      ...prev,
+      subject: '',
+      preheader: '',
+      logo: cleanUrl(data.sponsorLogo) || '',
+      logoAlt: data.sponsorName || '',
+      title: data.title || '',
+      dateTime: eventType === 'ondemand' ? '' : (data.dateTime || ''),
+      storyId: cleanStoryId(data.storyId) || '',
+      intro: '',
+      learn1: learnings[0],
+      learn2: learnings[1],
+      learn3: learnings[2],
+      learn4: learnings[3],
+      apShortcode: '',
+      veName: '',
+      veShortcode: veUrl,
+      creditValue: creditValue || prev.creditValue,
+      showCredits: !!creditValue,
+      hosts: hosts.length ? hosts.map(h => ({ ...h, alt: h.name })) : [{ name: '', title: '', image: '', alt: '' }]
+    }));
+
+    const missing = Array.isArray(data.missing) && data.missing.length ? ` Missing: ${data.missing.join(', ')}.` : '';
+    const learnCount = learnings.filter(Boolean).length;
+    const hasVE = eventType === 'virtual' || eventType === 'demo';
+    const veNote = hasVE
+      ? (veUrl
+        ? ' Event link set to the event page; add the Virtual Event name and, if you track it, swap in the event promo shortcode from the flowchart sheet.'
+        : ' Add the Virtual Event name and link from the flowchart sheet.')
+      : '';
+    return `Imported "${data.title || 'Untitled'}" as ${TEMPLATES[eventType].name}: ${hosts.length} host(s), ${learnCount} learning(s)${creditValue ? `, ${creditValue}` : ', no credits'}.${missing} Add the AP shortcode from the flowchart sheet.${veNote} Then copy the Gemini prompt.`;
+  };
+
+  const importFromText = (text) => {
+    try {
+      const start = (text || '').indexOf('{');
+      const end = (text || '').lastIndexOf('}');
+      if (start === -1 || end === -1) {
+        throw new Error("No webcast data found. Click Grab Webcast on the webcast page first.");
+      }
+      const summary = applyWebcastImport(JSON.parse(text.substring(start, end + 1)));
+      setImportMsg({ type: 'ok', text: summary });
+      setImportText('');
+      setShowImportBox(false);
+    } catch (err) {
+      setImportMsg({ type: 'error', text: err.message });
+    }
+  };
+
+  const handleClipboardImport = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      importFromText(text);
+    } catch {
+      setShowImportBox(true);
+      setImportMsg({ type: 'error', text: "Couldn't read the clipboard. Paste the copied data into the box below instead." });
+    }
+  };
+
   const finalHtml = useMemo(() => {
     const currentVariant = TEMPLATES[activeTab].variants[activeVariant];
     let html = currentVariant.html;
@@ -764,6 +861,73 @@ Generate EXACTLY this JSON structure:
         </div>
         <p style={{ margin: '0 0 16px 0', fontSize: '11.5px', color: '#64748B', lineHeight: '15px' }}>Generate high-impact, compliant webcast email promotions instantly.</p>
         
+        {/* ⚡ QUICK START: IMPORT FROM WEBCAST PAGE (bookmarklet) */}
+        <div style={{
+          background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+          border: '1px solid #86efac',
+          borderRadius: '12px',
+          padding: '14px',
+          marginBottom: '10px'
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '6px' }}>
+            <span style={{ fontSize: '10px', fontWeight: '800', color: '#166534', textTransform: 'uppercase', letterSpacing: '0.7px', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              ⚡ Quick Start: Import Webcast Page
+            </span>
+            <a href="/bookmarklet.html" target="_blank" rel="noreferrer" style={{ fontSize: '10.5px', fontWeight: '700', color: '#166534' }}>
+              Install bookmarklet ↗
+            </a>
+          </div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '10.5px', color: '#3f6212', lineHeight: '14px' }}>
+            On the hr.com webcast page, click <strong>📋 Grab Webcast</strong>, then come back here.
+          </p>
+          <button
+            onClick={handleClipboardImport}
+            className="action-btn"
+            style={{ width: '100%', padding: '10px', background: '#166534', color: '#fff', border: 'none', borderRadius: '8px', fontSize: '12px', fontWeight: '700', fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: 'pointer', boxShadow: '0 2px 4px rgba(22, 101, 52, 0.15)' }}
+          >
+            Paste from Webcast Page
+          </button>
+          {!showImportBox && (
+            <button
+              onClick={() => setShowImportBox(true)}
+              style={{ fontSize: '10.5px', cursor: 'pointer', fontWeight: '700', border: 'none', background: 'none', color: '#166534', padding: 0, marginTop: '6px', fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            >
+              Or paste the data manually
+            </button>
+          )}
+          {showImportBox && (
+            <>
+              <textarea
+                placeholder="Paste the copied webcast data here..."
+                value={importText}
+                onChange={e => setImportText(e.target.value)}
+                style={{ ...iS, padding: '7px 10px', fontSize: '11px', height: '60px', marginTop: '8px', fontFamily: 'monospace', resize: 'vertical' }}
+              />
+              <button
+                onClick={() => importFromText(importText)}
+                className="action-btn"
+                style={{ width: '100%', padding: '8px', background: '#ffffff', color: '#166534', border: '1px solid #86efac', borderRadius: '8px', fontSize: '11.5px', fontWeight: '700', fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: '6px', cursor: 'pointer' }}
+              >
+                Import Pasted Data
+              </button>
+            </>
+          )}
+          {importMsg && (
+            <p style={{
+              margin: '8px 0 0 0',
+              fontSize: '10.5px',
+              lineHeight: '15px',
+              padding: '8px',
+              borderRadius: '6px',
+              color: importMsg.type === 'ok' ? '#166534' : '#991b1b',
+              backgroundColor: importMsg.type === 'ok' ? '#ffffff' : '#fef2f2',
+              border: `1px solid ${importMsg.type === 'ok' ? '#bbf7d0' : '#fecaca'}`
+            }}>
+              {importMsg.type === 'ok' ? '✅ ' : '⚠️ '}{importMsg.text}
+            </p>
+          )}
+        </div>
+
         {/* 🚀 PRIMARY STEP: SELECT TEMPLATE TYPE */}
         <div style={{ 
           background: 'linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%)', 
@@ -818,7 +982,7 @@ Generate EXACTLY this JSON structure:
           </span>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
             {(TEMPLATES[activeTab]?.variants || []).map((v, idx) => {
-              const dotColors = ['#C01060', '#0F172A', '#02588E', '#FDB414'];
+              const dotColors = ['#C01060', '#0F172A', '#02588E', '#FDB414', '#F472B6', '#1E293B', '#A16207', '#4AC4D6', '#94C83D', '#EF4A3D'];
               return (
                 <button
                   key={v.id}
