@@ -52,7 +52,7 @@
       <ol>
         <li>Open the webcast page on hr.com (log in as usual).</li>
         <li>Click <strong>📋 Grab Webcast</strong> on your bookmarks bar. A panel shows what was found, and the data is copied.</li>
-        <li>In the Email Builder, click <strong>Paste from Webcast Page</strong>. The template type, title, date, sponsor logo, story ID, credit, hosts, learnings and description are filled in.</li>
+        <li>In the Email Builder, click <strong>Paste from Webcast Page</strong>. The template type, title, date, sponsor logo, credit, hosts, learnings and description are filled in.</li>
         <li>Carry on with the Gemini step as before to write the subject lines and copy.</li>
       </ol>
     </div>
@@ -63,7 +63,6 @@
         <tr><td>Template type</td><td>Breadcrumb, e.g. "Upcoming Webcasts / Standalone"</td></tr>
         <tr><td>Title</td><td>The page heading</td></tr>
         <tr><td>Date &amp; time</td><td>"Date &amp; Time" box</td></tr>
-        <tr><td>Story ID</td><td>Register / Add to Calendar link</td></tr>
         <tr><td>Sponsor logo &amp; name</td><td>"Presented by" logo</td></tr>
         <tr><td>Credit</td><td>Credit image in the description (e.g. "1 HR CREDIT"), then credit types</td></tr>
         <tr><td>Key learnings</td><td>"Here's What You'll Learn" bullets</td></tr>
@@ -124,22 +123,6 @@ function hrWebcastGrab() {
     : /virtual/i.test(crumb) ? 'virtual'
     : /standalone/i.test(crumb) ? 'standalone' : '';
 
-  /* Story ID: register/calendar link first, then element ids, then the edit link */
-  var storyId = '';
-  var link = d.querySelector('.webcastCenterBtn a[href*="storyID="], [id^="reg_link_"]');
-  var m = link && (link.getAttribute('href') || '').match(/storyID=(\d{10,})/i);
-  if (m) storyId = m[1];
-  if (!storyId) {
-    var holder = d.querySelector('[id^="return_"], [id^="reg_link_"]');
-    m = holder && holder.id.match(/(\d{10,})/);
-    if (m) storyId = m[1];
-  }
-  if (!storyId) {
-    m = (d.querySelector('a[href*="/network/event/update"]') || {}).href;
-    m = m && m.match(/eID=(\d{10,})/);
-    if (m) storyId = m[1];
-  }
-  out.storyId = storyId;
 
   out.sponsors = [].slice.call(d.querySelectorAll('.spons_list img'))
     .filter(function (img) { return img.src && !/spacer/i.test(img.src); })
@@ -209,7 +192,7 @@ function hrWebcastGrab() {
   }
   out.description = desc;
 
-  var labels = { title: 'Title', dateTime: 'Date & time', storyId: 'Story ID', sponsorLogo: 'Sponsor logo', learnings: 'Learnings', hosts: 'Hosts', description: 'Description' };
+  var labels = { title: 'Title', dateTime: 'Date & time', sponsorLogo: 'Sponsor logo', learnings: 'Learnings', hosts: 'Hosts', description: 'Description' };
   out.missing = Object.keys(labels).filter(function (k) {
     if (k === 'dateTime' && out.eventType === 'ondemand') return false;
     var v = out[k];
@@ -255,7 +238,6 @@ function hrWebcastGrab() {
   row('Type', typeNames[out.eventType] || out.pageType, !!out.eventType);
   row('Title', out.title, !!out.title);
   if (out.eventType !== 'ondemand') row('Date', out.dateTime, !!out.dateTime);
-  row('Story ID', out.storyId, !!out.storyId);
   row('Sponsor', out.sponsorName + (out.sponsors.length > 1 ? ' (+' + (out.sponsors.length - 1) + ' more)' : ''), !!out.sponsorLogo);
   row('Credit', out.creditValue ? out.creditValue + (out.creditGuessed ? ' (guessed from credit type)' : '') : 'none (credit section off)', true);
   row('Learnings', out.learnings.length + ' found', out.learnings.length > 0);

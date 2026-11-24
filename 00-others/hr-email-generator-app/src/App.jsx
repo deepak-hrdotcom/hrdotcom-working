@@ -1,5 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { TEMPLATES, HOST_CARD, CREDIT_HTML_BLOCK } from './templates';
+import { TEMPLATES } from './templates';
+import { COPY_RULES } from './copyRules';
+import { cleanUrl, renderEmail } from './render';
 
 const lS = { 
   display: 'block', 
@@ -56,94 +58,6 @@ const rmBtn = {
   fontFamily: "'Plus Jakarta Sans', sans-serif"
 };
 
-const cleanUrl = (val) => {
-  if (!val || typeof val !== 'string') return '';
-  let str = val.trim();
-  
-  // 1. If it matches markdown link [text](url)
-  const markdownMatch = str.match(/\[(.*?)\]\((https?:\/\/[^\s\)]+)\)/i);
-  if (markdownMatch) {
-    const textPart = markdownMatch[1];
-    const urlPart = markdownMatch[2];
-    
-    // If the text inside [] is a valid URL, prefer it (handles Gemini's weird formatting)
-    if (textPart.match(/^https?:\/\//i)) {
-      str = textPart; 
-    } else if (urlPart.includes('google.com/search?q=')) {
-      // If the urlPart is a google search, extract the 'q' parameter
-      try {
-        const urlObj = new URL(urlPart);
-        const qParam = urlObj.searchParams.get('q');
-        str = qParam || textPart;
-      } catch (e) {
-        str = textPart;
-      }
-    } else {
-      str = urlPart;
-    }
-  }
-  
-  // 2. Strip any leading/trailing brackets, parentheses, quotes, or whitespace
-  str = str.replace(/^[\[\(\s'"]+|[\]\)\s'"]+$/g, '').trim();
-  
-  // 3. Fallback: extract the first absolute http/https substring
-  const httpMatch = str.match(/(https?:\/\/[^\s\(\)\[\]"'<>]+)/i);
-  if (httpMatch) {
-    str = httpMatch[1];
-  }
-  
-  // Final safeguard: if it still is a google search query, decode it
-  if (str.includes('google.com/search?q=')) {
-     try {
-       const urlObj = new URL(str);
-       const qParam = urlObj.searchParams.get('q');
-       if (qParam) str = qParam;
-     } catch (e) {}
-  }
-  
-  return str;
-};
-
-const cleanStoryId = (val) => {
-  if (!val || typeof val !== 'string') return '';
-  // HR.com story IDs are typically long strings of digits (e.g. 1780419353709)
-  const digitMatch = val.match(/\d{8,}/);
-  if (digitMatch) {
-    return digitMatch[0];
-  }
-  
-  // Fallback: strip brackets and handle markdown link artifacts
-  let str = val.replace(/^[\[\(\s'"]+|[\]\)\s'"]+$/g, '').trim();
-  if (str.includes('](')) {
-    str = str.split('](')[0].replace(/^\[/, '');
-  }
-  return str;
-};
-
-const renderIntroHtml = (introText) => {
-  const defaultPara1 = "Despite rapid advancements in technology, global workforce productivity and employee engagement continue to slump across industries. Organizations struggle to pinpoint the root causes of this systemic decline, impacting retention and workplace culture.";
-  const defaultPara2 = "Based on recent studies, this session reveals key organizational drivers, leadership practices, and technology tools that measurably revitalize team output.";
-
-  let paragraphs = introText 
-    ? introText.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
-    : [];
-
-  if (paragraphs.length === 0) {
-    paragraphs = [defaultPara1, defaultPara2];
-  } else if (paragraphs.length === 1) {
-    const lines = introText.split('\n').map(p => p.trim()).filter(Boolean);
-    if (lines.length > 1) {
-      paragraphs = lines;
-    }
-  }
-
-  return paragraphs.map((para, idx) => {
-    const isLast = idx === paragraphs.length - 1;
-    const marginBottom = isLast ? '0' : '16px';
-    return `<p class="body-copy-p" style="margin:0 0 ${marginBottom} 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;color:#4A5568;text-align:left;line-height:28px;">${para}</p>`;
-  }).join('\n                            ');
-};
-
 export default function App() {
   const [activeTab, setActiveTab] = useState('demo');
   const [activeVariant, setActiveVariant] = useState(0);
@@ -160,12 +74,12 @@ export default function App() {
     logoHeight: "40",
     title: "",
     dateTime: "",
-    storyId: "",
     intro: "",
     learn1: "",
     learn2: "",
     learn3: "",
     learn4: "",
+    badge: "",
     apShortcode: "",
     veName: "",
     veShortcode: "",
@@ -186,7 +100,6 @@ export default function App() {
   const [aiSponsorLogo, setAiSponsorLogo] = useState('');
   const [aiSponsorName, setAiSponsorName] = useState('');
   const [aiDateTime, setAiDateTime] = useState('');
-  const [aiStoryId, setAiStoryId] = useState('');
   const [aiApShortcode, setAiApShortcode] = useState('');
   const [aiVeName, setAiVeName] = useState('');
   const [aiVeShortcode, setAiVeShortcode] = useState('');
@@ -208,7 +121,7 @@ export default function App() {
       .substring(0, 4000); // Full webcast descriptions from the bookmarklet run ~2,000+ chars
   };
 
-  const buildPrompt = (tab, titleVal, descVal, learningsList, hostsList, sponsorLogoVal, sponsorNameVal, dateTimeVal, storyIdVal, apShortcodeVal, veNameVal, veShortcodeVal, creditVal) => {
+  const buildPrompt = (tab, titleVal, descVal, learningsList, hostsList, sponsorLogoVal, sponsorNameVal, dateTimeVal, apShortcodeVal, veNameVal, veShortcodeVal, creditVal) => {
     const cleanDesc = cleanDescription(descVal);
     const hostsFormatted = Array.isArray(hostsList) ? hostsList
       .map((h, idx) => `Host #${idx + 1}:\n  - Name: ${h.name || 'N/A'}\n  - Image URL: ${h.image || 'N/A'}\n  - Designation: ${h.title || 'N/A'}`)
@@ -228,36 +141,13 @@ export default function App() {
    - "logoAlt": Extract the sponsor name for the alt text.
    - "title": Extract the webcast title (if not already provided in Webcast Title).
    - "dateTime": Extract the webcast date and time string (e.g. "May 27, 2026 at 2:30 PM - 3:30 PM ET").
-   - "storyId": Extract the story ID (numeric, usually 12-13 digits) from the registration URL (e.g., if URL contains "storyID=1774643599549", storyId is "1774643599549").
-   - "apShortcode": Extract the webcast registration/details URL or secondary CTA link.
+   - "apShortcode": Extract the AP shortcode (e.g. https://web.hr.com/xxxxx) that leads to the webcast more-info page. All CTA buttons use it.
    - "creditValue": "N/A" (or keep as default).
    - "showCredits": false (demo webcasts do not qualify for HRCI/SHRM credits).
    - "veName": Extract the parent Virtual Event name if applicable (e.g., "HR Demo Day #3"), or "" if not part of a virtual event.
    - "veShortcode": Extract the Virtual Event URL or shortcode if applicable, or "" if not part of a virtual event.`;
 
-      copywritingInstructions = `Copywriting Guidelines for DEMO Webcast (Visual walkthrough & capabilities focus):
-1. SUBJECT LINE: Act as a senior B2B email content strategist and high-converting copywriter. Create EXACTLY 10 different subject line options. Format as an ordered list (1., 2., 3., 4., 5., 6., 7., 8., 9., 10.) separated by newlines (\\n) inside the single "subject" JSON string.
-Best Practices & Rules for the 10 Subject Line Options:
-- Title & Topic Alignment: Every option MUST closely align with and incorporate the specific Webcast Title, core theme, and key topic/keywords. The subscriber must immediately recognize what specific subject this webcast covers—never output generic or disconnected advice.
-- Compelling Curiosity & Urgency: Re-frame the webcast title and description details into irresistible hooks that trigger immediate curiosity, operational urgency, or professional interest to drive maximum open rates.
-- Diversity Across 10 Options: Provide a balanced mix across the 10 options:
-  * 2-3 Urgent Pain Point / Risk Hooks (addressing the key operational challenge in title/desc)
-  * 2-3 Actionable How-To / Solution Hooks (highlighting the product walkthrough & capabilities)
-  * 2 Curiosity Question Hooks (provoking reflection directly tied to the title)
-  * 2 Strategic / High-Impact Benefit Hooks (unlocking efficiency or workflow gains)
-- Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
-- Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
-- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
-- Strict Exclusions: NO colons (:). NO dates or time hooks (do NOT use "June 23", "this Wednesday", "tomorrow", etc.). NO spammy hype (no ALL-CAPS words, no fake RE:/FWD:).
-
-2. PREHEADER: Max 90 chars. Focus on visual proof, time-saving, or ease-of-use. End with soft urgency (e.g., 'register for walkthrough').
-3. INTRO PARAGRAPHS: Exactly TWO distinct paragraphs separated by double newlines (\\n\\n), created strictly based on the provided webcast title and description data. Paragraph 1 (Problem) must hook the reader with the specific operational/business challenge identified in the webcast description. Paragraph 2 (Solution) must present the product demo/walkthrough as the direct solution to overcome that challenge. Total combined length 350 to 500 characters max.
-4. KEY LEARNINGS (Exactly 4 points):
-   - You MUST base these points strictly on the "Raw Takeaways/Learnings" provided above.
-   - If the raw data has 1 point, expand/derive exactly 4 distinct, punchy takeaway sentences from it.
-   - Frame these as feature demonstrations or walkthrough highlights (e.g., "See a detailed walkthrough of...", "Learn how to easily automate...", "Explore key features for...").
-   - Each point must be a short, single sentence of 6-10 words max.
-   - Start with an action verb. Focus on driving registrations by creating curiosity.`;
+      copywritingInstructions = COPY_RULES.demo;
 
     } else if (tab === 'ondemand') {
       templateInstructions = `This is for an ON-DEMAND Webcast. You must extract and generate:
@@ -265,36 +155,13 @@ Best Practices & Rules for the 10 Subject Line Options:
    - "logoAlt": Extract the sponsor name.
    - "title": Extract the webcast title (if not already provided in Webcast Title).
    - "dateTime": Set to "" (live date is not used for on-demand webcasts).
-   - "storyId": Extract the story ID (numeric) from the webcast registration URL.
    - "apShortcode": Extract the On-Demand link.
    - "creditValue": Extract recertification credit value if mentioned.
    - "showCredits": true or false depending on credit details.
    - "veName": "" (not applicable).
    - "veShortcode": "" (not applicable).`;
 
-      copywritingInstructions = `Copywriting Guidelines for ON-DEMAND Webcast (Immediate convenient access focus):
-1. SUBJECT LINE: Act as a senior B2B email content strategist and high-converting copywriter. Create EXACTLY 10 different subject line options. Format as an ordered list (1., 2., 3., 4., 5., 6., 7., 8., 9., 10.) separated by newlines (\\n) inside the single "subject" JSON string.
-Best Practices & Rules for the 10 Subject Line Options:
-- Title & Topic Alignment: Every option MUST closely align with and incorporate the specific Webcast Title, core theme, and key topic/keywords. The subscriber must immediately recognize what specific subject this webcast covers—never output generic or disconnected advice.
-- Compelling Curiosity & Urgency: Re-frame the webcast title and description details into irresistible hooks that trigger immediate curiosity, emotional resonance, or professional urgency to drive maximum open rates.
-- Diversity Across 10 Options: Provide a balanced mix across the 10 options:
-  * 2-3 Urgent Pain Point / Risk Hooks (addressing the key challenge in title/desc)
-  * 2-3 Actionable How-To / Solution Hooks (promising convenient, instant solution)
-  * 2 Curiosity Question Hooks (provoking reflection directly tied to the title)
-  * 2 Strategic / High-Impact Benefit Hooks (unlocking leadership or productivity gains)
-- Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
-- Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
-- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
-- Strict Exclusions: NO colons (:). NO live dates or upcoming time hooks (do NOT use "this Wednesday", "tomorrow", "[Jun 23]", or specific dates). NEVER include the words "ondemand", "on-demand", or "on demand" (or their capitalizations). NO spammy hype.
-
-2. PREHEADER: Max 90 chars. Focus on instant learning on their own schedule. End with soft urgency (e.g., 'watch now free').
-3. INTRO PARAGRAPHS: Exactly TWO distinct paragraphs separated by double newlines (\\n\\n), created strictly based on the provided webcast title and description data. Paragraph 1 (Problem) must hook the reader with the specific business or HR challenge/pain point identified in the webcast description. Paragraph 2 (Solution) must present the webcast content as the direct solution. Total combined length 350 to 500 characters max. You MUST NEVER include the words "ondemand", "on-demand", "on demand", "recorded session", "recorded webcast", "recording", "watch this recorded session" (or their variations/capitalizations) in these paragraphs.
-4. KEY LEARNINGS (Exactly 4 points):
-   - You MUST base these points strictly on the "Raw Takeaways/Learnings" provided above.
-   - If the raw data has 1 point, expand/derive exactly 4 distinct, punchy takeaway sentences from it.
-   - Frame these as "What you will discover:" or "Key takeaways you will unlock:".
-   - Each point must be a short, single sentence of 6-10 words max.
-   - Start with an action verb or active noun. Focus on driving registrations by creating high curiosity.`;
+      copywritingInstructions = COPY_RULES.ondemand;
 
     } else if (tab === 'standalone') {
       templateInstructions = `This is for a STANDALONE Webcast. You must extract and generate:
@@ -302,35 +169,13 @@ Best Practices & Rules for the 10 Subject Line Options:
    - "logoAlt": Extract the sponsor name.
    - "title": Extract the webcast title (if not already provided in Webcast Title).
    - "dateTime": Extract the webcast date and time (e.g., "June 4, 2026 at 1:00 PM - 2:00 PM ET").
-   - "storyId": Extract the story ID (numeric) from the registration URL.
-   - "apShortcode": Extract the webcast registration URL.
+   - "apShortcode": Extract the AP shortcode (e.g. https://web.hr.com/xxxxx) that leads to the webcast more-info page. All CTA buttons use it.
    - "creditValue": Extract the recertification credit text (e.g., "1 HRCI / 1 SHRM Credit").
    - "showCredits": true.
    - "veName": "" (not applicable).
    - "veShortcode": "" (not applicable).`;
 
-      copywritingInstructions = `Copywriting Guidelines for STANDALONE Webcast (Educational event focus):
-1. SUBJECT LINE: Act as a senior B2B email content strategist and high-converting copywriter. Create EXACTLY 10 different subject line options. Format as an ordered list (1., 2., 3., 4., 5., 6., 7., 8., 9., 10.) separated by newlines (\\n) inside the single "subject" JSON string.
-Best Practices & Rules for the 10 Subject Line Options:
-- Title & Topic Alignment: Every option MUST closely align with and incorporate the specific Webcast Title, core theme, and key topic/keywords. The subscriber must immediately recognize what specific subject this webcast covers—never output generic or disconnected advice.
-- Compelling Curiosity & Urgency: Re-frame the webcast title and description details into irresistible hooks that trigger immediate curiosity, professional urgency, or emotional resonance to drive maximum open rates.
-- Diversity Across 10 Options: Provide a balanced mix across the 10 options:
-  * 2-3 Urgent Pain Point / Risk Hooks (addressing the key challenge in title/desc)
-  * 2-3 Actionable How-To / Solution Hooks (promising practical learning & outcomes)
-  * 2 Curiosity Question Hooks (provoking professional reflection tied to the title)
-  * 2 Strategic / High-Impact Benefit Hooks (unlocking HR or business advantages)
-- Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
-- Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
-- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
-- Strict Exclusions: NO colons (:). NO dates or time hooks (do NOT use "June 23", "this Wednesday", "tomorrow", etc.). NO spammy hype (no ALL-CAPS words, no fake RE:/FWD:).
-
-2. PREHEADER: Max 90 chars. Complements subject, never repeats it. End with soft urgency (e.g., 'register now').
-3. INTRO PARAGRAPHS: Exactly TWO distinct paragraphs separated by double newlines (\\n\\n), created strictly based on the provided webcast title and description data. Paragraph 1 (Problem) must hook the reader with the specific business or HR challenge/pain point identified in the webcast description. Paragraph 2 (Solution) must present the webcast content as the direct solution to solve that problem. Total combined length 350 to 500 characters max.
-4. KEY LEARNINGS (Exactly 4 points):
-   - You MUST base these points strictly on the "Raw Takeaways/Learnings" provided above.
-   - If the raw data has 1 point, expand/derive exactly 4 distinct, punchy takeaway sentences from it.
-   - Each point must be a short, single sentence of 6-10 words max.
-   - Start with an action verb or active noun. Focus on driving registrations by creating curiosity.`;
+      copywritingInstructions = COPY_RULES.standalone;
 
     } else if (tab === 'virtual') {
       templateInstructions = `This is for a VIRTUAL EVENT Webcast. You must extract and generate:
@@ -338,40 +183,17 @@ Best Practices & Rules for the 10 Subject Line Options:
    - "logoAlt": Extract the sponsor name.
    - "title": Extract the webcast title (if not already provided in Webcast Title).
    - "dateTime": Extract the live event date and time.
-   - "storyId": Extract the story ID from the registration URL.
-   - "apShortcode": Extract the webcast details URL.
+   - "apShortcode": Extract the AP shortcode (e.g. https://web.hr.com/xxxxx) that leads to the webcast more-info page. All CTA buttons use it.
    - "veName": Extract the parent Virtual Event name (e.g., "State of Todays HR Tech and Integrations").
    - "veShortcode": Extract the Virtual Event registration link.
    - "creditValue": Extract the credit text.
    - "showCredits": true.`;
 
-      copywritingInstructions = `Copywriting Guidelines for VIRTUAL EVENT Webcast (Full-day pass & broader event context):
-1. SUBJECT LINE: Act as a senior B2B email content strategist and high-converting copywriter. Create EXACTLY 10 different subject line options. Format as an ordered list (1., 2., 3., 4., 5., 6., 7., 8., 9., 10.) separated by newlines (\\n) inside the single "subject" JSON string.
-Best Practices & Rules for the 10 Subject Line Options:
-- Title & Topic Alignment: Every option MUST closely align with and incorporate the specific Webcast Title, core theme, and key topic/keywords. The subscriber must immediately recognize what specific subject this webcast covers—never output generic advice or vague event mentions. DO NOT use generic phrases like 'at our event', 'attend our event', or the virtual event name.
-- Compelling Curiosity & Urgency: Re-frame the session topic and description details into irresistible hooks that trigger high curiosity, professional urgency, or deep interest to drive maximum open rates.
-- Diversity Across 10 Options: Provide a balanced mix across the 10 options:
-  * 2-3 Urgent Pain Point / Risk Hooks (addressing the key session challenge in title/desc)
-  * 2-3 Actionable How-To / Solution Hooks (highlighting session learning & practical strategies)
-  * 2 Curiosity Question Hooks (provoking professional reflection tied to the title)
-  * 2 Strategic / High-Impact Benefit Hooks (unlocking HR or leadership gains)
-- Length & Mobile Optimization: Keep each option punchy, ideally 40-55 chars (max 60 chars) so it never truncates on mobile screens.
-- Mechanics: Use conversational second-person ('you', 'your'). Title Case or Sentence Case cleanly.
-- Question Mark Rule: EVERY subject line option that is a question (e.g., starts with Is, Are, Why, How, Can, Do, Does, Should, Would, What, etc.) MUST ALWAYS end with a question mark (?). Never omit the question mark.
-- Strict Exclusions: NO colons (:). NO dates or time hooks (do NOT use "June 23", "this Wednesday", "tomorrow", etc.). NO spammy hype.
-
-2. PREHEADER: Max 90 chars. Mention that the full-day virtual event is free. End with soft urgency (e.g., 'get your free pass').
-3. INTRO PARAGRAPHS: Exactly TWO distinct paragraphs separated by double newlines (\\n\\n), created strictly based on the provided webcast title and description data. Paragraph 1 (Problem) must outline the specific business/HR challenge identified in the webcast description. Paragraph 2 (Solution) must present the webcast session content and solution. Total combined length 350 to 500 characters max. DO NOT include generic event details or invitations like 'attend this event', 'join us for this virtual event', or registration call-to-actions, keeping the tone educational and compelling.
-4. KEY LEARNINGS (Exactly 4 points):
-   - You MUST base these points strictly on the "Raw Takeaways/Learnings" provided above.
-   - If the raw data has 1 point, expand/derive exactly 4 distinct, punchy takeaway sentences from it.
-   - Frame these as "Key session highlights you'll experience:".
-   - Each point must be a short, single sentence of 6-10 words max.
-   - Start with an action verb or active noun. Focus on driving registrations by creating excitement for the whole virtual event.`;
+      copywritingInstructions = COPY_RULES.virtual;
     }
 
     let userMetadataInstructions = "";
-    if (sponsorLogoVal || sponsorNameVal || dateTimeVal || storyIdVal || apShortcodeVal || veNameVal || veShortcodeVal || creditVal) {
+    if (sponsorLogoVal || sponsorNameVal || dateTimeVal || apShortcodeVal || veNameVal || veShortcodeVal || creditVal) {
       userMetadataInstructions = `
 ---
 CRITICAL - USER-SPECIFIED METADATA (PRIORITIZE THESE VALUES):
@@ -379,7 +201,6 @@ The user has explicitly provided the following metadata. You MUST output these e
 ${sponsorLogoVal ? `- For "logo": "${sponsorLogoVal}"` : ""}
 ${sponsorNameVal ? `- For "logoAlt": "${sponsorNameVal}"` : ""}
 ${dateTimeVal ? `- For "dateTime": "${dateTimeVal}"` : ""}
-${storyIdVal ? `- For "storyId": "${storyIdVal}"` : ""}
 ${apShortcodeVal ? `- For "apShortcode": "${apShortcodeVal}"` : ""}
 ${veNameVal ? `- For "veName": "${veNameVal}"` : ""}
 ${veShortcodeVal ? `- For "veShortcode": "${veShortcodeVal}"` : ""}
@@ -423,7 +244,7 @@ CRITICAL JSON OUTPUT CONSTRAINTS (MUST FOLLOW):
 - You MUST return all keys listed in the JSON structure below.
 - DO NOT omit any keys, do not leave keys out of the JSON, and do not return null.
 - If a user input or value is empty, missing, not found in the description, or not applicable for the selected template (e.g. dateTime for On-Demand, or veName/veShortcode for non-virtual templates), you MUST still output the key and set its value to an empty string "" (or false for showCredits, or an empty array [] for hosts if there are absolutely no hosts).
-- NEVER wrap any URLs, image paths, story IDs, or string values in brackets [], parentheses (), or markdown link formatting. All URLs and images MUST be clean, raw plain-text strings (e.g., "https://public-cdn.hr.com/system/app/media/rs/2025/10/16/mgtmdfzw/120.jpg", NOT "[https://public-cdn.hr.com/system/app/media/rs/2025/10/16/mgtmdfzw/120.jpg]"). NEVER convert URLs into Google Search links or redirect links. Output the exact raw URL provided (e.g. "https://web.hr.com/eobib").
+- NEVER wrap any URLs, image paths, or string values in brackets [], parentheses (), or markdown link formatting. All URLs and images MUST be clean, raw plain-text strings (e.g., "https://public-cdn.hr.com/system/app/media/rs/2025/10/16/mgtmdfzw/120.jpg", NOT "[https://public-cdn.hr.com/system/app/media/rs/2025/10/16/mgtmdfzw/120.jpg]"). NEVER convert URLs into Google Search links or redirect links. Output the exact raw URL provided (e.g. "https://web.hr.com/eobib").
 - NEVER output placeholder text like "[Logo Image URL]", "[Subject here]", etc. If you don't have a value or generated copy, output an empty string "" instead.
 - Do not wrap the JSON in \`\`\`json or \`\`\` blocks, just return raw JSON text.
 
@@ -436,7 +257,6 @@ Generate EXACTLY this JSON structure:
   "logoAlt": "",
   "title": "",
   "dateTime": "",
-  "storyId": "",
   "introParagraph": "Paragraph 1 (Problem)\\n\\nParagraph 2 (Solution)",
   "keyLearnings": [
     "",
@@ -462,7 +282,7 @@ Generate EXACTLY this JSON structure:
   const handleCopyPrompt = () => {
     const hasHostsInput = Array.isArray(aiHostsList) && aiHostsList.some(h => h.name || h.image || h.title);
     const hasLearningsInput = Array.isArray(aiLearnings) && aiLearnings.some(l => l.trim() !== "");
-    if (!aiDesc && !hasLearningsInput && !hasHostsInput && !aiSponsorLogo && !aiSponsorName && !aiDateTime && !aiStoryId && !aiApShortcode && !aiVeName && !aiVeShortcode && !aiCredit) {
+    if (!aiDesc && !hasLearningsInput && !hasHostsInput && !aiSponsorLogo && !aiSponsorName && !aiDateTime && !aiApShortcode && !aiVeName && !aiVeShortcode && !aiCredit) {
       alert("Please enter webcast details or paste description first!");
       return;
     }
@@ -475,7 +295,6 @@ Generate EXACTLY this JSON structure:
       aiSponsorLogo,
       aiSponsorName,
       aiDateTime,
-      aiStoryId,
       aiApShortcode,
       aiVeName,
       aiVeShortcode,
@@ -549,7 +368,6 @@ Generate EXACTLY this JSON structure:
         logoAlt: data.logoAlt || prev.logoAlt || "",
         title: data.title || prev.title || "",
         dateTime: (data.dateTime !== undefined && activeTab !== 'ondemand') ? (data.dateTime || prev.dateTime || "") : (prev.dateTime || ""),
-        storyId: cleanStoryId(data.storyId) || prev.storyId || "",
         intro: removeProhibitedWords(data.introParagraph || prev.intro || ""),
         learn1: removeProhibitedWords(keyLearnings[0] || prev.learn1 || ""),
         learn2: removeProhibitedWords(keyLearnings[1] || prev.learn2 || ""),
@@ -608,7 +426,6 @@ Generate EXACTLY this JSON structure:
     setAiLearnings(learnings);
     setAiHostsList(hosts.length ? hosts : [{ name: '', title: '', image: '' }]);
     setAiDesc(data.description || '');
-    setAiStoryId(data.storyId || '');
     setAiCredit(creditValue);
     setAiApShortcode('');
     setAiVeName('');
@@ -623,7 +440,6 @@ Generate EXACTLY this JSON structure:
       logoAlt: data.sponsorName || '',
       title: data.title || '',
       dateTime: eventType === 'ondemand' ? '' : (data.dateTime || ''),
-      storyId: cleanStoryId(data.storyId) || '',
       intro: '',
       learn1: learnings[0],
       learn2: learnings[1],
@@ -674,90 +490,7 @@ Generate EXACTLY this JSON structure:
     }
   };
 
-  const finalHtml = useMemo(() => {
-    const currentVariant = TEMPLATES[activeTab].variants[activeVariant];
-    let html = currentVariant.html;
-    const activeHostCard = currentVariant.hostCard || HOST_CARD;
-
-    // 1. Process Host Cards with Preview Fallbacks
-    const hostsHtml = fields.hosts.map((h, i) => {
-      const cardHtml = activeHostCard
-        .replaceAll("{{H_NAME}}", h.name || "Expert Name")
-        .replace("{{H_TITLE}}", h.title || "Designation / Company")
-        .replace("{{H_IMG}}", cleanUrl(h.image) || "https://public-cdn.hr.com/profile_images/default.jpg")
-        .replace("{{H_ALT}}", h.alt || h.name || "Expert Image");
-
-      // Wrap with Outlook ghost tables for 2 columns per row
-      let prefix = "";
-      if (i === 0) {
-        prefix = `<!--[if mso]><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->`;
-      } else if (i % 2 === 0) {
-        prefix = `<!--[if mso]></td></tr><tr><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->`;
-      } else {
-        prefix = `<!--[if mso]></td><td width="276" align="center" valign="top" style="padding:10px 8px;"><![endif]-->`;
-      }
-
-      let suffix = "";
-      if (i === fields.hosts.length - 1) {
-        suffix = `<!--[if mso]></td><![endif]-->`;
-      }
-
-      return prefix + cardHtml + suffix;
-    }).join("");
-
-    // Labels logic
-    const hostLabel = fields.hosts.length > 1 ? "Your expert hosts" : "Your expert host";
-    const hostSubLabel = fields.hosts.length > 1 ? "Learn directly from industry leaders" : "Learn directly from industry leader";
-
-    // 2. Process Credit Section Toggle
-    let creditHtml = fields.showCredits 
-      ? CREDIT_HTML_BLOCK.replace("{{CREDIT_VALUE}}", fields.creditValue || "1 HR Credit") 
-      : "";
-
-    // 3. Master Mapping with Fallbacks for the Live Preview
-    const map = {
-      "{{PREHEADER}}": fields.preheader || "Join this upcoming webcast to stay ahead of HR trends.",
-      "{{LOGO_URL}}": cleanUrl(fields.logo) || "https://public-cdn.hr.com/system/app/media/rs/2022/3/25/l164gf41/120.jpg",
-      "{{LOGO_ALT}}": fields.logoAlt || "Sponsor Logo",
-      "{{TITLE}}": fields.title || "Webcast Title: The Future of Work",
-      "{{DATE_TIME}}": fields.dateTime || "April 14, 2026 at 11:00 AM - 12:00 PM ET",
-      "{{SPLIT_DATE_TIME}}": (fields.dateTime || "April 14, 2026 at 11:00 AM - 12:00 PM ET").replace(/\s+at\s+/i, "<br>"),
-      "__STORY_ID__": cleanStoryId(fields.storyId) || "000000",
-      "{{INTRO}}": renderIntroHtml(fields.intro),
-      "{{LEARN1}}": fields.learn1 || "The core definition of this technology and why it matters",
-      "{{LEARN2}}": fields.learn2 || "Real-world examples and case studies from industry leaders",
-      "{{LEARN3}}": fields.learn3 || "A practical readiness framework for your specific HR team",
-      "{{LEARN4}}": fields.learn4 || "Actionable strategies to compress weeks of work into hours",
-      "__SECONDARY_CTA__": cleanUrl(fields.apShortcode) || "#",
-      "__ONDEMAND_CTA__": cleanUrl(fields.apShortcode) || "#",
-      "{{HOSTS_SECTION}}": hostsHtml,
-      "Your expert hosts": hostLabel, 
-      "Learn directly from industry leaders": hostSubLabel,
-      "__VE_NAME__": fields.veName || "Virtual Event Name",
-      "__VE_CTA__": cleanUrl(fields.veShortcode) || "#",
-      "{{CREDIT_SECTION}}": creditHtml
-    };
-
-    // Update Outlook host section wrapper to centered 552px wide table
-    html = html.replace(
-      '<!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><![endif]-->',
-      '<!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="552" align="center"><tr><![endif]-->'
-    );
-
-    // Proportional logo height adjustment
-    const logoHeightNum = parseInt(fields.logoHeight, 10) || 40;
-    const logoWidthNum = Math.round(2.25 * logoHeightNum);
-    html = html.replaceAll("max-width:90px;max-height:40px;", `max-width:${logoWidthNum}px;max-height:${logoHeightNum}px;`);
-
-    Object.entries(map).forEach(([key, val]) => {
-      html = html.replaceAll(key, val || "");
-    });
-
-    // Replace the subject comment in all templates dynamically!
-    html = html.replace(/<!-- SUBJECT: .*? -->/, `<!-- SUBJECT: ${fields.subject || '[REPLACE WITH GENERATED SUBJECT LINE]'} -->`);
-
-    return html;
-  }, [fields, activeTab, activeVariant]);
+  const finalHtml = useMemo(() => renderEmail(TEMPLATES[activeTab].variants[activeVariant], fields), [fields, activeTab, activeVariant]);
 
   const updateHost = (i, key, val) => {
     const n = [...fields.hosts];
@@ -1214,20 +947,11 @@ Generate EXACTLY this JSON structure:
             <p style={{ margin: '0 0 6px 0', fontSize: '9.5px', color: '#64748B', lineHeight: '13px' }}>
               * Leave blank if the webcast is not part of a virtual event.
             </p>
-            
-            {/* 9. Story ID */}
-            <label style={{ ...lS, marginTop: '8px', marginBottom: '4px', fontSize: '10px' }}>9. Story ID</label>
+                        
+            {/* 9. AP Shortcode */}
+            <label style={{ ...lS, marginTop: '8px', marginBottom: '4px', fontSize: '10px' }}>9. AP Shortcode (all CTA buttons)</label>
             <input 
-              placeholder="Story ID (e.g. 17746...)" 
-              value={aiStoryId} 
-              onChange={e => setAiStoryId(e.target.value)} 
-              style={{ ...iS, padding: '7px 10px', fontSize: '12px', marginTop: 0, marginBottom: '6px' }} 
-            />
-            
-            {/* 10. AP Shortcode */}
-            <label style={{ ...lS, marginTop: '8px', marginBottom: '4px', fontSize: '10px' }}>10. Registration URL / AP Shortcode</label>
-            <input 
-              placeholder="Registration URL / AP shortcode" 
+              placeholder="https://web.hr.com/xxxxx" 
               value={aiApShortcode} 
               onChange={e => setAiApShortcode(e.target.value)} 
               style={{ ...iS, padding: '7px 10px', fontSize: '12px', marginTop: 0, marginBottom: '8px' }} 
@@ -1323,6 +1047,9 @@ Generate EXACTLY this JSON structure:
           />
         </div>
 
+        <label style={lS}>Header label (tag next to the logo)</label>
+        <input placeholder={TEMPLATES[activeTab].variants[0].badge + ' (default)'} style={iS} value={fields.badge || ''} onChange={e => setFields({...fields, badge: e.target.value})} />
+
         <label style={lS}>2. Hero Title</label>
         <input placeholder="Enter Main Headline" style={iS} value={fields.title} onChange={e => setFields({...fields, title: e.target.value})} />
 
@@ -1341,8 +1068,8 @@ Generate EXACTLY this JSON structure:
           </div>
         )}
 
-        <label style={lS}>4. Story ID (Primary CTA)</label>
-        <input placeholder="Enter Story ID" style={iS} value={fields.storyId} onChange={e => setFields({...fields, storyId: e.target.value})} />
+        <label style={lS}>4. AP shortcode (all CTA buttons)</label>
+        <input placeholder="https://web.hr.com/xxxxx" style={iS} value={fields.apShortcode} onChange={e => setFields({...fields, apShortcode: e.target.value})} />
 
         <label style={lS}>5. Intro Paragraphs (Problem & Solution)</label>
         <textarea placeholder="Enter 2 paragraphs (Problem & Solution) separated by a blank line" style={{...iS, height:'90px', resize:'vertical'}} value={fields.intro} onChange={e => setFields({...fields, intro: e.target.value})} />
@@ -1350,8 +1077,6 @@ Generate EXACTLY this JSON structure:
         <label style={lS}>6. 4 Key Learnings</label>
         {[1,2,3,4].map(n => <input key={n} placeholder={`Learning sentence ${n}`} style={{...iS, marginBottom:'4px'}} value={fields[`learn${n}`]} onChange={e => setFields({...fields, [`learn${n}`]: e.target.value})} />)}
 
-        <label style={lS}>7. Registration URL / AP shortcode</label>
-        <input placeholder="Paste Registration URL or AP shortcode" style={iS} value={fields.apShortcode} onChange={e => setFields({...fields, apShortcode: e.target.value})} />
 
         <div style={{ background: '#f8fafc', padding: '14px', borderRadius: '10px', marginTop: '16px', border: '1px solid #e2e8f0' }}>
           <label style={{ ...lS, marginTop: 0, marginBottom: '10px', color: '#1e293b' }}>Expert Hosts (Max 5)</label>
